@@ -1,0 +1,29 @@
+Physico-chemical methods and properties ontology (fix)
+---
+from: https://www.ebi.ac.uk/ols/ontologies/fix
+https://bioportal.bioontology.org/ontologies/FIX
+http://www.ontobee.org/ontology/FIX
+
+Some interesting classes:
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/FIX_0000276">
+molecular property
+	
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/FIX_0000286">
+supramolecular property
+
+molecular structure, 
+macromolecular structure (subclass of molecular structure)
+secondary structure (subclass of macromolecular structure and of conformation)
+tertiary structure (subclass of macromolecular structure and of conformation)
+quaternary structure (subclass of macromolecular structure)
+supramolecular structure (subclass of supramolecular property and of structure)
+
+structure (subclass of general physico-chemical property)
+physico-chemical property (268)
+general physico-chemical property(439; subclass of physico-chemical property)
+
+polysaccharide structure (subclass of macromolecular structure)
+glycoprotein structure (subclass of polysaccharide structure)
+glycoprotein tertiary structure (subclass of glycoprotein structure and protein tertiary structure)
+
