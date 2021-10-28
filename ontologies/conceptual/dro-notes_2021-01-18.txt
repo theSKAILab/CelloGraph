@@ -1,0 +1,44 @@
+materials:
+-cellulosic pulp
+	- plant pulp
+	- wood pulp
+		- virgin wood pulp (def.: produced from wood?)
+	- recovered paper
+	- disolving wood pulp
+- regenerated cellulose (equivalent to:? manmade cellulosic film and fiber)
+
+- sources of cellulose-based materials
+	- plants?? 
+	- (raw) wood
+	- waste paper or paperboard??
+
+- cellulosic derivates ??
+
+- cellulosis products
+	- wood products
+		- paper or paperboard??
+		- wood-based panels
+		- sawnwood
+		- wood-based fuels
+		- 
+
+- cellulose-based materials 
+	- cellulosic fibers
+	- plant fibers 
+	- wood?? (products? and resources)
+	- paper or paperboard?? (products and resources?) 
+
+-textile fibers:
+	- natural textile fibers: def: intersection of natural fibers (cellulosis fibers as specialization) and textile fibers (based on the use of the fiber?)
+		- cotton (not included in plant fibers?)
+		- plant fibers
+		- wood (should this be cellulosic fibers?; why not a specialization of plant fiber??)
+		- down
+		- silk
+	- semi-synthetic manmade cellulosic fibers
+	- plastic textile fibers 
+
+semi-synthetic manmade cellulosic fibers
+
+
+MATERIAL is-used-to-make MATERIAL
