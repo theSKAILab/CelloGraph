@@ -1,0 +1,396 @@
+@prefix : <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ISO_TS_20488: <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#> .
+@base <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488> .
+
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488> rdf:type owl:Ontology ;
+                                                                      rdfs:comment """ISO/TS 20488 Technical specification
+Nanotechnologies-Standard tersms fand their defination for cellulose nanomaterial""" ;
+                                                                      rdfs:label """Contact:
+
+Xuelian Zhang
+University of Maine
+Email:xlzhxl@hotmail.com
+Cel:207-307-4240"""@hotmail.com ;
+                                                                      owl:versionInfo "v1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#alternative_source
+ISO_TS_20488:alternative_source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#definition
+ISO_TS_20488:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#id
+ISO_TS_20488:id rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#source
+ISO_TS_20488:source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#synonym
+ISO_TS_20488:synonym rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasConfigurationOf
+ISO_TS_20488:hasConfigurationOf rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf ISO_TS_20488:hasSomeIn .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasDimensionIn
+ISO_TS_20488:hasDimensionIn rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf ISO_TS_20488:hasSomeIn .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasPartIn
+ISO_TS_20488:hasPartIn rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ISO_TS_20488:hasSomeIn .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasSome
+ISO_TS_20488:hasSome rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasSomeIn
+ISO_TS_20488:hasSomeIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hasStructureIn
+ISO_TS_20488:hasStructureIn rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf ISO_TS_20488:hasSomeIn .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#isComposedOf
+ISO_TS_20488:isComposedOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#amorphous
+ISO_TS_20488:amorphous rdf:type owl:Class ;
+                       rdfs:subClassOf ISO_TS_20488:solid_structure ;
+                       ISO_TS_20488:source "ISO/TS20477:2017, 3.2.2" ;
+                       skos:definition "Solid structure where its ions, molecules, or atoms are oriented randomly, lacking any order." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellullose_nanomaterial
+ISO_TS_20488:cellullose_nanomaterial rdf:type owl:Class ;
+                                     rdfs:subClassOf ISO_TS_20488:nanomaterial ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty ISO_TS_20488:isComposedOf ;
+                                                       owl:someValuesFrom ISO_TS_20488:cellulose
+                                                     ] ;
+                                     ISO_TS_20488:source "ISO/TS20477:2017, 3.3.1" ;
+                                     ISO_TS_20488:synonym "cellulosic nanomaterial" ,
+                                                          "nanocellulose(NC)" ;
+                                     rdfs:comment "Some cellulose nanomateiral can be composed of chemically modified cellulose." ,
+                                                  "This term is inclusive of cellulose nano-object and cellulose nanostructure material." ;
+                                     skos:definition "Material composed predominantly of cellulose, with any external dimension in the nanoscale, or a material having internal structure or surface structure in the nanoscale, with the internal structure or surface structure composed predominantly of cellulose." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose
+ISO_TS_20488:cellulose rdf:type owl:Class ;
+                       owl:disjointWith ISO_TS_20488:hemicellulose ;
+                       ISO_TS_20488:source "ISO/TS20477:2017, 3.2.4" ;
+                       skos:definition "Linear polymeric chain of beta(1-4)linked D-glucopyranose units." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_microfibrils
+ISO_TS_20488:cellulose_microfibrils rdf:type owl:Class ;
+                                    owl:equivalentClass ISO_TS_20488:cellulose_nanocrystal ;
+                                    rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nano-object
+ISO_TS_20488:cellulose_nano-object rdf:type owl:Class ;
+                                   rdfs:subClassOf ISO_TS_20488:cellullose_nanomaterial ,
+                                                   ISO_TS_20488:nano-object ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:hasDimensionIn ;
+                                                     owl:someValuesFrom ISO_TS_20488:nanoscale
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:isComposedOf ;
+                                                     owl:someValuesFrom ISO_TS_20488:cellulose
+                                                   ] ;
+                                   owl:disjointWith ISO_TS_20488:cellulose_nanostructured_material ;
+                                   ISO_TS_20488:source "ISO/TS20477:2017, 3.3.2" ;
+                                   skos:definition "Nano-object composed predominantly of cellulose." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nano_ribbon
+ISO_TS_20488:cellulose_nano_ribbon rdf:type owl:Class ;
+                                   rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                   rdfs:comment "cellulose nanofibrils from bacteria sources" .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanocrystal
+ISO_TS_20488:cellulose_nanocrystal rdf:type owl:Class ;
+                                   owl:equivalentClass ISO_TS_20488:cellulose_nanowire ,
+                                                       ISO_TS_20488:cellulose_needle ,
+                                                       ISO_TS_20488:cellulose_sphere ,
+                                                       <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanowhiskers_(CNW)> ,
+                                                       <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_crystalline_cellulose(NCC)> ;
+                                   rdfs:subClassOf ISO_TS_20488:nanocrystal ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:hasSome ;
+                                                     owl:someValuesFrom ISO_TS_20488:elementary_fibril
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:hasStructureIn ;
+                                                     owl:someValuesFrom ISO_TS_20488:crystalline
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:hasStructureIn ;
+                                                     owl:someValuesFrom ISO_TS_20488:paracrystalline
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty ISO_TS_20488:isComposedOf ;
+                                                     owl:someValuesFrom ISO_TS_20488:cellulose
+                                                   ] ;
+                                   owl:disjointWith ISO_TS_20488:cellulose_nanofibril ;
+                                   ISO_TS_20488:source "ISO/TS 20477:2017(E), 3.3.5" ;
+                                   rdfs:comment "The dimension are typically 3-50 nm in cross section and 100 nm to several um in length on the sources of the cellulose nanocrystal." ;
+                                   skos:definition "Nanocrystal predominantly composed of cellulose with at least one elementary fibril, containing predominantly crystalline and paracrystalline regions, with aspect ratio of usually less than 50 but usually greater than 5, not exhibiting longitudinal splits, inter-particle entanglement, or network-like structures." ;
+                                   skos:historyNote "Historically cellulose nanocrystal have been called nano crystalline cellulose(NCC), whiskers such as cellulose nanowhiskers (CNW), and microfibrils such as cellulose microfibrils; they have also been called sphere, needles or nanowires on their shoe, dimensions and morphology; other names have included cellulose micelles, cellulose crystallites and cellulose microcrystals." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanofibre
+ISO_TS_20488:cellulose_nanofibre rdf:type owl:Class ;
+                                 rdfs:subClassOf ISO_TS_20488:nanofibre ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ISO_TS_20488:isComposedOf ;
+                                                   owl:someValuesFrom ISO_TS_20488:cellulose
+                                                 ] ;
+                                 ISO_TS_20488:source "ISO/TS20477:2017, 3.3.4" ;
+                                 skos:definition "Nanofibre composed predominantly of cellulose" .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanofibril
+ISO_TS_20488:cellulose_nanofibril rdf:type owl:Class ;
+                                  rdfs:subClassOf ISO_TS_20488:cellulose_nanofibre ;
+                                  ISO_TS_20488:source "ISO/TS20477:2017, 3.3.6" ;
+                                  rdfs:comment "Cellulose nanofibrils produced from plant sources by mechanical; processed usually contain hemicellulose and in some cases lignin." ,
+                                               "Some cellulose nano fibrils might have functional groups on their surfaces as a result of the manufacturing process." ;
+                                  rdfs:seeAlso "nano fibrillated cellulose(NFC)" ;
+                                  skos:definition "Cellulose nanofibre composed of at least one elementary fibril, containing crystalline, paracrystalline, and amorphous regions, with aspect ration usually greater than 10, which may contain longitudinal splits, entanglement between particles, or network-like structures." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanostructured_material
+ISO_TS_20488:cellulose_nanostructured_material rdf:type owl:Class ;
+                                               rdfs:subClassOf ISO_TS_20488:cellullose_nanomaterial ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ISO_TS_20488:hasStructureIn ;
+                                                                 owl:someValuesFrom ISO_TS_20488:nanoscale
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ISO_TS_20488:isComposedOf ;
+                                                                 owl:someValuesFrom ISO_TS_20488:cellulose
+                                                               ] ;
+                                               ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015,2.7" ;
+                                               ISO_TS_20488:source "ISO/TS20477:2017, 3.3.3" ;
+                                               skos:definition "Nanostructured material of which the internal or surface nanostructure is predominantly composed of cellulose." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanowire
+ISO_TS_20488:cellulose_nanowire rdf:type owl:Class ;
+                                rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_needle
+ISO_TS_20488:cellulose_needle rdf:type owl:Class ;
+                              rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_sphere
+ISO_TS_20488:cellulose_sphere rdf:type owl:Class ;
+                              rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#crystalline
+ISO_TS_20488:crystalline rdf:type owl:Class ;
+                         rdfs:subClassOf ISO_TS_20488:solid_structure ;
+                         ISO_TS_20488:source "ISO/TS20477:2017, 3.2.1" ;
+                         skos:definition "solid structure where its ions, molecules, or atoms are in an ordered, three-three-dimensional arrangement." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#elementary_fibril
+ISO_TS_20488:elementary_fibril rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty ISO_TS_20488:hasConfigurationOf ;
+                                                 owl:someValuesFrom ISO_TS_20488:cellulose
+                                               ] ;
+                               ISO_TS_20488:source "ISO/TS20477:2017, 3.2.5" ;
+                               skos:definition "Structure, originating from single terminal enzyme complex, having a configuration of cellulose chain specific to each cellulose-producing plant, animal, algal, and bacterial species." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#hemicellulose
+ISO_TS_20488:hemicellulose rdf:type owl:Class ;
+                           ISO_TS_20488:source "ISO/TS20477:2017, 3.2.6" ;
+                           rdfs:comment "Hemicellulose can be branched polymers." ,
+                                        "Hemicellulose is usually extractable with dilute alkaline solutions." ;
+                           skos:definition "Non-cellulose polysaccharides in organisms, typically containing monomers such as, but not limited to xylose, glucose, mannose, galactose, arabinose and glucuronic acid." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano-object
+ISO_TS_20488:nano-object rdf:type owl:Class ;
+                         rdfs:subClassOf ISO_TS_20488:nanomaterial ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ISO_TS_20488:hasDimensionIn ;
+                                           owl:someValuesFrom ISO_TS_20488:nanoscale
+                                         ] ;
+                         ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015, 2.5" ;
+                         ISO_TS_20488:source "ISO/TS20477:2017, 3.1.3" ;
+                         rdfs:comment "the second and the third external dimensions are orthogonal to the first dimension and to each other." ;
+                         skos:definition "Discrete piece of material with one ,two or three external dimensions in the nanoscale." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanocrystal
+ISO_TS_20488:nanocrystal rdf:type owl:Class ;
+                         rdfs:subClassOf ISO_TS_20488:nano-object ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ISO_TS_20488:hasStructureIn ;
+                                           owl:someValuesFrom ISO_TS_20488:crystalline
+                                         ] ;
+                         ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015, 4.15" ;
+                         ISO_TS_20488:source "ISO/TS20477:2017, 3.1.7" ;
+                         skos:definition "Nano-object with a crystalline structure." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanofibre
+ISO_TS_20488:nanofibre rdf:type owl:Class ;
+                       rdfs:subClassOf ISO_TS_20488:nano-object ;
+                       ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015, 4.5" ;
+                       ISO_TS_20488:source "ISO/TS20477:2017, 3.1.6" ;
+                       ISO_TS_20488:synonym "Nanofibril" ,
+                                            "Nanofilament" ;
+                       rdfs:comment "The largest external dimension is not necessarily in the nanoscale." ;
+                       skos:definition "Nano-object with two similar external dimensions in the nanoscale and the dimensions significantly larger." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanomaterial
+ISO_TS_20488:nanomaterial rdf:type owl:Class ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty ISO_TS_20488:hasSomeIn ;
+                                            owl:someValuesFrom ISO_TS_20488:nanoscale
+                                          ] ;
+                          ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015, 2.4" ;
+                          ISO_TS_20488:source "ISO/TS20477:2017, 3.1.2" ;
+                          skos:definition "Materials with any external dimension in nanoscale or having internal structure or surface structure in the nanoscale." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanoscale
+ISO_TS_20488:nanoscale rdf:type owl:Class ;
+                       ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015, 2.1" ;
+                       ISO_TS_20488:source "ISO/TS20477:2017, 3.1.1" ;
+                       skos:definition "Length range approximately from 1nm to 100 nm." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanostructure
+ISO_TS_20488:nanostructure rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty ISO_TS_20488:hasPartIn ;
+                                             owl:someValuesFrom ISO_TS_20488:nanoscale
+                                           ] ;
+                           ISO_TS_20488:alternative_source "ISO/TS 80004-1:2015,2.6" ;
+                           ISO_TS_20488:source "ISO/TS20477:2017, 3.1.4" ;
+                           skos:definition "Composition of inter-related constituent parts in which one or more of those parts is a nanoscale region." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#paracrystalline
+ISO_TS_20488:paracrystalline rdf:type owl:Class ;
+                             rdfs:subClassOf ISO_TS_20488:solid_structure ;
+                             ISO_TS_20488:source "ISO/TS20477:2017, 3.2.3" ;
+                             skos:definition "Structure in the intermediate state between crystalline and amorphous, having short and medium range ordered lattice structure and lacking long range order in at lease on e direction." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#solid_structure
+ISO_TS_20488:solid_structure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_microfibril(CMF)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_microfibril(CMF)> rdf:type owl:Class ;
+                                                                                                owl:equivalentClass <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanofibre(CNF)> ,
+                                                                                                                    <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#micro_fibrillar_cellulose(MFC)> ,
+                                                                                                                    <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#microfibrillated_cellulose(MFC)> ,
+                                                                                                                    <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_fibrillated_cellulose(NFC)> ,
+                                                                                                                    <http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanofibrillar_cellulose(NFC)> ;
+                                                                                                rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                                rdfs:comment "" ,
+                                                                                                             "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanofibre(CNF)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanofibre(CNF)> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                              rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanowhiskers_(CNW)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#cellulose_nanowhiskers_(CNW)> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#micro_fibrillar_cellulose(MFC)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#micro_fibrillar_cellulose(MFC)> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                                    rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#microfibrillated_cellulose(MFC)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#microfibrillated_cellulose(MFC)> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                                     rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_crystalline_cellulose(NCC)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_crystalline_cellulose(NCC)> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf ISO_TS_20488:nanocrystal .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_fibrillated_cellulose(NFC)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nano_fibrillated_cellulose(NFC)> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                                     rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanofibrillar_cellulose(NFC)
+<http://www.semanticweb.org/xuelian/ontologies/2021/11/ISO_TS_20488#nanofibrillar_cellulose(NFC)> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf ISO_TS_20488:cellulose_nanofibril ;
+                                                                                                  rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
