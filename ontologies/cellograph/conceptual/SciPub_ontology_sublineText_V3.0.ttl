@@ -1,0 +1,496 @@
+@prefix sp: <http://cellograph.com/SciPub/2022v1.0/>  .
+@prefix : <http://cellograph.com/SciPub/2022v1.0/>  . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+sp:    a                 owl:Ontology ;
+        rdfs:label         " CelloGragh "@en-us ;
+        dcterms:created    "2022-2-14"^^xsd:Date ;
+        dcterms:creator    "Xuelian Zhang"@en-us ;
+        dcterms:license    <http://cellograph.com/software> ;
+	dcterms:modified   "2022-2-23"^^xsd:Date ;
+        dcterms:publisher  <http://cellograph.com/> ;
+        dcterms:rights     "Copyright 2022 - 2032 UMaine/SKAI."@en-us ;
+        dcterms:subject    "Ontology"@en-us ;
+        owl:versionIRI     <http://cellograph.com/SciPub/2022v1.0> ;
+        owl:versionInfo    "1.0"@en-us .
+
+# ~ * ~ * ~ * ~
+# Classes
+# ~ * ~ * ~ * ~
+
+# Declaration of highest-level classes 
+
+:ScientificPublication rdf:type rdfs:Class .
+:Term rdf:type rdfs:Class .
+:TermStatus rdf:type rdfs:Class .
+:Agent rdf:type rdfs:Class . 
+:BibliographicEntry rdf:type rdfs:Class . 
+:LocationInDocument rdf:type rdfs:Class . 
+:PublicationAuthor rdf:type rdfs:Class . 
+
+# ———————
+# DocumentPart
+# ———————
+# Declaration of subclasses for DocumentPart
+
+:Figure rdfs:subClassOf :DocumentPart .
+:Table rdfs:subClassOf :DocumentPart .
+:Equation rdfs:subClassOf :DocumentPart .
+:Listing rdfs:subClassOf :DocumentPart .
+:Bibliography rdfs:subClassOf :DocumentPart.
+:Abstract rdfs:subClassOf :DocumentPart .
+:Keyword rdfs:subClassOf :DocumentPart .
+:TextFragment rdfs:subClassOf :DocumentPart .
+
+:Figure rdf:type rdfs:Class . 
+:Table rdf:type rdfs:Class .
+:Equation rdf:type rdfs:Class  .
+:Listing rdf:type rdfs:Class .
+:Bibliography rdf:type rdfs:Class .
+:Keywords rdf:type rdfs:Class  .
+
+# ——————— 
+# Term
+# ———————
+# Declaration of subclasses for Term
+
+:SingleTerm rdfs:subClassOf :Term .
+:CompoundTerm rdfs:subClassOf :Term.
+
+:SingleTerm rdf:type rdfs:Class .
+:CompoundTerm rdf:type rdfs:Class .
+
+# ———————
+# TextFragment
+# ———————
+# Declaration of subclasses for TextFragment
+
+:Section rdfs:subClassOf :TextFragment .
+:Paragraph rdfs:subClassOf :TextFragment .
+:Sentence rdfs:subClassOf :TextFragment .
+:Heading rdfs:subClassOf :TextFragment .
+:DocumentPart rdfs:subClassOf :TextFragment .
+:Abstract rdfs:subClassOf :TextFragment .
+
+:Section rdf:type rdfs:Class .
+:Paragraph rdf:type rdfs:Class  .
+:Sentence rdf:type rdfs:Class .
+:Heading rdf:type rdfs:Class .
+
+# ———————
+# LocationInDocument
+# ———————
+# Declaration of subclasses for LocationInDocument
+
+:Page rdfs:subClassOf :LocationInDocument .
+:Column rdfs:subClassOf :LocationInDocument .
+:Line rdfs:subClassOf :LocationInDocument .
+
+:Page rdf:type rdfs:Class .
+:Column rdf:type rdfs:Class .
+:Line rdf:type rdfs:Class .
+
+# ———————
+# TermStatus
+# ———————
+# Declaration of subclasses for TermStatus
+
+:ConfirmedStatus rdfs:subClassOf :TermStatus .
+:CandidateStatus rdfs:subClassOf :TermStatus .
+:RejectedStatus rdfs:subClassOf :TermStatus .
+
+:ConfirmedStatus rdf:type rdfs:Class .
+:CandidateStatus rdf:type rdfs:Class .
+:RejectedStatus rdf:type rdfs:Class .
+
+# ———————
+# Agent
+# ———————
+# Declaration of subclasses for Agent
+
+:System rdfs:subClassOf :Agent .
+:Person rdfs:subClassOf :Agent .
+:Organization rdfs:subClassOf :Agent .
+
+:System rdf:type rdfs:Class .
+:Person rdf:type rdfs:Class .
+:Organization rdf:type rdfs:Class .
+
+# ~ * ~ * ~ * ~
+# Object Property
+# ~ * ~ * ~ * ~
+
+:contains rdf:type owl:ObjectProperty .
+:hasStatus rdf:type owl:ObjectProperty .
+:occursInText rdf:type rdf:Property .
+:statusCreatedBy rdf:type rdf:Property .
+:statusTerminatedBy rdf:type rdf:Property .
+:hasStartingLocation rdf:type rdf:Property .
+:hasEndingLocation rdf:type rdf:Property .
+:hasAuthor rdf:type rdf:Property .
+:person rdf:type rdf:Property .
+:affiliation rdf:type rdf:Property .
+:hasStartingLine rdf:type rdf:Property .
+:hasStartingColumn rdf:type rdf:Property .
+:hasStartingPage rdf:type rdf:Property .
+:hasEndingLine rdf:type rdf:Property .
+:hasEndingColumn rdf:type rdf:Property .
+:hasEndingPage rdf:type rdf:Property .
+
+:containsDocumentPart rdfs:subPropertyOf :contains .
+:containsTerm rdfs:subPropertyOf :contains .
+:containsText rdfs:subPropertyOf :contains .
+:containsBibliographicEntry rdfs:subPropertyOf :contains .
+:containsKeyword rdfs:subPropertyOf :contains .
+:containsFragment rdfs:subPropertyOf :contains .
+
+# ~ * ~ * ~ * ~~ * ~ 
+# Domain&Range
+# ~ * ~ * ~ * ~~ * ~ 
+
+:contains rdfs:domain :ScientificPublication .
+:contains rdfs:range :Abstract .
+
+:containsDocumentPart rdfs:domain :ScientificPublication .
+:containsDocumentPart rdfs:range :DocumentPart .
+
+:containsTerm rdfs:domain :ScientificPublication .
+:containsTerm rdfs:range :Term . 
+
+:containsText rdfs:domain :ScientificPublication .
+:containsText rdfs:range :TextFragment .
+
+:hasAuthor rdfs:domain :ScientificPublication .
+:hasAuthor rdfs:range :PublicationAuthor .
+
+:person rdfs:domain :PublicationAuthor .
+:person rdfs:domain :Person .
+
+:affiliation rdfs:domain :PublicationAuthor .
+:affiliation rdfs:domain :Organization .
+
+:hasStatus rdfs:domain :Term . 
+:hasStatus rdfs:range :TermStatus .
+
+:occursInText rdfs:domain :Term . 
+:occursInText rdfs:range :TextFragment .
+
+:containsKeyword rdfs:domain :Keywords .
+:containsKeyword rdfs:range :Term .
+
+:containsBibliographicEntry rdfs:domain :Bibliography .
+:containsBibliographicEntry rdfs:range :BibliographicEntry .
+
+:containsFragment rdfs:domain :TextFragment .
+:containsFragment rdfs:range :TextFragment .
+
+:statusCreatedBy rdfs:domain :TermStatus .
+:statusCreatedBy rdfs:range :Agent .
+
+:statusTerminatedBy rdfs:domain :TermStatus .
+:statusTerminatedBy rdfs:range :Agent .
+
+:hasStartingLocation rdfs:domain :TextFragment .
+:hasStartingLocation rdfs:range :LocationInDocument .
+
+:hasEndingLocation rdfs:domain :TextFragment .
+:hasEndingLocation rdfs:range :LocationInDocument .
+
+:hasStartingLine rdfs:domain :LocationInDocument .
+:hasStartingLine rdfs:range :LocationInDocument .
+
+:hasStartingColumn rdfs:domain :LocationInDocument .
+:hasStartingColumn rdfs:range :LocationInDocument .
+
+:hasStartingPage rdfs:domain :LocationInDocument .
+:hasStartingPage rdfs:range :LocationInDocument .
+
+:hasEndingLine rdfs:domain :LocationInDocument .
+:hasEndingLine rdfs:range :LocationInDocument .
+
+:hasEndingColumn rdfs:domain :LocationInDocument .
+:hasEndingColumn rdfs:range :LocationInDocument .
+
+:hasEndingPage rdfs:domain :LocationInDocument .
+:hasEndingPage rdfs:range :LocationInDocument .
+
+# ~ * ~ * ~ * ~~ * ~ 
+# Datatype property
+# ~ * ~ * ~ * ~~ * ~ 
+
+# Datatype Properties of ScientificPublication
+
+:title rdf:type owl:DatatypeProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range xsd:string .
+
+:doi rdf:type owl:DatatypeProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range xsd:string .
+
+:authors rdf:type owl:DatatypeProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range xsd:string .
+
+:venue rdf:type owl:DatatypeProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range xsd:string .
+
+:publicationDate rdf:type owl:DatatypeProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range xsd:dateTime .
+
+
+# Datatype Properties of TermStatus
+
+:statusCreatedDate rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TermStatus ;
+	rdfs:range xsd:dateTime .
+
+:statusTerminatedDate rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TermStatus ;
+	rdfs:range xsd:dateTime .
+
+:statusCreatedBy rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TermStatus ;
+	rdfs:range xsd:string .
+
+:statusTerminatedBy rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TermStatus ;
+	rdfs:range xsd:string .
+
+# Datatype Properties of Person
+
+:firstName rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string .
+
+:lastName rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string .
+
+:orcid rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string .
+
+# Datatype Properties of PublicationAuthor 
+
+:position rdf:type owl:DatatypeProperty ;
+	rdfs:domain :PublicationAuthor ;
+	rdfs:range xsd:nonNegativeInteger .
+
+# Datatype Properties of TextFragment
+
+:text rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TextFragment,
+			:Term ;
+	rdfs:range xsd:string .
+
+# ~ * ~ * ~ * ~~ * ~ 
+# Axiom
+# ~ * ~ * ~ * ~~ * ~ 
+
+# Class axiom
+
+:DocumentPart owl:disjointUnionOf
+	(:Figure 
+	:Table 
+	:Equation 
+	:Listing 
+	:Bibliography 
+	:Abstract 
+	:Keyword ) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:Figure 
+			:Table 
+			:Equation 
+			:Listing 
+			:Bibliography 
+			:Abstract 
+			:Keyword ) ].
+
+
+:TextFragment owl:disjointUnionOf
+	(:Section
+	:Paragraph
+	:Sentence 
+	:Heading ) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:Section
+			:Paragraph
+			:Sentence 
+			:Heading ) ].
+
+
+:TermStatus owl:disjointUnionOf
+	(:ConfirmedStatus 
+	:CandidateStatus 
+	:RejectedStatus ) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:ConfirmedStatus 
+			:CandidateStatus 
+			:RejectedStatus ) ].
+
+:Agent owl:disjointUnionOf
+	(:Person
+	:Organization
+	:System) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:Person
+			:System) ].
+
+
+:Term owl:disjointUnionOf
+	(:SingleTerm
+	:CompoundTerm) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:SingleTerm
+			:CompoundTerm) ].
+
+
+:LocationInDocument owl:disjointUnionOf
+	(:Page
+	:Column
+	:Line ) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:Page
+			:Column
+			:Line ) ].
+
+:TextFragment owl:disjointUnionOf
+	(:Section
+	:Paragraph
+	:Sentence
+	:Heading ) .
+
+[ rdf:type owl:AllDisjointClasses;
+	owl:members(:Section
+			:Paragraph
+			:Sentence
+			:Heading ) ].
+
+# Property axioms
+
+:containsDocumentPart rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:containsTerm rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:ReflexiveProperty .
+
+:containsText rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:ReflexiveProperty .
+
+:hasStatus rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:occursInText rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:containsBibliographicEntry rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:statusCreatedBy rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty ;
+		rdf:type owl:FunctionalProperty .
+
+:statusTerminatedBy rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty ;
+		rdf:type owl:FunctionalProperty .
+
+:hasStartingLocation rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty ;
+		rdf:type owl:FunctionalProperty .
+
+:hasEndingLocation rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty ;
+		rdf:type owl:FunctionalProperty .
+
+:hasAuthor rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:person rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+
+# ~ * ~ * ~ * ~~ * ~ 
+# Class expressions
+# ~ * ~ * ~ * ~~ * ~ 
+
+:ScientificPublication rdfs:subClassOf 
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :containsDocumentPart;
+       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :DocumentPart] ,
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :containsText;
+       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :TextFragment] .
+
+:DocumentPart rdfs:subClassOf 
+    	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :contains;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+        		owl:someValuesFrom :Abstract] ,
+    	[rdf:type owl:Restriction ;
+      		owl:onProperty :contains;
+       	 	owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+       		owl:someValuesFrom :Keyword] ,
+    	[rdf:type owl:Restriction ;
+      		 owl:onProperty :contains;
+      	 	 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+        	 	 owl:someValuesFrom :Bibliography] .
+
+:TextFragment rdfs:subClassOf 
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :hasStartingLocation;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :LocationInDocument] ,
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :hasEndingLocation;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :LocationInDocument] .
+
+:TermStatus rdfs:subClassOf 
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :statusCreatedBy;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :Agent] ,
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :statusTerminatedBy;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :Agent] .
+
+:Term rdfs:subClassOf 
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :hasStatus;
+       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :TermStatus] .
+
+:Bibliography rdfs:subClassOf 
+	[rdf:type owl:Restriction ;
+       	 	owl:onProperty :containsBibliographicEntry;
+       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+		owl:someValuesFrom :BibliographicEntry] .

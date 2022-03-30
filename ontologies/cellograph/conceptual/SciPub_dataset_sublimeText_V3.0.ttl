@@ -1,0 +1,933 @@
+@prefix : <http://cellograph.com/SciPub/2022v1.0/>  .
+@prefix sp: <http://cellograph.com/SciPub/2022v1.0/>  .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:pubA rdf:type sp:ScientificPublication.
+
+:pubA sp:containsText :pubASec1 ,
+				:pubASec2 ,
+				:pubASec3 ,
+				:pubASec4 ,
+				:pubASec5 ,
+				:pubASec5_1 ,
+				:pubASec5_2 ,
+				:pubASec6 ,
+				:pubASec7 .
+:pubA sp:containsDocumentPart :Figure1 ,
+						:Figure2 ,
+						:Figure3 ,
+						:Figure4 ,
+						:Figure5 ,
+						:Figure6 ,
+						:Figure7 ,
+						:Figure8 ,
+						:Figure9 ,
+						:Figure10 ,
+						:Table1 ,
+						:Abstract1 ,
+						:Keyword1 ,
+						:Keyword2 ,
+						:Keyword3 ,
+						:Keyword4 ,
+						:Keyword5 ,
+						:Acknowledgements1 ,
+						:BibliographicEntry1 ,
+ 						:BibliographicEntry2 ,
+ 						:BibliographicEntry3 ,
+ 						:BibliographicEntry4 ,
+ 						:BibliographicEntry5 .
+:pubA sp:contansTerm :Term1 ,
+				 :Term2 ,
+				 :Term3 ,
+				 :Term4 ,
+				 :Term5 ,
+				 :Term6 ,
+				 :Term7 ,
+				 :Term8 ,
+				 :Term9 ,
+				 :Term10 ,
+				 :Term11 ,
+				 :Term12 ,
+				 :Term13 ,
+				 :Term14 ,
+				 :Term15 ,
+				 :Term16 ,
+				 :Term17 ,
+				 :Term18 ,
+				 :Term19 ,
+				 :Term20 ,
+				 :Term21 ,
+				 :Term22 ,
+				 :Term23 ,
+				 :Term24 ,
+				 :Term25 ,
+				 :Term26 ,
+				 :Term27 ,
+				 :Term28 ,
+				 :Term29 ,
+				 :Term30 ,
+				 :Term31 ,
+				 :Term32 ,
+				 :Term33 ,
+				 :Term34 ,
+				 :Term35 ,
+				 :Term36 ,
+				 :Term37 ,
+				 :Term38 ,
+				 :Term39 ,
+				 :Term40 ,
+				 :Term41 ,
+				 :Term42 ,
+				 :Term43 ,
+				 :Term44 ,
+				 :Term45 .
+
+
+#~~~~~~~~~~
+#Article Info
+#~~~~~~~~~~
+
+:pubA sp:Title 'Nanocellulose: Extraction and application'^^xsd:string ;
+		sp:Venue 'Carbon Resources Conversion'^^xsd:string ;
+		sp:PublicationDate '2018'^^xsd:nonNegativeInteger ;
+		sp:DOI 'https://doi.org/10.1016/j.crcon.2018.05.004'^^xsd:string ;
+		sp:hasAuthor :Author1,
+					:Author2,
+					:Author3,
+			 		:Author4,
+			  		:Author5;
+		sp:hasCorrespndingAuthor :Author6 .
+
+#~~~~~~~~~~
+#PublicationAuthor
+#~~~~~~~~~~
+:Author1 rdf:type sp:PublicationAuthor ;
+               sp:position '1'^^xsd:nonNegativeInteger ;
+               sp:person :Person1 ;
+	      sp:affiliation :Organization1 .
+
+:Author2 rdf:type sp:PublicationAuthor ;
+               sp:position '2'^^xsd:nonNegativeInteger ;
+               sp:person :Person2 ;
+	      sp:affiliation :Organization3 .
+
+:Author3 rdf:type sp:PublicationAuthor ;
+               sp:position '3'^^xsd:nonNegativeInteger ;
+               sp:person :Person3 ;
+	      sp:affiliation :Organization4 .
+
+:Author4 rdf:type sp:PublicationAuthor ;
+               sp:position '4'^^xsd:nonNegativeInteger ;
+               sp:person :Person4 ;
+	      sp:affiliation :Organization5 .
+
+:Author5 rdf:type sp:PublicationAuthor ;
+               sp:position '5'^^xsd:nonNegativeInteger ;
+               sp:person :Person5 ;
+	      sp:affiliation :Organization1 .
+
+:Author6 rdf:type sp:PublicationAuthor ;
+               sp:position '6'^^xsd:nonNegativeInteger ;
+               sp:person :Person6 ;
+	      sp:affiliation :Organization1 ,
+				:Organization2 .
+
+#~~~~~~~~~~
+#Person
+#~~~~~~~~~~
+:Person1 rdf:type sp:Person ;
+		sp:firstName 'Patchiya'^^xsd:string ;
+		sp:lastName 'Phanthong'^^xsd:string .
+	    
+:Person2 rdf:type sp:person ;
+		sp:firstName 'Prasert'^^xsd:string ; 
+		sp:lastName 'Reubroycharoen'^^xsd:string .
+
+:Person3 rdf:type sp:person ;
+		sp:firstName 'Xiaogang'^^xsd:string ; 
+		sp:lastName 'Hao'^^xsd:string .
+
+:Person4 rdf:type sp:person ;
+		sp:firstName 'Guangwen'^^xsd:string ;
+		sp:lastName 'Xu'^^xsd:string .
+
+:Person5 rdf:type sp:person ;
+		sp:firstName 'Abuliti'^^xsd:string ;
+		sp:lastName 'Abudula'^^xsd:string .
+
+:Person6 rdf:type sp:person ;
+		sp:firstName 'Guoqing'^^xsd:string ;
+  		sp:lastName 'Guan'^^xsd:string ;
+		sp:email 'guan@hirosaki-u.ac.jp'^^xsd:string .
+
+:Organization1 rdf:type sp:Organization ;
+			sp:text 'Graduate School of Science and Technology, Hirosaki University, 1-Bunkyocho, Hirosaki 036-8560, Japan'^^xsd:string.
+
+:Organization2 rdf:type sp:Organization ;
+			sp:text 'Department of Renewable Energy, Institute of Regional Innovation (IRI), Hirosaki University, 2-1-3, Matsubara, Aomori 030-0813, Japan'^^xsd:string.
+
+:Organization3 rdf:type sp:Organization ;
+			sp:text 'Department of Chemical Technology, Chulalongkorn University, Bangkok 10330, Thailand '^^xsd:string.
+
+:Organization4 rdf:type sp:Organization ;
+			sp:text 'Department of Chemical Engineering, Taiyuan University of Technology, Taiyuan 030024, China '^^xsd:string.
+
+:Organization5 rdf:type sp:Organization ;
+			sp:text 'Institute of Industrial Chemistry and Energy Technology, Shenyang University of Chemical Technology (SYUCT), Shenyang 110142, China '^^xsd:string.
+
+
+#~~~~~~~~~~
+#Section
+#~~~~~~~~~~
+:pubASec1 rdf:type sp:Section ;
+		sp:contansFragment :pubASec1Header ,
+					:Paragraph1 ,
+					:Paragraph2 ;
+		sp:hasStartingLocation :pubASec1StartLoc ;
+		sp:hasEndingLocation :pubASec1EndLoc .
+:pubASec1StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '3'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:pubASec1EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '9'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '2'^^xsd:nonNegativeInteger .
+
+:pubASec2 rdf:type sp:Section ;
+		sp:contansFragment :pubASec2Header ,
+					:Paragraph3 ,
+					:Paragraph4 ,
+					:Paragraph5 ,
+					:Paragraph6 ;
+		sp:hasStartingLocation :pubASec2StartLoc ;
+		sp:hasEndingLocation :pubASec2EndLoc .
+:pubASec2StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '11'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+:pubASec2EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '34'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '2'^^xsd:nonNegativeInteger .
+
+:pubASec3 rdf:type sp:Section ;
+		sp:contansFragment :pubASec3Header ,
+					:Paragraph7 ,
+					:Paragraph8 ,
+					:Paragraph9 ,
+					:Paragraph10 ,
+					:Paragraph11 ,
+					:Paragraph12 ,
+					:Paragraph13 ,
+					:Paragraph14 ,
+					:Paragraph15 ;
+		sp:hasStartingLocation :pubASec3StartLoc ;
+		sp:hasEndingLocation :pubASec3EndLoc .
+:pubASec3StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '36'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+:pubASec3EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '35'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '4'^^xsd:nonNegativeInteger .
+
+:pubASec4 rdf:type sp:Section ;
+		sp:contansFragment :pubASec4Header ,
+					:Paragraph16 ,
+					:Paragraph17 ,
+					:Paragraph18 ,
+					:Paragraph19 ,
+					:Paragraph20 ,
+					:Paragraph21 ,
+					:Paragraph22 ,
+					:Paragraph23 ;
+		sp:hasStartingLocation :pubASec4StartLoc ;
+		sp:hasEndingLocation :pubASec4EndLoc .
+:pubASec4StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '37'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '4'^^xsd:nonNegativeInteger.
+:pubASec4EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '36'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '5'^^xsd:nonNegativeInteger .
+
+:pubASec5 rdf:type sp:Section ;
+		sp:contansFragment :pubASec5Header ,
+					:Paragraph24 ,
+					:pubASec5_1 ,
+					:pubASec5_2 ;
+		sp:hasStartingLocation :pubASec5StartLoc ;
+		sp:hasEndingLocation :pubASec5EndLoc .
+:pubASec5_1 rdf:type sp:Section ;
+		sp:contansFragment :pubASec5_1Header ,
+					:Paragraph25 ,
+					:Paragraph26 ,
+					:Paragraph27 ,
+					:Paragraph28 .
+:pubASec5_2 rdf:type sp:Section ;
+		sp:contansFragment :pubASec5_2Header ,
+					:Paragraph29 ,
+					:Paragraph30 ,
+					:Paragraph31 ,
+					:Paragraph32 ,
+					:Paragraph33 ,
+					:Paragraph34 ,
+					:Paragraph35 ,
+					:Paragraph36 ,
+					:Paragraph37 ,
+					:Paragraph38 ,
+					:Paragraph39 .
+:pubASec5StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '45'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '5'^^xsd:nonNegativeInteger.
+:pubASec5EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '49'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '6'^^xsd:nonNegativeInteger .
+
+:pubASec6 rdf:type sp:Section ;
+		sp:contansFragment :pubASec6Header  ,
+					:Paragraph40  , 
+					:Paragraph41  ,
+					:Paragraph42  ,
+					:Paragraph43  ,
+					:Paragraph44  ,
+					:Paragraph45  ,
+					:Paragraph46  ,
+					:Paragraph47  ;
+		sp:hasStartingLocation :pubASec6StartLoc ;
+		sp:hasEndingLocation :pubASec6EndLoc .
+:pubASec6StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '51'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '6'^^xsd:nonNegativeInteger.
+:pubASec6EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '34'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '9'^^xsd:nonNegativeInteger .
+
+:pubASec7 rdf:type sp:Section ;
+		 sp:contansFragment :pubASec7Header ,
+					:Paragraph48 ,
+					:Paragraph49 ,
+					:Paragraph50 ;
+		sp:hasStartingLocation :pubASec7StartLoc ;
+		sp:hasEndingLocation :pubASec7EndLoc .
+:pubASec7StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '10'^^xsd:nonNegativeInteger.
+:pubASec7EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '26'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '10'^^xsd:nonNegativeInteger .
+
+:pubASec1Header rdf:type sp:Heading ;
+				sp:text '1. Introduction'^^xsd:string ;
+				sp:hasStartingLocation :pubASec1StartLoc .
+:pubASec2Header rdf:type sp:Heading ;
+				sp:text '2. Lignocellkulose biomass'^^xsd:string ;
+				sp:hasStartingLocation :pubASec2StartLoc .
+:pubASec3Header rdf:type sp:Heading ;
+				sp:text '3. Nanocellulose'^^xsd:string ;
+				sp:hasStartingLocation :pubASec3StartLoc .
+:pubASec4Header rdf:type sp:Heading ;
+				sp:text '4. Application of nanocellulose'^^xsd:string ;
+				sp:hasStartingLocation :pubASec4StartLoc .
+:pubASec5Header rdf:type sp:Heading ;
+				sp:text '5. Extraction of nanocellulose from lignocellulsoc niomass'^^xsd:string ;
+				sp:hasStartingLocation :pubASec5StartLoc .
+:pubASec5_1Header rdf:type sp:Heading ;
+				sp:text '5.1 Biomass pretreatment'^^xsd:string .
+:pubASec5_2Header rdf:type sp:Heading ;
+				 	sp:text '5.2. Extraction of nanocellulose'^^xsd:string .
+:pubASec6Header rdf:type sp:Heading ;
+				sp:text '6. Extraction of nanocellulose with the assistance of ball milling'^^xsd:string ;
+				sp:hasStartingLocation :pubASec6StartLoc .
+:pubASec7Header rdf:type sp:Heading ;
+				sp:text '7. Conclusion and future prospects'^^xsd:string ;
+				sp:hasStartingLocation :pubASec7StartLoc .
+
+:Paragraph1 rdf:type sp:Paragraph .
+:Paragraph2 rdf:type sp:Paragraph .
+:Paragraph3 rdf:type sp:Paragraph .
+:Paragraph4 rdf:type sp:Paragraph .
+:Paragraph5 rdf:type sp:Paragraph .
+:Paragraph6 rdf:type sp:Paragraph .
+:Paragraph7 rdf:type sp:Paragraph .
+:Paragraph8 rdf:type sp:Paragraph .
+:Paragraph9 rdf:type sp:Paragraph .
+:Paragraph10 rdf:type sp:Paragraph .
+:Paragraph11 rdf:type sp:Paragraph . 
+:Paragraph12 rdf:type sp:Paragraph .
+:Paragraph13 rdf:type sp:Paragraph .
+:Paragraph14 rdf:type sp:Paragraph .
+:Paragraph15 rdf:type sp:Paragraph .
+:Paragraph16 rdf:type sp:Paragraph .
+:Paragraph17 rdf:type sp:Paragraph .
+:Paragraph18 rdf:type sp:Paragraph .
+:Paragraph19 rdf:type sp:Paragraph .
+:Paragraph20 rdf:type sp:Paragraph .
+:Paragraph21 rdf:type sp:Paragraph .
+:Paragraph22 rdf:type sp:Paragraph .
+:Paragraph23 rdf:type sp:Paragraph .
+:Paragraph24 rdf:type sp:Paragraph .
+:Paragraph25 rdf:type sp:Paragraph .
+:Paragraph26 rdf:type sp:Paragraph .
+:Paragraph27 rdf:type sp:Paragraph .
+:Paragraph28 rdf:type sp:Paragraph .
+:Paragraph29 rdf:type sp:Paragraph .
+:Paragraph30 rdf:type sp:Paragraph .
+:Paragraph31 rdf:type sp:Paragraph .
+:Paragraph32 rdf:type sp:Paragraph .
+:Paragraph33 rdf:type sp:Paragraph .
+:Paragraph34 rdf:type sp:Paragraph .
+:Paragraph35 rdf:type sp:Paragraph .
+:Paragraph36 rdf:type sp:Paragraph .
+:Paragraph37 rdf:type sp:Paragraph .
+:Paragraph38 rdf:type sp:Paragraph .
+:Paragraph39 rdf:type sp:Paragraph .
+:Paragraph40 rdf:type sp:Paragraph .
+:Paragraph41 rdf:type sp:Paragraph .
+:Paragraph42 rdf:type sp:Paragraph .
+:Paragraph43 rdf:type sp:Paragraph .
+:Paragraph44 rdf:type sp:Paragraph .
+:Paragraph45 rdf:type sp:Paragraph .
+:Paragraph46 rdf:type sp:Paragraph .
+:Paragraph47 rdf:type sp:Paragraph .
+:Paragraph48 rdf:type sp:Paragraph .
+:Paragraph49 rdf:type sp:Paragraph .
+:Paragraph50 rdf:type sp:Paragraph .
+
+#~~~~~~~~~~
+#Figure
+#~~~~~~~~~~'
+
+:Figure1 rdf:type sp:Figure;
+			sp:Title 'Main structure of plant cell wall in lignocellulosic biomass which is consisted of lignin, hemicellulose, and cellulose.'^^xsd:string ;
+	  sp:figureNumber '1'^^xsd:nonNegativeInteger ;
+	  sp:hasStartingLocation :Fig1Loc .
+:Fig1Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+
+:Figure2 rdf:type sp:Figure ;
+			sp:Title 'Schematic of cellobiose.'^^xsd:string ;
+	  sp:figureNumber '2'^^xsd:nonNegativeInteger ;
+	     sp:hasStartingLocation :Fig2Loc .
+:Fig2Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger .
+:Figure3 rdf:type sp:Figure ;
+			sp:Title 'Intramolecular and intermolecular hydrogen bonding networks in cellulose structure.'^^xsd:string ;
+	     sp:figureNumber '3'^^xsd:nonNegativeInteger ;
+	     sp:hasStartingLocation :Fig3Loc .
+:Fig3Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '3'^^xsd:nonNegativeInteger.
+:Figure4 rdf:type sp:Figure ;
+			sp:Title 'Schematic of nanocrystalline cellulose which can be extracted from cellulose chains using acid hydrolyzed amorphous region and left only crystalline region.'^^xsd:string ;
+	  sp:figureNumber '4'^^xsd:nonNegativeInteger ;
+	     sp:hasStartingLocation :Fig4Loc .
+:Fig4Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '3'^^xsd:nonNegativeInteger.
+:Figure5 rdf:type sp:Figure ;
+			sp:Title 'Schematic of nano fibrillated cellulose which can be extracted from cellulose chains using mechanical process to cleavage the fiber into nanometer size in diameter.'^^xsd:string ;
+	  sp:figureNumber '5'^^xsd:nonNegativeInteger ;
+	     sp:hasStartingLocation :Fig5Loc .
+:Fig5Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '3'^^xsd:nonNegativeInteger.
+:Figure6 rdf:type sp:Figure ;
+			sp:Title 'Schematic of hairy cellulose nanocrystalloids which can be extracted from cellulose chains by chemical treatment. The amorphous parts are solubilized while the cleaving of some amorphous chains are protruded at both ends of crystalline regions.'^^xsd:string ;
+	  sp:figureNumber '6'^^xsd:nonNegativeInteger ;
+	     sp:hasStartingLocation :Fig6Loc .
+:Fig6Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '4'^^xsd:nonNegativeInteger.
+:Figure7 rdf:type sp:Figure ; 
+			sp:Title 'Schematic of nanocellulose extraction from lignocellulosic biomass. '^^xsd:string ;
+   	     sp:hasStartingLocation :Fig7Loc .
+:Fig7Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '5'^^xsd:nonNegativeInteger.
+:Figure8 rdf:type sp:Figure ;
+			sp:Title 'Schematic of planetary ball milling.'^^xsd:string ;
+    	    sp:hasStartingLocation :Fig8Loc .
+:Fig8Loc rdf:type sp:LocationInDocument ;
+				sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				sp:hasStartingPage '7'^^xsd:nonNegativeInteger.
+:Figure9 rdf:type sp:Figure ;
+			sp:Title 'SEM images of cotton-derived cellulose after ball milling in (a) dry state, (b) water, (c) toluene, and (d) 1-butanol [100]. [Reprinted by permission from springer Nature, Copyright ! 2007].'^^xsd:string ;
+	   sp:hasStartingLocation :Fig9Loc .
+:Fig9Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '8'^^xsd:nonNegativeInteger.
+:Figure10 rdf:type sp:Figure ;
+			sp:Ttile 'SEM images of (A) cellulose powder, (B) mixing of cellulose powder and BMIMCl without ball milling, (C) ball-milled cellulose powder without BMIMCl, and (D) nanocellulose from ball milling with BMIMCl, and (E) TEM image of nanocellulose from ball milling with BMIMCl [110]. [Reprinted by permission from springer Nature, Copyright ! 2017]. '^^xsd:string ;
+  	    sp:hasStartingLocation :Fig10Loc .
+:Fig10Loc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingPage '9'^^xsd:nonNegativeInteger.
+
+
+#~~~~~~~~~~
+#Table
+#~~~~~~~~~~
+
+:Table1 rdf:type sp:Table ;
+	 sp:Title 'Progress of nanocellulose extraction by ball milling.'^^xsd:string ;
+	    sp:hasStartingLocation :Table1Loc .
+:Table1Loc rdf:type sp:LocationInDocument ;
+		sp:hasStartingPage '8'^^xsd:nonNegativeInteger .
+
+#~~~~~~~~~~
+#Keywords
+#~~~~~~~~~~
+
+sp:Keywords sp:containsKeyword :Keyword1 ,
+					:Keyword2 ,
+					:Keyword3 ,
+					:Keyword4 ,
+					:Keyword5 ,
+					:Keyword6 ;
+		sp:hasStartingLocation :KeywordsStartLoc ;
+		sp:hasEndingLocation :KeywordsEndLoc .
+:KeywordsStartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:KeywordsEndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '6'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '1'^^xsd:nonNegativeInteger .
+
+:Keyword1 rdf:type sp:SingleTerm ;
+			sp:text'Biomass'^^xsd:string .
+:Keyword2 rdf:type sp:SinlgeTerm ;
+			sp:text'Cellulose'^^xsd:string .
+:Keyword3 rdf:type sp:CompoundTerm ;
+			sp:text'Nanocellulose fiber'^^xsd:string .
+:Keyword4 rdf:type sp:SingleTerm ; 
+			sp:text'Extraction'^^xsd:string .
+:Keyword5 rdf:type sp:SingleTerm ;
+			sp:text'Application'^^xsd:string .
+:Keyword6 rdf:type sp:SingleTerm ;
+			sp:text'Outlook'^^xsd:string .
+
+#~~~~~~~~~~
+#Abstract
+#~~~~~~~~~~
+
+:Abstract1 rdf:type sp:Abstract ;
+	      sp:containsFragment :AbsPara1 ;
+		sp:hasStartingLocation :AbsStartLoc ;
+		sp:hasEndingLocation :AbsEndLoc .
+:AbsStartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine   '1 '^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn  '2 '^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage  '1 '^^xsd:nonNegativeInteger.
+:AbsEndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine  '8 '^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn  '2 '^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage  '1 '^^xsd:nonNegativeInteger .
+
+:AbsPara1 rdf:type sp:Paragraph .
+:AbsPara1 sp:containsFragment :AbsSent1 .
+:AbsSent1 rdf:type sp:Sentence ;
+		sp:text 'Recently, nanocellulose and its applications gain high attraction in both research and industrial areas due to its attractive properties such as excellent mechanical properties, high surface area, rich hydroxyl groups for modification, and natural properties with 100% environmental friendliness. '^^xsd:string .
+
+:AbsPara1 sp:containsText :AbsSent2 .
+:AbsSent2 rdf:type sp:Sentence ; 
+		sp:text 'In this review, the background of nanocellulose originated from lignocellulosic biomass and the typical extraction methods and general applications are summarized, in which the nanocellulose extraction methods related to ball milling are mainly introduced.'^^xsd:string .
+
+:AbsPara1 sp:containsText :AbsSent3 .
+:AbsSent3 rdf:type sp:Sentence ;
+		sp:text 'Also, an outlook on its future is given. It is expected to provide guid- ance on the effective extraction of nanocellulose from biomass and its most possible applications in the future. '^^xsd:string .
+
+#~~~~~~~~~~
+#Acknowledgements
+#~~~~~~~~~~
+:Acknowledgements1 rdf:type sp:Acknowledgements ;
+				sp:containsText :AckSent1 ;
+				sp:hasStartingLocation :AckStartLoc ;
+				sp:hasEndingLocation :AckEndLoc .
+:AckStartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine '28'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '10'^^xsd:nonNegativeInteger.
+:AckEndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '33'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '10'^^xsd:nonNegativeInteger .
+
+:AckSent1 rdf:type sp:Sentence ;
+			sp:text 'This work is supported by Aomori City Government. Phanthong P. gratefully acknowledged the scholarship from the Ministry of Education, Culture, sports, Science and Technology(MEXT) of Japan. '^^xsd:string .
+ 
+#~~~~~~~~~~
+#Bibliography
+#~~~~~~~~~~
+
+:BibliographicEntry1 rdf:type sp:BibliographicEntry ;
+				sp:text '[1]  A. Dufresne, Nanocellulose: a new ageless bionanomaterial, Mater. Today 16 (2013) 220–227.'^^xsd:string .
+:BibliographicEntry2 rdf:type sp:BibliographicEntry ;
+				sp:text '[2]  A. Dufresne, Nanocellulose: potential reinforcement in composites, Nat. Polym., Vol. 2: Nanocompos. 2 (2012) 1–32.'^^xsd:string .
+:BibliographicEntry3 rdf:type sp:BibliographicEntry ;
+				sp:text '[3]  H.V. Lee, S.B.A. Hamid, S.K. Zain, Conversion of lignocellulosic biomass to nanocellulose: structure and chemical process, Sci. World J. 2014 (2014) 1– 20.'^^xsd:string .
+:BibliographicEntry4 rdf:type sp:BibliographicEntry ;
+				sp:text '[4]  P. Langan, L. Petridis, H.M. O’Neill, S.V. Pingali, M. Foston, Y. Nishiyama, R. Schulz, B. Lindner, B.L. Hanson, S. Harton, W.T. Heller, V. Urban, B.R. Evans, S. Gnanakaran, A.J. Ragauskas, J.C. Smith, B.H. Davison, Common processes drive the thermochemical pretreatment of lignocellulosic biomass, Green Chem. 16 (2014) 63–68.'^^xsd:string .
+
+:BibliographicEntry5 rdf:type sp:BibliographicEntry ;
+				sp:text '[5]  V.B. Agbor, N. Cicek, R. Sparling, A. Berlin, D.B. Levin, Biomass pretreatment: fundamentals toward application, Biotechnol. Adv. 29 (2011) 675–685.'^^xsd:string .
+
+
+#~~~~~~~~~~
+#Paragraph&Sentence
+#~~~~~~~~~~
+
+:Paragraph1 sp:containsFragment :Para1Sent1 ,
+					:Para1Sent2 ,
+					:Para1Sent3 ;
+		  sp:hasStartingLocation :Para1StartLoc ;
+		  sp:hasEndingLocation :Para1EndLoc .
+:Para1StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '3'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:Para1EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '9'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '1'^^xsd:nonNegativeInteger .
+
+:Para1Sent1 rdf:type sp:Sentence ;
+			sp:text 'In the 21st century, when humans become aware of environmental conservation, applications of renewable resources become more and more important for their daily life since they are friendly to nature. '^^xsd:string ;
+ 		  sp:hasStartingLocation :Para1Sent1StartLoc ;
+		  sp:hasEndingLocation :Para1Sent1EndLoc .
+:Para1Sent1StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '3'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:Para1Sent1EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '1'^^xsd:nonNegativeInteger .
+
+:Para1Sent2 rdf:type sp:Sentence ;
+			sp:text 'Nanocellulose is a natural nanomaterial which can be extracted from plant cell wall. '^^xsd:string ;
+	         sp:hasStartingLocation :Para1Sent2StartLoc ;
+		   sp:hasEndingLocation :Para1Sent2EndLoc .
+:Para1Sent2StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:Para1Sent2EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '3'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '1'^^xsd:nonNegativeInteger .			
+:Para1Sent3 rdf:type sp:Sentence ;
+			sp:text 'With its nanometer size in diameter, nanocellulose consists of attractive properties such as high strength, excellent stiffness, and high surface area [1,2] '^^xsd:string ;
+	         sp:hasStartingLocation :Para1Sent3StartLoc ;
+		   sp:hasEndingLocation :Para1Sent3EndLoc .
+:Para1Sent3StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '3'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '1'^^xsd:nonNegativeInteger.
+:Para1Sent3EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '4'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '1'^^xsd:nonNegativeInteger .			
+:Paragraph2 sp:containsFragment :Para2Sent1 ,
+					:Para2Sent2 ,
+					:Para2Sent3 ;
+		  sp:hasStartingLocation :Para2StartLoc ;
+		  sp:hasEndingLocation :Para1EndLoc .
+:Para2StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+:Para2EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '9'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '2'^^xsd:nonNegativeInteger .
+
+:Para2Sent1 rdf:type sp:Sentence ;
+			sp:text 'Nowadays, nanocellulose gets high attraction from research and industries. '^^xsd:string ;
+ 		  sp:hasStartingLocation :Para2Sent1StartLoc ;
+		  sp:hasEndingLocation :Para2Sent1EndLoc .
+:Para2Sent1StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+:Para2Sent1EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '2'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '2'^^xsd:nonNegativeInteger .
+
+:Para2Sent2 rdf:type sp:Sentence ;
+			sp:text 'The study of nanocellulose is not only about its extraction from biomass, but also the new applications in various fields. '^^xsd:string ;
+ 		  sp:hasStartingLocation :Para2Sent2StartLoc ;
+		  sp:hasEndingLocation :Para2Sent2EndLoc .
+:Para2Sent2StartLoc rdf:type sp:LocationInDocument ;
+				 sp:hasStartingLine  '2'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasStartingPage '2'^^xsd:nonNegativeInteger.
+:Para2Sent2EndLoc rdf:type sp:LocationInDocument ;
+				 sp:hasEndingLine '3'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:hasEndingPage '2'^^xsd:nonNegativeInteger .
+
+#~~~~~~~~~~
+#Term
+#~~~~~~~~~~
+
+:Term1 rdf:type sp:SingleTerm ; 
+	sp:text 'Recently'^^xsd:string;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 . 
+:Term2 rdf:type sp:SingleTerm ;
+	sp:text 'nanocellulose'^^xsd:string;
+	:hasStatus :ConfirmedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent3 ,
+				:Para2Sent1 ,
+				:Para2Sent2 .
+:Term3 rdf:type sp:SingleTerm ;
+	sp:text 'and'^^xsd:string;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 . 
+:Term4 rdf:type sp:SingleTerm ;
+	sp:text 'its'^^xsd:string;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent3 ,
+				:Para2Sent2 .
+:Term5 rdf:type sp:SingleTerm ;
+	sp:text 'application'^^xsd:string ;
+	:hasStatus :ComfirmedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent1 ,
+				:Para2Sent2 .
+:Term6 rdf:type sp:SingleTerm ;
+	sp:text 'gain'^^xsd:string ;
+	:hasStatus :CandidateStatus1 ;
+	sp:occuredInText :AbsSent1 . 
+:Term7 rdf:type sp:SingleTerm ;
+	sp:text 'high'^^xsd:string ;
+	:hasStatus :CandidateStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent3 ,
+				:Para2Sent1 .
+:Term8 rdf:type sp:SingleTerm ;
+	sp:text 'attraction'^^xsd:string ;
+	:hasStatus :CandidateStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term9 rdf:type sp:SingleTerm ;
+	sp:text 'in'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent1 ,
+				:Para1Sent3 .
+:Term10 rdf:type sp:SingleTerm ;
+	sp:text 'both'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term11 rdf:type sp:SinlgeTerm ;
+	sp:text 'research'^^xsd:string ;
+	:hasStatus :CandidateStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term12 rdf:type sp:CompoundTerm ;
+	sp:text 'industrial areas'^^xsd:string ;
+	:hasStatus :CandidateStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term13 rdf:type sp:CompoundTerm ;
+	sp:text 'due to'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:containsTerm :Term14 ;
+	sp:occuredInText :AbsSent1 .
+:Term14 rdf:type sp:SingleTerm ;
+	sp:text 'to'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term15 rdf:type sp:SingleTerm ;
+	sp:text 'attractive'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term16 rdf:type sp:SingleTerm ;
+	sp:text 'properties'^^xsd:string ;
+	:hasStatus :ConfirmedStatus1 ;
+	sp:occuredInText :AbsSent1 .
+:Term17 rdf:type sp:CompoundTerm ;
+	sp:text 'such as'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent3 .
+:Term18 rdf:type sp:SingleTerm ;
+	sp:text 'excellent'^^xsd:string ;
+	:hasStatus :RejectedStatus1 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent3 .
+:Term19 rdf:type sp:CompoundTerm ;
+	sp:text 'mechanical properties'^^xsd:string ;
+	:hasStatus :ConfirmedStatus1 ;
+	sp:containsTerm :Term20 ;
+	sp:occuredInText :AbsSent1 .
+:Term20 rdf:type sp:SingleTerm ;
+		sp:text 'mechanical'^^xsd:string ;
+		:hasStatus :CandidateStatus1 ;
+		sp:occuredInText :AbsSent1 .
+:Term21 rdf:type sp:SingleTerm ;
+	sp:text 'and'^^xsd:string ;
+	:hasStatus :RejectedStatus2 ;
+	sp:occuredInText :AbsSent1 ,
+				:Para1Sent1,
+				:Para1Sent3 ,
+				:Para2Sent1 ,
+				:Para2Sent2 .
+:Term22 rdf:type sp:CompoundTerm ;
+		sp:text 'surface area'^^xsd:string ;
+		:hasStatus :ConfirmedStatus2 ;
+		sp:containsTerm :Term23 ;
+		sp:containsTerm :Term24 ;
+		sp:occuredInText :AbsSent3 .
+:Term23 rdf:type sp:SingleTerm ;
+		sp:text 'surface'^^xsd:string ;
+		:hasStatus :CandidateStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term24 rdf:type sp:SingleTerm ;
+		sp:text 'area'^^xsd:string ;
+		:hasStatus :CandidateStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term25 rdf:type sp:SingleTerm ;
+		sp:text 'rich'^^xsd:string ;
+		:hasStatus :RejectedStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term26 rdf:type sp:CompoundTerm ;
+		sp:text 'hydroxyl groups'^^xsd:string ;
+		:hasStatus :ConfirmedStatus2 ;
+		sp:containsTerm :Term27 ;
+		sp:containsTerm :Term28 ;
+		sp:occuredInText :AbsSent1 .
+:Term27 rdf:type sp:SingleTerm ;
+		sp:text 'hydroxyl'^^xsd:string ;
+		:hasStatus :CandidateStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term28 rdf:type sp:SingleTerm ;
+		sp:text'groups'^^xsd:string ;
+		:hasStatus :RejectedStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term29 rdf:type sp:SingleTerm ;
+		sp:text 'modification'^^xsd:string ;
+		:hasStatus :ConfirmedStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term30 rdf:type sp:CompoundTerm ;
+		sp:text 'natural properties'^^xsd:string ;
+		:hasStatus :ConfirmedStatus2 ;
+		sp:containsTerm :Term31 ;
+		sp:occuredInText :AbsSent1 .
+:Term31 rdf:type sp:SingleTerm ;
+		sp:text 'natural'^^xsd:string ;
+		:hasStatus :CandidateStatus2 ;
+		sp:occuredInText :AbsSent1 ,
+					:Para1Sent2 .
+:Term32 rdf:type sp:CompoundTerm ;
+		sp:text 'environmental friendliness.'^^xsd:string ;
+		:hasStatus :ConfirmedStatus2 ;
+		sp:containsTerm :Term33 ;
+		sp:containsTerm :Term34 ;
+		sp:occuredInText :AbsSent1 .
+:Term33 rdf:type sp:SingleTerm ;
+		sp:text 'environmental'^^xsd:string ;
+		:hasStatus :CandidateStatus2 ;
+		sp:occuredInText :AbsSent1 ,
+					:Para1Sent1 .
+:Term34 rdf:type sp:SingleTerm ;
+		sp:text 'friendliness'^^xsd:string ;
+		:hasStatus :RejectedStatus2 ;
+		sp:occuredInText :AbsSent1 .
+:Term35 rdf:type sp:SingleTerm ;
+		sp:text 'nanomaterial'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term36 rdf:type sp:CompoundTerm ;
+		sp:text 'plant cell wall'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term37 rdf:type sp:SingleTerm ;
+		sp:text 'plant'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term38 rdf:type sp:CompoundTerm ;
+		sp:text 'cell wall'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term39 rdf:type sp:CompoundTerm ;
+		sp:text 'nanometer size'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent3 .
+:Term40 rdf:type sp:CompoundTerm ;
+		sp:text 'diameter'^^xsd:string ;
+		:hasStatus :CandidateStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term41 rdf:type sp:CompoundTerm ;
+		sp:text 'extracted from'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+:Term42 rdf:type sp:SingleTerm ;
+		sp:text 'from'^^xsd:string ;
+		:hasStatus :RejectedStatus3 ;
+		sp:occuredInText :Para1Sent2 ,
+					:Para2Sent1 .
+:Term43 rdf:type sp:SingleTerm ;
+		sp:text 'in'^^xsd:string ;
+		:hasStatus :RejectedStatus3 ;
+		sp:occuredInText :Para1Sent3 ,
+					:Para2Sent2 .
+:Term44 rdf:type sp:SingleTerm ;
+		sp:text 'size'^^xsd:string ;
+		:hasStatus :ConfirmedStatus3 ;
+		sp:occuredInText :Para1Sent3 .
+:Term45 rdf:type sp:SingleTerm ;
+		sp:text 'with'^^xsd:string ;
+		:hasStatus :RejectedStatus3 ;
+		sp:occuredInText :Para1Sent2 .
+
+
+##~~~~~~~~~~
+#TermStatus
+##~~~~~~~~~~
+
+:ConfirmedStatus1 rdf:type sp:ConfimredStatus ;
+		sp:statusCreatedDate '2022/03/18'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:CandidateStatus1 rdf:type sp:CandidateStatus ;
+		sp:statusCreatedDate '2022/03/18'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:RejectedStatus1 rdf:type sp:RejectedStatus ;
+		sp:statusCreatedDate '2022/03/18'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:ConfirmedStatus2 rdf:type sp:ConfimredStatus ;
+		sp:statusCreatedDate '2022/03/20'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:CandidateStatus2 rdf:type sp:CandidateStatus ;
+		sp:statusCreatedDate '2022/03/20'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:RejectedStatus2 rdf:type sp:RejectedStatus ;
+		sp:statusCreatedDate '2022/03/20'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :Creator1 .
+:ConfirmedStatus3 rdf:type sp:ConfimredStatus ;
+		sp:statusCreatedDate '2022/03/21'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:CandidateStatus3 rdf:type sp:CandidateStatus ;
+		sp:statusCreatedDate '2022/03/21'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :creator1 .
+:RejectedStatus3 rdf:type sp:RejectedStatus ;
+		sp:statusCreatedDate '2022/03/21'^^xsd:nonNegativeInteger ;
+		sp:statusCreatedBy :Creator1 .
+
+:Creator1 rdf:type sp:Person ;
+		sp:firstname 'Xuelian'^^xsd:string ;
+		sp:lastName 'Zhang'^^xsd:string ;
+		sp:affiliation :Creator1Orgo1 .
+:Creator1Org1 rdf:type sp:Orgnization ;
+			  sp:text'SPAI lab@University of Maine'^^xsd:string .
