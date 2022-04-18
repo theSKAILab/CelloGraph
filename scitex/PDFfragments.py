@@ -2,6 +2,7 @@ from typing import Reversible
 import copy
 import re
 import PDFparser
+import textprocessing
 
 
 # CLASSES
@@ -37,6 +38,22 @@ class section:
                 retval.append(cite)
         return retval
 
+    def copy(self):
+        titlecopy = copy.copy(self.title)
+        parent = self.parent
+        paracopy = []
+        for i in range(len(self.para)):
+            paracopy.append(copy.copy(self.para[i]))
+        typecopy = copy.copy(type)
+        ratiocopy = copy.copy(self.ratio)
+        subsections = []
+        for i in range(len(self.subsections)):
+            subsections.append(self.subsections[i].copy())
+        retval = section(titlecopy, parent, typecopy, ratiocopy)
+        retval.para = paracopy
+        retval.subsections = subsections
+        return retval
+
 
 # sentences: an array of sentences.
 # coords: an array of ints that indicate which section the paragraph is from
@@ -49,6 +66,12 @@ class paragraph:
         self.paraNum = paraNum
         self.citations = cites
         self.align = align
+
+    def getText(self):
+        retval = ""
+        for s in self.sentences:
+            retval += s + " "
+        return retval
 
     def getPlace(self):
         retval = "Section: "
@@ -115,6 +138,8 @@ class sentence:
 class PDFdocument:
     def __init__(self):
         self.sections = []
+        self.figures = []
+        self.tables = []
 
     # takes an array of coordinates that lead to the appropriate section, then assembles the text of that section into one string
     # coords: an array of up to three numbers indicating a specific section or subsection
@@ -136,7 +161,7 @@ class PDFdocument:
 
         # if they've requested a specific paragraph, then give it to them
         if(para != -1 and sent == -1):
-            return RDFWriter.makeString(head.para[para].sentences, "class")
+            return textprocessing.makeString(head.para[para].sentences, "class")
         # if they've requested a specific paragraph and sentence, then give it to them
         if(para != -1 and sent != -1):
             return head.para[para].sentences[sent].text
@@ -146,7 +171,8 @@ class PDFdocument:
 
         # get all the text between the section and the first subsection
         for p in range(len(head.para)):
-            retval += RDFWriter.makeString(head.para[p].sentences, "class")
+            retval += textprocessing.makeString(
+                head.para[p].sentences, "class")
             retval += "\n\n"
 
         # get all the text from subsections

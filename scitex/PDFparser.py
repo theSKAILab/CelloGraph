@@ -7,6 +7,8 @@ import PDFfragments
 import random
 import textprocessing
 import minorfunctions
+import spacy
+from spacy.matcher import Matcher
 
 
 # This is a document containing all the functions that get used in the code
@@ -88,7 +90,7 @@ def FindSpace(pdf):
 
     # the most common difference is going to be the difference between one line and another.
     # True means we want an index and not the most common value.
-    lineIndex = mostCommon(diffs[0], True)
+    lineIndex = minorfunctions.mostCommon(diffs[0], True)
     linespace = round(float(diffs[0][lineIndex]), 1)
     lineratio = round(float(diffs[4][lineIndex]), 1)
     lineheight = round(float(diffs[5][lineIndex]), 1)
@@ -149,7 +151,7 @@ def PDFSort(pdf):
 # Currently these two lines make it so that we only do page 2, for debugging purposes.
 # They have to be changed back to len(pages) and pg later.
     for pg in range(len(pdf.pages)):
-        page = (pdf.pages[4].extract_words(y_tolerance=6))
+        page = (pdf.pages[pg].extract_words(y_tolerance=6))
         catch = False
         cols = HandleColumns(page)
 
@@ -159,7 +161,7 @@ def PDFSort(pdf):
         # 0 is the end of the previous line
         # 1 is the space between the lines
         # 2 is the ratio between height and space
-        #3 is height
+        # 3 is height
 
         diffs = [[], [], [], []]
 
@@ -183,7 +185,7 @@ def PDFSort(pdf):
                 # diff is the vertical distance from the top of 1 word to the top of the next. If it's not roughly 0, mark a new line.
                 # space is the vertical distance from the bottom of 1 word to the top of the next.
                 # height is the height of the word.
-                #diffs[1] is space
+                # diffs[1] is space
                 # diffs[2] is height/space, a relative ratio of its height.
                 diff = words[w+1]["top"] - words[w]["top"]
 
@@ -202,11 +204,8 @@ def PDFSort(pdf):
                 if(w > len(words)-1):
                     w = len(words)-1
 
-                # IF THE LINE IS A PAGE section, I DON'T WANT TO READ IT
-                # if(float(words[w]["top"]) < 101):
-                #       bookmark = w+1
-                #      continue
-                #
+                if(pg == 4):
+                    print("bruh")
 
                 # diff is the difference between top of this line and bottom of previous line
                 # ratio is the height/space ratio
@@ -300,17 +299,17 @@ def PDFSort(pdf):
                     if(bookmark < len(words)):
                         # Figure out what type of section it is and add it appropriately:
                         # add it to the list of sections and update activesection, subsection, section
-                        type = FindsectionType(words[bookmark])
+                        type = textprocessing.FindsectionType(words[bookmark])
                         # sections
                         if(type == 1):
                             PDF.sections.append(
-                                PDFfragments.section(helperfunctions.makeString(words[bookmark:w+1]), None, type, ratio))
+                                PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), None, type, ratio))
                             activesection = PDF.sections[len(PDF.sections)-1]
                             activesection = activesection
                         # subsection
                         elif(type == 2):
                             activesection.subsections.append(
-                                PDFfragments.section(helperfunctions.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1], type))
+                                PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1], type))
                             activesubsection = activesection.subsections[len(
                                 activesection.subsections)-1]
                             activesection = activesubsection
@@ -322,19 +321,19 @@ def PDFSort(pdf):
                                 # add new section as activesection's sibling
                                 if(type == activesection.type):
                                     activesection.parent.subsections.append(
-                                        PDFfragments.section(helperfunctions.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1].subsections[len(activesection.subsections)-1], type))
+                                        PDFfragments.section(minorfunctions.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1].subsections[len(activesection.subsections)-1], type))
                                     activesection = activesection.parent.subsections[len(
                                         activesection.parent.subsections)-1]
                                 # if this section is lower than activesection (i.e. AS is x.y.z and this is x.y.z.a)
                                 # add new section as a subsection of activesection.
                                 elif(type > activesection.type):
                                     activesection.subsections.append(PDFfragments.section(
-                                        helperfunctions.makeString(words[bookmark:w+1]), activesection, type))
+                                        textprocessing.makeString(words[bookmark:w+1]), activesection, type))
                             # if activesection is a section
                             # add new section as a subsection of that section.
                             else:
                                 activesection.subsections.append(
-                                    PDFfragments.section(helperfunctions.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1]))
+                                    PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1]))
                                 activesubsection = activesection.subsections[len(
                                     activesection.subsections)-1]
                                 activesection = activesubsection
@@ -363,7 +362,7 @@ def PDFSort(pdf):
 #                elif(ratio < lineratio):
 #                    sectionwatch = True
 #                    # Make all the sentences between bookmark and the end of the paragraph.
-#                    sentlist = MakeSentences(makeString(
+#                    sentlist = textprocessing.MakeSentences(makeString(
 #                        words[bookmark:w+1]), coords, paraNum)
 #
 #                    # if this paragraph is split between 2 pages, then add these sentences to the first half of the paragraph.
@@ -390,7 +389,7 @@ def PDFSort(pdf):
 
                 # if it's the end of a non-section block, add that block as a paragraph.
                 elif(end_block):
-                    sentlist = MakeSentences(helperfunctions.makeString(
+                    sentlist = textprocessing.MakeSentences(textprocessing.makeString(
                         words[bookmark:w+1]), copy.copy(coords), paraNum)
                     if(w < len(words)-1):
                         para = PDFfragments.paragraph(
@@ -404,8 +403,8 @@ def PDFSort(pdf):
                     bookmark = w+1
                 # if it's just a newline, then we don't care.
                 else:
-                    if (DetermineParagraph(words, w, paraAlign, paraSpace, useSpace)):
-                        sentlist = MakeSentences(helperfunctions.makeString(
+                    if (textprocessing.DetermineParagraph(words, w, paraAlign, paraSpace, useSpace, ERROR_MARGIN)):
+                        sentlist = textprocessing.MakeSentences(textprocessing.makeString(
                             words[bookmark:w+1]), copy.copy(coords), paraNum)
                         if(addto and pg > 0):
                             addto = False
@@ -432,7 +431,7 @@ def PDFSort(pdf):
 
             # Add whatever text is at the end of the page.
             if(bookmark != len(words)-1):
-                sentlist = MakeSentences(helperfunctions.makeString(
+                sentlist = textprocessing.MakeSentences(textprocessing.makeString(
                     words[bookmark:w+1]), copy.copy(coords), paraNum)
                 if(addto):
                     addto = False
@@ -456,18 +455,97 @@ def PDFSort(pdf):
                     paraNum += 1
                 bookmark = 0
 
-    removeCopies(PDF)
+    removePageHeaders(PDF)
+    # removeFigureHeaders(PDF)
 
     return PDF
 
-#
 
-
-def removeCopies(PDF):
+# Intent is to remove running headers at the top of the page that get marked as headers
+# This is achieved by removing sections with duplicate headers.
+def removePageHeaders(PDF):
     single = []
     remove = []
-    for h in PDF.sections:
-        if(h is not in copies):
-            add to copies
+    # for each section header, if there's an identical section header, flag both to be removed.
+    # each element of remove is (index, sectiontitle)
+    for h in range(len(PDF.sections)):
+        title = PDF.sections[h].title
+        titleinsingle = False
+
+        # check if we've seen this title already
+        for i in range(len(single)):
+            if(single[i][1] == title):
+                titleinsingle = True
+
+        # if we haven't, add it to the list of things we've seen.
+        if(not titleinsingle):
+            single.append((h, PDF.sections[h].title))
+
+        # if we have, add it to the list of things to remove
         else:
-            add to "remove"
+            if h not in remove:
+                for j in range(len(single)):
+                    if single[j][1] == title and single[j] not in remove:
+                        remove.append(single[j])
+            remove.append((h, PDF.sections[h].title))
+
+    # now go through and remove them all. Any text under that header will be put under the previous header.
+    for i in range(len(remove)-1, -1, -1):
+        if(remove[i][0] != 0 and remove[i][0] < len(PDF.sections)-1):
+            moveSection(PDF.sections[remove[i][0]],
+                        PDF.sections[remove[i][0]-1])
+            PDF.sections.pop(remove[i][0])
+
+
+# adds the contents of a section header to another section
+# tomove is Section header whose contents will be moved.
+# destination is a Section header who will receive tomove's contents.
+# tomove's contents will be added at the end of destination
+# If destination has subsections, tomove's contents will be added there instead.
+def moveSection(tomove, destination):
+    # check to see if there's a subsection we should be putting this in
+    check = 0
+    if(len(destination.subsections) > 0):
+        check = len(destination.subsections[len(
+            destination.subsections)-1].subsections)
+
+    if(check == 0):
+        for i in range(len(tomove.subsections)):
+            destination.subsections.append(
+                copy.deepcopy(tomove.subsections[i]))
+        for i in range(len(tomove.para)):
+            destination.para.append(copy.deepcopy(tomove.para[i]))
+    else:
+        moveSection(
+            tomove, destination.subsections[len(destination.subsections)-1])
+
+
+# removes any headers that are actually just figure or table descriptions.
+# figures and graphics get added to PDF.figures
+# tables get added to PDF.tables
+
+def removeFigureHeaders(PDF):
+    # set up some spacy stuff
+    nlp = spacy.load("en_core_web_sm")
+    figurematcher = Matcher(nlp.vocab)
+    figurepattern = [{"LOWER": "figure"}, {"IS_DIGIT": True}]
+    figpattern = [{"LOWER": "fig"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
+    tablepattern = [{"LOWER": "table"}, {"IS_DIGIT": True}]
+    tabpattern = [{"LOWER": "tab"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
+    graphicpattern = [{"LOWER": "graphic"}, {"IS_DIGIT": True}]
+    graphpattern = [{"LOWER": "graph"}, {"IS_DIGIT": True}]
+
+    figurematcher.add(
+        "figures", [figurepattern, figpattern, tablepattern, tabpattern, graphicpattern, graphpattern])
+
+    for i in range(len(PDF.sections)-1, 0, -1):
+        doc = nlp(PDF.sections[i].title)
+        matches = figurematcher(doc)
+
+        if len(matches) > 0:
+            moveSection(PDF.sections[i], PDF.sections[i-1])
+            sectioncopy = PDF.sections[i].copy()
+            sectioncopy.parent = PDF.sections[i-1]
+            PDF.sections[i-1].subsections.append(sectioncopy)
+            PDF.figures.append(sectioncopy.title)
+            PDF.sections.pop(i)
