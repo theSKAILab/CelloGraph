@@ -1,5 +1,5 @@
-@prefix SciPub: <http://cellograph.com/SciPub/2022v1.0/>  .
-@prefix : <http://cellograph.com/scipub/2022v1.0/>  . 
+@prefix sp: <http://cellograph.com/SciPub/2022v1.0/>  .
+@prefix : <http://cellograph.com/SciPub/2022v1.0/>  . 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -7,15 +7,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 
-SciPub:    a                 owl:Ontology ;
+sp:    a                 owl:Ontology ;
         rdfs:label         " CelloGragh "@en-us ;
         dcterms:created    "2022-2-14"^^xsd:Date ;
-        dcterms:creator    "Xuelian Zhang
-				236A Boardman Hall
-				University of Maine
-				Email:xuelian.zhang@maine.edu"@en-us ;
+        dcterms:creator    "Xuelian Zhang"@en-us ;
         dcterms:license    <http://cellograph.com/software> ;
-	dcterms:modified   "2022-2-18"^^xsd:Date ;
+	dcterms:modified   "2022-2-23"^^xsd:Date ;
         dcterms:publisher  <http://cellograph.com/> ;
         dcterms:rights     "Copyright 2022 - 2032 UMaine/SKAI."@en-us ;
         dcterms:subject    "Ontology"@en-us ;
@@ -29,13 +26,12 @@ SciPub:    a                 owl:Ontology ;
 # Declaration of highest-level classes 
 
 :ScientificPublication rdf:type rdfs:Class .
-:DocumentPart rdf:type rdfs:Class .
 :Term rdf:type rdfs:Class .
-:Segment rdf:type rdfs:Class .
 :TermStatus rdf:type rdfs:Class .
 :Agent rdf:type rdfs:Class . 
 :BibliographicEntry rdf:type rdfs:Class . 
 :LocationInDocument rdf:type rdfs:Class . 
+:PublicationAuthor rdf:type rdfs:Class . 
 
 # ———————
 # DocumentPart
@@ -49,16 +45,16 @@ SciPub:    a                 owl:Ontology ;
 :Bibliography rdfs:subClassOf :DocumentPart.
 :Abstract rdfs:subClassOf :DocumentPart .
 :Keyword rdfs:subClassOf :DocumentPart .
+:TextFragment rdfs:subClassOf :DocumentPart .
 
-:Figure rdf:type rdfs:Class. 
+:Figure rdf:type rdfs:Class . 
 :Table rdf:type rdfs:Class .
 :Equation rdf:type rdfs:Class  .
 :Listing rdf:type rdfs:Class .
 :Bibliography rdf:type rdfs:Class .
-:Abstract rdf:type rdfs:Class .
-:Keyword rdf:type rdfs:Class  .
+:Keywords rdf:type rdfs:Class  .
 
-# ———————
+# ——————— 
 # Term
 # ———————
 # Declaration of subclasses for Term
@@ -70,14 +66,16 @@ SciPub:    a                 owl:Ontology ;
 :CompoundTerm rdf:type rdfs:Class .
 
 # ———————
-# PieceOfText
+# TextFragment
 # ———————
-# Declaration of subclasses for PieceOfText
+# Declaration of subclasses for TextFragment
 
-:Section rdfs:subClassOf :Segment .
-:Paragraph rdfs:subClassOf :Segment .
-:Sentence rdfs:subClassOf :Segment .
-:Heading rdfs:subClassOf :Segment .
+:Section rdfs:subClassOf :TextFragment .
+:Paragraph rdfs:subClassOf :TextFragment .
+:Sentence rdfs:subClassOf :TextFragment .
+:Heading rdfs:subClassOf :TextFragment .
+:DocumentPart rdfs:subClassOf :TextFragment .
+:Abstract rdfs:subClassOf :TextFragment .
 
 :Section rdf:type rdfs:Class .
 :Paragraph rdf:type rdfs:Class  .
@@ -117,9 +115,11 @@ SciPub:    a                 owl:Ontology ;
 
 :System rdfs:subClassOf :Agent .
 :Person rdfs:subClassOf :Agent .
+:Organization rdfs:subClassOf :Agent .
 
 :System rdf:type rdfs:Class .
- :Person rdf:type rdfs:Class .
+:Person rdf:type rdfs:Class .
+:Organization rdf:type rdfs:Class .
 
 # ~ * ~ * ~ * ~
 # Object Property
@@ -132,12 +132,22 @@ SciPub:    a                 owl:Ontology ;
 :statusTerminatedBy rdf:type rdf:Property .
 :hasStartingLocation rdf:type rdf:Property .
 :hasEndingLocation rdf:type rdf:Property .
+:hasAuthor rdf:type rdf:Property .
+:person rdf:type rdf:Property .
+:affiliation rdf:type rdf:Property .
+:hasStartingLine rdf:type rdf:Property .
+:hasStartingColumn rdf:type rdf:Property .
+:hasStartingPage rdf:type rdf:Property .
+:hasEndingLine rdf:type rdf:Property .
+:hasEndingColumn rdf:type rdf:Property .
+:hasEndingPage rdf:type rdf:Property .
 
-
-:containsDocumentText rdfs:subPropertyOf :contains .
+:containsDocumentPart rdfs:subPropertyOf :contains .
 :containsTerm rdfs:subPropertyOf :contains .
 :containsText rdfs:subPropertyOf :contains .
 :containsBibliographicEntry rdfs:subPropertyOf :contains .
+:containsKeyword rdfs:subPropertyOf :contains .
+:containsFragment rdfs:subPropertyOf :contains .
 
 # ~ * ~ * ~ * ~~ * ~ 
 # Domain&Range
@@ -146,23 +156,38 @@ SciPub:    a                 owl:Ontology ;
 :contains rdfs:domain :ScientificPublication .
 :contains rdfs:range :Abstract .
 
-:containsDocumentText rdfs:domain :ScientificPublication .
-:containsDocumentText rdfs:range :DocumentPart .
+:containsDocumentPart rdfs:domain :ScientificPublication .
+:containsDocumentPart rdfs:range :DocumentPart .
 
 :containsTerm rdfs:domain :ScientificPublication .
 :containsTerm rdfs:range :Term . 
 
 :containsText rdfs:domain :ScientificPublication .
-:containsText rdfs:range :Segment .
+:containsText rdfs:range :TextFragment .
+
+:hasAuthor rdfs:domain :ScientificPublication .
+:hasAuthor rdfs:range :PublicationAuthor .
+
+:person rdfs:domain :PublicationAuthor .
+:person rdfs:domain :Person .
+
+:affiliation rdfs:domain :PublicationAuthor .
+:affiliation rdfs:domain :Organization .
 
 :hasStatus rdfs:domain :Term . 
 :hasStatus rdfs:range :TermStatus .
 
 :occursInText rdfs:domain :Term . 
-:occursInText rdfs:range :Segment .
+:occursInText rdfs:range :TextFragment .
+
+:containsKeyword rdfs:domain :Keywords .
+:containsKeyword rdfs:range :Term .
 
 :containsBibliographicEntry rdfs:domain :Bibliography .
 :containsBibliographicEntry rdfs:range :BibliographicEntry .
+
+:containsFragment rdfs:domain :TextFragment .
+:containsFragment rdfs:range :TextFragment .
 
 :statusCreatedBy rdfs:domain :TermStatus .
 :statusCreatedBy rdfs:range :Agent .
@@ -170,12 +195,29 @@ SciPub:    a                 owl:Ontology ;
 :statusTerminatedBy rdfs:domain :TermStatus .
 :statusTerminatedBy rdfs:range :Agent .
 
-:hasStartingLocation rdfs:domain :Segment .
+:hasStartingLocation rdfs:domain :TextFragment .
 :hasStartingLocation rdfs:range :LocationInDocument .
 
-:hasEndingLocation rdfs:domain :Segment .
+:hasEndingLocation rdfs:domain :TextFragment .
 :hasEndingLocation rdfs:range :LocationInDocument .
 
+:hasStartingLine rdfs:domain :LocationInDocument .
+:hasStartingLine rdfs:range :LocationInDocument .
+
+:hasStartingColumn rdfs:domain :LocationInDocument .
+:hasStartingColumn rdfs:range :LocationInDocument .
+
+:hasStartingPage rdfs:domain :LocationInDocument .
+:hasStartingPage rdfs:range :LocationInDocument .
+
+:hasEndingLine rdfs:domain :LocationInDocument .
+:hasEndingLine rdfs:range :LocationInDocument .
+
+:hasEndingColumn rdfs:domain :LocationInDocument .
+:hasEndingColumn rdfs:range :LocationInDocument .
+
+:hasEndingPage rdfs:domain :LocationInDocument .
+:hasEndingPage rdfs:range :LocationInDocument .
 
 # ~ * ~ * ~ * ~~ * ~ 
 # Datatype property
@@ -183,23 +225,23 @@ SciPub:    a                 owl:Ontology ;
 
 # Datatype Properties of ScientificPublication
 
-:Title rdf:type owl:DatatypeProperty ;
+:title rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
 	rdfs:range xsd:string .
 
-:DOI rdf:type owl:DatatypeProperty ;
+:doi rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
 	rdfs:range xsd:string .
 
-:Authors rdf:type owl:DatatypeProperty ;
+:authors rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
 	rdfs:range xsd:string .
 
-:Venue rdf:type owl:DatatypeProperty ;
+:venue rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
 	rdfs:range xsd:string .
 
-:PublicationDate rdf:type owl:DatatypeProperty ;
+:publicationDate rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
 	rdfs:range xsd:dateTime .
 
@@ -222,20 +264,32 @@ SciPub:    a                 owl:Ontology ;
 	rdfs:domain :TermStatus ;
 	rdfs:range xsd:string .
 
-# Datatype Properties of Agent
+# Datatype Properties of Person
 
-:FirstName rdf:type owl:DatatypeProperty ;
-	rdfs:domain :Agent ;
+:firstName rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
 	rdfs:range xsd:string .
 
-:LastName rdf:type owl:DatatypeProperty ;
-	rdfs:domain :Agent ;
+:lastName rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
 	rdfs:range xsd:string .
 
-:ORCID rdf:type owl:DatatypeProperty ;
-	rdfs:domain :Agent ;
+:orcid rdf:type owl:DatatypeProperty ;
+	rdfs:domain :Person ;
 	rdfs:range xsd:string .
 
+# Datatype Properties of PublicationAuthor 
+
+:position rdf:type owl:DatatypeProperty ;
+	rdfs:domain :PublicationAuthor ;
+	rdfs:range xsd:nonNegativeInteger .
+
+# Datatype Properties of TextFragment
+
+:text rdf:type owl:DatatypeProperty ;
+	rdfs:domain :TextFragment,
+			:Term ;
+	rdfs:range xsd:string .
 
 # ~ * ~ * ~ * ~~ * ~ 
 # Axiom
@@ -262,7 +316,7 @@ SciPub:    a                 owl:Ontology ;
 			:Keyword ) ].
 
 
-:Segment owl:disjointUnionOf
+:TextFragment owl:disjointUnionOf
 	(:Section
 	:Paragraph
 	:Sentence 
@@ -287,6 +341,7 @@ SciPub:    a                 owl:Ontology ;
 
 :Agent owl:disjointUnionOf
 	(:Person
+	:Organization
 	:System) .
 
 [ rdf:type owl:AllDisjointClasses;
@@ -313,7 +368,7 @@ SciPub:    a                 owl:Ontology ;
 			:Column
 			:Line ) ].
 
-:Segment owl:disjointUnionOf
+:TextFragment owl:disjointUnionOf
 	(:Section
 	:Paragraph
 	:Sentence
@@ -327,7 +382,7 @@ SciPub:    a                 owl:Ontology ;
 
 # Property axioms
 
-:containsDocumentText rdf:type owl:ObjectProperty ;
+:containsDocumentPart rdf:type owl:ObjectProperty ;
 		rdf:type owl:AsymmetricProperty ;
 		rdf:type owl:IrreflexiveProperty .
 
@@ -371,6 +426,14 @@ SciPub:    a                 owl:Ontology ;
 		rdf:type owl:IrreflexiveProperty ;
 		rdf:type owl:FunctionalProperty .
 
+:hasAuthor rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
+:person rdf:type owl:ObjectProperty ;
+		rdf:type owl:AsymmetricProperty ;
+		rdf:type owl:IrreflexiveProperty .
+
 
 # ~ * ~ * ~ * ~~ * ~ 
 # Class expressions
@@ -378,13 +441,13 @@ SciPub:    a                 owl:Ontology ;
 
 :ScientificPublication rdfs:subClassOf 
 	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :containsDocumentText;
+       	 	owl:onProperty :containsDocumentPart;
        		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
 		owl:someValuesFrom :DocumentPart] ,
 	[rdf:type owl:Restriction ;
        	 	owl:onProperty :containsText;
        		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :Segment] .
+		owl:someValuesFrom :TextFragment] .
 
 :DocumentPart rdfs:subClassOf 
     	[rdf:type owl:Restriction ;
@@ -400,7 +463,7 @@ SciPub:    a                 owl:Ontology ;
       	 	 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
         	 	 owl:someValuesFrom :Bibliography] .
 
-:Segment rdfs:subClassOf 
+:TextFragment rdfs:subClassOf 
 	[rdf:type owl:Restriction ;
        	 	owl:onProperty :hasStartingLocation;
        		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
