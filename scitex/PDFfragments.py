@@ -17,13 +17,19 @@ import textprocessing
 # para: an array of paragraphs between this section and the next
 
 class section:
-    def __init__(self, t, p=None, type=0, ratio=0):
+    def __init__(self, t, p=None, type=1, ratio=0):
         self.title = t
         self.subsections = []
         self.parent = p
         self.para = []
         self.type = type
         self.ratio = ratio
+
+# returns (last subsection, last subsection's type)
+    def lastsub(self):
+        if(len(self.subsections) == 0):
+            return (None, None)
+        return (self.subsections[len(self.subsections)-1], self.type+1)
 
 # getCite() returns an array of all citations in this section and in all subsections.
     def getCite(self):
@@ -140,6 +146,12 @@ class PDFdocument:
         self.sections = []
         self.figures = []
         self.tables = []
+
+    def lastSect(self):
+        if(len(self.sections) != 0):
+            return self.sections[len(self.sections)-1]
+        else:
+            return section("")
 
     # takes an array of coordinates that lead to the appropriate section, then assembles the text of that section into one string
     # coords: an array of up to three numbers indicating a specific section or subsection

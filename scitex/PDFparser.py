@@ -9,7 +9,7 @@ import textprocessing
 import minorfunctions
 import spacy
 from spacy.matcher import Matcher
-
+import textSettings
 
 # This is a document containing all the functions that get used in the code
 
@@ -27,8 +27,34 @@ PARAS_REQUIRED = 2
 # MAJOR FUNCTIONS
 # The following functions are used to perform major functions and are really long
 
+def getDiffs(words):
+    diffs = [[], [], [], []]
+    for w in range(len(words)-1):
+        # if the first word is lowercase, then a paragraph probably got split up.
+        # rework this code so it works on body text and not page sections
+        if(w == 0):
+            doc = nlp(words[0]["text"])
+            if(doc[0].is_lower):
+                addto = True
+
+        # diff is the vertical distance from the top of 1 word to the top of the next. If it's not roughly 0, mark a new line.
+        # space is the vertical distance from the bottom of 1 word to the top of the next.
+        # height is the height of the word.
+        # diffs[1] is space
+        # diffs[2] is height/space, a relative ratio of its height.
+        diff = words[w+1]["top"] - words[w]["top"]
+
+        if(diff - ERROR_MARGIN > 0):
+            space = words[w+1]["top"] - words[w]["bottom"]
+            height = words[w]["bottom"] - words[w]["top"]
+            diffs[0].append(w)
+            diffs[1].append(round(float(space), 1))
+            diffs[2].append(round(float(height/space), 1))
+            diffs[3].append(round(float(height), 1))
+    return diffs
 
 # HandleColumns: takes a list of words and separates it by columns.
+
 
 def HandleColumns(words):
     retval = [[]]
@@ -125,9 +151,7 @@ def PDFSort(pdf):
     # declare variables that get used later.
     PDF = PDFfragments.PDFdocument()
     nlp = spacy.load("en_core_web_sm")
-    activesection = PDFfragments.section("", None)
-    activesubsection = PDFfragments.section("", None)
-    activesection = PDFfragments.section("", None)
+    activesection = PDFfragments.section("")
     coords = [-1]
     paraNum = 0
     addto = False
@@ -148,54 +172,19 @@ def PDFSort(pdf):
 
 # big loop through each page. Get the page's text, then sort out the paragraphs and sections
 
-# Currently these two lines make it so that we only do page 2, for debugging purposes.
-# They have to be changed back to len(pages) and pg later.
     for pg in range(len(pdf.pages)):
         page = (pdf.pages[pg].extract_words(y_tolerance=6))
-        catch = False
         cols = HandleColumns(page)
-
-        sectionwatch = True
-
-        # we're making a new diffs list
-        # 0 is the end of the previous line
-        # 1 is the space between the lines
-        # 2 is the ratio between height and space
-        # 3 is height
-
-        diffs = [[], [], [], []]
 
         # do this entire process for each column
         for c in range(len(cols)):
 
             # reset the bookmark
             # words = all words in this col
+            # diffs = a list of lines of text and some accompanying stats.
             bookmark = 0
             words = cols[c]
-
-            for w in range(len(words)-1):
-
-                # if the first word is lowercase, then a paragraph probably got split up.
-                # rework this code so it works on body text and not page sections
-                if(w == 0):
-                    doc = nlp(words[0]["text"])
-                    if(doc[0].is_lower):
-                        addto = True
-
-                # diff is the vertical distance from the top of 1 word to the top of the next. If it's not roughly 0, mark a new line.
-                # space is the vertical distance from the bottom of 1 word to the top of the next.
-                # height is the height of the word.
-                # diffs[1] is space
-                # diffs[2] is height/space, a relative ratio of its height.
-                diff = words[w+1]["top"] - words[w]["top"]
-
-                if(diff - ERROR_MARGIN > 0):
-                    space = words[w+1]["top"] - words[w]["bottom"]
-                    height = words[w]["bottom"] - words[w]["top"]
-                    diffs[0].append(w)
-                    diffs[1].append(round(float(space), 1))
-                    diffs[2].append(round(float(height/space), 1))
-                    diffs[3].append(round(float(height), 1))
+            diffs = getDiffs(words)
 
             for d in range(len(diffs[0])):
 
@@ -204,191 +193,52 @@ def PDFSort(pdf):
                 if(w > len(words)-1):
                     w = len(words)-1
 
-                if(pg == 4):
-                    print("bruh")
-
-                # diff is the difference between top of this line and bottom of previous line
-                # ratio is the height/space ratio
-                # height is how tall this line is.
-                diff = diffs[1][d]
-                ratio = diffs[2][d]
-                height = diffs[3][d]
-
-                # Figure out a bunch of stuff
-
-                # is the text big
-                big_size = False
-                small_size = False
-                normal_size = False
-                if(height > lineheight + ERROR_MARGIN):
-                    big_size = True
-                elif(height < lineheight - ERROR_MARGIN):
-                    small_size = True
-                else:
-                    normal_size = True
-
-                # is there a big space beforehand
-                before_bigspace = False
-                before_smallspace = False
-                before_normal = False
-                if(d != 0):
-                    if(diffs[1][d-1] > linespace + ERROR_MARGIN):
-                        before_bigspace = True
-                    elif(diffs[1][d-1] < linespace - ERROR_MARGIN):
-                        before_smallspace = True
-                    else:
-                        before_normal = True
-
-                # is there a big space afterwards
-                after_bigspace = False
-                after_smallspace = False
-                after_normal = False
-                if(diffs[1][d] > linespace + ERROR_MARGIN):
-                    after_bigspace = True
-                elif(diffs[1][d] < linespace - ERROR_MARGIN):
-                    after_smallspace = True
-                else:
-                    after_normal = True
+                if(pg == 6):
+                    print("stop")
 
                 # Use that stuff to figure out what type of text we're working with
-
-                single_section = False
-                start_multi = False
-                in_multi = False
-                end_section = False
-                figure_text = False
-                normal_text = False
-                end_block = False
-
-                if(bookmark == 0):
-                    before_bigspace = True
-
-                # if we're in a multiline section then figure out whether it's ending.
-                if(consistentRatio != 0):
-                    if(d < len(diffs[1])-1 and diffs[2][d] == consistentRatio and diffs[2][d+1] != lineratio):
-                        in_multi = True
-                    else:
-                        end_section = True
-                # if the next line is similar to this line and not normal text, it's a multiline section.
-                elif(d < len(diffs[1])-1 and before_bigspace and diffs[2][d+1] == ratio and not diffs[2][d+1] == lineratio):
-                    start_multi = True
-                # if there's a ton of space before and after this, it's a single line section.
-                elif(after_bigspace and before_bigspace):
-                    end_section = True
-                # if there's a big space but normal text, then it's the end of a block, which we do want to detect.
-                elif(after_bigspace):
-                    end_block = True
-                # if it's none of those, it's normal text.
-                else:
-                    normal_text = True
-                    consistentRatio = 0
+                setting = textSettings.diffSettings(
+                    d, diffs, lineheight, lineratio, consistentRatio, ERROR_MARGIN)
 
                 # if it's normal, we don't care.
                 # if it's the end of a section, then add as normal, reset consistent
                 # if it's at the beginning of a multi, set consistent space and don't move bookmark.
                 # if it's in a multi, don't move bookmark.
 
-                if(start_multi):
+                if(settings.type == diffType.START_MULTI):
                     consistentRatio = ratio
                 # if we're expecting a section and the next line is not a section, add the section
-                elif(end_section):
+                elif(settings.type == diffType.END_SECTION):
 
                     # if next line is relative normal space, multiline
                     # else, single line.
                     consistentRatio = 0
                     if(bookmark < len(words)):
                         # Figure out what type of section it is and add it appropriately:
-                        # add it to the list of sections and update activesection, subsection, section
                         type = textprocessing.FindsectionType(words[bookmark])
-                        # sections
-                        if(type == 1):
-                            PDF.sections.append(
-                                PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), None, type, ratio))
-                            activesection = PDF.sections[len(PDF.sections)-1]
-                            activesection = activesection
-                        # subsection
-                        elif(type == 2):
-                            activesection.subsections.append(
-                                PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1], type))
-                            activesubsection = activesection.subsections[len(
-                                activesection.subsections)-1]
-                            activesection = activesubsection
-                        # Some form of sub-sub-section
-                        else:
-                            # if activesection isn't a section
-                            if(activesection.parent):
-                                # if this section is at the same level as activesection (i.e. both are x.y.z) then
-                                # add new section as activesection's sibling
-                                if(type == activesection.type):
-                                    activesection.parent.subsections.append(
-                                        PDFfragments.section(minorfunctions.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1].subsections[len(activesection.subsections)-1], type))
-                                    activesection = activesection.parent.subsections[len(
-                                        activesection.parent.subsections)-1]
-                                # if this section is lower than activesection (i.e. AS is x.y.z and this is x.y.z.a)
-                                # add new section as a subsection of activesection.
-                                elif(type > activesection.type):
-                                    activesection.subsections.append(PDFfragments.section(
-                                        textprocessing.makeString(words[bookmark:w+1]), activesection, type))
-                            # if activesection is a section
-                            # add new section as a subsection of that section.
-                            else:
-                                activesection.subsections.append(
-                                    PDFfragments.section(textprocessing.makeString(words[bookmark:w+1]), PDF.sections[len(PDF.sections)-1]))
-                                activesubsection = activesection.subsections[len(
-                                    activesection.subsections)-1]
-                                activesection = activesubsection
-                        # update the coordinates
-                        newcoords = []
-                        # if we're in a shallower section now (from 2.3.4.5 to 3.1) remove depth
-                        if(len(coords) > type):
-                            for i in range(type):
-                                newcoords.append(coords[i])
-                        # if we're in a deeper section, add depth.
-                        elif(len(coords) < type):
-                            newcoords = copy.copy(coords)
-                            newcoords.append(-1)
-                        # else just copy as is
-                        else:
-                            newcoords = copy.copy(coords)
-                        # update coords
-                        coords = copy.copy(newcoords)
-                        coords[len(coords)-1] += 1
+
+                        addSection(activesection,
+                                   textprocessing.makeString(words[bookmark:w+1]), type, PDF)
+
+                        # update activesection
+                        activesection = PDF.lastSect()
+                        test = activesection.lastsub()
+                        while(test != (None, None)):
+                            activesection = test[0]
+                            test = activesection.lastsub()
+
+                        activesection.type = textprocessing.FindsectionType(
+                            words[bookmark])
+
+                        # update coordinates
+                        coords = newCoords(coords, type)
 
                         # reset paragraph counter, update bookmark
                         paraNum = 0
                         bookmark = w+1
 
-#                # if it's not a section, but is the space just before a section, then we need to anticipate a section.
-#                elif(ratio < lineratio):
-#                    sectionwatch = True
-#                    # Make all the sentences between bookmark and the end of the paragraph.
-#                    sentlist = textprocessing.MakeSentences(makeString(
-#                        words[bookmark:w+1]), coords, paraNum)
-#
-#                    # if this paragraph is split between 2 pages, then add these sentences to the first half of the paragraph.
-#                    if(addto and len(activesection.para) > 0):
-#                        addto = False
-#                        activepara = activesection.para[len(
-#                            activesection.para)-1]
-#                        for s in range(len(sentlist)):
-#                            if(s == 0):
-#                                activepara.sentences[len(
-#                                    activepara.sentences)-1].text += " " + sentlist[s].text
-#                            else:
-#                                activesection.para[len(
-#                                    activesection.para)-1].sentences.append(sentlist[s])
-#                    # If it's a normal paragraph, then add it to the list
-#                    else:
-#                        para = PDFfragments.paragraph(
-#                            coords, paraNum, sentlist, copy.copy(cites))
-#                        cites = []
-#                        activesection.para.append(para)
-#                        paraNum += 1
-#                    bookmark = w+1
-#                    sectionwatch = True
-
                 # if it's the end of a non-section block, add that block as a paragraph.
-                elif(end_block):
+                elif(settings.type == diffType.END_BLOCK):
                     sentlist = textprocessing.MakeSentences(textprocessing.makeString(
                         words[bookmark:w+1]), copy.copy(coords), paraNum)
                     if(w < len(words)-1):
@@ -401,34 +251,35 @@ def PDFSort(pdf):
                     activesection.para.append(para)
                     paraNum += 1
                     bookmark = w+1
-                # if it's just a newline, then we don't care.
-                else:
-                    if (textprocessing.DetermineParagraph(words, w, paraAlign, paraSpace, useSpace, ERROR_MARGIN)):
-                        sentlist = textprocessing.MakeSentences(textprocessing.makeString(
-                            words[bookmark:w+1]), copy.copy(coords), paraNum)
-                        if(addto and pg > 0):
-                            addto = False
-                            for s in range(len(sentlist)):
-                                activepara = activesection.para[len(
-                                    activesection.para)-1]
-                                if(s == 0):
-                                    activepara.sentences[len(
-                                        activepara.sentences)-1].text += " " + sentlist[s].text
-                                else:
-                                    activesection.para[len(
-                                        activesection.para)-1].sentences.append(sentlist[s])
-                        else:
-                            if(w < len(words)-1):
-                                para = PDFfragments.paragraph(
-                                    copy.copy(coords), paraNum, sentlist, copy.copy(cites), words[w+1]["x0"])
+                # if there's a new paragraph, add that.
+                elif (textprocessing.DetermineParagraph(words, w, paraAlign, paraSpace, useSpace, ERROR_MARGIN)):
+                    sentlist = textprocessing.MakeSentences(textprocessing.makeString(
+                        words[bookmark:w+1]), copy.copy(coords), paraNum)
+                    # if this is the 2nd half of a cutoff paragraph, sew it back together.
+                    if(addto and pg > 0):
+                        addto = False
+                        for s in range(len(sentlist)):
+                            activepara = activesection.para[len(
+                                activesection.para)-1]
+                            if(s == 0):
+                                activepara.sentences[len(
+                                    activepara.sentences)-1].text += " " + sentlist[s].text
                             else:
-                                para = PDFfragments.paragraph(
-                                    copy.copy(coords), paraNum, sentlist, copy.copy(cites), words[w]["x0"])
-                            cites = []
-                            activesection.para.append(para)
-                            paraNum += 1
-                        bookmark = w+1
+                                activesection.para[len(
+                                    activesection.para)-1].sentences.append(sentlist[s])
+                    else:
+                        if(w < len(words)-1):
+                            para = PDFfragments.paragraph(
+                                copy.copy(coords), paraNum, sentlist, copy.copy(cites), words[w+1]["x0"])
+                        else:
+                            para = PDFfragments.paragraph(
+                                copy.copy(coords), paraNum, sentlist, copy.copy(cites), words[w]["x0"])
+                        cites = []
+                        activesection.para.append(para)
+                        paraNum += 1
+                    bookmark = w+1
 
+            # END OF DIFFS LOOP
             # Add whatever text is at the end of the page.
             if(bookmark != len(words)-1):
                 sentlist = textprocessing.MakeSentences(textprocessing.makeString(
@@ -461,8 +312,66 @@ def PDFSort(pdf):
     return PDF
 
 
+def addSection(header, title, type, PDF=None):
+    type = textprocessing.FindsectionType(title)
+    # if it's broken return false
+    if(type == 0 or header == None):
+        PDF.sections.append(PDFfragments.section(
+            "ERROR:SECTION_MISSING" + title, header.parent))
+
+    # if it's a section header, add it to the PDF's list
+    elif(type == 1):
+        PDF.sections.append(PDFfragments.section(title, header.parent))
+
+    # if it's the current header's sibling, add it to the parent's list
+    elif(type == header.type):
+        header.parent.subsections.append(
+            PDFfragments.section(title, header.parent))
+
+    # if it's a child of the current header, add it to the current header's list
+    elif(type == header.type + 1):
+        header.subsections.append(PDFfragments.section(title, header))
+
+    # if it's an uncle of the current header, recurse upwards.
+    elif(type < header.type):
+        if(header.parent and header.parent.parent):
+            addSection(header.parent, title, type, PDF)
+        else:
+            PDF.sections.append(PDFfragments.section(title, header.parent))
+
+    # if it's a grandchild of the current header, recurse downwards.
+    elif(type > header.type):
+        next = header.lastsub()[0]
+        if(next):
+            addSection(next, title, type)
+        else:
+            header.subsections.append(
+                PDFfragments.section("ERROR:SECTION_MISSING" + title, header))
+
+
+# update the coordinates
+def newCoords(coords, type):
+    newcoords = []
+    # if we're in a shallower section now (from 2.3.4.5 to 3.1) remove depth
+    if(len(coords) > type):
+        for i in range(type):
+            newcoords.append(coords[i])
+    # if we're in a deeper section, add depth.
+    elif(len(coords) < type):
+        newcoords = coords
+        newcoords.append(-1)
+    # else just copy as is
+    else:
+        newcoords = coords
+    # update coords
+    coords = newcoords
+    coords[len(coords)-1] += 1
+    return coords
+
 # Intent is to remove running headers at the top of the page that get marked as headers
 # This is achieved by removing sections with duplicate headers.
+
+
 def removePageHeaders(PDF):
     single = []
     remove = []
