@@ -55,17 +55,25 @@ def MakeSentences(str, coords, p):
 
 
 # this is a function to facilitate very complicated if statements.
-def DetermineParagraph(words, w, paraAlign, paraSpace, useSpace, error):
-    if(not useSpace):
+def DetermineParagraph(words, w, pdfSettings, error):
+    if(not pdfSettings.useSpace):
         if(w < len(words)-1):
-            return words[w+1]["top"] != words[w]["top"] and int(words[w+1]["x0"]) != paraAlign
+            return newline(words, w+1) and words[w+1]["x0"] != pdfSettings.paraAlign
         else:
             return True
     else:
         if(w < len(words)-1):
-            return float(words[w]["top"] - words[w+1]["top"]) + error > paraSpace
+            return minorfunctions.isGreater(words[w]["top"] - words[w+1]["top"], pdfSettings.paraSpace, error)
         else:
             return False
+
+
+def newline(words, w):
+    if(w == 0):
+        return True
+    if(words[w-1]["top"] != words[w]["top"] and words[w-1]["bottom"] != words[w-1]["bottom"]):
+        return True
+    return False
 
 # ratio is the height/space ratio of the current line
 # lineratio is the expected ratio of a normal line
@@ -80,24 +88,29 @@ def Determinesection(ratio, lineratio, height, lineheight, diffs, d, ratioerror)
     # if we think this line is a section
     if(ratio < lineratio-ratioerror and height > lineheight):
         # if the next line is a section, or the line after is normal.
-        if(d < len(diffs[0])-3 and diffs[2][d+2] > lineratio-ratioerror):
+        if(d < len(diffs)-3 and diffs[d+2]["AftRatio"] > lineratio-ratioerror):
             return True
     return False
 
-# Takes a "word" and determines what section depth it is.
-# Don't have great terminology yet, but determines if its x. ; x.y. ; x.y.z. etc
 
-# If the "word" isn't actually section coordinates then it returns as if x.
-
-
-def FindsectionType(word):
+def FindsectionType(sectionheader):
     retval = 0
-    for i in range(len(word["text"])):
-        if(word["text"][i] == '.'):
-            if(i > 0 and word["text"][i-1].isdigit()):
+    if(isinstance(sectionheader, str)):
+        for i in range(len(sectionheader)):
+            if(sectionheader[i] == '.'):
+                if(i > 0 and sectionheader[i-1].isdigit()):
+                    retval += 1
+            if(sectionheader[len(sectionheader)-1].isdigit()):
                 retval += 1
-    if(word["text"][len(word["text"])-1].isdigit()):
-        retval += 1
+
+    else:
+        for i in range(len(sectionheader["text"])):
+            if(sectionheader["text"][i] == '.'):
+                if(i > 0 and sectionheader["text"][i-1].isdigit()):
+                    retval += 1
+        if(sectionheader["text"][len(sectionheader["text"])-1].isdigit()):
+            retval += 1
+
     if(retval == 0):
         return 1
     return retval
@@ -119,3 +132,19 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
         pattern = re.compile(pattern)
         word["text"] = pattern.sub('', word["text"])
     return word
+
+
+def HandleColumns(words, ERROR_MARGIN):
+    retval = [[]]
+    c = 0
+
+    for w in range(1, len(words)):
+        if(words[w]["x1"] - words[w-1]["x0"] + ERROR_MARGIN > words[w-1]["x1"] - words[w-2]["x0"]
+                and words[w-1]["top"] + ERROR_MARGIN > words[w]["top"]):
+            c += 1
+        if(words[w]["top"] + ERROR_MARGIN > words[w-1]["top"]):
+            c = 0
+        while(c > (len(retval) - 1)):
+            retval.append([])
+        retval[c].append(words[w])
+    return retval

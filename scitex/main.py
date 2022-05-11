@@ -12,7 +12,6 @@ FILEPATH = "scitex/Gupta et al.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
-
 # Heinze 30
 # Klemm, -
 
