@@ -4,6 +4,7 @@ import re
 import copy
 import PDFfragments
 
+
 # takes an array of things, takes all the text out, then puts it all into one string.
 # has two modes: dictionary mode and class mode. Dictionary mode will use the "text" item from the dictionary.
 # Class mode will use the "text" field
@@ -134,15 +135,15 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
     return word
 
 
-def HandleColumns(words, ERROR_MARGIN):
+def HandleColumns(words, error):
     retval = [[]]
     c = 0
 
     for w in range(1, len(words)):
-        if(words[w]["x1"] - words[w-1]["x0"] + ERROR_MARGIN > words[w-1]["x1"] - words[w-2]["x0"]
-                and words[w-1]["top"] + ERROR_MARGIN > words[w]["top"]):
+        if(float(words[w]["x1"] - words[w-1]["x0"]) + error > float(words[w-1]["x1"] - words[w-2]["x0"])
+                and float(words[w-1]["top"]) + error > float(words[w]["top"])):
             c += 1
-        if(words[w]["top"] + ERROR_MARGIN > words[w-1]["top"]):
+        if(float(words[w]["top"]) + error > float(words[w-1]["top"])):
             c = 0
         while(c > (len(retval) - 1)):
             retval.append([])

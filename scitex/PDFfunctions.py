@@ -16,14 +16,14 @@ def getDiffs(words, pdfSettings, ERROR_MARGIN):
             if(doc[0].is_lower):
                 pdfSettings.addto = True
 
-        diff = words[w+1]["top"] - words[w]["top"]
+        diff = float(words[w+1]["top"] - words[w]["top"])
 
         if(diff - ERROR_MARGIN > 0):
-            aftspace = words[w+1]["top"] - words[w]["bottom"]
-            befspace = words[w]["top"] - words[bookmark]["bottom"]
+            aftspace = float(words[w+1]["top"] - words[w]["bottom"])
+            befspace = float(words[w]["top"] - words[bookmark]["bottom"])
             if bookmark == 0:
                 befspace = aftspace
-            height = words[w]["bottom"] - words[w]["top"]
+            height = float(words[w]["bottom"] - words[w]["top"])
             aftRatio = height/aftspace
             befRatio = height/befspace
             diffs.append({"LineEndDex": w, "AftSpace": aftspace,

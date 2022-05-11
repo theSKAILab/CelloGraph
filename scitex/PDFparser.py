@@ -18,7 +18,8 @@ import PDFfunctions
 # mostly cuz I don't wanna look through 5000 lines when I'm looking at code.py
 
 # Sometimes the lines are just a little bit off in terms of how far away they are. I.e. two lines will be 13.7 apart, the next two will be 14.1
-ERROR_MARGIN = 2
+VERTICAL_ERROR = .7
+HORIZONTAL_ERROR = 4
 RATIO_MARGIN = 0.05
 
 # para-margin is the number of unusual spaces that have to happen before I'll believe that they're being used
@@ -32,7 +33,7 @@ def PDFSort(pdf):
     # declare variables that get used later.
     PDF = PDFfragments.PDFdocument()
 
-    pdfSettings = PDFsettings.PDFsettings(pdf, ERROR_MARGIN, PARAS_REQUIRED)
+    pdfSettings = PDFsettings.PDFsettings(pdf, VERTICAL_ERROR, PARAS_REQUIRED)
 
     for pg in range(len(pdf.pages)):
         PDF, pdfSettings = DealWithPage(PDF, pdf.pages[pg], pdfSettings)
@@ -45,8 +46,9 @@ def PDFSort(pdf):
 
 def DealWithPage(PDF, page, pdfSettings):
     pagewords = (page.extract_words(y_tolerance=6))
-    cols = textprocessing.HandleColumns(pagewords, ERROR_MARGIN)
-
+    if(page.page_number == 5):
+        print("Breakpoint")
+    cols = textprocessing.HandleColumns(pagewords, HORIZONTAL_ERROR)
     for c in range(len(cols)):
         pdfSettings.bookmark = 0
         PDF, pdfSettings = DealWithCol(PDF, cols[c], pdfSettings)
@@ -56,7 +58,7 @@ def DealWithPage(PDF, page, pdfSettings):
 
 def DealWithCol(PDF, words, pdfSettings):
     diffs, pdfSettings = PDFfunctions.getDiffs(
-        words, pdfSettings, ERROR_MARGIN)
+        words, pdfSettings, VERTICAL_ERROR)
 
     for d in range(len(diffs)):
         PDF, pdfSettings = DealWithDiff(
@@ -71,7 +73,7 @@ def DealWithCol(PDF, words, pdfSettings):
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         if(pdfSettings.addto):
             addto = False
-            if(len(activesection.para) == 0):
+            if(len(pdfSettings.activesection.para) == 0):
                 newpara = PDFfragments.paragraph(
                     pdfSettings.coords, pdfSettings.paraNum)
                 pdfSettings.activesection.para.append(newpara)
@@ -79,8 +81,11 @@ def DealWithCol(PDF, words, pdfSettings):
                 pdfSettings.activesection.para)-1]
             for s in range(len(sentlist)):
                 if(s == 0):
-                    activepara.sentences[len(
-                        activepara.sentences)-1].text += " " + sentlist[s].text
+                    if(len(activepara.sentences) > 0):
+                        activepara.sentences[len(
+                            activepara.sentences)-1].text += " " + sentlist[s].text
+                    else:
+                        activepara.sentences.append(" " + sentlist[s].text)
                 else:
                     pdfSettings.activesection.para[len(
                         activesection.para)-1].sentences.append(sentlist[s])
@@ -100,7 +105,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         w = len(words)-1
 
     settings = textSettings.diffSettings(
-        d, diffs, pdfSettings, ERROR_MARGIN)
+        d, diffs, pdfSettings, VERTICAL_ERROR)
 
     if(settings.type == textSettings.diffType.START_MULTI):
         pdfSettings.consistentRatio = diffs[d]["AftRatio"]
@@ -137,7 +142,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         pdfSettings.paraNum += 1
         pdfSettings.bookmark = w+1
     # if there's a new paragraph, add that.
-    elif (textprocessing.DetermineParagraph(words, w, pdfSettings, ERROR_MARGIN)):
+    elif (textprocessing.DetermineParagraph(words, w, pdfSettings, VERTICAL_ERROR)):
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         # if this is the 2nd half of a cutoff paragraph, sew it back together.

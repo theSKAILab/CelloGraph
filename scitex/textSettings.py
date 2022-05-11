@@ -75,14 +75,13 @@ class diffSettings:
             self.aftspace = spaceSize.NORMAL_SPACE
 
     def calcAdvSet(self, d, diffs, pdfSettings, error):
-
         if(self.InMultiTest(d, diffs, pdfSettings, error)):
             self.type = diffType.IN_MULTI
 
         elif(self.StartMultiTest(d, diffs, pdfSettings, error)):
             self.type = diffType.START_MULTI
 
-        elif(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE):
+        elif(self.EndSectionTest(d, diffs, pdfSettings, error)):
             self.type = diffType.END_SECTION
 
         elif(self.aftspace == spaceSize.BIG_SPACE):
@@ -94,7 +93,7 @@ class diffSettings:
 
     # if we're not at the bottom of the col and there's a big space before this line and there's a big space after this line and next line.
     def StartMultiTest(self, d, diffs, pdfSettings, error):
-        if(minorfunctions.EndofCol(d+1, diffs)):
+        if(minorfunctions.EndofCol(d+2, diffs)):
             return False
         if(minorfunctions.areEqual(diffs[d+1]["AftRatio"], pdfSettings.lineratio, error)):
             return False
@@ -102,20 +101,34 @@ class diffSettings:
             return False
         if(not (self.befspace == spaceSize.BIG_SPACE and self.aftspace == spaceSize.BIG_SPACE)):
             return False
+        if(minorfunctions.areEqual(diffs[d]["BefSpace"], pdfSettings.linespace, error) or minorfunctions.areEqual(diffs[d]["AftSpace"], pdfSettings.linespace, error)):
+            return False
+        if(not minorfunctions.areEqual(diffs[d]["AftSpace"], diffs[d+1]["AftSpace"], error)):
+            return False
         if(d == 0):
             if(minorfunctions.areEqual(diffs[d+1]["AftSpace"], diffs[d]["AftSpace"], error)):
                 return True
         if(d != 0):
-            return minorfunctions.isLesser(diffs[d]["AftSpace"], diffs[d]["BefSpace"], error)
+            if(minorfunctions.isLesser(diffs[d]["AftSpace"], diffs[d]["BefSpace"], error)):
+                return True
+        return False
 
     # if we're not at the bottom of the col and the ratio of size to spacing is the same for the next line as it is for this line,
-        # and that ratio isn't the same as the normal text ratio.
+    # and that ratio isn't the same as the normal text ratio.
+
     def InMultiTest(self, d, diffs, pdfSettings, error):
         if(d == 0):
             return False
         if(minorfunctions.EndofCol(d+1, diffs) or self.consistentRatio == 0):
             return False
+        if(minorfunctions.areEqual(diffs[d]["BefSpace"], pdfSettings.linespace, error) or minorfunctions.areEqual(diffs[d]["AftSpace"], pdfSettings.linespace, error)):
+            return False
         if(minorfunctions.areEqual(diffs[d+1]["AftRatio"], pdfSettings.lineratio, error)):
             return False
         if(minorfunctions.areEqual(diffs[d]["AftRatio"], self.consistentRatio, error)):
             return True
+
+    def EndSectionTest(self, d, diffs, pdfSettings, error):
+        if(d == len(diffs)-1):
+            return False
+        return self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE

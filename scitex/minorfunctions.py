@@ -15,8 +15,6 @@ def most_frequent(List):
 
 # "equal" so that we can have an error margin, error is a percentage
 def areEqual(val1, val2, error=0):
-    val1 = float(val1)
-    val2 = float(val2)
     if(val1 <= val2*((error+100)/100) and val1 >= val2*((100-error)/100)):
         return True
     else:
@@ -60,14 +58,14 @@ def EndofCol(d, diffs):
 # index is something for whether you want the index or the value.
 
 
-def mostCommon(arr, index=False):
+def mostCommon(arr, index=False, error=0):
     retval = 0
 
     # countarr has elements [element, indices, counts]
     countarr = [[], [], []]
 
     for i in range(len(arr)):
-        j = isIn(arr[i], countarr[0])
+        j = isIn(arr[i], countarr[0], error)
         if(j > -1):
             countarr[2][j] += 1
         else:
@@ -97,17 +95,35 @@ def mostCommonLineSpace(arr, index=False, error=0):
 
     arr = reverseDiff(arr, "AftSpace")
 
-    occurence_count = Counter(arr)
+    countarr = [[], [], []]
 
+    for i in range(len(arr)):
+        j = isIn(arr[i], countarr[0], error)
+        if(j > -1):
+            countarr[2][j] += 1
+        else:
+            countarr[0].append(arr[i])
+            countarr[1].append(i)
+            countarr[2].append(1)
+
+    maxdex = myMax(countarr[2], True)
     if(index):
-        mostcommon = occurence_count.most_common(1)[0][0]
-        for i in range(len(arr)):
-            if(areEqual(arr[i], mostcommon, error)):
-                return i
-        return arr[0]
+        # returns the index of the thing with the highest count
+        return countarr[1][maxdex]
     else:
         # returns the thing with the highest count
-        return occurence_count.most_common(1)[0][0]
+        return countarr[0][maxdex]
+    #occurence_count = Counter(arr)
+#
+    # if(index):
+    #    mostcommon = occurence_count.most_common(1)[0][0]
+    #    for i in range(len(arr)):
+    #        if(areEqual(arr[i], mostcommon, error)):
+    #            return i
+    #    return arr[0]
+    # else:
+    #    # returns the thing with the highest count
+    #    return occurence_count.most_common(1)[0][0]
 
 
 # Python's default 'in' method doens't return the index, so I fixed that.
