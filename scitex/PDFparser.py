@@ -38,15 +38,15 @@ def PDFSort(pdf):
     for pg in range(len(pdf.pages)):
         PDF, pdfSettings = DealWithPage(PDF, pdf.pages[pg], pdfSettings)
 
-    minorfunctions.removePageHeaders(PDF)
-    # minorfunctions.removeFigureHeaders(PDF)
+    # PDFfunctions.removePageHeaders(PDF)
+    # PDFfunctions.removeFigureHeaders(PDF)
 
     return PDF
 
 
 def DealWithPage(PDF, page, pdfSettings):
     pagewords = (page.extract_words(y_tolerance=6))
-    if(page.page_number == 5):
+    if(page.page_number == 9):
         print("Breakpoint")
     cols = textprocessing.HandleColumns(pagewords, HORIZONTAL_ERROR)
     for c in range(len(cols)):

@@ -5,7 +5,7 @@ import PDFfragments
 import minorfunctions
 
 
-def getDiffs(words, pdfSettings, ERROR_MARGIN):
+def getDiffs(words, pdfSettings, error):
     diffs = []
     bookmark = 0
     for w in range(len(words)-1):
@@ -16,9 +16,7 @@ def getDiffs(words, pdfSettings, ERROR_MARGIN):
             if(doc[0].is_lower):
                 pdfSettings.addto = True
 
-        diff = float(words[w+1]["top"] - words[w]["top"])
-
-        if(diff - ERROR_MARGIN > 0):
+        if(newline(words, w, error)):
             aftspace = float(words[w+1]["top"] - words[w]["bottom"])
             befspace = float(words[w]["top"] - words[bookmark]["bottom"])
             if bookmark == 0:
@@ -31,6 +29,24 @@ def getDiffs(words, pdfSettings, ERROR_MARGIN):
                           "Align": words[w]["x0"], "Text": words[bookmark+1:w+1]})
             bookmark = w
     return diffs, pdfSettings
+
+# returns True if words[w] is on a newline
+
+
+def newline(words, w, error):
+    if w == 0:
+        return True
+    nextTop = float(words[w+1]["top"])
+    top = float(words[w]["top"])
+    if(minorfunctions.areEqual(top, nextTop, error)):
+        return False
+    bot = float(words[w]["bottom"])
+    prevBot = float(words[w-1]["bottom"])
+    nextBot = float(words[w+1]["bottom"])
+    if(minorfunctions.listElementsEqual([bot, prevBot, nextBot], error)):
+        return False
+    return True
+
 
 # adds the contents of a section header to another section
 # tomove is Section header whose contents will be moved.
