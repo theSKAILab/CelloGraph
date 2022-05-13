@@ -20,9 +20,9 @@ output = PDFparser.PDFSort(plumber)
 
 print("this is just here so I can put a breakpoint here.")
 
-plaintext = plaintextwriter.PDFtoplain(output)
+plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("debug output.txt", 'w')
+file = open("debug output.rtf", 'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 

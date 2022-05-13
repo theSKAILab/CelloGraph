@@ -1,20 +1,8 @@
 import PDFfragments
 
-# results: screenshot of a textfile
-
-# methods: flow charts of each piece. Make it very black box
-
 # Related works:
 # PDF Plumber: Works on PDFs, doesn't do what we want
 # ChemDataExtractor: Does what we want, doesn't work on PDFs
-
-
-# In the motivation section (probably) "Challenges" Slide
-# put screenshots of all the complicated parts of PDFs that we need to work with
-
-
-# PUT LOTS OF PICTURES
-
 
 # PDF has a list of sections
 # PDF also has a list of figure descriptions/captions and table descriptions/captions
@@ -30,11 +18,13 @@ import PDFfragments
 def SectiontoPlain(sec):
     retval = ""
 
-    retval += "\n\nSection " + ": " + sec.title
+    retval += "\n\nNEW SECTION: " + sec.title + "\n"
     for i in range(len(sec.para)):
-        retval += sec.para[i].gettext()
+        retval += "\nNEW PARA:"
+        for j in range(len(sec.para[i].sentences)):
+            retval += "\n\tNEW SENTENCE: " + sec.para[i].sentences[j].text
 
-    for s in range(len(sec.subsections)):
+    for i in range(len(sec.subsections)):
         retval += SectiontoPlain(sec.subsections[i])
     return retval
 
