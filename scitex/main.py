@@ -1,4 +1,3 @@
-from pdfminer.pdfdocument import PDFDocument
 import pdfplumber
 from pdfplumber.utils import extract_text
 import PDFparser
@@ -12,8 +11,8 @@ FILEPATH = "scitex/Gupta et al.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
-# Heinze 30
-# Klemm, -
+# Heinze
+# Klemm
 
 
 output = PDFparser.PDFSort(plumber)

@@ -20,7 +20,10 @@ def getDiffs(words, pdfSettings, error):
             aftspace = float(words[w+1]["top"] - words[w]["bottom"])
             befspace = float(words[w]["top"] - words[bookmark]["bottom"])
             if bookmark == 0:
-                befspace = aftspace
+                befspace = pdfSettings.linespace * 2
+            if(len(diffs) == 1):
+                diffs[0]["AftSpace"] = befspace
+                diffs[0]["AftRatio"] = diffs[0]["Height"]/befspace
             height = float(words[w]["bottom"] - words[w]["top"])
             aftRatio = height/aftspace
             befRatio = height/befspace
@@ -35,7 +38,7 @@ def getDiffs(words, pdfSettings, error):
 
 def newline(words, w, error):
     if w == 0:
-        return True
+        return False
     nextTop = float(words[w+1]["top"])
     top = float(words[w]["top"])
     if(minorfunctions.areEqual(top, nextTop, error)):
@@ -113,7 +116,7 @@ def addSection(header, title, type, PDF, recursionlevel=0):
 # This is achieved by removing sections with duplicate headers.
 
 
-def removePageHeaders(PDF):
+def removeDuplicateHeaders(PDF):
     single = []
     remove = []
     # for each section header, if there's an identical section header, flag both to be removed.
@@ -142,9 +145,63 @@ def removePageHeaders(PDF):
     # now go through and remove them all. Any text under that header will be put under the previous header.
     for i in range(len(remove)-1, -1, -1):
         if(remove[i][0] != 0 and remove[i][0] < len(PDF.sections)-1):
-            minorfunctions.moveSection(PDF.sections[remove[i][0]],
-                                       PDF.sections[remove[i][0]-1])
+            moveSection(PDF.sections[remove[i][0]],
+                        PDF.sections[remove[i][0]-1])
             PDF.sections.pop(remove[i][0])
+
+
+def removePageHeaderSentences(PDF):
+    single = []
+    remove = []
+    # for each section header, if there's an identical section header, flag both to be removed.
+    # each element of remove is (index, sectiontitle)
+    for i in range(len(PDF.sections)):
+        for j in range(len(PDF.sections[i].para)):
+            for k in range(len(PDF.sections[i].para[j].sentences)):
+
+                section = PDF.sections[i]
+                para = section.para[j]
+                sent = para.sentences[k]
+
+                insingle = False
+
+                # check if we've seen this title already
+                for l in range(len(single)):
+                    if(single[l].text == sent.text):
+                        insingle = True
+                        break
+
+                # if we haven't, add it to the list of things we've seen.
+                if(not insingle):
+                    single.append((sent))
+
+                # if we have, add it to the list of things to remove
+                else:
+                    if sent not in remove:
+                        for l in range(len(single)):
+                            if single[l].text == sent.text and single[l] not in remove:
+                                remove.append(single[l])
+                    remove.append(sent)
+
+    # now go through and remove them all. Any text under that header will be put under the previous header.
+    for i in range(len(remove)-1, -1, -1):
+        sent = remove[i]
+        PDF.sections[sent.coords[0]] = recursiveRemoveSentence(
+            PDF.sections[sent.coords[0]], sent.coords, sent.para, sent.sentNum)
+    return PDF
+
+
+def recursiveRemoveSentence(section, coords, paraNum, sentNum):
+    if(len(section.para[paraNum].sentences) == 0):
+        return section
+    elif(len(coords) == 1):
+        section.para[paraNum].sentences.pop(sentNum)
+        if(len(section.para[paraNum].sentences) == 0):
+            section.para.pop(paraNum)
+        return section
+    else:
+        section = section.subsections[coords[0]]
+        return recursiveRemoveSentence(section, coords[1:], paraNum, sentNum)
 
 
 # removes any headers that are actually just figure or table descriptions.
@@ -155,12 +212,14 @@ def removeFigureHeaders(PDF):
     # set up some spacy stuff
     nlp = spacy.load("en_core_web_sm")
     figurematcher = Matcher(nlp.vocab)
-    figurepattern = [{"LOWER": "figure"}, {"IS_DIGIT": True}]
+    figurepattern = [{"LOWER": "figure"}, {
+        "IS_DIGIT": True}, {"IS_PUNC": True}]
     figpattern = [{"LOWER": "fig"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
-    tablepattern = [{"LOWER": "table"}, {"IS_DIGIT": True}]
+    tablepattern = [{"LOWER": "table"}, {"IS_DIGIT": True}, {"IS_PUNC": True}]
     tabpattern = [{"LOWER": "tab"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
     graphicpattern = [{"LOWER": "graphic"}, {"IS_DIGIT": True}]
     graphpattern = [{"LOWER": "graph"}, {"IS_DIGIT": True}]
+    schemepattern = [{"LOWER": "scheme"}, {"IS_DIGIT": True}]
 
     figurematcher.add(
         "figures", [figurepattern, figpattern, tablepattern, tabpattern, graphicpattern, graphpattern])

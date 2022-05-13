@@ -20,7 +20,7 @@ def SectiontoPlain(sec):
 
     retval += "\n\nNEW SECTION: " + sec.title + "\n"
     for i in range(len(sec.para)):
-        retval += "\nNEW PARA:"
+        retval += "\n\nNEW PARA:"
         for j in range(len(sec.para[i].sentences)):
             retval += "\n\tNEW SENTENCE: " + sec.para[i].sentences[j].text
 

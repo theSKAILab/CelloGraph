@@ -38,7 +38,10 @@ def PDFSort(pdf):
     for pg in range(len(pdf.pages)):
         PDF, pdfSettings = DealWithPage(PDF, pdf.pages[pg], pdfSettings)
 
-    # PDFfunctions.removePageHeaders(PDF)
+    #PDF = PDFfunctions.removeBibliography
+    # bib must be removed before page/fig headers so that bib info don't get deleted
+    PDF = PDFfunctions.removePageHeaderSentences(PDF)
+    #PDF = PDFfunctions.removePageHeaders(PDF)
     # PDFfunctions.removeFigureHeaders(PDF)
 
     return PDF
@@ -46,8 +49,6 @@ def PDFSort(pdf):
 
 def DealWithPage(PDF, page, pdfSettings):
     pagewords = (page.extract_words(y_tolerance=6))
-    if(page.page_number == 9):
-        print("Breakpoint")
     cols = textprocessing.HandleColumns(pagewords, HORIZONTAL_ERROR)
     for c in range(len(cols)):
         pdfSettings.bookmark = 0
@@ -91,7 +92,7 @@ def DealWithCol(PDF, words, pdfSettings):
                         activesection.para)-1].sentences.append(sentlist[s])
         else:
             para = PDFfragments.paragraph(
-                copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites))
+                pdfSettings.coords, pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites))
             pdfSettings.activesection.para.append(para)
             pdfSettings.paraNum += 1
         pdfSettings.bookmark = 0

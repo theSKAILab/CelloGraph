@@ -133,9 +133,10 @@ def isIn(element, arr, error=0):
             return i
     return -1
 
-
 # similarly, python's default 'max' function doesn't return the index.
 # so I made a new max, where index=True will return the index.
+
+
 def myMax(arr, index=False):
     retval = 0
     for i in range(len(arr)):
