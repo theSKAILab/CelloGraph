@@ -15,6 +15,8 @@ def most_frequent(List):
 
 # "equal" so that we can have an error margin, error is a percentage
 def areEqual(val1, val2, error=0):
+    val1 = float(val1)
+    val2 = float(val2)
     if(val1 <= val2*((error+100)/100) and val1 >= val2*((100-error)/100)):
         return True
     else:

@@ -2,7 +2,6 @@ import minorfunctions
 
 
 class EqualTester():
-
     def totalEqualTest(self):
         self.equalTest()
         self.greaterEqualTest()
@@ -24,3 +23,7 @@ class EqualTester():
         assert minorfunctions.areEqual(100, 90) == False
         assert minorfunctions.areEqual(100, 90, 10) == True
         assert minorfunctions.areEqual(100, 95, 4) == False
+
+
+eq = EqualTester()
+eq.totalEqualTest()

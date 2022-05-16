@@ -102,6 +102,10 @@ def DealWithCol(PDF, words, pdfSettings):
 
 def DealWithDiff(PDF, words, diffs, d, pdfSettings):
     w = diffs[d]["LineEndDex"]
+    if(d == 32):
+        endofline = words[w]
+        newline = words[w+1]
+        print("Breakpoint")
     if(w > len(words)-1):
         w = len(words)-1
 
@@ -112,6 +116,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         pdfSettings.consistentRatio = diffs[d]["AftRatio"]
 
     elif(settings.type == textSettings.diffType.END_SECTION):
+        pdfSettings.addto = False
         pdfSettings.consistentRatio = 0
         if(pdfSettings.bookmark < len(words)):
             type = textprocessing.FindsectionType(words[pdfSettings.bookmark])
@@ -130,6 +135,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
 
     # if it's the end of a non-section block, add that block as a paragraph.
     elif(settings.type == textSettings.diffType.END_BLOCK):
+        pdfSettings.addto = False
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         if(w < len(words)-1):
@@ -147,17 +153,17 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         # if this is the 2nd half of a cutoff paragraph, sew it back together.
-        if(pdfSettings.addto and pg > 0):
-            addto = False
+        if(pdfSettings.addto):
+            pdfSettings.addto = False
+            activepara = pdfSettings.activesection.para[len(
+                pdfSettings.activesection.para)-1]
             for s in range(len(sentlist)):
-                activepara = activesection.para[len(
-                    activesection.para)-1]
                 if(s == 0):
                     activepara.sentences[len(
                         activepara.sentences)-1].text += " " + sentlist[s].text
                 else:
-                    activesection.para[len(
-                        activesection.para)-1].sentences.append(sentlist[s])
+                    pdfSettings.activesection.para[len(
+                        pdfSettings.activesection.para)-1].sentences.append(sentlist[s])
         else:
             if(w < len(words)-1):
                 para = PDFfragments.paragraph(

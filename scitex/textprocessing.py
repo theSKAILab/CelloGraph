@@ -3,6 +3,7 @@ from spacy.matcher import Matcher
 import re
 import copy
 import PDFfragments
+import minorfunctions
 
 
 # takes an array of things, takes all the text out, then puts it all into one string.
@@ -59,7 +60,9 @@ def MakeSentences(str, coords, p):
 def DetermineParagraph(words, w, pdfSettings, error):
     if(not pdfSettings.useSpace):
         if(w < len(words)-1):
-            return newline(words, w+1) and words[w+1]["x0"] != pdfSettings.paraAlign
+            retval = newline(
+                words, w+1, error) and not minorfunctions.areEqual(words[w+1]["x0"], pdfSettings.paraAlign, error)
+            return retval
         else:
             return True
     else:
@@ -69,10 +72,11 @@ def DetermineParagraph(words, w, pdfSettings, error):
             return False
 
 
-def newline(words, w):
+def newline(words, w, error=0):
     if(w == 0):
         return True
-    if(words[w-1]["top"] != words[w]["top"] and words[w-1]["bottom"] != words[w-1]["bottom"]):
+    if(not minorfunctions.areEqual(words[w-1]["top"], words[w]["top"], error) and not minorfunctions.areEqual(
+            words[w-1]["bottom"], words[w]["bottom"]), error):
         return True
     return False
 
