@@ -11,6 +11,8 @@ class PDFsettings():
         self.linespace, self.lineratio, self.lineheight, self.paraAlign, self.paraSpace = FindSpace(
             pdf, ERROR_MARGIN, PARAS_REQUIRED)
 
+        self.pageHeaders = FindPageHeaders(pdf)
+
         self.useSpace = False
         if(self.paraAlign == -1):
             self.useSpace = True
@@ -22,6 +24,24 @@ class PDFsettings():
         self.paraNum = 0
         self.bookmark = 0
         self.activesection = PDFfragments.section("")
+
+
+def FindPageHeaders(pdf):
+    headers = []
+    for i in range(len(pdf.pages)):
+        iwords = pdf.pages[i].extract_words(y_tolerance=6)
+        for j in range(i+1, len(pdf.pages)):
+            jwords = pdf.pages[j].extract_words(y_tolerance=6)
+            if iwords[0] == jwords[0]:
+                count = 1
+                for k in range(1, len(iwords)):
+                    if iwords[k] == jwords[k]:
+                        count += 1
+                    else:
+                        break
+                headers = minorfunctions.appendNoRepeats(
+                    jwords[0:count], headers)
+    return headers
 
 
 # FindSpace: Takes a PDF and tries to figure out what the spacing is

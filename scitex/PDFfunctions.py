@@ -5,6 +5,58 @@ import PDFfragments
 import minorfunctions
 
 
+def removePageHeadersEarly(words, pdfSettings):
+    for i in range(len(pdfSettings.pageHeaders)):
+        if(pdfSettings.pageHeaders[i][0] == words[0]):
+            words = CutWords(words, pdfSettings.pageHeaders[i])
+            return words
+    return words
+
+
+def CutWords(large, small):
+    for i in range(len(small)-1, -1, -1):
+        if small[i] == large[i]:
+            large.pop(i)
+        else:
+            return large
+    return large
+
+
+def removeTables(PDF, page, words, error):
+    objs = page.objects
+
+    try:
+        objs["line"]
+    except:
+        return PDF, words
+
+    highestLine = minorfunctions.heighestLine(objs)
+    lowestLine = minorfunctions.lowestLine(objs)
+
+    retval = []
+    currentRow = []
+    remove = []
+
+    for w in range(len(words)-1):
+        if(textprocessing.newline(words, w+1, error)):
+            if(len(currentRow) != 0):
+                retval.append(currentRow)
+                currentRow = []
+        if minorfunctions.isGreater(words[w]["top"], highestLine["top"], error) and minorfunctions.isLesser(words[w]["bottom"], lowestLine["bottom"], error):
+            currentRow.append(words[w])
+            remove.append(w)
+
+    if len(currentRow) != 0:
+        retval.append(currentRow)
+
+    PDF.tables.append(retval)
+
+    for i in range(len(remove)-1, -1, -1):
+        words.pop(remove[i])
+
+    return PDF, words
+
+
 def getDiffs(words, pdfSettings, error):
     diffs = []
     bookmark = 0

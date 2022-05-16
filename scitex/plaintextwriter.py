@@ -38,7 +38,7 @@ def PDFtoPlain(PDF):
     for fig in range(len(PDF.figures)):
         retval += "\nFigure " + fig + " description: " + PDF.figures[fig]
 
-    for tab in range(len(PDF.tables)):
-        retval += "\nTable " + tab + " description: " + PDF.tables[tab]
+    # for tab in range(len(PDF.tables)):
+    #    retval += "\nTable " + str(tab) + " description: " + PDF.tables[tab]
 
     return retval

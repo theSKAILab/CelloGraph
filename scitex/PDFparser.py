@@ -26,8 +26,9 @@ RATIO_MARGIN = 0.05
 # to determine different paragraphs.
 PARAS_REQUIRED = 2
 
-
 # PDFSort: Takes a pdf from pdfplumber, a PDF class from above, and two numbers to calibrate reading.
+
+
 def PDFSort(pdf):
 
     # declare variables that get used later.
@@ -48,16 +49,21 @@ def PDFSort(pdf):
 
 
 def DealWithPage(PDF, page, pdfSettings):
-    pagewords = (page.extract_words(y_tolerance=6))
-    cols = textprocessing.HandleColumns(pagewords, HORIZONTAL_ERROR)
+    pagewords = page.extract_words(y_tolerance=6)
+    pagewords = PDFfunctions.removePageHeadersEarly(pagewords, pdfSettings)
+    cols = textprocessing.HandleColumns(
+        pagewords, HORIZONTAL_ERROR, VERTICAL_ERROR)
+
     for c in range(len(cols)):
         pdfSettings.bookmark = 0
-        PDF, pdfSettings = DealWithCol(PDF, cols[c], pdfSettings)
+        PDF, pdfSettings = DealWithCol(PDF, page, cols[c], pdfSettings)
 
     return PDF, pdfSettings
 
 
-def DealWithCol(PDF, words, pdfSettings):
+def DealWithCol(PDF, page, words, pdfSettings):
+    PDF, words = PDFfunctions.removeTables(PDF, page, words, VERTICAL_ERROR)
+
     diffs, pdfSettings = PDFfunctions.getDiffs(
         words, pdfSettings, VERTICAL_ERROR)
 
@@ -102,10 +108,6 @@ def DealWithCol(PDF, words, pdfSettings):
 
 def DealWithDiff(PDF, words, diffs, d, pdfSettings):
     w = diffs[d]["LineEndDex"]
-    if(d == 32):
-        endofline = words[w]
-        newline = words[w+1]
-        print("Breakpoint")
     if(w > len(words)-1):
         w = len(words)-1
 

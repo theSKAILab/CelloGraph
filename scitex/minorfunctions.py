@@ -115,7 +115,7 @@ def mostCommonLineSpace(arr, index=False, error=0):
     else:
         # returns the thing with the highest count
         return countarr[0][maxdex]
-    #occurence_count = Counter(arr)
+    # occurence_count = Counter(arr)
 #
     # if(index):
     #    mostcommon = occurence_count.most_common(1)[0][0]
@@ -134,6 +134,17 @@ def isIn(element, arr, error=0):
         if areEqual(arr[i], element, error):
             return i
     return -1
+
+
+def appendNoRepeats(element, arr):
+    inArr = False
+    for i in range(len(arr)):
+        if arr[i] == element:
+            inArr = True
+            break
+    if inArr == False:
+        arr.append(element)
+    return arr
 
 # similarly, python's default 'max' function doesn't return the index.
 # so I made a new max, where index=True will return the index.
@@ -180,3 +191,35 @@ def updateActiveSection(PDF, words, pdfSettings):
     active.type = textprocessing.FindsectionType(
         words[pdfSettings.bookmark])
     return active
+
+
+def heighestLine(objs):
+    try:
+        objs["line"]
+    except:
+        return None
+
+    retval = None
+    for line in objs["line"]:
+        if(not retval):
+            retval = line
+        elif(retval["top"] > line["top"]):
+            retval = line
+
+    return retval
+
+
+def lowestLine(objs):
+    try:
+        objs["line"]
+    except:
+        return None
+
+    retval = None
+    for line in objs["line"]:
+        if(not retval):
+            retval = line
+        elif(retval["bottom"] < line["bottom"]):
+            retval = line
+
+    return retval

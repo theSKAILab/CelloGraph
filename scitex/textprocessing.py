@@ -60,14 +60,15 @@ def MakeSentences(str, coords, p):
 def DetermineParagraph(words, w, pdfSettings, error):
     if(not pdfSettings.useSpace):
         if(w < len(words)-1):
-            retval = newline(
-                words, w+1, error) and not minorfunctions.areEqual(words[w+1]["x0"], pdfSettings.paraAlign, error)
+            retval = newline(words, w+1, error) and not minorfunctions.areEqual(
+                words[w+1]["x0"], pdfSettings.paraAlign, error)
             return retval
         else:
             return True
     else:
         if(w < len(words)-1):
-            return minorfunctions.isGreater(words[w]["top"] - words[w+1]["top"], pdfSettings.paraSpace, error)
+            return minorfunctions.isGreater(
+                words[w]["top"] - words[w+1]["top"], pdfSettings.paraSpace, error)
         else:
             return False
 
@@ -126,7 +127,7 @@ def FindsectionType(sectionheader):
 
 def CitationRemoval(cites, PDF, word, coords, paraNum):
     # find all the citations
-    pattern = r'\[+\d+\]'
+    pattern = r'\[\d\]'
     results = re.finditer(pattern, word["text"])
 
     # add each one to the PDF's list of citations and then remove it.
@@ -139,15 +140,17 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
     return word
 
 
-def HandleColumns(words, error):
+def HandleColumns(words, hError, vError):
     retval = [[]]
     c = 0
 
-    for w in range(1, len(words)):
-        if(float(words[w]["x1"] - words[w-1]["x0"]) + error > float(words[w-1]["x1"] - words[w-2]["x0"])
-                and float(words[w-1]["top"]) + error > float(words[w]["top"])):
+    for w in range(0, len(words)):
+        prevspace = words[w-1]["x1"] - words[w-2]["x0"]
+        space = words[w]["x1"] - words[w-1]["x0"]
+        if(minorfunctions.isGreater(space, prevspace, hError)) and minorfunctions.isGreater(
+                words[w-1]["top"], words[w]["top"], vError):
             c += 1
-        if(float(words[w]["top"]) + error > float(words[w-1]["top"])):
+        if(newline(words, w, vError)):
             c = 0
         while(c > (len(retval) - 1)):
             retval.append([])
