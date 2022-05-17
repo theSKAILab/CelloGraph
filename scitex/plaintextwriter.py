@@ -36,9 +36,9 @@ def PDFtoPlain(PDF):
         retval += SectiontoPlain(PDF.sections[sec])
 
     for fig in range(len(PDF.figures)):
-        retval += "\nFigure " + fig + " description: " + PDF.figures[fig]
+        retval += "\n\n\n" + PDF.figures[fig].getText()
 
-    # for tab in range(len(PDF.tables)):
-    #    retval += "\nTable " + str(tab) + " description: " + PDF.tables[tab]
+#    for tab in range(len(PDF.tables)):
+#        retval += "\n\n\n" + PDF.tables[tab].getText()
 
     return retval

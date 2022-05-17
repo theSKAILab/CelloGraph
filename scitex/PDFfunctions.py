@@ -3,6 +3,9 @@ from spacy.matcher import Matcher
 import textprocessing
 import PDFfragments
 import minorfunctions
+import copy
+
+# fix to look at every other page for page headers instead of "every page w/equal text"
 
 
 def removePageHeadersEarly(words, pdfSettings):
@@ -128,40 +131,46 @@ def moveSection(tomove, destination):
             tomove, destination.subsections[len(destination.subsections)-1])
 
 
-def addSection(header, title, type, PDF, recursionlevel=0):
+def addSection(header, title, type, PDF, pdfSettings, recursionlevel=0):
+
+    coords = copy.copy(pdfSettings.coords)
     # if it's broken return false
     if(type == 0 or header == None or recursionlevel > 9):
         PDF.sections.append(PDFfragments.section(
-            "ERROR:SECTION_MISSING" + title, header.parent))
+            "ERROR:SECTION_MISSING" + title, header.parent, pdfSettings.coords))
 
     # if it's a section header, add it to the PDF's list
     elif(type == 1):
-        PDF.sections.append(PDFfragments.section(title, header.parent))
+        PDF.sections.append(PDFfragments.section(
+            title, header.parent, coords))
 
     # if it's the current header's sibling, add it to the parent's list
     elif(type == header.type):
         header.parent.subsections.append(
-            PDFfragments.section(title, header.parent))
+            PDFfragments.section(title, header.parent, coords))
 
     # if it's a child of the current header, add it to the current header's list
     elif(type == header.type + 1):
-        header.subsections.append(PDFfragments.section(title, header))
+        header.subsections.append(PDFfragments.section(
+            title, header, coords))
 
     # if it's an uncle of the current header, recurse upwards.
     elif(type < header.type):
         if(header.parent and header.parent.parent):
-            addSection(header.parent, title, type, PDF, recursionlevel+1)
+            addSection(header.parent, title, type, PDF,
+                       pdfSettings, recursionlevel+1)
         else:
-            PDF.sections.append(PDFfragments.section(title, header.parent))
+            PDF.sections.append(PDFfragments.section(
+                title, header.parent, coords))
 
     # if it's a grandchild of the current header, recurse downwards.
     elif(type > header.type):
         next = header.lastsub()[0]
         if(next):
-            addSection(next, title, type, PDF, recursionlevel+1)
+            addSection(next, title, type, PDF, pdfSettings, recursionlevel+1)
         else:
             header.subsections.append(
-                PDFfragments.section("ERROR:SECTION_MISSING" + title, header))
+                PDFfragments.section("ERROR:SECTION_MISSING" + title, header, coords))
 
 
 # Intent is to remove running headers at the top of the page that get marked as headers
@@ -244,7 +253,7 @@ def removePageHeaderSentences(PDF):
 
 
 def recursiveRemoveSentence(section, coords, paraNum, sentNum):
-    if(len(section.para[paraNum].sentences) == 0):
+    if(len(coords) == 0):
         return section
     elif(len(coords) == 1):
         section.para[paraNum].sentences.pop(sentNum)
@@ -256,34 +265,96 @@ def recursiveRemoveSentence(section, coords, paraNum, sentNum):
         return recursiveRemoveSentence(section, coords[1:], paraNum, sentNum)
 
 
+def recursiveRemovePara(section, coords, paraNum):
+    if(len(coords) == 0 or paraNum >= len(section.para)):
+        return section
+    if(len(coords) == 1):
+        section.para.pop(paraNum)
+        if paraNum < len(section.para):
+            if len(section.para[paraNum].sentences) == 0:
+                section.para.pop(paraNum)
+        for i in range(len(section.para)):
+            if(section.para[i].paraNum > paraNum):
+                section.para[i].paraNum -= 1
+                for j in range(len(section.para[i].sentences)):
+                    section.para[i].sentences[j].para -= 1
+        return section
+    else:
+        section = section.subsections[coords[0]]
+        return recursiveRemoveSentence(section, coords[1:], paraNum, sentNum)
+
+
 # removes any headers that are actually just figure or table descriptions.
 # figures and graphics get added to PDF.figures
 # tables get added to PDF.tables
 
 def removeFigureHeaders(PDF):
-    # set up some spacy stuff
+    if(len(PDF.sections) == 0):
+        return PDF
+    else:
+        for i in range(len(PDF.sections)):
+            if i == 6:
+                print("Breakpoint")
+            PDF, PDF.sections[i] = recursiveRemoveFigureHeaders(
+                PDF, PDF.sections[i])
+            PDF.sections[i] = cleanSection(PDF.sections[i])
+    return PDF
+
+
+def recursiveRemoveFigureHeaders(PDF, section):
+    i = -1
+    while i < len(section.para)-1:
+        i += 1
+        para = section.para[i]
+        if(len(para.sentences) == 0):
+            section.para.pop(i)
+            i -= 1
+            continue
+        sent = words(para.sentences[0].text)
+        if(len(sent) == 2 and sent[1].isdigit()):
+            PDF.figures.append(para)
+            PDF.sections[section.coords[0]] = recursiveRemovePara(
+                section, section.coords, para.paraNum)
+            i -= 1
+    for j in range(len(section.subsections)-1):
+        PDF, section.subsections[j] = recursiveRemoveFigureHeaders(
+            PDF, section.subsections[j])
+    return PDF, section
+
+
+def cleanSection(section):
     nlp = spacy.load("en_core_web_sm")
-    figurematcher = Matcher(nlp.vocab)
-    figurepattern = [{"LOWER": "figure"}, {
-        "IS_DIGIT": True}, {"IS_PUNC": True}]
-    figpattern = [{"LOWER": "fig"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
-    tablepattern = [{"LOWER": "table"}, {"IS_DIGIT": True}, {"IS_PUNC": True}]
-    tabpattern = [{"LOWER": "tab"}, {"IS_PUNC": True}, {"IS_DIGIT": True}]
-    graphicpattern = [{"LOWER": "graphic"}, {"IS_DIGIT": True}]
-    graphpattern = [{"LOWER": "graph"}, {"IS_DIGIT": True}]
-    schemepattern = [{"LOWER": "scheme"}, {"IS_DIGIT": True}]
+    i = 0
+    while i < len(section.para):
+        i += 1
+        if(i > len(section.para)-1):
+            break
+        para = section.para[i]
+        prev = section.para[i-1]
+        if(len(para.sentences) == 0):
+            section.para.pop(i)
+            i -= 1
+            continue
+        doc = nlp(section.para[i].sentences[0].text)
+        if(doc[0].is_lower):
+            prev.sentences[len(prev.sentences) -
+                           1].text += para.sentences[0].text
+            for j in range(1, len(para.sentences)):
+                prev.sentences.append(para.sentences[j])
+            section.para[i] = para
+            section.para[i-1] = prev
+            section.para.pop(i)
+            i -= 1
+    for i in range(len(section.subsections)):
+        section.subsections[i] = cleanSection(section.subsections[i])
+    return section
 
-    figurematcher.add(
-        "figures", [figurepattern, figpattern, tablepattern, tabpattern, graphicpattern, graphpattern])
 
-    for i in range(len(PDF.sections)-1, 0, -1):
-        doc = nlp(PDF.sections[i].title)
-        matches = figurematcher(doc)
-
-        if len(matches) > 0:
-            minorfunctions.moveSection(PDF.sections[i], PDF.sections[i-1])
-            sectioncopy = PDF.sections[i].copy()
-            sectioncopy.parent = PDF.sections[i-1]
-            PDF.sections[i-1].subsections.append(sectioncopy)
-            PDF.figures.append(sectioncopy.title)
-            PDF.sections.pop(i)
+def words(str):
+    retval = []
+    bookmark = 0
+    for i in range(len(str)):
+        if str[i] == ' ' or str[i] == '.':
+            retval.append(str[bookmark:i])
+            bookmark = i+1
+    return retval

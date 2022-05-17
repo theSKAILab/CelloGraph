@@ -17,13 +17,14 @@ import textprocessing
 # para: an array of paragraphs between this section and the next
 
 class section:
-    def __init__(self, t, p=None, type=1, ratio=0):
+    def __init__(self, t, p=None, coords=[], type=1, ratio=0):
         self.title = t
         self.subsections = []
         self.parent = p
         self.para = []
         self.type = type
         self.ratio = ratio
+        self.coords = coords
 
 # returns (last subsection, last subsection's type)
     def lastsub(self):
@@ -76,7 +77,7 @@ class paragraph:
     def getText(self):
         retval = ""
         for s in self.sentences:
-            retval += s + " "
+            retval += s.text + " "
         return retval
 
     def getPlace(self):

@@ -39,11 +39,11 @@ def PDFSort(pdf):
     for pg in range(len(pdf.pages)):
         PDF, pdfSettings = DealWithPage(PDF, pdf.pages[pg], pdfSettings)
 
-    #PDF = PDFfunctions.removeBibliography
+    # PDF = PDFfunctions.removeBibliography
     # bib must be removed before page/fig headers so that bib info don't get deleted
     PDF = PDFfunctions.removePageHeaderSentences(PDF)
-    #PDF = PDFfunctions.removePageHeaders(PDF)
-    # PDFfunctions.removeFigureHeaders(PDF)
+
+    PDF = PDFfunctions.removeFigureHeaders(PDF)
 
     return PDF
 
@@ -123,14 +123,14 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         if(pdfSettings.bookmark < len(words)):
             type = textprocessing.FindsectionType(words[pdfSettings.bookmark])
 
+            pdfSettings.coords = minorfunctions.newCoords(
+                pdfSettings.coords, type)
+
             PDFfunctions.addSection(pdfSettings.activesection,
-                                    textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF)
+                                    textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF, pdfSettings)
 
             pdfSettings.activesection = minorfunctions.updateActiveSection(
                 PDF, words, pdfSettings)
-
-            pdfSettings.coords = minorfunctions.newCoords(
-                pdfSettings.coords, type)
 
             pdfSettings.paraNum = 0
             pdfSettings.bookmark = w+1
