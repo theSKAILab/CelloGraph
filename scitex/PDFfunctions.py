@@ -11,7 +11,7 @@ import copy
 
 def removePageHeadersEarly(words, pdfSettings):
     for i in range(len(pdfSettings.pageHeaders)):
-        if(pdfSettings.pageHeaders[i][0] == words[0]):
+        if(pdfSettings.pageHeaders[i] == words[:len(pdfSettings.pageHeaders[i])]):
             words = CutWords(words, pdfSettings.pageHeaders[i])
             return words
     return words

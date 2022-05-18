@@ -42,7 +42,7 @@ def PDFSort(pdf):
 
     # PDF = PDFfunctions.removeBibliography
     # bib must be removed before page/fig headers so that bib info don't get deleted
-    PDF = PDFfunctions.removePageHeaderSentences(PDF)
+    #PDF = PDFfunctions.removePageHeaderSentences(PDF)
 
     PDF = PDFfunctions.removeFigureHeaders(PDF)
 
@@ -50,6 +50,9 @@ def PDFSort(pdf):
 
 
 def DealWithPage(PDF, page, pdfSettings):
+    if(page.page_number == 9):
+        print("Breakpoint")
+
     pagewords = page.extract_words(
         y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
 
