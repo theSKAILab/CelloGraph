@@ -35,6 +35,7 @@ def MakeSentences(str, coords, p):
     ePattern = [{"TEXT": "!"}]
     bracketPattern = [{"SHAPE": "xxxx.[dd"}]
     numPattern = [{"SHAPE": "ddd-dddd).[dd"}]
+
     sentMatcher.add("Sentences", [sentPattern,
                     qPattern, ePattern, bracketPattern, numPattern])
 
@@ -44,10 +45,22 @@ def MakeSentences(str, coords, p):
     matches = sentMatcher(doc)
     # for each sentence, add it to the list and then move the bookmark forward
     for id, start, end in matches:
-        span = doc[bookmark: end]
-        bookmark = end
-        retval.append(PDFfragments.sentence(span.text, coords, p, sentNum))
-        sentNum += 1
+        # if not match "(|[ x* .|?|! x* ]|)"
+        paren = False
+        for t in range(start, bookmark-1, -1):
+            token = doc[t]
+            if token.text == ")" or token.text == "]":
+                break
+            if token.text == "(" or token.text == "[":
+                paren = True
+                break
+
+        if(paren == False):
+            span = doc[bookmark: end]
+            testthingy = doc[bookmark]
+            bookmark = end
+            retval.append(PDFfragments.sentence(span.text, coords, p, sentNum))
+            sentNum += 1
 
     # if it somehow didn't catch something then add that something to the end
     if(bookmark != len(doc)):

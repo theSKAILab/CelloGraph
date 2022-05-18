@@ -17,7 +17,7 @@ import PDFfunctions
 
 # mostly cuz I don't wanna look through 5000 lines when I'm looking at code.py
 
-# Sometimes the lines are just a little bit off in terms of how far away they are. I.e. two lines will be 13.7 apart, the next two will be 14.1
+
 VERTICAL_ERROR = .7
 HORIZONTAL_ERROR = 4
 RATIO_MARGIN = 0.05
@@ -34,7 +34,8 @@ def PDFSort(pdf):
     # declare variables that get used later.
     PDF = PDFfragments.PDFdocument()
 
-    pdfSettings = PDFsettings.PDFsettings(pdf, VERTICAL_ERROR, PARAS_REQUIRED)
+    pdfSettings = PDFsettings.PDFsettings(
+        pdf, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
     for pg in range(len(pdf.pages)):
         PDF, pdfSettings = DealWithPage(PDF, pdf.pages[pg], pdfSettings)
@@ -49,8 +50,11 @@ def PDFSort(pdf):
 
 
 def DealWithPage(PDF, page, pdfSettings):
-    pagewords = page.extract_words(y_tolerance=6)
+    pagewords = page.extract_words(
+        y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
+
     pagewords = PDFfunctions.removePageHeadersEarly(pagewords, pdfSettings)
+
     cols = textprocessing.HandleColumns(
         pagewords, HORIZONTAL_ERROR, VERTICAL_ERROR)
 

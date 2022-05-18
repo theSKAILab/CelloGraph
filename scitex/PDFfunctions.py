@@ -1,5 +1,6 @@
 import spacy
 from spacy.matcher import Matcher
+import re
 import textprocessing
 import PDFfragments
 import minorfunctions
@@ -311,16 +312,21 @@ def recursiveRemoveFigureHeaders(PDF, section):
             i -= 1
             continue
         sent = words(para.sentences[0].text)
-        if(len(sent) == 2 and sent[1].isdigit()):
+        sent2 = words(para.sentences[1].text)
+        if(len(sent) == 2 and sent[1].isdigit() or len(sent) == 1 and sent2[0].isdigit()):
             PDF.figures.append(para)
             PDF.sections[section.coords[0]] = recursiveRemovePara(
                 section, section.coords, para.paraNum)
             i -= 1
+
     for j in range(len(section.subsections)-1):
         PDF, section.subsections[j] = recursiveRemoveFigureHeaders(
             PDF, section.subsections[j])
     return PDF, section
 
+
+# "." counts
+# "(x* . x*)" doesn't count
 
 def cleanSection(section):
     nlp = spacy.load("en_core_web_sm")

@@ -4,7 +4,7 @@ import PDFparser
 import PDFfragments
 import plaintextwriter
 
-FILEPATH = "scitex/Gupta et al.pdf"
+FILEPATH = "scitex/Heinze.pdf"
 #FILEPATH = "Heinze.pdf"
 #FILEPATH = "Klemm et al.pdf"
 
@@ -21,7 +21,7 @@ print("this is just here so I can put a breakpoint here.")
 
 plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("debug output.rtf", 'w+', encoding="utf-8")
+file = open("Heinze debug output.rtf", 'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 
