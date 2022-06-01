@@ -478,10 +478,7 @@ def getWords(page, hError, spaceChar=False):
         horizontalSpace = not minorfunctions.areEqual(
             chars[i+1]["x0"], chars[i]["x1"], size)
 
-        if(i == 126):
-            print("Breakpoint")
-
-        if(topUnEqual or (not spaceChar and horizontalSpace and bookmark != i)):
+        if(topUnEqual or (not spaceChar and horizontalSpace)):
             retval.append(makeWord(chars[bookmark:i+1]))
             bookmark = i+1
 

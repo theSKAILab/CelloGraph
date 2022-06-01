@@ -40,27 +40,34 @@ def MakeSentences(str, coords, p):
                     qPattern, ePattern, bracketPattern, numPattern])
 
     doc = nlp(str)
-    bookmark = 0
     sentNum = 0
+    text = ""
     matches = sentMatcher(doc)
+    bookmark = 0
+    lookAt = []
     # for each sentence, add it to the list and then move the bookmark forward
     for id, start, end in matches:
-        # if not match "(|[ x* .|?|! x* ]|)"
+
+        # don't add the sentence if it's just periods or if its inside parenthesis/brackets.
         paren = False
-        text = doc[start:end]
-        for t in range(len(text) - 1):
-            if text[t] == ')' or text[t] == ']':
+        dots = True
+        text = doc[bookmark:end]
+        test = len(text)
+        for t in range(len(text) - 1, -1, -1):
+            token = text[t].text
+            if text[t].text != '.':
+                dots = False
+            if text[t].text == ')' or text[t].text == ']':
                 break
-            if text[t] == '(' or text[t] == '[':
+            if text[t].text == '(' or text[t].text == '[':
                 paren = True
                 break
 
-        if(paren == False):
-            span = doc[bookmark: end]
-            testthingy = doc[bookmark]
-            bookmark = end
-            retval.append(PDFfragments.sentence(span.text, coords, p, sentNum))
+        if(not dots and not paren):
+            retval.append(PDFfragments.sentence(text.text, coords, p, sentNum))
             sentNum += 1
+            text = ""
+            bookmark = end
 
     # if it somehow didn't catch something then add that something to the end
     if(bookmark != len(doc)):
@@ -86,6 +93,7 @@ def DetermineParagraph(words, w, pdfSettings, error):
             return False
 
 
+# returns true if w is the first word on a new line.
 def newline(words, w, error=0):
     if(w == 0):
         return True
@@ -93,8 +101,6 @@ def newline(words, w, error=0):
     #    return False
     # else:
     #    return True
-    if(w == 84):
-        print("Breakpoint")
     topGreater = minorfunctions.isGreater(
         words[w]["top"], words[w-1]["top"], error)
     bottomGreater = minorfunctions.isGreater(

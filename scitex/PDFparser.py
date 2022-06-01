@@ -53,17 +53,15 @@ def DealWithPage(PDF, page, pdfSettings):
 
     pagechars = page.chars
 
-    if(page.page_number == 7):
-        print("Breakpoint")
-
     pagewords = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
-
     pagewords = PDFfunctions.removePageHeadersEarly(
         pagewords, page.page_number, pdfSettings)
 
     # cols = textprocessing.HandleColumns(
     #    pagewords, pdfSettings.horizontal, pdfSettings.intraline)
 
+    if(page.page_number == 10):
+        print("Breakpoint")
     cols = [pagewords]
 
     for c in range(len(cols)):
