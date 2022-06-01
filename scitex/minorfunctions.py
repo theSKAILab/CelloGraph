@@ -13,54 +13,76 @@ def most_frequent(List):
 # The following functions are short and used for my own sanity
 
 
-# "equal" so that we can have an error margin, error is a percentage
-def areEqual(val1, val2, error=0):
+# if percentage is true, it'll return true if v1 is within error% of v2
+# if percentage is false, it'll return true if v1 = v2 +- error
+def areEqual(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
-    if(val1 <= val2*((error+100)/100) and val1 >= val2*((100-error)/100)):
-        return True
+    error = float(error)
+    if(percentage):
+        if(val1 < val2*((100+error)/100) and val1 > val2*(100-error)/100):
+            return True
+        else:
+            return False
     else:
-        return False
+        if(val1 <= val2 + error and val1 >= val2 - error):
+            return True
+        else:
+            return False
 
 
 # areEqual but for a list.
-
-
-def listElementsEqual(list, error=0):
+def listElementsEqual(list, error=0, percentage=False):
     for i in range(len(list)):
-        for j in range(1, len(list)):
-            if(not areEqual(list[i], list[j], error)):
+        for j in range(i, len(list)):
+            if(not areEqual(list[i], list[j], error, percentage)):
                 return False
     return True
 
 
-def isGreater(val1, val2, error=0):
+# returns true if val1 > val2+error or val1 < val2* (100+error)%
+def isGreater(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
-    if(val1 > val2*((100+error)/100)):
-        return True
+    if(percentage):
+        if(val1 > val2*((100+error)/100)):
+            return True
+        else:
+            return False
     else:
-        return False
+        if(val1 > val2 + error):
+            return True
+        else:
+            return False
 
 
-def isLesser(val1, val2, error=0):
+# returns true if val1 < val2-error or val1 < val2* (100-error)%
+def isLesser(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
-    if(val1 < val2*((100-error)/100)):
-        return True
+    if(percentage):
+        if(val1 < val2*((100-error)/100)):
+            return True
+        else:
+            return False
     else:
-        return False
+        if(val1 < val2 - error):
+            return True
+        else:
+            return False
 
 
-def EndofCol(d, diffs):
-    return d > len(diffs)-1
+# just for shorthand
+def isEndofCol(i, lines):
+    return i > len(lines)-1
+
 
 # returns the most common element in an array.
 # if there's a tie it'll take the one that happens first.
 # index is something for whether you want the index or the value.
-
-
 def mostCommon(arr, index=False, error=0):
+    if(len(arr) == 0):
+        return None
     retval = 0
 
     # countarr has elements [element, indices, counts]
@@ -85,57 +107,29 @@ def mostCommon(arr, index=False, error=0):
 
 
 # take a list of dicts, make a list of attribute
-def reverseDiff(diffs, attribute):
+def reverseArr(arr, attribute):
     retval = []
-    for d in range(len(diffs)):
-        retval.append(diffs[d][attribute])
+    for i in range(len(arr)):
+        retval.append(arr[i][attribute])
     return retval
 
 
+# this is for shorthand.
 def mostCommonLineSpace(arr, index=False, error=0):
-    retval = 0
-
-    arr = reverseDiff(arr, "AftSpace")
-
-    countarr = [[], [], []]
-
-    for i in range(len(arr)):
-        j = isIn(arr[i], countarr[0], error)
-        if(j > -1):
-            countarr[2][j] += 1
-        else:
-            countarr[0].append(arr[i])
-            countarr[1].append(i)
-            countarr[2].append(1)
-
-    maxdex = myMax(countarr[2], True)
-    if(index):
-        # returns the index of the thing with the highest count
-        return countarr[1][maxdex]
-    else:
-        # returns the thing with the highest count
-        return countarr[0][maxdex]
-    # occurence_count = Counter(arr)
-#
-    # if(index):
-    #    mostcommon = occurence_count.most_common(1)[0][0]
-    #    for i in range(len(arr)):
-    #        if(areEqual(arr[i], mostcommon, error)):
-    #            return i
-    #    return arr[0]
-    # else:
-    #    # returns the thing with the highest count
-    #    return occurence_count.most_common(1)[0][0]
+    arr = reverseArr(arr, "AftSpace")
+    return mostCommon(arr, index, error)
 
 
 # Python's default 'in' method doens't return the index, so I fixed that.
-def isIn(element, arr, error=0):
+def isIn(element, arr, error=0, percentage=False):
     for i in range(len(arr)):
-        if areEqual(arr[i], element, error):
+        if areEqual(arr[i], element, error, percentage):
             return i
     return -1
 
 
+# if element isn't in arr, appends element to arr.
+# takes a list, returns a list.
 def appendNoRepeats(element, arr):
     inArr = False
     for i in range(len(arr)):
@@ -146,10 +140,8 @@ def appendNoRepeats(element, arr):
         arr.append(element)
     return arr
 
-# similarly, python's default 'max' function doesn't return the index.
-# so I made a new max, where index=True will return the index.
 
-
+# I made a new max function, where index=True will return the index of the max.
 def myMax(arr, index=False):
     retval = 0
     for i in range(len(arr)):
@@ -161,14 +153,14 @@ def myMax(arr, index=False):
         return arr[retval]
 
 
-# update the coordinates
+# update the coordinates of what section or sub-sub-etc-section we're in.
 def newCoords(coords, type):
     newcoords = []
-    # if we're in a shallower section now (from 2.3.4.5 to 3.1) remove depth
+    # if we're in a shallower section now (from 2.3.4.5 to 2.4) remove depth
     if(len(coords) > type):
         for i in range(type):
             newcoords.append(coords[i])
-    # if we're in a deeper section, add depth.
+    # if we're in a deeper section, (2.3 to 2.3.1) add depth.
     elif(len(coords) < type):
         newcoords = coords
         newcoords.append(-1)
@@ -181,6 +173,8 @@ def newCoords(coords, type):
     return coords
 
 
+# returns the last subsection (or sub-sub-sub-etc-section) of the last section
+# also updates its type if need be.
 def updateActiveSection(PDF, words, pdfSettings):
     active = PDF.lastSect()
     test = active.lastsub()
@@ -193,33 +187,45 @@ def updateActiveSection(PDF, words, pdfSettings):
     return active
 
 
+# returns either "None" if there are no lines, or the highest line.
+# pass in pdf.pages[i].objs
 def heighestLine(objs):
     try:
         objs["line"]
     except:
         return None
 
-    retval = None
-    for line in objs["line"]:
-        if(not retval):
-            retval = line
-        elif(retval["top"] > line["top"]):
-            retval = line
-
-    return retval
+    return toppest(objs["line"])
 
 
+# returns either "None" if there are no lines, or the lowest line.
+# pass in pdf.pages[i].objs
 def lowestLine(objs):
     try:
         objs["line"]
     except:
         return None
 
-    retval = None
-    for line in objs["line"]:
-        if(not retval):
-            retval = line
-        elif(retval["bottom"] < line["bottom"]):
-            retval = line
+    return bottomest(objs["line"])
 
+
+# returns the thing with the highest "top" attribute
+def toppest(list):
+    retval = None
+    for thing in list:
+        if(not retval):
+            retval = thing
+        elif(thing["top"] > retval["top"]):
+            retval = thing
+    return retval
+
+
+# returns the thing with the lowest "bottom" attribute
+def bottomest(list):
+    retval = None
+    for thing in list:
+        if(not retval):
+            retval = thing
+        elif(thing["bottom"] < retval["bottom"]):
+            retval = thing
     return retval

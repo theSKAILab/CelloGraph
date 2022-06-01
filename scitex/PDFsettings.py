@@ -1,6 +1,8 @@
 from enum import Enum
 import minorfunctions
 import PDFfragments
+import PDFfunctions
+import textprocessing
 
 
 class PDFsettings():
@@ -8,11 +10,13 @@ class PDFsettings():
         self.paraAlign = -1
         self.paraSpace = -1
 
-        self.linespace, self.lineratio, self.lineheight, self.paraAlign, self.paraSpace, self.vert, self.horizontal = FindSpace(
+        self.linespace, self.lineratio, self.lineheight, self.paraAlign, self.paraSpace, self.interline, self.horizontal = FindSpace(
             pdf, vError, hError, PARAS_REQUIRED)
 
-        self.pageHeaders = FindPageHeaders(pdf, self)
-        self.pageFooters = FindPageFooters(pdf, self)
+        self.intraline = self.linespace * .4
+
+        self.pageHeaders = FindPageHeaders(pdf, self, hError)
+        self.pageFooters = FindPageFooters(pdf, self, hError)
 
         self.useSpace = False
         if(self.paraAlign == -1):
@@ -27,41 +31,55 @@ class PDFsettings():
         self.activesection = PDFfragments.section("")
 
 
-def FindPageHeaders(pdf, pdfSettings):
+class Header():
+    def __init__(self, text, expect_num=False):
+        self.text = text
+        self.expect_num = expect_num
+
+    def __eq__(self, other):
+        return self.text == other.text and self.expect_num == self.expect_num
+
+
+def FindPageHeaders(pdf, pdfSettings, hError):
     headers = []
     for i in range(len(pdf.pages)-4):
-        words = pdf.pages[i].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
-        words2 = pdf.pages[i+2].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
-        words3 = pdf.pages[i+4].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
+        words = PDFfunctions.getWords(pdf.pages[i], hError)
+
+        words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
+
+        words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
+
         index = 0
         first1 = words[0]
+        expect_num = False
         while first1["text"].isdigit():
             index += 1
             first1 = words[index]
         if words[index]["text"] == words2[index]["text"] and words2[index]["text"] == words3[index]["text"]:
-            count = 1
+            count = 0
             for k in range(index, len(words)):
                 if words[k]["text"] == words2[k]["text"] and words2[k]["text"] == words3[k]["text"]:
                     count += 1
+                elif(words[k]["text"].isdigit() and words[k]["text"] == i+1):
+                    expect_num = True
+                    break
+                elif(words[k]["text"][0:len(str(i+1))] == str(i+1)):
+                    expect_num = True
+                    break
                 else:
                     break
             headers = minorfunctions.appendNoRepeats(
-                words[0:count], headers)
+                Header(words[0:count], expect_num), headers)
     return headers
 
 
-def FindPageFooters(pdf, pdfSettings):
+def FindPageFooters(pdf, pdfSettings, hError):
     headers = []
     for i in range(len(pdf.pages)-4):
-        words = pdf.pages[i].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
-        words2 = pdf.pages[i+2].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
-        words3 = pdf.pages[i+4].extract_words(
-            y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
+        words = PDFfunctions.getWords(pdf.pages[i], hError)
+        words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
+        words3 = PDFfunctions.getWords(pdf.pages[i+3], hError)
+
         if words[len(words)-1] == words2[len(words2)-1] and words2[len(words2)-1] == words3[len(words3)-1]:
             count = 1
             for k in range(1, len(words)):
@@ -87,28 +105,23 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
     # For now we're going to use the first three pages, because if there are 3 pages without a
     # normal line space; paragraph space; and a section space, then too bad. (for now)
     pages = []
-    pages.append(pdf.pages[0].extract_words(y_tolerance=1, x_tolerance=1))
-    pages.append(pdf.pages[1].extract_words(y_tolerance=1, x_tolerance=1))
-    pages.append(pdf.pages[2].extract_words(y_tolerance=1, x_tolerance=1))
+    pages.append(PDFfunctions.getWords(pdf.pages[0], hError))
+    pages.append(PDFfunctions.getWords(pdf.pages[1], hError))
+    pages.append(PDFfunctions.getWords(pdf.pages[2], hError))
 
     # for each word, if it has a different y coordinate, note the difference
-    # diffs[0] is the distance between lines
-    # diffs[1] is the index of the last word of the previous line
-    # diffs[2] is the first index of each line
-    # diffs[3] is the left-alignment of the first word of each line
-    # diffs[4] is, for each line, the height of that line divided by the space between that line and the next line.
-    # diffs[5] is the height of each line
-    diffs = []
+
+    lines = []
     spaces = []
 
     for i in range(len(pages)):
         bookmark = 0
         words = pages[i]
         for j in range(1, len(words)):
-            if(not minorfunctions.areEqual(words[j-1]["top"], words[j]["top"], vError)):
+            if(textprocessing.newline(words, j, vError/100)):
                 diff = words[j]["top"] - words[bookmark]["bottom"]
                 height = words[j]["bottom"] - words[j]["top"]
-                diffs.append({"AftSpace": float(diff), "LineEndDex": bookmark, "LineStartDex": j,
+                lines.append({"AftSpace": float(diff), "LineEndDex": bookmark, "LineStartDex": j,
                              "Align": words[j]["x0"], "Height": height, "Ratio": float(height/diff)})
                 bookmark = j
             else:
@@ -116,29 +129,30 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
 
     # the most common difference is going to be the difference between one line and another.
     # True means we want an index and not the most common value.
-    lineIndex = minorfunctions.mostCommonLineSpace(diffs, True, vError)
-    linespace = float(diffs[lineIndex]["AftSpace"])
+    lineIndex = minorfunctions.mostCommonLineSpace(lines, True, vError/100)
+    linespace = float(lines[lineIndex]["AftSpace"])
+    lineratio = float(lines[lineIndex]["Ratio"])
+    lineheight = float(lines[lineIndex]["Height"])
 
     wordspace = float(minorfunctions.mostCommon(spaces, False, hError))
-    vert = linespace * ((100-vError)/100)
-    horizontal = wordspace * ((100-hError)/100)
-    lineratio = float(diffs[lineIndex]["Ratio"])
-    lineheight = float(diffs[lineIndex]["Height"])
+    vert = linespace * ((vError)/100)
+    horizontal = wordspace * ((hError)/100)
+
     # paraAlign should be the x coordinate of the body text, so that any line with a different x-coordinate can be a new paragraph.
 
     paraSpace = -1
     paraAlign = -1
     paraCount = 0
 
-    for d in range(1, len(diffs[0])-1):
-        if(minorfunctions.listElementsEqual([diffs[d-1]["AftSpace"], linespace, diffs[d+1]["AftSpace"]], vError) and isGreater(diffs[d]["AftSpace"], linespace, vError)):
-            paraSpace = diffs[d]["AftSpace"]
+    for i in range(1, len(lines[0])-1):
+        if(minorfunctions.listElementsEqual([lines[i-1]["AftSpace"], linespace, lines[i+1]["AftSpace"]], vError) and minorfunctions.isGreater(lines[i]["AftSpace"], linespace, vError)):
+            paraSpace = lines[i]["AftSpace"]
             paraCount = 0
 
     if(paraCount < PARAS_REQUIRED):
         paraSpace = -1
 
     if(paraSpace == -1):
-        paraAlign = diffs[lineIndex]["Align"]
+        paraAlign = lines[lineIndex]["Align"]
 
     return linespace, lineratio, lineheight, paraAlign, paraSpace, vert, horizontal

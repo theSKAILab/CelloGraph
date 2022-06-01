@@ -17,9 +17,9 @@ import PDFfunctions
 
 # mostly cuz I don't wanna look through 5000 lines when I'm looking at code.py
 
-
-VERTICAL_ERROR = .7
-HORIZONTAL_ERROR = 4
+# these are sorta misnomers but the higher these values are the lower the actual error value will be
+VERTICAL_ERROR = 5
+HORIZONTAL_ERROR = 10
 RATIO_MARGIN = 0.05
 
 # para-margin is the number of unusual spaces that have to happen before I'll believe that they're being used
@@ -50,16 +50,21 @@ def PDFSort(pdf):
 
 
 def DealWithPage(PDF, page, pdfSettings):
-    if(page.page_number == 9):
+
+    pagechars = page.chars
+
+    if(page.page_number == 7):
         print("Breakpoint")
 
-    pagewords = page.extract_words(
-        y_tolerance=pdfSettings.vert, x_tolerance=pdfSettings.horizontal)
+    pagewords = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 
-    pagewords = PDFfunctions.removePageHeadersEarly(pagewords, pdfSettings)
+    pagewords = PDFfunctions.removePageHeadersEarly(
+        pagewords, page.page_number, pdfSettings)
 
-    cols = textprocessing.HandleColumns(
-        pagewords, HORIZONTAL_ERROR, VERTICAL_ERROR)
+    # cols = textprocessing.HandleColumns(
+    #    pagewords, pdfSettings.horizontal, pdfSettings.intraline)
+
+    cols = [pagewords]
 
     for c in range(len(cols)):
         pdfSettings.bookmark = 0
@@ -69,23 +74,25 @@ def DealWithPage(PDF, page, pdfSettings):
 
 
 def DealWithCol(PDF, page, words, pdfSettings):
-    PDF, words = PDFfunctions.removeTables(PDF, page, words, VERTICAL_ERROR)
+    PDF, words = PDFfunctions.removeTables(
+        PDF, page, words, pdfSettings.interline)
 
-    diffs, pdfSettings = PDFfunctions.getDiffs(
-        words, pdfSettings, VERTICAL_ERROR)
+    lines, pdfSettings = PDFfunctions.getLines(
+        words, pdfSettings, pdfSettings.intraline)
 
-    for d in range(len(diffs)):
-        PDF, pdfSettings = DealWithDiff(
-            PDF, words, diffs, d, pdfSettings)
+    for i in range(len(lines)):
+        PDF, pdfSettings = DealWithLine(
+            PDF, words, lines, i, pdfSettings)
 
     # Add whatever text is at the end of the col.
     if(pdfSettings.bookmark != len(words)-1):
-        w = diffs[len(diffs)-1]["LineEndDex"]
-        if(w > len(words)-1):
-            w = len(words)-1
+        w = len(words)-1
+
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
-        if(pdfSettings.addto):
+        if(len(sentlist) == 0):
+            return PDF, pdfSettings
+        elif(pdfSettings.addto):
             addto = False
             if(len(pdfSettings.activesection.para) == 0):
                 newpara = PDFfragments.paragraph(
@@ -102,7 +109,7 @@ def DealWithCol(PDF, page, words, pdfSettings):
                         activepara.sentences.append(" " + sentlist[s].text)
                 else:
                     pdfSettings.activesection.para[len(
-                        activesection.para)-1].sentences.append(sentlist[s])
+                        pdfSettings.activesection.para)-1].sentences.append(sentlist[s])
         else:
             para = PDFfragments.paragraph(
                 pdfSettings.coords, pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites))
@@ -113,18 +120,21 @@ def DealWithCol(PDF, page, words, pdfSettings):
     return PDF, pdfSettings
 
 
-def DealWithDiff(PDF, words, diffs, d, pdfSettings):
-    w = diffs[d]["LineEndDex"]
+def DealWithLine(PDF, words, lines, lineIndex, pdfSettings):
+    w = lines[lineIndex]["LineEndDex"]
     if(w > len(words)-1):
         w = len(words)-1
 
-    settings = textSettings.diffSettings(
-        d, diffs, pdfSettings, VERTICAL_ERROR)
+    if(lineIndex == 17):
+        print("Breakpoint")
 
-    if(settings.type == textSettings.diffType.START_MULTI):
-        pdfSettings.consistentRatio = diffs[d]["AftRatio"]
+    settings = textSettings.lineSettings(
+        lineIndex, lines, pdfSettings, pdfSettings.interline)
 
-    elif(settings.type == textSettings.diffType.END_SECTION):
+    if(settings.type == textSettings.lineType.START_MULTI):
+        pdfSettings.consistentRatio = lines[lineIndex]["AftRatio"]
+
+    elif(settings.type == textSettings.lineType.END_SECTION):
         pdfSettings.addto = False
         pdfSettings.consistentRatio = 0
         if(pdfSettings.bookmark < len(words)):
@@ -143,7 +153,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
             pdfSettings.bookmark = w+1
 
     # if it's the end of a non-section block, add that block as a paragraph.
-    elif(settings.type == textSettings.diffType.END_BLOCK):
+    elif(settings.type == textSettings.lineType.END_BLOCK):
         pdfSettings.addto = False
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
@@ -158,7 +168,7 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
         pdfSettings.paraNum += 1
         pdfSettings.bookmark = w+1
     # if there's a new paragraph, add that.
-    elif (textprocessing.DetermineParagraph(words, w, pdfSettings, VERTICAL_ERROR)):
+    elif (textprocessing.DetermineParagraph(words, w, pdfSettings, pdfSettings.interline)):
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         # if this is the 2nd half of a cutoff paragraph, sew it back together.
@@ -166,6 +176,11 @@ def DealWithDiff(PDF, words, diffs, d, pdfSettings):
             pdfSettings.addto = False
             activepara = pdfSettings.activesection.para[len(
                 pdfSettings.activesection.para)-1]
+            while(len(activepara.sentences) == 0):
+                pdfSettings.activesection.para.pop(len(
+                    pdfSettings.activesection.para)-1)
+                activepara = pdfSettings.activesection.para[len(
+                    pdfSettings.activesection.para)-1]
             for s in range(len(sentlist)):
                 if(s == 0):
                     activepara.sentences[len(

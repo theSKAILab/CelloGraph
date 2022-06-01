@@ -5,8 +5,6 @@ import PDFfragments
 import plaintextwriter
 
 FILEPATH = "scitex/Heinze.pdf"
-#FILEPATH = "Heinze.pdf"
-#FILEPATH = "Klemm et al.pdf"
 
 
 plumber = pdfplumber.open(FILEPATH)
@@ -21,7 +19,7 @@ print("this is just here so I can put a breakpoint here.")
 
 plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("Heinze debug output.rtf", 'w+', encoding="utf-8")
+file = open("Heinze debug output.txt", 'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 

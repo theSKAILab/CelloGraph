@@ -47,11 +47,11 @@ def MakeSentences(str, coords, p):
     for id, start, end in matches:
         # if not match "(|[ x* .|?|! x* ]|)"
         paren = False
-        for t in range(start, bookmark-1, -1):
-            token = doc[t]
-            if token.text == ")" or token.text == "]":
+        text = doc[start:end]
+        for t in range(len(text) - 1):
+            if text[t] == ')' or text[t] == ']':
                 break
-            if token.text == "(" or token.text == "[":
+            if text[t] == '(' or text[t] == '[':
                 paren = True
                 break
 
@@ -89,25 +89,44 @@ def DetermineParagraph(words, w, pdfSettings, error):
 def newline(words, w, error=0):
     if(w == 0):
         return True
-    if(not minorfunctions.areEqual(words[w-1]["top"], words[w]["top"], error) and not minorfunctions.areEqual(
-            words[w-1]["bottom"], words[w]["bottom"]), error):
+    # if(words[w][top] <= words[w-1][top] or words[w][bottom] >= words[w-1][bottom]):
+    #    return False
+    # else:
+    #    return True
+    if(w == 84):
+        print("Breakpoint")
+    topGreater = minorfunctions.isGreater(
+        words[w]["top"], words[w-1]["top"], error)
+    bottomGreater = minorfunctions.isGreater(
+        words[w]["bottom"], words[w-1]["bottom"], error)
+    if(topGreater and bottomGreater):
         return True
     return False
+
+
+def charNewline(chars, c, error=0):
+    if(c == 0):
+        return True
+    if(not minorfunctions.areEqual(words[w-1]["y0"], words[w]["y0"], error) and not minorfunctions.areEqual(
+            words[w-1]["y1"], words[w]["y1"]), error):
+        return True
+    return False
+
 
 # ratio is the height/space ratio of the current line
 # lineratio is the expected ratio of a normal line
 # same for height and lineheight
 # diffs is the list of lines
-# d is the current index in that list
+# i is the current index in that list
 
 
-def Determinesection(ratio, lineratio, height, lineheight, diffs, d, ratioerror):
+def Determinesection(ratio, lineratio, height, lineheight, lines, i, ratioerror):
     if(ratio < .3):
         return False
     # if we think this line is a section
     if(ratio < lineratio-ratioerror and height > lineheight):
         # if the next line is a section, or the line after is normal.
-        if(d < len(diffs)-3 and diffs[d+2]["AftRatio"] > lineratio-ratioerror):
+        if(i < len(lines)-3 and lines[i+2]["AftRatio"] > lineratio-ratioerror):
             return True
     return False
 
@@ -140,7 +159,7 @@ def FindsectionType(sectionheader):
 
 def CitationRemoval(cites, PDF, word, coords, paraNum):
     # find all the citations
-    pattern = r'\[\d\]'
+    pattern = r'\[\i\]'
     results = re.finditer(pattern, word["text"])
 
     # add each one to the PDF's list of citations and then remove it.
@@ -157,11 +176,14 @@ def HandleColumns(words, hError, vError):
     retval = [[]]
     c = 0
 
-    for w in range(0, len(words)):
+    for w in range(2, len(words)):
+
         prevspace = words[w-1]["x1"] - words[w-2]["x0"]
         space = words[w]["x1"] - words[w-1]["x0"]
-        if(minorfunctions.isGreater(space, prevspace, hError)) and minorfunctions.isGreater(
-                words[w-1]["top"], words[w]["top"], vError):
+
+        if(newline(words, w-1, vError)):
+            continue
+        if(minorfunctions.isGreater(space, prevspace, hError) and not newline(words, w, vError)):
             c += 1
         if(newline(words, w, vError)):
             c = 0

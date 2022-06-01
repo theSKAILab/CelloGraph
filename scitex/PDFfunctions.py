@@ -5,18 +5,30 @@ import textprocessing
 import PDFfragments
 import minorfunctions
 import copy
+import decimal
 
-# fix to look at every other page for page headers instead of "every page w/equal text"
 
-
-def removePageHeadersEarly(words, pdfSettings):
+# look through each page header and if it matches the beginning of the page,
+# remove the page header from the page.
+# Also removes page numbers from the beginning of the page.
+def removePageHeadersEarly(words, num, pdfSettings):
+    if(words[0:len(str(num))] == str(num)):
+        words = words[1:]
+    if(words[0]["text"][0:len(str(num))] == str(num)):
+        words[0]["text"] = words[0]["text"][len(str(num)):]
     for i in range(len(pdfSettings.pageHeaders)):
-        if(pdfSettings.pageHeaders[i] == words[:len(pdfSettings.pageHeaders[i])]):
-            words = CutWords(words, pdfSettings.pageHeaders[i])
+        if(pdfSettings.pageHeaders[i].text == words[:len(pdfSettings.pageHeaders[i].text)]):
+            words = CutWords(words, pdfSettings.pageHeaders[i].text)
+            if(pdfSettings.pageHeaders[i].expect_num and words[0]["text"][0:len(str(num))] == str(num)):
+                if(len(words[0]["text"]) == len(str(i))):
+                    words = words[1:]
+                else:
+                    words[0]["text"] = words[0]["text"][1:]
             return words
     return words
 
 
+# takes words off of large as long as they match the words in small.
 def CutWords(large, small):
     for i in range(len(small)-1, -1, -1):
         if small[i] == large[i]:
@@ -26,6 +38,7 @@ def CutWords(large, small):
     return large
 
 
+# removes any text that's between pdfplumber line objects.
 def removeTables(PDF, page, words, error):
     objs = page.objects
 
@@ -61,8 +74,11 @@ def removeTables(PDF, page, words, error):
     return PDF, words
 
 
-def getDiffs(words, pdfSettings, error):
-    diffs = []
+# goes through all the words and organizes them into diff objects
+# diffs are essentially lines of text (maybe I should rename them...)
+# they do have some accompanying stats like height and spacing for ease of access.
+def getLines(words, pdfSettings, error):
+    lines = []
     bookmark = 0
     for w in range(len(words)-1):
         # if the first word is lowercase, then a paragraph probably got split up.
@@ -77,21 +93,31 @@ def getDiffs(words, pdfSettings, error):
             befspace = float(words[w]["top"] - words[bookmark]["bottom"])
             if bookmark == 0:
                 befspace = pdfSettings.linespace * 2
-            if(len(diffs) == 1):
-                diffs[0]["AftSpace"] = befspace
-                diffs[0]["AftRatio"] = diffs[0]["Height"]/befspace
+            if(len(lines) == 1):
+                lines[0]["AftSpace"] = befspace
+                lines[0]["AftRatio"] = lines[0]["Height"]/befspace
             height = float(words[w]["bottom"] - words[w]["top"])
             aftRatio = height/aftspace
             befRatio = height/befspace
-            diffs.append({"LineEndDex": w, "AftSpace": aftspace,
+            lines.append({"LineEndDex": w, "AftSpace": aftspace,
                          "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
                           "Align": words[w]["x0"], "Text": words[bookmark+1:w+1]})
             bookmark = w
-    return diffs, pdfSettings
+
+    if(bookmark != len(words)-2):
+        lw = len(words)-1
+        befspace = float(words[lw]["top"] - words[bookmark]["bottom"])
+        aftspace = befspace
+        height = float(words[lw]["bottom"] - words[lw]["top"])
+        aftRatio = height/aftspace
+        befRatio = height/befspace
+        lines.append({"LineEndDex": lw, "AftSpace": aftspace,
+                     "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
+                      "Align": words[lw]["x0"], "Text": words[bookmark+1:lw]})
+    return lines, pdfSettings
+
 
 # returns True if words[w] is on a newline
-
-
 def newline(words, w, error):
     if w == 0:
         return False
@@ -100,9 +126,8 @@ def newline(words, w, error):
     if(minorfunctions.areEqual(top, nextTop, error)):
         return False
     bot = float(words[w]["bottom"])
-    prevBot = float(words[w-1]["bottom"])
     nextBot = float(words[w+1]["bottom"])
-    if(minorfunctions.listElementsEqual([bot, prevBot, nextBot], error)):
+    if(minorfunctions.listElementsEqual([bot, nextBot], error)):
         return False
     return True
 
@@ -112,10 +137,7 @@ def newline(words, w, error):
 # destination is a Section header who will receive tomove's contents.
 # tomove's contents will be added at the end of destination
 # If destination has subsections, tomove's contents will be added there instead.
-
-
 def moveSection(tomove, destination):
-    # check to see if there's a subsection we should be putting this in
     check = 0
     if(len(destination.subsections) > 0):
         check = len(destination.subsections[len(
@@ -127,11 +149,14 @@ def moveSection(tomove, destination):
                 copy.deepcopy(tomove.subsections[i]))
         for i in range(len(tomove.para)):
             destination.para.append(copy.deepcopy(tomove.para[i]))
+        return destination
     else:
-        moveSection(
+        destination.subsections[len(destination.subsections)-1] = moveSection(
             tomove, destination.subsections[len(destination.subsections)-1])
+        return destination
 
 
+# adds the section to PDF
 def addSection(header, title, type, PDF, pdfSettings, recursionlevel=0):
 
     coords = copy.copy(pdfSettings.coords)
@@ -176,8 +201,6 @@ def addSection(header, title, type, PDF, pdfSettings, recursionlevel=0):
 
 # Intent is to remove running headers at the top of the page that get marked as headers
 # This is achieved by removing sections with duplicate headers.
-
-
 def removeDuplicateHeaders(PDF):
     single = []
     remove = []
@@ -212,6 +235,7 @@ def removeDuplicateHeaders(PDF):
             PDF.sections.pop(remove[i][0])
 
 
+# removes duplicate sentences.
 def removePageHeaderSentences(PDF):
     single = []
     remove = []
@@ -253,6 +277,8 @@ def removePageHeaderSentences(PDF):
     return PDF
 
 
+# removes a sentence from a section at the given coords, para, and sent
+# it will navigate itself to the correct subsection before trying to remove the sentence.
 def recursiveRemoveSentence(section, coords, paraNum, sentNum):
     if(len(coords) == 0):
         return section
@@ -266,6 +292,7 @@ def recursiveRemoveSentence(section, coords, paraNum, sentNum):
         return recursiveRemoveSentence(section, coords[1:], paraNum, sentNum)
 
 
+# Same as "recursiveRemoveSentence" but for paragraphs
 def recursiveRemovePara(section, coords, paraNum):
     if(len(coords) == 0 or paraNum >= len(section.para)):
         return section
@@ -292,14 +319,43 @@ def recursiveRemovePara(section, coords, paraNum):
 def removeFigureHeaders(PDF):
     if(len(PDF.sections) == 0):
         return PDF
-    else:
-        for i in range(len(PDF.sections)):
-            if i == 6:
-                print("Breakpoint")
-            PDF, PDF.sections[i] = recursiveRemoveFigureHeaders(
-                PDF, PDF.sections[i])
-            PDF.sections[i] = cleanSection(PDF.sections[i])
+
+    nlp = spacy.load("en_core_web_sm")
+
+    i = -1
+    while i < len(PDF.sections)-2:
+        i += 1
+        doc = nlp(PDF.sections[i].title)
+        if(len(doc) > 1):
+            if(doc[1].text.isdigit() or doc[1].text == "." and doc[2].text.isdigit()):
+                PDF.sections[i] = DealWithMultiLineFigureHeader(
+                    PDF.sections[i])
+
+                PDF.sections[i -
+                             1] = moveSection(PDF.sections[i], PDF.sections[i-1])
+                PDF.sections.pop(i)
+                i -= 1
+
+        PDF, PDF.sections[i] = recursiveRemoveFigureHeaders(
+            PDF, PDF.sections[i])
+        PDF.sections[i] = cleanSection(PDF.sections[i])
     return PDF
+
+
+# In the event that a figure header goes onto multiple lines, this will remove all of them.
+def DealWithMultiLineFigureHeader(section):
+    if(len(section.para) == 0):
+        return section
+    if(len(section.para[0].sentences) == 0):
+        return section
+    nlp = spacy.load("en_core_web_sm")
+    doc = nlp(section.para[0].sentences[0].text)
+
+    if(doc[0].is_lower):
+        section.title += section.para[0].sentences[0].text
+        section.para[0].sentences.pop(0)
+
+    return section
 
 
 def recursiveRemoveFigureHeaders(PDF, section):
@@ -310,6 +366,8 @@ def recursiveRemoveFigureHeaders(PDF, section):
         if(len(para.sentences) == 0):
             section.para.pop(i)
             i -= 1
+            continue
+        if(len(para.sentences) == 1):
             continue
         sent = words(para.sentences[0].text)
         sent2 = words(para.sentences[1].text)
@@ -328,6 +386,8 @@ def recursiveRemoveFigureHeaders(PDF, section):
 # "." counts
 # "(x* . x*)" doesn't count
 
+
+# cleanSection takes a section and removes empty paragraphs and stitches fragmented ones together.
 def cleanSection(section):
     nlp = spacy.load("en_core_web_sm")
     i = 0
@@ -356,6 +416,7 @@ def cleanSection(section):
     return section
 
 
+# turn a string of text into an array of words
 def words(str):
     retval = []
     bookmark = 0
@@ -363,4 +424,97 @@ def words(str):
         if str[i] == ' ' or str[i] == '.':
             retval.append(str[bookmark:i])
             bookmark = i+1
+    return retval
+
+
+# use this instead of the default pdfplumber.extract_text()
+# extract text only looks at the doctop attribute, which makes it not read subscript right
+# page is pdf.pages[i] via pdfplumber
+# hError is an integer
+# spaceChar is for if words are delineated by space characters instead of just physical space
+
+def getWords(page, hError, spaceChar=False):
+    chars = page.chars
+    pagenum = str(page.page_number)
+    retval = []
+    bookmark = 0
+    if(len(chars) == 0):
+        return []
+
+    if(spaceChar):
+        hError = 60
+
+    size = minorfunctions.mostCommon(minorfunctions.reverseArr(
+        chars, "width")) * decimal.Decimal((hError)/100)
+
+    i = -1
+    while i < len(chars)-2:
+        i += 1
+        if(i < len(pagenum)):
+            num = pagenum[i]
+            if(chars[i]["text"] == num):
+                bookmark = i+1
+                continue
+
+        if(isSpace(chars, i) and not spaceChar):
+            return getWords(page, hError, True)
+
+        if(isSpace(chars, i) and bookmark != i):
+            word = makeWord(chars[bookmark:i])
+            if(word):
+                retval.append(word)
+                bookmark = i+1
+                continue
+
+        if(chars[i+1]["x0"]+size < chars[i]["x1"] and bookmark != i):
+            word = makeWord(chars[bookmark:i+1])
+            if(word):
+                retval.append(word)
+                bookmark = i+1
+                continue
+
+        topUnEqual = minorfunctions.isGreater(
+            chars[i+1]["top"], chars[i]["top"], hError)
+        horizontalSpace = not minorfunctions.areEqual(
+            chars[i+1]["x0"], chars[i]["x1"], size)
+
+        if(i == 126):
+            print("Breakpoint")
+
+        if(topUnEqual or (not spaceChar and horizontalSpace and bookmark != i)):
+            retval.append(makeWord(chars[bookmark:i+1]))
+            bookmark = i+1
+
+    if(bookmark != len(chars)-1):
+        retval.append(makeWord(chars[bookmark:len(chars)-1]))
+
+    return retval
+
+
+# returns true if its a space or a wacky character that ends up looking like a space.
+def isSpace(chars, i):
+    if(i == 0 or i == len(chars)-1):
+        return False
+    if(chars[i]["text"] == ' ' or chars[i]["text"] == '\xa0'):
+        return True
+    return False
+
+
+# takes characters and turns them into a word object that pdfplumber would use.
+def makeWord(chars):
+    if(len(chars) == 0):
+        return None
+
+    text = ""
+    for c in chars:
+        text += c["text"]
+
+    x0 = chars[0]["x0"]
+    x1 = chars[len(chars)-1]["x1"]
+
+    top = minorfunctions.toppest(chars)["top"]
+    bottom = minorfunctions.bottomest(chars)["bottom"]
+
+    retval = {"text": text, "x0": x0, "x1": x1, "top": top,
+              "bottom": bottom, "upright": True, "direction": 1}
     return retval
