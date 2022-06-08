@@ -17,14 +17,15 @@ import textprocessing
 # para: an array of paragraphs between this section and the next
 
 class section:
-    def __init__(self, t, p=None, coords=[], type=1, ratio=0):
+    def __init__(self, t, p=None, coords=[], type=0, h=3, pagenum=1):
         self.title = t
         self.subsections = []
         self.parent = p
         self.para = []
         self.type = type
-        self.ratio = ratio
         self.coords = coords
+        self.height = h
+        self.pagenum = pagenum
 
 # returns (last subsection, last subsection's type)
     def lastsub(self):
@@ -52,7 +53,6 @@ class section:
         for i in range(len(self.para)):
             paracopy.append(copy.copy(self.para[i]))
         typecopy = copy.copy(type)
-        ratiocopy = copy.copy(self.ratio)
         subsections = []
         for i in range(len(self.subsections)):
             subsections.append(self.subsections[i].copy())

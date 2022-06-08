@@ -48,7 +48,7 @@ def MakeSentences(str, coords, p):
     # for each sentence, add it to the list and then move the bookmark forward
     for id, start, end in matches:
 
-        # don't add the sentence if it's just periods or if its inside parenthesis/brackets.
+        # don't add the sentence if it's inside parenthesis/brackets or there's no whitespace after
         paren = False
         dots = True
         text = doc[bookmark:end]
@@ -101,15 +101,43 @@ def newline(words, w, error=0):
     #    return False
     # else:
     #    return True
-    topGreater = minorfunctions.isGreater(
+    topGreater = not minorfunctions.isLesser(
         words[w]["top"], words[w-1]["top"], error)
-    bottomGreater = minorfunctions.isGreater(
+    bottomLesser = not minorfunctions.isGreater(
         words[w]["bottom"], words[w-1]["bottom"], error)
-    if(topGreater and bottomGreater):
-        return True
-    return False
+    if(topGreater and bottomLesser):
+        return False
+    return True
 
 
+# if the page number is either the first word, or
+# is tacked onto the beginning of the first word, remove it.
+def removePageNumber(words, num):
+    original = words
+    words = removePageNumberWord(words, num)
+    if(words != original):
+        return words
+    words = removePageNumberFromBeginningOfWord(words, num)
+    return words
+
+
+def removePageNumberWord(words, num):
+    if(len(words) < len(str(num))):
+        return words
+    if(words[0:len(str(num))] == str(num)):
+        words = words[1:]
+    return words
+
+
+def removePageNumberFromBeginningOfWord(words, num):
+    if(len(words) < 1):
+        return words
+    if(words[0]["text"][0:len(str(num))] == str(num)):
+        words[0]["text"] = words[0]["text"][len(str(num)):]
+    return words
+
+
+# the newline function but for characters.
 def charNewline(chars, c, error=0):
     if(c == 0):
         return True
@@ -119,25 +147,7 @@ def charNewline(chars, c, error=0):
     return False
 
 
-# ratio is the height/space ratio of the current line
-# lineratio is the expected ratio of a normal line
-# same for height and lineheight
-# diffs is the list of lines
-# i is the current index in that list
-
-
-def Determinesection(ratio, lineratio, height, lineheight, lines, i, ratioerror):
-    if(ratio < .3):
-        return False
-    # if we think this line is a section
-    if(ratio < lineratio-ratioerror and height > lineheight):
-        # if the next line is a section, or the line after is normal.
-        if(i < len(lines)-3 and lines[i+2]["AftRatio"] > lineratio-ratioerror):
-            return True
-    return False
-
-
-def FindsectionType(sectionheader):
+def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
     retval = 0
     if(isinstance(sectionheader, str)):
         for i in range(len(sectionheader)):
@@ -155,13 +165,44 @@ def FindsectionType(sectionheader):
         if(sectionheader["text"][len(sectionheader["text"])-1].isdigit()):
             retval += 1
 
-    if(retval == 0):
-        return 1
-    return retval
+    if(pagenum == 1 or active.pagenum == 1):
+        if(retval == 0):
+            return 1
+        return retval
+    else:
+        test = active
+        while(test):
+            if(minorfunctions.areEqual(height, test.height, error)):
+                if(retval != 0):
+                    return retval
+                else:
+                    return test.type
+            elif(minorfunctions.isGreater(height, test.height, error)):
+                if(retval == test.type-1 or retval == 1):
+                    return retval
+                else:
+                    test = test.parent
+            elif(minorfunctions.isLesser(height, test.height, error)):
+                if(retval >= test.type+1):
+                    return retval
+                else:
+                    retval += 1
 
+        if(retval != 0):
+            return retval
+        else:
+            return test.type
+
+
+def isValid(str):
+    for i in str:
+        if not i.isdigit():
+            return True
+    return False
 
 # Searches the page for citations and removes them.
 # returns a string with all citations removed.
+
 
 def CitationRemoval(cites, PDF, word, coords, paraNum):
     # find all the citations

@@ -95,7 +95,6 @@ class lineSettings:
     def StartMultiTest(self, i, lines, pdfSettings, error):
         if(minorfunctions.isEndofCol(i+2, lines)):
             return False
-
         if(not minorfunctions.areEqual(lines[i]["AftSpace"], lines[i+1]["AftSpace"], error)):
             return False
         if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
@@ -105,6 +104,8 @@ class lineSettings:
         if(not (self.befspace == spaceSize.BIG_SPACE and self.aftspace == spaceSize.BIG_SPACE)):
             return False
         if(minorfunctions.areEqual(lines[i]["BefSpace"], pdfSettings.linespace, error) or minorfunctions.areEqual(lines[i]["AftSpace"], pdfSettings.linespace, error)):
+            return False
+        if(minorfunctions.isGreater(lines[i]["Height"], lines[i+1]["Height"], error)):
             return False
         if(i == 0):
             if(minorfunctions.areEqual(lines[i+1]["AftSpace"], lines[i]["AftSpace"], pdfSettings.interline)):

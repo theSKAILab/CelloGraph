@@ -1,0 +1,38 @@
+import pdfplumber
+from pdfplumber.utils import extract_text
+import PDFparser
+import PDFfragments
+import PDFsettings
+import PDFfunctions
+
+
+FILEPATH = "scitex/Heinze.pdf"
+
+plumber = pdfplumber.open(FILEPATH)
+
+VERTICAL_ERROR = 5
+HORIZONTAL_ERROR = 10
+RATIO_MARGIN = 0.05
+PARAS_REQUIRED = 2
+
+PDF = PDFfragments.PDFdocument()
+pdfSettings = PDFsettings.PDFsettings(
+    plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
+
+
+page = plumber.pages[29]
+words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
+
+words = PDFfunctions.removePageHeadersEarly(
+    words, page.page_number, pdfSettings)
+
+lines, pdfSettings = PDFfunctions.getLines(
+    words, pdfSettings, pdfSettings.intraline)
+
+pdfSettings.activesection = PDFfragments.section(
+    "7.2", None, [0], 2, 11, 18)
+
+#PDF, words, lines, lineIndex, pdfSettings, pagenum
+for i in range(len(lines)):
+    PDF, pdfSettings = PDFparser.DealWithLine(
+        PDF, words, lines, i, pdfSettings, page.page_number)

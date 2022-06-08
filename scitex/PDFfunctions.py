@@ -12,26 +12,25 @@ import decimal
 # remove the page header from the page.
 # Also removes page numbers from the beginning of the page.
 def removePageHeadersEarly(words, num, pdfSettings):
-    if(words[0:len(str(num))] == str(num)):
-        words = words[1:]
-    if(words[0]["text"][0:len(str(num))] == str(num)):
-        words[0]["text"] = words[0]["text"][len(str(num)):]
+    words = textprocessing.removePageNumber(words, num)
+
     for i in range(len(pdfSettings.pageHeaders)):
-        if(pdfSettings.pageHeaders[i].text == words[:len(pdfSettings.pageHeaders[i].text)]):
+        header = minorfunctions.reverseArr(
+            pdfSettings.pageHeaders[i].text, "text")
+        wordtext = minorfunctions.reverseArr(words, "text")
+        if(minorfunctions.BeginningEqual(header, wordtext)):
             words = CutWords(words, pdfSettings.pageHeaders[i].text)
-            if(pdfSettings.pageHeaders[i].expect_num and words[0]["text"][0:len(str(num))] == str(num)):
-                if(len(words[0]["text"]) == len(str(i))):
-                    words = words[1:]
-                else:
-                    words[0]["text"] = words[0]["text"][1:]
-            return words
+            if(pdfSettings.pageHeaders[i].expect_num):
+                textprocessing.removePageNumber(words, num)
+    if(words[0]["text"] == ""):
+        words = words[1:]
     return words
 
 
 # takes words off of large as long as they match the words in small.
 def CutWords(large, small):
     for i in range(len(small)-1, -1, -1):
-        if small[i] == large[i]:
+        if small[i]["text"] == large[i]["text"] or large[i]["text"] == "":
             large.pop(i)
         else:
             return large
@@ -79,55 +78,52 @@ def removeTables(PDF, page, words, error):
 # they do have some accompanying stats like height and spacing for ease of access.
 def getLines(words, pdfSettings, error):
     lines = []
-    bookmark = 0
+
+    prevLineBegin = 0
+    currentLineBegin = 0
+    nextLineBegin = 0
+
     for w in range(len(words)-1):
+
         # if the first word is lowercase, then a paragraph probably got split up.
         if(w == 0):
             nlp = spacy.load("en_core_web_sm")
             doc = nlp(words[0]["text"])
-            if(doc[0].is_lower):
-                pdfSettings.addto = True
+            if(len(doc) > 0):
+                if(doc[0].is_lower):
+                    pdfSettings.addto = True
 
-        if(newline(words, w, error)):
-            aftspace = float(words[w+1]["top"] - words[w]["bottom"])
-            befspace = float(words[w]["top"] - words[bookmark]["bottom"])
-            if bookmark == 0:
-                befspace = pdfSettings.linespace * 2
-            if(len(lines) == 1):
-                lines[0]["AftSpace"] = befspace
-                lines[0]["AftRatio"] = lines[0]["Height"]/befspace
-            height = float(words[w]["bottom"] - words[w]["top"])
-            aftRatio = height/aftspace
-            befRatio = height/befspace
-            lines.append({"LineEndDex": w, "AftSpace": aftspace,
-                         "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                          "Align": words[w]["x0"], "Text": words[bookmark+1:w+1]})
-            bookmark = w
+        if(textprocessing.newline(words, w, error) and w != 0):
 
-    if(bookmark != len(words)-2):
-        lw = len(words)-1
-        befspace = float(words[lw]["top"] - words[bookmark]["bottom"])
-        aftspace = befspace
-        height = float(words[lw]["bottom"] - words[lw]["top"])
-        aftRatio = height/aftspace
-        befRatio = height/befspace
-        lines.append({"LineEndDex": lw, "AftSpace": aftspace,
-                     "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                      "Align": words[lw]["x0"], "Text": words[bookmark+1:lw]})
+            if(nextLineBegin == 0):
+                nextLineBegin = w
+                continue
+
+            lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
+                lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w)
+
+    # get the second to last line
+    lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
+        lines, words, prevLineBegin, currentLineBegin, nextLineBegin, len(words)-1)
+
+    # get the last line
+    lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
+        lines, words, prevLineBegin, currentLineBegin, len(words), len(words)-1)
+
     return lines, pdfSettings
 
 
 # returns True if words[w] is on a newline
 def newline(words, w, error):
-    if w == 0:
+    if w == 0 or w == len(words)-1:
         return False
-    nextTop = float(words[w+1]["top"])
+    prevTop = float(words[w-1]["top"])
     top = float(words[w]["top"])
-    if(minorfunctions.areEqual(top, nextTop, error)):
+    if(minorfunctions.areEqual(top, prevTop, error)):
         return False
     bot = float(words[w]["bottom"])
-    nextBot = float(words[w+1]["bottom"])
-    if(minorfunctions.listElementsEqual([bot, nextBot], error)):
+    prevBot = float(words[w-1]["bottom"])
+    if(minorfunctions.listElementsEqual([bot, prevBot], error)):
         return False
     return True
 
@@ -157,7 +153,7 @@ def moveSection(tomove, destination):
 
 
 # adds the section to PDF
-def addSection(header, title, type, PDF, pdfSettings, recursionlevel=0):
+def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, recursionlevel=0):
 
     coords = copy.copy(pdfSettings.coords)
     # if it's broken return false
@@ -168,35 +164,38 @@ def addSection(header, title, type, PDF, pdfSettings, recursionlevel=0):
     # if it's a section header, add it to the PDF's list
     elif(type == 1):
         PDF.sections.append(PDFfragments.section(
-            title, header.parent, coords))
+            title, header.parent, coords, 1, h, pagenum))
 
     # if it's the current header's sibling, add it to the parent's list
     elif(type == header.type):
         header.parent.subsections.append(
-            PDFfragments.section(title, header.parent, coords))
+            PDFfragments.section(title, header.parent, coords, type, h, pagenum))
 
     # if it's a child of the current header, add it to the current header's list
     elif(type == header.type + 1):
         header.subsections.append(PDFfragments.section(
-            title, header, coords))
+            title, header, coords, type, h, pagenum))
 
     # if it's an uncle of the current header, recurse upwards.
     elif(type < header.type):
         if(header.parent and header.parent.parent):
             addSection(header.parent, title, type, PDF,
-                       pdfSettings, recursionlevel+1)
+                       pdfSettings, h, pagenum, recursionlevel+1)
         else:
             PDF.sections.append(PDFfragments.section(
-                title, header.parent, coords))
+                title, header.parent, coords, h, pagenum))
 
     # if it's a grandchild of the current header, recurse downwards.
     elif(type > header.type):
         next = header.lastsub()[0]
         if(next):
-            addSection(next, title, type, PDF, pdfSettings, recursionlevel+1)
+            addSection(next, title, type, PDF,
+                       pdfSettings, h, pagenum, recursionlevel+1)
         else:
             header.subsections.append(
-                PDFfragments.section("ERROR:SECTION_MISSING" + title, header, coords))
+                PDFfragments.section("ERROR:SECTION_MISSING" + title, header, coords, type, h, pagenum))
+
+    return PDF, header
 
 
 # Intent is to remove running headers at the top of the page that get marked as headers
@@ -307,14 +306,16 @@ def recursiveRemovePara(section, coords, paraNum):
                 for j in range(len(section.para[i].sentences)):
                     section.para[i].sentences[j].para -= 1
         return section
-    else:
-        section = section.subsections[coords[0]]
+    elif(len(section.subsections) > coords[0]):
+        section = section.subsections[coords[1]]
         return recursiveRemoveSentence(section, coords[1:], paraNum, sentNum)
-
+    else:
+        return section
 
 # removes any headers that are actually just figure or table descriptions.
 # figures and graphics get added to PDF.figures
 # tables get added to PDF.tables
+
 
 def removeFigureHeaders(PDF):
     if(len(PDF.sections) == 0):
@@ -374,7 +375,9 @@ def recursiveRemoveFigureHeaders(PDF, section):
         if(len(sent) == 2 and sent[1].isdigit() or len(sent) == 1 and sent2[0].isdigit()):
             PDF.figures.append(para)
             PDF.sections[section.coords[0]] = recursiveRemovePara(
-                section, section.coords, para.paraNum)
+                section, section.coords[1:], para.paraNum)
+            section = recursiveRemovePara(
+                section, section.coords[1:], para.paraNum)
             i -= 1
 
     for j in range(len(section.subsections)-1):
@@ -450,13 +453,8 @@ def getWords(page, hError, spaceChar=False):
     i = -1
     while i < len(chars)-2:
         i += 1
-        if(i < len(pagenum)):
-            num = pagenum[i]
-            if(chars[i]["text"] == num):
-                bookmark = i+1
-                continue
 
-        if(isSpace(chars, i) and not spaceChar):
+        if(isSpace(chars, i) and not spaceChar and len(retval) < 30):
             return getWords(page, hError, True)
 
         if(isSpace(chars, i) and bookmark != i):
@@ -466,15 +464,18 @@ def getWords(page, hError, spaceChar=False):
                 bookmark = i+1
                 continue
 
-        if(chars[i+1]["x0"]+size < chars[i]["x1"] and bookmark != i):
+        if(chars[i+1]["x0"]+size < chars[i]["x1"]):
             word = makeWord(chars[bookmark:i+1])
             if(word):
                 retval.append(word)
                 bookmark = i+1
                 continue
 
-        topUnEqual = minorfunctions.isGreater(
+        topUnEqual = not minorfunctions.areEqual(
             chars[i+1]["top"], chars[i]["top"], hError)
+        if(spaceChar):
+            topUnEqual = not minorfunctions.areEqual(
+                chars[i+1]["top"], chars[i]["top"], hError/18)
         horizontalSpace = not minorfunctions.areEqual(
             chars[i+1]["x0"], chars[i]["x1"], size)
 
@@ -490,7 +491,7 @@ def getWords(page, hError, spaceChar=False):
 
 # returns true if its a space or a wacky character that ends up looking like a space.
 def isSpace(chars, i):
-    if(i == 0 or i == len(chars)-1):
+    if(i == 0 or i >= len(chars)-1):
         return False
     if(chars[i]["text"] == ' ' or chars[i]["text"] == '\xa0'):
         return True
@@ -512,6 +513,50 @@ def makeWord(chars):
     top = minorfunctions.toppest(chars)["top"]
     bottom = minorfunctions.bottomest(chars)["bottom"]
 
-    retval = {"text": text, "x0": x0, "x1": x1, "top": top,
+    retval = {"text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
               "bottom": bottom, "upright": True, "direction": 1}
     return retval
+
+
+def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
+    prevline = words[prevLineBegin:currentLineBegin]
+    currentline = words[currentLineBegin:nextLineBegin]
+    nextline = words[nextLineBegin:w]
+
+    if(len(prevline) > 0):
+        prevBottom = float(minorfunctions.bottomest(prevline)["bottom"])
+        prevTop = float(minorfunctions.toppest(prevline)["top"])
+
+    currentBottom = float(minorfunctions.bottomest(currentline)["bottom"])
+    currentTop = float(minorfunctions.toppest(currentline)["top"])
+
+    if(len(nextline) > 0):
+        nextBottom = float(minorfunctions.bottomest(nextline)["bottom"])
+        nextTop = float(minorfunctions.toppest(nextline)["top"])
+
+    if(len(lines) == 0):
+        aftspace = nextTop - currentBottom
+        befspace = aftspace * 3
+
+    elif(nextLineBegin == len(words)):
+        befspace = currentTop - prevBottom
+        aftspace = befspace * 3
+
+    else:
+        aftspace = nextTop - currentBottom
+        befspace = currentTop - prevBottom
+
+    height = float(minorfunctions.bottomest(currentline)
+                   ["bottom"] - minorfunctions.toppest(currentline)["top"])
+
+    aftRatio = height/aftspace
+    befRatio = height/befspace
+    lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
+                 "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
+                  "Align": words[w]["x0"], "Text": words[currentLineBegin:nextLineBegin]})
+
+    prevLineBegin = currentLineBegin
+    currentLineBegin = nextLineBegin
+    nextLineBegin = w
+
+    return lines, prevLineBegin, currentLineBegin, nextLineBegin

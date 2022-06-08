@@ -37,7 +37,7 @@ class Header():
         self.expect_num = expect_num
 
     def __eq__(self, other):
-        return self.text == other.text and self.expect_num == self.expect_num
+        return minorfunctions.reverseArr(self.text, "text") == minorfunctions.reverseArr(other.text, "text") and self.expect_num == self.expect_num
 
 
 def FindPageHeaders(pdf, pdfSettings, hError):
@@ -118,11 +118,11 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
         bookmark = 0
         words = pages[i]
         for j in range(1, len(words)):
-            if(textprocessing.newline(words, j, vError/100)):
+            if(textprocessing.newline(words, j, vError/10)):
                 diff = words[j]["top"] - words[bookmark]["bottom"]
                 height = words[j]["bottom"] - words[j]["top"]
                 lines.append({"AftSpace": float(diff), "LineEndDex": bookmark, "LineStartDex": j,
-                             "Align": words[j]["x0"], "Height": height, "Ratio": float(height/diff)})
+                             "Align": words[j]["x0"], "Height": height, "Ratio": float(height/diff), "Text": words[bookmark:j]})
                 bookmark = j
             else:
                 spaces.append(words[j]["x0"]-words[j-1]["x1"])

@@ -44,12 +44,15 @@ def PDFSort(pdf):
     # bib must be removed before page/fig headers so that bib info don't get deleted
     #PDF = PDFfunctions.removePageHeaderSentences(PDF)
 
-    PDF = PDFfunctions.removeFigureHeaders(PDF)
+    #PDF = PDFfunctions.removeFigureHeaders(PDF)
 
     return PDF
 
 
 def DealWithPage(PDF, page, pdfSettings):
+
+    if(page.page_number == 30):
+        print("Breakpoint")
 
     pagechars = page.chars
 
@@ -57,11 +60,11 @@ def DealWithPage(PDF, page, pdfSettings):
     pagewords = PDFfunctions.removePageHeadersEarly(
         pagewords, page.page_number, pdfSettings)
 
+    hate = pagewords[len(pagewords)-300:]
+
     # cols = textprocessing.HandleColumns(
     #    pagewords, pdfSettings.horizontal, pdfSettings.intraline)
 
-    if(page.page_number == 10):
-        print("Breakpoint")
     cols = [pagewords]
 
     for c in range(len(cols)):
@@ -80,7 +83,7 @@ def DealWithCol(PDF, page, words, pdfSettings):
 
     for i in range(len(lines)):
         PDF, pdfSettings = DealWithLine(
-            PDF, words, lines, i, pdfSettings)
+            PDF, words, lines, i, pdfSettings, page.page_number)
 
     # Add whatever text is at the end of the col.
     if(pdfSettings.bookmark != len(words)-1):
@@ -118,12 +121,12 @@ def DealWithCol(PDF, page, words, pdfSettings):
     return PDF, pdfSettings
 
 
-def DealWithLine(PDF, words, lines, lineIndex, pdfSettings):
+def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum):
     w = lines[lineIndex]["LineEndDex"]
     if(w > len(words)-1):
         w = len(words)-1
 
-    if(lineIndex == 17):
+    if(lineIndex == 18):
         print("Breakpoint")
 
     settings = textSettings.lineSettings(
@@ -136,13 +139,17 @@ def DealWithLine(PDF, words, lines, lineIndex, pdfSettings):
         pdfSettings.addto = False
         pdfSettings.consistentRatio = 0
         if(pdfSettings.bookmark < len(words)):
-            type = textprocessing.FindsectionType(words[pdfSettings.bookmark])
+            type = textprocessing.FindsectionType(
+                words[pdfSettings.bookmark], pdfSettings.activesection, pagenum, lines[lineIndex]["Height"], pdfSettings.intraline)
+
+            if(len(lines[lineIndex]["Text"]) < 2 and len(lines[lineIndex]["Text"][0]["text"]) < 3):
+                type = pdfSettings.activesection.type+1
 
             pdfSettings.coords = minorfunctions.newCoords(
                 pdfSettings.coords, type)
 
-            PDFfunctions.addSection(pdfSettings.activesection,
-                                    textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF, pdfSettings)
+            PDF, pdfSettings.activesection = PDFfunctions.addSection(pdfSettings.activesection,
+                                                                     textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF, pdfSettings, lines[lineIndex]["Height"], pagenum, pdfSettings.intraline)
 
             pdfSettings.activesection = minorfunctions.updateActiveSection(
                 PDF, words, pdfSettings)
@@ -170,7 +177,7 @@ def DealWithLine(PDF, words, lines, lineIndex, pdfSettings):
         sentlist = textprocessing.MakeSentences(textprocessing.makeString(
             words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
         # if this is the 2nd half of a cutoff paragraph, sew it back together.
-        if(pdfSettings.addto):
+        if(pdfSettings.addto and len(pdfSettings.activesection.para) > 0):
             pdfSettings.addto = False
             activepara = pdfSettings.activesection.para[len(
                 pdfSettings.activesection.para)-1]

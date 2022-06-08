@@ -74,7 +74,7 @@ def isLesser(val1, val2, error=0, percentage=False):
 
 # just for shorthand
 def isEndofCol(i, lines):
-    return i > len(lines)-1
+    return i >= len(lines)-1
 
 
 # returns the most common element in an array.
@@ -110,12 +110,23 @@ def mostCommon(arr, index=False, error=0):
 def reverseArr(arr, attribute):
     retval = []
     for i in range(len(arr)):
+        try:
+            arr[i][attribute]
+        except:
+            return arr
         retval.append(arr[i][attribute])
     return retval
 
 
 # this is for shorthand.
 def mostCommonLineSpace(arr, index=False, error=0):
+    if(len(arr) == 0):
+        return None
+    try:
+        arr[0]["AftSpace"]
+    except:
+        return None
+
     arr = reverseArr(arr, "AftSpace")
     return mostCommon(arr, index, error)
 
@@ -133,6 +144,7 @@ def isIn(element, arr, error=0, percentage=False):
 def appendNoRepeats(element, arr):
     inArr = False
     for i in range(len(arr)):
+        test = arr[i]
         if arr[i] == element:
             inArr = True
             break
@@ -143,8 +155,15 @@ def appendNoRepeats(element, arr):
 
 # I made a new max function, where index=True will return the index of the max.
 def myMax(arr, index=False):
+    if(len(arr) == 0):
+        return None
+
     retval = 0
     for i in range(len(arr)):
+        try:
+            test = int(arr[i])
+        except:
+            return arr[0]
         if arr[i] > arr[retval]:
             retval = i
     if(index):
@@ -155,6 +174,10 @@ def myMax(arr, index=False):
 
 # update the coordinates of what section or sub-sub-etc-section we're in.
 def newCoords(coords, type):
+    if(coords == []):
+        return [0]
+    if(type == 0):
+        return coords
     newcoords = []
     # if we're in a shallower section now (from 2.3.4.5 to 2.4) remove depth
     if(len(coords) > type):
@@ -169,21 +192,32 @@ def newCoords(coords, type):
         newcoords = coords
     # update coords
     coords = newcoords
-    coords[len(coords)-1] += 1
-    return coords
+    if(coords == []):
+        return [0]
+    else:
+        coords[len(coords)-1] += 1
+        return coords
 
 
 # returns the last subsection (or sub-sub-sub-etc-section) of the last section
 # also updates its type if need be.
 def updateActiveSection(PDF, words, pdfSettings):
+    if(len(PDF.sections) == 0):
+        return None
     active = PDF.lastSect()
-    test = active.lastsub()
-    while(test != (None, None)):
-        active = test[0]
+    if(active.title != ""):
         test = active.lastsub()
+        if(test[0]):
+            active = test[0]
+        while(active.lastsub() != (None, None)):
+            active = test[0]
+            test = active.lastsub()
 
-    active.type = textprocessing.FindsectionType(
-        words[pdfSettings.bookmark])
+        # if(pdfSettings.bookmark < len(words)):
+        #    active.type = textprocessing.FindsectionType(
+        #        words[pdfSettings.bookmark])
+        # else:
+        #    active.type = textprocessing.FindsectionType(active.title)
     return active
 
 
@@ -211,21 +245,51 @@ def lowestLine(objs):
 
 # returns the thing with the highest "top" attribute
 def toppest(list):
+    if(len(list) == 0):
+        return None
     retval = None
     for thing in list:
+        try:
+            thing["top"]
+            test = int(thing["top"])
+        except:
+            return None
         if(not retval):
             retval = thing
-        elif(thing["top"] > retval["top"]):
+        elif(thing["top"] < retval["top"]):
             retval = thing
     return retval
 
 
 # returns the thing with the lowest "bottom" attribute
 def bottomest(list):
+    if(len(list) == 0):
+        return None
     retval = None
     for thing in list:
+        try:
+            thing["bottom"]
+            test = int(thing["bottom"])
+        except:
+            return None
         if(not retval):
             retval = thing
-        elif(thing["bottom"] < retval["bottom"]):
+        elif(thing["bottom"] > retval["bottom"]):
             retval = thing
     return retval
+
+
+def BeginningEqual(str1, str2):
+    if(len(str1) == 0 or len(str2) == 0):
+        return False
+    length = minLength(str1, str2)
+    if str1[:length] == str2[:length]:
+        return True
+    return False
+
+
+def minLength(str1, str2):
+    if(len(str1) > len(str2)):
+        return len(str2)
+    else:
+        return len(str1)

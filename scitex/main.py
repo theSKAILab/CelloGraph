@@ -19,7 +19,7 @@ print("this is just here so I can put a breakpoint here.")
 
 plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("Heinze debug output.txt", 'w+', encoding="utf-8")
+file = open("Heinze but with no figure removal.txt", 'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 
