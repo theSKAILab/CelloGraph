@@ -29,6 +29,10 @@ def removePageHeadersEarly(words, num, pdfSettings):
 
 # takes words off of large as long as they match the words in small.
 def CutWords(large, small):
+    if(len(large) == 0 or len(small) == 0):
+        return large
+    if(len(large) < len(small)):
+        return CutWords(small, large)
     for i in range(len(small)-1, -1, -1):
         if small[i]["text"] == large[i]["text"] or large[i]["text"] == "":
             large.pop(i)
@@ -115,7 +119,7 @@ def getLines(words, pdfSettings, error):
 
 # returns True if words[w] is on a newline
 def newline(words, w, error):
-    if w == 0 or w == len(words)-1:
+    if w == 0 or w >= len(words)-1:
         return False
     prevTop = float(words[w-1]["top"])
     top = float(words[w]["top"])
@@ -318,16 +322,16 @@ def recursiveRemovePara(section, coords, paraNum):
 
 
 def removeFigureHeaders(PDF):
-    if(len(PDF.sections) == 0):
+    if(len(PDF.sections) <= 1):
         return PDF
 
     nlp = spacy.load("en_core_web_sm")
 
     i = -1
-    while i < len(PDF.sections)-2:
+    while i < len(PDF.sections)-1:
         i += 1
         doc = nlp(PDF.sections[i].title)
-        if(len(doc) > 1):
+        if(len(doc) > 1 and i > 0):
             if(doc[1].text.isdigit() or doc[1].text == "." and doc[2].text.isdigit()):
                 PDF.sections[i] = DealWithMultiLineFigureHeader(
                     PDF.sections[i])
@@ -345,10 +349,10 @@ def removeFigureHeaders(PDF):
 
 # In the event that a figure header goes onto multiple lines, this will remove all of them.
 def DealWithMultiLineFigureHeader(section):
-    if(len(section.para) == 0):
+
+    if(len(section.para) == 0 or len(section.para[0].sentences) == 0):
         return section
-    if(len(section.para[0].sentences) == 0):
-        return section
+
     nlp = spacy.load("en_core_web_sm")
     doc = nlp(section.para[0].sentences[0].text)
 
@@ -357,6 +361,8 @@ def DealWithMultiLineFigureHeader(section):
         section.para[0].sentences.pop(0)
 
     return section
+
+# removes figure descriptions that are subsection headers or are in text
 
 
 def recursiveRemoveFigureHeaders(PDF, section):
@@ -370,8 +376,8 @@ def recursiveRemoveFigureHeaders(PDF, section):
             continue
         if(len(para.sentences) == 1):
             continue
-        sent = words(para.sentences[0].text)
-        sent2 = words(para.sentences[1].text)
+        sent = minorfunctions.words(para.sentences[0].text)
+        sent2 = minorfunctiosn.words(para.sentences[1].text)
         if(len(sent) == 2 and sent[1].isdigit() or len(sent) == 1 and sent2[0].isdigit()):
             PDF.figures.append(para)
             PDF.sections[section.coords[0]] = recursiveRemovePara(
@@ -386,14 +392,10 @@ def recursiveRemoveFigureHeaders(PDF, section):
     return PDF, section
 
 
-# "." counts
-# "(x* . x*)" doesn't count
-
-
 # cleanSection takes a section and removes empty paragraphs and stitches fragmented ones together.
 def cleanSection(section):
     nlp = spacy.load("en_core_web_sm")
-    i = 0
+    i = -1
     while i < len(section.para):
         i += 1
         if(i > len(section.para)-1):
@@ -417,17 +419,6 @@ def cleanSection(section):
     for i in range(len(section.subsections)):
         section.subsections[i] = cleanSection(section.subsections[i])
     return section
-
-
-# turn a string of text into an array of words
-def words(str):
-    retval = []
-    bookmark = 0
-    for i in range(len(str)):
-        if str[i] == ' ' or str[i] == '.':
-            retval.append(str[bookmark:i])
-            bookmark = i+1
-    return retval
 
 
 # use this instead of the default pdfplumber.extract_text()
@@ -504,8 +495,19 @@ def makeWord(chars):
         return None
 
     text = ""
-    for c in chars:
-        text += c["text"]
+    for c in range(len(chars)):
+        if(isSpace(chars, c)):
+            x0 = chars[0]["x0"]
+            x1 = chars[c]["x1"]
+
+            top = minorfunctions.toppest(chars)["top"]
+            bottom = minorfunctions.bottomest(chars)["bottom"]
+
+            retval = {"text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
+                      "bottom": bottom, "upright": True, "direction": 1}
+            return retval
+        else:
+            text += chars[c]["text"]
 
     x0 = chars[0]["x0"]
     x1 = chars[len(chars)-1]["x1"]
@@ -519,6 +521,9 @@ def makeWord(chars):
 
 
 def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
+    if(len(words) == 0):
+        return lines, prevLineBegin, currentLineBegin, nextLineBegin
+
     prevline = words[prevLineBegin:currentLineBegin]
     currentline = words[currentLineBegin:nextLineBegin]
     nextline = words[nextLineBegin:w]
@@ -553,7 +558,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     befRatio = height/befspace
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                  "Align": words[w]["x0"], "Text": words[currentLineBegin:nextLineBegin]})
+                  "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin]})
 
     prevLineBegin = currentLineBegin
     currentLineBegin = nextLineBegin

@@ -44,6 +44,7 @@ def listElementsEqual(list, error=0, percentage=False):
 def isGreater(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
+    error = float(error)
     if(percentage):
         if(val1 > val2*((100+error)/100)):
             return True
@@ -60,6 +61,7 @@ def isGreater(val1, val2, error=0, percentage=False):
 def isLesser(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
+    error = float(error)
     if(percentage):
         if(val1 < val2*((100-error)/100)):
             return True
@@ -199,8 +201,27 @@ def newCoords(coords, type):
         return coords
 
 
+# I wanted an xor for something and was sad that python didn't have one
+def xor(a, b):
+    return not(a and b) and not(not a and not b)
+
+
+# turn a string of text into an array of words
+def words(str):
+    retval = []
+    bookmark = 0
+    for i in range(len(str)):
+        if str[i] == ' ' or str[i] == '.':
+            retval.append(str[bookmark:i])
+            bookmark = i+1
+    if(bookmark < len(str)-1):
+        retval.append(str[bookmark:])
+    return retval
+
 # returns the last subsection (or sub-sub-sub-etc-section) of the last section
 # also updates its type if need be.
+
+
 def updateActiveSection(PDF, words, pdfSettings):
     if(len(PDF.sections) == 0):
         return None

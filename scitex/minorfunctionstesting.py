@@ -313,6 +313,32 @@ nct = newCoordsTester()
 nct.allTest()
 
 
+class wordsTester():
+    def allTest(self):
+        self.emptyTest()
+        self.oneWordTest()
+        self.multiWordTest()
+
+    def emptyTest(self):
+        words = ""
+        arr = minorfunctions.words(words)
+        assert len(arr) == 0
+
+    def oneWordTest(self):
+        words = "Antidisestablishmentarianism"
+        arr = minorfunctions.words(words)
+        assert len(arr) == 1
+
+    def multiWordTest(self):
+        words = "The Fitness Graham Pacer Test is a multistage aerobic capacity test"
+        arr = minorfunctions.words(words)
+        assert len(arr) == 11
+
+
+wt = wordsTester()
+wt.allTest()
+
+
 class limitedSettings():
     def __init__(self, bkmk=0):
         self.bookmark = bkmk

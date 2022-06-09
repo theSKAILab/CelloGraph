@@ -101,10 +101,11 @@ def newline(words, w, error=0):
     #    return False
     # else:
     #    return True
+    height = words[w]["bottom"] - words[w]["top"]
     topGreater = not minorfunctions.isLesser(
-        words[w]["top"], words[w-1]["top"], error)
+        words[w]["top"], words[w-1]["top"], height/2)
     bottomLesser = not minorfunctions.isGreater(
-        words[w]["bottom"], words[w-1]["bottom"], error)
+        words[w]["bottom"], words[w-1]["bottom"], height/2)
     if(topGreater and bottomLesser):
         return False
     return True

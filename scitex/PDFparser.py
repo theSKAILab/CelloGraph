@@ -51,7 +51,7 @@ def PDFSort(pdf):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 30):
+    if(page.page_number == 5):
         print("Breakpoint")
 
     pagechars = page.chars

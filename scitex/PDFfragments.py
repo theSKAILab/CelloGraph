@@ -3,6 +3,7 @@ import copy
 import re
 import PDFparser
 import textprocessing
+import minorfunctions
 
 
 # CLASSES
@@ -27,7 +28,44 @@ class section:
         self.height = h
         self.pagenum = pagenum
 
+    def __eq__(self, other):
+        if(minorfunctions.xor(self, other)):
+            return False
+        if self.title == other.title:
+            if(self.type == other.type):
+                if(self.coords == other.coords):
+                    if(self.height == other.height):
+                        if(self.pagenum == other.pagenum):
+                            if(self.parent and other.parent):
+                                if(not self.parent.lightEq(other.parent)):
+                                    return False
+                            if(minorfunctions.xor(self.parent, other.parent)):
+                                return False
+                            if(len(self.subsections) == len(other.subsections)):
+                                for i in range(len(self.subsections)):
+                                    if(self.subsections[i] != other.subsections[i]):
+                                        return False
+                                return True
+        return False
+
+    # this is a version of eq that doesn't use recursion
+    def lightEq(self, other):
+        if(not self and not other):
+            return True
+        elif(not self or not other):
+            return False
+        if self.title == other.title:
+            if(self.type == other.type):
+                if(self.coords == other.coords):
+                    if(self.height == other.height):
+                        if(self.pagenum == other.pagenum):
+                            if(len(self.subsections) == len(other.subsections)):
+                                return True
+        return False
+
+
 # returns (last subsection, last subsection's type)
+
     def lastsub(self):
         if(len(self.subsections) == 0):
             return (None, None)
@@ -73,6 +111,16 @@ class paragraph:
         self.paraNum = paraNum
         self.citations = cites
         self.align = align
+
+    def __eq__(self, other):
+        if(self.coords == other.coords):
+            if(self.paraNum == other.paraNum):
+                if(len(self.sentences) == len(other.sentences)):
+                    for i in range(len(self.sentences)):
+                        if(self.sentences[i] != other.sentences[i]):
+                            return False
+                    return True
+        return False
 
     def getText(self):
         retval = ""
@@ -131,6 +179,14 @@ class sentence:
         self.para = para
         self.sentNum = sentNum
 
+    def __eq__(self, other):
+        if(self.coords == other.coords):
+            if(self.sentNum == other.sentNum):
+                if(self.para == other.para):
+                    if(self.text == other.text):
+                        return True
+        return False
+
     # getPlace: returns a string describing the location of this sentence
     def getPlace(self):
         retval = "Section: "
@@ -153,6 +209,19 @@ class PDFdocument:
             return self.sections[len(self.sections)-1]
         else:
             return section("")
+
+    def __eq__(self, other):
+        if(len(self.sections) != len(other.sections)):
+            return False
+        if(len(self.figures) != len(other.figures)):
+            return False
+        if(len(self.figures) != len(other.figures)):
+            return False
+        for i in range(len(self.sections)):
+            if(self.sections[i] != other.sections[i]):
+                return False
+
+        return True
 
     # takes an array of coordinates that lead to the appropriate section, then assembles the text of that section into one string
     # coords: an array of up to three numbers indicating a specific section or subsection

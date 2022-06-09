@@ -4,7 +4,7 @@ import PDFparser
 import PDFfragments
 import plaintextwriter
 
-FILEPATH = "scitex/Heinze.pdf"
+FILEPATH = "scitex/Gupta et al.pdf"
 
 
 plumber = pdfplumber.open(FILEPATH)
@@ -19,7 +19,8 @@ print("this is just here so I can put a breakpoint here.")
 
 plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("Heinze but with no figure removal.txt", 'w+', encoding="utf-8")
+file = open("Improved Gupta.txt",
+            'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 
