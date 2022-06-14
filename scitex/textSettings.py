@@ -78,6 +78,9 @@ class lineSettings:
         if(self.InMultiTest(i, lines, pdfSettings, error)):
             self.type = lineType.IN_MULTI
 
+        elif(self.FigureTest(i, lines, pdfSettings, error)):
+            self.type = lineType.FIGURE_TEXT
+
         elif(self.StartMultiTest(i, lines, pdfSettings, error)):
             self.type = lineType.START_MULTI
 
@@ -114,6 +117,10 @@ class lineSettings:
             if(minorfunctions.isLesser(lines[i]["AftSpace"], lines[i]["BefSpace"], pdfSettings.interline)):
                 return True
         return False
+
+    def FigureTest(self, i, lines, pdfSettings, error):
+        if(self.size == lineSize.SMALL_SIZE):
+            return True
 
     # if we're not at the bottom of the col and the ratio of size to spacing is the same for the next line as it is for this line,
     # and that ratio isn't the same as the normal text ratio.

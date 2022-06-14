@@ -56,7 +56,7 @@ def FindPageHeaders(pdf, pdfSettings, hError):
             index += 1
             first1 = words[index]
         if words[index]["text"] == words2[index]["text"] and words2[index]["text"] == words3[index]["text"]:
-            count = 0
+            count = index
             for k in range(index, len(words)):
                 if words[k]["text"] == words2[k]["text"] and words2[k]["text"] == words3[k]["text"]:
                     count += 1
@@ -69,27 +69,45 @@ def FindPageHeaders(pdf, pdfSettings, hError):
                 else:
                     break
             headers = minorfunctions.appendNoRepeats(
-                Header(words[0:count], expect_num), headers)
+                Header(words[index:count], expect_num), headers)
     return headers
 
 
 def FindPageFooters(pdf, pdfSettings, hError):
-    headers = []
+    footers = []
     for i in range(len(pdf.pages)-4):
         words = PDFfunctions.getWords(pdf.pages[i], hError)
-        words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
-        words3 = PDFfunctions.getWords(pdf.pages[i+3], hError)
+        visible1 = words[len(words)-250:]
 
-        if words[len(words)-1] == words2[len(words2)-1] and words2[len(words2)-1] == words3[len(words3)-1]:
-            count = 1
-            for k in range(1, len(words)):
-                if words[len(words)-k] == words2[len(words2)-k] and words2[len(words2)-k] == words3[len(words2)-k]:
+        words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
+        visible2 = words2[len(words2)-250:]
+
+        words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
+        visible3 = words3[len(words3)-250:]
+
+        index = 1
+        first1 = words[len(words)-1]
+        expect_num = False
+        while first1["text"].isdigit():
+            index += 1
+            first1 = words[index]
+        if words[len(words)-index]["text"] == words2[len(words2)-index]["text"] and words2[len(words2)-index]["text"] == words3[len(words3)-index]["text"]:
+            count = 0
+            for k in range(index+1, len(words)):
+                if words[len(words)-k]["text"] == words2[len(words2)-k]["text"] and words2[len(words2)-k]["text"] == words3[len(words3)-k]["text"]:
                     count += 1
+                elif(words[len(words)-k]["text"].isdigit() and words[len(words)-k]["text"] == str(i+1)):
+                    expect_num = True
+                    break
+                elif(words[len(words)-k]["text"][0:len(str(i+1))] == str(i+1) or words[len(words)-1]["text"][0:len(str(i+1))] == str(i+1)):
+                    expect_num = True
+                    break
                 else:
                     break
-            headers = minorfunctions.appendNoRepeats(
-                words[len(words)-count: len(words)], headers)
-    return headers
+            text = words[len(words)-count-1:len(words)-index+1]
+            footers = minorfunctions.appendNoRepeats(
+                Header(text, expect_num), footers)
+    return footers
 
 
 # FindSpace: Takes a PDF and tries to figure out what the spacing is

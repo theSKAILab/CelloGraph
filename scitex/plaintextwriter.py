@@ -18,7 +18,8 @@ import PDFfragments
 def SectiontoPlain(sec):
     retval = ""
 
-    retval += "\n\nNEW SECTION: " + sec.title + "\n"
+    retval += "\n\nNEW SECTION: " + sec.title + \
+        " (Level: " + str(sec.type) + ")\n"
     for i in range(len(sec.para)):
         retval += "\n\nNEW PARA:"
         for j in range(len(sec.para[i].sentences)):
@@ -35,10 +36,34 @@ def PDFtoPlain(PDF):
     for sec in range(len(PDF.sections)):
         retval += SectiontoPlain(PDF.sections[sec])
 
+    retval += "\n\n\n"
     for fig in range(len(PDF.figures)):
-        retval += "\n\n\n" + PDF.figures[fig].getText()
+        retval += FiguretoPlain(PDF.figures[fig])
 
-#    for tab in range(len(PDF.tables)):
-#        retval += "\n\n\n" + PDF.tables[tab].getText()
+    for tab in range(len(PDF.tables)):
+        retval += "\n\n\n"
+        #retval += TabletoPlain(PDF.tables[tab])
+
+    return retval
+
+
+def FiguretoPlain(figure):
+    retval = "\n\n"
+    for line in range(len(figure)):
+        retval += "\n"
+        for word in range(len(figure[line]["Text"])):
+            retval += figure[line]["Text"][word]["text"]
+            retval += " "
+
+    return retval
+
+
+def TabletoPlain(Table):
+    retval = ""
+    for line in range(len(figure)):
+        retval += "\n"
+        for word in range(len(figure[line]["Text"])):
+            retval += figure[line]["Text"][word]["text"]
+            retval += " "
 
     return retval

@@ -421,6 +421,43 @@ class CutWordsTester():
 cwt = CutWordsTester()
 cwt.allTest()
 
+
+class CutWordsEndTester():
+    def allTest(self):
+        self.emptyTest()
+        self.reverseTest()
+        self.normalTest()
+        self.unequalTest()
+
+    def emptyTest(self):
+        assert PDFfunctions.CutWordsEnd([], []) == []
+
+    def reverseTest(self):
+        long = [{"text": "Hello"}, {"text": "there"},
+                {"text": "today's"}, {"text": "Monday."}]
+        short = [{"text": "today's"}, {"text": "Monday."}]
+        cut = PDFfunctions.CutWordsEnd(short, long)
+        assert cut == [{"text": "Hello"}, {"text": "there"}]
+
+    def normalTest(self):
+        long = [{"text": "Hello"}, {"text": "there"},
+                {"text": "today's"}, {"text": "Monday."}]
+        short = [{"text": "today's"}, {"text": "Monday."}]
+        cut = PDFfunctions.CutWordsEnd(long, short)
+        assert cut == [{"text": "Hello"}, {"text": "there"}]
+
+    def unequalTest(self):
+        long = [{"text": "Hello"}, {"text": "there"},
+                {"text": "today's"}, {"text": "Monday."}]
+        short = [{"text": "UmActually"}]
+        cut = PDFfunctions.CutWordsEnd(long, short)
+        assert cut == [{"text": "Hello"}, {"text": "there"},
+                       {"text": "today's"}, {"text": "Monday."}]
+
+
+cwet = CutWordsEndTester()
+cwet.allTest()
+
 #
 #    # removePageHeadersEarly(words, num, pdfSettings):
 #

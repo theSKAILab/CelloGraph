@@ -309,6 +309,15 @@ def BeginningEqual(str1, str2):
     return False
 
 
+def EndEqual(str1, str2):
+    if(len(str1) == 0 or len(str2) == 0):
+        return False
+    length = minLength(str1, str2)
+    if str1[len(str1)-length:] == str2[len(str2)-length:]:
+        return True
+    return False
+
+
 def minLength(str1, str2):
     if(len(str1) > len(str2)):
         return len(str2)

@@ -77,12 +77,16 @@ def MakeSentences(str, coords, p):
 
 
 # this is a function to facilitate very complicated if statements.
-def DetermineParagraph(words, w, pdfSettings, error):
+def DetermineParagraph(lines, lineIndex, pdfSettings, error):
+    if(lines[lineIndex]["LineStartDex"] == pdfSettings.bookmark):
+        return False
     if(not pdfSettings.useSpace):
-        if(w < len(words)-1):
-            retval = newline(words, w+1, error) and not minorfunctions.areEqual(
-                words[w+1]["x0"], pdfSettings.paraAlign, error)
-            return retval
+        if(lineIndex < len(lines)-1):
+            currentAlign = minorfunctions.areEqual(
+                lines[lineIndex]["Align"], pdfSettings.paraAlign, error)
+            nextAlign = minorfunctions.areEqual(
+                lines[lineIndex+1]["Align"], lines[lineIndex]["Align"], error)
+            return not currentAlign and not nextAlign
         else:
             return True
     else:
@@ -116,6 +120,7 @@ def newline(words, w, error=0):
 def removePageNumber(words, num):
     original = words
     words = removePageNumberWord(words, num)
+    size = words[300:]
     if(words != original):
         return words
     words = removePageNumberFromBeginningOfWord(words, num)
@@ -123,10 +128,15 @@ def removePageNumber(words, num):
 
 
 def removePageNumberWord(words, num):
-    if(len(words) < len(str(num))):
+    size = words[300:]
+    if(len(words) < 1):
         return words
-    if(words[0:len(str(num))] == str(num)):
+    if(words[0]["text"] == str(num)):
         words = words[1:]
+        return words
+    if(words[len(words)-1]["text"] == str(num)):
+        words = words[:len(words)-1]
+        return words
     return words
 
 
@@ -239,3 +249,37 @@ def HandleColumns(words, hError, vError):
             retval.append([])
         retval[c].append(words[w])
     return retval
+
+
+def cleanPara(sentlist, pdfSettings):
+    if(len(sentlist) == 0):
+        return sentlist, pdfSettings
+
+    nlp = spacy.load("en_core_web_sm")
+    doc = nlp(sentlist[0].text)
+    if(len(doc) > 0):
+        if(doc[0].is_lower):
+            pdfSettings.addto = True
+
+    i = -1
+    while i < len(sentlist)-1:
+        i += 1
+        doc = nlp(sentlist[i].text)
+        if(len(doc) > 0):
+            if(doc[0].is_lower and i != 0):
+                sentlist[i-1].text += " " + sentlist[i].text
+                sentlist.pop(i)
+                i -= 1
+            elif(len(sentlist[i].text) < 10):
+                if(i == 0 and len(sentlist) > 1):
+                    sentlist[i+1].text = sentlist[i].text + \
+                        " " + sentlist[i+1].text
+                    sentlist.pop(i)
+                    i -= 1
+                    # add it to the next sentence
+                elif(i != 0):
+                    sentlist[i-1].text += " " + sentlist[i].text
+                    sentlist.pop(i)
+                    i -= 1
+
+    return sentlist, pdfSettings

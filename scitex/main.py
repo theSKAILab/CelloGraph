@@ -19,7 +19,7 @@ print("this is just here so I can put a breakpoint here.")
 
 plaintext = plaintextwriter.PDFtoPlain(output)
 
-file = open("Improved Gupta.txt",
+file = open("6_14_Gupta.txt",
             'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
