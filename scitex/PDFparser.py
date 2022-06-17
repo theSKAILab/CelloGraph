@@ -51,7 +51,7 @@ def PDFSort(pdf):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 4):
+    if(page.page_number == 23):
         print("Breakpoint")
 
     pagechars = page.chars
@@ -82,7 +82,7 @@ def DealWithCol(PDF, page, words, pdfSettings):
     PDF, words = PDFfunctions.removeTables(
         PDF, page, words, pdfSettings.interline)
 
-    lines, pdfSettings = PDFfunctions.getLines(
+    words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
 
     i = -1
@@ -103,9 +103,6 @@ def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum):
     w = lines[lineIndex]["LineEndDex"]
     if(w > len(words)-1):
         w = len(words)-1
-
-    if(lineIndex == len(lines)-1):
-        print("Breakpoint")
 
     settings = textSettings.lineSettings(
         lineIndex, lines, pdfSettings, pdfSettings.interline)

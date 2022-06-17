@@ -49,11 +49,7 @@ def PDFtoPlain(PDF):
 
 def FiguretoPlain(figure):
     retval = "\n\n"
-    for line in range(len(figure)):
-        retval += "\n"
-        for word in range(len(figure[line]["Text"])):
-            retval += figure[line]["Text"][word]["text"]
-            retval += " "
+    retval += figure.text
 
     return retval
 

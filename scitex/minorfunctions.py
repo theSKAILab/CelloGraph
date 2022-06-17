@@ -323,3 +323,15 @@ def minLength(str1, str2):
         return len(str2)
     else:
         return len(str1)
+
+
+def isCaption(str):
+    if(str == "Fig." or "Figure"):
+        return True
+    if(str == "Tab." or "Table"):
+        return True
+    if(str == "Scheme" or "Schema"):
+        return True
+    if(str == "Graph" or "Graphic"):
+        return True
+    return False

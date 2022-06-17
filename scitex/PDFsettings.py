@@ -22,6 +22,8 @@ class PDFsettings():
         if(self.paraAlign == -1):
             self.useSpace = True
 
+        self.newFig = False
+
         self.cites = []
         self.coords = [-1]
         self.addto = False
@@ -124,8 +126,10 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
     # normal line space; paragraph space; and a section space, then too bad. (for now)
     pages = []
     pages.append(PDFfunctions.getWords(pdf.pages[0], hError))
-    pages.append(PDFfunctions.getWords(pdf.pages[1], hError))
-    pages.append(PDFfunctions.getWords(pdf.pages[2], hError))
+    if(len(pdf.pages) > 1):
+        pages.append(PDFfunctions.getWords(pdf.pages[1], hError))
+    if(len(pdf.pages) > 2):
+        pages.append(PDFfunctions.getWords(pdf.pages[2], hError))
 
     # for each word, if it has a different y coordinate, note the difference
 
@@ -162,7 +166,7 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
     paraAlign = -1
     paraCount = 0
 
-    for i in range(1, len(lines[0])-1):
+    for i in range(1, len(lines)-1):
         if(minorfunctions.listElementsEqual([lines[i-1]["AftSpace"], linespace, lines[i+1]["AftSpace"]], vError) and minorfunctions.isGreater(lines[i]["AftSpace"], linespace, vError)):
             paraSpace = lines[i]["AftSpace"]
             paraCount = 0

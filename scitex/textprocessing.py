@@ -73,7 +73,25 @@ def MakeSentences(str, coords, p):
     if(bookmark != len(doc)):
         retval.append(PDFfragments.sentence(
             doc[bookmark:].text, coords, p, sentNum))
+
     return retval
+
+
+def checkForCutOffs(sentences):
+    if(len(sentences) == 0):
+        return sentences
+
+    for i in range(len(sentences)):
+        j = 0
+        while(j < len(sentences[i].text)-3):
+            text = sentences[i].text
+            j += 1
+            if(text[j:j+2] == '- ' and text[j-1] != ' '):
+                sentences[i].text = sentences[i].text[:j] + \
+                    sentences[i].text[j+2:]
+                j -= 2
+
+    return sentences
 
 
 # this is a function to facilitate very complicated if statements.

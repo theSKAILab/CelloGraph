@@ -6,7 +6,7 @@ import PDFsettings
 import PDFfunctions
 
 
-FILEPATH = "scitex/Heinze.pdf"
+FILEPATH = "scitex/cutoffTest.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -20,7 +20,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[29]
+page = plumber.pages[0]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 
 words = PDFfunctions.removePageHeadersEarly(
@@ -30,9 +30,13 @@ lines, pdfSettings = PDFfunctions.getLines(
     words, pdfSettings, pdfSettings.intraline)
 
 pdfSettings.activesection = PDFfragments.section(
-    "7.2", None, [0], 2, 11, 18)
+    "5", None, [0], 1, 11, 18)
+
+PDF.sections.append(pdfSettings.activesection)
 
 #PDF, words, lines, lineIndex, pdfSettings, pagenum
-for i in range(len(lines)):
-    PDF, pdfSettings = PDFparser.DealWithLine(
+i = -1
+while i < len(lines)-1:
+    i += 1
+    PDF, pdfSettings, lines, i = PDFparser.DealWithLine(
         PDF, words, lines, i, pdfSettings, page.page_number)

@@ -29,6 +29,8 @@ def removePageHeadersEarly(words, num, pdfSettings):
 
 def removePageFootersEarly(words, num, pdfSettings):
     words = textprocessing.removePageNumber(words, num)
+    heck = words[300:]
+    doubleheck = words[600:]
 
     for i in range(len(pdfSettings.pageFooters)):
         header = minorfunctions.reverseArr(
@@ -144,7 +146,49 @@ def getLines(words, pdfSettings, error):
     lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
         lines, words, prevLineBegin, currentLineBegin, len(words), len(words)-1)
 
-    return lines, pdfSettings
+    # deal with Cutoffs
+    words, lines = DealWithCutOffs(words, lines)
+
+    return words, lines, pdfSettings
+
+
+def DealWithCutOffs(words, lines):
+    i = -1
+    while i < len(lines)-2:
+        i += 1
+        if(lines[i]["Cutoff"]):
+            lineText = lines[i]["Text"]
+            currentWord = lineText[len(lineText)-1]
+
+            # get rid of the hyphen
+            currentWord["text"] = currentWord["text"][:len(
+                currentWord["text"])-1]
+
+            currentWord["chars"].pop(len(currentWord["chars"])-1)
+
+            # add the first "word" of the next line
+            nextText = lines[i+1]["Text"]
+            nextWord = nextText[0]
+
+            for char in nextWord["chars"]:
+                currentWord["chars"].append(char)
+
+            currentWord["text"] += nextWord["text"]
+
+            # remove the first word from the next line
+            lines[i+1]["Text"].pop(0)
+            words.pop(lines[i+1]["LineStartDex"])
+            if(len(lines[i+1]["Text"]) == 0):
+                lines.pop(i+1)
+            lines[i+1]["LineEndDex"] -= 1
+            for j in range(i+2, len(lines)):
+                lines[j]["LineStartDex"] -= 1
+                lines[j]["LineEndDex"] -= 1
+
+            # update this line
+            lineText[len(lineText)-1] = currentWord
+            lines[i]["Text"] = lineText
+    return words, lines
 
 
 # returns True if words[w] is on a newline
@@ -489,8 +533,6 @@ def getWords(page, hError, spaceChar=False, vError=3):
             return getWords(page, hError, True)
 
         if(isSpace(chars, i) and bookmark != i):
-            if(pagenum == '1'):
-                print("Breakpoint")
             if(unusual != ""):
                 unusual = ""
             else:
@@ -539,7 +581,7 @@ def getWords(page, hError, spaceChar=False, vError=3):
 
 # returns true if its a space or a wacky character that ends up looking like a space.
 def isSpace(chars, i):
-    if(i == 0 or i >= len(chars)-1):
+    if(i == 0 or i > len(chars)-1):
         return False
     if(chars[i]["text"] == ' ' or chars[i]["text"] == '\xa0'):
         return True
@@ -561,7 +603,7 @@ def makeWord(chars, unusual=""):
     for c in range(len(chars)):
         if(isSpace(chars, c)):
             x0 = chars[0]["x0"]
-            x1 = chars[c]["x1"]
+            x1 = chars[c-1]["x1"]
 
             top = minorfunctions.toppest(chars)["top"]
             bottom = minorfunctions.bottomest(chars)["bottom"]
@@ -575,7 +617,7 @@ def makeWord(chars, unusual=""):
                 super = True
                 text += "}"
 
-            retval = {"text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
+            retval = {"text": text, "chars": chars[:c], "x0": x0, "x1": x1, "top": top,
                       "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super}
             return retval
         else:
@@ -632,6 +674,16 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
         aftspace = nextTop - currentBottom
         befspace = currentTop - prevBottom
 
+    cutoff = False
+    charDex = 1
+    chars = words[nextLineBegin - 1]["chars"]
+    char = chars[len(chars)-charDex]
+    while(isSpace(chars, len(chars)-charDex)):
+        charDex += 1
+        char = chars[len(chars)-charDex]
+    if(char["text"] == '-'):
+        cutoff = True
+
     height = float(minorfunctions.bottomest(currentline)
                    ["bottom"] - minorfunctions.toppest(currentline)["top"])
 
@@ -639,7 +691,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     befRatio = height/befspace
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                  "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin]})
+                  "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": cutoff})
 
     prevLineBegin = currentLineBegin
     currentLineBegin = nextLineBegin
@@ -659,7 +711,7 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum):
         words[pdfSettings.bookmark], pdfSettings.activesection, pagenum, lines[lineIndex]["Height"], pdfSettings.intraline)
 
     if(len(lines[lineIndex]["Text"]) < 2 and len(lines[lineIndex]["Text"][0]["text"]) < 3):
-        type = pdfSettings.activesection.type+1
+        type = pdfSettings.activesection.type + 1
 
     pdfSettings.coords = minorfunctions.newCoords(
         pdfSettings.coords, type)
@@ -697,12 +749,14 @@ def addBlock(pdfSettings, words, w):
 
 # turns sentlist into a paragraph and adds it to the last para in pdfSettings.activesection
 # returns updated pdfSettings
-def addToPara(pdfSettings, sentlist):
+def addToPara(pdfSettings, sentlist, words, w):
     activepara = pdfSettings.activesection.para[len(
         pdfSettings.activesection.para)-1]
     while(len(activepara.sentences) == 0):
         pdfSettings.activesection.para.pop(len(
             pdfSettings.activesection.para)-1)
+        if(len(pdfSettings.activesection.para) == 0):
+            return addPara(pdfSettings, sentlist, words, w)
         activepara = pdfSettings.activesection.para[len(
             pdfSettings.activesection.para)-1]
     for s in range(len(sentlist)):
@@ -739,6 +793,7 @@ def addPara(pdfSettings, sentlist, words, w):
 def extensiveAddPara(pdfSettings, words, w):
     if(w < 0):
         return pdfSettings
+
     sentlist = textprocessing.MakeSentences(textprocessing.makeString(
         words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
 
@@ -747,7 +802,7 @@ def extensiveAddPara(pdfSettings, words, w):
     # if this is the 2nd half of a cutoff paragraph, sew it back together.
     if(pdfSettings.addto and len(pdfSettings.activesection.para) > 0):
         pdfSettings.addto = False
-        pdfSettings = addToPara(pdfSettings, sentlist)
+        pdfSettings = addToPara(pdfSettings, sentlist, words, w)
     else:
         pdfSettings = addPara(pdfSettings, sentlist, words, w)
     pdfSettings.bookmark = w+1
@@ -763,18 +818,22 @@ def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum):
         text1 = line["Text"][1]["text"]
         bigenough = len(line["Text"]) >= 2
         numbered = text1.isdigit() or text1[:len(text1)-1].isdigit()
-        figure = (text0 == "Fig." or text0 == "Figure")
-        isNewFigure = (bigenough and numbered)
+        figure = minorfunctions.isCaption(text0)
+        isNewFigure = (
+            figure and bigenough and numbered) or pagenum != PDF.lastFig().pagenum
+
         if(len(PDF.figures) == 0 or isNewFigure):
-            PDF.figures.append([line])
+            figure = PDFfragments.figure(line["Text"], pagenum)
+            PDF.figures.append(figure)
         else:
-            PDF.figures[len(PDF.figures)-1].append(line)
+            PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
 
     else:
-        if(len(PDF.figures) > 0):
-            PDF.figures[len(PDF.figures)-1].append(line)
+        if(len(PDF.figures) > 0 and pagenum == PDF.lastFig().pagenum):
+            PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
         else:
-            PDF.figures.append([line])
+            figure = PDFfragments.figure(line["Text"], pagenum)
+            PDF.figures.append(figure)
 
     for i in range(line["LineEndDex"], line["LineStartDex"]-1, -1):
         words.pop(i)

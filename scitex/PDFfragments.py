@@ -66,6 +66,7 @@ class section:
 
 # returns (last subsection, last subsection's type)
 
+
     def lastsub(self):
         if(len(self.subsections) == 0):
             return (None, None)
@@ -197,7 +198,30 @@ class sentence:
         return retval
 
 
+class figure:
+    def __init__(self, words, num):
+        self.words = words
+        self.pagenum = num
+        self.text = ""
+        self.sentences = []
+        self.configure()
+
+    def configure(self):
+        self.text = ""
+        for word in self.words:
+            self.text += word["text"]
+            if(self.text[len(self.text)-1] != ' '):
+                self.text += ' '
+
+        self.sentences = textprocessing.MakeSentences(self.text, [], -1)
+
+    def addWords(self, words):
+        self.words += words
+        self.configure()
+
 # sections: an array of the sections within this document
+
+
 class PDFdocument:
     def __init__(self):
         self.sections = []
@@ -209,6 +233,12 @@ class PDFdocument:
             return self.sections[len(self.sections)-1]
         else:
             return section("")
+
+    def lastFig(self):
+        if(len(self.figures) != 0):
+            return self.figures[len(self.figures)-1]
+        else:
+            return figure("", -1)
 
     def __eq__(self, other):
         if(len(self.sections) != len(other.sections)):
