@@ -40,7 +40,41 @@ def listElementsEqual(list, error=0, percentage=False):
     return True
 
 
+def bubbleSort(arr):
+    if(len(arr) < 2):
+        return arr
+
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(1, len(arr)):
+            if arr[i-1] < arr[i]:
+                swapped = True
+                arr[i], arr[i - 1] = arr[i - 1], arr[i]
+
+    return arr
+
+# sorts a 2d array by length, so that the longest is first
+# I just use bubble sort for now
+
+
+def sortByLen(arr):
+    if(len(arr) < 2):
+        return arr
+
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(1, len(arr)):
+            if len(arr[i-1].text) < len(arr[i].text):
+                swapped = True
+                arr[i], arr[i - 1] = arr[i - 1], arr[i]
+
+    return arr
+
 # returns true if val1 > val2+error or val1 < val2* (100+error)%
+
+
 def isGreater(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
@@ -76,7 +110,7 @@ def isLesser(val1, val2, error=0, percentage=False):
 
 # just for shorthand
 def isEndofCol(i, lines):
-    return i >= len(lines)-1
+    return i >= len(lines)-1 or lines[i]["AftSpace"] < 0
 
 
 # returns the most common element in an array.
@@ -313,7 +347,9 @@ def EndEqual(str1, str2):
     if(len(str1) == 0 or len(str2) == 0):
         return False
     length = minLength(str1, str2)
-    if str1[len(str1)-length:] == str2[len(str2)-length:]:
+    mini1 = str1[len(str1)-length:]
+    mini2 = str2[len(str2)-length:]
+    if mini1 == mini2:
         return True
     return False
 
@@ -324,6 +360,8 @@ def minLength(str1, str2):
     else:
         return len(str1)
 
+# really long if statement
+
 
 def isCaption(str):
     if(str == "Fig." or "Figure"):
@@ -333,5 +371,14 @@ def isCaption(str):
     if(str == "Scheme" or "Schema"):
         return True
     if(str == "Graph" or "Graphic"):
+        return True
+    return False
+
+
+# returns true if its a space or a wacky character that ends up looking like a space.
+def isSpace(chars, i):
+    if(i == 0 or i > len(chars)-1):
+        return False
+    if(chars[i]["text"] == ' ' or chars[i]["text"] == '\xa0'):
         return True
     return False

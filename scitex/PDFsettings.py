@@ -18,6 +18,9 @@ class PDFsettings():
         self.pageHeaders = FindPageHeaders(pdf, self, hError)
         self.pageFooters = FindPageFooters(pdf, self, hError)
 
+        self.pageHeaders = minorfunctions.sortByLen(self.pageHeaders)
+        self.pageFooters = minorfunctions.sortByLen(self.pageFooters)
+
         self.useSpace = False
         if(self.paraAlign == -1):
             self.useSpace = True
@@ -27,9 +30,11 @@ class PDFsettings():
         self.cites = []
         self.coords = [-1]
         self.addto = False
+        self.addtoNext = False
         self.consistentRatio = 0
         self.paraNum = 0
         self.bookmark = 0
+        self.offset = 0
         self.activesection = PDFfragments.section("")
 
 
@@ -46,70 +51,153 @@ def FindPageHeaders(pdf, pdfSettings, hError):
     headers = []
     for i in range(len(pdf.pages)-4):
         words = PDFfunctions.getWords(pdf.pages[i], hError)
-
         words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
-
         words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
 
-        index = 0
-        first1 = words[0]
-        expect_num = False
-        while first1["text"].isdigit():
-            index += 1
-            first1 = words[index]
-        if words[index]["text"] == words2[index]["text"] and words2[index]["text"] == words3[index]["text"]:
-            count = index
-            for k in range(index, len(words)):
-                if words[k]["text"] == words2[k]["text"] and words2[k]["text"] == words3[k]["text"]:
-                    count += 1
-                elif(words[k]["text"].isdigit() and words[k]["text"] == i+1):
-                    expect_num = True
-                    break
-                elif(words[k]["text"][0:len(str(i+1))] == str(i+1)):
-                    expect_num = True
-                    break
-                else:
-                    break
-            headers = minorfunctions.appendNoRepeats(
-                Header(words[index:count], expect_num), headers)
+        foundHeader = False
+        headers, foundHeader = addHeader(headers, words, i, words2, words3)
+
+        if(not foundHeader and i >= 4):
+            words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
+            words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
+            headers, foundHeader = addHeader(headers, words, i, words2, words3)
+
+    if(len(pdf.pages) > 4):
+        for i in range(len(pdf.pages)-4, len(pdf.pages)):
+            words = PDFfunctions.getWords(pdf.pages[i], hError)
+            words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
+            words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
+            headers, foundHeader = addHeader(headers, words, i, words2, words3)
+
     return headers
+
+
+def addHeader(headers, words, i, words2, words3):
+    index = 0
+    first1 = words[0]
+    expect_num = False
+    foundHeader = False
+    while first1["text"].isdigit():
+        index += 1
+        first1 = words[index]
+    if(headerCheck(words, words2, words3, index)):
+        foundHeader = True
+        count = index
+        for k in range(index, len(words)):
+            if headerCheck(words, words2, words3, k):
+                count += 1
+            elif(words[k]["text"].isdigit() and words[k]["text"] == i+1):
+                expect_num = True
+                break
+            elif(words[k]["text"][0:len(str(i+1))] == str(i+1)):
+                expect_num = True
+                break
+            else:
+                break
+        headers = minorfunctions.appendNoRepeats(
+            Header(words[index:count], expect_num), headers)
+    return headers, foundHeader
+
+
+# really long if statement, checks that words[index] is equal for all words or they're all numbers.
+def headerCheck(words, words2, words3, index):
+    w1 = words[index]["text"]
+    w2 = words2[index]["text"]
+    w3 = words3[index]["text"]
+    if w1 == w2 and w2 == w3:
+        return True
+    if w1.isdigit() and w2.isdigit() and w3.isdigit():
+        num = int(w1)
+        num2 = int(w2)
+        num3 = int(w3)
+        if(num2 == num + 2 and num3 == num2 + 2):
+            next1 = words[index+1]["text"]
+            next2 = words2[index+1]["text"]
+            next3 = words3[index+1]["text"]
+            if next1 == next2 and next2 == next3:
+                return True
+            else:
+                return False
+    return False
+
+
+def footerCheck(words, words2, words3, index):
+    if(index < 1):
+        index = 1
+    w1 = words[len(words)-index]["text"]
+    w2 = words2[len(words2)-index]["text"]
+    w3 = words3[len(words3)-index]["text"]
+    if w1 == w2 and w2 == w3:
+        return True
+    w1 = textprocessing.trimScript(w1)
+    w2 = textprocessing.trimScript(w2)
+    w3 = textprocessing.trimScript(w3)
+    if w1.isdigit() and w2.isdigit() and w3.isdigit():
+        num = int(w1)
+        num2 = int(w2)
+        num3 = int(w3)
+        if(num2 == num + 2 and num3 == num2 + 2):
+            return True
+    return False
 
 
 def FindPageFooters(pdf, pdfSettings, hError):
     footers = []
     for i in range(len(pdf.pages)-4):
+        if(i == 28):
+            print("Breakpoint")
         words = PDFfunctions.getWords(pdf.pages[i], hError)
-        visible1 = words[len(words)-250:]
-
         words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
-        visible2 = words2[len(words2)-250:]
-
         words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
-        visible3 = words3[len(words3)-250:]
 
-        index = 1
-        first1 = words[len(words)-1]
-        expect_num = False
-        while first1["text"].isdigit():
-            index += 1
-            first1 = words[index]
-        if words[len(words)-index]["text"] == words2[len(words2)-index]["text"] and words2[len(words2)-index]["text"] == words3[len(words3)-index]["text"]:
-            count = 0
-            for k in range(index+1, len(words)):
-                if words[len(words)-k]["text"] == words2[len(words2)-k]["text"] and words2[len(words2)-k]["text"] == words3[len(words3)-k]["text"]:
-                    count += 1
-                elif(words[len(words)-k]["text"].isdigit() and words[len(words)-k]["text"] == str(i+1)):
-                    expect_num = True
-                    break
-                elif(words[len(words)-k]["text"][0:len(str(i+1))] == str(i+1) or words[len(words)-1]["text"][0:len(str(i+1))] == str(i+1)):
-                    expect_num = True
-                    break
-                else:
-                    break
-            text = words[len(words)-count-1:len(words)-index+1]
-            footers = minorfunctions.appendNoRepeats(
-                Header(text, expect_num), footers)
+        visible1 = words[len(words)-60:]
+        visible2 = words2[len(words2)-60:]
+        visible3 = words3[len(words3)-60:]
+
+        foundFooter = False
+        footers, foundFooter = addFooter(footers, words, i, words2, words3)
+
+        if(not foundFooter and i >= 4):
+            words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
+            words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
+            footers, foundFooter = addFooter(footers, words, i, words2, words3)
+
+    if(len(pdf.pages) > 4):
+        for i in range(len(pdf.pages)-4, len(pdf.pages)):
+            words = PDFfunctions.getWords(pdf.pages[i], hError)
+            words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
+            words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
+            footers, foundFooter = addFooter(footers, words, i, words2, words3)
+
     return footers
+
+
+def addFooter(footers, words, i, words2, words3):
+    index = 1
+    first1 = words[len(words)-1]
+    expect_num = False
+    foundFooter = False
+    if first1["text"].isdigit():
+        if(int(first1["text"]) == first1["Page"]):
+            index += 1
+    if footerCheck(words, words2, words3, index):
+        foundFooter = True
+        count = 0
+        for k in range(index+1, len(words)):
+            if footerCheck(words, words2, words3, k):
+                count += 1
+            elif(words[len(words)-k]["text"].isdigit() and words[len(words)-k]["text"] == str(i+1)):
+                expect_num = True
+                break
+            elif(words[len(words)-k]["text"][0:len(str(i+1))] == str(i+1) or words[len(words)-1]["text"][0:len(str(i+1))] == str(i+1)):
+                expect_num = True
+                break
+            else:
+                break
+        text = words[len(words)-count-1:len(words)-index+1]
+        footers = minorfunctions.appendNoRepeats(
+            Header(text, expect_num), footers)
+    return footers, foundFooter
 
 
 # FindSpace: Takes a PDF and tries to figure out what the spacing is
@@ -118,7 +206,6 @@ def FindPageFooters(pdf, pdfSettings, hError):
 # paraAlign is the left-margin on a standard line, so that any deviation can be
 # detected as a new paragraph
 # paraSpace is the vertical space between paragraphs, if that spacing is not the same as linespace.
-
 
 def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
 

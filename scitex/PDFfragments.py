@@ -18,7 +18,7 @@ import minorfunctions
 # para: an array of paragraphs between this section and the next
 
 class section:
-    def __init__(self, t, p=None, coords=[], type=0, h=3, pagenum=1):
+    def __init__(self, t, p=None, coords=[], type=0, h=3, pagenum=1, colnum=0):
         self.title = t
         self.subsections = []
         self.parent = p
@@ -27,6 +27,7 @@ class section:
         self.coords = coords
         self.height = h
         self.pagenum = pagenum
+        self.colnum = colnum
 
     def __eq__(self, other):
         if(minorfunctions.xor(self, other)):
@@ -65,7 +66,6 @@ class section:
 
 
 # returns (last subsection, last subsection's type)
-
 
     def lastsub(self):
         if(len(self.subsections) == 0):
@@ -106,12 +106,18 @@ class section:
 # paraNum: the index of this paragraph within its section
 # citations: an array of citations
 class paragraph:
-    def __init__(self, coords, paraNum, sent=[], cites=[], align=0):
+    def __init__(self, coords, paraNum, sent=[], cites=[], align=0, start=[0, 0], end=[0, 0]):
         self.sentences = sent
         self.coords = coords
         self.paraNum = paraNum
         self.citations = cites
         self.align = align
+        self.start = start
+        self.end = end
+        self.startPage = start[0]
+        self.startCol = start[1]
+        self.endPage = end[0]
+        self.endCol = end[1]
 
     def __eq__(self, other):
         if(self.coords == other.coords):
@@ -174,11 +180,18 @@ class citation:
 # sentNum: the index of this sentence within the paragraph its from
 
 class sentence:
-    def __init__(self, text, coords, para, sentNum):
+    def __init__(self, words, text, coords, para, sentNum, start=[0, 0], end=[0, 0]):
+        self.words = words
         self.text = text
         self.coords = coords
         self.para = para
         self.sentNum = sentNum
+        self.start = start
+        self.end = end
+        self.startPage = start[0]
+        self.startCol = start[1]
+        self.endPage = end[0]
+        self.endCol = end[1]
 
     def __eq__(self, other):
         if(self.coords == other.coords):
@@ -188,7 +201,17 @@ class sentence:
                         return True
         return False
 
+    # iadd is for +=
+    def __iadd__(self, other):
+        self.text += other.text
+        self.words += other.words
+        self.endCol = other.endCol
+        self.endPage = other.endPage
+        self.end = [self.endPage, self.endCol]
+        return self
+
     # getPlace: returns a string describing the location of this sentence
+
     def getPlace(self):
         retval = "Section: "
         for i in self.coords:
@@ -199,25 +222,45 @@ class sentence:
 
 
 class figure:
-    def __init__(self, words, num):
+    def __init__(self, words, num, colnum):
         self.words = words
         self.pagenum = num
         self.text = ""
         self.sentences = []
+        self.col = colnum
         self.configure()
 
-    def configure(self):
-        self.text = ""
-        for word in self.words:
-            self.text += word["text"]
-            if(self.text[len(self.text)-1] != ' '):
-                self.text += ' '
 
-        self.sentences = textprocessing.MakeSentences(self.text, [], -1)
+# turns self.words into a string, makes it self.text
+# also turns self.words into sentences, makes it self.sentences.
+# part makes it work on only the last (part) words.
+
+    def configure(self, part=0):
+        if(part == 0 or part > len(self.words)):
+            self.text = ""
+            for word in self.words:
+                self.text += word["text"]
+                if(self.text[len(self.text)-1] != ' '):
+                    self.text += ' '
+        else:
+            for i in range(len(self.words)-part, len(self.words)):
+                word = self.words[i]
+                self.text += word["text"]
+                if(self.text[len(self.text)-1] != ' '):
+                    self.text += ' '
+
+        nonzero = textprocessing.MakeSentences(
+            self.words[len(self.words)-1-part:], [], -1, self.pagenum, self.col)
+
+        if(nonzero):
+            self.sentences += nonzero
+
+        self.sentences = textprocessing.stitchSentences(self.sentences)
 
     def addWords(self, words):
+        prevsize = len(self.words)
         self.words += words
-        self.configure()
+        self.configure(len(self.words)-prevsize)
 
 # sections: an array of the sections within this document
 
@@ -238,7 +281,7 @@ class PDFdocument:
         if(len(self.figures) != 0):
             return self.figures[len(self.figures)-1]
         else:
-            return figure("", -1)
+            return figure("", -1, 0)
 
     def __eq__(self, other):
         if(len(self.sections) != len(other.sections)):

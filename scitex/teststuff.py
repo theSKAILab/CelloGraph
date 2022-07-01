@@ -6,7 +6,7 @@ import PDFsettings
 import PDFfunctions
 
 
-FILEPATH = "scitex/cutoffTest.pdf"
+FILEPATH = "scitex/test/scriptTest2.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 

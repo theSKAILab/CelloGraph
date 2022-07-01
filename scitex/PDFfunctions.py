@@ -6,6 +6,7 @@ import PDFfragments
 import minorfunctions
 import copy
 import decimal
+import time
 
 
 # look through each page header and if it matches the beginning of the page,
@@ -15,13 +16,18 @@ def removePageHeadersEarly(words, num, pdfSettings):
     words = textprocessing.removePageNumber(words, num)
 
     for i in range(len(pdfSettings.pageHeaders)):
+
         header = minorfunctions.reverseArr(
             pdfSettings.pageHeaders[i].text, "text")
+
         wordtext = minorfunctions.reverseArr(words, "text")
+
         if(minorfunctions.BeginningEqual(header, wordtext)):
             words = CutWords(words, pdfSettings.pageHeaders[i].text)
             if(pdfSettings.pageHeaders[i].expect_num):
                 words = textprocessing.removePageNumber(words, num)
+            break
+
     if(words[0]["text"] == ""):
         words = words[1:]
     return words
@@ -33,13 +39,20 @@ def removePageFootersEarly(words, num, pdfSettings):
     doubleheck = words[600:]
 
     for i in range(len(pdfSettings.pageFooters)):
+
         header = minorfunctions.reverseArr(
             pdfSettings.pageFooters[i].text, "text")
+
         wordtext = minorfunctions.reverseArr(words, "text")
+        doubleheck = wordtext[600:]
+
         if(minorfunctions.EndEqual(header, wordtext)):
+
             words = CutWordsEnd(words, pdfSettings.pageFooters[i].text)
+
             if(pdfSettings.pageFooters[i].expect_num):
                 words = textprocessing.removePageNumber(words, num)
+
     if(words[len(words)-1]["text"] == ""):
         words = words[:len(words)-1]
     return words
@@ -113,6 +126,9 @@ def removeTables(PDF, page, words, error):
 # diffs are essentially lines of text (maybe I should rename them...)
 # they do have some accompanying stats like height and spacing for ease of access.
 def getLines(words, pdfSettings, error):
+
+    sec1 = time.time()
+
     lines = []
 
     prevLineBegin = 0
@@ -149,6 +165,10 @@ def getLines(words, pdfSettings, error):
     # deal with Cutoffs
     words, lines = DealWithCutOffs(words, lines)
 
+    sec2 = time.time()
+
+    print("Time to get lines: " + str(sec2 - sec1))
+
     return words, lines, pdfSettings
 
 
@@ -156,6 +176,8 @@ def DealWithCutOffs(words, lines):
     i = -1
     while i < len(lines)-2:
         i += 1
+        if(i == 22):
+            print("Breakpoint")
         if(lines[i]["Cutoff"]):
             lineText = lines[i]["Text"]
             currentWord = lineText[len(lineText)-1]
@@ -174,6 +196,12 @@ def DealWithCutOffs(words, lines):
                 currentWord["chars"].append(char)
 
             currentWord["text"] += nextWord["text"]
+            currentWord["Pieces"].append(nextWord["text"])
+
+            # but if its the only word on that line then we need to keep some of that data.
+            if(len(lines[i+1]["Text"]) == 1):
+                lines[i]["AftSpace"] = lines[i+1]["AftSpace"]
+                lines[i]["AftRatio"] = lines[i+1]["AftRatio"]
 
             # remove the first word from the next line
             lines[i+1]["Text"].pop(0)
@@ -188,6 +216,7 @@ def DealWithCutOffs(words, lines):
             # update this line
             lineText[len(lineText)-1] = currentWord
             lines[i]["Text"] = lineText
+
     return words, lines
 
 
@@ -231,7 +260,7 @@ def moveSection(tomove, destination):
 
 
 # adds the section to PDF
-def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, recursionlevel=0):
+def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, colnum=0, recursionlevel=0):
 
     coords = copy.copy(pdfSettings.coords)
     # if it's broken return false
@@ -242,36 +271,36 @@ def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, recursionl
     # if it's a section header, add it to the PDF's list
     elif(type == 1):
         PDF.sections.append(PDFfragments.section(
-            title, header.parent, coords, 1, h, pagenum))
+            title, header.parent, coords, 1, h, pagenum, colnum))
 
     # if it's the current header's sibling, add it to the parent's list
     elif(type == header.type):
         header.parent.subsections.append(
-            PDFfragments.section(title, header.parent, coords, type, h, pagenum))
+            PDFfragments.section(title, header.parent, coords, type, h, pagenum, colnum))
 
     # if it's a child of the current header, add it to the current header's list
     elif(type == header.type + 1):
         header.subsections.append(PDFfragments.section(
-            title, header, coords, type, h, pagenum))
+            title, header, coords, type, h, pagenum, colnum))
 
     # if it's an uncle of the current header, recurse upwards.
     elif(type < header.type):
         if(header.parent and header.parent.parent):
             addSection(header.parent, title, type, PDF,
-                       pdfSettings, h, pagenum, recursionlevel+1)
+                       pdfSettings, h, pagenum, colnum, recursionlevel+1)
         else:
             PDF.sections.append(PDFfragments.section(
-                title, header.parent, coords, h, pagenum))
+                title, header.parent, coords, h, pagenum, colnum))
 
     # if it's a grandchild of the current header, recurse downwards.
     elif(type > header.type):
         next = header.lastsub()[0]
         if(next):
             addSection(next, title, type, PDF,
-                       pdfSettings, h, pagenum, recursionlevel+1)
+                       pdfSettings, h, pagenum, colnum, recursionlevel+1)
         else:
             header.subsections.append(
-                PDFfragments.section("ERROR:SECTION_MISSING" + title, header, coords, type, h, pagenum))
+                PDFfragments.section("ERROR:SECTION_MISSING" + title, header, coords, type, h, pagenum, colnum))
 
     return PDF, header
 
@@ -471,11 +500,14 @@ def recursiveRemoveFigureHeaders(PDF, section):
 # cleanSection takes a section and removes empty paragraphs and stitches fragmented ones together.
 def cleanSection(section):
     nlp = spacy.load("en_core_web_sm")
-    i = -1
-    while i < len(section.para):
-        i += 1
-        if(i > len(section.para)-1):
+    i = 0
+    while (len(section.para) > 0):
+        if(len(section.para[0].sentences) == 0):
+            section.para.pop(0)
+        else:
             break
+    while i < len(section.para)-1:
+        i += 1
         para = section.para[i]
         prev = section.para[i-1]
         if(len(para.sentences) == 0):
@@ -526,31 +558,32 @@ def getWords(page, hError, spaceChar=False, vError=3):
 
     i = -1
     unusual = ""
+    prevdiff = -1
     while i < len(chars)-2:
         i += 1
 
-        if(isSpace(chars, i) and not spaceChar and len(retval) < 30):
+        if(minorfunctions.isSpace(chars, i) and not spaceChar and len(retval) < 30):
             return getWords(page, hError, True)
 
-        if(isSpace(chars, i) and bookmark != i):
-            if(unusual != ""):
-                unusual = ""
-            else:
-                unusual = findScript(chars, i, bookmark-1,
-                                     vError, float(space)*4)
+        if(minorfunctions.isSpace(chars, i) and bookmark != i):
+            unusual, prevdiff = findScript(chars, i, bookmark-1,
+                                           vError, float(space)*4, prevdiff)
 
-            word = makeWord(chars[bookmark:i+1], unusual)
-            retval, bookmark = addWord(word, retval, unusual, bookmark, i)
+            word = makeWord(
+                retval, chars[bookmark:i+1], page.page_number, unusual)
+            retval, bookmark = addWord(
+                word, retval, unusual, bookmark, i, hError)
 
         elif(chars[i+1]["x0"]+space < chars[i]["x1"]):
-            if(unusual != ""):
-                unusual = ""
-            else:
-                unusual = findScript(chars, i, bookmark-1,
-                                     vError, float(space)*4)
+            # if verticals are unequal, if too high, super, if too low, sub.
+            # measure that difference. if we're
+            unusual, prevdiff = findScript(chars, i, bookmark-1,
+                                           vError, float(space)*4, prevdiff)
 
-            word = makeWord(chars[bookmark:i+1], unusual)
-            retval, bookmark = addWord(word, retval, unusual, bookmark, i)
+            word = makeWord(
+                retval, chars[bookmark:i+1], page.page_number, unusual)
+            retval, bookmark = addWord(
+                word, retval, unusual, bookmark, i, hError)
 
         else:
             section = chars[bookmark:i+1]
@@ -562,34 +595,23 @@ def getWords(page, hError, spaceChar=False, vError=3):
                 chars[i+1]["x0"], chars[i]["x1"], space)
 
             if(topUnEqual or botUnEqual or (not spaceChar and horizontalSpace)):
-                if(pagenum == '1'):
-                    print("Breakpoint")
-                if(unusual != ""):
-                    unusual = ""
-                else:
-                    unusual = findScript(chars, i, bookmark-1,
-                                         vError, float(space)*4)
+                unusual, prevdiff = findScript(chars, i, bookmark-1,
+                                               vError, float(space)*4, prevdiff)
 
-                word = makeWord(chars[bookmark:i+1], unusual)
-                retval, bookmark = addWord(word, retval, unusual, bookmark, i)
+                word = makeWord(
+                    retval, chars[bookmark:i+1], page.page_number, unusual)
+                retval, bookmark = addWord(
+                    word, retval, unusual, bookmark, i, hError)
 
     if(bookmark != len(chars)-1):
-        retval.append(makeWord(chars[bookmark:len(chars)]))
+        retval.append(
+            makeWord(retval, chars[bookmark:len(chars)], page.page_number))
 
     return retval
 
 
-# returns true if its a space or a wacky character that ends up looking like a space.
-def isSpace(chars, i):
-    if(i == 0 or i > len(chars)-1):
-        return False
-    if(chars[i]["text"] == ' ' or chars[i]["text"] == '\xa0'):
-        return True
-    return False
-
-
 # takes characters and turns them into a word object that pdfplumber would use.
-def makeWord(chars, unusual=""):
+def makeWord(words, chars, pagenum, unusual=""):
     if(len(chars) == 0):
         return None
 
@@ -601,7 +623,7 @@ def makeWord(chars, unusual=""):
         text = ""
 
     for c in range(len(chars)):
-        if(isSpace(chars, c)):
+        if(minorfunctions.isSpace(chars, c)):
             x0 = chars[0]["x0"]
             x1 = chars[c-1]["x1"]
 
@@ -617,8 +639,8 @@ def makeWord(chars, unusual=""):
                 super = True
                 text += "}"
 
-            retval = {"text": text, "chars": chars[:c], "x0": x0, "x1": x1, "top": top,
-                      "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super}
+            retval = {"Page": pagenum, "text": text, "chars": chars[:c], "x0": x0, "x1": x1, "top": top,
+                      "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super, "Pieces": [text]}
             return retval
         else:
             text += chars[c]["text"]
@@ -629,6 +651,8 @@ def makeWord(chars, unusual=""):
     top = minorfunctions.toppest(chars)["top"]
     bottom = minorfunctions.bottomest(chars)["bottom"]
 
+    sub = False
+    super = False
     if(unusual == "Subscript"):
         sub = True
         text += "}"
@@ -636,8 +660,8 @@ def makeWord(chars, unusual=""):
         super = True
         text += "}"
 
-    retval = {"text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
-              "bottom": bottom, "upright": True, "direction": 1}
+    retval = {"Page": pagenum, "text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
+              "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super, "Pieces": [text]}
     return retval
 
 
@@ -650,6 +674,24 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     prevline = words[prevLineBegin:currentLineBegin]
     currentline = words[currentLineBegin:nextLineBegin]
     nextline = words[nextLineBegin:w]
+
+    if(len(currentline) == 0):
+        return lines, prevLineBegin, currentLineBegin, nextLineBegin
+
+    if(len(currentline) == len(words)):
+        height = float(minorfunctions.bottomest(currentline)[
+                       "bottom"] - minorfunctions.toppest(currentline)["top"])
+        aftRatio = height
+        befRatio = height
+        lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": height,
+                      "BefSpace": height, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
+                      "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": False})
+
+        prevLineBegin = currentLineBegin
+        currentLineBegin = nextLineBegin
+        nextLineBegin = w
+
+        return lines, prevLineBegin, currentLineBegin, nextLineBegin
 
     if(len(prevline) > 0):
         prevBottom = float(minorfunctions.bottomest(prevline)["bottom"])
@@ -674,15 +716,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
         aftspace = nextTop - currentBottom
         befspace = currentTop - prevBottom
 
-    cutoff = False
-    charDex = 1
-    chars = words[nextLineBegin - 1]["chars"]
-    char = chars[len(chars)-charDex]
-    while(isSpace(chars, len(chars)-charDex)):
-        charDex += 1
-        char = chars[len(chars)-charDex]
-    if(char["text"] == '-'):
-        cutoff = True
+    cutoff = detectCutoff(words, nextLineBegin)
 
     height = float(minorfunctions.bottomest(currentline)
                    ["bottom"] - minorfunctions.toppest(currentline)["top"])
@@ -700,9 +734,23 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     return lines, prevLineBegin, currentLineBegin, nextLineBegin
 
 
+def detectCutoff(words, nextLineBegin):
+    cutoff = False
+    charDex = 1
+    chars = words[nextLineBegin - 1]["chars"]
+    char = chars[len(chars)-charDex]
+    while(minorfunctions.isSpace(chars, len(chars)-charDex)):
+        charDex += 1
+        char = chars[len(chars)-charDex]
+    if(char["text"] == '-'):
+        cutoff = True
+    return cutoff
+
 # figures out a bunch of information about the section and then adds it
 # info includes type, parent, coords, etc
-def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum):
+
+
+def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum, colnum):
 
     pdfSettings.addto = False
     pdfSettings.consistentRatio = 0
@@ -717,7 +765,7 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum):
         pdfSettings.coords, type)
 
     PDF, pdfSettings.activesection = addSection(pdfSettings.activesection,
-                                                textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF, pdfSettings, lines[lineIndex]["Height"], pagenum, pdfSettings.intraline)
+                                                textprocessing.makeString(words[pdfSettings.bookmark:w+1]), type, PDF, pdfSettings, lines[lineIndex]["Height"], pagenum, pdfSettings.intraline, colnum)
 
     pdfSettings.activesection = minorfunctions.updateActiveSection(
         PDF, words, pdfSettings)
@@ -730,15 +778,15 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum):
 
 def addBlock(pdfSettings, words, w):
     pdfSettings.addto = False
-    sentlist = textprocessing.MakeSentences(textprocessing.makeString(
-        words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
+    pdfSettings, sentlist = textprocessing.MakeSentences(
+        words[pdfSettings.bookmark:w+1], copy.copy(pdfSettings.coords), pdfSettings.paraNum, pdfSettings)
 
     if(w < len(words)-1):
         para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w+1]["x0"])
+            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w+1]["x0"], [pagenum, colnum], [pagenum, colnum])
     else:
         para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w]["x0"])
+            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w]["x0"], [pagenum, colnum], [pagenum, colnum])
     pdfSettings.cites = []
     pdfSettings.activesection.para.append(para)
     pdfSettings.paraNum += 1
@@ -749,20 +797,37 @@ def addBlock(pdfSettings, words, w):
 
 # turns sentlist into a paragraph and adds it to the last para in pdfSettings.activesection
 # returns updated pdfSettings
-def addToPara(pdfSettings, sentlist, words, w):
+def addToPara(pdfSettings, sentlist, words, w, pagenum, colnum):
     activepara = pdfSettings.activesection.para[len(
         pdfSettings.activesection.para)-1]
     while(len(activepara.sentences) == 0):
         pdfSettings.activesection.para.pop(len(
             pdfSettings.activesection.para)-1)
         if(len(pdfSettings.activesection.para) == 0):
-            return addPara(pdfSettings, sentlist, words, w)
+            return addPara(pdfSettings, sentlist, words, w, pagenum)
         activepara = pdfSettings.activesection.para[len(
             pdfSettings.activesection.para)-1]
+
+    newPage = False
+    newCol = False
+    if(words[w]["Page"] != activepara.endPage):
+        newPage = True
+        activepara.endPage = words[w]["Page"]
+        activepara.endCol = 0
+    elif(colnum != activepara.endCol):
+        newCol = True
+        activepara.endCol = colnum
+
     for s in range(len(sentlist)):
         if(s == 0):
             activepara.sentences[len(
                 activepara.sentences)-1].text += " " + sentlist[s].text
+            if(newPage):
+                activepara.sentences[len(
+                    activepara.sentences)-1].endPage += 1
+            elif(newCol):
+                activepara.sentences[len(
+                    activepara.sentences)-1].endCol += 1
         else:
             pdfSettings.activesection.para[len(
                 pdfSettings.activesection.para)-1].sentences.append(sentlist[s])
@@ -772,13 +837,13 @@ def addToPara(pdfSettings, sentlist, words, w):
 
 # turns sentlist into a paragraph and adds it to pdfSettings.activesection
 # returns updated pdfSettings
-def addPara(pdfSettings, sentlist, words, w):
+def addPara(pdfSettings, sentlist, words, w, pagenum, colnum):
     if(w < len(words)-1):
         para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w+1]["x0"])
+            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w+1]["x0"], [pagenum, colnum], [pagenum, colnum])
     else:
         para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w]["x0"])
+            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w]["x0"], [pagenum, colnum], [pagenum, colnum])
     pdfSettings.cites = []
     pdfSettings.activesection.para.append(para)
     pdfSettings.paraNum += 1
@@ -790,27 +855,35 @@ def addPara(pdfSettings, sentlist, words, w):
 # returns updated pdfSettings.
 
 
-def extensiveAddPara(pdfSettings, words, w):
+def extensiveAddPara(pdfSettings, words, w, pagenum, colnum):
     if(w < 0):
         return pdfSettings
 
-    sentlist = textprocessing.MakeSentences(textprocessing.makeString(
-        words[pdfSettings.bookmark:w+1]), copy.copy(pdfSettings.coords), pdfSettings.paraNum)
+    pdfSettings, sentlist = textprocessing.MakeSentences(
+        words[pdfSettings.bookmark:w+1], copy.copy(pdfSettings.coords), pdfSettings.paraNum, pagenum, colnum, pdfSettings)
 
     sentlist, pdfSettings = textprocessing.cleanPara(sentlist, pdfSettings)
+
+    if(len(sentlist) == 0):
+        return pdfSettings
 
     # if this is the 2nd half of a cutoff paragraph, sew it back together.
     if(pdfSettings.addto and len(pdfSettings.activesection.para) > 0):
         pdfSettings.addto = False
-        pdfSettings = addToPara(pdfSettings, sentlist, words, w)
+        pdfSettings = addToPara(pdfSettings, sentlist,
+                                words, w, pagenum, colnum)
     else:
-        pdfSettings = addPara(pdfSettings, sentlist, words, w)
+        pdfSettings = addPara(pdfSettings, sentlist, words, w, pagenum, colnum)
     pdfSettings.bookmark = w+1
+
+    if(pdfSettings.addtoNext):
+        pdfSettings.addtoNext = False
+        pdfSettings.addto = True
 
     return pdfSettings
 
 
-def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum):
+def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum, colnum):
     # if it follows the "new figure" format, then add a new one, otherwise, add to the last one.
     line = lines[lineIndex]
     if(len(line["Text"]) > 1):
@@ -823,7 +896,7 @@ def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum):
             figure and bigenough and numbered) or pagenum != PDF.lastFig().pagenum
 
         if(len(PDF.figures) == 0 or isNewFigure):
-            figure = PDFfragments.figure(line["Text"], pagenum)
+            figure = PDFfragments.figure(line["Text"], pagenum, colnum)
             PDF.figures.append(figure)
         else:
             PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
@@ -832,13 +905,15 @@ def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum):
         if(len(PDF.figures) > 0 and pagenum == PDF.lastFig().pagenum):
             PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
         else:
-            figure = PDFfragments.figure(line["Text"], pagenum)
+            figure = PDFfragments.figure(line["Text"], pagenum, colnum)
             PDF.figures.append(figure)
 
-    for i in range(line["LineEndDex"], line["LineStartDex"]-1, -1):
+    for i in range(line["LineEndDex"]-pdfSettings.offset, line["LineStartDex"]-1-pdfSettings.offset, -1):
         words.pop(i)
 
-    lines = updateIndices(lines, lineIndex)
+    line = lines[lineIndex]
+    size = line["LineEndDex"] - line["LineStartDex"] + 1
+    pdfSettings.offset += size
     lines.pop(lineIndex)
 
     return PDF, pdfSettings, lines, words
@@ -846,6 +921,7 @@ def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum):
 
 # shift the indices of lines after lineIndex so that lineIndex can be safely removed from lines.
 # returns updated lines.
+# NOTE: Deprecated cuz it made the code slower, replaced with pdfSettings.offset.
 def updateIndices(lines, lineIndex):
     if(lineIndex < 0 or lineIndex >= len(lines)):
         return lines
@@ -861,9 +937,9 @@ def updateIndices(lines, lineIndex):
 
 
 # detects whether chars[i] is superscript or subscript.
-def findScript(chars, i, bookmark, error, width):
-    if(i == 0):
-        return ""
+def findScript(chars, i, bookmark, error, width, prevdiff):
+    if(i == 0 or bookmark < 0):
+        return "", -1
     char = chars[i]
     compare = chars[bookmark]
 
@@ -873,27 +949,58 @@ def findScript(chars, i, bookmark, error, width):
     topdiff = char["top"] - compare["top"]
     botdiff = char["bottom"] - compare["bottom"]
 
+    if topdiff > compare["height"] and not minorfunctions.areEqual(botdiff, topdiff, error):
+        compare = chars[i+1]
+        topdiff = char["top"] - compare["top"]
+        botdiff = char["bottom"] - compare["bottom"]
+
     if(topdiff == 0 or botdiff == 0):
-        return ""
+        return "", -1
 
-    if(topdiff > 0.1 and minorfunctions.isLesser(topdiff, char["height"], error, True)):
-        return "Subscript"
+    if(minorfunctions.areEqual(abs(topdiff), prevdiff, error, True) or minorfunctions.areEqual(abs(botdiff), prevdiff, error, True)):
+        return "", -1
 
-    if(botdiff < -0.1 and minorfunctions.isLesser(float(botdiff)*-1, char["height"], error, True)):
-        return "Superscript"
+    if(topdiff > 0.1 and minorfunctions.isLesser(topdiff, compare["height"], error, True)):
+        return "Subscript", abs(topdiff)
 
-    return ""
+    if(botdiff < -0.1 and minorfunctions.isLesser(float(botdiff)*-1, compare["height"], error, True)):
+        return "Superscript", abs(botdiff)
+
+    return "", -1
 
 
-def addWord(word, words, unusual, bookmark, i):
+def addWord(word, words, unusual, bookmark, i, error=0):
     if(word):
-        if(unusual == ""):
+        if(len(words) == 0):
+            prevScript = False
+            tooFar = False
+        else:
+            prevScript = words[len(
+                words)-1]["Superscript"] or words[len(words)-1]["Subscript"]
+            tooFar = not minorfunctions.areEqual(
+                word["x0"], words[len(words)-1]["x1"], error, True)
+
+        if(not prevScript and (unusual == "" or tooFar)):
             words.append(word)
             bookmark = i+1
             return words, bookmark
         else:
-            words[len(words)-1]["text"] += word["text"]
+            words[len(words)-1] = combineWords(words[len(words)-1], word)
             bookmark = i+1
             return words, bookmark
 
     return words, bookmark
+
+
+def combineWords(base, new):
+    base["text"] += new["text"]
+    base["chars"] += new["chars"]
+    base["Pieces"].append(new["text"])
+    base["Superscript"] = False
+    base["Subscript"] = False
+    base["x1"] = new["x1"]
+
+    if(not new["Subscript"] and not new["Superscript"]):
+        base["top"] = new["top"]
+        base["bottom"] = new["bottom"]
+    return base

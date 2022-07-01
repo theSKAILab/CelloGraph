@@ -75,8 +75,9 @@ class lineSettings:
             self.aftspace = spaceSize.NORMAL_SPACE
 
     def calcAdvSet(self, i, lines, pdfSettings, error):
-        if(i == 51):
+        if(i == 7):
             print("Breakpoint")
+
         if(self.InMultiTest(i, lines, pdfSettings, error)):
             self.type = lineType.IN_MULTI
 
@@ -93,22 +94,27 @@ class lineSettings:
             self.type = lineType.END_BLOCK
 
         else:
-            self.type = lineType.NORMAL_TEXT
-            self.consistentRatio = 0
+            if(self.consistentRatio == 0):
+                self.type = lineType.NORMAL_TEXT
+            else:
+                self.type = lineType.END_SECTION
+                self.consistentRatio = 0
 
     # if we're not at the bottom of the col and there's a big space before this line and there's a big space after this line and next line.
     def StartMultiTest(self, i, lines, pdfSettings, error):
-        if(minorfunctions.isEndofCol(i+2, lines)):
+        if(minorfunctions.isEndofCol(i+1, lines) or minorfunctions.isEndofCol(i+2, lines) or pdfSettings.addto):
             return False
-        # if(not minorfunctions.areEqual(lines[i]["AftSpace"], lines[i+1]["AftSpace"], error)):
+        if(minorfunctions.areEqual(lines[i+1]["AftSpace"], pdfSettings.linespace, error)):
+            return False
+        # if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
         #    return False
-        if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
-            return False
         if((not self.befspace == spaceSize.BIG_SPACE) and lines[i]["AftSpace"] > 0):
             return False
         if(minorfunctions.areEqual(lines[i]["BefSpace"], pdfSettings.linespace, error)):
             return False
-        if(minorfunctions.isGreater(lines[i]["Height"], lines[i+1]["Height"], error)):
+        if(minorfunctions.isGreater(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
+            return False
+        if(minorfunctions.isGreater(lines[i]["Align"], lines[i+1]["Align"], error)):
             return False
         if(i == 0):
             if(minorfunctions.areEqual(lines[i+1]["AftSpace"], lines[i]["AftSpace"], pdfSettings.interline)):
@@ -130,20 +136,20 @@ class lineSettings:
             return False
         if(minorfunctions.isEndofCol(i+1, lines) or self.consistentRatio == 0):
             return False
-        if(minorfunctions.areEqual(lines[i]["BefSpace"], pdfSettings.linespace, error) or minorfunctions.areEqual(lines[i]["AftSpace"], pdfSettings.linespace, error)):
-            return False
         if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
             return False
         if(minorfunctions.areEqual(lines[i]["AftRatio"], self.consistentRatio, error)):
             return True
 
+        return False
+
     def EndSectionTest(self, i, lines, pdfSettings, error):
-        if(i == len(lines)-1):
+        if(i == len(lines)-1 or (pdfSettings.addto and lines[i]["AftRatio"] == pdfSettings.lineratio)):
             return False
         if(minorfunctions.areEqual(lines[i]["AftRatio"], pdfSettings.lineratio, error)):
             return False
-        # if(minorfunctions.areEqual(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
-        #    return False
+        if(pdfSettings.consistentRatio == 0 and minorfunctions.areEqual(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
+            return False
         if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE):
             return True
         if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):

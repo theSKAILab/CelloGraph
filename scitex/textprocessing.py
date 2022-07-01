@@ -4,6 +4,7 @@ import re
 import copy
 import PDFfragments
 import minorfunctions
+import time
 
 
 # takes an array of things, takes all the text out, then puts it all into one string.
@@ -25,7 +26,7 @@ def makeString(arr, mode="dict"):
 
 
 #
-def MakeSentences(str, coords, p):
+def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
     retval = []
     # set up some spacy stuff to detect end of sentence
     nlp = spacy.load("en_core_web_sm")
@@ -33,48 +34,92 @@ def MakeSentences(str, coords, p):
     sentPattern = [{"TEXT": "."}]
     qPattern = [{"TEXT": "?"}]
     ePattern = [{"TEXT": "!"}]
-    bracketPattern = [{"SHAPE": "xxxx.[dd"}]
+    bracketclosePattern = [{"SHAPE": "]."}]
+    bracketopenPattern = [{"SHAPE": ".["}]
     numPattern = [{"SHAPE": "ddd-dddd).[dd"}]
+    citeSuperPattern = [{"SHAPE": ".^{[dd]}"}]
+    citeSubPattern = [{"SHAPE": "._{[dd]}"}]
 
     sentMatcher.add("Sentences", [sentPattern,
-                    qPattern, ePattern, bracketPattern, numPattern])
+                    qPattern, ePattern, bracketclosePattern, bracketopenPattern, numPattern, citeSuperPattern, citeSubPattern])
 
-    doc = nlp(str)
     sentNum = 0
-    text = ""
-    matches = sentMatcher(doc)
     bookmark = 0
-    lookAt = []
-    # for each sentence, add it to the list and then move the bookmark forward
-    for id, start, end in matches:
+    text = ""
 
-        # don't add the sentence if it's inside parenthesis/brackets or there's no whitespace after
-        paren = False
-        dots = True
-        text = doc[bookmark:end]
-        test = len(text)
-        for t in range(len(text) - 1, -1, -1):
-            token = text[t].text
-            if text[t].text != '.':
-                dots = False
-            if text[t].text == ')' or text[t].text == ']':
-                break
-            if text[t].text == '(' or text[t].text == '[':
-                paren = True
-                break
+    for i in range(len(words)):
+        str = makeString([words[i]])
+        doc = nlp(str)
+        matches = sentMatcher(doc)
 
-        if(not dots and not paren):
-            retval.append(PDFfragments.sentence(text.text, coords, p, sentNum))
-            sentNum += 1
-            text = ""
-            bookmark = end
+        # for each sentence, add it to the list and then move the bookmark forward
+        for id, start, end in matches:
+
+            # don't add the sentence if it's inside parenthesis/brackets or there's no whitespace after
+            paren = False
+            dots = True
+            text = nlp(makeString(words[bookmark:i+1]))
+            for t in range(len(text) - 1, -1, -1):
+                token = text[t].text
+                if text[t].text != '.':
+                    dots = False
+                if text[t].text == ')' or text[t].text == ']':
+                    break
+                if text[t].text == '(' or text[t].text == '[':
+                    paren = True
+                    break
+                if(len(text) > 4):
+                    test = text[len(text)-2:].text
+                    if(text[len(text)-4:].text == "etc." or text[len(text)-4:].text == "et."):
+                        break
+
+            if(not dots and not paren):
+                retval.append(PDFfragments.sentence(
+                    words[bookmark:i+1], text.text, coords, p, sentNum, [pagenum, colnum], [pagenum, colnum]))
+                sentNum += 1
+                text = ""
+                bookmark = i+1
 
     # if it somehow didn't catch something then add that something to the end
-    if(bookmark != len(doc)):
+    if(bookmark != len(words)):
         retval.append(PDFfragments.sentence(
-            doc[bookmark:].text, coords, p, sentNum))
+            words[bookmark:], makeString(words[bookmark:]), coords, p, sentNum, [pagenum, colnum], [pagenum, colnum]))
+        word = words[len(words)-1]
+        finalchar = word["chars"][len(word["chars"])-1]["text"]
+        if(pdfSettings and pagenum > 2 and finalchar != "]"):
+            pdfSettings.addtoNext = True
 
+    if(pdfSettings):
+        return pdfSettings, retval
     return retval
+
+
+def stitchSentences(sentences):
+    sentDex = -1
+    while sentDex < len(sentences)-2:
+        sentDex += 1
+        sentence = sentences[sentDex]
+        if(not sentence):
+            sentences.pop(sentDex)
+            sentDex -= 1
+            continue
+        index = 1
+        char = sentence.text[len(sentence.text)-index]
+        while(index < len(sentence.text) and char == ' '):
+            index += 1
+            char = sentence.text[len(sentence.text)-index]
+        if(char != '.' and char != '!' and char != '?'):
+            sentences[sentDex] += sentences[sentDex+1]
+            sentences.pop(sentDex+1)
+    return sentences
+
+
+# gets rid of any super or subscript at the end of the word so you can look at just the base word.
+def trimScript(str):
+    for i in range(len(str)):
+        if(str[i] == '_'):
+            return str[:i]
+    return str
 
 
 def checkForCutOffs(sentences):
@@ -185,8 +230,8 @@ def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
                     retval += 1
             if(sectionheader[len(sectionheader)-1].isdigit()):
                 retval += 1
-
     else:
+        height = sectionheader["bottom"] - sectionheader["top"]
         for i in range(len(sectionheader["text"])):
             if(sectionheader["text"][i] == '.'):
                 if(i > 0 and sectionheader["text"][i-1].isdigit()):
@@ -249,23 +294,24 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
 
 
 def HandleColumns(words, hError, vError):
+    sec1 = time.time()
     retval = [[]]
     c = 0
 
-    for w in range(2, len(words)):
+    for w in range(len(words)):
 
-        prevspace = words[w-1]["x1"] - words[w-2]["x0"]
-        space = words[w]["x1"] - words[w-1]["x0"]
+        prevtop = words[w-1]["top"]
+        top = words[w]["top"]
+        prevX = words[w-1]["x1"]
+        X = words[w]["x0"]
 
-        if(newline(words, w-1, vError)):
-            continue
-        if(minorfunctions.isGreater(space, prevspace, hError) and not newline(words, w, vError)):
+        if(newline(words, w, vError) and minorfunctions.isLesser(top, prevtop, vError) and minorfunctions.isGreater(X, prevX, hError)):
             c += 1
-        if(newline(words, w, vError)):
-            c = 0
         while(c > (len(retval) - 1)):
             retval.append([])
         retval[c].append(words[w])
+    sec2 = time.time()
+    print("Seconds to Handle Columns: " + str(sec2 - sec1))
     return retval
 
 

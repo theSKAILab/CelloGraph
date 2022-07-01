@@ -1,0 +1,729 @@
+Time to Read: 702.7556412220001 sec, aka 11.71259402036667 min
+All Times:
+Page 1: 13.45317006111145
+Page 2: 23.21734881401062
+Page 3: 12.977658033370972
+Page 4: 12.931944131851196
+Page 5: 16.385683298110962
+Page 6: 15.470492362976074
+Page 7: 22.949159383773804
+Page 8: 19.75399422645569
+Page 9: 23.53511881828308
+Page 10: 22.277302026748657
+Page 11: 14.703047037124634
+Page 12: 15.114837169647217
+Page 13: 18.08456540107727
+Page 14: 57.48331880569458
+Page 15: 18.388967990875244
+Page 16: 17.665170192718506
+Page 17: 7.354653358459473
+Page 18: 9.134562253952026
+Page 19: 44.55744004249573
+Page 20: 45.09503960609436
+Page 21: 46.295594215393066
+
+
+Median Time per page = 18.08456540107727
+Avg Time per page = 22.706146058582124
+
+NEW SECTION: Chapter  (Level: 1)
+
+
+NEW SECTION: An Update on Overview of Cellulose, Its Structure and Applications  (Level: 1)
+
+
+NEW SECTION: Praveen Kumar Gupta, Shreeya Sai Raghunath,   Deepali V enkatesh Prasanna, Priyadharsini V enkat, Vidhya Shree, Chandrananthi Chithananthan, Shreya Choudhary, Krithika Surender and Keerthana Geetha  (Level: 1)
+
+
+NEW SECTION: Abstract  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Cellulose (C_{6} H_{10} O_{5} )_{n}  is one of the most ubiquitous organic polymers on the planet. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)It is a significant structural component of the primary cell wall of green plants, various forms of algae and oomycetes. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)It is a polysaccharide consisting of a linear chain of several hundred to many thousands of β(1 → 4) linked d-glucose units. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)There are various extraction procedures for cellulose developed by using different processes like oxidation, etherification and esterification which convert the prepared celluloses in to cellulose derivatives. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Since it is a non-toxic, bio-degradable polymer with high tensile and compressive strength, it has widespread use in various fields such as nanotechnology, pharmaceutical industry, food industry, cosmetics, textile and paper industry, drug-delivery systems in treating cancer and other diseases. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Micro-crystalline cellulose in particular is among the most frequently used cellulose derivatives in the food, cosmetics, pharma industry, etc.  and is an important excipient due to its binding and tableting properties, characterized by its plasticity and cohesiveness when wet. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Bacterial cellulose’s high dispensability, tasteless and odourless nature provides it with lot of industrial applications. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Currently, about half of the waste produced in India contains about 50% cellulose which can be used productively. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)This chapter deals with the chemistry of cellulose, its extraction and its properties which help various industries to make the most of it. 
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Keywords: properties, chemistry, types, microcrystalline cellulose, cellulose nanocrystals, cellulose nanofibres, extraction, characterization, NMR, SEM, FTIR, BJH, biomedical applications, pharmaceutical applications, renewable energy applications, waste management, drug delivery, wound healing, scaffolding, implants, biofuels, consumables 
+
+NEW SECTION: 1. Introduction  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Cellulose is the most abundant biopolymer available in nature, since it is one of the major components of the cell walls of most of the plants [1]. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)It is a homopolymer of anhydroglucose, with the glucose residues linked in a ß-1,4 fashion [2]. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Cell walls of plant cells attribute their mechanical strength to cellulose. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 2, col 1)Cellulose owes its  structural properties to the fact that it can retain a semi-crystalline state of aggregation even in an aqueous environment, which is unusual for a polysaccharide [3, 4]. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)As far as cellulose based products are concerned, paperboard and paper are the most commonly used ones [5]. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Smaller amounts of cellulose when processed under appropriate conditions, can be converted to a wide variety of derivatives, these can be used in manufacture of few commercial products like cellophane and rayon [6]. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Since cellulose is a homopolymer of a glucose derivative, it is a great source of fermentable sugar. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)It is cultivated in the form of energy crops for the production of ethanol, ethers, acetic acid, etc. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Besides energy requirements the industrial demands of cellulose are fulfilled by wood pulp and cotton crops [7]. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose also fulfils the dietary requirements of some animals, particularly ruminants and termite, they can digest cellulose with help of symbiotic microorganisms present in their gut, while some organisms secrete a group of enzymes called cellulases to aid the degradation of cellulose molecules [8]. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Human beings are unable to digest cellulose due to lack of cellulases, thus cellulose acts as a hydrophilic bulking agent for faeces and potentially aids in defecation [9]. 
+
+NEW SECTION: 2. Overview  (Level: 1)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Among the various raw materials which nature has placed at our disposal for industrial purposes, cellulose has from time immemorial occupied a prominent position. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Its abundance is attributed to the constant photosynthetic cycles taking place in higher plants, which can synthesize around 1011 ± 1012 tons of cellulose in a rather pure form. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Since time immemorial it has served mankind either as a construction material or as a versatile starting material for chemical reactions for the production of artificial cellulose based threads and biofilms as well as for production of a variety of stable cellulose derivatives which are used for various industrial and domestic applications [10]. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose was used for various biochemical conversions even before its polymeric nature was recognized and well understood. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)In the process of recognizing and understanding its polymeric structure, it led to the discovery of nitrocellulose, synthesis of organo-soluble cellulose acetate and the preparation of Schweizer’s reagent (first cellulose solvent). 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Another area of great interest was nanocellulose, the nanostructure of cellulose has proven to be advantageous because of its applications in a variety of fields [11, 12]. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Due to such great economical significance of tree cellulose, the current scientific focus is more towards cellulose biosynthesis as it is still not well understood [13]. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Most of the recent findings concerning the molecular mechanism of cellulose biosynthesis in higher plants resulted from research in model herbaceous plants and fibre crops and have been reviewed recently. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)All these aspects trigger a researchers’ curiosity and makes them want to dig deeper and unveil other properties and applications of cellulose. 
+
+NEW SECTION: 3. Chemistry of cellulose  (Level: 1)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The Cellulose is made up of a d-glucose unit at one end and a C4-OH group, the non-reducing end, while the terminating group is C1-OH, the reducing end with aldehyde structure. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Some technical celluloses contain extra carbonyl and carboxy groups, like the bleached wood pulp. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The molecular structure is responsible for its significant properties: Chirality, hydrophilicity, degradability and chemical variability due to high reactivity from the donor group—OH. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The superior hydrogen bonds add crystalline fibre structures to cellulose. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 3, col 1)Figure 1 presents the four  different pathways which determine the major processing routes. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The most famous and highly used pathway is the manufacture of cellulose from plants. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)It is established that cellulose is found in its purest form from the seed hairs of cotton. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The wood cellulose, on the other hand forms a composite with lignin and other polysaccharides, which is further separated by large scale chemical pulping and purification processes. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Cellulose can be derived from algae, some specific bacteria, and fungi, apart from most plants. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The supramolecular structures are used for research on cellulose structures, reactivity, and crystallinity with further note on development of biomaterials and new substances. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Cyanobacteria are known to biosynthesize cellulose for nearly 3.5 billion years [15]. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The first synthesis of cellulose in vitro is reported as the cellucellulase—cellulose formation by catalyzed cellobiosyl fluoride and the chemosynthesis was processed in a ring opening polymerization of the d-glucose moieties [16]. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)A lot of research is ongoing in the field and study of cellulose over the past decade. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The structure and properties of cellulose are quintessential to perform modifications and processing of cellulose on the whole. 
+
+NEW SECTION: 4. Properties of cellulose  (Level: 1)
+
+
+NEW PARA: (Start: pg 3, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The structure of cellulose has been constantly a subject requiring intensive research as it is formed by the hydrogen bonds between the network of hydroxy groups [17]. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 4, col 1)The progress was for more than a 100 years of intensive development on structure analysis methods like electron microscopy, X-ray diffraction and high  resolution solid state NMR spectroscopy. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The complete detailed analysis is required for the procedures of synthetic reactions and cellulose based manmade products with extensive applications. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The structure of cellulose as depicted in Figure 2 consists of hydroxyl groups of β-1,4-glucan cellulose at C2, C3 and C6. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The CH_{2} OH group is positioned relative to the C4 and C5 bonds along with a shear relativity with O5–C5 bonds. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The solid state is equally likely to be represented in the crystalline (high order) and amorphous (low order). 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The crystal structure in particular is determined by the X-ray diffraction using a monoclinic unit cell which is made up of two cellulose chains in a parallel orientation and two fold screw axis [18]. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The investigations with respect to the electron microbeam diffraction, combined X-ray and neutron diffraction have clearly indicated that the cellulose crystalline structures have a triclinic and monoclinic unit cell. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The schematic representations of the I_{β}  crystal structure, in Figure 3, indicate the two intramolecular chain-stiffening hydrogen bonds. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The recent researches on the I_{β}  crystal structure have different H-bonds and different conformations of neighbouring chains. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The thermodynamically stable cellulose II can occur in other forms of crystal structures and is the most stable form of cellulose. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)The cellulose I can be treated with aqueous sodium hydroxide to form cellulose II. 
+
+NEW SECTION: 5. Types of cellulose 5.1 Bacterial cellulose  (Level: 1)
+
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Although cellulose is mainly produced by plants, many bacteria, especially those belonging to the genus Gluconacetobacter are involved in the production of a very peculiar form of cellulose with mechanical and structural properties that can be exploited in numerous applications. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Bacterial cellulose are usually produced by Gluconacetobacter hansenii UCP1619 using the Hestrin-Schramm (HS) medium. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)But there are few limitations associated with bacterial cellulose like the production cost is high, use of expensive culture media, poor yields, downstream processing, and operating costs. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Bacterial cellulose can also be produced by bacteria from genera Sarcina, and Agrobacterium [19]. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Bacterial   cellulose produced by aerobic bacteria has unique physiochemical properties compared to plant cellulose [20]. 
+
+NEW SECTION: 5.2 Cellulose acetate  (Level: 2)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Cellulose acetate is an important ester of cellulose. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Cellulose acetate can be used for great varies of applications like for films, membranes or fibres, depending on the way it has been processed. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)A special field for using cellulose acetate is the synthesis of porous, spherical particles, so called cellulose beads [21]. 
+
+NEW SECTION: 5.3 Ethylcellulose  (Level: 2)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Ethylcellulose (EC) is a derivative of cellulose in which some of the hydroxyl groups on the repeating anhydroglucose units are modified into ethyl ether groups, largely called as non-ionic ethyl ether of cellulose. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Ethylcellulose (EC) based microencapsulated drug delivery systems are being studied to achieve extended drug release and to protect the core substance from degradation [22]. 
+
+NEW SECTION: 5.4 Hydroxypropyl cellulose (HPC)  (Level: 2)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Hydroxypropyl cellulose (HPC) is one of the derivatives of cellulose which is soluble in both water and organic solvent. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)It can be used as a lubricant. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)It can also be used for the treatment of keratoconjunctivitis sicca, corneal erosions neuroparalytic keratitis etc. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)It is also used as a lubricant for patients having artificial eye [23–25]. 
+
+NEW SECTION: 6. Extraction and characterization of cellulose  (Level: 1)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Cellulose is one of the most abundant biomass materials in nature possessing some promising properties. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)In our work, let us look into the various procedures involved in extracting cellulose from different sources. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The sources available are many which can be broadly classified into Agro-waste, Domestic-waste (and other means such as wood, plant and paper). 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The processes involved include usual chemical procedures like alkaline extraction, bleaching, acid hydrolysis and chlorination. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The final products can be characterized by using techniques like thermogravimetric analysis (TGA), infrared spectroscopy (FTIR), X-ray diffraction (XRD), differential scanning calorimetry (DSC) and scanning electronic microscopy (SEM). 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Purified cellulose can be obtained successfully using the above mentioned procedures. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)In our study, we will be concentrating on the extraction of cellulose from agricultural residues and plants [26–28] (Figure 4). 
+
+NEW SECTION: 6.1 Extraction of cellulose from agricultural residues  (Level: 2)
+
+
+NEW SECTION: 6.1.1 Extraction of cellulose from sugarcane bagasse  (Level: 3)
+
+
+NEW PARA: (Start: pg 6, col 1; End: pg 6, col 1)
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Sugarcane bagasse (SCB) is a key agricultural residue which has grown to be the point of interest in recent times. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The extraction of cellulose from SCB was investigated using steam explosion and xylanase based environmentally friendly pretreatment for reducing chemical bleaching and to determine the characteristics of cellulose from sugarcane bagasse. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)SCB is a low value agriculture residue and about 40–50% of bagasse is the glucose polymer cellulose. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)There are several approaches to pretreat lignocellulosic materials to extract cellulose such as steam explosion, solvent extraction and alkaline treatment. 
+
+NEW SECTION: 6.1.1.1 Methodology  (Level: 4)
+
+
+NEW PARA: (Start: pg 6, col 1; End: pg 6, col 1)
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Cellulose is extracted from SCB by using steam explosion and xylanase pretreatment and bleaching process. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The dried SCB treated with steam explosion at a pressure 13 bar (195°C) for 15 minutes to obtain steam exploded SCB fibres. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Then, the steam exploded SCB is treated with 20 μg of xylanase using fibre to liquor ratio of 1:10 for 1 hour at 50°C under constant agitation. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Then, dried steam exploded SCB is treated with xylanase (fibre to liquor ratio of 1:10) and then bleached with 0.7% sodium chlorite (NaClO_{2} ) adjusted to a pH of 4 by the addition of weak acetic acid at 70°C for 1 hour. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Sodium chlorite and acetic acid at the same loading were added to the reaction every 1 hour till the cellulose turns white. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The cellulose fibres thus obtained would then filtrated, washed with distilled water until the pH of water neutral and dried at 55°C for 24 hours. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The steam explosion process includes saturating the dry material with steam at elevated pressure and temperature followed by sudden release of pressure, resulting in substantial resistance of degraded lignin fragments, facilitates the release of lignin, which is then readily available for further bleaching and thereby increases the efficiency of the bleaching process Thus, the use of enzymes to treat pulp before applying chemical bleaching help to reduce chemical required in bleaching stage, breakdown of lignocellulosic structure, hydrolysis of the hemicelluloses fraction, depolymerization of the lignin components and defibrillization. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)In terms of bleaching treatments, chlorine-based chemicals were typically used for bleaching process resulting in chemical hazard released into environmental. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Xylanases are glycosyl hydrolase that can catalyse the hydrolysis of β-1, 4-glycosidic bonds in xylan by means of double displacement mechanical reaction. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)This treatment improves accessibility of bleaching chemical to the pulp by decreasing diffusion [29] (Table 1). 
+
+NEW SECTION: 6.1.2 Extraction of cellulose from rice husk  (Level: 3)
+
+
+NEW PARA: (Start: pg 6, col 1; End: pg 6, col 1)
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Rice is the most cultivated cereal crop in the world. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Rice husk is a major agrowaste that is generated in huge quantities. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)It accounts for 20% of the 600 million tons of paddy produced worldwide. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)People often dispose the rice husk waste using open burning which is an environmental threat causing damage to the land and the surrounding area in which it is disposed. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)This rice husk can be put into best use by exploitation of its cellulose content. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Rice husk comprises of 33% cellulose, 26% hemicellulose, and 7% lignin. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Thus, the use of rice husk as the primary source for producing cellulose fibres and nanocrystals is efficient. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The strategy is to extract cellulose fibres from the rice husk using alkali and bleaching treatments. 
+
+NEW SECTION: 6.1.2.1 Methodology  (Level: 4)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Sodium hydroxide (99% purity) is used for alkaline treatment. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Sodium chlorite, acetic acid and NaOH are used as bleaching agents while sulphuric acid is used for hydrolysis. 
+
+NEW SECTION: 6.1.2.2 Preparation of cellulose nanocrystals from rice husk  (Level: 4)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)1.  Treatment with alkali: Cellulose is purified by treating with Alkali to remove lignin and hemicellulose on or after rice husk grits. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The pulverised rice husk is preserved through an alkali solution (4% by weight of NaOH). 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The combination is poured into a plump bottom flask and action is performed at reflux temperature intended for 2 hours. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The solid is formerly filtered and carry away numerous times by means of distilled water. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)This treatment is frequent thrice. 
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)2.  Bleaching process: Subsequent the alkali action, bleaching progression is completed by totalling a buffer solution of acetic acid, aqueous chlorite (1.7% by weightiness) and purified water at reflux (by means of a silicon emollient soak at 100–130°C) for 4 hours. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The assortment is then permitted to cool and the additional distilled liquid is filtered. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The bleaching procedure is performed four periods. 
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)3.  Acid hydrolysis: The acid hydrolysis action is performed on the fibres subsequently alkali action and decolourising at a temperature of 50°C by means of 10.0 mol L^{−1}  of preheated sulphuric acid intended for 40 minutes underneath non-stop stirring. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The fibre content varieties from 4 to 6% by heaviness. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The hydrolysed substantial is eroded by centrifugation at 10000 rpm at 10°C for 10 minutes. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)This centrifugation stage is repeated many times before the suspension is dialyzed in contradiction of purified water for several days until persistent pH in the range of 5–6 is attained. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The subsequent suspension is formerly sonicated for 30 minutes previously it is frozen for additional use [30]. 
+
+NEW SECTION: 6.2 Extraction of cellulose from plants 6.2.1 Extraction of cellulose from bamboo  (Level: 2)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)This extraction method involves use of Bamboo fibres as a raw material for cellulose extraction. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The chemicals used to produce cellulose nanofibres are toluene, ethanol, hydrogen peroxide, acetic acid glacial, titanium (IV) oxide, and sodium  hydroxide. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)All the chemicals used here are of analytical grade.  %) 
+
+NEW SECTION: ERROR:SECTION_MISSING6.1.2.3 Methodology  (Level: 4)
+
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)1.  Bamboo fibre preparation: Green bamboo Culm of 1 m length is prepared. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)It is then ground using a planner machine to produce small chips and powder form excluding the internodes. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)This chips and powder mixture is put into an oven at 70°C for 72 hours to dry. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The oven dried sample is ground and then sieved using 600 μm size sieve. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The 600 μm mesh size fibres are used for the synthesis of cellulose fibre. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)This sample is then labelled as green bamboo fibre (GBF). 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2.  Preparation of cellulose from bamboo fibre and de-waxing of bamboo fibre: The 400 mL toluene and 200 mL of ethyl alcohol are filled into a round flask to produce toluene-ethanol of ratio 2:1. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The round flask is placed on a heating element. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)A Soxhlet extractor is placed on top of the boiling flask and fixed firmly using a retort stand. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)About 10 grams of GBF is scooped into a membrane tube and placed into the extraction thimble. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)A Liebig condenser is placed on top of the extractor and then fixed firmly. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The temperature of the heating element is observed using a digital thermometer and it is maintained at 250°C. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The extraction process is continued till the colour mixture disappears. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The process takes 2 hours with approximately 10–12 cycles of extraction. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The extraction thimble is taken out using tweezers. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The product is transferred into a beaker and stirred using a glass rod while adding toluene-ethanol mixture. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The final product is filtered using a filter paper placed on a funnel. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)It is then distributed evenly using glass rod on a filter paper. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)It is then placed in an oven set to temperature 70°C for drying overnight and is kept for delignification processes. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The dried sample is identified as dewaxed bamboo fibre (DBF). 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)3.  Delignification of bamboo fibre: The delignification solution is prepared using 82.3 g of 35% by weight of hydrogen peroxide (H_{2} O_{2} ) and 106.2 g of 99.8% by weight of acetic acid (CH_{3} COOH) in the present of titanium (IV) oxide as catalyst. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Thirty grams of dry DBF sample is weighed and immersed into delignification solution contained in a round bottom flask. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The flask is placed on the heating element and heated to 130°C. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)After 2 hours, the heater is switched off and cooled to room temperature. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The treated product is then filtered using Buchner flask and rinsed with de-ionized (DI) water until the pH level reaches 7 and dried at 70°C for 1 day. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The dried sample is placed in a bottle and kept in a cool and dark place for alkaline treatment. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The sample so obtained is delignified bamboo fibre (DLBF). 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)4.  Mercerization: DLBF is finally immersed in an alkaline solution in order to dissolve the pectin and hemicelluloses. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)6% by weight of sodium hydroxide is used to treat the DLBF in a flask at room temperature. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The mixture is stirred using auto shaker at 150 rpm, heated to 80°C for 2 hours, and stopped after 8 hours of proper stirring. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The mixture is then rinsed continuously with de-ionized water until the product reaches pH 7. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The treated product is finally filtered using Buchner flask, rinsed with de-ionized water until the pH level reaches 7, and freeze-dried at −85°C for 2 days [31]. 
+
+NEW SECTION: 6.1.2.4 Characterization of cellulose extracted from bamboo  (Level: 4)
+
+
+NEW PARA: (Start: pg 8, col 1; End: pg 9, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 9, col 1)After extraction of cellulose, it is generally characterized by using the following techniques:  1.  Fourier transform infrared spectroscopy (FTIR): The infrared spectra obtained using a FTIR Spectrometer model IRAFFINITY -1 CE. The spectra were to be taken at a resolution of 4 cm^{−1} , with a total of 60 scans for each sample. The transmittance range of the scans was 600–4000 cm^{−1} . The composition changes in GBF were investigated by FTIR spectroscopy (Figure 5). 
+
+NEW PARA: (Start: pg 9, col 1; End: pg 9, col 1)
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)2.  Scanning electron microscopy (SEM): The bamboo fibre samples was vacuum-dried for 24 hours at 70°C, pressed onto a carbon tape adhered to a sample holder surface, and sputtered with titanium. Imaging of each sample was done using Hitachi M-3030 scanning electron microscope. All images were taken at an accelerating voltage of 5 kV with a magnification of 1500 time [33]. 
+
+NEW PARA: (Start: pg 9, col 1; End: pg 9, col 1)
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)3.  Barrett-Joyner-Halenda (BJH) analysis: In order to do BJH analysis the bamboo fibre sample is dried for 24 hours at 70°C and inserted into a capillary tube. 
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)The outgas had an approximately 7 hour duration with final outgas temperature of 350°C. 
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)After outgas process, the sample was analysed using Nova Quantachrome 4200e automated gas sorption instrument for 1.5 hours across a wide range of relative pressures at constant temperature (77 K) using liquid nitrogen (Figure 6). 
+
+NEW PARA: (Start: pg 9, col 1; End: pg 9, col 1)
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)4.  Thermogravimetric analysis (TGA): Dynamic thermogravimetric measurements were performed using a Shimadzu DTG 60H instrument. The temperature programs for dynamic tests was run from ambient temperature 25–700°C. All measurements was made under a nitrogen flow (20 mL/min), while keeping a constant heating rate of 10°C min^{−1}  and using an aluminium crucible with a pinhole (Figure 7). 
+
+NEW SECTION: 6.1.2.5 Characterization of cellulose extracted from rice husk fibres  (Level: 4)
+
+
+NEW PARA: (Start: pg 9, col 1; End: pg 10, col 1)
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)The chemical conformation of rice husk at individual phase of action is originate to be giving to the approaches conveyed by the Technical Association of Pulp and Paper Industry (TAPPI). 
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)The cellulose and hemicellulose contents are retrieved conferring to TAPPI standard T203 OS-74 though the lignin content is restrained according to TAPPI normal T222 OS-83. 
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 10, col 1)The silica ash content is calculated by  means of the thermogravimetric examination (TGA) data. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)The arrangement of silica ash was found at temperatures 900°C as the residual ash at this point can be credited to the silica ash [30, 33, 34]. 
+
+NEW SECTION: 6.1.2.6 Scanning electron microscopy (SEM)  (Level: 4)
+
+
+NEW PARA: (Start: pg 10, col 1; End: pg 10, col 1)
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)It is utilized to detect the superficial morphology of the rice husk fibres. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)The effect of the numerous chemical treatments is evaluated using an assessment of the raw , alkali treated, and bleached fibres. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Rice husk fibres is reserved on the aluminium stub and raised in the oven at 60°C. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)The samples are then covered with gold by means of a vacuum sputter coater (model SC 500). 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)The width of the gold layer is approximately 0.01–0.1 μm. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)The fast-tracking voltage is 15 kV . 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Transmission electron microscopy (TEM) is used to regulate the proportions of the cellulose nanocrystals attained from the rice husk fibres. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)A drop of a diluted suspension (1% by weight) is placed on the superficial of a clean copper grid and covered through a thin carbon film. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)As for contrast in TEM, the cellulose nanocrystals are undesirably stained in a 2% by weight solution of uranyl acetate for 10 seconds then carried away by means of 50% by weight of sieved alcohol. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Later sample is dehydrated at ambient temperature before TEM examination is approved out through an accelerating voltage of 80 kV (Figure 8). 
+
+NEW SECTION: 6.1.2.7 Fourier transform infrared (FTIR) spectroscopy  (Level: 4)
+
+
+NEW PARA: (Start: pg 11, col 1; End: pg 11, col 1)
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Fourier transform infrared spectra are noted with the assistance of a PerkinElmer FTIR spectrophotometer. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Un-treated, alkali-treated, blanched, and acidhydrolysed rice husk fibres models are examined. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Models are excellently crushed and mixed with potassium bromide. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The combination is then flattened to pellet form. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)FTIR spectral investigation is achieved inside the wave number range of 400–4000 cm^{−1}  (Figure 9). 
+
+NEW SECTION: 6.1.2.8 X-ray diffraction (XRD)  (Level: 4)
+
+
+NEW PARA: (Start: pg 11, col 1; End: pg 11, col 1)
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)X-ray diffraction is applied to identify the crystallinity of rice husk grits after numerous extraction methods. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Each sample/material in the arrangement of milled powder is set aside on the sample vessel and levelled to attain complete and unvarying X-ray exposure. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The trials are examined with the   assistance of an X-ray diffractometer at room temperature (RT) by means of a monochromatic CuKα energy source (λ = 0.1539 nm) in the step-scan approach with a 2θ angle extending from 10 to 50°C with a stage of 0.04 and scanning period of 5 minutes. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)To characterize the crystallinity of the several samples, the crystallinity index CrI, is created based on the mirrored intensity data  (Figure 10). 
+
+NEW SECTION: 6.1.2.9 Thermogravimetric analysis (TGA)  (Level: 4)
+
+
+NEW PARA: (Start: pg 11, col 1; End: pg 12, col 1)
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The thermal stability of the different samples is determined by TGA measurements performed using a Mettler Toledo thermogravimetric analyser. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 12, col 1)The quantity  of sample involved for individual measurement remained approximately 1 mg. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Each measurement is achieved under a nitrogen based generated atmosphere through a gas flow of 10 mL min^{−1}  by means of heating the substantial from room temperature to 900°C at a heating rate of 10°C min^{−1}  [34]. 
+
+NEW SECTION: 7. Applications of cellulose  (Level: 1)
+
+
+NEW PARA: (Start: pg 12, col 1; End: pg 13, col 1)
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Cellulose is the most richly found organic polymer, as it is a major structural component of the primary cell wall of green plants, several algae and oomycetes. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 13, col 1)Cellulose is found in large quantities in frequently used materials like cotton (90%),  Wood (50%) and dried Hemp (57%). 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)It has numerous applications in various fields, but it is most frequently used in the manufacturing of paper and cardboard or in derivative products like cellophane and rayon. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)It is also a major component of textiles made from cotton or linen. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Further, its use is seen in the pharmaceutical industry as inactive fillers in drugs, in the form of powdered cellulose and microcrystalline cellulose. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)However, one of the most important uses of cellulose is in the production of biofuel and in the food Industry. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)This will be elaborated further in the following sections [33]. 
+
+NEW SECTION: 7.1 Use of cellulose in renewable energy 7.1.1 Biofuel  (Level: 2)
+
+
+NEW PARA: (Start: pg 13, col 1; End: pg 13, col 1)
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)A drastic increase in the population of the world coupled with an exponential increase in technological advancements and need of the people, fossil fuels are being rapidly depleted. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)At such an hour, the term sustainable development comes into play. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)In order to develop sustainably, it is important to switch to a fuel that is more clean, green and more cost-effective. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)One such alternative, is cellulose derived biofuel. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)There are numerous advantages of using biofuel, the first and foremost being cost-effective. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Recent studies have shown that due to increase in demand, the cost of biofuel is decreasing as ethanol costs lesser than petrol and diesel. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Further, there is a significant reduction in the carbon emission. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)The raw material used for biofuel is simply a substrate that has cellulose in it. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Since cellulose is so widely abundant, the cost is significantly lower. 
+
+NEW PARA: (Start: pg 13, col 1; End: pg 13, col 1)
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)The ethanol obtained from cellulose is used as an alternative substrate in the production of biofuel. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)It is considered a superior source due to its high energy efficiency and low cost as compared to other sources. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)This is a very good source for renewable energy as it is found most abundantly in stalks, leaves and stem of green plants. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Other sources for ethanol include, feedstocks, including wheat straw , rice straw , sawdust, forest thinning and grasses perennial grasses and switchgrass. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Cellulose can be broken down into fermentable sugars by using the fungus Trichoderma reesei or by using acid to convert them first into sugars and then into gas. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)The gut of termites also can be utilized for this purpose. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Further, a group of bacteria collectively referred to as methanogens have the ability to digest cellulose and produce carbon di oxide and methane, which is further processed. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)One group of such bacteria called methanobacteria grow anaerobically on cellulosic matter and degrade it to produce methane. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)They are also found in the rumen of cattle and the dung of cattle. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)As is seen from this, it is quite easy to obtain a substrate for biogas production especially by using waste cellulosic material. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Therefore, it is important that to utilize even the apparent waste material to ensure a reduction in wastage and optimum usage of its potential [34, 35]. 
+
+NEW SECTION: 7.2 Use of cellulose in consumables  (Level: 2)
+
+
+NEW PARA: (Start: pg 13, col 1; End: pg 13, col 1)
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Cellulose has numerous applications in the field of pharmaceuticals and food technology. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Modifying the structure of cellulose with other chemical groups results in the production of structures that have better bio-compatibility, flexibility, stability, emulsifying effects. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Further, cellulose being indigestible by human beings, tend to have zero calorific value and can thus have been added in food to serve several purposes. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Compounds like HPMC, sodium carboxymethyl cellulose, hydroxyethyl cellulose and others are commonly utilized in the pharmaceutical industry and food technology industry. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Some of these uses are enumerated below: 
+
+NEW SECTION: 7.2.1 Hydroxypropyl methylcellulose  (Level: 3)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)HPMC is widely utilized in the pharmaceutical industry not only because it is safe and nontoxic but also because it does not get engrossed orally and does not upsurge the energy of foods. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)It is utilized as a film-forming agent, thickener, blocker, sustainedrelease agent, blending agent and suspending agent in many dosage forms, thus forming the numerous pharmaceutical preparation consistently discrete, tough short of being wrecked due to sustained release effects or steady emulsion without stratification. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)It is regularly used as a matrix, adhesives, frame ingredients, the film creating material or in the creation of sustained or controlled release microcapsules and pellets [36]. 
+
+NEW SECTION: 7.2.2 Sodium carboxymethyl cellulose  (Level: 3)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)It used as an emulsion stabilizer in injections, adhesion and film-forming materials which have proved to be effective in controlling wound infections and can reduce postoperative oedema and wound stimulation phenomena. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Animal experiments have shown that sodium carboxymethyl cellulose is a safe and reliable carrier of anticancer drugs [37]. 
+
+NEW SECTION: 7.2.3 Hydroxyethyl cellulose  (Level: 3)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)In ice cream, frozen milk drinks, it is added as a stabilizer to extend the storage life and improve the overflow property. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)It is also used as the stabilizer of beer foam. 
+
+NEW SECTION: 7.2.4 Food  (Level: 3)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Due to its unique physical and chemical properties and its behaviour in water, it is today being increasingly used a food additive to improve the bulk and fibre content of foods without having a major impact on the flavour of the food. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Since it is indigestible by humans, it has no caloric value and is thus used in excessive amounts in diet foods to create a sensation of fullness both physical and physiology without having consumed too many calories. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)It is also widely used an emulsifier and a thickening agent in whipped cream, sauces and ice cream [38]. 
+
+NEW SECTION: 7.3 Biomedical and pharmaceutical applications of cellulose  (Level: 2)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Cellulose, with its properties, as discussed in previous sections of this manuscript, is extensively used in the field of biomedicine and pharmaceuticals. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The cost of several pharmaceutical products is extremely high due to production factors such as high cost, difficulty in procuring the material, complicated processing steps etc. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)These problems can be remedied by the use of cellulose, which is found abundantly in nature. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The most productive use of cellulose would be the utilization of plant based waste materials which are produced in bulk by many industries such as the sugar production industry as well as in minor quantities by households. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The applications highlighted below could be brought to mainstream commercial use with the appropriate optimization techniques and novel modifications to the various steps of the production and processing of cellulosic material. 
+
+NEW SECTION: 7.3.1 Cellulose in coating of solid dosage forms and compressibility enhancers  (Level: 3)
+
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Solid dosage forms including pills, tablets, granules, pellets, microcapsules and spherules can be coated, usually with the aim to protect the drug from adverse environmental factors such as humidity, oxygen, enzymatic or acidic degradation. 
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Coating may also be used to facilitate drug delivery systems with altered release mechanisms such as delayed release, extended release, step-by-step release, pulsatile release and sustained release. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Derivatives of cellulose such as esters and ethers are also extensively used as coating materials. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)In the process of solid dosage form manufacture by direct compression, a problem that frequently occurs is low compactability of the drug, this is more seen more frequently when the amount of drug in the formulation exceeds 30%. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Many attempts are being made to reduce the price of the final product by experimenting with various starting materials and test conditions [39]. 
+
+NEW SECTION: 7.3.2 Cellulose in drug delivery  (Level: 3)
+
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)From the advent of novel drug delivery systems, cellulose based models seemed like strong candidates due to their projected benefits. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Since then various advances have been made with the aim to bring its use to common practice. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)There are still many hurdles to cross before this becomes a reality. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Cellulose based drug delivery is an important step in green and sustainable pharmacy which focuses on toxicity reduction, biodegradability and less hazardous synthesis with respect to drugs and drug delivery systems. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)A very brief overview of the primary ways in which it is used is provided here. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Cellulose nanocrystals (CNCs) have the potential to acquire a negative charge during hydrolysis. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)This coupled with their large surface area allow them to bind ionizable drugs such as tetracycline and doxorubicin permitting optimum dosing control. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Sites for surface modification for multiple chemicals are provided by the multitude of surface hydroxyl groups. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)This is used in case of non-ionized or hydrophobic drugs which do not generally bind to cellulose. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)The open pore structure and high surface area of CNC based aerogels provide increased drug loading capacity and drug bioavailability. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Extremely porous aerogel scaffolds were reported to attain sustained drug release [40]. 
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Cellulose derivatives have also been researched in terms of drug delivery. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)For instance, cellulose acetate has been successfully used in several HIV drugs, five flavonoids, one pain reliever and two antibiotics among others. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Hydroxypropyl methylcellulose has been used in oral drug delivery formulations [41]. 
+
+NEW SECTION: 7.3.3 Cellulose in scaffolding  (Level: 3)
+
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Scaffolds are materials that have been engineered to cause desirable cellular interactions to contribute to the formation of new functional tissues for medical purposes by providing the microenvironment required by cells to proliferate, migrate and differentiate. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)It contributes the geometrical basis and building blocks to provide cell attachment. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Gluconacetobacter xylinus sourced nanocellulose is an emerging biomaterial for this purpose. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Bacterial nanocellulose has a very high affinity for water and therefore displays properties similar to those of hydrogels which provides an ideal environment to host cells. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Studies have confirmed that human smooth muscle cells, bone forming osteoblasts and fibroblasts and human embryonic kidney cells can grow in the presence of bacterial cellulose scaffolds. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)The main challenge in the production of these scaffolds seems to be biodegradability as the cellulose, the enzyme required to breakdown cellulose is not present in humans. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)This property was reported to be enhanced by periodate oxidation [42]. 
+
+NEW SECTION: 7.3.4 Cellulose in biomedical implants  (Level: 3)
+
+
+NEW PARA: (Start: pg 15, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)BNC is specifically nondegradable under physiological conditions and has been shown to be biocompatible. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 16, col 1)These properties further impart durable mechanical properties and long-term chemical stability which make it an exciting candidate for application in this field:  • Cardiovascular implants: Bacterial cellulose has an important application in artificial blood vessels. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Compared to the material generally used for vascular grafts, these materials show less thrombosis and occlusion. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Heparin hybridized bacterial nanocellulose scaffolds with anticoagulant properties have potential use in vascular tissue engineering. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Potential use of BC in the production of heart valve replacements has been explored [43, 44]. 
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)• Bone and connective tissue repair: Nanocellulose are promising materials for the culture of various cells including osteoblasts and chondroblasts indicating that they have potential for bone tissue regeneration and healing. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)A membrane of BC and hydroxyapatite was developed as biomaterial for potential bone regeneration, which delivered prone growth of osteoblast cells, high level of alkaline phosphatase activity and greater bone nodule formation. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)It was also found that HAp crystals are partially substituted with carbonate resembling natural bones [45–47]. 
+
+NEW SECTION: 8. Conclusion  (Level: 1)
+
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)From the chapter we can conclude that cellulose is a highly versatile polymer which is easy to manufacture and extract. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Its application in multiple fields has been discussed above. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)With increasing population, demand and technological innovations, renewable energy is gradually becoming imperative aspect of resource conservation and overall environmental health. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Although various other polymers can be utilized for consumables, biomedical and pharmaceutical applications, the marked advantage of cellulose is that it is a biodegradable and environmentally friendly material. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)The intensive research on the chemistry of the compound, has resulted in the production of a wide variety of biodegradable products with a plethora of applications. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)An improved information of the many structural levels in which cellulose partakes will allow us to understand better practise of this exceptional and metastable molecular assembly produced by plant metabolic pathways. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)We have placed emphasis on the diverse applications of cellulose to promote more innovations that aim to bridge the gap between the amounts of cellulosic waste and its optimum utilization. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Large amounts of cellulose based wastes are produced in every community across the world, which remain a largely untapped resource. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Research that involves the conversion of this perceived waste into a widely used commodity would have the dual benefit of organic waste management and sustainable innovations. 
+
+NEW SECTION: Acknowledgements  (Level: 1)
+
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)The authors listed in this chapter wish to express their appreciation to the RSST trust Bangalore for their continuation support and encouragement. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)As a corresponding author, I also express my sincere thanks to all other authors whose valuable contribution and important comments make this manuscript in this form. 
+
+NEW SECTION: Conflict of interest  (Level: 1)
+
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)The authors listed in this chapter have no conflict of interest known best from our side. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)There was also no problem related to funding. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)All authors have contributed equally with their valuable comments which made the manuscript to this form. 
+
+NEW SECTION: Funding information  (Level: 1)
+
+
+NEW PARA: (Start: pg 17, col 1; End: pg 17, col 1)
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)There was no funding provided for the above research and preparation of the manuscript. 
+
+NEW SECTION: List of abbreviations  (Level: 1)
+
+
+NEW PARA: (Start: pg 17, col 1; End: pg 18, col 1)
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 18, col 1)DP degree of polymerization NMR nuclear magnetic resonance HS Hestrin-Schramm CMC carboxymethyl cellulose PKC palm kernel cake EC ethylcellulose HPC hydroxypropyl cellulose MCC microcrystalline cellulose TGA thermogravimetric analysis FTIR Fourier transform infrared spectroscopy XRD X-ray diffraction DSC differential scanning calorimetry SEM scanning electron microscopy SCB sugarcane bagasse GBF green bamboo fibre DBF dewaxed bamboo fibre DI deionized DLBF delignified bamboo fibre AmimCl 1-allyl-3-methylimidazolium chloride IL ionic liquid DMSO dimethyl sulfoxide BJH Barrett-Joyner-Halenda analysis DTG derivative thermogravimetric CNC cellulose nanocrystal HIV human immunodeficiency virus ER extended release BNC bacterial nanocellulose BC bacterial cellulose HAp hydroxyapatite GTR guided tissue regeneration  © 2019 The Author(s). 
+	NEW SENTENCE: (Start: pg 18, col 1; End: pg 18, col 1)Licensee IntechOpen. 
+	NEW SENTENCE: (Start: pg 18, col 1; End: pg 18, col 1)This chapter is distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/ by/3.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. 
+	NEW SENTENCE: (Start: pg 18, col 1; End: pg 18, col 1)Author details  Praveen Kumar Gupta*, Shreeya Sai Raghunath, Deepali Venkatesh Prasanna, Priyadharsini Venkat, Vidhya Shree, Chandrananthi Chithananthan, Shreya Choudhary, Krithika Surender and Keerthana Geetha Department of Biotechnology, R. V College of Engineering, Bangalore, India  * Address all correspondence to: praveenkgupta@rvce.edu.in 
+
+NEW SECTION: References  (Level: 1)
+
+
+NEW PARA: (Start: pg 19, col 1; End: pg 21, col 2)
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)[1] Khandelwal M, Windle A. Hierarchical Organisation in the Most Abundant Biopolymer –Cellulose. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)MRS Proceedings.  2013.  p. 1504, Mrsf12-1504-v02-03. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)DOI: 10.1557/ opl.2013.379  [2] Holtzapple MT. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Cellulose. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)In: Caballero B, editor. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Encyclopedia of Food Sciences and Nutrition .  2nd ed. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Academic Press. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)2003:998-1007. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)ISBN 9780122270550.  https://doi.org/10.1016/ B0-12-227055-X/00185-1  [3] Aravamudhan A, Ramos DM, Nada A, Kumbar S. Natural Polymers: Polysaccharides and Their Derivatives for Biomedical Applications. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Natural and Synthetic Biomedical Polymers. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)2014:67-89. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)DOI: 10.1016/ B978-0-12-396983-5.00004-1  [4] Zhang Z, Ortiz O, Goyal R, Kohn J. Biodegradable Polymers. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)In: Principles of Tissue Engineering: 4th ed. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Elsevier Inc. 2013:441-473.  https://doi.org/10.1016/ B978-0-12-398358-9.00023-9  [5] Rose M, Palkovits R. Cellulose-based sustainable polymers: State of the art and future trends. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Macromolecular Rapid Communications. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)2011;32(17):1299-1311  [6] Kalia S, Dufresne A, Cherian B, Kaith B, Avérous L, Njuguna J, et al. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Cellulosebased bio- and nanocomposites: A Review . 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)International Journal of Polymer Science.  Vol. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)2011, Article ID 837875, 35 pages, 2011.  https://doi.  org/10.1155/2011/837875  [7] Aunina Z, Bazbauers G, Valters K Feasibility of bioethanol production from Lignocellulosic biomass. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Scientific Journal of Riga Technical University Environmental and Climate Technologies. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)2010;4(-1):11-15  [8] Niwińska B. Digestion in ruminants. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 2)In: Carbohydrates-Comprehensive  Studies on Glycobiology and Glycotechnology. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)IntechOpen.  2012. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)DOI: 10.5772/51574. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Available from: https://www .intechopen.com/books/ carbohydrates-comprehensive-studieson-glycobiology-and-glycotechnology/ digestion-in-ruminants  [9] Zhang T, Yang Y, Liang Y, Jiao X, Zhao C. Beneficial effect of intestinal fermentation of natural polysaccharides. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Nutrients. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)2018;10(8):1055  [10] Serra D, Richter A, Hengge R. Cellulose as an architectural element in spatially structured Escherichia coli biofilms. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Journal of Bacteriology. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)2013;195(24):5540-5554  [11] Fernandes A, Thomas L, Altaner C, Callow P , Forsyth V , Apperley D, et al. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Nanostructure of cellulose microfibrils in spruce wood. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Proceedings of the National Academy of Sciences. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)2011;108(47):E1195-E1203  [12] Chawla S, Kanatt S, Sharma A. Chitosan. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)In: Ramawat K, Mérillon JM, ediors. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Polysaccharides. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Springer, Cham.  2015.  pp.  219-246.  https://doi.  org/10.1007/978-3-319-16298-0_13  [13] Li S, Bashline L, Lei L, Gu Y. Cellulose synthesis and its regulation. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)In: The Arabidopsis Book.  Vol.  12. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)BiOne Complete(Open Access).  2014.  p. e0169.  https://doi.org/10.1199/tab.0169  [14] Nobles DR, Romanovicz DK, Malcolm Brown R Jr. Cellulose in cyanobacteria. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Origin of vascular plant cellulose synthase. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Plant Physiology. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)2001;127:529-542  [15] Nakatsubo F, Kamitakahara H,   Hori M. Cationic ring-opening polymerization of 3,6-di-O-benzyl-αd-glucose 1,2,4-Orthopivalate and the first chemical synthesis of cellulose. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 19, col 2)Journal of the American Chemical Society. 
+	NEW SENTENCE: (Start: pg 19, col 2; End: pg 20, col 2)1996;118(7):1677-1681  [16] Zugenmaier P . 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Conformation and packing of various crystalline cellulose fibers. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Progress in Polymer Science. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2001;26:1341-1417  [17] Gardner KH, Blackwell J. The Structure of native Cellulose. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Biopolymers. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Wiley Online Library. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)1974;13:1975-2001.  http://dx.doi.  org/10.1002/bip.1974.360131005  [18] Klemm D, Fink BHH-P , Bohn A. Cellulose: Fascinating biopolymer and sustainable raw material Angew . 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Angewandte Chemie International Edition. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2005;44:3358-3393  [19] Costa A, Almeida F, Vinhas G, Sarubbo L. Production of bacterial cellulose by Gluconacetobacter hansenii using corn steep liquor as nutrient sources. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Frontiers in Microbiology.  2017;8  [20] Esa F, Tasirin S, Rahman N. Overview of bacterial cellulose production and application. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Agriculture and Agricultural Science Procedia. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2014;2:113-119  [21] Fischer S, Thümmler K, Volkert B, Hettrich K, Schmidt I, Fischer K. Properties and applications of cellulose acetate. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Macromolecular Symposia. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2008;262(1):89-96  [22] Murtaza G. Ethylcellulose microparticles: A review . 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)International Jornal of Pharmacy and Pharmaceutical Sciences. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2012;69(1):11-22  [23] Luchs J, Nelinson D, Macy J.   Efficacy of Hydroxypropyl cellulose ophthalmic inserts (LACRISERT) in subsets of patients with dry eye syndrome: Findings from a patient registry.  Cornea. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2010;29(12):1417-1427  [24] McDonald M, D’Aversa G, Perry HD, Wittpenn JR, Nelinson DS. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 2)Correlating patient-reported response to hydroxypropyl cellulose ophthalmic insert (LACRISERT^{®} ) therapy with  clinical outcomes: Tools for predicting response. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Current Eye Research. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)2010;35(10):880-887  [25] Sanford-Smith J. Glaucoma. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)In: Eye Diseases in Hot Climates.  4th ed. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)India: Elsevier; 2003.  pp.  298-315  [26] Blumenthal H. The Appliance of Science (Melting Point). 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)International Edition: The Guardian.  2004. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Available from: https://www .theguardian.  com/lifeandstyle/2004/nov/20/ foodanddrink.shopping3  [27] Matrosovich M, Matrosovich T, Garten W, Klenk HD. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)New low-viscosity overlay medium for viral plaque assays. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Virology Journal. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)2006;3(1):63  [28] Lynch M, inventor; Lynch Maurice Gerard, assignee. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Decorative skin and hair cosmetics containing microcrystalline cellulose as enhancing agent. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)United States patent application US 10/752,173. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)12 August 2004  [29] Saelee K, Yingkamhaeng N, Nimchua T, Sukyai P . 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Extraction and characterization of cellulose from sugarcane bagasse by using environmental friendly method. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)The 26th Annual Meeting of the Thai Society for Biotechnology and International Conference, TSB.  2014  [30] Liew FK, Hamdan S, Rezaur M, Rahman MR, Lai JCH, Hossen MF, et al. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Synthesis and characterization of cellulose from green bamboo by chemical treatment with mechanical process. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Journal of Chemistry. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)2015;2015:212158.  6 pages.  http://dx.doi.  org/10.1155/2015/212158  [31] Johar N, Ahmad I, Dufresne A.   Extraction, preparation and characterization of cellulose fibers and nanocrystals from rice husk. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 20, col 2)Industrial Crops and Products. 
+	NEW SENTENCE: (Start: pg 20, col 2; End: pg 21, col 2)2012;37(1): 93-99.  https://doi.org/10.1016/j.  indcrop.2011.12.016  [32] Madureira A, Atatoprak T, Çabuk D, Sousa F, Pullar R, Pintado M. Extraction and characterisation of cellulose nanocrystals from pineapple peel. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)International Journal of Food Studies. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 3)2018;7:24-33  [33] Ang TN, Ngoh G, Chua A, Gyu Lee M. Elucidation of the effect of ionic liquid pretreatment on rice husk via structural analyses. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Biotechnology for Biofuels. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)2012;5:67. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)DOI: 10.1186/1754-6834-5-67  [34] Rosa SML, Rehman N, de Miranda MIG, Nachtigall SMB, Bica CID. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Chlorine-free extraction of cellulose from rice husk and whisker isolation. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Carbohydrate Polymers. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)2012;87(2):1131-1138. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)ISSN 0144-8617. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)DOI: 10.1016/j.carbpol.2011.08.084  [35] Mettler M, Paulsen A, Vlachos D, Dauenhauer P . 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Pyrolytic conversion of cellulose to fuels: Levoglucosan deoxygenation via elimination and cyclization within molten biomass. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Energy & Environmental Science. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)2012;5(7):7864  [36] De Silva D, Olver J. Hydroxypropyl methylcellulose (HPMC) lubricant facilitates insertion of porous spherical orbital implants. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Ophthalmic Plastic & Reconstructive Surgery. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)2005;21(4):301-302  [37] Hollabaugh C, Burt L, Walsh A. Carboxymethylcellulose. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Uses and applications. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Industrial and Engineering Chemistry. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)1945;37(10):943-947  [38] Dhingra D, Michael M, Rajput H, Patil R. Dietary fiber in foods: A review . 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Journal of Food Science and Technology. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)2011;49(3):255-266  [39] Vanhatalo K. A new manufacturing process for microcrystalline cellulose (MCC). 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Aalto University publication series [doctoral dissertations].  2017  [40] George J, Sabapathi NS. 
+	NEW SENTENCE: (Start: pg 21, col 2; End: pg 21, col 2)Cellulose nanocrystals: Synthesis, functional properties, and applications. 
+
+NEW PARA: (Start: pg 21, col 3; End: pg 21, col 3)
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Nanotechnology, Science and Applications. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2015;8:45  [41] Barud H, Silva R, Barud H, Tercjak A, Guttierez J, Lustri W, et al. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)A multipurpose natural and renewable polymer in medical applications: Bacterial cellulose. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Carbohydrate Polymers. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2018;153:406-420. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)DOI: 10.1016/j.carbpol.2016.07.059. 
+
+NEW PARA: (Start: pg 21, col 3; End: pg 21, col 3)
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)[42] Jorfi M, Foster E. Recent advances in nanocellulose for biomedical applications. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Journal of Applied Polymer Science. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2014;132:19. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)DOI: 10.1002/app.41719  [43] Kucińska-Lipka J, Gubanska I, Janik H. Bacterial cellulose in the field of wound healing and regenerative medicine of skin: Recent trends and future prospective. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Polymer Bulletin. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2015;72(9):2399-2419.  https://doi.  org/10.1007/s00289-015-1407-3  [44] Courtenay J, Johns M, Galembeck F, Deneke C, Lanzoni E, Costa C, et al. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Surface modified cellulose scaffolds for tissue engineering. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Cellulose. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2016;24(1):253-267  [45] Modulevsky DJ, Cuerrier CM, Pelling AE. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Biocompatibility of subcutaneously implanted plant-derived cellulose biomaterials. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)PLoS One.  2016;11(6):e0157894. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)DOI: 10.1371/ journal.pone.0157894  [46] Trache D, Hussin M, Hui Chuin C, Sabar S, Fazita M, Taiwo O, et al. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Microcrystalline cellulose: Isolation, characterization and bio-composites application—A review . 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)International Journal of Biological Macromolecules. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2016;93:789-804  [47] Nascimento P , Marim R, Carvalho G, Mali S. Nanocellulose Produced from Rice hulls and its effect on the properties of biodegradable starch films. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)Materials Research. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)2016;19(1): 167-174. 
+	NEW SENTENCE: (Start: pg 21, col 3; End: pg 21, col 3)DOI: 10.1590/1980-5373-MR2015-0423 [Epub Feb 12, 2016] 
+
+
+
+
+Figure 1. Major pathways of formation of cellulose [14]. 
+
+Figure 2. Molecular structure of cellulose (n = DP, degree of polymerization) [14]. 
+
+Figure 3. The crystal structures of cellulose I and II: (a) projection of the unit cell along the a-b plane and (b) projection of UC parallel to (100) lattice plane, cellulose I and (010) lattice plane, cellulose II [14]. 
+
+Figure 4. Different sources of cellulose extraction. 
+
+%) 
+
+Table 1. Extraction and characterization of cellulose from sugarcane bagasse by using environmental friendly method [29]. 
+
+Figure 5. Comparative differences of FTIR peaks into green bamboo fibre (GBF) and cellulose fibre (CF). The peak intensity at 1514 cm^{−1}  from the spectrum of the GBF is credited to the C═C stretching vibration in the aromatic ring of lignin. Yet, the cellulose fibre did not show the C═C stretching at that region. This is an indication that the lignin was well removed by chemical process [30, 32]. 
+
+Figure 7. The thermogravimetric analysis of (GBF, DBF, DLBF and CF) green bamboo fibre, dewaxed bamboo fibre, delignified bamboo fibre and cellulose fibre, respectively. The weight loss rate was obtained from the derivative thermogravimetric (DTG) data. The intersection of tangents drawn from thermogravimetric curve, one before inflection caused by the degradation and another from the cellulose degradation step indicates the onset degradation temperature [30]. 
+
+Figure 6. BJH surface area for four samples. It was noted that there was an increase in the BJH surface area of GBF and a decrease after DLBF. The decreased surface area of cellulose fibre might be a result of the mechanical grinding process that creates smaller cellulose fibre thus reduced the surface area. This result also indicates that mechanical grinding should be avoided to obtain higher BJH surface area. The final cellulose fibre showed that BJH surface area is two times greater than the initial green bamboo fibre [30, 32]. 
+
+Figure 8. SEM images of (a) untreated rice husk and rice husk residues of (b) [BMIM]Cl, 1-butyl-3-methylimidazolium chloride; (c) [EMIM] OAc, 1-ethyl-3-methylimidazolium acetate; and (d) [EMIM] DEP, 1-ethyl-3methylimidazolium diethyl phosphate pretreatments [34]. 
+
+Figure 10. X-ray diffractograms of rice husk (RH), bleached rice husk (RHB), rise husk nanofibrin after 1 and 2 hour of bleaching (RHNF1h and RHNF2h, respectively) [34]. 
+
+Figure 9. FTIR spectra for RH (rice husk), RH extractive-free, alkaline treated RH (RH after 15 minutes autoclave), RH cellulose (after 30 minutes bleaching) and commercial microcrystalline cellulose (MCC) in the range from 2000 
+
+to 800 cm^{−1}  [34]. 
+
+View publication stats View publication stats 
+
+
+
+
+
+
+
+
+
+
+
