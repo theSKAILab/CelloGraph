@@ -1,0 +1,538 @@
+Time to Read: 614.0601344108582 sec, aka 10.234335573514302 min
+All Times:
+Page 1: 179.9066824913025
+Page 2: 27.90129256248474
+Page 3: 8.536944150924683
+Page 4: 28.712419271469116
+Page 5: 89.10344171524048
+Page 6: 19.876776933670044
+Page 7: 77.21388030052185
+Page 8: 131.51250338554382
+
+
+Median Time per page = 28.712419271469116
+Avg Time per page = 70.34549260139465
+
+NEW SECTION: Nanocellulose electroconductive composites Zhijun Shi,^{ab} Glyn O. Phillips^{cd} and Guang^{Yang*}^{ab}  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)scaﬀold for electrically stimulated drug release devices, implantable biosensors, and neuronal prostheses. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Here the beneﬁts of combining conventional and bacterial cellulose with these electroactive 
+
+NEW SECTION: Introduction  (Level: 1)
+
+
+NEW SECTION: Cellulose is an important natural material which is biocompatible and hydrophobic and which can be extensively derivatized  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 2)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 2)and so form strong and stable stiﬀ-chain homomolecular  structures with lm- and hydrogel-forming properties.  It is,  therefore, complementary to other conducting optical materials and has the potential to be a stable and robust carrier, matrix or scaﬀold component for the fabrication of new functional  materials.^{1} 
+
+NEW PARA: (Start: pg 1, col 2; End: pg 1, col 2)
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)Inorganic nanoparticles, metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids can associate with cellulose to form such materials. 
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)In this way their specic conducting properties can be combined with the characteristic properties of cellulose such as high hydration, swellability, in vitro and in vivo biocompatibility and allow small molecules to diﬀuse into the  matrix. 
+
+NEW PARA: (Start: pg 1, col 2; End: pg 1, col 2)
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)Due to the wide range of morphological forms of cellulose the composites provide opportunities to produce materials with high electrical conductivity, ON–OFF electrical and optical 
+
+NEW PARA: (Start: pg 1, col 2; End: pg 1, col 2)
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)Zhijun Shi was awarded a Bachelor of Biotechnology in 2008 from the Huazhong University of Science and Technology, China. 
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)In 2009, he commenced his PhD research at Huazhong University of Science and Technology, in the area of microbiology, where he is currently completing his candidature. 
+	NEW SENTENCE: (Start: pg 1, col 2; End: pg 1, col 2)His research interests include the fabrication of optical-electronic materials based on bacterial cellulose. 
+
+NEW PARA: (Start: pg 1, col 3; End: pg 1, col 3)
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)Glyn O. Phillips holds BSc, PhD and DSc degrees from the University of Wales where he is a Professorial Fellow, and is a Chartered Chemist and Fellow of the Royal Society of Chemistry. 
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)He is Chairman of Research Transfer Ltd, Phillips Hydocolloids Research Ltd, the Cellucon and Trusts and the Wrexham Gums and Stabilisers Conferences. 
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)He is a consultant  to several industrial organisations, including the Association for the International Promotion of Gums. 
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)In 2010 the “Glyn O. Phillips Hydrocolloids Research Centre”_{was} opened in Hubei University of Technology, China of which Professor Phillips is Chairman. 
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)His research interests centre  on carbohydrate and biomaterials systems. 
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)3194 | Nanoscale, 2013, 5, 3194–3201 This journal is^{ª} The Royal Society of Chemistry 2013 Nanoscale 
+
+NEW SECTION: MINIREVIEW  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 3; End: pg 1, col 3)
+	NEW SENTENCE: (Start: pg 1, col 3; End: pg 1, col 3)8 B 
+
+NEW SECTION: View Article Online  (Level: 1)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)switching and electrochemical redox properties. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)These can form stimuli responsive materials with viable sensory and actuation applications and can be fabricated into biorecognition membrane layers within biosensors, neural prosthetics, and devices for electrostimulated drug release, and exible biocompatible energy harvesting. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)This paper reviews the current status of electroconductive cellulose composites to include their synthesis, characterization and key applications. 
+
+NEW SECTION: Fabrication of electroconductive cellulose composites  (Level: 1)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose and conducting materials can be combined by blending, forming a co-network, or by doping the conductor with cellulose.  Fig. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)1 illustrates such synthetic routes. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The cellulose can be a solid matrix, with the electroconductive material dispersed on the surface or within the matrix. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose can also be dissolved in solvents such as dimethylacetamide (DMAc)/LiCl, aqueous NaOH/urea, N-methylmorpholine-N-oxide (NMMO) or the ionic liquid 1-butyl-3methylimidazolium acetate (BMIM-OAc),^{2–5} and aer mixing in solution cast or electrospun with the conductor to form microspheres, bers or membranes. 
+
+NEW SECTION: Combination with conducting polymers Conducting polymers, developed since the 1970s, are a family of  (Level: 2)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 2)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)highly conjugated polymers with spatially extended p-bonding which provide unique electrical, electrochemical and optical properties. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Most derive from just a few basic polymer structures, such as polyacetylene, polypyrrole, polyfuran, polyaniline and polythiophene (Table 1). 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 2)They nd applications as diverse as electrical conductors, nonlinear optical devices, polymeric light emitting diodes (LEDs), anti-static and corrosion protective coatings, chemical and biological sensors, electrodes of batteries, electromagnetic shielding materials, solar cells,  microwave absorbing materials, and valves in microelectromechanical  systems (MEMs) devices.^{6–9} 
+
+NEW PARA: (Start: pg 2, col 2; End: pg 2, col 2)
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)It is diﬃcult to form lms when cast and dried from such dispersions because their H-bond forming ability is low or even absent. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)However, cellulosic hydrogels or solutions provide suﬃcient H-bonding to cast lms from heterogenic mixtures of cellulose and conducting polymers and so form microspheres, spun as bers or applied to electrodes and to other solid-state electronic devices. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)A conducting nanocomposite lm was cast from aqueous slurries using doped polypyrrole (PPy) particles, and carboxymethyl cellulose (CMC) and nanobrillar cellulose (NFC) as the conducting and reinforcing phase, respectively.^{13} PPy–cellulose composites were prepared by in situ polymerization of pyrrole in cellulose pulp suspensions.^{14} PPy coating of individual bers of wood-based nanocellulose was carried out in situ by chemical polymerization to give an electrically conducting continuous high-surface-area composite.^{15} The conducting polymer, polyaniline (PANI), was synthesized by polymerisation in the presence of dispersed pulp bers to yield PANI–pulp composite bers, which were then formed into a  conducting paper sheet.^{16} 
+
+NEW PARA: (Start: pg 2, col 2; End: pg 2, col 2)
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Cellulose can also provide a stabilizing and lm-forming matrix that can adhere to a supporting substrate. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)This can be either within the cellulose network or on the surface through chemical oxidative polymerization or electrochemical polymerization. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Li et al.  thus prepared PANI–cotton composites by in situ polymerization of aniline on graed cotton.^{17} Another study, by Castillo-Ortega et al.,  looked at the adsorption and desorption of a gold–iodide complex on a cellulose acetate membrane coated with PANI or PPy.^{18} PANI could also be deposited onto the surface and insides of the pores of microporous mixed cellulose ester membranes using various chemical oxidative polymerization techniques.^{19} In this way the charge transport processes of PANI composite membranes could be identied and correlated with the PANI deposition site and the extent of PANI surface layering on the microporous membranes. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Li et al.^{20} used cotton as a template to synthesise PANI microbelts. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Zhou et al.^{21} described the anisotropic actuation of electroactive papers with a poly(3,4-ethylenedioxythiophene)/poly(4-styrene sulfonate) (PEDOT/PSS) coating on cellulose-based paper. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)The electroactive papers displayed a contractile stress when an external voltage was applied, the magnitude and direction of the stress depending on the relative orientation of the paper bers and the loading direction of the coating. 
+
+NEW SECTION: Discovered in 1991, carbon nanotubes (CNTs) form unique structures with unexpected physical (mechanical, thermal and  (Level: 2)
+
+
+NEW PARA: (Start: pg 2, col 2; End: pg 2, col 2)
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)electronic) properties which oﬀer promising applications in both the physical and life sciences. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)These can be classied into two main types: single-walled carbon nanotubes (SWNTs), which consist of one single layer of graphene sheet seamlessly rolled into a cylindrical tube; and multi-walled carbon nanotubes (MWNTs), which are made up of several concentric graphene  layers.  Guang Yang is a Professor, Distinguished Young Scholar, and a Chutian Scholar (Special Term Professor) in Hubei Province. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)She received her BS and PhD degrees from Wuhan University. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)She was an Alexander von Humboldt fellow at Johannes Gutenberg-Universitaet Mainz, Germany (2002–2004) before moving to Kyushu University, Japan, as a Japan Society for the 
+
+NEW PARA: (Start: pg 2, col 2; End: pg 2, col 2)
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Promotion of Science fellow (2004–2006). 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)She then moved to the College of Life Science and Technology at Huazhong University of Science and Technology as a professor. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)She was a senior visiting scholar at the University of Akron, USA in 2010. 
+	NEW SENTENCE: (Start: pg 2, col 2; End: pg 2, col 2)Her research interests focus on bionic nanocomposites. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 2)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 2)Poly(para-phenylene sulde)(PPs)  Fig.1 Schematicillustrationofthegeneralizedsyntheticroutestoelectroconductivecellulosecomposites.^{10–12} Copyright2005RoyalSocietyofChemistry.Copyright 
+	NEW SENTENCE: (Start: pg 3, col 2; End: pg 3, col 2)2006AmericanChemicalSociety.Copyright2009Elsevier. 
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Many biomolecules (including cellulose) combine with CNTs via non-covalent interactions. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Aer solubilization CNTs can attach to chemical or biological molecules without aﬀecting the electronic network of the nanotubes or their non-covalent functionalisation. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Applications have been found in biomedical technologies. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Tanaka et al.^{22} fabricated MWCNT–cellulose composite papers and measured the temperature dependence of their electrical conductivity. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Basavaraja et al.^{23} used diﬀerent weight percentages of MWNTs dispersed in cellulose triacetate (CTA) solution to prepare CTA–MWNTs. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Such composite lms can be used for electromagnetic interference shielding.^{CNT–} cellulose composite materials can also be used to decrease electromagnetic wave interference, control undesired reections, prevent cross-talk, and suppress noise in circuits.^{24,25} Lu and Hsieh^{26} recently reported MWCNTs reinforced with cellulose bers prepared by electrospinning MWCNT-loaded cellulose acetate (CA) solutions. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Miyauchi et al.^{27} also used electrospinning technology to combine cellulose and MWCNTs, to fabricate core–sheath MWNT-cellulose bers having a cable structure with a conductive core and an insulating sheath. 
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Cellulose has also been shown to combine with SWNTs, and Oya and Ogino^{28} reported the preparation of an electrically conductive SWNT–cellulose nanocomposite simply using the “washi”_{process} by adding the SWNTs into a pulp suspension. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Kim et al.^{29} used N-methylmorpholine-N-oxide (NMMO) monohydrate as a dispersing agent for acid-treated SWNTs (A-SWNTs) as well as a cellulose solvent. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)A cellulose–SWNT composite has been shown to be homogenous, hydrophilic, conductive and biocompatible, and was used to immobilize leukemia K562 cells on a gold electrode in a cell impedance sensor.^{30} SWCNTs wrapped with cellulose have been prepared by the treatment of SWCNTs with a cellulose solution in the ionic liquid 1-butyl-3methylimidazolium bromide. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)This cellulose–SWCNT scaﬀolds could promote the growth of HeLa cells.^{31} 
+
+NEW SECTION: Combination with graphene  (Level: 2)
+
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Graphene has attracted considerable interest as a potential new electronic material. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)It is a two-dimensional carbon material with atomic thickness and versatile electrochemical properties, because graphene-based assemblies combine high electrical conductivity, electroactivity, and strength. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Thus, assemblies of graphene, graphene oxide, or related polymer composites have been used as^{so} electrodes for exible batteries, supercapacitors, etc. 
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 2)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Highly ordered graphene paper can be prepared by directional ow-induced assembly of graphene sheets which have been well dispersed in solution. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Moderate thermal annealing can enhance the mechanical stiﬀness, strength and electrical conductivity. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 2)In this way graphene paper can become biocompatible and suitable for biomedical applications.^{32} Kim et al.^{33} used N-methylmorpholine-N-oxide (NMMO) monohydrate as solvent to prepare graphene oxide (GO)–cellulose composite lms. The products had improved thermal and electrical properties, and were strong but brittle. It is also possible to fabricate mechanically robust and electrically conductive  materials based on amine functionalized cellulose nanobrils  and chemically reduced grapheme oxide sheets. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)These composites not only exhibit good electrical properties (1.8 S m^{(cid:1)1} ) but also have excellent mechanical properties (tensile strength of 273 MPa).^{34} Graphene–cellulose paper (GCP) membranes have advantages as free standing binder-free electrodes for exible super-capacitors. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Their electrical conductivity is highly stable and decreases only 6% aer being bent 1000 times. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Flexible GCP electrodes have a high capacitance per geometric area of 81 mF cm^{(cid:1)2} , which is equivalent to a gravimetric capacitance of 120 F g^{(cid:1)1} of graphene, and retain >99% capacitance over 5000 cycles.^{35} 
+
+NEW SECTION: Combination with inorganic nanoparticles  (Level: 2)
+
+
+NEW PARA: (Start: pg 4, col 2; End: pg 4, col 2)
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Hybrid inorganic–organic nanocomposites are a new class of functional nanomaterials that show improved conductive, optical, thermal and mechanical properties because of the synergistic eﬀect of the combined physical or chemical interactions  between the inorganic and organic components. 
+
+NEW PARA: (Start: pg 4, col 2; End: pg 4, col 2)
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Mineral nanoparticle-reinforced, metal nanoparticle-reinforced and nanober-reinforced polymer matrix nanocomposites and hybrid nanocomposites have been based on natural cellulose. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)A conductivity of 0.15 S cm^{(cid:1)1} has been reported for cellulose-based composites containing copper which had been introduced by electrolysis plating.^{36} Sol–gel indium tin oxide lms on cellulose have shown a conductivity as high as 16 S cm^{(cid:1)1} aer annealing at 450^{(cid:3)} C for 6 h.^{37} Nylon bers electrolytically coated with silver showed an eﬀective conductivity up to 1950 S cm^{(cid:1)1} . 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Cotton bers and paper coated with ZnO by atomic layer deposition (ALD) showed an eﬀective conductivity of up to 24 S cm^{(cid:1)1} .^{38} The electrical transport and photoconductivity of pure and iodine-doped cellulose bers showed signicant enhancements of more than four orders of magnitude when compared with undoped samples.^{39} TiO_{2}^{–} cellulose composite lms were fabricated by in situ synthesis of TiO_{2} nanoparticles in the regenerated cellulose matrix having a micronanoporous structure via a sol–gel method. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)This composite had good high photocatalytic activity and was useful for waste water treatment. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)Free-standing, nanotubular indium tin oxide (ITO) sheets with diﬀerent In/Sn ratios were fabricated by the surface sol–gel process using cellulose lter paper as a template. 
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 4, col 2)When prepared by this template synthesis the product exhibited a high electrical conductivity of 0.53 S cm^{(cid:1)1} .^{40} 
+
+NEW SECTION: Combination with ionic liquids  (Level: 2)
+
+
+NEW PARA: (Start: pg 4, col 2; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 4, col 2; End: pg 5, col 2)At room-temperature ionic liquids are frequently colorless, uid, and easy to handle but at high temperatures can be corrosive and viscous.^{41} Nevertheless, they have widely been promoted as “green^{solvents”} for chemical applications due to their chemical and thermal stabilities, low vapor pressure and high ionic conductivity.^{42} They have been used in several types of polymerization processes, and also investigated as components for polymeric matrices (such as polymer gels), as templates for porous polymers and as novel electrolytes for  electrochemical polymerizations.^{43}  Ionic liquids have excellent ionic conductivity up to their decomposition temperature and so can play an important role  in forming electrolyte matrixes. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Varying amounts of 1-butyl-3methylimidazolium bis(triuoromethylsulfonyl) imide (BMITFSI), for example, have been loaded into a cellulose lm during its regeneration process by utilizing a traditional solution blending technique. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Such BMITFSI–cellulose had very high conductivity under ambient conditions.^{44} Cellulose triacetate (CTA), N-methyl-N0-propylpyrrolidinium bis(triuoromethanesulfonyl)imide (Pyr1,3TFSI), and lithium bis(triuoromethanesulfonyl)imide (LiTFSI) were used to obtain new composite polymer gels. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The ionic conductivities of these polymer gels were signicantly enhanced by the presence of LiTFSI, and could be used as electrolytes.^{45} Another group^{46} synthesized a graed cellulose gel electrolyte in an ionic liquid 1-butyl-3-methylimidazolium iodide ([Bmim]I) for preparing dye-sensitized solar cells. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The cellulose was graed homogeneously with acrylic acid by in situ polymerization in an ionic liquid [Bmim]I as reaction medium. Using the graed cellulose gel as polymer host, and KI and I_{2} as ionic conductors, an ionic conductivity of 7.33 mS cm^{(cid:1)1} of the gel polymer electrolyte was produced (Table 2). 
+
+NEW SECTION: Bacterial cellulose electroconductive composites  (Level: 1)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 3)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The biosynthesis of cellulose takes place not only in plants, but also in bacteria, algae, and fungi. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Bacterial cellulose (BC) is produced by many microorganisms (such as Acetobacter, Agrobacterium, Achromobacter, Aerobacter, Azotobacter, Sarcina ventriculi, Salmonella, Escherichia and Rhizobium). 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 2)Sharing the same structural unit, BC does not only have the properties of conventional cellulose produced by plants, but it also has  special properties such as high chemical purity and crystallinity, a high degree of polymerization, excellent biocompatibility and biodegradability. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)These properties have already led to its successful commercialization in a variety of niche markets, including health foods, high-end audio components, speciality papers, and wound care, and even for gene detection. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)Signicantly, BC is a natural polymer hydrogel, which has threedimensional polymeric networks and adsorbs large amounts of water. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)BC hydrogels are exible and have good mechanical properties, and they can accordingly easily change their size and shape in response to environmental stimuli. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)Moreover, BC can also contain other monomeric, reactive and potentially polymerizable monomers within its networks, occupying its void volume and interacting with BC ber chains. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)These properties can be used to combine with inorganic nanoparticles, metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids to thus change or improve the characteristics of BC, and in particular to improve its electrical conductivity. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)Yoon et al.^{11} incorporated multiwalled carbon nanotubes (MWCNTs) into bacterial cellulose pellicles produced by Gluconacetobacter xylinum, and so increased the conductivity up to 1.4^{(cid:4)} 10^{(cid:1)1} S cm^{(cid:1)1} . 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)Jung et al.^{57} used an aqueous silk broin solution to improve the light transmittance of bacterial cellulose membranes, then incorporated these with MWCNTs to enhance the electrical conductivity, transparency and electrical properties. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)A light transmittance of 70.3% at 550 nm and electrical conductivity of 2.1^{(cid:4)} 10^{(cid:1)3} S cm^{(cid:1)1} was achieved. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 2)Bacterial cellulose productivity can be improved by adding conducting materials to the culture medium. 
+	NEW SENTENCE: (Start: pg 5, col 2; End: pg 5, col 3)The structure of cellulose microbrils has been investigated in a static  culture medium containing acid-treated MWCNTs.^{58} Bacterial  the cellulose ber 
+
+NEW SECTION: 18,19,47–49  (Level: 2)
+
+
+NEW PARA: (Start: pg 5, col 7; End: pg 5, col 12)
+	NEW SENTENCE: (Start: pg 5, col 7; End: pg 5, col 12)aer blending;  eﬃciency; thermal  interference; cell impedance sensors  Graphene Solvent casting aer blending; ltering a  of lter paper  cm^{(cid:1)1} ; mechanically strong; biocompatible  transparent and exible electrodes 
+
+NEW SECTION: ERROR:SECTION_MISSING35,51–53  (Level: 0)
+
+
+NEW PARA: (Start: pg 5, col 14; End: pg 5, col 16)
+	NEW SENTENCE: (Start: pg 5, col 14; End: pg 5, col 15)compression molding aer  chemical sensing; biosensors 
+
+NEW SECTION: ERROR:SECTION_MISSING38,54–56  (Level: 0)
+
+
+NEW PARA: (Start: pg 5, col 17; End: pg 6, col 1)
+	NEW SENTENCE: (Start: pg 5, col 17; End: pg 6, col 17)Ionic liquids Casting IL/cellulose dispersions  celluloses have been synthesized in MWCNT-dispersed medium and it was found that a substantial number of MWCNTs were attached to the surfaces of the bacterial cellulose brils.^{59}  Recently, we have fabricated a BC–polyaniline (PANI) composite. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)PANI was polymerized and deposited as an adhering layer on the surfaces of the cellulose bers. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)This forms a relatively uniform thin-lm conductive material, and its electrical conductivity can reach 10^{(cid:1)1} S cm^{(cid:1)1} . 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)By varying the reaction time and controlling the proton acid doping/dedoping it is possible to obtain materials having a range of conductivities.^{47} BC can also be combined with polyaniline^{60,61} and polypyrrole,^{62} which can be polymerized through chemical or electrochemical polymerization. 
+
+NEW PARA: (Start: pg 6, col 1; End: pg 6, col 2)
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Metal nanoparticles (such as Au, Ag) have also been applied as the lm forming material to produce various types of lms (including BC) because of their good biocompatibility and conductivity. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Silver metal and its compounds have strong inhibitory and bactericidal eﬀects as well as a broad spectrum of antimicrobial activities. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 2)As a result there have been many investigations of silver combined with BC for antimicrobial applications.^{63–65}  Medical applications of bacterial cellulose electroconductive hydrogels  Bacterial cellulose is a natural hydrogel, with a stable nanober network, high water content, shape-ability during biosynthesis,  and biocompatibility.^{66} Such nanobers are neither cytotoxic nor genotoxic. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)BC is also a 3D template for in vitro and in vivo tissue growth, which can be used for medical implants ranging from bone and cartilage repair to tubular prototype gras for  vascular surgery.^{67}  Electroconductive hydrogels provide good small molecule transport, high hydration levels and biocompatibility. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)Crosslinked hydrogels can then provide redox switching and electrical properties of inherently conductive polymers. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)When based on bacterial cellulose these have three-dimensional polymeric networks, imbibe large amounts of water, and are exible with good mechanical properties. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)They can change their size and shape in response to environmental stimuli.^{Cellulose–} SWNT composites have proved to be homogenous, hydrophilic, conductive and biocompatible, and have been used to immobilize leukemia K562 cells on a gold electrode in a cell impedance sensor.^{30} Using BC hydrogels as natural biotemplates, mesoporous titania networks consisting of interconnected anatase nanowires have been synthesized. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)These BC–TiO_{2} hydrogels may nd potential applications in areas including photocatalysis, photovoltaics, and bone-tissue engineering.^{68} Gold nanoparticles (AuNPs) and BC nanocomposites have been used for the immobilization of heme proteins. 
+	NEW SENTENCE: (Start: pg 6, col 2; End: pg 6, col 2)Horseradish peroxidase (HRP), hemoglobin (Hb) and myoglobin (Mb) immobilized in a Au–BC lm showed high biocatalytic activity with good sensitivity, low detection limit and fast response toward hydrogen peroxide.^{69} 
+
+NEW SECTION: Flexible displays  (Level: 1)
+
+
+NEW SECTION: Flexible displays have been produced by using bacterial cellulose as the substrate or the basic optical lm to improve their  (Level: 1)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)electronic properties.^{70} Legnani et al.^{71} used BC as the exible substrate for the fabrication of organic light emitting diodes (OLEDs). 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Indium tin oxide (ITO) thin lms were deposited onto the membrane at room temperature using radio frequency magnetron sputtering. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The average transmittance of BC membrane substrates at 550 nm is only 40%. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Clarity is the most important property for bottom emissive displays, and a total light transmission of >85% over 400–800 nm coupled with a haze of less than 0.7% are typical of what is required.^{72} Thus many groups have made eﬀorts to improve the light transmittance of BC.^{73} Nogi et al.^{74} fabricated transparent composites with bacterial cellulose (BC) nanobers which have low thermal expansion, and even an electroluminescent layer could be deposited onto these transparent BC nanocomposites. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)However, this nal nanocomposite material is not exible enough and therefore cannot achieve the bending radius required for roll-to-roll processing. 
+
+NEW SECTION: Electro-active biopolymer actuators  (Level: 2)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Cellulose-based electro-active paper is light in weight, is biodegradable, and has a large displacement output and low actuation voltage when dry.^{75} Jeon et al.  developed such an electro-active biopolymer actuator based on bacterial cellulose. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)They showed that the LiCl treated bacterial cellulose can be adjusted to achieve a better actuation performance by controlling the crystallinity and stiﬀness of the pristine BC.^{76} Piezoelectric materials are smart materials which can convert mechanical energy (such as from breathing, or walking) into more useful electrical energy. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)However, traditional piezoelectrics are hard, inexible crystals which can also be toxic. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)BCbased piezoelectric materials could lead to nanopiezoelectric devices that combine the key qualities of exibility, energy eﬃciency, and biocompatibility. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)The target is to use piezoelectric nanogenerators for continuously self-powering portable electronics and biomedical implants. 
+
+NEW SECTION: Conclusions  (Level: 1)
+
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)We have indicated that the combination of cellulose and conductive electroactive materials allows both materials to retain their unique responsive properties. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Cellulose as a matrix of cellulose-based conductive composites, gives the composites rich and colorful forms. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Hydrogels were the rst biomaterials to be specically designed for use in humans. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Cellulose hydrogels, especially bacterial cellulose hydrogels, have an especially stable nanober network, high water content, shape-ability during biosynthesis, and biocompatibility. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)These natural polymers open up the important and rapidly expanding elds of personal care, medicine, and life sciences. 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)When cellulose is combined with conductive materials, it has the potential to introduce novel properties into exible electrodes, exible displays, biocompatible energy scavenging, electrically stimulated drug release devices, implantable biosensors and neural prosthetics (Fig. 2). 
+
+NEW SECTION: Acknowledgements  (Level: 1)
+
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)The work was supported by the National Natural Science Foundation of China (20774033, 21074041), the Fundamental Research Funds for the Central Universities, Huazhong University of Science and Technology (2010JC016), and the Natural Science of Hubei Province for Distinguished Young Scholars (2008CDB279). 
+
+NEW SECTION: References 1 D. Klemm, B. Heublein, H. P. Fink and A. Bohn, Angew.  (Level: 1)
+
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)Chem.,  Int.  Ed., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2005, 44, 3358–3393. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2 H. Qi, C. Chang and L. Zhang, Green Chem., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2009, 11,^{177–}  184.  3 J. Cai and L. Zhang, Macromol.  Biosci., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2005, 5, 539–548. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)4 R. P. Swatloski, S. K. Spear, J. D. Holbrey and R. D. Rogers,  J. Am.  Chem.  Soc., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2002, 124, 4974–4975. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)5 J. Schurz, Prog.  Polym.  Sci., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)1999, 24, 481–483. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)6 D. Kumar and R. C. Sharma, Eur.  Polym. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)J., 1998, 34,^{1053–}  1060.  7 M. Trojanowicz, Microchim. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)Acta, 2003, 143, 75–91. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)8 B. D. Malhotra, A. Chaubey and S. P. Singh, Anal.  Chim.  Acta,  2006, 578, 59–74. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)9 V. Saxena and B. D. Malhotra, Curr.  Appl.  Phys., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2003, 3,^{293–}  305. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)10 J. Huang, I. Ichinose and T. Kunitake, Chem.  Commun.,  2005,  1717–1719. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)11 S. H. Yoon, H. J. Jin, M. C. Kook and Y. R. Pyun,  Biomacromolecules, 2006, 7, 1280–1284. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)12 W. Hu, S. Chen, X. Li, S. Shi, W. Shen, X. Zhang and  H. Wang, Mater.  Sci.  Eng., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)C, 2009, 29, 1216–1219. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)13 C. Sasso, E. Zeno, M. Petit Conil, D. Chaussy, M. N. Belgacem, S. Tapin Lingua and D. Beneventi,  Macromol.  Mater.  Eng., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2010, 295, 934–941. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)14 C. Ding, X. Qian, G. Yu and X. An, Cellulose, 2010, 17,^{1067–}  1077. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)15 G. Nystr¨ om, A. Mihranyan, A. Razaq, T. Lindstr¨ om, L. Nyholm and M. Strømme, J. Phys.  Chem. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)B, 2010, 114,  4178–4182. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)16 H. Goto, Text.  Res. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)J., 2011, 81, 122. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)17 R. Li, G. Liu, F. Gu, Z. Wang, Y. Song and J. Wang, J. Appl. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)Polym.  Sci., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2011, 120, 1126–1132. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)18 M. M. Castillo-Ortega, I. Santos-Sauceda, J. C. Encinas, D. E. Rodriguez-Felix, T. Del Castillo-Castro, F. RodriguezFelix, J. L. Valenzuela-Garc´ ıa, L. S. Quiroz-Castillo and  P. J. Herrera-Franco, J. Mater.  Sci., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2011, 46, 7466–7474. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)19 A. A. Qaiser, M. M. Hyland and D. A. Patterson, J. Phys.  Chem. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)B, 2011, 115, 1652–1661. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)20 Q. Li, C. Zhang and Y. Ye, J. Thermoplast.  Compos.  Mater., 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2011, 24, 389. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)21 J. Zhou, T. Fukawa, H. Shirai and M. Kimura, Macromol. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)Mater.  Eng., 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2010, 295, 671–675. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)22 T. Tanaka, E. Sano, M. Imai and K. Akiyama, J. Appl.  Phys., 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2010, 107, 54307. 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)23 C. Basavaraja, E. Jo, B. S. Kim and D. S. Huh, Polym.  Compos., 
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)2011, 8, 2207–2210. 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)24 B. Fugetsu, E. Sano, M. Sunada, Y. Sambongi, T. Shibuya,  X. Wang and T. Hiraki, Carbon, 2008, 46, 1256–1258. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)25 M. Imai, K. Akiyama, T. Tanaka and E. Sano, Compos.  Sci. 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Technol., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2010, 70, 1564–1570. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)26 P. Lu and Y. L. Hsieh, ACS Appl.  Mater. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Interfaces, 2010, 2,  2413–2420. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)27 M. Miyauchi, J. Miao, T. J. Simmons, J. W. Lee, T. V. Doherty, J. S. Dordick and R. J. Linhardt, Biomacromolecules, 2010, 11,  2440–2445. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)28 T. Oya and T. Ogino, Carbon, 2008, 46, 169–171. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)29 D. H. Kim, S. Y. Park, J. Kim and M. Park, J. Appl.  Polym.  Sci., 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2010, 117, 3588–3594. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)30 J. Wan, X. Yan, J. Ding and R. Ren, Sens. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Actuators, B, 2010,  146, 221–225. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)31 L. Li, L. Meng, X. Zhang, C. Fu and Q. Lu, J. Mater.  Chem., 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2009, 19, 3612–3617. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)32 H. Chen, M. B. M¨ uller, K. J. Gilmore, G. G. Wallace and D. Li,  Adv.  Mater., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2008, 20, 3557–3561. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)33 C. J. Kim, W. Khan, D. H. Kim, K. S. Cho and S. Y. Park,  Carbohydr.  Polym., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2011, 86, 903–909. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)34 N. D. Luong, N. Pahimanolis, U. Hippi, J. T. Korhonen, J. Ruokolainen, L. S. Johansson, J. D. Nam and J. Sepp¨ al¨ a,  J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2011, 21, 13991–13998. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)35 Z. Weng, Y. Su, D. W. Wang, F. Li, J. Du and H. M. Cheng,  Adv.  Energy Mater., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2011, 1, 917–922. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)36 D. Zabetakis, M. Dinderman and P. Schoen, Adv.  Mater., 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2005, 17, 734–738. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)37 Y. Aoki, J. Huang and T. Kunitake, J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2006, 16,  292–297.  38 J. S. Jur, W. J. Sweet III, C. J. Oldham and G. N. Parsons, Adv. 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Funct.  Mater., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2011, 21, 1993–2002. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)39 A. S. Zakirov, S. U. Yuldashev, H. J. Wang, J. C. Lee, T. W. Kang and A. T. Mamadalimov, J. Mater.  Sci.,  2011,  46, 896–901. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)40 Y. Aoki, J. Huang and T. Kunitake, J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2006, 16,  292–297.  41 R. D. Rogers and K. R. Seddon, Science, 2003, 302, 792. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)42 M. J. Earle and K. R. Seddon, Pure Appl.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2000, 72,  1391–1398. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)43 J. Lu, F. Yan and J. Texter, Prog.  Polym.  Sci., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2009, 34,  431–448.  44 S. K. Mahadeva, C. Yi and J. Kim, Ionics, 2011, 17, 41–47. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)45 J. M. Lee, D. Q. Nguyen, S. B. Lee, H. Kim, B. S. Ahn, H. Lee  and H. S. Kim, J. Appl.  Polym.  Sci., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2009, 115, 32–36. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)46 P. Li, Y. Zhang, W. Fa, Y. Zhang and B. Huang, Carbohydr. 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Polym.,  2011, 86, 1216–1220. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)47 Z. Shi, S. Zang, F. Jiang, L. Huang, D. Lu, Y. Ma and G. Yang,  RSC Adv., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2012, 2, 1040–1046. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)48 O. van den Berg, M. Schroeter, J. R. Capadona and C. Weder,  J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2007, 17, 2746–2753. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)49 D. O. Carlsson, G. Nystr¨ om, Q. Zhou, L. A. Berglund, L. Nyholm and M. Strømme, J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)2012, 22,  19014–19024. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)50 R. E. Anderson, J. Guan, M. Ricard, G. Dubey, J. Su, G. Lopinski, G. Dorris, O. Bourne and B. Simard, J. Mater. 
+
+NEW PARA: (Start: pg 8, col 1; End: pg 8, col 1)
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Chem.,  2010, 20, 2400–2407. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)51 X. Zhang, Y. Feng, Y. Shen, K. Yoshino and W. Feng,  Carbohydr.  Polym., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2012, 87, 644–649. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)52 A. Kundu, R. K. Layek and A. K. Nandi, J. Mater.  Chem.,  2012,  22, 8139–8144. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)53 D. Kim, J. Y. Han, D. Lee, Y. Lee and D. Y. Jeon, J. Mater. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Chem.,  2012, 22, 20026–20031. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)54 R. J. B. Pinto, P. A. A. P. Marques, C. P. Neto, T. Trindade,  S. Daina and P. Sadocco, Acta Biomater., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2009, 5, 2279–2289. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)55 D. Zabetakis, M. Dinderman and P. Schoen, Adv.  Mater., 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2005, 17, 734–738. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)56 J. George, S. A. Vallayil, S. N. Shanmugam, R. V. Karna and  B. Siddaramiah, J. Mater.  Chem., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2012, 22, 22433–22439. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)57 R. Jung, H. S. Kim, Y. Kim, S. M. Kwon, H. S. Lee and H. J. Jin,  J. Polym.  Sci., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Part B: Polym.  Phys., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2008, 46, 1235–1242. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)58 Z. Yan, S. Chen, H. Wang, B. Wang, C. Wang and J. Jiang,  Carbohydr.  Res., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2008, 343, 73–80. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)59 W. I. Park, H. S. Kim, S. M. Kwon, Y. H. Hong and H. J. Jin,  Carbohydr.  Polym., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2009, 77, 457–463. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)60 J. A. Marins, B. G. Soares, K. Dahmouche, S. J. L. Ribeiro,  H. Barud and D. Bonemer, Cellulose, 2011, 18, 1285–1294. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)61 W. Hu, S. Chen, Z. Yang, L. Liu and H. Wang, J. Phys.  Chem. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)B, 2011, 115, 8453–8457. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)62 D. Muller, C. R. Rambo, D. Recouvreux, L. M. Porto and  G. Barra, Synth.  Met., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2011, 161, 106–111. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)63 M. Sureshkumar, D. Y. Siswanto and C. K. Lee, J. Mater. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Chem.,  2010, 20, 6948–6955. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)64 L. C. de Santa Maria, A. L. C. Santos, P. C. Oliveira, H. S. Barud, Y. Messaddeq and S. J. L. Ribeiro, Mater.  Lett., 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2009, 63, 797–799. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)65 S. Ifuku, M. Tsuji, M. Morimoto, H. Saimoto and H. Yano,  Biomacromolecules, 2009, 10, 2714–2717. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)66 D. Klemm, F. Kramer, S. Moritz, T. Lindstr¨ om, M. Ankerfors, D. Gray and A. Dorris, Angew.  Chem.,  Int.  Ed., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2011, 50,^{5438–}  5466. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)67 L. Fu, J. Zhang and G. Yang, Carbohydr.  Polym., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2013, 92,  1432–1442. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)68 D. Zhang and L. Qi, Chem.  Commun., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2005, 2735–2737. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)69 W. Wang, T. J. Zhang, D. W. Zhang, H. Y. Li, Y. R. Ma, L. M. Qi, Y. L. Zhou and X. X. Zhang, Talanta, 2011, 84,  71–77. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)70 J. Shah and R. M. Brown, Appl. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Microbiol. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Biotechnol.,  2005,  66, 352–355. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)71 C. Legnani, C. Vilani, V. L. Calil, H. S. Barud, W. G. Quirino, C. A. Achete, S. Ribeiro and M. Cremona, Thin Solid Films,  2008, 517, 1016–1020. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)72 G. P. Crawford, Encapsulated liquid crystal materials for  exible display applications, Wiley Online Library, 2005. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)73 H. Yano, J. Sugiyama, A. N. Nakagaito, M. Nogi, T. Matsuura,  M. Hikita and K. Handa, Adv.  Mater., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2005, 17, 153–155. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)74 M. Nogi and H. Yano, Adv.  Mater., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2008, 20, 1849–1852. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)75 J. Kim, S. Yun and Z. Ounaies, Macromolecules, 2006, 39,  4202–4206. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)76 J. H. Jeon, I. K. Oh, C. D. Kee and S. J. Kim, Sens. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Actuators, B,  2010, 146, 307–313. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)77 Y. Qi and M. C. McAlpine, Energy Environ.  Sci., 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)2010, 3,^{1275–} 1285. 
+
+
+
+
+Cellulose-based electroconductive composites can be prepared by combining conducting electroactive materials with hydrophilic biocompatible cellulose. Inorganic nanoparticles, such as metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids (through doping, blending or coating) can be introduced into the cellulose matrix. Such composites can form a biocompatible interface for microelectronic devices, and provide a biocompatible matrix or composites are described and future applications are considered. a Department of Biomedical Engineering, College of Life Science and Technology, Huazhong University of Science and Technology, Wuhan 430074, P. R. China. E-mail: yang_sunny@yahoo.com; Fax: +86 027 8779 2265; Tel: +86 027 8779 3523 ^{b}National Engineering Research Center for Nano-Medicine, Huazhong University of Science and Technology, Wuhan 430074, P. R. China ^{c}Glyn O. Phillips Hydrocolloids Research Centre, Glyndwr University, Wrexham LL11 2AW, Wales, UK ^{d}Phillips Hydrocolloids Research Ltd, 45 Old Bond Street, London W1S 4QT, UK. E-mail: Phillipsglyn@aol.com; Fax: +44 (0) 1978293370; Tel: +44 (0) 1978293321 Cite this: Nanoscale, 2013, 5, 3194 Received 24th January 2013 Accepted 25th February 2013 DOI: 10.1039/c3nr00408b www.rsc.org/nanoscale D o w n l o a d e d  b y  H u a z h o n g  U n i v e r s i t y  o f  S c i e n c e  &  T e c h n o l o g y  o n  1 0 / 0 4 / 2 0 1 3  1 2 : 1 6 : 2 4 .  P u b l i s h e d  o n  2 7  F e b r u a r y  2 0 1 3  o n  h t t p : / / p u b s . r s c . o r g  |  d o i : 1 0 . 1 0 3 9 / C 3 N R 0 0 4 0 View Journal | View Issue 
+
+Table1 Structuresofsomeconductivepolymers Polyacetylene(PA) Polyaniline(PANI) Polythiophene(PTh) Poly(para-phenylene)(PP) Polypyrrole(PPy) Poly(para-phenylenevinylene)(PPV) ^{Polyazulene}Poly(3,4-ethylenedioxythiophene)(PEDOT) 
+
+Table 2 Cellulose combined with several conductive materials Conductive material Methods Properties Applications References Conducting polymers (PPy, PANI, PEDOT/PSS, PEDOT, etc.) Casting conducting polymers/cellulose dispersions; in situ chemical polymerization; coating on Conductivity 10^{(cid:1)5} to 10^{2} S cm^{(cid:1)1} ; enhanced mechanical properties; electromechanical properties; biocompatible Conductors; biosensors; electromechanical devices; organic electronics Carbon nanotubes (SWNTs and MWNTs) Solution evaporation technique; solvent casting electrospinning; blending in the cellulose matrix Conductivity 10^{(cid:1)4} to 10^{2} S cm^{(cid:1)1} ; enhanced mechanical properties; electromagnetic interference shielding stimulated conductivity; anti-static; biocompatible Wearable electronics; energy storage; decrease electromagnetic wave 22,23,25,50 graphene nanosheet suspension through a sheet Conductivity 10^{(cid:1)4} to 10^{2} S Flexible supercapacitors; energy-storage devices; biocompatible materials; Inorganic nanoparticles (ZnO, SnO_{2} , TiO_{2} , I, Au, Ag, Cu) Atomic layer deposition; internal mixing; liquidphase deposition; LbL deposition; doping Conductivity 10^{(cid:1)6} to 10^{3} S cm^{(cid:1)1} ; antimicrobial activity; biodegradable; enhanced mechanical properties Antimicrobials; functional Conductivity 10^{(cid:1)8} to 10^{(cid:1)4} S cm^{(cid:1)1} Gel electrolytes 45 
+
+Fig. 2 Applications of nanocellulose electroconductive composites.^{47,59,66,73–75,77} Copyright 2010 and 2011 Royal Society of Chemistry. Copyright 2009 Elsevier. 
+
+Copyright 2005, 2008 and 2011 John Wiley and Sons. Copyright 2006 American Chemical Society. 

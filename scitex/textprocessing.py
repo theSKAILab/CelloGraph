@@ -37,11 +37,10 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
     bracketclosePattern = [{"SHAPE": "]."}]
     bracketopenPattern = [{"SHAPE": ".["}]
     numPattern = [{"SHAPE": "ddd-dddd).[dd"}]
-    citeSuperPattern = [{"SHAPE": ".^{[dd]}"}]
-    citeSubPattern = [{"SHAPE": "._{[dd]}"}]
+    citePattern = [{"ORTH": "]"}, {"ORTH": "}"}]
 
     sentMatcher.add("Sentences", [sentPattern,
-                    qPattern, ePattern, bracketclosePattern, bracketopenPattern, numPattern, citeSuperPattern, citeSubPattern])
+                    qPattern, ePattern, bracketclosePattern, bracketopenPattern, numPattern, citePattern])
 
     sentNum = 0
     bookmark = 0
@@ -58,14 +57,18 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
             # don't add the sentence if it's inside parenthesis/brackets or there's no whitespace after
             paren = False
             dots = True
+            sent = False
             text = nlp(makeString(words[bookmark:i+1]))
             for t in range(len(text) - 1, -1, -1):
-                token = text[t].text
-                if text[t].text != '.':
+
+                char = text[t].text
+                if char != '.':
                     dots = False
-                if text[t].text == ')' or text[t].text == ']':
+                else:
+                    sent = True
+                if char == ')' or char == ']':
                     break
-                if text[t].text == '(' or text[t].text == '[':
+                if char == '(' or char == '[':
                     paren = True
                     break
                 if(len(text) > 4):
@@ -73,7 +76,7 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
                     if(text[len(text)-4:].text == "etc." or text[len(text)-4:].text == "et."):
                         break
 
-            if(not dots and not paren):
+            if(sent and not dots and not paren):
                 retval.append(PDFfragments.sentence(
                     words[bookmark:i+1], text.text, coords, p, sentNum, [pagenum, colnum], [pagenum, colnum]))
                 sentNum += 1
@@ -322,7 +325,7 @@ def cleanPara(sentlist, pdfSettings):
     nlp = spacy.load("en_core_web_sm")
     doc = nlp(sentlist[0].text)
     if(len(doc) > 0):
-        if(doc[0].is_lower):
+        if(doc[0].is_lower or doc[0].is_punct):
             pdfSettings.addto = True
 
     i = -1

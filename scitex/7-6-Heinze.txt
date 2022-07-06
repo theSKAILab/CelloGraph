@@ -1,61 +1,61 @@
-Time to Read: 1413.7631206512451 sec, aka 23.562718677520753 min
+Time to Read: 1329.1509957313538 sec, aka 22.152516595522563 min
 All Times:
-Page 1: 16.52763056755066
-Page 2: 71.02322220802307
-Page 3: 13.926482200622559
-Page 4: 41.44394373893738
-Page 5: 18.829524517059326
-Page 6: 84.56298208236694
-Page 7: 5.916329622268677
-Page 8: 9.379827737808228
-Page 9: 13.037386894226074
-Page 10: 7.05333685874939
-Page 11: 15.254429578781128
-Page 12: 13.79861307144165
-Page 13: 5.736853837966919
-Page 14: 7.707172393798828
-Page 15: 12.429795503616333
-Page 16: 12.175736665725708
-Page 17: 13.28155517578125
-Page 18: 12.724859952926636
-Page 19: 9.484134197235107
-Page 20: 9.504613876342773
-Page 21: 7.480682611465454
-Page 22: 15.536492586135864
-Page 23: 8.208844900131226
-Page 24: 11.500595569610596
-Page 25: 13.869100570678711
-Page 26: 11.744640350341797
-Page 27: 15.578501462936401
-Page 28: 11.978458881378174
-Page 29: 10.193529605865479
-Page 30: 22.429622888565063
-Page 31: 12.460800886154175
-Page 32: 5.533243179321289
-Page 33: 34.09081220626831
-Page 34: 31.69393301010132
-Page 35: 8.673949241638184
-Page 36: 3.623814105987549
-Page 37: 23.534918785095215
-Page 38: 37.95557904243469
-Page 39: 53.329729318618774
-Page 40: 89.83167719841003
-Page 41: 22.24896764755249
-Page 42: 9.565150499343872
-Page 43: 13.063934803009033
-Page 44: 46.313833236694336
-Page 45: 47.23835229873657
-Page 46: 48.83633589744568
-Page 47: 47.05040907859802
-Page 48: 48.27766990661621
-Page 49: 48.11189794540405
-Page 50: 48.41632103919983
-Page 51: 49.84081840515137
-Page 52: 16.62485980987549
+Page 1: 12.019933938980103
+Page 2: 56.43488693237305
+Page 3: 10.613416194915771
+Page 4: 30.994967460632324
+Page 5: 16.983867406845093
+Page 6: 77.05976581573486
+Page 7: 6.257431507110596
+Page 8: 10.205798864364624
+Page 9: 13.375047445297241
+Page 10: 7.2086403369903564
+Page 11: 15.705763339996338
+Page 12: 14.680343866348267
+Page 13: 5.950354814529419
+Page 14: 8.497878551483154
+Page 15: 12.955992698669434
+Page 16: 12.120605707168579
+Page 17: 13.376047372817993
+Page 18: 13.875677108764648
+Page 19: 9.538763761520386
+Page 20: 9.91301941871643
+Page 21: 7.808779001235962
+Page 22: 15.095578670501709
+Page 23: 8.106039047241211
+Page 24: 11.47084355354309
+Page 25: 13.113526105880737
+Page 26: 11.341573476791382
+Page 27: 15.964097738265991
+Page 28: 12.35581350326538
+Page 29: 11.373321056365967
+Page 30: 22.122424364089966
+Page 31: 11.8448965549469
+Page 32: 5.315333366394043
+Page 33: 31.393523931503296
+Page 34: 29.909810066223145
+Page 35: 9.105054378509521
+Page 36: 3.34981632232666
+Page 37: 22.610288858413696
+Page 38: 34.99989151954651
+Page 39: 49.97052884101868
+Page 40: 80.42978501319885
+Page 41: 21.80215048789978
+Page 42: 8.741658449172974
+Page 43: 11.97464632987976
+Page 44: 45.78174543380737
+Page 45: 45.730583906173706
+Page 46: 48.2332329750061
+Page 47: 46.51347827911377
+Page 48: 47.120389461517334
+Page 49: 47.65792918205261
+Page 50: 47.40026783943176
+Page 51: 47.106210470199585
+Page 52: 16.515406608581543
 
 
-Median Time per page = 13.869100570678711
-Avg Time per page = 24.3968443778845
+Median Time per page = 13.376047372817993
+Avg Time per page = 23.077438987218418
 
 NEW SECTION: _{©}_{Springer} International Publishing Switzerland 2015 Cellulose: Structure and Properties Thomas Heinze  (Level: 1)
 
@@ -127,7 +127,7 @@ NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
 	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)One end contains an anomeric C atom linked by the glycosidic bonds (nonreducing end) whereas the other end has a D-glucopyranose unit in equilibrium with the aldehyde function (reducing end group). 
 
 NEW PARA: (Start: pg 4, col 1; End: pg 5, col 1)
-	NEW SENTENCE: (Start: pg 4, col 1; End: pg 5, col 5)HO OH  O _{O}HO  ^{O}HO OH  O _{O}HO  OH OH  Changes in the molecular structure originate from reactions leading to hydrolysis or oxidation of the cellulose chain. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 5, col 5)HO OH  O _{O}HO  ^{O}HO OH  O_{O} HO  OH OH  Changes in the molecular structure originate from reactions leading to hydrolysis or oxidation of the cellulose chain. 
 	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Such reactions mainly occur on the surface of the ﬁbrils or in amorphous regions. 
 
 NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
@@ -182,7 +182,7 @@ NEW PARA: (Start: pg 6, col 1; End: pg 6, col 1)
 	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)Cellulose_{Iβ} corresponds to a triclinic symmetry with space group P_{1} containing one chain in the unit cell, as schematically displayed in Fig.  6a. 
 
 NEW PARA: (Start: pg 6, col 1; End: pg 8, col 1)
-	NEW SENTENCE: (Start: pg 6, col 1; End: pg 7, col 18)Cellulose I can be transformed into the thermodynamically stable crystalline  form of cellulose II by regeneration from the dissolved state or mercerization.  O  O O  O O  O H H  H H  H H  H H  O O  O _{O}O  ^{O}O O  O _{O}O  O O  H H  H H  O H  O H  H H  _{H}a) b)  Mercerized cellulose II can easily be achieved by treatment of cellulose with alkali at concentrations >18 wt% and subsequent thorough washing. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 7, col 17)Cellulose I can be transformed into the thermodynamically stable crystalline  form of cellulose II by regeneration from the dissolved state or mercerization.  O  O O  O O  O H H  H H  H H  H H  O O  O _{O}O  ^{O}O O  O_{O} O  O O  H H  H H  O H  O H  a) b)  Mercerized cellulose II can easily be achieved by treatment of cellulose with alkali at concentrations >18 wt% and subsequent thorough washing. 
 	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The irreversible transition to cellulose II is used for improving the quality of natural ﬁbers and yarns. 
 	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Moreover, the treatment of cellulose with aqueous alkali (mainly aqueous sodium hydroxide) is the key step for activating the polymer prior to heterogeneous chemical modiﬁcation, particularly for commercial etheriﬁcation. 
 	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The structure of cellulose II was revised by neutron ﬁber diffraction analysis [27]. 
@@ -451,7 +451,10 @@ NEW PARA: (Start: pg 22, col 1; End: pg 22, col 1)
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)The essential factors required for dissolution of cellulose include:  1.  Solubility of a sufﬁcient amount of electrolyte in the organic liquid 2. 
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)Adequate stability of the electrolyte/solvent complex 3. 
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)Cooperative action of the solvated ion-pair on cellulose hydrogen bonds 4. 
-	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)Sufﬁcient basicity of the anion [106]  For example, to obtain a 3 wt% solution of cellulose in DMAc requires about 4 wt% LiCl, whereas 10 wt% LiCl is needed to dissolve it in DMF. 
+	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)Sufﬁcient basicity of the anion [106] 
+
+NEW PARA: (Start: pg 22, col 1; End: pg 22, col 1)
+	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)For example, to obtain a 3 wt% solution of cellulose in DMAc requires about 4 wt% LiCl, whereas 10 wt% LiCl is needed to dissolve it in DMF. 
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)This agrees with the fact that LiCl forms a stronger complex with the former solvent [107]. 
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)By contrast, NaCl is not appropriate because it is insoluble in DMAc and DMF. 
 	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)The strength of cation–solvent association of alkali metal chlorides in DMAc and DMF is in the order Li^{+} >_{Na}^{+} >_{K}^{+} >_{Cs}^{+} (as determined by electrospray ionization mass spectroscopy). 
@@ -533,7 +536,10 @@ NEW PARA: (Start: pg 26, col 1; End: pg 26, col 1)
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Nevertheless, according to the literature [126, 127] and our own experience, cellulose can be dissolved in ILs with imidazolium, ammonium, and pyridinium. 
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Only organic salts with asymmetric cations give melts that can interact with the backbone of cellulose. 
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Neither sulfonium nor phosphonium salts have so far been able to dissolve cellulose. 
-	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Dissolution of cellulose in pyridinium salts must be performed under protective gas otherwise degradation results [128]  1-Ethyl-3-methylimidazolium acetate (EMIMAc) ILs have the advantage of not having a reactive side group, such as the unsaturated function of the 1-allyl-3methylimidazolium (AMIM) ion. 
+	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Dissolution of cellulose in pyridinium salts must be performed under protective gas otherwise degradation results [128] 
+
+NEW PARA: (Start: pg 26, col 1; End: pg 26, col 1)
+	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)1-Ethyl-3-methylimidazolium acetate (EMIMAc) ILs have the advantage of not having a reactive side group, such as the unsaturated function of the 1-allyl-3methylimidazolium (AMIM) ion. 
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)Moreover, EMIMAc is considered to be nontoxic, noncorrosive, and even biodegradable. 
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)However, EMIMAc reacts with the reducing end groups of cellodextrins, according to the formula depicted in Fig. 
 	NEW SENTENCE: (Start: pg 26, col 1; End: pg 26, col 1)23, giving a hemiacetal-type structure [129–131]. 
@@ -580,7 +586,8 @@ NEW PARA: (Start: pg 29, col 1; End: pg 30, col 1)
 	NEW SENTENCE: (Start: pg 29, col 1; End: pg 29, col 1)Partially nitrated cellulose ester was used as a “plastic” (trade name Celluloid) and is still produced commercially [150]. 
 	NEW SENTENCE: (Start: pg 29, col 1; End: pg 29, col 1)Methyl-, ethyl-, and hydroxyalkyl ethers as well as cellulose acetate are cellulose products that remain important even decades after their discovery. 
 	NEW SENTENCE: (Start: pg 29, col 1; End: pg 29, col 1)The same applies to other cellulose products carrying a variety of functional groups, such as ethylhydroxyethyl and hydroxypropylmethyl cellulose, acetopropionates,  acetobutyrates, and acetophthalates. 
-	NEW SENTENCE: (Start: pg 29, col 1; End: pg 30, col 1)Ionic cellulose ethers were introduced a long LiOH_{urea}  time ago and commercial production of the most important ionic cellulose ether, carboxymethyl cellulose (CMC), began in the 1920s [151]. 
+	NEW SENTENCE: (Start: pg 29, col 1; End: pg 29, col 2)Ionic cellulose ethers were introduced a long LiOH_{urea}  4.0(cid:3)10^{(cid:5)4} g mL^{(cid:5)1} in aqueous 4.6 wt% LiOH/15 wt% urea. 
+	NEW SENTENCE: (Start: pg 29, col 2; End: pg 30, col 2)(c) Model of inclusion complex  time ago and commercial production of the most important ionic cellulose ether, carboxymethyl cellulose (CMC), began in the 1920s [151]. 
 
 NEW PARA: (Start: pg 30, col 1; End: pg 30, col 1)
 	NEW SENTENCE: (Start: pg 30, col 1; End: pg 30, col 1)The preparation of commercial cellulose derivatives is exclusively carried out under heterogeneous reaction conditions. 
@@ -667,7 +674,7 @@ NEW PARA: (Start: pg 34, col 1; End: pg 35, col 1)
 NEW PARA: (Start: pg 35, col 1; End: pg 36, col 1)
 	NEW SENTENCE: (Start: pg 35, col 1; End: pg 35, col 1)This behavior was found for the ﬁrst time for carbohydrates, whereas it is well known for polypeptides and proteins such hemoglobin and its sickle cell mutation [182]. 
 	NEW SENTENCE: (Start: pg 35, col 1; End: pg 35, col 1)The large self-assembling cationic structures render them possible candidates for mimicking the properties of histones and using as condensing or packing agents in DNA-based therapies [183]. 
-	NEW SENTENCE: (Start: pg 35, col 1; End: pg 36, col 1)Most importantly, however, our traditional perceptions as to what is “protein-like” and what is “carbohydrate-like” behavior may need to be reconsidered [184].  cellulose DS_{Amine}^{¼}_{0.60,} at various concentrations: solid (──) 2.0 mg/mL; dash (– –) 1.0 mg/mL; dot (∙∙∙∙∙∙) 0.5 mg/mL; dash dot (–^{∙} – ∙) 0.25 mg/mL; short dot (∙∙∙∙∙∙) 0.125 mg/mL. Sedimentation velocity patterns from the Rayleigh interference optical  6-deoxy-6-(ω-aminoethyl)aminocellulose (AEA cellulose). 
+	NEW SENTENCE: (Start: pg 35, col 1; End: pg 36, col 1)Most importantly, however, our traditional perceptions as to what is “protein-like” and what is “carbohydrate-like” behavior may need to be reconsidered [184].  cellulose DS_{Amine} ¼0.60, at various concentrations: solid (──) 2.0 mg/mL; dash (– –) 1.0 mg/mL; dot (∙∙∙∙∙∙) 0.5 mg/mL; dash dot (–^{∙} – ∙) 0.25 mg/mL; short dot (∙∙∙∙∙∙) 0.125 mg/mL. Sedimentation velocity patterns from the Rayleigh interference optical  6-deoxy-6-(ω-aminoethyl)aminocellulose (AEA cellulose). 
 	NEW SENTENCE: (Start: pg 36, col 1; End: pg 36, col 1)Top: Monomer unit of DP ~10, degree 
 
 NEW SECTION: 7.3 Reactions of 6-Deoxy-6-Azido Cellulose  (Level: 2)
@@ -693,14 +700,14 @@ NEW PARA: (Start: pg 37, col 1; End: pg 37, col 1)
 
 NEW PARA: (Start: pg 37, col 1; End: pg 39, col 1)
 	NEW SENTENCE: (Start: pg 37, col 1; End: pg 37, col 1)Chemoselective synthesis of dendronized cellulose could be a path not only to regioselective functionalization of propargyl cellulose in position 6 [191] but also to functionalization at position 3 [192]. 
-	NEW SENTENCE: (Start: pg 37, col 1; End: pg 39, col 6)By nucleophilic displacement of 6-Otosylcellulose (DS 0.58) with propargyl amine, 6-deoxy-6-aminopropargyl cellulose is formed and provides an excellent starting material for reaction, including dendronization of cellulose by the Huisgen reaction to yield 6-deoxy-6-amino⁄  O DMSO  O O_{OH}^{HO}  COO^{-} Na^{+} O_{OH}^{HO}  (DMSO, methanol or EMImAc) O  O O_{OH}^{HO}  dendronviatosylation,nucleophilicdisplacementbyazide,andconversionwiththedendron 38T.Heinze  (4-methyl-(1,2,3-triazolo)-1-propyl-polyamido amine) cellulose derivatives (Fig. 35). 
+	NEW SENTENCE: (Start: pg 37, col 1; End: pg 39, col 6)By nucleophilic displacement of 6-Otosylcellulose (DS 0.58) with propargyl amine, 6-deoxy-6-aminopropargyl cellulose is formed and provides an excellent starting material for reaction, including dendronization of cellulose by the Huisgen reaction to yield 6-deoxy-6-amino⁄  Fig.  29 (continued) of substitution at C-6 DS_{Amine} ¼0.83, and degree of substitution at C-2 of tosyl residues DS_{Tosyl} ¼0.2, yielding molar mass M~3,250 g/mol and sedimentation coefﬁcient  O DMSO  O O_{OH}^{HO}  COO^{-} Na^{+} O_{OH}^{HO}  (DMSO, methanol or EMImAc) O  O O_{OH}^{HO}  dendronviatosylation,nucleophilicdisplacementbyazide,andconversionwiththedendron 38T.Heinze  (4-methyl-(1,2,3-triazolo)-1-propyl-polyamido amine) cellulose derivatives (Fig. 35). 
 
 NEW PARA: (Start: pg 39, col 1; End: pg 39, col 1)
 	NEW SENTENCE: (Start: pg 39, col 1; End: pg 39, col 1)3-Mono-O-propargyl cellulose can be produced by reaction of 2,6-di-Othexyldimethylsilyl cellulose with propargyl bromide in the presence of sodium hydride, followed by subsequent treatment with tetrabutylammonium ﬂuoride trihydrate for complete removal of the silicon-containing moieties of 3-mono-Opropargyl-2,6-di-O-thexyldimethylsilyl cellulose. 
 	NEW SENTENCE: (Start: pg 39, col 1; End: pg 39, col 1)Cu-catalyzed Huisgen reaction with azido-propyl-polyamidoamine of ﬁrst and second generation dendrons leads to cellulose regioselectively functionalized with 3-O-(4-methyl-1-N-propylpolyamidoamine-(1,2,3-triazole)) ([192], Fig.  36). 
 
 NEW PARA: (Start: pg 39, col 4; End: pg 41, col 5)
-	NEW SENTENCE: (Start: pg 39, col 4; End: pg 41, col 18)80 H-18^{H-13,}  - 3  80 H-18^{H-13,}  - 3  HN NH O  CO OCH_{3}_{OCH}_{3} 7  13 14  15^{16} 17  18 ppm  O OCH_{3} CO  O OCH_{3} O  O OCH_{3} CO  O OCH_{3} O  O OCH_{3} CO  O OCH_{3} O  24 h, 25°C DMSO  OCH3OCH3 N 
+	NEW SENTENCE: (Start: pg 39, col 4; End: pg 41, col 18)80 H-18^{H-13,}  - 3  80 H-18^{H-13,}  - 3  HN NH N  OCH_{3} 7  13 14  15^{16} 17  18 ppm  O OCH_{3} CO  O OCH_{3} O  O OCH_{3} CO  O OCH_{3} O  O OCH_{3} CO  O OCH_{3} O  24 h, 25°C DMSO  OCH3OCH3 N 
 
 NEW SECTION: 7.4 Cellulose Carbonate as Reactive Intermediate  (Level: 2)
 
@@ -773,7 +780,7 @@ O OH O OH O _{OH}OH
 
 Fig. 2 Representation of a cellulose molecule 
 
-_{O}O _{O}O H^{O} H H^{O} H O O O O O O O H ^{H}_{H} O 4 6 6 5 1 ^{2}_{3} 4 
+_{O}O O H^{O} H H^{O} H O O O O O O O H ^{H}H O H H H 4 6 6 5 1^{2}_{3} 4 
 
 Fig. 3 Hydrogen bonding system of (a) cellulose I and (b) cellulose II (reproduced with permission from Tashiro and Kobayashi [22], copyright 1991, with permission from Elsevier) 
 
@@ -805,7 +812,7 @@ Fig. 15 Scanning electron micrographs of the nanoﬁber webs of 6-deoxy-6-trisam
 
 Fig. 16 Field-emission scanning electron micrographs of nanoparticles prepared by (a) emulsiﬁcation–evaporation of cellulose triacetate (CTA) (150 W, 10 s, cW 25 mg/mL), (b) by dialysis of CTA (cW 4 mg/mL), and (c) by dropping water into a solution of CA, DS 2.45 (cW 6 mg/mL, V(H_{2} O) 70 mL, rate 10 mL/min) 
 
-Fig. 17 Confocal micrograph overlay of 21 stacks of human ﬁbroblasts (red cell membrane) incubated with FITC-labeled cellulose nanoparticles 
+Fig. 17 Confocal micrograph overlay of 21 stacks of human ﬁbroblasts (redcell membrane) incubated with FITC-labeled cellulose nanoparticles 
 
 Fig. 18 Cellulose dissolved in N,N-dimethylacetamide/triethyloctylammonium chloride after dissolution (a) and after 24 h (b) Fig. 19^{13} C-NMR spectrum (100 MHz, acetone-d_{6} ) of cellulose in acetone-d_{6} /triethyloctylammonium chloride 
 
@@ -823,7 +830,7 @@ Fig. 23 Structure proposed for conversion of the reducing end group of cellodext
 
 cellulose Channel IC 
 
-Fig. 25 (a, b) Transmission electron micrographs of cellulose at concentration of 4.0^{(cid:3)} 10^{(cid:5)4} g mL^{(cid:5)1} in aqueous 4.6 wt% LiOH/15 wt% urea. (c) Model of inclusion complex 
+Fig. 25 (a, b) Transmission electron micrographs of cellulose at concentration of 
 
 Fig. 24 Phase diagram of ternary cellulose/NaOH/water system 
 
@@ -843,35 +850,35 @@ Fig. 28 Representative sedimentation coefﬁcient distributions of 6-deoxy-6-(2-
 
 Fig. 29 Reversible tetramerization and further higher-order association of the polysaccharide 
 
-(cid:2) 
-
-Fig. 29 (continued) of substitution at C-6 DS_{Amine}^{¼}_{0.83,} and degree of substitution at C-2 of tosyl residues DS_{Tosyl}^{¼}_{0.2,} yielding molar mass M ~ 3,250 g/mol and sedimentation coefﬁcient s ~ 0.5 S. Middle: Assembly into tetramers with M ~ 13,000 g/mol and s ~ 1.7 S. Lower: Sedimentation coefﬁcient distribution for AEA cellulose at different concentrations: 2.0 (black), 1.0 (red), 0.75 (blue), 0.25 (green), and 0.125 mg/mL (pink). Based on the s ~ M^{2/3} scaling relationship, the supermonomers associate into supertrimers, superhexamers, and super-9-mers. There is also evidence for some superdimers, although they were not evident at the highest loading concentration. The proportion of supermonomers drops relative to the higher-order species indicates partial reversibility, even with the higher-order association 
+(cid:2) s~0.5 S. Middle: Assembly into tetramers with M~13,000 g/mol and s~1.7 S. Lower: Sedimentation coefﬁcient distribution for AEA cellulose at different concentrations: 2.0 (black), 1.0 (red), 0.75 (blue), 0.25 (green), and 0.125 mg/mL (pink). Based on the s~M^{2/3} scaling relationship, the supermonomers associate into supertrimers, superhexamers, and super-9-mers. There is also evidence for some superdimers, although they were not evident at the highest loading concentration. The proportion of supermonomers drops relative to the higher-order species indicates partial reversibility, even with the higher-order association 
 
 O_{OH}^{HO} NN N O CH3 DMF CCH NN N N N N_{+} O_{OH}^{HO} NN N OH^{HO} N OH^{HO} N (Dimethyl^{sulfoxide)} N N O Fig.31Reactionpathforconversionofcellulosewithﬁrstgenerationpropargyl-PAMAM 
 
-1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 80 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 C 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 80 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 C 1 ^{HO}N ^{O}N ^{N}O O O O H_{3} CO^{H}_{3} 8^{9} 11^{12} ppm 
+1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 80 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 C 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 80 1.7 2.0 2.2 2.5 2.7 3.0 3.2 3.5 3.7 4.0 4.2 C 1 OH^{HO} N ^{N}O O O O H_{3} CO^{H}_{3} CO OCH_{3} 8^{9} 
+
+11 12 ppm 
 
 Fig. 32 HSQC-DEPT NMR spectrum of second generation PAMAM-triazolo cellulose (DS 0.59). AGU anhydroglucose unit. Adapted from [187] 
 
-OH _{5}^{6} O 9 11^{12} O 9 12 14_{15} O HN N O O O H_{N} O 9 12 14 _{18}19 22 15 16_{17} 
+OH 4_{5}^{6} O 9 11^{12} O 9 12 O HN N O O O H_{N} O 9 12 14_{18} 19 22 16_{17} 
 
-50 100 150 _{75}125 175 1 12,17,22 12,17 OH _{5}^{6} OH _{5}^{6} O 9 11^{12} O 9 11^{12} O 9 12 14_{15} O 9 12 14_{15} O HN N O O O H_{N} O 9 12 14 _{18}19 22 15 16_{17} O HN N O O O H_{N} O 9 12 14 _{18}19 22 15 16_{17} 
+50 100 150 75 125 175 1 12,17,22 12,17 OH 4_{5}^{6} OH 4_{5}^{6} O 9 11^{12} O 9 11^{12} O 9 12 O 9 12 O HN N O O O H_{N} O 9 12 14_{18} 19 22 16_{17} O HN N O O O H_{N} O 9 12 14_{18} 19 22 16_{17} 
 
-50 100 150 _{75}125 175 1 12,17,22 12,17 Fig. 33^{13} C-NMR spectra of ﬁrst (DS 0.60, A), second (DS 0.48, B), and third (DS 0.28, C) generation PAMAM-triazolo cellulose in DMSO-d_{6} at 60^{(cid:4)} C 
+50 100 150 75 125 175 1 12,17,22 12,17 Fig. 33^{13} C-NMR spectra of ﬁrst (DS 0.60, A), second (DS 0.48, B), and third (DS 0.28, C) generation PAMAM-triazolo cellulose in DMSO-d_{6} at 60^{(cid:4)} C 
 
 Si (ii) TBAF    24 h, 50°C, THF    24 h, 50°C, DMSO O_{O}_{OH} CuSO4+5H2O Sodium ascorbate N OCH3OCH3 OO Fig.36Synthesisreactionofﬁrstgeneration3-O-(4-methyl-1-N-propyl-polyamidoamine-(1,2,3triazole))cellulosevia3-O-propargylcellulose OH^{HO} O DMSO OH^{HOO} N N^{N} Cellulose:StructureandProperties41 
 
 Acknowledgements Dr. Andreas Koschella is thankfully acknowledged for his efforts in preparing the manuscript. 
 
-1. Klemm D, Heublein B, Fink H-P et al (2005) Cellulose: fascinating biopolymer and sustainable raw material. Angew Chem Int Ed 44:3358–3393 2. Mohanty AK, Misra M, Hinrichsen G (2000) Bioﬁbres, biodegradable polymers and biocomposites. An overview. Macromol Mater Eng 276(277):1–24 3. Heinze T, Liebert T (2012) Celluloses and polyoses/hemicelluloses. In: Matyjaszewski K, pp 83–152 4. Payen A (1839) Composition de la matie^{`} re ligneuse. Comptes Rendus 8:51–53 5. Young RA (1994) Comparison of the properties of chemical cellulose pulps. Cellulose 1:107–130 6. Sixta H (ed) (2006) Handbook of pulp. Wiley-VCH, Weinheim 7. Schubert S, Schlufter K, Heinze T (2011) Conﬁgurations, structures, and morphologies of cellulose. In: Popa V (ed) Polysaccharides in medicinal and pharmaceutical applications. iSmithers, Shrewsbury, pp 1–55 8. Hon DN-S (1996) Cellulose and its derivatives: structures, reactions, and medical uses. In: Dumitriu S (ed) Polysaccharides in medical applications. Marcel Dekker, New York, pp 87–105 9. Eichhorn SJ, Baillie CA, Zafeiropoulos N et al (2001) Current international research into cellulosic ﬁbers and composites. J Mater Sci 36:2107–2131 10. Vandamme EJ, De Baets S, Vanbaelen A et al (1998) Improved production of bacterial cellulose and its application potential. Polym Degrad Stab 59:93–99 11. Jonas R, Farah LF (1998) Production and application of microbial cellulose. Polym Degrad Stab 59:101–106 12. Rao VSR, Sundararajan PR, Ramakrishnan C et al (1967) Conformational studies of amylose. In: Ramachandran GN (ed) Conformation of biopolymers, vol 2. Academic, London, pp 721–737 13. Kra^{¨} ssig HA (1993) Cellulose: structure, accessibility and reactivity. Gordon and Breach Science, Yverdon 14. Perez S, Mazeau K (2005) Conformations, structures, and morphologies of celluloses. In: Dumitriu S (ed) Polysaccharides: structural diversity and functional versatility. Marcel Dekker, New York, pp 41–68 15. Kondo T (1997) The relationship between intramolecular hydrogen bonds and certain physical properties of regioselectively substituted cellulose derivatives. J Polym Sci A Polym Chem 35:717–723 16. Liang CY, Marchessault RH (1959) Infrared spectra of crystalline polysaccharides. I. Hydrogen bonds in native celluloses. J Polym Sci 37:385–395 17. Michell AJ (1988) Second derivative FTIR spectra of celluloses I and II and related monoand oligosaccharides. Carbohydr Res 173:185–195 18. Kamide K, Okajima K, Kowsaka K et al (1985) CP/MASS (cross-polarization/magic angle sample spinning] carbon-13 NMR spectra of cellulose solids: an explanation by the intramolecular hydrogen bond concept. Polym J 17:701–706 19. Gardner KH, Blackwell J (1974) Structure of native cellulose. Biopolymers 13:1975–2001 20. Nishiyama Y, Langan P, Chanzy H (2002) Crystal structure and hydrogen-bonding system in cellulose^{Iβ} from synchrotron x-ray and neutron ﬁber diffraction. J Am Chem Soc 124:9074–9082 21. Kondo T (2005) Hydrogen bonds in cellulose and cellulose derivatives. In: Dumitriu S (ed) Polysaccharides: structural diversity and functional versatility, 2nd edn. Marcel Dekker, New York, pp 69–98 22. Tashiro K, Kobayashi M (1991) Theoretical evaluation of three-dimensional elastic constants of native and regenerated celluloses: role of hydrogen bonds. Polymer 32:1516–1526 
+1. Klemm D, Heublein B, Fink H-P et al (2005) Cellulose: fascinating biopolymer and sustainable raw material. Angew Chem Int Ed 44:3358–3393 2. Mohanty AK, Misra M, Hinrichsen G (2000) Bioﬁbres, biodegradable polymers and biocomposites. An overview. Macromol Mater Eng 276(277):1–24 3. Heinze T, Liebert T (2012) Celluloses and polyoses/hemicelluloses. In: Matyjaszewski K, pp 83–152 4. Payen A (1839) Composition de la matie `re ligneuse. Comptes Rendus 8:51–53 5. Young RA (1994) Comparison of the properties of chemical cellulose pulps. Cellulose 1:107–130 6. Sixta H (ed) (2006) Handbook of pulp. Wiley-VCH, Weinheim 7. Schubert S, Schlufter K, Heinze T (2011) Conﬁgurations, structures, and morphologies of cellulose. In: Popa V (ed) Polysaccharides in medicinal and pharmaceutical applications. iSmithers, Shrewsbury, pp 1–55 8. Hon DN-S (1996) Cellulose and its derivatives: structures, reactions, and medical uses. In: Dumitriu S (ed) Polysaccharides in medical applications. Marcel Dekker, New York, pp 87–105 9. Eichhorn SJ, Baillie CA, Zafeiropoulos N et al (2001) Current international research into cellulosic ﬁbers and composites. J Mater Sci 36:2107–2131 10. Vandamme EJ, De Baets S, Vanbaelen A et al (1998) Improved production of bacterial cellulose and its application potential. Polym Degrad Stab 59:93–99 11. Jonas R, Farah LF (1998) Production and application of microbial cellulose. Polym Degrad Stab 59:101–106 12. Rao VSR, Sundararajan PR, Ramakrishnan C et al (1967) Conformational studies of amylose. In: Ramachandran GN (ed) Conformation of biopolymers, vol 2. Academic, London, pp 721–737 13. Kra ¨ssig HA (1993) Cellulose: structure, accessibility and reactivity. Gordon and Breach Science, Yverdon 14. Perez S, Mazeau K (2005) Conformations, structures, and morphologies of celluloses. In: Dumitriu S (ed) Polysaccharides: structural diversity and functional versatility. Marcel Dekker, New York, pp 41–68 15. Kondo T (1997) The relationship between intramolecular hydrogen bonds and certain physical properties of regioselectively substituted cellulose derivatives. J Polym Sci A Polym Chem 35:717–723 16. Liang CY, Marchessault RH (1959) Infrared spectra of crystalline polysaccharides. I. Hydrogen bonds in native celluloses. J Polym Sci 37:385–395 17. Michell AJ (1988) Second derivative FTIR spectra of celluloses I and II and related monoand oligosaccharides. Carbohydr Res 173:185–195 18. Kamide K, Okajima K, Kowsaka K et al (1985) CP/MASS (cross-polarization/magic angle sample spinning] carbon-13 NMR spectra of cellulose solids: an explanation by the intramolecular hydrogen bond concept. Polym J 17:701–706 19. Gardner KH, Blackwell J (1974) Structure of native cellulose. Biopolymers 13:1975–2001 20. Nishiyama Y, Langan P, Chanzy H (2002) Crystal structure and hydrogen-bonding system in cellulose^{Iβ} from synchrotron x-ray and neutron ﬁber diffraction. J Am Chem Soc 124:9074–9082 21. Kondo T (2005) Hydrogen bonds in cellulose and cellulose derivatives. In: Dumitriu S (ed) Polysaccharides: structural diversity and functional versatility, 2nd edn. Marcel Dekker, New York, pp 69–98 22. Tashiro K, Kobayashi M (1991) Theoretical evaluation of three-dimensional elastic constants of native and regenerated celluloses: role of hydrogen bonds. Polymer 32:1516–1526 
 
 23. Sarko A, Muggli R (1947) Packing analysis of carbohydrates and polysaccharides. III. Valonia cellulose and cellulose II. Macromolecules 7:486–494 24. Atalla RH, VanderHart DL (1984) Native cellulose: a composite of two distinct crystalline forms. Science 223:283–285 25. Isogai A, Usuda M, Kato T et al (1989) Solid-state CP/MAS carbon-13 NMR study of cellulose polymorphs. Macromolecules 22:3168–3172 26. Zugenmaier P (2001) Conformation and packing of various crystalline cellulose ﬁbers. Prog Polym Sci 26:1341–1417 27. Langan P, Nishiyama Y, Chanzy H (1999) A revised structure and hydrogen-bonding system in cellulose II from a neutron ﬁber diffraction analysis. J Am Chem Soc 121:9940–9946 28. Wada M, Heux L, Isogai A et al (2001) Improved structural data of cellulose IIII prepared in supercritical ammonia. Macromolecules 34:1237–1243 29. Gardiner ES, Sarko A (1985) Packing analysis of carbohydrates and polysaccharides. 16. The crystal structures of celluloses IV_{I} and IV_{II} . Can J Chem 63:173–180 30. Isogai A (1994) Allomorphs of cellulose and other polysaccharides. In: Gilbert RD (ed) Cellulosic polymers: blends and composites. Hanser, Munich, p 1 31. Hermans PH, Weidinger A (1946) Recrystallization of amorphous cellulose. J Am Chem Soc 68:1138 32. Wadehra IL, Manley RSJ (1965) Recrystallization of amorphous cellulose. J Appl Polym Sci 9:2627–2630 33. Schroeder LR, Gentile VM, Atalla RH (1986) Nondegradative preparation of amorphous cellulose. J Wood Chem Technol 6:1–14 34. Atalla RH, Ellis JD, Schroeder LR (1984) Some effects of elevated temperatures on the structure of cellulose and its transformation. J Wood Chem Technol 4:465–482 35. de Souza Lima MM, Borsali R (2004) Rodlike cellulose microcrystals: structure, properties, and applications. Macromol Rapid Commun 25:771–787 36. Ioelovich M, Leykin A (2008) Cellulose as a nanostructured polymer: a short review. Bioresources 3:1403–1418 37. Welch LM, Roseveare WE, Mark H (1946) Fibrillar structure of rayon ﬁbers. Ind Eng Chem 38:580–582 38. Sisson WA (1940) X-ray studies of crystallite orientation in cellulose ﬁbers. III. Fiber structures from coagulated cellulose. J Phys Chem 44:513–529 39. Klemm D, Schumann D, Udhardt U et al (2001) Bacterial synthesized cellulose – artiﬁcial blood vessels for microsurgery. Prog Polym Sci 26:1561–1603 40. Yoshinaga F, Tonouchi N, Watanabe K (1997) Research progress in the production of bacterial cellulose by aeration and agitation culture and its application as a new industrial material. Biosci Biotechnol Biochem 61:219–224 41. Kongruang S (2008) Bacterial cellulose production by Acetobacter xylinum strains from agricultural waste products. Appl Biochem Biotechnol 148:245–256 42. Ring DF, Nashed W, Dow T (1987) Microbial polysaccharide articles and methods of production. US Patent 4,655,758, 7 Apr 1987 43. Ring DF, Nashed W, Dow T (1986) Liquid loaded pad for medical applications. US Patent 
 
 4,588,400, 13 May 1986 44. Farah LF (1990) Process for the preparation of cellulose ﬁlm, cellulose ﬁlm produced thereby, artiﬁcial skin graft and its use. US Patent 4,912,049, 27 Mar 1990 45. Czaja W, Krystynowicz A, Bielecki S et al (2006) Microbial cellulose-the natural power to heal wounds. Biomaterials 27:145–151 46. Watanabe K, Tabuchi M, Morinaga Y et al (1998) Structural features and properties of bacterial cellulose produced in agitated-culture. Cellulose 5:187–200 47. Klemm D, Schumann D, Kramer F et al (2006) Nanocelluloses as innovative polymers in research and application. Adv Polym Sci 205:49–96 
 
-mechanical shearing and high-pressure homogenization for nanoscale cellulose ﬁbrils and strong gels. Biomacromolecules 8:1934–1941 49. Samir MASA, Alloin F, Dufresne A (2005) Review of recent research into cellulosic whiskers, their properties and their application in nanocomposite ﬁeld. Biomacromolecules 6:612–626 50. Dufresne A (2008) Polysaccharide nano crystal reinforced nanocomposites. Can J Chem 86:484–494 51. Steege H-H, Philipp B (1974) Production, characterization, and use of microcrystalline cellulose. Zellst Pap 23:68–73 52. Bondeson D, Mathew A, Oksman K (2006) Optimization of the isolation of nanocrystals from microcrystalline cellulose by acid hydrolysis. Cellulose 13:171–180 53. Araki J, Wada M, Kuga S et al (1998) Flow properties of microcrystalline cellulose suspension prepared by acid treatment of native cellulose. Colloid Surf A Physicochem Eng Asp 142:75–82 54. Dong XM, Revol JF, Gray DG (1998) Effect of microcrystallite preparation conditions on the formation of colloid crystals of cellulose. Cellulose 5:19–32 55. Araki J, Wada M, Kuga S et al (1999) Inﬂuence of surface charge on viscosity behavior of cellulose microcrystal suspension. J Wood Sci 45:258–261 56. de Vries HI (1951) Rotatory power and other optical properties of certain liquid crystals. Acta Crystallogr 4:219–226 57. Revol J-F, Bradford H, Giasson J et al (1992) Helicoidal self-ordering of cellulose microﬁbrils in aqueous suspension. Int J Biol Macromol 14:170–172 58. Kroon-Batenburg LMJ, Kroon J, Northolt MG (1986) Chain modulus and intramolecular hydrogen bonding in native and regenerated cellulose ﬁbers. Polym Commun 27:290–292 59. Nishino T, Matsuda I, Hirao K (2004) All-cellulose composite. Macromolecules 37:7683–7687 60. Odijk T, Lekkerkerker HNW (1985) Theory of the isotropic-liquid crystal phase separation for a solution of bidisperse rodlike macromolecules. J Phys Chem 89:2090–2096 61. de Souza Lima MM, Borsali R (2002) Static and dynamic light scattering from polyelectrolyte microcrystal cellulose. Langmuir 18:992–996 62. Angellier H, Putaux J-L, Molina-Boisseau S et al (2005) Starch nanocrystal ﬁllers in an acrylic polymer matrix. Macromol Symp 221:95–104 63. Marchessault RH, Morehead FF, Walter NM (1959) Liquid crystal systems from ﬁbrillar polysaccharides. Nature 184:632–633 64. Revol JF, Godbout L, Dong XM et al (1994) Chiral nematic suspensions of cellulose crystallites; phase separation and magnetic ﬁeld orientation. Liq Cryst 16:127–134 65. Revol JF, Godbout L, Gray DG (1998) Solid self-assembled ﬁlms of cellulose with chiral nematic order and optically variable properties. J Pulp Paper Sci 24:146–149 66. Orts WJ, Godbout L, Marchessault RH et al (1998) Enhanced ordering of liquid crystalline suspensions of cellulose microﬁbrils: a small-angle neutron scattering study. Macromolecules 31:5717–5725 67. Favier V, Canova GR, Cavaille^{´} JY et al (1995) Nanocomposite materials from latex and cellulose whiskers. Polym Adv Technol 6:351–355 68. Favier V, Chanzy H, Cavaille^{´} JY (1995) Polymer nanocomposites reinforced by cellulose whiskers. Macromolecules 28:6365–6367 69. Viet D, Beck-Candanedo S, Gray DG (2007) Dispersion of cellulose nanocrystals in polar organic solvents. Cellulose 14:109–113 70. Dubief D, Samain E, Dufresne A (1999) Polysaccharide microcrystals reinforced amorphous 71. Dufresne A, Kellerhals MB, Witholt B (1999) Transcrystallization in Mcl-PHAs/cellulose whiskers composites. Macromolecules 32:7396–7401 
+mechanical shearing and high-pressure homogenization for nanoscale cellulose ﬁbrils and strong gels. Biomacromolecules 8:1934–1941 49. Samir MASA, Alloin F, Dufresne A (2005) Review of recent research into cellulosic whiskers, their properties and their application in nanocomposite ﬁeld. Biomacromolecules 6:612–626 50. Dufresne A (2008) Polysaccharide nano crystal reinforced nanocomposites. Can J Chem 86:484–494 51. Steege H-H, Philipp B (1974) Production, characterization, and use of microcrystalline cellulose. Zellst Pap 23:68–73 52. Bondeson D, Mathew A, Oksman K (2006) Optimization of the isolation of nanocrystals from microcrystalline cellulose by acid hydrolysis. Cellulose 13:171–180 53. Araki J, Wada M, Kuga S et al (1998) Flow properties of microcrystalline cellulose suspension prepared by acid treatment of native cellulose. Colloid Surf A Physicochem Eng Asp 142:75–82 54. Dong XM, Revol JF, Gray DG (1998) Effect of microcrystallite preparation conditions on the formation of colloid crystals of cellulose. Cellulose 5:19–32 55. Araki J, Wada M, Kuga S et al (1999) Inﬂuence of surface charge on viscosity behavior of cellulose microcrystal suspension. J Wood Sci 45:258–261 56. de Vries HI (1951) Rotatory power and other optical properties of certain liquid crystals. Acta Crystallogr 4:219–226 57. Revol J-F, Bradford H, Giasson J et al (1992) Helicoidal self-ordering of cellulose microﬁbrils in aqueous suspension. Int J Biol Macromol 14:170–172 58. Kroon-Batenburg LMJ, Kroon J, Northolt MG (1986) Chain modulus and intramolecular hydrogen bonding in native and regenerated cellulose ﬁbers. Polym Commun 27:290–292 59. Nishino T, Matsuda I, Hirao K (2004) All-cellulose composite. Macromolecules 37:7683–7687 60. Odijk T, Lekkerkerker HNW (1985) Theory of the isotropic-liquid crystal phase separation for a solution of bidisperse rodlike macromolecules. J Phys Chem 89:2090–2096 61. de Souza Lima MM, Borsali R (2002) Static and dynamic light scattering from polyelectrolyte microcrystal cellulose. Langmuir 18:992–996 62. Angellier H, Putaux J-L, Molina-Boisseau S et al (2005) Starch nanocrystal ﬁllers in an acrylic polymer matrix. Macromol Symp 221:95–104 63. Marchessault RH, Morehead FF, Walter NM (1959) Liquid crystal systems from ﬁbrillar polysaccharides. Nature 184:632–633 64. Revol JF, Godbout L, Dong XM et al (1994) Chiral nematic suspensions of cellulose crystallites; phase separation and magnetic ﬁeld orientation. Liq Cryst 16:127–134 65. Revol JF, Godbout L, Gray DG (1998) Solid self-assembled ﬁlms of cellulose with chiral nematic order and optically variable properties. J Pulp Paper Sci 24:146–149 66. Orts WJ, Godbout L, Marchessault RH et al (1998) Enhanced ordering of liquid crystalline suspensions of cellulose microﬁbrils: a small-angle neutron scattering study. Macromolecules 31:5717–5725 67. Favier V, Canova GR, Cavaille ´ JY et al (1995) Nanocomposite materials from latex and cellulose whiskers. Polym Adv Technol 6:351–355 68. Favier V, Chanzy H, Cavaille ´ JY (1995) Polymer nanocomposites reinforced by cellulose whiskers. Macromolecules 28:6365–6367 69. Viet D, Beck-Candanedo S, Gray DG (2007) Dispersion of cellulose nanocrystals in polar organic solvents. Cellulose 14:109–113 70. Dubief D, Samain E, Dufresne A (1999) Polysaccharide microcrystals reinforced amorphous 71. Dufresne A, Kellerhals MB, Witholt B (1999) Transcrystallization in Mcl-PHAs/cellulose whiskers composites. Macromolecules 32:7396–7401 
 
-72. Angles NM, Dufresne A (2000) Plasticized starch/tunicin whiskers nanocomposites. 1. Structural analyses. Macromolecules 33:8344–8353 73. Grunert M, Winter WT (2002) Nanocomposites of cellulose acetate butyrate reinforced with cellulose nanocrystals. J Polym Environ 10:27–30 74. Chazeau L, Cavaille^{´} JY, Perez J (2000) Plasticized PVC reinforced with cellulose whiskers. II. Plastic behavior. J Polym Sci B Polym Phys 38:383–392 75. Revol JF (1982) On the cross-sectional shape of cellulose crystallites in Valonia ventricosa. Carbohydr Polym 2:123–134 76. Correa AC, Morais Teixeira E, Carmona VB et al (2014) Obtaining nanocomposites of 
+72. Angles NM, Dufresne A (2000) Plasticized starch/tunicin whiskers nanocomposites. 1. Structural analyses. Macromolecules 33:8344–8353 73. Grunert M, Winter WT (2002) Nanocomposites of cellulose acetate butyrate reinforced with cellulose nanocrystals. J Polym Environ 10:27–30 74. Chazeau L, Cavaille ´ JY, Perez J (2000) Plasticized PVC reinforced with cellulose whiskers. II. Plastic behavior. J Polym Sci B Polym Phys 38:383–392 75. Revol JF (1982) On the cross-sectional shape of cellulose crystallites in Valonia ventricosa. Carbohydr Polym 2:123–134 76. Correa AC, Morais Teixeira E, Carmona VB et al (2014) Obtaining nanocomposites of 
 
 polyamide 6 and cellulose whiskers via extrusion and injection molding. Cellulose 21:311–322 77. Mathew AP, Dufresne A (2002) Morphological investigation of nanocomposites from sorbitol plasticized starch and tunicin whiskers. Biomacromolecules 3:609–617 78. Turbak AF, Snyder FW, Sandberg KR (1982) Suspensions containing microﬁbrillated cellulose. 
 
@@ -890,27 +897,6 @@ p 461 152. Wu J, Zhang J, Zhang H et al (2004) Homogeneous acetylation of cellul
 166. Wenz G, Liepold P, Bordeanu N (2005) Synthesis and SAM formation of water soluble functional carboxymethylcelluloses: thiosulfates and thioethers. Cellulose 12:85–96 167. Arai K, Aoki F (1994) Preparation and identiﬁcation of sodium deoxycellulosesulfonate. 168. Arai K, Yoda N (1998) Preparation of water-soluble sodium deoxycellulose sulfonate from homogeneously prepared tosyl cellulose. Cellulose 5:51–58 169. Liu C, Baumann H (2002) Exclusive and complete introduction of amino groups and their N-sulfo and N-carboxymethyl groups into the 6-position of cellulose without the use of protecting groups. Carbohydr Res 337:1297–1307 170. Heinze T (1998) New ionic polymers by cellulose functionalization. Macromol Chem Phys 199:2341–2364 171. Koschella A, Heinze T (2001) Novel regioselectively 6-functionalized cationic cellulose polyelectrolytes prepared via cellulose sulfonates. Macromol Biosci 1:178–184 172. Heinze T, Koschella A, Magdaleno-Maiza L et al (2001) Nucleophilic displacement reactions on tosyl cellulose by chiral amines. Polym Bull 46:7–13 173. Knaus S, Mais U, Binder WH (2003) Synthesis, characterization and properties of methylaminocellulose. Cellulose 10:139–150 174. Tiller J, Berlin P, Klemm D (1999) Soluble and ﬁlm-forming cellulose derivatives with redox-chromogenic and enzyme immobilizing 1,4-phenylenediamine groups. Macromol Chem Phys 200:1–9 175. Tiller J, Berlin P, Klemm D (2000) Novel matrices for biosensor application by structural design of redox-chromogenic aminocellulose esters. J Appl Polym Sci 75:904–915 176. Berlin P, Klemm D, Tiller J et al (2000) A novel soluble aminocellulose derivative type: its transparent ﬁlm-forming properties and its efﬁcient coupling with enzyme proteins for biosensors. Macromol Chem Phys 201:2070–2082 177. Berlin P, Klemm D, Jung A et al (2003) Film-forming aminocellulose derivatives as enzymecompatible support matrices for biosensor developments. Cellulose 10:343–367 178. Becher J, Liebegott H, Berlin P et al (2004) Novel xylylene diaminocellulose derivatives for enzyme immobilization. Cellulose 11:119–126 179. Jung A, Berlin P (2005) New water-soluble and ﬁlm-forming aminocellulose tosylates as enzyme support matrices with Cu^{2+} -chelating properties. Cellulose 12:67–84 180. Dam J, Schuck P (2005) Sedimentation velocity analysis of heterogeneous protein-protein interactions: sedimentation coefﬁcient distributions c(s) and asymptotic boundary proﬁles from Gilbert-Jenkins theory. Biophys J 89:651–666 181. Heinze T, Nikolajski M, Daus S et al (2011) Protein-like oligomerisation of carbohydrates. Angew Chem Int Ed 50:8602–8604 182. Ferrone FA, Hofrichter J, Eaton WA (1985) Kinetics of sickle hemoglobin polymerization. II. A double nucleation mechanism. J Mol Biol 183:611–631 183. Teif VB, Bohinc K (2011) Condensed DNA: condensing the concepts. Prog Biophys Mol Biol 105:208–222 184. Nikolajski M, Heinze T, Adams GG et al (2014) Protein–like fully reversible tetramerisation and super-association of an aminocellulose. Sci Rep 4:3861 185. Liebert T, Ha ¨nsch C, Heinze T (2006) Click chemistry with polysaccharides. Macromol Rapid Commun 27:208–213 186. Koschella A, Richter M, Heinze T (2010) Novel cellulose-based polyelectrolytes synthesized via the click reaction. Carbohydr Res 345:1028–1033 187. Pohl M, Schaller J, Meister F et al (2008) Selectively dendronized cellulose: synthesis and characterization. Macromol Rapid Commun 29:142–148 188. Heinze T,^{Sch€} obitz M, Pohl M et al (2008) Interactions of ionic liquids with polysaccharides: IV. Dendronization of 6-azido-6-deoxy cellulose. J Polym Sci A Polym Chem 46:3853–3859 189.^{Sch€} obitz M, Meister F, Heinze T (2009) Unconventional reactivity of cellulose dissolved in ionic liquids. Macromol Symp 280:102–111 
 
 190. Pohl M, Morris GA, Harding SE et al (2009) Studies on the molecular ﬂexibility of novel dendronized carboxymethyl cellulose derivatives. Eur Polym J 45:1098–1110 191. Pohl M, Heinze T (2008) Novel biopolymer structures synthesized by dendronization of 6-deoxy-6-aminopropargyl cellulose. Macromol Rapid Commun 29:1739–1745 192. Fenn D, Pohl M, Heinze T (2009) Novel 3-O-propargyl cellulose as a precursor for regioselective functionalization of cellulose. React Funct Polym 69:347–352 193. Elschner T, Ganske K, Heinze T (2013) Synthesis and aminolysis of polysaccharide carbonates. Cellulose 20:339–353 194. Pourjavadi A (2011) Synthesis of soluble N-functionalized polysaccharide derivatives using phenyl carbonate precursor and their application as catalysts (Erratum to document cited in CA156:339191]. Starch 63:820 195. Hayashi S (2002) Synthesis and properties of cellulose carbonate derivatives. Kobunshi Ronbunshu 59:1–7 196. Sanchez Chaves M, Arranz F (1985) Water-insoluble dextrans by grafting, 2. Reaction of dextrans with n-alkyl chloroformates. Chemical and enzymic hydrolysis. Makromol Chem 186:17–29 197. Elschner T,^{K€} otteritzsch M, Heinze T (2014) Synthesis of cellulose tricarbonates in 1-butyl3-methylimidazolium chloride/pyridine. Macromol Biosci 14:161–165 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

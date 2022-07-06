@@ -6,12 +6,17 @@ import PDFsettings
 import PDFfunctions
 
 
-FILEPATH = "scitex/test/scriptTest2.pdf"
+table_settings = {
+    "vertical_strategy": "text",
+    "horizontal_strategy": "text"
+}
+
+FILEPATH = "scitex/Shi et al.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
 VERTICAL_ERROR = 5
-HORIZONTAL_ERROR = 10
+HORIZONTAL_ERROR = 30
 RATIO_MARGIN = 0.05
 PARAS_REQUIRED = 2
 
@@ -20,13 +25,19 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[0]
+page = plumber.pages[4]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
+
+
+tables = page.extract_tables(table_settings)
 
 words = PDFfunctions.removePageHeadersEarly(
     words, page.page_number, pdfSettings)
 
-lines, pdfSettings = PDFfunctions.getLines(
+visible = words[300:]
+hate = words[600:]
+
+words, lines, pdfSettings = PDFfunctions.getLines(
     words, pdfSettings, pdfSettings.intraline)
 
 pdfSettings.activesection = PDFfragments.section(
@@ -39,4 +50,4 @@ i = -1
 while i < len(lines)-1:
     i += 1
     PDF, pdfSettings, lines, i = PDFparser.DealWithLine(
-        PDF, words, lines, i, pdfSettings, page.page_number)
+        PDF, words, lines, i, pdfSettings, page.page_number, 0)

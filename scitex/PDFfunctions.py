@@ -546,6 +546,7 @@ def getWords(page, hError, spaceChar=False, vError=3):
     chars = page.chars
     pagenum = str(page.page_number)
     retval = []
+    visuals = retval[len(retval)-290:]
     bookmark = 0
     if(len(chars) == 0):
         return []
@@ -560,6 +561,7 @@ def getWords(page, hError, spaceChar=False, vError=3):
     unusual = ""
     prevdiff = -1
     while i < len(chars)-2:
+        visuals = retval[len(retval)-290:]
         i += 1
 
         if(minorfunctions.isSpace(chars, i) and not spaceChar and len(retval) < 30):
@@ -869,12 +871,12 @@ def extensiveAddPara(pdfSettings, words, w, pagenum, colnum):
 
     # if this is the 2nd half of a cutoff paragraph, sew it back together.
     if(pdfSettings.addto and len(pdfSettings.activesection.para) > 0):
-        pdfSettings.addto = False
         pdfSettings = addToPara(pdfSettings, sentlist,
                                 words, w, pagenum, colnum)
     else:
         pdfSettings = addPara(pdfSettings, sentlist, words, w, pagenum, colnum)
     pdfSettings.bookmark = w+1
+    pdfSettings.addto = False
 
     if(pdfSettings.addtoNext):
         pdfSettings.addtoNext = False
@@ -943,6 +945,9 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
     char = chars[i]
     compare = chars[bookmark]
 
+    if(i == 150):
+        print("Bookmark")
+
     # if(not minorfunctions.isLesser(char["width"], width)):
     #    return ""
 
@@ -960,10 +965,18 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
     if(minorfunctions.areEqual(abs(topdiff), prevdiff, error, True) or minorfunctions.areEqual(abs(botdiff), prevdiff, error, True)):
         return "", -1
 
-    if(topdiff > 0.1 and minorfunctions.isLesser(topdiff, compare["height"], error, True)):
+    validTopDiff = minorfunctions.isGreater(topdiff, 0.5)
+    TopNotNewLine = minorfunctions.isLesser(
+        abs(topdiff), compare["height"], error, True)
+
+    validBotDiff = minorfunctions.isGreater(botdiff*-1, 0.5)
+    BotNotNewLine = minorfunctions.isLesser(
+        abs(botdiff), compare["height"], error, True)
+
+    if(validTopDiff and TopNotNewLine):
         return "Subscript", abs(topdiff)
 
-    if(botdiff < -0.1 and minorfunctions.isLesser(float(botdiff)*-1, compare["height"], error, True)):
+    if(validBotDiff and BotNotNewLine):
         return "Superscript", abs(botdiff)
 
     return "", -1

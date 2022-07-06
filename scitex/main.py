@@ -5,7 +5,7 @@ import PDFfragments
 import plaintextwriter
 import time
 
-FILEPATH = "scitex/Klemm et al.pdf"
+FILEPATH = "scitex/pdfs/Heinze.pdf"
 
 
 plumber = pdfplumber.open(FILEPATH)
@@ -27,7 +27,7 @@ print("Time to Read: " + str(diff) + " sec, aka " + str(diff/60) + " min")
 plaintext = "Time to Read: " + \
     str(diff) + " sec, aka " + str(diff/60) + " min" + plaintext
 
-file = open("7-1-Klemm.txt",
+file = open("7-6-Heinze.txt",
             'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()

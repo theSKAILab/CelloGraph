@@ -100,35 +100,41 @@ def addHeader(headers, words, i, words2, words3):
 
 
 # really long if statement, checks that words[index] is equal for all words or they're all numbers.
-def headerCheck(words, words2, words3, index):
-    w1 = words[index]["text"]
+def headerCheck(words, words2, words3, index, offset=0):
+    if(index < 0):
+        index = 0
+    w1 = words[index+offset]["text"]
     w2 = words2[index]["text"]
     w3 = words3[index]["text"]
+
     if w1 == w2 and w2 == w3:
         return True
+
+    w1 = textprocessing.trimScript(w1)
+    w2 = textprocessing.trimScript(w2)
+    w3 = textprocessing.trimScript(w3)
+
     if w1.isdigit() and w2.isdigit() and w3.isdigit():
         num = int(w1)
         num2 = int(w2)
         num3 = int(w3)
-        if(num2 == num + 2 and num3 == num2 + 2):
-            next1 = words[index+1]["text"]
-            next2 = words2[index+1]["text"]
-            next3 = words3[index+1]["text"]
-            if next1 == next2 and next2 == next3:
-                return True
-            else:
-                return False
+        if(minorfunctions.listElementsEqual([int(w1), int(w2), int(w3)], 4)):
+            return True
+
     return False
 
 
-def footerCheck(words, words2, words3, index):
+# returns true if w1, w2, w3 are all equal or all numbers within 4 of each other (for if they're page numbers)
+def footerCheck(words, words2, words3, index, offset=0):
     if(index < 1):
         index = 1
-    w1 = words[len(words)-index]["text"]
+    w1 = words[len(words)-index-offset]["text"]
     w2 = words2[len(words2)-index]["text"]
     w3 = words3[len(words3)-index]["text"]
+
     if w1 == w2 and w2 == w3:
         return True
+
     w1 = textprocessing.trimScript(w1)
     w2 = textprocessing.trimScript(w2)
     w3 = textprocessing.trimScript(w3)
@@ -136,23 +142,22 @@ def footerCheck(words, words2, words3, index):
         num = int(w1)
         num2 = int(w2)
         num3 = int(w3)
-        if(num2 == num + 2 and num3 == num2 + 2):
+        if(minorfunctions.listElementsEqual([int(w1), int(w2), int(w3)], 4)):
             return True
+
     return False
 
 
 def FindPageFooters(pdf, pdfSettings, hError):
     footers = []
     for i in range(len(pdf.pages)-4):
-        if(i == 28):
-            print("Breakpoint")
         words = PDFfunctions.getWords(pdf.pages[i], hError)
         words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
         words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
 
-        visible1 = words[len(words)-60:]
-        visible2 = words2[len(words2)-60:]
-        visible3 = words3[len(words3)-60:]
+        visible1 = words[len(words)-240:]
+        visible2 = words2[len(words2)-240:]
+        visible3 = words3[len(words3)-240:]
 
         foundFooter = False
         footers, foundFooter = addFooter(footers, words, i, words2, words3)
@@ -162,17 +167,55 @@ def FindPageFooters(pdf, pdfSettings, hError):
             words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
             footers, foundFooter = addFooter(footers, words, i, words2, words3)
 
+        if(not foundFooter and (i == 0 or i == 1)):
+            words2 = PDFfunctions.getWords(pdf.pages[0], hError)
+            words3 = PDFfunctions.getWords(pdf.pages[1], hError)
+            footers, foundFooter = addFooter(footers, words, i, words2, words3)
+
     if(len(pdf.pages) > 4):
         for i in range(len(pdf.pages)-4, len(pdf.pages)):
             words = PDFfunctions.getWords(pdf.pages[i], hError)
             words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
             words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
+
+            if(i-4 == 0 and len(pdf.pages) > i+2):
+                words3 = PDFfunctions.getWords(pdf.pages[i+2], hError)
+
+            visible1 = words[len(words)-240:]
+            visible2 = words2[len(words2)-240:]
+            visible3 = words3[len(words3)-240:]
+
             footers, foundFooter = addFooter(footers, words, i, words2, words3)
 
     return footers
 
 
+def checkForOffset(words, words2, words3, index):
+    for x in range(10):
+        for y in range(4):
+            w1 = words[len(words)-index-y-x]["text"]
+            w2 = words2[len(words2)-index-x]["text"]
+            w3 = words3[len(words3)-index-x]["text"]
+            if w1 == w2 and w2 == w3:
+                if(x > 0):
+                    x -= 1
+                return x, y
+            if w1.isdigit() and w2.isdigit() and w3.isdigit():
+                num = int(w1)
+                num2 = int(w2)
+                num3 = int(w3)
+                if(num2 == num + 2 and num3 == num2 + 2):
+                    if(x > 0):
+                        x -= 1
+                    return x, y
+    return 0, 0
+
+
 def addFooter(footers, words, i, words2, words3):
+    visible1 = words[len(words)-240:]
+    visible2 = words2[len(words2)-240:]
+    visible3 = words3[len(words3)-240:]
+
     index = 1
     first1 = words[len(words)-1]
     expect_num = False
@@ -183,9 +226,17 @@ def addFooter(footers, words, i, words2, words3):
     if footerCheck(words, words2, words3, index):
         foundFooter = True
         count = 0
-        for k in range(index+1, len(words)):
-            if footerCheck(words, words2, words3, k):
+        k = index
+        oldOffset = 0
+        while k < len(words):
+            k += 1
+            if footerCheck(words, words2, words3, k, oldOffset):
                 count += 1
+                continue
+            x, newOffset = checkForOffset(words, words2, words3, k)
+            if(newOffset != 0 and newOffset != oldOffset):
+                oldOffset = newOffset
+                k -= x
             elif(words[len(words)-k]["text"].isdigit() and words[len(words)-k]["text"] == str(i+1)):
                 expect_num = True
                 break

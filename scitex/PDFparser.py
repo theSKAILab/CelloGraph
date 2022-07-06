@@ -18,9 +18,9 @@ import time
 
 # mostly cuz I don't wanna look through 5000 lines when I'm looking at code.py
 
-# these are sorta misnomers but the higher these values are the lower the actual error value will be
+# higher number = more precise
 VERTICAL_ERROR = 5
-HORIZONTAL_ERROR = 10
+HORIZONTAL_ERROR = 30
 RATIO_MARGIN = 0.05
 
 # para-margin is the number of unusual spaces that have to happen before I'll believe that they're being used
@@ -68,7 +68,7 @@ def PDFSort(pdf, times=False):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 8):
+    if(page.page_number == 6):
         print("Breakpoint")
 
     pagechars = page.chars
