@@ -10,9 +10,9 @@ import os
 
 FOLDER = "scitex/evalPDF"
 
-for filename in os.listdir("scitex/evalPDF"):
+for filename in os.listdir(FOLDER):
     if filename.endswith('.pdf'):
-        plumber = pdfplumber.open(os.path.join("scitex/evalPDF", filename))
+        plumber = pdfplumber.open(os.path.join(FOLDER, filename))
 
         
         sec1 = time.time()
@@ -29,7 +29,7 @@ for filename in os.listdir("scitex/evalPDF"):
         plaintext = "Time to Read: " + \
             str(diff) + " sec, aka " + str(diff/60) + " min" + plaintext
 
-        file = open("7-13-" + filename + ".txt",
+        file = open("7-18-" + filename + ".txt",
                     'w+', encoding="utf-8")
         file.write(plaintext)
         file.close()

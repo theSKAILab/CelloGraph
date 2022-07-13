@@ -88,50 +88,50 @@ def CutWordsEnd(large, small):
 
 
 # removes any text that's between pdfplumber line objects.
-def removeTables(PDF, pdfSettings, page, words):
-    objs = page.objects
-    heck = words[len(words)-600:]
-    heck2 = words[len(words)-300:]
-
-    try:
-        objs["line"]
-    except:
-        return removeTablesRect(PDF, pdfSettings, page, words)
-
-    if(len(objs["line"]) < 1):
-        return PDF, words
-
-    highestLine = minorfunctions.toppest(objs["line"])
-    lowestLine = minorfunctions.bottomest(objs["line"])
-
-    retval = []
-    currentRow = []
-    currentCell = []
-    remove = []
-
-    for w in range(len(words)-1):
-        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
-            if(len(currentCell) != 0):
-                currentRow.append(currentCell)
-                currentCell = []
-        if(w > 0):
-            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
-                if(len(currentRow) != 0):
-                    retval.append(currentRow)
-                    currentRow = []
-        if withinBounds(words[w], highestLine, lowestLine, pdfSettings.interline):
-            currentCell.append(words[w])
-            remove.append(w)
-
-    if len(currentRow) != 0:
-        retval.append(currentRow)
-
-    PDF.tables.append([retval, page.page_number])
-
-    for i in range(len(remove)-1, -1, -1):
-        words.pop(remove[i])
-
-    return PDF, words
+#def removeTables(PDF, pdfSettings, page, words):
+#    objs = page.objects
+#    heck = words[len(words)-600:]
+#    heck2 = words[len(words)-300:]
+#
+#    try:
+#        objs["line"]
+#    except:
+#        return removeTablesRect(PDF, pdfSettings, page, words)
+#
+#    if(len(objs["line"]) < 1):
+#        return PDF, words
+#
+#    highestLine = minorfunctions.toppest(objs["line"])
+#    lowestLine = minorfunctions.bottomest(objs["line"])
+#
+#    retval = []
+#    currentRow = []
+#    currentCell = []
+#    remove = []
+#
+#    for w in range(len(words)-1):
+#        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
+#            if(len(currentCell) != 0):
+#                currentRow.append(currentCell)
+#                currentCell = []
+#        if(w > 0):
+#            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
+#                if(len(currentRow) != 0):
+#                    retval.append(currentRow)
+#                    currentRow = []
+#        if withinBounds(words[w], highestLine, lowestLine, pdfSettings.interline):
+#            currentCell.append(words[w])
+#            remove.append(w)
+#
+#    if len(currentRow) != 0:
+#        retval.append(currentRow)
+#
+#    PDF.tables.append([retval, page.page_number])
+#
+#    for i in range(len(remove)-1, -1, -1):
+#        words.pop(remove[i])
+#
+#    return PDF, words
 
 
 def withinBounds(word, high, low, error):
@@ -861,7 +861,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
         befRatio = height/befspace
     else:
         befRatio = .00001
-        
+
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
                   "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": cutoff})

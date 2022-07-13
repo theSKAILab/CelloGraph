@@ -74,7 +74,7 @@ def FiguretoPlain(figure):
 
 def TabletoPlain(Table):
 
-    retval = "NEW TABLE: " + str(Table[1])
+    retval = "NEW TABLE: Page " + str(Table[1])
 
     Table = Table[0]
     for row in range(len(Table)):

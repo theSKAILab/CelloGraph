@@ -1,7 +1,6 @@
 from typing import Reversible
 import copy
 import re
-import PDFparser
 import textprocessing
 import minorfunctions
 

@@ -84,9 +84,9 @@ def DealWithPage(PDF, page, pdfSettings):
         pagewords = PDFfunctions.removePageFootersEarly(
             pagewords, page.page_number, pdfSettings)
 
-    if(page.page_number != 1):
-        PDF, words = PDFfunctions.removeTables(
-            PDF, pdfSettings, page, pagewords)
+    #if(page.page_number != 1):
+    #    PDF, words = PDFfunctions.removeTables(
+    #        PDF, pdfSettings, page, pagewords)
 
     hate = pagewords[len(pagewords)-300:]
 
