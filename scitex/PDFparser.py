@@ -68,7 +68,7 @@ def PDFSort(pdf, times=False):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 6):
+    if(page.page_number == 13):
         print("Breakpoint")
 
     pagechars = page.chars
@@ -83,6 +83,10 @@ def DealWithPage(PDF, page, pdfSettings):
     if(len(pdfSettings.pageFooters) > 0):
         pagewords = PDFfunctions.removePageFootersEarly(
             pagewords, page.page_number, pdfSettings)
+
+    if(page.page_number != 1):
+        PDF, words = PDFfunctions.removeTables(
+            PDF, pdfSettings, page, pagewords)
 
     hate = pagewords[len(pagewords)-300:]
 
@@ -101,9 +105,6 @@ def DealWithPage(PDF, page, pdfSettings):
 def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
     pdfSettings.offset = 0
-
-    PDF, words = PDFfunctions.removeTables(
-        PDF, page, words, pdfSettings.interline)
 
     words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
@@ -125,7 +126,7 @@ def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
 def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum, colnum):
 
-    if(lineIndex == 4):
+    if(lineIndex == 24):
         print("Breakpoint")
 
     sec1 = time.time()

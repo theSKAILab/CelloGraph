@@ -33,6 +33,7 @@ def removePageHeadersEarly(words, num, pdfSettings):
     return words
 
 
+# same as removePageHeadersEarly() but for Footers
 def removePageFootersEarly(words, num, pdfSettings):
     words = textprocessing.removePageNumber(words, num)
     heck = words[300:]
@@ -57,9 +58,8 @@ def removePageFootersEarly(words, num, pdfSettings):
         words = words[:len(words)-1]
     return words
 
+
 # takes words off of large as long as they match the words in small.
-
-
 def CutWords(large, small):
     if(len(large) == 0 or len(small) == 0):
         return large
@@ -73,6 +73,7 @@ def CutWords(large, small):
     return large
 
 
+# same as CutWords() but we cut words off the end instead of the beginning.
 def CutWordsEnd(large, small):
     if(len(large) == 0 or len(small) == 0):
         return large
@@ -87,34 +88,98 @@ def CutWordsEnd(large, small):
 
 
 # removes any text that's between pdfplumber line objects.
-def removeTables(PDF, page, words, error):
+def removeTables(PDF, pdfSettings, page, words):
     objs = page.objects
+    heck = words[len(words)-600:]
+    heck2 = words[len(words)-300:]
 
     try:
         objs["line"]
     except:
+        return removeTablesRect(PDF, pdfSettings, page, words)
+
+    if(len(objs["line"]) < 1):
         return PDF, words
 
-    highestLine = minorfunctions.heighestLine(objs)
-    lowestLine = minorfunctions.lowestLine(objs)
+    highestLine = minorfunctions.toppest(objs["line"])
+    lowestLine = minorfunctions.bottomest(objs["line"])
 
     retval = []
     currentRow = []
+    currentCell = []
     remove = []
 
     for w in range(len(words)-1):
-        if(textprocessing.newline(words, w+1, error)):
-            if(len(currentRow) != 0):
-                retval.append(currentRow)
-                currentRow = []
-        if minorfunctions.isGreater(words[w]["top"], highestLine["top"], error) and minorfunctions.isLesser(words[w]["bottom"], lowestLine["bottom"], error):
-            currentRow.append(words[w])
+        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
+            if(len(currentCell) != 0):
+                currentRow.append(currentCell)
+                currentCell = []
+        if(w > 0):
+            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
+                if(len(currentRow) != 0):
+                    retval.append(currentRow)
+                    currentRow = []
+        if withinBounds(words[w], highestLine, lowestLine, pdfSettings.interline):
+            currentCell.append(words[w])
             remove.append(w)
 
     if len(currentRow) != 0:
         retval.append(currentRow)
 
-    PDF.tables.append(retval)
+    PDF.tables.append([retval, page.page_number])
+
+    for i in range(len(remove)-1, -1, -1):
+        words.pop(remove[i])
+
+    return PDF, words
+
+
+def withinBounds(word, high, low, error):
+    if minorfunctions.isGreater(word["top"], high["top"], error) and minorfunctions.isLesser(word["bottom"], low["bottom"], error):
+        if not minorfunctions.isLesser(word["x0"], high["x0"]) and not minorfunctions.isGreater(word["x1"], high["x1"]):
+            return True
+    return False
+
+
+def removeTablesRect(PDF, pdfSettings, page, words):
+    objs = page.objects
+    heck = words[len(words)-600:]
+    heck2 = words[len(words)-300:]
+
+    try:
+        objs["rect"]
+    except:
+        return PDF, words
+
+    if(len(objs["rect"]) < 1):
+        return PDF, words
+
+    highestRect = minorfunctions.toppest(objs["rect"])
+    lowestRect = minorfunctions.bottomest(objs["rect"])
+
+    retval = []
+    currentRow = []
+    currentCell = []
+    remove = []
+
+    for w in range(len(words)-1):
+        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
+            if(len(currentCell) != 0):
+                currentRow.append(currentCell)
+                currentCell = []
+        if(w > 0):
+            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
+                if(len(currentRow) != 0):
+                    retval.append(currentRow)
+                    currentRow = []
+        if minorfunctions.isGreater(words[w]["top"], highestRect["top"], pdfSettings.interline) and minorfunctions.isLesser(words[w]["bottom"], lowestRect["bottom"], pdfSettings.interline):
+            currentCell.append(words[w])
+            remove.append(w)
+
+    if len(currentRow) != 0:
+        retval.append(currentRow)
+
+    PDF.tables.append([retval, page.page_number])
 
     for i in range(len(remove)-1, -1, -1):
         words.pop(remove[i])
@@ -172,6 +237,7 @@ def getLines(words, pdfSettings, error):
     return words, lines, pdfSettings
 
 
+# look through the lines and find lines that got cutoff and then stitch them back together.
 def DealWithCutOffs(words, lines):
     i = -1
     while i < len(lines)-2:
@@ -259,7 +325,11 @@ def moveSection(tomove, destination):
         return destination
 
 
-# adds the section to PDF
+# adds the section header to PDF
+# header = the last header that got added.
+# title = title of current header
+# type = level of current header (1 = section, 2+ = subsection, etc)
+# h = height of current header
 def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, colnum=0, recursionlevel=0):
 
     coords = copy.copy(pdfSettings.coords)
@@ -307,6 +377,7 @@ def addSection(header, title, type, PDF, pdfSettings, h=3, pagenum=1, colnum=0, 
 
 # Intent is to remove running headers at the top of the page that get marked as headers
 # This is achieved by removing sections with duplicate headers.
+# This function has been deprecated.
 def removeDuplicateHeaders(PDF):
     single = []
     remove = []
@@ -342,6 +413,8 @@ def removeDuplicateHeaders(PDF):
 
 
 # removes duplicate sentences.
+# Intent is to remove page headers that appear as sentences.
+# This has been deprecated.
 def removePageHeaderSentences(PDF):
     single = []
     remove = []
@@ -419,11 +492,10 @@ def recursiveRemovePara(section, coords, paraNum):
     else:
         return section
 
+
 # removes any headers that are actually just figure or table descriptions.
 # figures and graphics get added to PDF.figures
 # tables get added to PDF.tables
-
-
 def removeFigureHeaders(PDF):
     if(len(PDF.sections) <= 1):
         return PDF
@@ -451,6 +523,7 @@ def removeFigureHeaders(PDF):
 
 
 # In the event that a figure header goes onto multiple lines, this will remove all of them.
+# I believe this has been deprecated.
 def DealWithMultiLineFigureHeader(section):
 
     if(len(section.para) == 0 or len(section.para[0].sentences) == 0):
@@ -465,9 +538,9 @@ def DealWithMultiLineFigureHeader(section):
 
     return section
 
+
 # removes figure descriptions that are subsection headers or are in text
-
-
+# This was almost certainly deprecated.
 def recursiveRemoveFigureHeaders(PDF, section):
     i = -1
     while i < len(section.para)-1:
@@ -541,9 +614,8 @@ def cleanSection(section):
 # page is pdf.pages[i] via pdfplumber
 # hError is an integer
 # spaceChar is for if words are delineated by space characters instead of just physical space
-
 def getWords(page, hError, spaceChar=False, vError=3):
-    chars = page.chars
+    chars = HandleWacky(page.chars)
     pagenum = str(page.page_number)
     retval = []
     visuals = retval[len(retval)-290:]
@@ -554,13 +626,13 @@ def getWords(page, hError, spaceChar=False, vError=3):
     if(spaceChar):
         hError = 60
 
-    space = minorfunctions.mostCommon(minorfunctions.reverseArr(
-        chars, "width")) * decimal.Decimal((hError)/100)
+    space = minorfunctions.mostCommon(minorfunctions.reverseArr(chars, "width")) * ((hError)/100)
 
     i = -1
     unusual = ""
     prevdiff = -1
     while i < len(chars)-2:
+
         visuals = retval[len(retval)-290:]
         i += 1
 
@@ -612,10 +684,63 @@ def getWords(page, hError, spaceChar=False, vError=3):
     return retval
 
 
+def HandleWacky(chars, prev=None):
+    if(not prev):
+        prev = chars[0]
+    c = -1
+    while c < (len(chars)-2):
+        c += 1
+        vis = chars[c-10:c+10]
+        if(chars[c]["text"] == "\ue103"):
+            chars[c]["text"] = "fi"
+            chars[c]["top"] = prev["top"]
+            chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c]["text"] == "ﬀ"):
+            chars[c]["text"] = "ff"
+            chars[c]["top"] = prev["top"]
+            chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c+1]["text"] == "¨" and c+1<len(chars)-1):
+            if(chars[c]["text"] == "a"):
+                chars[c]["text"] = "ä"
+                chars[c+1]["top"] = chars[c]["top"]
+                chars[c+1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c+1)
+            elif(chars[c]["text"] == "e"):
+                chars[c]["text"] = "ë"
+                chars[c+1]["top"] = chars[c]["top"]
+                chars[c+1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c+1)
+            elif(chars[c]["text"] == "i"):
+                chars[c]["text"] = "ï"
+                chars[c+1]["top"] = chars[c]["top"]
+                chars[c+1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c+1)
+            elif(chars[c]["text"] == "o"):
+                chars[c]["text"] = "ö"
+                chars[c+1]["top"] = chars[c]["top"]
+                chars[c+1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c+1)
+            elif(chars[c]["text"] == "u"):
+                chars[c]["text"] = "ü"
+                chars[c+1]["top"] = chars[c]["top"]
+                chars[c+1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c+1)
+        if(chars[c-1]["text"] == "€" ):
+            if(chars[c]["text"] == "o"):
+                chars[c-1]["text"] = "ö"
+                chars[c-1]["top"] = chars[c]["top"]
+                chars[c-1]["bottom"] = chars[c]["bottom"]
+                chars.pop(c)       
+       
+    return chars
+
+
 # takes characters and turns them into a word object that pdfplumber would use.
 def makeWord(words, chars, pagenum, unusual=""):
     if(len(chars) == 0):
         return None
+
+    chars = HandleWacky(chars)
 
     if(unusual == "Superscript"):
         text = "^{"
@@ -667,7 +792,11 @@ def makeWord(words, chars, pagenum, unusual=""):
     return retval
 
 
+# takes a list of words and adds a line very carefully, including lots of numbers based on other lines.
 def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
+    if(w == 45):
+        print("Breakpoint")
+
     if(len(words) == 0):
         return lines, prevLineBegin, currentLineBegin, nextLineBegin
 
@@ -723,8 +852,16 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     height = float(minorfunctions.bottomest(currentline)
                    ["bottom"] - minorfunctions.toppest(currentline)["top"])
 
-    aftRatio = height/aftspace
-    befRatio = height/befspace
+    if(aftspace != 0):
+        aftRatio = height/aftspace
+    else:
+        aftRatio = .00001
+
+    if(befspace != 0):
+        befRatio = height/befspace
+    else:
+        befRatio = .00001
+        
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
                   "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": cutoff})
@@ -736,6 +873,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     return lines, prevLineBegin, currentLineBegin, nextLineBegin
 
 
+# sees whether a line is being cutoff by a hyphen.
 def detectCutoff(words, nextLineBegin):
     cutoff = False
     charDex = 1
@@ -748,10 +886,9 @@ def detectCutoff(words, nextLineBegin):
         cutoff = True
     return cutoff
 
+
 # figures out a bunch of information about the section and then adds it
 # info includes type, parent, coords, etc
-
-
 def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum, colnum):
 
     pdfSettings.addto = False
@@ -778,6 +915,7 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum, colnu
     return PDF, pdfSettings, lines
 
 
+# deprecated
 def addBlock(pdfSettings, words, w):
     pdfSettings.addto = False
     pdfSettings, sentlist = textprocessing.MakeSentences(
@@ -852,11 +990,10 @@ def addPara(pdfSettings, sentlist, words, w, pagenum, colnum):
 
     return pdfSettings
 
+
 # takes the words between pdfSettings.bookmark and w and turns them into a paragraph
 # adds the paragraph to pdfSettings.activesection (or combines it with last paragraph if addto is True)
 # returns updated pdfSettings.
-
-
 def extensiveAddPara(pdfSettings, words, w, pagenum, colnum):
     if(w < 0):
         return pdfSettings
@@ -885,6 +1022,7 @@ def extensiveAddPara(pdfSettings, words, w, pagenum, colnum):
     return pdfSettings
 
 
+# Figures out whether lines[lineIndex] is a new figure or part of an existing one, then adds it accordingly.
 def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum, colnum):
     # if it follows the "new figure" format, then add a new one, otherwise, add to the last one.
     line = lines[lineIndex]
@@ -940,6 +1078,7 @@ def updateIndices(lines, lineIndex):
 
 # detects whether chars[i] is superscript or subscript.
 def findScript(chars, i, bookmark, error, width, prevdiff):
+
     if(i == 0 or bookmark < 0):
         return "", -1
     char = chars[i]
@@ -982,6 +1121,7 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
     return "", -1
 
 
+# figures out whether word is script, if it is, adds it to another word, otherwise it adds it to the list of words.
 def addWord(word, words, unusual, bookmark, i, error=0):
     if(word):
         if(len(words) == 0):
@@ -1005,6 +1145,7 @@ def addWord(word, words, unusual, bookmark, i, error=0):
     return words, bookmark
 
 
+# adds subscript onto the previous word.
 def combineWords(base, new):
     base["text"] += new["text"]
     base["chars"] += new["chars"]

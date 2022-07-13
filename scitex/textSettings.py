@@ -75,7 +75,7 @@ class lineSettings:
             self.aftspace = spaceSize.NORMAL_SPACE
 
     def calcAdvSet(self, i, lines, pdfSettings, error):
-        if(i == 7):
+        if(i == 21):
             print("Breakpoint")
 
         if(self.InMultiTest(i, lines, pdfSettings, error)):
@@ -105,6 +105,8 @@ class lineSettings:
         if(minorfunctions.isEndofCol(i+1, lines) or minorfunctions.isEndofCol(i+2, lines) or pdfSettings.addto):
             return False
         if(minorfunctions.areEqual(lines[i+1]["AftSpace"], pdfSettings.linespace, error)):
+            return False
+        if(minorfunctions.areEqual(lines[i+2]["AftSpace"], pdfSettings.linespace, error)):
             return False
         # if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
         #    return False

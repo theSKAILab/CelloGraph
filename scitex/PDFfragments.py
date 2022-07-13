@@ -262,27 +262,29 @@ class figure:
         self.words += words
         self.configure(len(self.words)-prevsize)
 
-# sections: an array of the sections within this document
 
-
+# PDFdocument is the big class where one instance of it will have access to all the text.
 class PDFdocument:
     def __init__(self):
         self.sections = []
         self.figures = []
         self.tables = []
 
+    # just returns the last section, unless there aren't any.
     def lastSect(self):
         if(len(self.sections) != 0):
             return self.sections[len(self.sections)-1]
         else:
             return section("")
 
+    # same as lastSect but for figures.
     def lastFig(self):
         if(len(self.figures) != 0):
             return self.figures[len(self.figures)-1]
         else:
             return figure("", -1, 0)
 
+    # had to make my own equality function smh
     def __eq__(self, other):
         if(len(self.sections) != len(other.sections)):
             return False
@@ -385,8 +387,7 @@ class PDFdocument:
         return retval
 
 
-# class word
-
+# I don't think I use this anywhere; I just make words be dicts.
 class word():
     def __init__(self, text="", coords=[]):
         self.text = text

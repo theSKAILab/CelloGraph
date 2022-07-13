@@ -60,7 +60,7 @@ def PDFtoPlain(PDF, times=[]):
 
     for tab in range(len(PDF.tables)):
         retval += "\n\n\n"
-        #retval += TabletoPlain(PDF.tables[tab])
+        retval += TabletoPlain(PDF.tables[tab])
 
     return retval
 
@@ -73,11 +73,16 @@ def FiguretoPlain(figure):
 
 
 def TabletoPlain(Table):
-    retval = ""
-    for line in range(len(figure)):
-        retval += "\n"
-        for word in range(len(figure[line]["Text"])):
-            retval += figure[line]["Text"][word]["text"]
-            retval += " "
+
+    retval = "NEW TABLE: " + str(Table[1])
+
+    Table = Table[0]
+    for row in range(len(Table)):
+        retval += "\n--------------------------\n"
+        for cell in range(len(Table[row])):
+            retval += "|"
+            for word in range(len(Table[row][cell])):
+                retval += Table[row][cell][word]["text"]
+                retval += " "
 
     return retval

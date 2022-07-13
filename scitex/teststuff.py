@@ -4,6 +4,7 @@ import PDFparser
 import PDFfragments
 import PDFsettings
 import PDFfunctions
+import plaintextwriter
 
 
 table_settings = {
@@ -11,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/Shi et al.pdf"
+FILEPATH = "scitex/pdfs/Heinze.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -25,7 +26,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[4]
+page = plumber.pages[12]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 
 
@@ -36,6 +37,9 @@ words = PDFfunctions.removePageHeadersEarly(
 
 visible = words[300:]
 hate = words[600:]
+
+PDF, words = PDFfunctions.removeTables(
+    PDF, pdfSettings, page, words)
 
 words, lines, pdfSettings = PDFfunctions.getLines(
     words, pdfSettings, pdfSettings.intraline)
@@ -51,3 +55,11 @@ while i < len(lines)-1:
     i += 1
     PDF, pdfSettings, lines, i = PDFparser.DealWithLine(
         PDF, words, lines, i, pdfSettings, page.page_number, 0)
+
+
+plaintext = plaintextwriter.PDFtoPlain(PDF)
+
+file = open("TableTestOutput.txt",
+            'w+', encoding="utf-8")
+file.write(plaintext)
+file.close()

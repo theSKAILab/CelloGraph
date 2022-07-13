@@ -142,9 +142,11 @@ def checkForCutOffs(sentences):
     return sentences
 
 
-# this is a function to facilitate very complicated if statements.
+# this is a function to facilitate a very complicated if statement.
 def DetermineParagraph(lines, lineIndex, pdfSettings, error):
-    if(lines[lineIndex]["LineStartDex"] == pdfSettings.bookmark):
+    w = lines[lineIndex]["LineStartDex"]
+    words = lines[lineIndex]["Text"]
+    if(w == pdfSettings.bookmark):
         return False
     if(not pdfSettings.useSpace):
         if(lineIndex < len(lines)-1):
@@ -176,13 +178,48 @@ def newline(words, w, error=0):
         words[w]["top"], words[w-1]["top"], height/2)
     bottomLesser = not minorfunctions.isGreater(
         words[w]["bottom"], words[w-1]["bottom"], height/2)
-    if(topGreater and bottomLesser):
+    newCol = minorfunctions.isLesser(
+        words[w]["top"]-words[w-1]["top"], 0, height/4)
+    if(topGreater and bottomLesser and not newCol):
         return False
     return True
 
 
+def newCell(words, w, vError, hError):
+    prevtop = words[w-1]["top"]
+    top = words[w]["top"]
+    prevX = words[w-1]["x1"]
+    X = words[w]["x0"]
+    height = words[w]["bottom"] - words[w]["top"]
+    width = float(words[w]["x1"] - words[w]["x0"])
+
+    # if new col
+    if(minorfunctions.isGreater(X, prevX, width+hError)):
+        return True
+
+    if(minorfunctions.isGreater(top, prevtop, float(height)*2.1) and minorfunctions.isLesser(X, prevX)):
+        return True
+
+    return False
+
+
+def newRow(words, w, vError, hError):
+    prevtop = words[w-1]["top"]
+    top = words[w]["top"]
+    prevX = words[w-1]["x1"]
+    X = words[w]["x0"]
+    height = words[w]["bottom"] - words[w]["top"]
+    width = float(words[w]["x1"] - words[w]["x0"])
+
+    # if new row
+    if(minorfunctions.isGreater(top, prevtop, float(height)*2.1) and minorfunctions.isLesser(X, prevX)):
+        return True
+    return False
+
 # if the page number is either the first word, or
 # is tacked onto the beginning of the first word, remove it.
+
+
 def removePageNumber(words, num):
     original = words
     words = removePageNumberWord(words, num)

@@ -4,6 +4,26 @@ import PDFfragments
 import PDFfunctions
 import textprocessing
 
+# PDF Settings is a really big class that I use to hold onto a zillion different values while reading the PDF.
+
+# paraAlign is the x-coordinate of a line of body text, so that any line that deviates from that can be suspected of being a new paragraph.
+# paraSpace is used in the event that a PDF denotes paragraphs by vertical spacing instead of horizontal alignment.
+
+# linespace, lineratio, and lineheight all describe features of normal body text lines.
+# space is how much space is between lines.
+# height is height of the line.
+# ratio is the ratio between space and height.
+
+# interline and intraline are vertical error values.
+# horizontal is a horizontal error value.
+
+# pageHeaders and pageFooters are arrays
+# addto is whether the next paragraph needs to be stitched onto the previous one.
+# addtoNext is whether the paragraph after next needs to be stitched onto the next one.
+
+# consistentRatio is the lineratio between lines in a multiline header.
+# offset is a measure of how many words have been removed from an array of words due to being figure text.
+
 
 class PDFsettings():
     def __init__(self, pdf, vError, hError, PARAS_REQUIRED):
@@ -38,6 +58,7 @@ class PDFsettings():
         self.activesection = PDFfragments.section("")
 
 
+# expect_num is whether the text right after the header is a page number.
 class Header():
     def __init__(self, text, expect_num=False):
         self.text = text
@@ -86,12 +107,13 @@ def addHeader(headers, words, i, words2, words3):
         for k in range(index, len(words)):
             if headerCheck(words, words2, words3, k):
                 count += 1
-            elif(words[k]["text"].isdigit() and words[k]["text"] == i+1):
-                expect_num = True
-                break
-            elif(words[k]["text"][0:len(str(i+1))] == str(i+1)):
-                expect_num = True
-                break
+            # Deprecated because headerCheck now accounts for page numbers.
+            # elif(words[k]["text"].isdigit() and words[k]["text"] == i+1):
+            #    expect_num = True
+            #    break
+            # elif(words[k]["text"][0:len(str(i+1))] == str(i+1)):
+            #    expect_num = True
+            #    break
             else:
                 break
         headers = minorfunctions.appendNoRepeats(
@@ -280,10 +302,11 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
         for j in range(1, len(words)):
             if(textprocessing.newline(words, j, vError/10)):
                 diff = words[j]["top"] - words[bookmark]["bottom"]
-                height = words[j]["bottom"] - words[j]["top"]
-                lines.append({"AftSpace": float(diff), "LineEndDex": bookmark, "LineStartDex": j,
-                             "Align": words[j]["x0"], "Height": height, "Ratio": float(height/diff), "Text": words[bookmark:j]})
-                bookmark = j
+                if(diff > 0):
+                    height = words[j]["bottom"] - words[j]["top"]
+                    lines.append({"AftSpace": float(diff), "LineEndDex": bookmark, "LineStartDex": j,
+                                 "Align": words[j]["x0"], "Height": height, "Ratio": float(height/diff), "Text": words[bookmark:j]})
+                    bookmark = j
             else:
                 spaces.append(words[j]["x0"]-words[j-1]["x1"])
 
