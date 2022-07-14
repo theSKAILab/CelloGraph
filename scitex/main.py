@@ -8,7 +8,7 @@ import os
 
 # tell it to run for every pdf in a folder instead of an individual document
 
-FOLDER = "scitex/evalPDF"
+FOLDER = "scitex/pdfs"
 
 for filename in os.listdir(FOLDER):
     if filename.endswith('.pdf'):

@@ -1,0 +1,812 @@
+Time to Read: 567.0896224975586 sec, aka 9.451493708292643 min
+All Times:
+Page 1: 16.469711303710938
+Page 2: 13.489528894424438
+Page 3: 21.202778339385986
+Page 4: 6.126379728317261
+Page 5: 11.376090288162231
+Page 6: 35.59483551979065
+Page 7: 70.57263159751892
+Page 8: 15.391002416610718
+Page 9: 3.4161384105682373
+Page 10: 16.5693838596344
+Page 11: 12.722550630569458
+Page 12: 18.00711154937744
+Page 13: 5.495022535324097
+Page 14: 25.00217604637146
+Page 15: 13.910293817520142
+Page 16: 18.2757351398468
+Page 17: 8.031031131744385
+Page 18: 31.100425004959106
+Page 19: 15.932183980941772
+Page 20: 43.02946329116821
+Page 21: 3.264887571334839
+Page 22: 3.3969316482543945
+Page 23: 2.999296188354492
+
+
+Median Time per page = 15.391002416610718
+Avg Time per page = 17.88589516929958
+
+NEW SECTION: Adhesion and Surface Issues in Cellulose and Nanocellulose Douglas J. Gardner^{a,∗} , Gloria S. Oporto^{a} , Ryan Mills^{a} and  (Level: 1)
+
+
+NEW SECTION: My Ahmed Said Azizi Samir^{b}  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)a_{University}  of Maine, Forest Bioproducts Research Initiative and Advanced Engineered Wood 
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Composite (AEWC) Center, University of Maine, Orono, ME 04469, USA b_{Nanocomposites} and Bioconcepts SARL, N170 Tanalt Alhouda, Agadir — Morocco 
+
+NEW SECTION: Abstract This paper provides a review of the scientiﬁc literature concerned with adhesion and surface properties of cellulose and nanocellulose. Cellulose is the most abundant chemical compound on earth and its natural afﬁnity for self-adhesion has long been recognized. The ease of adhesion that occurs in cellulose has contributed to its use in paper and other ﬁber-based composite materials. Cellulose adhesion, which has received considerable attention over the past half century, occurs over a practical length scale ranging from the nanoscale to millimeters. Adhesion theories that have been examined in the bonding of cellulose ﬁbers include: mechanical interlocking, adsorption or wetting theory, diffusion theory, and the theory of weak boundary layers. Cellulose ﬁbers on the nanoscale are prepared in four different ways: (1) bacterial cellulose nanoﬁbers, (2) cellulose nanoﬁbers by electrospinning, (3) microﬁbrillated cellulose plant cell ﬁbers and (4) nanorods or cellulose whiskers. Structure and properties of nanocellulose that are important include: morphology, crystalline structure, surface properties, chemical and physical properties, and properties in liquid suspension. Cellulosic nanoﬁbers present a very high surface area which makes the adhesion properties the most important parameter to control for nanocomposite applications. In this paper, we will focus on discussion of the adhesion and surface characteristics of cellulose nanoﬁbers that impact its properties and application in nanomaterials.  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)_{Koninklijke} Brill NV, Leiden, 2008 
+
+NEW SECTION: Keywords Nanotechnology, cellulose, nanocellulose, whiskers, adhesion, bacterial cellulose  (Level: 1)
+
+
+NEW SECTION: 1. Introduction  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 1, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Nanotechnology is the understanding and control of matter at dimensions of roughly 1–100 nm, where unique phenomena enable novel applications. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Encompassing nanoscale science, engineering and technology, nanotechnology involves imaging, measuring, modeling, and manipulating matter at this length scale. 
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 1, col 1)Nanotechnology research and development (R&D) in the US has been high priority 
+
+NEW SECTION: ^{*}To whom correspondence should be addressed. Tel.: (1-207) 581-2846. Fax: (1-207) 581-2074; e-mail:  (Level: 1)
+
+
+NEW SECTION: douglas.gardner@umit.maine.edu  (Level: 1)
+
+
+NEW PARA: (Start: pg 1, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 1, col 1; End: pg 2, col 1)_{Koninklijke} Brill NV, Leiden, 2008 DOI:10.1163/156856108X295509  research across all segments of science and engineering since the enactment of the National Nanotechnology Initiative (NNI) in 2001. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Nanomaterials derived from renewable biomaterials, especially cellulose and lignocellulose, will undoubtedly play a large role in the nanotechnology research effort. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)To exploit their potential, R&D investments must be made in the science and engineering that will fully determine the properties and characteristics of cellulose and lignocellulose at the nanoscale, develop the technologies to manipulate self-assembly and multifunctionallity, and develop these new technologies to the point where industry can produce  advanced and cost-competitive cellulose and lignocellulose-based products [1]. 
+
+NEW PARA: (Start: pg 2, col 1; End: pg 2, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The behavior of cellulose surfaces in different media as well as their interaction with different chemicals is of great importance in their current and future applications (papermaking, composites and nanocomposites). 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The mechanical performance of composites, for instance, is dependent on the degree of dispersion of the ﬁbers in the matrix polymer and the nature and intensity of ﬁber–polymer adhesion interactions. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)To explain cellulose adhesion phenomena, it is important to review the mechanisms of adhesion. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Several theories have been proposed to provide an explanation for adhesion phenomena; however, there is no single theory that explains adhesion in a general, comprehensive way. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The bonding phenomenon is the sum of a number of mechanical, physical and chemical forces that overlap and inﬂuence each other. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Based on this, it is not possible to separate these forces, and adhesion has been characterized as related to mechanical interlocking caused by the mechanical anchoring of the adhesive in the pores and the uneven parts of the surface; electrostatic forces, as they relate to the difference in electonegativities of adhering materials; diffusion which is related to the interpenetration of molecular chains at the interface where the adhesive and surface being bonded interact; weak boundary layers referring to the accumulation of air bubbles or lowmolecular-weight compounds from the adhesive, the adherends or the surroundings at the interface; and adsorption and wetting which are related to highly localized intermolecular forces. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Wetting may be attributed to acid–base interactions, weak hydrogen bonding or van der Waals forces (dipole–dipole and dispersion forces). 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The extent of wetting depends on the differences in surface free energies of the solid, liquid and subsequent interface. 
+
+NEW SECTION: 2. Cellulose Structure and Properties  (Level: 1)
+
+
+NEW PARA: (Start: pg 2, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose is a homopolymer composed of β-D-glucopyranose units which are linked together by (1^{→} 4)-glycosidic bonds [2]. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)The length of a native cellulose molecule is at least 5000 nm corresponding to a chain with about 10 000 glucopyranose units. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)Cellulose molecules are linear and are aggregated through van der Waals forces and both intra- and intermolecular hydrogen bonds. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 2, col 1)In a woody plant cell, the linear cellulose chains referred to as microﬁbrils are approximately 3.5^{×} 10 nm in cross-sectional dimension and of indeterminate length. 
+	NEW SENTENCE: (Start: pg 2, col 1; End: pg 3, col 1)The microﬁbrils have  both crystalline and amorphous regions. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Both linear cellulose molecules and the supermolecular microﬁbrils have a dominant inﬂuence on the behavior of wood as a material. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)A number of structures for the microﬁbril have been proposed. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)These models differ primarily in the description of the amorphous or less ordered regions. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)All the models can be reduced to one of three basic structures [3, 4]. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)1.  “Longitudinally arranged molecules change from one ordered region to the subsequent one, the transition areas being less ordered regions (fringed micelle system)”. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)2.  “The ﬁbrilllar units are individual cords consisting of longitudinally arranged molecules and sequences of ordered and disordered regions”. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)3.  “The ordered regions are packages of chains folded in a longitudinal direction, the areas containing the turns between adjacent chain packages being the less ordered regions”. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The molecular aggregations of cellulose in the wood cell wall contribute to its unique polymer properties. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)For improving the interaction or interfacial adhesion of cellulose with hydrophobic materials (solvents) it is possible to add a surfactant or to chemically modify its surface. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The cellulose reactivity or the lack of reactivity depends on its structure. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)To modify cellulose structure, the highly ordered hydrogen-bonded lattice must be disrupted by swelling or dissolution. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The reactive sites on cellulose, which may be derivatized, are the three-hydroxyl groups indicated as C-2, C-3 and C-6 (Fig. 1). 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)C-6 is a primary hydroxyl, which is the most reactive position for esteriﬁcation reactions while C-2 is the more acidic of the two  secondary hydroxyl groups and is the more reactive site for etheriﬁcation. 
+
+NEW PARA: (Start: pg 3, col 1; End: pg 3, col 1)
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Cellulose has a strong afﬁnity to itself and hydroxyl containing materials. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Based on the preponderance of hydroxyl functional groups, cellulose is very reactive with water. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)At common ambient environmental conditions, cellulose will have at least a monomolecular layer and up to several molecular layers of water associated with it [5]. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Cellulose is very stable in a variety of solvents and can only be dissolved by the application of strong acids or strong hydrogen bonding solvent systems, usually amine-based. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)The thermal properties of cellulose are such that the cellulose glass transition temperature is in the range of 200 to 230^{◦} C [6], which is close to its thermal decomposition temperature of 260^{◦} C.  Figure 1. 
+	NEW SENTENCE: (Start: pg 3, col 1; End: pg 3, col 1)Position of hydroxyl groups on cellulose backbone. 
+
+NEW PARA: (Start: pg 4, col 1; End: pg 4, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Cellulose ﬁbers on the nanoscale are prepared in four different ways: (1) bacterial cellulose nanoﬁbers, (2) cellulose nanoﬁbers by electrospinning, (3) microﬁbrillated cellulose plant cell ﬁbers and (4) nanorods or cellulose whiskers. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)Processing techniques have a signiﬁcant impact on the adhesion properties of the resulting cellulose nanoﬁbers in composite material applications. 
+
+NEW SECTION: 3. Cellulose Adhesion in Paper Adhesion in cellulose-based ﬁber materials, i.e. paper, has long been recognized going back 5000 years when Egyptians invented papyrus parchments [7]. The ease of adhesion that occurs between cellulose ﬁbers has contributed to a globally important industry that is among the largest in the world. Cellulose ﬁber bonding in paper and related products occurs over a practical length scale ranging from the nanoscale to millimeters, and this topic has received considerable attention over the past 50 years [8]. The adhesion theories that have been examined in the bonding of cellulose ﬁbers in paper include: mechanical interlocking, adsorption or wetting theory, diffusion theory, and the theory of weak boundary layers. Most paper ﬁbers manufactured from wood pulp range in length from 1 to 7 mm depending on the species [7]. The bonding of cellulose ﬁbers in paper relies primarily on hydrogen bonding between the ﬁbers that occurs as the wetted ﬁbers dry in contact with each other, and the bond strength can vary greatly depending on the method(s) used to prepare the ﬁbers including the pulping, bleaching and/or reﬁning process. Hydrogen bonding between ﬁbers requires close proximity between adjacent hydroxyl groups (0.25–0.35 nm). The partial solubility of cellulose in water and the diffusion theory of adhesion have also been reported since reﬁned ﬁbers have a ﬁbrillar structure on the near-molecular-size scale that contributes to adhesion [8]. Mechanical interlocking has not been shown to be important in the bonding of cellulose ﬁbers in paper except for paper in the bone-dry condition [8]. The adsorption of hydrophobic materials on cellulose ﬁbers during papermaking greatly decreases ﬁber-to-ﬁber bonding and is related to the weak boundary layer theory of adhesion [9].  (Level: 1)
+
+
+NEW SECTION: 4. Cellulose Adhesion in Films The preparation and use of smooth cellulose surfaces has facilitated experimental adhesion studies [10–13] on cellulose. Many researchers have prepared model surfaces of cellulose using spin coating [11, 12, 14], and spin casting [15] processes. Riegler and Sczech [11] prepared molecularly thin, smooth cellulose ﬁlms on wafer surfaces by spin coating a solution of cellulose dissolved in DMAc/LiCl. The cellulose layers were used to investigate cellulose/cellulose adhesion and their modiﬁcation by polyelectrolytes. Falt et al. [12] prepared ﬁlms of cellulose II through  (Level: 1)
+
+
+NEW PARA: (Start: pg 4, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 4, col 1)the dissolution of pulp in N-methylmorpholine-N-Oxide (NMMO) and diluted it to a speciﬁc concentration with dimethylsulfoxide and spin-coated the solution onto an oxidized silicon wafer. 
+	NEW SENTENCE: (Start: pg 4, col 1; End: pg 5, col 1)They showed that the ﬁnal thickness of the cellulose  ﬁlms is dependent on the cellulose concentration of the solution; the temperature of the solution has no effect on the ﬁlm thickness but affects the surface roughness. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Gray and Edgar [13] prepared smooth cellulose I surfaces from suspensions of cellulose nanocrystals obtained from acid hydrolysis of cotton and wood pulp. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)Eriksson et al. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)[10] prepared three different cellulose surfaces, one crystalline and two surfaces with a lower degree of crystallinity. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)They studied the adhesion between two cross-linked poly(dimethylsiloxane) (PDMS) surfaces, as well as the adhesion between PDMS and the cellulose surfaces prepared. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)They determined that the work of adhesion was similar for all three cellulose surfaces, and from contact angle measurements with methylene iodide, it was concluded that dispersion interactions dominated the surface. 
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)They also found differences in the adhesion properties between the different degree of crystalline order probably because of the surface groups’ ability to orient themselves and participate in speciﬁc or nonspeciﬁc interactions; a surface with a lower degree of crystalline order has a higher  possibility for reorientation of the surface groups. 
+
+NEW PARA: (Start: pg 5, col 1; End: pg 5, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 5, col 1)The different studies performed mainly on cellulose models have been focused on the electrostatic and adsorption or wetting mechanisms of cellulose adhesion. 
+
+NEW SECTION: Atomic force microscopy (AFM) has been used to evaluate adhesion properties of cellulose surfaces. Borkovek et al. [16] studied the interaction of cellulose layers with negatively charged colloidal silica particles. They found repulsive forces between the silica particles and the cellulose surfaces, which were interpreted quantitatively in terms of electrostatic interactions because of overlap of diffuse layers originating from negatively charged carboxylic groups on the cellulose surface. The authors concluded that nonelectrostatic forces, probably originating from hydrogen bonding, dominate the adsorption of cellulose onto probe surfaces. The electrostatic contribution to desorption forces could be detected only at a high pH, where the silica surface is highly charged. Zhang and Young [17] determined the adhesion properties of acetone extracted cellulose ﬁlms, which are rich in –OH groups. Both standard silicon nitride tips as well as self-assembled monolayer modiﬁed goldcoated tips containing a variety of speciﬁc functional groups were used to make the surface analyses. The authors determined that the adhesion force detected with –COOH terminated tips (approx. 34.8 nN) was much larger than that with –CH_{3} terminated tips (16.7 nN), which was attributed to the hydrogen bonding between –COOH and –OH functional groups. The adhesion force of –NH_{2} terminated AFM tips on acetone extracted cellulose ﬁlm was 42.9 nN, the strongest adhesion behavior, because of acid–base interaction was observed after introducing NH_{2} groups on the surface ﬁlms (using hydrazine plasma treatment) and using AFM tips terminated with –COOH. Conversely, the adhesion forces were reduced to 17.4 and 19.4 nN after their treatment with argon and oxygen based plasmas, respectively, probably as a result of greatly enhanced surface roughness of the ﬁlms. Nigmatullin et al.  (Level: 2)
+
+
+NEW PARA: (Start: pg 5, col 1; End: pg 6, col 1)
+	NEW SENTENCE: (Start: pg 5, col 1; End: pg 6, col 1)[18] determined that the interaction between pure cellulose surfaces in an aqueous  electrolyte solution was dominated by double layer repulsive forces, with the range and magnitude of net force depending on electrolyte concentration. 
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 1)The interaction was attributed to the negative charge of the cellulose surface. 
+
+NEW SECTION: Surface energy or surface wettability as an indication of the adhesion properties of cellulose has been widely studied using techniques that include thin-layer wicking [19], liquid absorption into cellulose pulp sheets [20], powder contact angle analysis [21], contact angle analysis of cellulose ﬁlms [22, 23], the Whilhelmy technique [24], inverse gas chromatography [25–27] and atomic force microscopy [16, 17, 28]. For surface energy determinations, the results are mainly interpreted in terms of  (Level: 2)
+
+
+NEW PARA: (Start: pg 6, col 1; End: pg 6, col 3)
+	NEW SENTENCE: (Start: pg 6, col 1; End: pg 6, col 3)Lifshitz–van der Waals (γ^{LW}_{s}^{)} and electron-donor (base, γ^{−} s^{),}  and electron-acceptor (acid, γ^{+} s^{)}  components of the surface energy. 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)Table 1(a)–(c) show the surface energy components of cellulose presented by different authors. 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)Table 1(a)–(c) indicate that in some cases cellulose surfaces have a lower acid–base component compared to the dispersion component; conversely in other cases cellulose surfaces have a higher acid–base component. 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)The variation in the values obtained could be explained principally because of the speciﬁc raw material used (preparation), the surface morphology, the techniques used for the measurements, and in some cases to the relationship of the models used for the calculations of the surface energy. 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)Mota et al. 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)[19] determined the surface energy components of three  Table 1(a). 
+	NEW SENTENCE: (Start: pg 6, col 3; End: pg 6, col 3)Cellulose surface energy components (in mJ/m^{2} )  Raw material γ^{LW}_{s}^{γ}^{+} s^{γ}^{−} s^{γ}^{AB}_{s} 
+
+NEW SECTION: *_{γ} total Polarity Reference  (Level: 3)
+
+
+NEW PARA: (Start: pg 6, col 4; End: pg 6, col 4)
+	NEW SENTENCE: (Start: pg 6, col 4; End: pg 6, col 4)(γ^{LW}_{s}^{+}_{γ}^{AB}_{s}^{)} (γ^{AB}_{s}^{/γ} total) (%)  Cellulose ﬁlm 40 2 44 18.8 58.8 32 Forsstrom  et al.  [22] 
+
+NEW PARA: (Start: pg 6, col 4; End: pg 6, col 4)
+	NEW SENTENCE: (Start: pg 6, col 4; End: pg 6, col 4)Hydrophobic 29 0.08 4 0.57 29.6 1.9 Forsstrom  cellulose et al.  [22] 
+
+NEW PARA: (Start: pg 6, col 4; End: pg 6, col 4)
+	NEW SENTENCE: (Start: pg 6, col 4; End: pg 6, col 4)Cellulose pulps 35 1.2 15 8.5 43.5 20 Pezron et al.  [20] 
+
+NEW SECTION: Cellulose ether ﬁlms Hydroxypropyl 35.8 0.15 27.2 4.0 39.9 10 methylcellulose Methylcellulose 36.3 0.04 36.7 2.4 38.7 6.3 Luner and Oh [15] Hydroxypropyl 40.2 0.11 17.2 2.8 45.0 6.4 cellulose Hydroxyethyl 44.8 0.16 40.1 5.1 49.9 10.2 cellulose  (Level: 4)
+
+
+NEW PARA: (Start: pg 6, col 4; End: pg 6, col 5)
+	NEW SENTENCE: (Start: pg 6, col 4; End: pg 6, col 5)*_{γ} AB_{s}^{=}_{2} ·_{(γ}^{+} s^{γ}^{−} s^{)}^{(1/2)}  (Luner and Toussaint [105]). 
+
+NEW PARA: (Start: pg 7, col 1; End: pg 7, col 1)
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Table 1(b). 
+	NEW SENTENCE: (Start: pg 7, col 1; End: pg 7, col 1)Cellulose surface energy components (in mJ/m^{2} )  Raw material γ^{LW}_{s}^{γ}^{+} s^{γ}^{−} s^{γ}^{AB}_{s} 
+
+NEW SECTION: *_{γ} total Polarity Reference  (Level: 5)
+
+
+NEW PARA: (Start: pg 7, col 2; End: pg 7, col 2)
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)(γ^{LW}_{s}^{+}_{γ}^{AB}_{s}^{)} (γ^{AB}_{s}^{/γ} total) (%)  Microcrystalline cellulose 52.3 – – – – –  at 39^{◦} C  Microgranular cellulose 43.2 – – – – –  at 39^{◦} C  Microﬁbrous cellulose 44.3 – – – – – Papirer  at 39^{◦} C et al. 
+	NEW SENTENCE: (Start: pg 7, col 2; End: pg 7, col 2)[27] Cotton 39 – – – – –  *_{γ} AB_{s}^{=}_{2} ·_{(γ}^{+} s^{γ}^{−} s^{)}^{(1/2)} 
+
+NEW SECTION: (Luner and Toussaint [105]).  (Level: 6)
+
+
+NEW PARA: (Start: pg 7, col 3; End: pg 7, col 3)
+	NEW SENTENCE: (Start: pg 7, col 3; End: pg 7, col 3)Table 1(c). 
+	NEW SENTENCE: (Start: pg 7, col 3; End: pg 7, col 3)Cellulose surface energy components (in mJ/m^{2} )  Raw material γ^{LW}_{s}^{γ}^{+} s^{γ}^{−} s^{γ}^{AB}_{s} 
+
+NEW SECTION: *_{γ} total Polarity Reference  (Level: 7)
+
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)(γ^{LW}_{s}^{+}_{γ}^{AB}_{s}^{)} (γ^{AB}_{s}^{/γ} total) (%)  Sigmacell 101, 50–56^{≈} 0 42–45 – – – Mota et al. 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Sigmacell 20 and [19] 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Avicel 101  Cellulose ﬁlm 39.1 2 39.7 17.8 56.7 31.8 Luner and  Toussaint [105] 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Cellulose ﬁlm 44.6 1.2 19.4 9.6 54.2 18 van Oss and  Costanzo [106] 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Viscose, lyocel 8–8.3 – – 25–25.5 33 75 Persin et al.  and modal ﬁbers (determined) [21] 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Cellulose from 27.5 – – 41 68.5 60 Berg and  puriﬁed cotton (determined) Westerlind  [24] 
+
+NEW PARA: (Start: pg 7, col 4; End: pg 7, col 4)
+	NEW SENTENCE: (Start: pg 7, col 4; End: pg 7, col 4)Highly crystalline 29.1 – – 34.8 63.9 54.5 Lee and cellulose (Avicel) (determined) Luner [107]  *_{γ} AB_{s}^{=}_{2} ·_{(γ}^{+} s^{γ}^{−} s^{)}^{(1/2)} 
+
+NEW SECTION: (Luner and Toussaint [105]).  (Level: 8)
+
+
+NEW PARA: (Start: pg 7, col 5; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 7, col 5; End: pg 7, col 5)celluloses (Sigmacell 101, Sigmacell 20 and Avicel 101) using the thin layer technique and the Washburn equation. 
+	NEW SENTENCE: (Start: pg 7, col 5; End: pg 7, col 7)Their results indicate that all three celluloses have high apolar (γ^{LW}_{s}^{)} and electron donor (γ^{−} s^{)}  components, while the electron acceptor component (γ^{+} s^{)}  is practically zero. 
+	NEW SENTENCE: (Start: pg 7, col 7; End: pg 7, col 7)The free energy interactions of cellulose/water/cellulose calculated from the components are positive, regardless of the cellulose crystallinity. 
+	NEW SENTENCE: (Start: pg 7, col 7; End: pg 7, col 7)This would mean that the cellulose surfaces have a hydrophilic character. 
+	NEW SENTENCE: (Start: pg 7, col 7; End: pg 8, col 7)However, the work of spreading of water has a small negative  value (3–9 mJ/m^{2} ), indicating that the surfaces are slightly hydrophobic. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)It is believed that the work of spreading better characterizes the hydrophobicity of the surface than the free energy of particle/water/particle interaction, because in the latter case, no electrostatic repulsion is taken into account in the calculations. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Pezron et al. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)[20] determined the cellulose pulp surface energy by liquid absorption into cellulose pulp sheets in relation to bacterial adhesion; Berg and Jacob [25] used inverse gas chromatography to determine the surface energy of microcrystalline cellulose and two wood pulp ﬁbers. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)They determined that all three surfaces exhibited both acidic and basic characteristics, but were predominantly acidic in nature. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Papirer et al. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)[27] demonstrated the inﬂuence of crystallinity on surface energy values; microcrystalline cellulose showed a signiﬁcantly higher (γ^{LW}_{s}^{)} value (41 mJ/m^{2} ) than amorphous cellulose (27.4 mJ/m^{2} ). 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)The authors used three different kinds of cellulose (microcrystalline (6.3 m^{2} /g), microgranular (34.5 m^{2} /g) and microﬁbrous (7 m^{2} /g)). 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)They determined that the dispersion component of surface energy (Table 1(a)–(c)), the acid–base properties, nanomorphology and humidity all inﬂuenced these properties. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)They determined that the ﬂattest surface corresponded to microcrystalline cellulose and therefore the better accessibility of the solid surface to adsorbing molecular probes. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)Luner and Oh [15] reported surface energy components of cellulose ether ﬁlms that were lower than cellulose. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 1)They determined that the dispersion (γ^{LW}_{s}^{)} component of surface energy was almost constant for cellulose ethers as compared with the acid–base component; this was explained based on the theory that the dispersion component of many polymers is independent of their surface chemical composition. 
+	NEW SENTENCE: (Start: pg 8, col 1; End: pg 8, col 2)That the γ^{+} s^{component}  of cellulose is signiﬁcantly greater than the cellulose ethers, maybe because of its relatively larger number of free hydroxyl groups. 
+
+NEW SECTION: Yamane et al. [23] attempted to clarify the hydrophilic and hydrophobic nature of cellulose based on its structural anisotropy. Regenerated cellulose is known as among the most hydrophilic polymers and the high wettability of cellulose ﬁlms results from its high density of hydroxyl groups. However, it was also demonstrated that cellulose also interacts with hydrophobic organic solvents (hexane, toluene, dichloromethane). The authors proposed that the hydrophilic behavior of cellulose was due to the location of hydroxyl groups at the equatorial positions of the  (Level: 2)
+
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)glucopyranose rings. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)Conversely, the axial direction of the glucopyranose ring is hydrophobic because atoms of C−H bonds are located on the axial positions of the ring. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)According to the authors, this suggests that the hydrophobic property of cellulose  may be created by structural controls such as reversing the planar orientation. 
+
+NEW PARA: (Start: pg 8, col 2; End: pg 8, col 2)
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)It is of interest to mention the work performed by Klingenberg and Zauscher [29] who studied the interaction between cellulose surfaces in aqueous solutions using colloidal probe microscopy. 
+	NEW SENTENCE: (Start: pg 8, col 2; End: pg 8, col 2)They reported that long-range interactions between cellulose surfaces are governed by double-layer forces and, once surfaces are in contact, by osmotic repulsive forces and viscoeleasticity. 
+
+NEW SECTION: 5. Challenges of Cellulose Adhesion on the Nanoscale  (Level: 1)
+
+
+NEW SECTION: The ease of adhesion between pulp ﬁbers that occurs during papermaking poses challenges to processing cellulose on the nanoscale. The hydrogen bonds present on the surface of nanoﬁbers or nanorods (whiskers) or of cellulose are the key for a better manageability of these new materials to determine future applications. These applications will be strongly dependent on the surface properties of nanocellulosic materials and their capability to be compatible with the matrix in which they are processed. There are four types of nanocellulose depending on their manner of fabrication. These include: bacterial cellulose, electrospun cellulose, microﬁbrillated cellulose (MFC) and whiskers of cellulose (nanorods). A review of each of them is presented in the following paragraphs.  (Level: 1)
+
+
+NEW SECTION: Bacterial cellulose is a nanomaterial derived from various strains of Acetobacter species [30, 31]; although strains of pseudomonas, Achrobacter, Alcaligene, Aerobacter and Azotobacter [32] also can be used to produce cellulose. An in-depth review of cellulose biosynthesis and function in bacteria was presented by Ross et al. [33], but a brief description of experimental details is presented here. The Acetobacter species is cultivated in a medium containing carbon and nitrogen sources in either a static or shaken environment [31]. However, oxygen is needed for cell division and cellulose synthesis and if oxygen is removed and replaced by pure nitrogen, no cellulose is obtained [34]. The bacterial cellulose is in network form containing pellicles of ribbon shaped cellulose ﬁbrils that are less then 100 nm wide and are made of microﬁbrils 2–4 nm in diameter [35]. Typical uses for the microbial derived nanocellulose range from medical applications [31], reinforcement in high quality papers [36], diaphragms for electro-acoustic transducers [37], paint additives, coatings, pharmaceuticals and cosmetics [32], and reinforcement for optically transparent ﬁlms [38]. Wan et al. [31] researched the use of bacterial cellulose for reinforcement in medical materials. Poly(vinyl alcohol) (PVA) was mechanically enhanced with the addition of bacterial cellulose. The addition of the bacterial cellulose allowed PVA, which has similar mechanical properties to various biological tissues, to be “tunable” over a broad range allowing the material to closely match various tissues for many medical applications. Nogi et al. [38] found that bacterial cellulose nanoﬁbers could be used as reinforcement in optically transparent materials. The ability to reinforce transparent materials is because of its high Young’s modulus and tensile strength of 138 and 2 GPa, respectively [39, 40]. Also, bacterial cellulose has a very low thermal expansion of only 0.1^{×} 10^{−6} K^{−1} [39]. The resin used was acrylic and to maintain transparency, ﬁber content ranged from 7.4 to 66.1 wt%. The ﬁndings indicated that at 7.4 wt% reinforcement the light transmittance was reduced by 2.4% and the thermal expansion coefﬁcient was reduced from 86^{×} 10^{−6}  (Level: 2)
+
+
+NEW PARA: (Start: pg 9, col 1; End: pg 10, col 1)
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 9, col 1)to 38^{×} 10^{−6} K^{−1} . 
+	NEW SENTENCE: (Start: pg 9, col 1; End: pg 10, col 1)These ﬁndings indicate that bacterial cellulose would make an  Figure 2. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Bacterial cellulose nanoﬁbers: SEM image of the outer side (B) of the tubes produced with 100 wt% of oxygen. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Magniﬁcation^{5000×} [109]. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Reprinted with permission of Wiley-Liss, Inc., a subsidiary of John Wiley & Sons, Inc.  effective nanoﬁber reinforcement for materials that require a low degree of thermal  expansion and are optically transparent. 
+
+NEW PARA: (Start: pg 10, col 1; End: pg 10, col 1)
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Bacterial cellulose is also used in hi-ﬁdelity loudspeakers and headphones because of two essential properties: high sonic velocity and low dynamic loss; “it is seen that both frequency response and second harmonic distortion are smoothed and extended to higher frequency regions” [36]. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Moreover, bacterial cellulose can be used in acoustic applications because of its high sonic velocity and low dynamic loss properties. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)“In fact, the sonic velocity of pure ﬁlm was almost equivalent to those of aluminum and titanium, while the tangent-delta was in a low range, 0.4–  0.5” [36]. 
+
+NEW PARA: (Start: pg 10, col 1; End: pg 10, col 1)
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)For all of these applications, the nature of bacterial cellulose provides the special properties that allow the unique materials to be formed. 
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 10, col 1)Figure 2 shows how the bacterial cellulose microﬁbrils look after growth with 100% oxygen. 
+
+NEW SECTION: 5.1.1. Adhesion Bacterial cellulose is more ordered than standard cellulose and this order and lack of irregularities leads to both superior reinforcement and thermal expansion properties when used with matrix materials. The inter- and intra-molecular binding and/or adhesion is accomplished through hydrogen bonding. Bacterial cellulose ﬁbers have a degree of polymerization between 2000 and 6000 [36]. This relatively low degree of polymerization may limit the adhesion through interpenetrating networks or mechanical interlocking and, for the most part, the adhesion in composite materials is limited to hydrogen bonding though other mechanisms of adhesion need to be explored. The elastic modulus of a single bacterial cellulose ﬁber has been determined by Guhados et al. [41]. The researchers worked with an atomic force microscope (AFM) to determine Young’s modulus by utilizing a nanoscale 3-point bending apparatus. The nanomechanical testing was done in force-volume mode where the cantilever deﬂection of the AFM is recorded as a function of vertical sample displacement.  (Level: 3)
+
+
+NEW PARA: (Start: pg 10, col 1; End: pg 11, col 1)
+	NEW SENTENCE: (Start: pg 10, col 1; End: pg 11, col 1)Using the 3-point bending method the authors calculated a Young’s  modulus of 78^{±} 17 GPa for bacterial cellulose ﬁbers with diameters ranging from 35 to 90 nm. 
+
+NEW SECTION: Cellulose needs to be in solution form to facilitate electrospinning [42, 43]; some of the solvents used have been N-methylmorpholine-N-Oxide (NMMO), N,Ndimethylacetamide  (Level: 2)
+
+
+NEW PARA: (Start: pg 11, col 1; End: pg 11, col 1)
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)(DMAc) and lithium chloride (LiCl)/N,N-dimethyl acetamide (DMAc) [42–46]. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)In addition to the solvent, other important factors to consider in the intrinsic properties of the solution for the cellulose electrospinning process are the cellulose molecular weight, solution viscosity, net charge density, surface tension of the cellulose solution, and solution conductivity. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Some of the operational conditions depend on the applied voltage, spinning temperature, ﬂow rate and distance between the nozzle and collector. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The humidity and temperature of the surroundings may also play an important role in determining the morphology and diameter of electrospun nanoﬁbers [47]. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The polymer solution must have a concentration high enough to cause polymer entanglements yet not so high that the viscosity prevents polymer motion induced by the electric ﬁeld. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The solution must also have a surface tension low enough, a charge density high enough, and a viscosity high enough to prevent the jet from collapsing into droplets before the solvent  has evaporated [48]. 
+
+NEW PARA: (Start: pg 11, col 1; End: pg 12, col 1)
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Joo et al. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)[44] studied the effect of solvent system, degree of polymerization (DP), processing conditions and post-spinning treatment on the microstruture of sub-micrometer scale, electrospun cellulose ﬁbers. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Also, they utilized electrospun cellulose ﬁbers to develop highly oxidized cellulose with HNO_{3} /H_{3} PO_{4} and NaNO_{2} having a large surface area. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The particular interest was to study how the degree of crystallinity of electrospun ﬁbers was inﬂuenced by these parameters. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Joo et al. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)[44] demonstrated that non-woven mats of submicronized cellulose ﬁbers of 250–750 nm in diameter could be obtained using the electrospinning process. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)They showed that cellulose ﬁbers obtained from LiCl/DMAc were mostly amorphous, whereas the degree of crystallinity of cellulose ﬁbers from NMMO/water could be controlled by the process conditions. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Some pictures of electrospun cellulose are presented in Fig.  3. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Liu and Tang [45] used cellulose acetate with the same acetyl concentration (39.8%), but different molecular weights ranging from 3.0^{×} 10^{4} to 5.0^{×} 10^{4} , to prepare cellulose acetate nanoﬁbers and nanoﬁbrous membranes in several conventional solvents such as acetone, acetone/N,N-dimethylacetamide (DMAc) and acetone/water. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)They produced nanoﬁbers with mean diameters less than 265 nm, but nanoﬁbers from low molecular weight cellulose acetate had a larger amount of spindle-like beads on ﬁbers and a broader ﬁber size distribution compared to those produced from high molecular weight which showed uniform and smooth ﬁber structure without defects. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)Joo and co-workers [42] obtained cellulose nonwoven mats of submicrometer-sized ﬁbers (150–500 nm in diameter) by electrospinning cellulose solutions. 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 11, col 1)The solvent system used was based on lithium chloride (LiCl) and N,N-dimethylacetamide (DMAc). 
+	NEW SENTENCE: (Start: pg 11, col 1; End: pg 12, col 1)They evaluated the effect of  Figure 3. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)SEM images of electrospun ﬁbers from 9 wt% DP210 cellulose/NMMO/water solution with a rotating collector at: (a) 1.2 rpm and (b) 6 rpm. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Flow rate was kept at 0.03 ml/min [44]. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Reprinted with permission from Elsevier.  temperature of the collector, type of collector (aluminum mesh and cellulose ﬁlter media), and post-spinning treatment, such as coagulation with water, on the morphology of electrospun ﬁbers. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Ethyl cellulose has also been used to study the diameter distribution and surface morphology of electrospun nanoﬁbers previously dissolved in a multicomponent solvent system (tetrahydrofuran, THF, and N,Ndimethylacetamide,  DMAc) [49]. 
+
+NEW PARA: (Start: pg 12, col 1; End: pg 12, col 1)
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Walkenstrom et al. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)[43] used electrospinning to process mixtures of poly (ethylene oxide) (PEO) and cellulose derivatives of carboxymethylcellulose (CMC) sodium salt, hyroxypropylmethylcellulose (HPMC), methylcellulose (MC), and enzymatically treated cellulose. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)They found that the substitution pattern of carboxymethyl groups on the CMC derivatives proved to be crucial for the appearance  of the nanoweb as well as for the morphology of individual nanoﬁbers. 
+
+NEW PARA: (Start: pg 12, col 1; End: pg 12, col 1)
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Electrospun ﬁbers have been successfully used for reinforced thermoplastic polymers [50]. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)Fink and Ganster [50] developed a double pultrusion technique for compounding thermoplastic polymers and electrospun ﬁbers (from viscose and lyocell) for injection moulding applications. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)They increased the ﬁnal mechanical properties of the composites up to three times compared to the initial matrix. 
+
+NEW PARA: (Start: pg 12, col 1; End: pg 13, col 1)
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)5.2.1.  Adhesion The surface characteristics of the electrospun cellulose ﬁbers are strongly dependent on the solvent used to dissolve the cellulose. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)It is known that to dissolve cellulose without chemical modiﬁcation or derivatization is difﬁcult because of the molecule stiffness and close chain packing via numerous intermolecular and intramolecular hydrogen bonds in the cellulose [51]. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)As the process of cellulose dissolution is usually connected with H-bond formation between the cellulose hydroxyl groups and solvent molecules, one of the most important criteria of dissolving ability of any solvent is the value of interaction energy of this solvent with cellulose which should be higher than the energy of intermolecular H-bonds in cellulose itself [52]. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 12, col 1)An analysis of cellulose surface characteristics after the electrospinning process was performed by Liu and Tang [45]. 
+	NEW SENTENCE: (Start: pg 12, col 1; End: pg 13, col 1)They made water contact angle measurements on  cellulose acetate electrospun ﬁbers and suggested that the orientation of hydrophobic and hydrophilic groups on the outermost ﬁber surface changed when the ﬁber size was reduced to the nanometer range. 
+
+NEW SECTION: Microﬁbrillated cellulose (MFC) is a material derived by disintegrating digested cellulose through a homogenizing process, exposing the underlying microﬁbrils. This new morphology was developed by Turbak et al. [53] in the early 1980s. This process usually starts with wood pulp; however, Dufresne et al. [54], describe how microﬁbrillated cellulose can be extracted from sugar beets. Regardless of the starting material, the process always involves a homogenization process. Nakagaito and Yano [55] describe the homogenizing process as subjecting the cellulose to a reciprocating motion producing a high pressure drop resulting in shearing and impact forces. The shearing and impact forces are responsible for exposing the substructural cellulose microﬁbrils. Through the homogenization process, the cellulose bundles are split and degraded leaving microﬁbrillated cellulose strands with dimensions of 10–100 nm [30]. Elementary kraft ﬁbers are on the order of 10’s of µm’s wide and are rod like [55]; whereas MFC is a network of interconnected microﬁbrils with little order on the nanometer scale, Fig. 4. Through the homogenization process the ratio of surface area to volume for the ﬁbers is increased dramatically. Nakagaito and Yano [56] researched phenolic resin reinforced composites where the composite mats had varying resin content. The MFC was passed through a high  (Level: 2)
+
+
+NEW PARA: (Start: pg 13, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 13, col 1)Figure 4. 
+	NEW SENTENCE: (Start: pg 13, col 1; End: pg 14, col 1)AFM image of MFC (homogenized 1 time) (Ryan Lena, Research Experience for Undergraduates, Forest Bioproducts Research Initiative, University of Maine, unpublished).  pressure homogenizer 2, 6, 14, 22 and 30 times creating MFC of varying degree of ﬁbrillation. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Their ﬁndings indicated that no strength improvements were developed until at least 16 passes through the homogenizer. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Their hypothesis for the strength increase due to increased homogenization was that increased homogenization minimized the number of weaker spots that would act as crack initiators. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Another hypothesis presented is that bond density is increased and the increase in  bond density inhibits crack formation. 
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Nakagaito and Yano [55] did more work with the MFC composites this time working with phenol-formaldehyde (PF) resins. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)In both studies, kraft pulp was used to make the MFC. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)In this study all the pulp was homogenized 15 times, the minimum found previously to improve reinforcement properties. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The PF resins were reinforced with both pulp and MFC. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The ﬁndings from this study showed that the Young’s modulus of both the pulp based and MFC-based composites were similar in the range of 18–19 GPa; however, the bending strength peaked at 370 and  260 MPa for the MFC and pulp reinforced composites, respectively. 
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Microﬁbrillated cellulose, and cellulose in general, has a very low thermal expansion coefﬁcient. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Nishino et al. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)[39] worked with all cellulose composites. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The all cellulose composites they made had an extremely low thermal expansion coefﬁcient, “apparently almost no thermal expansion or contraction; the α value of the composite was about 10^{−7} K^{−1} , which is much lower than those of metals (for  example, Fe: 11.8^{×} 10^{−6} K^{−1} , Si: 2.49^{×} 10^{−6} K^{−1} )”. 
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Microﬁbrillated cellulose has been shown to be a performance enhancer when added to composite materials. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Okubo et al. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)[57] fabricated a poly(lactic acid) (PLA), bamboo reinforced, composite material. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Three-point bending tests, microdrop tests, fracture toughness tests, and bamboo ﬁber embedded tests were conducted to evaluate mechanical properties. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The ﬁndings indicated that three-point bending strength and fracture toughness were improved by adding MFC and that MFC ﬁbers entangled onto the bamboo reinforcement preventing crack formation  and/or propagation. 
+
+NEW PARA: (Start: pg 14, col 1; End: pg 14, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)MFC has been converted in an attempt to improve composite performance by reducing its hydrophilicity. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Andresen et al. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)[65] describe some of the methods used in the literature [58–64] and then present their ﬁndings. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)They surface sized MFC with chlorodimethylisopropylsilane. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)The sizing was accomplished by grafting and then the resulting modiﬁed MFC was analyzed by FT-IR, contact angle analysis, X-ray photoelectron spectroscopy, atomic force microscopy, transmission electron microscopy, and white light interferometry. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)Their results indicated that too little sizing had only a negligible effect on the hydrophobicity and too much caused solubilization of the MFC. 
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 14, col 1)They found that a degree of surface substitution between 0.6 and 1 resulted in a hydrophobic MFC that could be dispersed without agglomeration in organic solvents. 
+
+NEW PARA: (Start: pg 14, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 14, col 1; End: pg 15, col 1)5.3.1.  Adhesion The interactions that take place in a composite between the reinforcement and the matrix determine how strong the reinforced material will be Azizi Samir et al.  [66]  worked with both microﬁbrils of cellulose and cellulose whiskers to compare the reinforcement properties for these two types of cellulose. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Cellulose was exposed to sulfuric acid baths at 40^{◦} C for 35 minutes. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Two sulfuric acid baths were used: one at 20 wt% and one at 60 wt%. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)The polymer used was latex reinforced with 6 wt% ﬁber either untreated or treated in one of the sulfuric acid baths. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Results from the study showed that the tensile strength and tensile modulus increased when the cellulosic ﬁbers were added; however, the highest values were found for the microﬁbril cellulose with no acid treatments. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)The elongation at break decreased for the material when the cellulosic ﬁbers were added and this is hypothesized to be due to the entanglement of the cellulosic ﬁbers. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)For the reinforced material, the elongation at break increased as a function of acid hydrolysis strength. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)All of this is an indication of the signiﬁcance of entanglement in the overall macroscopic  physical properties of the cellulosic reinforced composites. 
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)The hydrogen bonding that takes place between the nanocellulosic materials is well known but the study mentioned above demonstrates how important entanglements are for the microﬁbrillated cellulosic materials. 
+
+NEW SECTION: 5.4. Cellulose Nanorods or Whiskers of Cellulose  (Level: 2)
+
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Whiskers of cellulose, the needle-like structure of the cellulose crystallite, have been mainly studied for their liquid crystalline behavior in concentrated aqueous suspensions [65, 67–69] and for their reinforcing effect when added to a polymeric matrix giving rise to very strong and tough percolating networks of hydrogen bonded whiskers [70–76]. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Whiskers of cellulose are renewable materials which possess high availability, light weight and high mechanical properties. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)They consist of slender parallelepiped rods and, depending on their origin, the lateral dimensions range from about 2–50 nm in diameter for length than can reach several tens of micrometers [77]. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)According to these dimensions, they possess high aspect ratios and high speciﬁc surface area of about 150 m^{2} /g [78]. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)See an example of whiskers of cellulose in Fig.  5 [104]. 
+
+NEW PARA: (Start: pg 15, col 1; End: pg 15, col 1)
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)Figure 5. 
+	NEW SENTENCE: (Start: pg 15, col 1; End: pg 15, col 1)AFM topography image of cellulose nanowhiskers from a dried water suspension [104]. 
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Table 2.  Characteristics of whiskers of cellulose from different sources [77, 78, 82] 
+
+NEW SECTION: Cellulose source Length (nm) Cross section (nm) Tunicate^{*} 100–several microns 15 Algal (Valonia) >1000 10–20  (Level: 3)
+
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Bacterial 100–several microns 5–10 by 30–50 Wheat straw 220 5 Cotton 200–350 5–15 Wood 100–300 3–5 Sugar beet pulp 210 15 
+
+NEW SECTION: *_{Marine} animal from the Mediterranean Sea.  (Level: 4)
+
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Several raw materials have been used for producing whiskers of cellulose. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)These include sugar beet pulp, tunicin from tunicates (a sea animal) [71, 79, 80], mantle of the tunicates [81], valonia, sulphite wood pulp [82, 83], microﬁbrilated cellulose from kraft pulp [55], wheat straw [84], cotton ﬁlter paper [85, 86], bacterial cellulose [62], sisal [87], kraft pulp, hemp, ﬂax [88] and microcrystalline cellulose (MCC) [89]. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Some sources for obtaining cellulose nanocrystals and their characteristics are listed in Table 2. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)The method primarily utilized for obtaining the whiskers has been acid hydrolysis, which consists basically in removing the amorphous regions present in the cellulose ﬁbrils leaving the crystalline regions intact; therefore, the dimensions of the cellulose whiskers obtained after hydrolysis are mainly dependent on the percentage of amorphous regions that varies for each organism. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Traditionally the yields of cellulose whiskers by acid hydrolysis have been quite low (2–3%) [90]; however, in a recent study the process was optimized to reach yields up 30% and suspensions of nanocrystals with a length between 200 and 400 nm and  a width less than 10 nm [89]. 
+
+NEW PARA: (Start: pg 16, col 1; End: pg 16, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Hydrochloric acid also has been used for obtaining cellulose whiskers; however, the use of sulfuric acid leads to more stable whiskers aqueous suspensions [74, 78, 91, 92] because the whiskers present a higher negative charge on their surface compared with those prepared with HCl [93]; the repulsion forces are then also higher and the ﬂocculation between the nanoparticles is reduced. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Another way to achieve charged whiskers consists of the oxidation of the whiskers surface [94, 95]  or through an acylation process [96]. 
+
+NEW PARA: (Start: pg 16, col 1; End: pg 17, col 1)
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Nanocomposite ﬁlms either by ﬁlm casting (water evaporation) or by freeze drying, followed by classical compression or extrusion, have been prepared to study cellulose whiskers reinforcing properties in thermoplastics [97–100] or thermoset matrices [72]. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)Water suspensions of whiskers have been preferred in nanocomposite ﬁlms because of their high stability and the expected high level of dispersion of the whiskers within the host matrix in the resulting ﬁlms. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 16, col 1)This behavior, however, restricts the choice of the matrix to hydrosoluble polymers. 
+	NEW SENTENCE: (Start: pg 16, col 1; End: pg 17, col 1)The utilization of latexes, which allows the use of hydrophobic polymers as matrix, is a practical  alternative and ensures a good dispersion level of the ﬁller required for homogeneous composite processing [79, 98]. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)The simplest technique to process a composite material from latex and aqueous suspension of whiskers consists in mixing and casting the two aqueous suspensions. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)A solid nanocomposite ﬁlm can be then obtained by water evaporation and particle coalescence at a temperature higher than the glass transition temperature of the matrix [77]. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Some polymer latexes used for ﬁlm nanocomposites include those obtained by copolymerization of styrene and butyl acrylate [77, 79, 101] and poly(hydroxyoctanoate). 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Another alternative to processing nanocomposites using whiskers consists in dispersing them in an organic medium. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)In this case, for improving compatibility between the polar whiskers and apolar matrices, the addition of surfactants and chemical modiﬁcation of the whiskers have been proposed [80, 81, 86]. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Surface modiﬁcation involves reacting the hydroxyl groups on the surface of whiskers and in this way Grunert and Winter [62], for instance, used trimethylsilylation for reducing the hydrophilicity of the whisker surfaces. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)The use of surfactants improves compatibility, but large amounts of them are required because of the high speciﬁc area of the whiskers [76]. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Dispersion of cellulose whiskers has also been studied using polar organic solvents [79, 102]. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Dufresne et al. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)[79] dispersed cellulose whiskers from tunicin in an organic solvent (N,N-dimethylformamide, DMF) without addition of a surfactant or any chemical modiﬁcation. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Gray et al. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)[102] dispersed whiskers of cellulose in DMF and in dimethylsulfoxide (DMSO) and prepared nanocomposite ﬁlms. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)Cavaillé et al. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)[72] processed and characterized thermosetting nanocomposites using aqueous suspensions of microcrystalline cellulose and an epoxy matrix. 
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)They concluded that the reinforcing effect was due to the strong interactions existing between the cellulose whiskers and the epoxy network and the creation of a percolating network linked by H-bonds between cellulose ﬁbers. 
+
+NEW SECTION: 6. Summary and Discussion  (Level: 1)
+
+
+NEW PARA: (Start: pg 17, col 1; End: pg 17, col 1)
+	NEW SENTENCE: (Start: pg 17, col 1; End: pg 17, col 1)A short summary and discussion of the four types of nanocellulose reviewed is presented as follows: (1) Bacterial cellulose forms a perfectly ordered ﬁbril structure. 
+
+NEW PARA: (Start: pg 18, col 1; End: pg 18, col 2)
+	NEW SENTENCE: (Start: pg 18, col 1; End: pg 18, col 2)Table 3.  Properties of nanocellulose obtained using different processing methods  Raw material  Processing method 
+
+NEW SECTION: Bacterial Bacteria, Bacterial 138 78^{±} 17 2 0.1^{×} 10^{−6} cellulose nutrients cultivation (Nishino (Guhados (Page and K^{−1}  (Level: 2)
+
+
+NEW PARA: (Start: pg 18, col 3; End: pg 18, col 3)
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)nanoﬁbers et al. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)[39]) et al. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)[41]) El-Hosseiny (Nishino  [40]) et al. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)[39]) Electrospun Dissolved Electrospinning n.a. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)11 0.33 n.a.  cellulose ﬁbers^{*} cellulose process (Fink and (Fink and Ganster Ganster  [50]) [50])  Cellulose Digested Homogenizing n.a.  n.a.  n.a.  n.a.  microﬁbrillated cellulose  (MFC)  Whiskers of Various Acid 130–250 n.a. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)0.8–10 n.a.  cellulose cellulose hydrolysis (Nishino (Nishino sources et al. [108]) et al. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)[108]) [55, 62, 71, 79–88]  n.a.:  not available. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)*_{For} Viscose sliver [50]. 
+
+NEW PARA: (Start: pg 18, col 3; End: pg 18, col 3)
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)Expectations would be that this structure would outperform other less ordered ﬁbril types. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)The ﬁndings of Nakagaito et al. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)[30] indicate that microbial cellulose has an advantage over other nanoscale celluloses because of its regularity and continuous alignment. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)(2) The interest in electrospinning as a novel cellulose ﬁber production technology has increased over the past 5 years. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)Through the electrospinning process it is possible to produce ﬁbers from 50 to 500 nm in diameter, with high speciﬁc surface area and small pore size. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)In this way, several solvents for dissolving cellulose have been studied; however, there is still no consensus about the most appropriate cellulose solvent considering economics, safety and operational issues. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)Also, although efforts have been made to characterize the surface chemistry of ﬁlms or membranes prepared with electrospun ﬁbers, the surface chemistry of the individual electrospun ﬁbers has not been clearly determined. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)(3) Microﬁbrillated cellulose is fabricated by mechanical action called homogenization and results in different properties based on the number of homogenization passes. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)These homogenization passes make strands of nanocellulose ﬁbrils that are used for reinforcement in matrix materials. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)The cellulose microﬁbrils form an entangled network of ﬁbers which is shown to be an adhesion mechanism in MFC reinforced composites. 
+	NEW SENTENCE: (Start: pg 18, col 3; End: pg 18, col 3)(4) Finally, whiskers of cellulose have been extensively studied for more than 10 years. 
+
+NEW PARA: (Start: pg 19, col 1; End: pg 19, col 1)
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Most of the research has been focused on the preparation of cellulose whiskers (using different sources), characterization and their incorporation in thermoplastic, thermosetting and/or biodegradable matrices (PLA) for nanocomposite production. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)However, applications of cellulose whisker nanocomposites have not achieved commercial viability. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)The traditional way to obtain cellulose whiskers is through a hydrolysis process which has been optimized from 2–3% yield to 30% yield (of initial weight). 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)The interface between the polymer matrix and whiskers of cellulose and the dispersion quality of the nanocellulose in polymer matrices still need to be optimized for better interactions and improvement of the mechanical properties of the ﬁnal nanocomposites. 
+
+NEW SECTION: 7. Conclusions–Future Directions  (Level: 1)
+
+
+NEW PARA: (Start: pg 19, col 1; End: pg 19, col 1)
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)As a generalized conclusion, cellulose adhesion appears to be dominated by hydrogen bonding across the length scales from macroscopic to nanoscopic. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Future work should utilize analytical techniques such as inverse gas chromatography and atomic force microscopy to determine surface energy and adhesion characteristics of nanocellulose ﬁbers. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)From such studies, surface sizing needs can be determined for nanocellulose to aid in dispersion and improve interfacial compatibility in nanocomposites to maximize material properties. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Although some research has been performed to characterize cellulose at a nanolevel, through the preparation of molecularly smooth cellulose ﬁlms, it is necessary to continue research in this area to obtain a better understanding of the adhesion interactions beyond hydrogen bonding including mechanical interlocking, interpenetrating networks, and covalent linkages on a fundamental level to improve interfacial properties with thermoplastics, thermosets and biopolymers. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)A number of studies have promoted the properties of nanocomposites such as lightweight, strength, biodegradability (depending on the matrix used), etc.,  however, only a few speciﬁc applications have been presented. 
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)Therefore, future work should focus on real world applications where the  properties and/or economic justiﬁcations are better than existing materials. 
+
+NEW PARA: (Start: pg 19, col 1; End: pg 19, col 1)
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)According to a Vision and Technology Roadmap developed by Agenda 2020 (103) some future directions in the area of nanocomposites using cellulose and lignocellulose are:  •_{Modiﬁcation} of the side chains of inorganics, such as siloxanes, silanes, or sodium silicates, to link the cellulose ﬁbers through Si−OH bonds forming an organic/inorganic matrix. 
+
+NEW SECTION: •_{Development} of systems that simulate the growth of cellulose in trees or plants that can be accomplished on an industrial scale.  (Level: 1)
+
+
+NEW SECTION: •_{Use} of cellulose nanocrystals for reinforcement of other matrix materials.  (Level: 1)
+
+
+NEW PARA: (Start: pg 19, col 1; End: pg 19, col 1)
+	NEW SENTENCE: (Start: pg 19, col 1; End: pg 19, col 1)•_{Modiﬁcation} of the side chains of cellulose to further enhance self-assembly. 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)The research needs for nanocellulose adhesion ensure a bright future for this important, renewable polymer resource. 
+
+NEW SECTION: Acknowledgements Funding for this work was provided by the Maine Agricultural and Forestry Experiment Station McIntire-Stennis project ME09615-08, “Micro- and nanocellulose ﬁber ﬁlled engineering thermoplastic composites”; Federal Highway Administration (FHWA), Contract #DTFH61-06-C-0064, “The Structural Use of WPCs in Transportation Applications”, and the National Science Foundation (NSF) under Grant No. EPS-05-54545. The AFM picture in Fig. 3 came from an NSF-Research Experience for Undergraduate project by Ryan Lena, Grant No. EEC-0648793, “Explore It! Building the Next Generation of Sustainable Energy Researchers”.  (Level: 2)
+
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)References 1. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)T. H. Wegner and P. E. Jones, Cellulose 13, 115–118 (2006).  2. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)E. Sjöström, Wood Chemistry: Fundamentals and Applications. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Academic Press, San Diego, California (1981). 
+
+NEW SECTION: 3. A. Chakraborty, M. Sain and M. Kortschot, in: Cellulose Nanocomposites: Processing, Characterization and Properties, K. Oksman and M. Sain (Eds), pp. 169–186. American Chemical  (Level: 3)
+
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Society, Washington, DC (2005). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)4.  D. Fengel and G. Wegener, Wood: Chemistry, Ultrastructure, Reactions. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)De Gruyter, Berlin (1998). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)5.  Ch.  Skaar, Wood–Water Relations (Springer Series in Wood Science). 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Springer Verlag, New York, NY (1988). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)6.  D. A. I. Goring, Pulp Paper Mag.  Can. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)64, T517–T527 (Dec. 1963). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)7.  C. J. Biermann, Essentials of Pulping and Papermaking. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Academic Press, New York, NY (1993). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)8.  J. P. Casey (Ed.), Pulp and Paper Chemistry and Technology, Vol. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)2, 3rd edn. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)Wiley-Interscience, New York, NY (1980). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)9.  J. J. Bikerman, Ind. Eng.  Chem. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)59, 40–44 (1967). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)10.  L. Wågberg, M. Eriksson and S. Notley, Biomacromolecules 8, 912–919 (2007). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)11.  H. Riegler and R. J. Sczech, J. Colloid Interface Sci. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)301, 376–385 (2006). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)12.  S. Fält, E. L. Wågberg, E. L. Vesterlind and P. T. Larsson, Cellulose 11, 151–162 (2004). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)13.  D. G. Gray and C. D. Edgar, Cellulose 10, 299–306 (2003). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)14.  E. Kontturi, P. C. Thune and J. W. Niemantsverdriet, Polymer 44, 3621–3625 (2003). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)15.  P. E. Luner and E. Oh, Colloids Surfaces A 181, 31–48 (2001). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)16.  M. Borkovek, I. Radtchenko and G. Papastavrou, Biomacromolecules 6, 3057–3066 (2005). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)17.  X. Zhang and R. Young, Mater.  Res.  Soc.  Symp.  Proc. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)586, 157–162 (2000). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)18.  R. Nigmatullin, R. Lovitt, C. Wright, M. Linder, T. Nakari-Setala and M. Gama, Colloids Surfaces B 35, 125–135 (2004). 
+
+NEW SECTION: 19. M. Mota, F. Dourado, F. M. Gama and E. Chibowski, J. Adhesion Sci. Technol. 12, 1081–1090  (Level: 1)
+
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)(1998). 
+
+NEW PARA: (Start: pg 20, col 1; End: pg 20, col 1)
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)20.  I. Pezron, A. Rochex, J. M. Lebeault and D. Clausse, J. Dispersion Sci.  Technol. 
+	NEW SENTENCE: (Start: pg 20, col 1; End: pg 20, col 1)25, 781–787 (2004). 
+
+NEW SECTION: 21. Z. Persin, K. Stana-Kleinschek, M. Sﬁligoj-Smole, T. Kreze and V. Ribitsch, Textile Res. J. 74, 55–62 (2004).  (Level: 1)
+
+
+NEW SECTION: 22. J. Forsstrom, M. Eriksson and L. Wagberg, J. Adhesion Sci. Technol. 19, 783–798 (2005).  (Level: 1)
+
+
+NEW SECTION: 23. C. Yamane, T. Aoyagi, M. Ago, K. Sato, K. Okajima and T. Takahashi, Polym. J. 38, 819–826  (Level: 1)
+
+
+NEW SECTION: (2006).  (Level: 1)
+
+
+NEW SECTION: 24. J. C. Berg and B. S. Westerlind, J. Appl. Polym. Sci. 36, 523–534 (1988).  (Level: 1)
+
+
+NEW SECTION: 25. J. C. Berg and P. N. Jacob, Langmuir 10, 3086–3093 (1994).  (Level: 1)
+
+
+NEW SECTION: 26. A. Lundqvist and L. Odberg, in: Fundamentals of Papermaking Materials 2, 751–769. Pira International  (Level: 1)
+
+
+NEW SECTION: Ltd. (1997).  (Level: 1)
+
+
+NEW SECTION: 27. E. Papirer, E. Brendle, H. Balard and C. Vergelati, J. Adhesion Sci. Technol. 14, 321–337 (2000).  (Level: 1)
+
+
+NEW SECTION: 28. A. Pietak, S. Korte, E. Tan, A. Downard and M. P. Staiger, Appl. Surf. Sci. 253, 3627–3635  (Level: 1)
+
+
+NEW SECTION: (2007).  (Level: 1)
+
+
+NEW SECTION: 29. D. J. Klingenberg and S. Zauscher, J. Colloid Interface Sci. 229, 497–510 (2000).  (Level: 1)
+
+
+NEW SECTION: 30. A. N. Nakagaito, S. Iwamoto and H. Yano, Appl. Phys. A 80, 93–97 (2005).  (Level: 1)
+
+
+NEW SECTION: 31. W. K. Wan, J. L. Hutter, L. Millon and G. Guhados, ACS Symposium Series N^{◦} 938, 221–241  (Level: 1)
+
+
+NEW SECTION: (2005).  (Level: 1)
+
+
+NEW SECTION: 32. D. Byrom, in: Biomaterials: Novel Materials from Biological Sources, D. Byrom (Ed.), p. 265–  (Level: 1)
+
+
+NEW SECTION: 266. Macmillian Publishers Ltd., UK (1991).  (Level: 1)
+
+
+NEW SECTION: 33. P. Ross, R. Mayer and M. Benziman, Microbiological Reviews 55, 35–58 (March, 1991).  (Level: 1)
+
+
+NEW SECTION: 34. M. Schramm, Z. Gromet and S. Hestrin, Biochemical J. 67, 669–679 (1957).  (Level: 1)
+
+
+NEW SECTION: 35. S. Yamanaka, K. Watanabe, N. Kitamura, M. Iguchi, S. Mitsuhasi, Y. Nishi and M. Uryu,  (Level: 1)
+
+
+NEW SECTION: J. Mater. Sci. 24, 3141 (1989).  (Level: 1)
+
+
+NEW SECTION: 36. M. Iguchi, S. Yamanaka and A. Budhiono, J. Mater. Sci. 35, 261–270 (2000).  (Level: 1)
+
+
+NEW SECTION: 37. Y. Nishi, M. Uryu, S. Yamanaka, K. Watanabe, N. Kitamura, M. Iguchi and S. Mitsuhasi,  (Level: 1)
+
+
+NEW SECTION: J. Mater. Sci. 25, 2997 (1990).  (Level: 1)
+
+
+NEW SECTION: 38. M. Nogi, S. Ifuku, K. Abe, K. Handa, A. N. Nakagaito and H. Yano, Appl. Phys. Lett. 88, 133124  (Level: 1)
+
+
+NEW SECTION: (2006).  (Level: 1)
+
+
+NEW SECTION: 39. T. Nishino, I. Matsuda and K. Hirao, Macromolecules 37, 7683 (2004).  (Level: 1)
+
+
+NEW SECTION: 40. D. H. Page and F. El-Hosseiny, Pulp Pap Canada 9, TR99–T100 (1983).  (Level: 1)
+
+
+NEW SECTION: 41. G. Guhados, W. Wan and J. L. Hutter, Langmuir 21, 6642–6646 (2005).  (Level: 1)
+
+
+NEW SECTION: 42. Y. L. Joo, C.-W. Kim, M. Frey and M. Marquez, J. Polym. Sci. Part B: Polym. Phys. 43,  (Level: 1)
+
+
+NEW SECTION: 1673–1683 (2005).  (Level: 1)
+
+
+NEW SECTION: 43. P. Walkenstrom, A. Frenot and M. W. Henriksson, J. Appl. Polym. Sci. 103, 1473–1482 (2007).  (Level: 1)
+
+
+NEW SECTION: 44. Y. L. Joo, C.-W. Kim, D.-S. Kim, S.-Y. Kang and M. Marquez, Polymer 47, 5097–5107 (2006).  (Level: 1)
+
+
+NEW SECTION: 45. H. Liu and C. Tang, Polym. J. 39, 65–72 (2007).  (Level: 1)
+
+
+NEW SECTION: 46. P. Kulpinski, J. Appl. Polym. Sci. 98, 1855–1859 (2005).  (Level: 1)
+
+
+NEW SECTION: 47. Y. Xia and D. Li, Adv. Mater. 16, 1151–1170 (2004).  (Level: 1)
+
+
+NEW SECTION: 48. I. S. Chronakis and A. Frenot, Curr. Opin. Colloid Interface Sci. 8, 64–75 (2003).  (Level: 1)
+
+
+NEW SECTION: 49. Y. Huang, X. Wu, L. Wang and H. Yu, J. Appl. Polym. Sci. 97, 1292–1297 (2005).  (Level: 1)
+
+
+NEW SECTION: 50. H.-P. Fink and J. Ganster, Cellulose 13, 271–280 (2006).  (Level: 1)
+
+
+NEW SECTION: 51. J. Hong and Y. Kuo, Polym. Adv. Technol. 16, 425–428 (2005).  (Level: 1)
+
+
+NEW SECTION: 52. A. M. Bochek and L. M. Kalyuzhnaya, Russ. J. Appl. Chem. 75, 989–993 (2002).  (Level: 1)
+
+
+NEW SECTION: 53. A. F. Turbak, F. W. Snyder and K. R. Sandberg, J. Appl. Polym. Sci.: Appl. Polym. Symp. 37, 815  (Level: 1)
+
+
+NEW SECTION: (1983).  (Level: 1)
+
+
+NEW SECTION: 54. M. A. S. Azizi Samir, A. Dufresne, F. Alloin and M. Paillet, Macromolecules 37, 4313–4316  (Level: 1)
+
+
+NEW SECTION: (2004).  (Level: 1)
+
+
+NEW PARA: (Start: pg 21, col 1; End: pg 21, col 1)
+	NEW SENTENCE: (Start: pg 21, col 1; End: pg 21, col 1)55.  A. N. Nakagaito and H. Yano, Appl.  Phys. 
+	NEW SENTENCE: (Start: pg 21, col 1; End: pg 21, col 1)A 80, 155–159 (2005). 
+
+NEW SECTION: 56. A. N. Nakagaito and H. Yano, Appl. Phys. A 78, 547–552 (2004). 57. K. Okubo, T. Fujii and N. Yamashita, JSME Series A 48, 199–204 (2005). 58. J. F. Sassi and H. Chanzy, Cellulose 2, 111–127 (1995). 59. J.-Y. Cavaille, H. Chanzy, E. Fleury and J.-F. Sassi, US Patent 6 117 54 (1997). 60. M. J. Cash, A. N. Chan, H. T. Conner, P. J. Cowan, R. A. Gelman, K. M. Lusvardi, S. A. Thompson and F. P. Tise, US Patent 6 602 994 (1999). 61. C. Gousse, H. Chanzy, G. Excofﬁer, L. Soubeyrand and E. Fleury, Polymer 43, 2645–2651 (2002). 62. M. Grunert and W. T. Winter, J. Polym. Environ. 10, 27–30 (2002). 63. D. Y. Kim, Y. Nishiyama and K. Shigenori, Cellulose 9, 361–367 (2002). 64. C. Gousse, H. Chanzy, M. L. Cerrada and E. Fleury, Polymer 45, 1569–1575 (2004). 65. M. Andresen, L. Johansson, B. Tanem and P. Stenius, Cellulose 13, 665–667 (2006). 66. M. A. S. Azizi Samir, F. Alloin, J. Y. Sanchez and A. Dufresne, Polymer 45, 4033 (2004). 67. S. Matthews, K. Fleming, D. Gray and S. Prasannan, J. Am. Chem. Soc. 122, 5224–5225 (2000). 68. D. G. Gray and W. Chen, Langmuir 18, 633–637 (2002). 69. D. G. Gray and E. D. Cranston, Sci. Technol. Adv. Mater. 7, 319–321 (2006). 70. J. Y. Cavaillé, V. Favier and H. Chanzy, Macromolecules 28, 6365–6367 (1995). 71. V. Favier, J. Y. Cavaillé, G. R. Canova, H. Chanzy, A. Dufresne and C. Gauthier, Polym. Adv. Technol. 6, 351–355 (1995). 72. J. Y. Cavaillé, M. M. Ruiz, A. Dufresne, J. F. Gerard and C. Graillat, Composite Interfaces 7, 117–131 (2000). 73. W. Gindl and J. Keckes, Polymer 46, 10221–10225 (2005). 74. N. A. Kotov, P. Podsiadlo, S. Y. Choi, B. Shim, J. Lee and M. Cuddihy, Biomacromolecules 6,  (Level: 1)
+
+
+NEW SECTION: 2914–2918 (2005).  (Level: 1)
+
+
+NEW SECTION: 75. K. Oksman and L. Petersson, Composites Sci. Technol. 66, 2187–2196 (2006).  (Level: 1)
+
+
+NEW SECTION: 76. L. Heux, G. Chauve and C. Bonini, Langmuir 16, 8210–8212 (2000).  (Level: 1)
+
+
+NEW SECTION: 77. A. Dufresne, J. Nanosci. Nanotechnol. 6, 322–330 (2006).  (Level: 1)
+
+
+NEW SECTION: 78. L. Chazeau, P. Terech and J. Y. Cavaillé, Macromolecules 32, 1872–1875 (1999).  (Level: 1)
+
+
+NEW SECTION: 79. A. Dufresne, M. A. S. Azizi Samir, F. Alloin, J. Y. Sanchez and N. El Kissi, Macromolecules 37,  (Level: 1)
+
+
+NEW SECTION: 1386–1393 (2004).  (Level: 1)
+
+
+NEW SECTION: 80. L. Heux, N. Ljungberg and J. Y. Cavaillé, Polymer 47, 6285–6292 (2006).  (Level: 1)
+
+
+NEW SECTION: 81. L. Heux, C. Bonini, J. Y. Cavaille, P. Linder, C. Dewhurst and P. Terech, Langmuir 18, 3311–  (Level: 1)
+
+
+NEW SECTION: 3314 (2002).  (Level: 1)
+
+
+NEW SECTION: 82. D. G. Gray, S. Beck-Candanedo and M. Roman, Biomacromolecules 6, 1048–1054 (2005).  (Level: 1)
+
+
+NEW SECTION: 83. T. Zimmermann, E. Pohler and T. Geiger, Adv. Eng. Mater. 6, 754–761 (2004).  (Level: 1)
+
+
+NEW SECTION: 84. A. Dufresne, W. Helbert and J. Y. Cavaillé, Polym. Composites 17, 604–611 (1996).  (Level: 1)
+
+
+NEW SECTION: 85. R. Borsali, T. Ebeling, M. Paillet, O. Diat, A. Dufresne, J. Y. Cavaille and H. Chanzy, Langmuir  (Level: 1)
+
+
+NEW SECTION: 15, 6123–6126 (1999).  (Level: 1)
+
+
+NEW SECTION: 86. M. M. De Souza Lima, J. T. Wong, M. Paillet, R. Borsali and R. Pecora, Langmuir 19, 24–29  (Level: 1)
+
+
+NEW SECTION: (2003).  (Level: 1)
+
+
+NEW SECTION: 87. A. Dufresne, N. Garcia de Rodriguez and W. Thielemans, Cellulose 13, 261–270 (2006).  (Level: 1)
+
+
+NEW SECTION: 88. A. Bhatnagar and M. Sain, J. Reinf. Plast. Composites 24, 1259–1268 (2005).  (Level: 1)
+
+
+NEW SECTION: 89. C. Oksman, D. Bondeson and A. Mathew, Cellulose 13, 171–180 (2006).  (Level: 1)
+
+
+NEW SECTION: 90. B. Dawson-Andoh, Enhancement of commercial competitiveness of appalachian hardwoods  (Level: 1)
+
+
+NEW SECTION: through advanced technologies (2005). http://www.forestry.caf.wvu.edu/WVU_Final.pdf  (Level: 1)
+
+
+NEW SECTION: 91. J. Araki, M. Wada, S. Kuga and T. Okano, Colloids Surfaces A 142, 75–82 (1998).  (Level: 1)
+
+
+NEW PARA: (Start: pg 22, col 1; End: pg 22, col 1)
+	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)92.  R. Borsali and M. M. De Souza Lima, Macromol. 
+	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)Rapid Commun. 
+	NEW SENTENCE: (Start: pg 22, col 1; End: pg 22, col 1)25, 771–787 (2004). 
+
+NEW SECTION: 93. M. A. S. Azizi Samir, A. Dufresne and F. Alloin, Biomacromolecules 6, 612–626 (2005). 94. J. Araki, M. Wada and S. Kuga, Langmuir 17, 21–27 (2001). 95. M. R. Vignon, Y. Habibi and H. Chanzy, Cellulose 13, 679–687 (2006). 96. S. Kuga, H. Yuan, Y. Nishiyama and M. Wada, Biomacromolecules 7, 696–700 (2006). 97. P. Hajji, V. Favier, C. Gauthier and G. Vigier, Polym. Composites 17, 612–619 (1996). 98. J. Y. Cavaillé, L. Chazeau, G. Canova, R. Dendievel and B. Boutherin, J. Appl. Polym. Sci. 71, 1797–1808 (1999). 99. J. Y. Cavaillé, L. Chazeau and M. Paillet, J. Polym. Sci. Part B Polym. Phys. 37, 2151–2164 (1999). 100. J. Y. Cavaillé, L. Chazeau and J. Perez, J. Polym. Sci. Part B Polym. Phys. 38, 383–392 (2000). 101. V. Favier, G. R. Canova, J. Y. Cavaille, H. Chanza, A. Dufresne and C. Gauthier, Polym. Advan. Technol. 6, 351–355 (2003). 102. D. Gray, D. Viet and S. Beck-Candanedo, Cellulose 14, 109–113 (2007). 103. Nanotechnology for the Forest Product Industry, Vision and Technology Roadmap. www.nanotechforest.org 104. K. Oskman and I. Kvien, Appl. Phys. A 87, 641–643 (2007). 105. P. Luner and A. F. Toussaint, J. Adhesion Sci. Technol. 7, 635–648 (1993). 106. C. J. van Oss and P. M. Costanzo, J. Adhesion Sci. Technol. 6, 477–487 (1992). 107. S. B. Lee and P. Luner, Tappi 55, 116–121 (1972). 108. T. Nishino, K. Takano and K. Nakamae, J. Polym. Sci. Part B Polym. Phys. 33, 1647 (1995). 109. A. Bodin, H. Backdahl, H. Fink, L. Gustafsson, B. Risberg and P. Gatenholm, Biotechnol. Bioeng.  (Level: 1)
+
+
+NEW PARA: (Start: pg 23, col 1; End: pg 23, col 1)
+	NEW SENTENCE: (Start: pg 23, col 1; End: pg 23, col 1)97, 425–434 (2007). 
+
+
