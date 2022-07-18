@@ -82,7 +82,8 @@ def TabletoPlain(Table):
         for cell in range(len(Table[row])):
             retval += "|"
             for word in range(len(Table[row][cell])):
-                retval += Table[row][cell][word]["text"]
-                retval += " "
+                if(len(Table[row][cell][word]["text"]) != 0):
+                    retval += Table[row][cell][word]["text"]
+                    retval += " "
 
     return retval

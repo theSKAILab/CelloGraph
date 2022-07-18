@@ -167,6 +167,18 @@ def mostCommonLineSpace(arr, index=False, error=0):
     return mostCommon(arr, index, error)
 
 
+# this is for shorthand.
+def mostCommonLineHeight(arr, index=False, error=0):
+    if(len(arr) == 0):
+        return None
+    try:
+        arr[0]["Height"]
+    except:
+        return None
+
+    arr = reverseArr(arr, "Height")
+    return mostCommon(arr, index, error)
+
 # Python's default 'in' method doens't return the index, so I fixed that.
 def isIn(element, arr, error=0, percentage=False):
     for i in range(len(arr)):

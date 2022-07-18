@@ -119,9 +119,11 @@ def stitchSentences(sentences):
 
 # gets rid of any super or subscript at the end of the word so you can look at just the base word.
 def trimScript(str):
-    for i in range(len(str)):
-        if(str[i] == '_'):
-            return str[:i]
+    i = -1
+    while i < len(str)-1:
+        i += 1
+        if(str[i] == '_' or str[i]==' '):
+            str = str[:i] + str[i+1:len(str)]
     return str
 
 

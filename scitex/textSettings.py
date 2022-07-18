@@ -106,8 +106,8 @@ class lineSettings:
             return False
         if(minorfunctions.areEqual(lines[i+1]["AftSpace"], pdfSettings.linespace, error)):
             return False
-        if(minorfunctions.areEqual(lines[i+2]["AftSpace"], pdfSettings.linespace, error)):
-            return False
+        #if(minorfunctions.areEqual(lines[i+2]["AftSpace"], pdfSettings.linespace, error)):
+        #    return False
         # if(minorfunctions.areEqual(lines[i+1]["AftRatio"], pdfSettings.lineratio, error)):
         #    return False
         if((not self.befspace == spaceSize.BIG_SPACE) and lines[i]["AftSpace"] > 0):
@@ -148,10 +148,8 @@ class lineSettings:
     def EndSectionTest(self, i, lines, pdfSettings, error):
         if(i == len(lines)-1 or (pdfSettings.addto and lines[i]["AftRatio"] == pdfSettings.lineratio)):
             return False
-        if(minorfunctions.areEqual(lines[i]["AftRatio"], pdfSettings.lineratio, error)):
-            return False
-        if(pdfSettings.consistentRatio == 0 and minorfunctions.areEqual(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
-            return False
+        #if(pdfSettings.consistentRatio == 0 and minorfunctions.areEqual(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
+        #    return False
         if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE):
             return True
         if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):

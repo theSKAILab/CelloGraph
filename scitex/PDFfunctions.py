@@ -88,50 +88,50 @@ def CutWordsEnd(large, small):
 
 
 # removes any text that's between pdfplumber line objects.
-#def removeTables(PDF, pdfSettings, page, words):
-#    objs = page.objects
-#    heck = words[len(words)-600:]
-#    heck2 = words[len(words)-300:]
-#
-#    try:
-#        objs["line"]
-#    except:
-#        return removeTablesRect(PDF, pdfSettings, page, words)
-#
-#    if(len(objs["line"]) < 1):
-#        return PDF, words
-#
-#    highestLine = minorfunctions.toppest(objs["line"])
-#    lowestLine = minorfunctions.bottomest(objs["line"])
-#
-#    retval = []
-#    currentRow = []
-#    currentCell = []
-#    remove = []
-#
-#    for w in range(len(words)-1):
-#        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
-#            if(len(currentCell) != 0):
-#                currentRow.append(currentCell)
-#                currentCell = []
-#        if(w > 0):
-#            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
-#                if(len(currentRow) != 0):
-#                    retval.append(currentRow)
-#                    currentRow = []
-#        if withinBounds(words[w], highestLine, lowestLine, pdfSettings.interline):
-#            currentCell.append(words[w])
-#            remove.append(w)
-#
-#    if len(currentRow) != 0:
-#        retval.append(currentRow)
-#
-#    PDF.tables.append([retval, page.page_number])
-#
-#    for i in range(len(remove)-1, -1, -1):
-#        words.pop(remove[i])
-#
-#    return PDF, words
+def removeTables(PDF, pdfSettings, page, words):
+    objs = page.objects
+    heck = words[len(words)-600:]
+    heck2 = words[len(words)-300:]
+
+    try:
+        objs["line"]
+    except:
+        return removeTablesRect(PDF, pdfSettings, page, words)
+
+    if(len(objs["line"]) < 1):
+        return PDF, words
+
+    highestLine = minorfunctions.toppest(objs["line"])
+    lowestLine = minorfunctions.bottomest(objs["line"])
+
+    retval = []
+    currentRow = []
+    currentCell = []
+    remove = []
+
+    for w in range(len(words)-1):
+        if(textprocessing.newCell(words, w, pdfSettings.interline, pdfSettings.horizontal)):
+            if(len(currentCell) != 0):
+                currentRow.append(currentCell)
+                currentCell = []
+        if(w > 0):
+            if(textprocessing.newRow(words, w-1, pdfSettings.interline, pdfSettings.horizontal)):
+                if(len(currentRow) != 0):
+                    retval.append(currentRow)
+                    currentRow = []
+        if withinBounds(words[w], highestLine, lowestLine, pdfSettings.interline):
+            currentCell.append(words[w])
+            remove.append(w)
+
+    if len(currentRow) != 0:
+        retval.append(currentRow)
+
+    PDF.tables.append([retval, page.page_number])
+
+    for i in range(len(remove)-1, -1, -1):
+        words.pop(remove[i])
+
+    return PDF, words
 
 
 def withinBounds(word, high, low, error):
@@ -190,11 +190,12 @@ def removeTablesRect(PDF, pdfSettings, page, words):
 # goes through all the words and organizesnlp them into diff objects
 # diffs are essentially lines of text (maybe I should rename them...)
 # they do have some accompanying stats like height and spacing for ease of access.
-def getLines(words, pdfSettings, error):
+def getLines(words, pdfSettings, error, space=False):
 
     sec1 = time.time()
 
     lines = []
+    spaces = []
 
     prevLineBegin = 0
     currentLineBegin = 0
@@ -218,6 +219,8 @@ def getLines(words, pdfSettings, error):
 
             lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
                 lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w)
+        else:
+                spaces.append(words[w]["x0"]-words[w-1]["x1"])
 
     # get the second to last line
     lines, prevLineBegin, currentLineBegin, nextLineBegin = addLine(
@@ -234,7 +237,10 @@ def getLines(words, pdfSettings, error):
 
     print("Time to get lines: " + str(sec2 - sec1))
 
-    return words, lines, pdfSettings
+    if(not space):
+        return words, lines, pdfSettings
+    else:
+        return words, lines, spaces
 
 
 # look through the lines and find lines that got cutoff and then stitch them back together.
@@ -685,18 +691,70 @@ def getWords(page, hError, spaceChar=False, vError=3):
 
 
 def HandleWacky(chars, prev=None):
-    if(not prev):
-        prev = chars[0]
     c = -1
     while c < (len(chars)-2):
         c += 1
         vis = chars[c-10:c+10]
+        if(not prev):
+            prev = chars[0]
+        else:
+            prev = chars[c-1]
         if(chars[c]["text"] == "\ue103"):
             chars[c]["text"] = "fi"
             chars[c]["top"] = prev["top"]
             chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c]["text"] == "(cid:1)"):
+            chars[c]["text"] = "•"
+        elif(chars[c]["text"] == "(cid:1827)"):
+            chars[c]["text"] = "A"
+        elif(chars[c]["text"] == "(cid:1828)"):
+            chars[c]["text"] = "B"
+        elif(chars[c]["text"] == "(cid:1829)" or chars[c]["text"] == "(cid:2887)" or chars[c]["text"] == "(cid:2934)"):
+            chars[c]["text"] = "C"
+        elif(chars[c]["text"] == "(cid:1830)"):
+            chars[c]["text"] = "D"
+        elif(chars[c]["text"] == "(cid:1831)"):
+            chars[c]["text"] = "E"
+        elif(chars[c]["text"] == "(cid:1834)"):
+            chars[c]["text"] = "H"
+        elif(chars[c]["text"] == "(cid:1845)"):
+            chars[c]["text"] = "S"
+        elif(chars[c]["text"] == "(cid:2021)"):
+            chars[c]["text"] = "v"
+        elif(chars[c]["text"] == "(cid:2870)"):
+            chars[c]["text"] = "2"
+        elif(chars[c]["text"] == "(cid:2898)"):
+            chars[c]["text"] = "N"
+        elif(chars[c]["text"] == "(cid:2890)"):
+            chars[c]["text"] = "x"
+        elif(chars[c]["text"] == "(cid:2902)" or chars[c]["text"] == "(cid:3438)"):
+            chars[c]["text"] = "R"
+        elif(chars[c]["text"] == "(cid:2913)"):
+            chars[c]["text"] = "c"
+        elif(chars[c]["text"] == "(cid:2914)"):
+            chars[c]["text"] = "d"
+        elif(chars[c]["text"] == "(cid:2919)"):
+            chars[c]["text"] = "i"
+        elif(chars[c]["text"] == "(cid:2924)"):
+            chars[c]["text"] = "n"
+        elif(chars[c]["text"] == "(cid:4678)" or chars[c]["text"] == "(cid:3438)"):
+            chars[c]["text"] = "("
+        elif(chars[c]["text"] == "(cid:4679)" or chars[c]["text"] == "(cid:3442)"):
+            chars[c]["text"] = ")"
         elif(chars[c]["text"] == "ﬀ"):
             chars[c]["text"] = "ff"
+            chars[c]["top"] = prev["top"]
+            chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c]["text"] == "ﬀ"):
+            chars[c]["text"] = "ff"
+            chars[c]["top"] = prev["top"]
+            chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c]["text"] == "ﬁ"):
+            chars[c]["text"] = "fi"
+            chars[c]["top"] = prev["top"]
+            chars[c]["bottom"] = prev["bottom"]
+        elif(chars[c]["text"] == "ﬃ"):
+            chars[c]["text"] = "ffi"
             chars[c]["top"] = prev["top"]
             chars[c]["bottom"] = prev["bottom"]
         elif(chars[c+1]["text"] == "¨" and c+1<len(chars)-1):
@@ -852,15 +910,15 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
     height = float(minorfunctions.bottomest(currentline)
                    ["bottom"] - minorfunctions.toppest(currentline)["top"])
 
-    if(aftspace != 0):
+    if(aftspace > 0):
         aftRatio = height/aftspace
     else:
-        aftRatio = .00001
+        aftRatio = .01
 
-    if(befspace != 0):
+    if(befspace > 0):
         befRatio = height/befspace
     else:
-        befRatio = .00001
+        befRatio = .01
 
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,

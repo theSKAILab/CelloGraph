@@ -12,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/pdfs/Heinze.pdf"
+FILEPATH = "scitex/evalPDF/JAST4093 (1).pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -26,7 +26,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[12]
+page = plumber.pages[2]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 
 
@@ -38,8 +38,8 @@ words = PDFfunctions.removePageHeadersEarly(
 visible = words[300:]
 hate = words[600:]
 
-PDF, words = PDFfunctions.removeTables(
-    PDF, pdfSettings, page, words)
+#PDF, words = PDFfunctions.removeTables(
+#    PDF, pdfSettings, page, words)
 
 words, lines, pdfSettings = PDFfunctions.getLines(
     words, pdfSettings, pdfSettings.intraline)
@@ -59,7 +59,7 @@ while i < len(lines)-1:
 
 plaintext = plaintextwriter.PDFtoPlain(PDF)
 
-file = open("TableTestOutput.txt",
+file = open("evalTestOutput.txt",
             'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
