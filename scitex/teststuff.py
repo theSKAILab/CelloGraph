@@ -12,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/evalPDF/JAST4093 (1).pdf"
+FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -26,7 +26,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[2]
+page = plumber.pages[0]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 
 

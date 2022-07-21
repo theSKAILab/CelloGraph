@@ -126,7 +126,7 @@ def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
 def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum, colnum):
 
-    if(lineIndex == 26):
+    if(lineIndex == 21):
         print("Breakpoint")
 
     sec1 = time.time()

@@ -201,6 +201,7 @@ class sentence:
         return False
 
     # iadd is for +=
+    # Personal note: I think it's cool that we can override + and += and stuff.
     def __iadd__(self, other):
         self.text += other.text
         self.words += other.words
@@ -220,19 +221,26 @@ class sentence:
         return retval
 
 
+
+#all the fields here should be self-explanatory.
+#words = list of words
+#text = the words but as a string
+#sentences = the words but organized into sentence objects.
+#pagenum = what page is this figure on?
+#col = what column is this figure in? If it stretches between multiple, should be the start col.
 class figure:
-    def __init__(self, words, num, colnum):
+    def __init__(self, words, pagenum, colnum):
         self.words = words
-        self.pagenum = num
+        self.pagenum = pagenum
         self.text = ""
         self.sentences = []
         self.col = colnum
         self.configure()
 
 
-# turns self.words into a string, makes it self.text
-# also turns self.words into sentences, makes it self.sentences.
-# part makes it work on only the last (part) words.
+    # turns self.words into a string, makes it self.text
+    # also turns self.words into sentences, makes it self.sentences.
+    # part makes it work on only the last (part) words.
 
     def configure(self, part=0):
         if(part == 0 or part > len(self.words)):
@@ -256,6 +264,7 @@ class figure:
 
         self.sentences = textprocessing.stitchSentences(self.sentences)
 
+    # adds words to the figure, tells it to configure only the new words.
     def addWords(self, words):
         prevsize = len(self.words)
         self.words += words
@@ -386,7 +395,7 @@ class PDFdocument:
         return retval
 
 
-# I don't think I use this anywhere; I just make words be dicts.
+# I don't think I use this anywhere; I just make words as dictionaries.
 class word():
     def __init__(self, text="", coords=[]):
         self.text = text

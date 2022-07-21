@@ -77,14 +77,17 @@ def FindPageHeaders(pdf, pdfSettings, hError):
         words2 = PDFfunctions.getWords(pdf.pages[i+2], hError)
         words3 = PDFfunctions.getWords(pdf.pages[i+4], hError)
 
+        #get the header
         foundHeader = False
         headers, foundHeader = addHeader(headers, words, i, words2, words3)
 
+        #if we didn't find a header, look backwards
         if(not foundHeader and i >= 4):
             words2 = PDFfunctions.getWords(pdf.pages[i-2], hError)
             words3 = PDFfunctions.getWords(pdf.pages[i-4], hError)
             headers, foundHeader = addHeader(headers, words, i, words2, words3)
 
+    #look backwards for headers on the last 4 pages, since we can't look beyond the end of the doc.
     if(len(pdf.pages) > 4):
         for i in range(len(pdf.pages)-4, len(pdf.pages)):
             words = PDFfunctions.getWords(pdf.pages[i], hError)
@@ -96,6 +99,11 @@ def FindPageHeaders(pdf, pdfSettings, hError):
 
 
 
+#adds the header in words to headers, if there is one.
+#headers = a list of headers
+#words = the page in question
+#words2, words3 = two pages to compare words to when looking for headers.
+#i the page number of words.
 def addHeader(headers, words, i, words2, words3):
     visible1 = words[len(words)-240:]
     visible2 = words2[len(words2)-240:]
