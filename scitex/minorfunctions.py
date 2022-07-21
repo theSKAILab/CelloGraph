@@ -40,6 +40,7 @@ def listElementsEqual(list, error=0, percentage=False):
     return True
 
 
+#bubble sort. Returns arr, but in order.
 def bubbleSort(arr):
     if(len(arr) < 2):
         return arr
@@ -54,10 +55,9 @@ def bubbleSort(arr):
 
     return arr
 
+
 # sorts a 2d array by length, so that the longest is first
 # I just use bubble sort for now
-
-
 def sortByLen(arr):
     if(len(arr) < 2):
         return arr
@@ -72,9 +72,9 @@ def sortByLen(arr):
 
     return arr
 
+
+
 # returns true if val1 > val2+error or val1 < val2* (100+error)%
-
-
 def isGreater(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
@@ -142,7 +142,8 @@ def mostCommon(arr, index=False, error=0):
         return countarr[0][maxdex]
 
 
-# take a list of dicts, make a list of attribute
+# take a list of dicts, make a list of [attribute]
+# i.e. if you pass in an array of words and "page" it'll return a list of page numbers.
 def reverseArr(arr, attribute):
     retval = []
     for i in range(len(arr)):
@@ -179,6 +180,7 @@ def mostCommonLineHeight(arr, index=False, error=0):
     arr = reverseArr(arr, "Height")
     return mostCommon(arr, index, error)
 
+
 # Python's default 'in' method doens't return the index, so I fixed that.
 def isIn(element, arr, error=0, percentage=False):
     for i in range(len(arr)):
@@ -188,7 +190,7 @@ def isIn(element, arr, error=0, percentage=False):
 
 
 # if element isn't in arr, appends element to arr.
-# takes a list, returns a list.
+# takes a list, returns that list with the new element (if it isn't already in there)
 def appendNoRepeats(element, arr):
     inArr = False
     for i in range(len(arr)):
@@ -247,12 +249,12 @@ def newCoords(coords, type):
         return coords
 
 
-# I wanted an xor for something and was sad that python didn't have one
+# I wanted an xor for PDFfragments == overrides and was sad that python didn't have one
 def xor(a, b):
     return not(a and b) and not(not a and not b)
 
 
-# turn a string of text into an array of words
+# turn a string of text into an array of strings, splitting it up into words.
 def words(str):
     retval = []
     bookmark = 0
@@ -264,10 +266,11 @@ def words(str):
         retval.append(str[bookmark:])
     return retval
 
+
+
+
 # returns the last subsection (or sub-sub-sub-etc-section) of the last section
 # also updates its type if need be.
-
-
 def updateActiveSection(PDF, words, pdfSettings):
     if(len(PDF.sections) == 0):
         return None
@@ -346,6 +349,8 @@ def bottomest(list):
     return retval
 
 
+#takes two strings as input, returns a bool.
+#finds out whether the shorter string is the beginning of the longer one.
 def BeginningEqual(str1, str2):
     if(len(str1) == 0 or len(str2) == 0):
         return False
@@ -355,6 +360,8 @@ def BeginningEqual(str1, str2):
     return False
 
 
+#takes two strings as input, returns a bool.
+#finds out whether the shorter string is the end of the longer one.
 def EndEqual(str1, str2):
     if(len(str1) == 0 or len(str2) == 0):
         return False
@@ -366,15 +373,18 @@ def EndEqual(str1, str2):
     return False
 
 
+# takes two strings as input, returns an integer.
+# if str1 is shorter, returns len(str1), else returns len(str2)
 def minLength(str1, str2):
     if(len(str1) > len(str2)):
         return len(str2)
     else:
         return len(str1)
 
+
+
+
 # really long if statement
-
-
 def isCaption(str):
     if(str == "Fig." or "Figure"):
         return True

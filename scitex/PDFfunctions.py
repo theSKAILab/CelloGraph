@@ -690,6 +690,10 @@ def getWords(page, hError, spaceChar=False, vError=3):
     return retval
 
 
+
+#This really just looks through every character and determines whether it should be a different one.
+# The goal is to remove (cid:xxxx) tags, /ueXXXX tags, and other characters that are misread by pdfPlumber, such as when two characters get combined into one.
+
 def HandleWacky(chars, prev=None):
     c = -1
     while c < (len(chars)-2):

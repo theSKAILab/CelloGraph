@@ -2,24 +2,20 @@ from enum import Enum
 import minorfunctions
 
 # An enum describing the size of text
-
-
 class lineSize(Enum):
     NORMAL_SIZE = 1
     BIG_SIZE = 2
     SMALL_SIZE = 3
 
+
 # An enum describing the amount of space before/after a line of text
-
-
 class spaceSize(Enum):
     NORMAL_SPACE = 1
     BIG_SPACE = 2
     SMALL_SPACE = 3
 
+
 # An enum describing the types of lines of text.
-
-
 class lineType(Enum):
     END_SECTION = 1
     END_BLOCK = 2
@@ -30,8 +26,12 @@ class lineType(Enum):
 
 
 # class describing what kind of text line we're dealing with.
-# takes a bunch of inputs, and then uses them to calibrate itself.
 class lineSettings:
+
+    #i is the index of the lines array that we're dealing with.
+    #lines is the list of lines in this column.
+    #pdfSettings will gives us a bunch of numbers to use.
+    #error is vertical, interline error.
     def __init__(self, i, lines, pdfSettings, error, consistentRatio=0):
         self.size = lineSize.NORMAL_SIZE
         self.befspace = spaceSize.NORMAL_SPACE

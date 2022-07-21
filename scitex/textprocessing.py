@@ -9,8 +9,7 @@ import time
 
 # takes an array of things, takes all the text out, then puts it all into one string.
 # has two modes: dictionary mode and class mode. Dictionary mode will use the "text" item from the dictionary.
-# Class mode will use the "text" field
-
+# Class mode will use the ".text" field
 
 def makeString(arr, mode="dict"):
     retval = ""
@@ -25,7 +24,7 @@ def makeString(arr, mode="dict"):
     return retval
 
 
-#
+#uses spacy to turn a bunch of words into a bunch of sentences.
 def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
     retval = []
     # set up some spacy stuff to detect end of sentence
@@ -97,6 +96,7 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
     return retval
 
 
+#loops through a list of sentences and clears out any sentences that are either "None" or don't end in '.', '?', or '!', combining them with other sentences.
 def stitchSentences(sentences):
     sentDex = -1
     while sentDex < len(sentences)-2:
@@ -127,15 +127,20 @@ def trimScript(str):
     return str
 
 
+#takes a list of sentences, returns a fixed list of sentences.
+#stitches together any words that were cut off, i.e. turning "fina- lly" into "finally"
 def checkForCutOffs(sentences):
+    #if the list is empty, return it.
     if(len(sentences) == 0):
         return sentences
 
+    #for each sentence, look for a cutoff word
     for i in range(len(sentences)):
         j = 0
         while(j < len(sentences[i].text)-3):
             text = sentences[i].text
             j += 1
+            #if you find a cutoff word, stitch it back together.
             if(text[j:j+2] == '- ' and text[j-1] != ' '):
                 sentences[i].text = sentences[i].text[:j] + \
                     sentences[i].text[j+2:]
@@ -148,18 +153,26 @@ def checkForCutOffs(sentences):
 def DetermineParagraph(lines, lineIndex, pdfSettings, error):
     w = lines[lineIndex]["LineStartDex"]
     words = lines[lineIndex]["Text"]
+    
+    #if we're not exactly where we were...
     if(w == pdfSettings.bookmark):
         return False
+    #...and we're checking for paragraphs based on horizontal alignment...
     if(not pdfSettings.useSpace):
+        #...and this isn't the last line in the column...
         if(lineIndex < len(lines)-1):
+            #...and this line's alignment is different from the next line's and from what we expect it to be, return True.
             currentAlign = minorfunctions.areEqual(
                 lines[lineIndex]["Align"], pdfSettings.paraAlign, error)
             nextAlign = minorfunctions.areEqual(
                 lines[lineIndex+1]["Align"], lines[lineIndex]["Align"], error)
             return not currentAlign and not nextAlign
+        #if this is the last line in the paragraph, return True wait that doesn't sound right.
         else:
             return True
+    #...or if we aren't checking for paragraphs based on alignment...
     else:
+        #...then figure out whether the space is big enough to count.
         if(w < len(words)-1):
             return minorfunctions.isGreater(
                 words[w]["top"] - words[w+1]["top"], pdfSettings.paraSpace, error)
@@ -176,17 +189,26 @@ def newline(words, w, error=0):
     # else:
     #    return True
     height = words[w]["bottom"] - words[w]["top"]
+    
+    #if it isn't too much higher than the previous word...
     topGreater = not minorfunctions.isLesser(
         words[w]["top"], words[w-1]["top"], height/2)
+
+    #...and isn't too much lower than the previous word...
     bottomLesser = not minorfunctions.isGreater(
         words[w]["bottom"], words[w-1]["bottom"], height/2)
-    newCol = minorfunctions.isLesser(
+
+    #...and isn't part of a completely different column...
+    notNewCol = not minorfunctions.isLesser(
         words[w]["top"]-words[w-1]["top"], 0, height/4)
-    if(topGreater and bottomLesser and not newCol):
+
+    if(topGreater and bottomLesser and notNewCol):
         return False
     return True
 
 
+#tries to determine whether we've found a new cell in a table.
+#doesn't do too great a job if we're being honest.
 def newCell(words, w, vError, hError):
     prevtop = words[w-1]["top"]
     top = words[w]["top"]
@@ -205,6 +227,7 @@ def newCell(words, w, vError, hError):
     return False
 
 
+#tries to determine whether we've found a new row in a table. 
 def newRow(words, w, vError, hError):
     prevtop = words[w-1]["top"]
     top = words[w]["top"]
@@ -222,6 +245,7 @@ def newRow(words, w, vError, hError):
 # is tacked onto the beginning of the first word, remove it.
 
 
+#removes num from the beginning of the words array.
 def removePageNumber(words, num):
     original = words
     words = removePageNumberWord(words, num)
@@ -232,6 +256,7 @@ def removePageNumber(words, num):
     return words
 
 
+#if num is the first word in words, remove it.
 def removePageNumberWord(words, num):
     size = words[300:]
     if(len(words) < 1):
@@ -245,6 +270,7 @@ def removePageNumberWord(words, num):
     return words
 
 
+#if num is at the beginning of the first word in words, remove it.
 def removePageNumberFromBeginningOfWord(words, num):
     if(len(words) < 1):
         return words
@@ -253,18 +279,12 @@ def removePageNumberFromBeginningOfWord(words, num):
     return words
 
 
-# the newline function but for characters.
-def charNewline(chars, c, error=0):
-    if(c == 0):
-        return True
-    if(not minorfunctions.areEqual(words[w-1]["y0"], words[w]["y0"], error) and not minorfunctions.areEqual(
-            words[w-1]["y1"], words[w]["y1"]), error):
-        return True
-    return False
 
-
+#Figure out whether this section is a section, a subsection, etc.
 def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
     retval = 0
+
+    #if it's a string, look at how many numbers/periods there are.
     if(isinstance(sectionheader, str)):
         for i in range(len(sectionheader)):
             if(sectionheader[i] == '.'):
@@ -273,6 +293,7 @@ def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
             if(sectionheader[len(sectionheader)-1].isdigit()):
                 retval += 1
     else:
+        #otherwise turn it into a string and then look at how many numbers/periods there are.
         height = sectionheader["bottom"] - sectionheader["top"]
         for i in range(len(sectionheader["text"])):
             if(sectionheader["text"][i] == '.'):
@@ -281,11 +302,13 @@ def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
         if(sectionheader["text"][len(sectionheader["text"])-1].isdigit()):
             retval += 1
 
+    #if we're on page 1 then we might run into some headers that don't have a number, such as the title.
     if(pagenum == 1 or active.pagenum == 1):
         if(retval == 0):
             return 1
         return retval
     else:
+        #otherwise, no subsection header should be taller than it's parent section's header.
         test = active
         while(test):
             if(minorfunctions.areEqual(height, test.height, error)):
@@ -310,16 +333,19 @@ def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
             return test.type
 
 
+#i.isdigit() but for each char in the string.
+#consider moving this to minor functions.
 def isValid(str):
     for i in str:
         if not i.isdigit():
             return True
     return False
 
+
+
 # Searches the page for citations and removes them.
 # returns a string with all citations removed.
-
-
+#I don't actually use this one at the moment.
 def CitationRemoval(cites, PDF, word, coords, paraNum):
     # find all the citations
     pattern = r'\[\i\]'
@@ -335,6 +361,8 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
     return word
 
 
+
+#Take a bunch of words and turn them into columns.
 def HandleColumns(words, hError, vError):
     sec1 = time.time()
     retval = [[]]
@@ -357,6 +385,8 @@ def HandleColumns(words, hError, vError):
     return retval
 
 
+
+#clean up the paragraph a little bit.
 def cleanPara(sentlist, pdfSettings):
     if(len(sentlist) == 0):
         return sentlist, pdfSettings
