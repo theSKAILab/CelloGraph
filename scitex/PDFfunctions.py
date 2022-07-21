@@ -703,8 +703,14 @@ def HandleWacky(chars, prev=None):
             chars[c]["text"] = "fi"
             chars[c]["top"] = prev["top"]
             chars[c]["bottom"] = prev["bottom"]
-        elif(chars[c]["text"] == "(cid:1)"):
+        elif(chars[c]["text"] == "(cid:1)" or chars[c]["text"] == "(cid:4)"):
             chars[c]["text"] = "•"
+        elif(chars[c]["text"] == "(cid:2)"):
+            chars[c]["text"] = "°"
+        elif(chars[c]["text"] == "(cid:3)"):
+            chars[c]["text"] = "-"
+        elif(chars[c]["text"] == "(cid:5)"):
+            chars[c]["text"] = "*"
         elif(chars[c]["text"] == "(cid:1827)"):
             chars[c]["text"] = "A"
         elif(chars[c]["text"] == "(cid:1828)"):

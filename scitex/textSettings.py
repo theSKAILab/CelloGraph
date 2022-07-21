@@ -98,7 +98,8 @@ class lineSettings:
 
     # if we're not at the bottom of the col and there's a big space before this line and there's a big space after this line and next line.
     def StartMultiTest(self, i, lines, pdfSettings, error):
-        if(minorfunctions.isEndofCol(i+1, lines) or minorfunctions.isEndofCol(i+2, lines) or pdfSettings.addto):
+        pagenum = lines[0]["Text"][0]["Page"]
+        if(minorfunctions.isEndofCol(i+1, lines) or minorfunctions.isEndofCol(i+2, lines) or (pdfSettings.addto and pagenum != 1)):
             return False
         if(minorfunctions.areEqual(lines[i+1]["AftSpace"], pdfSettings.linespace, error)):
             return False
@@ -112,7 +113,7 @@ class lineSettings:
             return False
         if(minorfunctions.isGreater(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
             return False
-        if(minorfunctions.isGreater(lines[i]["Align"], lines[i+1]["Align"], error)):
+        if(minorfunctions.isGreater(lines[i]["Align"], lines[i+1]["Align"], error) and pagenum != 1):
             return False
         if(i == 0):
             if(minorfunctions.areEqual(lines[i+1]["AftSpace"], lines[i]["AftSpace"], pdfSettings.interline) and lines[i]["AftSpace"] > 0):
@@ -125,6 +126,7 @@ class lineSettings:
     def FigureTest(self, i, lines, pdfSettings, error):
         if(self.size == lineSize.SMALL_SIZE):
             return True
+        return False
 
     # if we're not at the bottom of the col and the ratio of size to spacing is the same for the next line as it is for this line,
     # and that ratio isn't the same as the normal text ratio.
@@ -150,3 +152,4 @@ class lineSettings:
             return True
         if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):
             return True
+        return False

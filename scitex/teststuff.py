@@ -28,15 +28,15 @@ pdfSettings = PDFsettings.PDFsettings(
 
 page = plumber.pages[0]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
-
+visible = words[300:]
+hate = words[600:]
 
 tables = page.extract_tables(table_settings)
 
 words = PDFfunctions.removePageHeadersEarly(
     words, page.page_number, pdfSettings)
 
-visible = words[300:]
-hate = words[600:]
+
 
 #PDF, words = PDFfunctions.removeTables(
 #    PDF, pdfSettings, page, words)
