@@ -12,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/evalPDF/JAST4093 (1).pdf"
+FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -28,15 +28,15 @@ pdfSettings = PDFsettings.PDFsettings(
 
 page = plumber.pages[2]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
-
+visible = words[300:]
+hate = words[600:]
 
 tables = page.extract_tables(table_settings)
 
 words = PDFfunctions.removePageHeadersEarly(
     words, page.page_number, pdfSettings)
 
-visible = words[300:]
-hate = words[600:]
+
 
 #PDF, words = PDFfunctions.removeTables(
 #    PDF, pdfSettings, page, words)

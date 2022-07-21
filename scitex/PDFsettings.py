@@ -2,6 +2,7 @@ from enum import Enum
 import minorfunctions
 import PDFfragments
 import PDFfunctions
+from minorfunctions import listElementsEqual
 import textprocessing
 
 # PDF Settings is a really big class that I use to hold onto a zillion different values while reading the PDF.
@@ -101,8 +102,8 @@ def addHeader(headers, words, i, words2, words3):
     visible2 = words2[len(words2)-240:]
     visible3 = words3[len(words3)-240:]
 
-    index = 1
-    first1 = words[len(words)-1]
+    index = 0
+    first1 = words[0]
     expect_num = False
     foundHeader = False
     if first1["text"].isdigit():
@@ -115,7 +116,7 @@ def addHeader(headers, words, i, words2, words3):
     if anyHeader:
         oldOffset = offset
         foundHeader = True
-        count = 0
+        count = index
         k = index
         while k < len(words):
             k += 1
@@ -143,23 +144,30 @@ def addHeader(headers, words, i, words2, words3):
 def headerCheck(words, words2, words3, index, offset=0):
     if(index < 0):
         index = 0
-    w1 = words[index+offset]["text"]
-    w2 = words2[index]["text"]
-    w3 = words3[index]["text"]
+    w1 = words[index+offset]
+    w2 = words2[index]
+    w3 = words3[index]
 
-    if w1 == w2 and w2 == w3:
-        return True
+    t1 = w1["text"]
+    t2 = w2["text"]
+    t3 = w3["text"]
 
-    w1 = textprocessing.trimScript(w1)
-    w2 = textprocessing.trimScript(w2)
-    w3 = textprocessing.trimScript(w3)
+    h1 = w1["bottom"] - w1["top"]
+    h2 = w2["bottom"] - w2["top"]
+    h3 = w3["bottom"] - w3["top"]
 
-    if w1.isdigit() and w2.isdigit() and w3.isdigit():
-        num = int(w1)
-        num2 = int(w2)
-        num3 = int(w3)
-        if(minorfunctions.listElementsEqual([int(w1), int(w2), int(w3)], 4)):
+    if t1 == t2 and t2 == t3:
+        if(minorfunctions.listElementsEqual([h1, h2, h3], 5, True)):
             return True
+
+    t1 = textprocessing.trimScript(t1)
+    t2 = textprocessing.trimScript(t2)
+    t3 = textprocessing.trimScript(t3)
+
+    if t1.isdigit() and t2.isdigit() and t3.isdigit():
+        if(minorfunctions.listElementsEqual([int(t1), int(t2), int(t3)], 4)):
+            if(minorfunctions.listElementsEqual([h1, h2, h3], 5, True)):
+                return True
 
     return False
 
@@ -276,7 +284,7 @@ def addFooter(footers, words, i, words2, words3):
     visible2 = words2[len(words2)-240:]
     visible3 = words3[len(words3)-240:]
 
-    index = 1
+    index = 0
     first1 = words[len(words)-1]
     expect_num = False
     foundFooter = False

@@ -6,9 +6,8 @@ import plaintextwriter
 import time
 import os
 
-# tell it to run for every pdf in a folder instead of an individual document
-
-FILEPATH = "scitex/evalPDF/A_Study_on_Thermal_and_Nanomechanical_Performance_.pdf"
+ ###tell it to run for every pdf in a folder instead of an individual document
+FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -22,7 +21,7 @@ print("Time to Read: " + str(diff) + " sec, aka " + str(diff/60) + " min")
 plaintext = "Time to Read: " + \
     str(diff) + " sec, aka " + str(diff/60) + " min" + plaintext
 #file = open(("7-18-" + FILEPATH + ".txt"), 'w+', encoding="utf-8")
-file = open(("7-18-JAST.txt"), 'w+', encoding="utf-8")
+file = open(("7-19-Gupta.txt"), 'w+', encoding="utf-8")
 file.write(plaintext)
 file.close()
 
@@ -37,8 +36,6 @@ file.close()
 #        sec1 = time.time()
 #        output, times = PDFparser.PDFSort(plumber, True)
 #
-#        print("this is just here so I can put a breakpoint here.")
-#
 #
 #        plaintext = plaintextwriter.PDFtoPlain(output, times)
 #        sec2 = time.time()
@@ -48,11 +45,10 @@ file.close()
 #        plaintext = "Time to Read: " + \
 #            str(diff) + " sec, aka " + str(diff/60) + " min" + plaintext
 #
-#        file = open("Table-Test-" + filename + ".txt",
+#        file = open("7-19-" + filename + ".txt",
 #                    'w+', encoding="utf-8")
 #        file.write(plaintext)
 #        file.close()
-
 
 
 
