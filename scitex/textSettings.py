@@ -2,24 +2,20 @@ from enum import Enum
 import minorfunctions
 
 # An enum describing the size of text
-
-
 class lineSize(Enum):
     NORMAL_SIZE = 1
     BIG_SIZE = 2
     SMALL_SIZE = 3
 
+
 # An enum describing the amount of space before/after a line of text
-
-
 class spaceSize(Enum):
     NORMAL_SPACE = 1
     BIG_SPACE = 2
     SMALL_SPACE = 3
 
+
 # An enum describing the types of lines of text.
-
-
 class lineType(Enum):
     END_SECTION = 1
     END_BLOCK = 2
@@ -120,7 +116,7 @@ class lineSettings:
         if(minorfunctions.isGreater(lines[i]["Align"], lines[i+1]["Align"], error) and pagenum != 1):
             return False
         if(i == 0):
-            if(minorfunctions.areEqual(lines[i+1]["AftSpace"], lines[i]["AftSpace"], pdfSettings.interline)):
+            if(minorfunctions.areEqual(lines[i+1]["AftSpace"], lines[i]["AftSpace"], pdfSettings.interline) and lines[i]["AftSpace"] > 0):
                 return True
         if(i != 0):
             if(minorfunctions.isLesser(lines[i]["AftSpace"], lines[i]["BefSpace"], pdfSettings.interline) and lines[i]["AftSpace"] > 0):
@@ -152,7 +148,7 @@ class lineSettings:
             return False
         #if(pdfSettings.consistentRatio == 0 and minorfunctions.areEqual(lines[i]["BefRatio"], pdfSettings.lineratio, error)):
         #    return False
-        if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE):
+        if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE and lines[i]["AftSpace"] > 0 and lines[i]["BefSpace"] > 0):
             return True
         if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):
             return True

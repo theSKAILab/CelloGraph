@@ -689,7 +689,7 @@ def getWords(page, hError, spaceChar=False, vError=3):
 
     return retval
 
-
+#This is a really really long case/switch statement for whatever stupid characters don't get read properly by pdfplumber.
 def HandleWacky(chars, prev=None):
     c = -1
     while c < (len(chars)-2):
@@ -858,8 +858,8 @@ def makeWord(words, chars, pagenum, unusual=""):
 
 # takes a list of words and adds a line very carefully, including lots of numbers based on other lines.
 def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
-    if(w == 45):
-        print("Breakpoint")
+    #if(w == 45):
+    #    print("Breakpoint")
 
     if(len(words) == 0):
         return lines, prevLineBegin, currentLineBegin, nextLineBegin

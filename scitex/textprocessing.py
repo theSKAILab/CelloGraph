@@ -59,6 +59,7 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
             dots = True
             sent = False
             text = nlp(makeString(words[bookmark:i+1]))
+            
             for t in range(len(text) - 1, -1, -1):
 
                 char = text[t].text
@@ -66,6 +67,9 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
                     dots = False
                 else:
                     sent = True
+                if(char == "al" and sent and t == len(text)-2):
+                    sent = False
+                    break
                 if char == ')' or char == ']':
                     break
                 if char == '(' or char == '[':
@@ -89,7 +93,7 @@ def MakeSentences(words, coords, p, pagenum, colnum, pdfSettings=None):
             words[bookmark:], makeString(words[bookmark:]), coords, p, sentNum, [pagenum, colnum], [pagenum, colnum]))
         word = words[len(words)-1]
         finalchar = word["chars"][len(word["chars"])-1]["text"]
-        if(pdfSettings and pagenum > 2 and finalchar != "]"):
+        if(pdfSettings and pagenum > 2 and finalchar != ']' and finalchar != ' ' and finalchar != '.'):
             pdfSettings.addtoNext = True
 
     if(pdfSettings):

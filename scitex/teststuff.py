@@ -26,7 +26,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[2]
+page = plumber.pages[0]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 visible = words[300:]
 hate = words[600:]
