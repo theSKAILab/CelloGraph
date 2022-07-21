@@ -21,6 +21,7 @@ class section:
         self.title = t
         self.subsections = []
         self.parent = p
+        # Array of Paragraphs objects
         self.para = []
         self.type = type
         self.coords = coords
@@ -106,6 +107,7 @@ class section:
 # citations: an array of citations
 class paragraph:
     def __init__(self, coords, paraNum, sent=[], cites=[], align=0, start=[0, 0], end=[0, 0]):
+        # Array of Sentence objects
         self.sentences = sent
         self.coords = coords
         self.paraNum = paraNum
@@ -182,6 +184,8 @@ class sentence:
     def __init__(self, words, text, coords, para, sentNum, start=[0, 0], end=[0, 0]):
         self.words = words
         self.text = text
+        # coords is an array of integer storing the sections where it is
+        # (e.g. [1,2] means Section 2, Subsection 3); numbers start at 0
         self.coords = coords
         self.para = para
         self.sentNum = sentNum
@@ -274,7 +278,9 @@ class figure:
 # PDFdocument is the big class where one instance of it will have access to all the text.
 class PDFdocument:
     def __init__(self):
+        # Array of Section objects (see class definition above)
         self.sections = []
+        # Array of Figure objects (see class definition above)
         self.figures = []
         self.tables = []
 
