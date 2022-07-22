@@ -68,7 +68,7 @@ def PDFSort(pdf, times=False):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 3):
+    if(page.page_number == 2):
         print("Breakpoint")
 
     pagechars = page.chars
@@ -108,6 +108,9 @@ def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
     words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
+
+    #if(page != 1):
+    pdfSettings = PDFsettings.newSpacing(lines, pdfSettings)
 
     i = -1
     while i < len(lines)-1:
@@ -161,7 +164,7 @@ def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum, colnum):
             PDF, lines, lineIndex, words, pdfSettings, pagenum, colnum)
         lineIndex -= 1
 
-    # if there's a new paragraph, add that.
+        # if there's a new paragraph, add that.
     elif (textprocessing.DetermineParagraph(lines, lineIndex, pdfSettings, pdfSettings.interline)):
         pdfSettings.consistentRatio = 0
         pdfSettings = PDFfunctions.extensiveAddPara(

@@ -12,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
+FILEPATH = "scitex/evalPDF/IGC paper Peng 2013 (1).pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -26,7 +26,7 @@ pdfSettings = PDFsettings.PDFsettings(
     plumber, VERTICAL_ERROR, HORIZONTAL_ERROR, PARAS_REQUIRED)
 
 
-page = plumber.pages[0]
+page = plumber.pages[2]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)
 visible = words[300:]
 hate = words[600:]

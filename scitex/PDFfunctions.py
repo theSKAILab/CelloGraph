@@ -42,14 +42,14 @@ def removePageFootersEarly(words, num, pdfSettings):
     for i in range(len(pdfSettings.pageFooters)):
 
         header = minorfunctions.reverseArr(
-            pdfSettings.pageFooters[i].text, "text")
+            pdfSettings.pageFooters[i].words, "text")
 
         wordtext = minorfunctions.reverseArr(words, "text")
         doubleheck = wordtext[600:]
 
         if(minorfunctions.EndEqual(header, wordtext)):
 
-            words = CutWordsEnd(words, pdfSettings.pageFooters[i].text)
+            words = CutWordsEnd(words, pdfSettings.pageFooters[i].words)
 
             if(pdfSettings.pageFooters[i].expect_num):
                 words = textprocessing.removePageNumber(words, num)
@@ -251,7 +251,7 @@ def DealWithCutOffs(words, lines):
         if(i == 22):
             print("Breakpoint")
         if(lines[i]["Cutoff"]):
-            lineText = lines[i]["Text"]
+            lineText = lines[i]["Words"]
             currentWord = lineText[len(lineText)-1]
 
             # get rid of the hyphen
@@ -261,7 +261,7 @@ def DealWithCutOffs(words, lines):
             currentWord["chars"].pop(len(currentWord["chars"])-1)
 
             # add the first "word" of the next line
-            nextText = lines[i+1]["Text"]
+            nextText = lines[i+1]["Words"]
             nextWord = nextText[0]
 
             for char in nextWord["chars"]:
@@ -271,14 +271,14 @@ def DealWithCutOffs(words, lines):
             currentWord["Pieces"].append(nextWord["text"])
 
             # but if its the only word on that line then we need to keep some of that data.
-            if(len(lines[i+1]["Text"]) == 1):
+            if(len(lines[i+1]["Words"]) == 1):
                 lines[i]["AftSpace"] = lines[i+1]["AftSpace"]
                 lines[i]["AftRatio"] = lines[i+1]["AftRatio"]
 
             # remove the first word from the next line
-            lines[i+1]["Text"].pop(0)
+            lines[i+1]["Words"].pop(0)
             words.pop(lines[i+1]["LineStartDex"])
-            if(len(lines[i+1]["Text"]) == 0):
+            if(len(lines[i+1]["Words"]) == 0):
                 lines.pop(i+1)
             lines[i+1]["LineEndDex"] -= 1
             for j in range(i+2, len(lines)):
@@ -287,7 +287,7 @@ def DealWithCutOffs(words, lines):
 
             # update this line
             lineText[len(lineText)-1] = currentWord
-            lines[i]["Text"] = lineText
+            lines[i]["Words"] = lineText
 
     return words, lines
 
@@ -689,12 +689,25 @@ def getWords(page, hError, spaceChar=False, vError=3):
 
     return retval
 
+
+def HandleGreekFont(char, font):
+    retval = char
+    if(char["fontname"] == 'KBFOKI+AdvPSMP10' and char["text"] == 'c'):
+            char["text"] = 'γ'
+    if(char["text"] != 'γ'):
+        print("Breakpoint")
+    
+    return char
+
+
 #This is a really really long case/switch statement for whatever stupid characters don't get read properly by pdfplumber.
 def HandleWacky(chars, prev=None):
     c = -1
     while c < (len(chars)-2):
         c += 1
         vis = chars[c-10:c+10]
+        if(chars[c]["fontname"] == 'KBFOKI+AdvPSMP10'):
+            chars[c] = HandleGreekFont(chars[c], 'KBFOKI+AdvPSMP10')
         if(not prev):
             prev = chars[0]
         else:
@@ -805,6 +818,8 @@ def makeWord(words, chars, pagenum, unusual=""):
         return None
 
     chars = HandleWacky(chars)
+    visWord = words[len(words)-20:]
+    
 
     if(unusual == "Superscript"):
         text = "^{"
@@ -830,7 +845,7 @@ def makeWord(words, chars, pagenum, unusual=""):
                 super = True
                 text += "}"
 
-            retval = {"Page": pagenum, "text": text, "chars": chars[:c], "x0": x0, "x1": x1, "top": top,
+            retval = {"page": pagenum, "text": text, "chars": chars[:c], "x0": x0, "x1": x1, "top": top,
                       "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super, "Pieces": [text]}
             return retval
         else:
@@ -851,7 +866,7 @@ def makeWord(words, chars, pagenum, unusual=""):
         super = True
         text += "}"
 
-    retval = {"Page": pagenum, "text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
+    retval = {"page": pagenum, "text": text, "chars": chars, "x0": x0, "x1": x1, "top": top,
               "bottom": bottom, "upright": True, "direction": 1, "Subscript": sub, "Superscript": super, "Pieces": [text]}
     return retval
 
@@ -880,7 +895,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
         befRatio = height
         lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": height,
                       "BefSpace": height, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                      "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": False})
+                      "Align": words[currentLineBegin]["x0"], "Words": words[currentLineBegin:nextLineBegin], "Cutoff": False})
 
         prevLineBegin = currentLineBegin
         currentLineBegin = nextLineBegin
@@ -928,7 +943,7 @@ def addLine(lines, words, prevLineBegin, currentLineBegin, nextLineBegin, w):
 
     lines.append({"LineStartDex": currentLineBegin, "LineEndDex": nextLineBegin-1, "AftSpace": aftspace,
                  "BefSpace": befspace, "Height": height, "AftRatio": aftRatio, "BefRatio": befRatio,
-                  "Align": words[currentLineBegin]["x0"], "Text": words[currentLineBegin:nextLineBegin], "Cutoff": cutoff})
+                  "Align": words[currentLineBegin]["x0"], "Words": words[currentLineBegin:nextLineBegin], "Cutoff": cutoff})
 
     prevLineBegin = currentLineBegin
     currentLineBegin = nextLineBegin
@@ -961,7 +976,7 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum, colnu
     type = textprocessing.FindsectionType(
         words[pdfSettings.bookmark], pdfSettings.activesection, pagenum, lines[lineIndex]["Height"], pdfSettings.intraline)
 
-    if(len(lines[lineIndex]["Text"]) < 2 and len(lines[lineIndex]["Text"][0]["text"]) < 3):
+    if(len(lines[lineIndex]["Words"]) < 2 and len(lines[lineIndex]["Words"][0]["text"]) < 3):
         type = pdfSettings.activesection.type + 1
 
     pdfSettings.coords = minorfunctions.newCoords(
@@ -979,25 +994,6 @@ def registerSection(PDF, words, w, lines, lineIndex, pdfSettings, pagenum, colnu
     return PDF, pdfSettings, lines
 
 
-# deprecated
-def addBlock(pdfSettings, words, w):
-    pdfSettings.addto = False
-    pdfSettings, sentlist = textprocessing.MakeSentences(
-        words[pdfSettings.bookmark:w+1], copy.copy(pdfSettings.coords), pdfSettings.paraNum, pdfSettings)
-
-    if(w < len(words)-1):
-        para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w+1]["x0"], [pagenum, colnum], [pagenum, colnum])
-    else:
-        para = PDFfragments.paragraph(
-            copy.copy(pdfSettings.coords), pdfSettings.paraNum, sentlist, copy.copy(pdfSettings.cites), words[w]["x0"], [pagenum, colnum], [pagenum, colnum])
-    pdfSettings.cites = []
-    pdfSettings.activesection.para.append(para)
-    pdfSettings.paraNum += 1
-    pdfSettings.bookmark = w+1
-
-    return pdfSettings
-
 
 # turns sentlist into a paragraph and adds it to the last para in pdfSettings.activesection
 # returns updated pdfSettings
@@ -1014,9 +1010,9 @@ def addToPara(pdfSettings, sentlist, words, w, pagenum, colnum):
 
     newPage = False
     newCol = False
-    if(words[w]["Page"] != activepara.endPage):
+    if(words[w]["page"] != activepara.endPage):
         newPage = True
-        activepara.endPage = words[w]["Page"]
+        activepara.endPage = words[w]["page"]
         activepara.endCol = 0
     elif(colnum != activepara.endCol):
         newCol = True
@@ -1090,26 +1086,26 @@ def extensiveAddPara(pdfSettings, words, w, pagenum, colnum):
 def registerFigure(PDF, lines, lineIndex, words, pdfSettings, pagenum, colnum):
     # if it follows the "new figure" format, then add a new one, otherwise, add to the last one.
     line = lines[lineIndex]
-    if(len(line["Text"]) > 1):
-        text0 = line["Text"][0]["text"]
-        text1 = line["Text"][1]["text"]
-        bigenough = len(line["Text"]) >= 2
+    if(len(line["Words"]) > 1):
+        text0 = line["Words"][0]["text"]
+        text1 = line["Words"][1]["text"]
+        bigenough = len(line["Words"]) >= 2
         numbered = text1.isdigit() or text1[:len(text1)-1].isdigit()
         figure = minorfunctions.isCaption(text0)
         isNewFigure = (
             figure and bigenough and numbered) or pagenum != PDF.lastFig().pagenum
 
         if(len(PDF.figures) == 0 or isNewFigure):
-            figure = PDFfragments.figure(line["Text"], pagenum, colnum)
+            figure = PDFfragments.figure(line["Words"], pagenum, colnum)
             PDF.figures.append(figure)
         else:
-            PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
+            PDF.figures[len(PDF.figures)-1].addWords(line["Words"])
 
     else:
         if(len(PDF.figures) > 0 and pagenum == PDF.lastFig().pagenum):
-            PDF.figures[len(PDF.figures)-1].addWords(line["Text"])
+            PDF.figures[len(PDF.figures)-1].addWords(line["Words"])
         else:
-            figure = PDFfragments.figure(line["Text"], pagenum, colnum)
+            figure = PDFfragments.figure(line["Words"], pagenum, colnum)
             PDF.figures.append(figure)
 
     for i in range(line["LineEndDex"]-pdfSettings.offset, line["LineStartDex"]-1-pdfSettings.offset, -1):

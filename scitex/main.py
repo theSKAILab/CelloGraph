@@ -9,7 +9,7 @@ import os
 
 ##This is the version that'll do a single file
 
-FILEPATH = "scitex/evalPDF/A_Study_on_Thermal_and_Nanomechanical_Performance_.pdf"
+FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
 
 
 plumber = pdfplumber.open(FILEPATH)
@@ -31,7 +31,7 @@ plaintext = "Time to Read: " + \
 
 #file = open(("7-18-" + FILEPATH + ".txt"), 'w+', encoding="utf-8")
 
-file = open(("7-19-Gupta.txt"), 'w+', encoding="utf-8")
+file = open(("7-22-ascomega.txt"), 'w+', encoding="utf-8")
 
 file.write(plaintext)
 
