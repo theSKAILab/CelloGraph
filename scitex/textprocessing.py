@@ -171,8 +171,25 @@ def DetermineParagraph(lines, lineIndex, pdfSettings, error):
             return False
 
 
+def cleanWord(word):
+    validChars = []
+    if(len(word["chars"]) < 2):
+        return word
+    for c in range(len(word["chars"])):
+        char = word["chars"][c]
+        tempWord = copy.deepcopy(word)
+        tempWord["chars"].pop(c)
+        tempWord["top"] = minorfunctions.toppest(tempWord["chars"])["top"]
+        tempWord["bottom"] = minorfunctions.bottomest(tempWord["chars"])["bottom"]
+        if(minorfunctions.isGreater(char["bottom"], tempWord["bottom"], .5) and minorfunctions.isLesser(char["top"], tempWord["top"], .5)):
+            word["top"] = tempWord["top"]
+            word["bottom"] = tempWord["bottom"]
+    return word
+
 # returns true if w is the first word on a new line.
 def newline(words, w, error=0):
+    if(w > 5 and w < len(words)-5):
+        vis = words[w-5:w+5]
     if(w == 0):
         return True
     # if(words[w][top] <= words[w-1][top] or words[w][bottom] >= words[w-1][bottom]):

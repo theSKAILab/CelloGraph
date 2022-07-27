@@ -8,9 +8,13 @@ import textprocessing
 # if percentage is true, it'll return true if v1 is within error% of v2
 # if percentage is false, it'll return true if v1 = v2 +- error
 def areEqual(val1, val2, error=0, percentage=False):
-    val1 = float(val1)
-    val2 = float(val2)
-    error = float(error)
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        error = float(error)
+    except:
+        return val1 == val2
+        
     if(percentage):
         if(val1 < val2*((100+error)/100) and val1 > val2*(100-error)/100):
             return True

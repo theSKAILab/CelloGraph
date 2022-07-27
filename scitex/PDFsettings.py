@@ -135,10 +135,10 @@ def addHeader(headers, words, i, words2, words3):
             if(newOffset != 0 and newOffset != oldOffset):
                 oldOffset = newOffset
                 k -= x
-            elif(words[len(words)-k].isdigit() and words[len(words)-k] == str(i+1)):
+            elif(words[len(words)-k]["text"].isdigit() and words[len(words)-k]["text"] == str(i+1)):
                 expect_num = True
                 break
-            elif(words[len(words)-k][0:len(str(i+1))] == str(i+1) or words[len(words)-1][0:len(str(i+1))] == str(i+1)):
+            elif(words[len(words)-k]["text"][0:len(str(i+1))] == str(i+1) or words[len(words)-1]["text"][0:len(str(i+1))] == str(i+1)):
                 expect_num = True
                 break
             else:
@@ -398,7 +398,7 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
 
 
 
-def newSpacing(lines, pdfSettings):
+def newSpacing(lines, page, pdfSettings):
     if(len(lines) < 1):
         return pdfSettings
 
@@ -414,5 +414,10 @@ def newSpacing(lines, pdfSettings):
     pdfSettings.linespace = linespace
     pdfSettings.lineheight = lineheight
     pdfSettings.lineratio = lineratio
+
+    if(page == 1):
+        pdfSettings.interline = linespace * .7
+    else:
+        pdfSettings.interline = pdfSettings.intraline / .4
 
     return pdfSettings

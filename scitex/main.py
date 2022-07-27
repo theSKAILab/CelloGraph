@@ -31,7 +31,7 @@ plaintext = "Time to Read: " + \
 
 #file = open(("7-18-" + FILEPATH + ".txt"), 'w+', encoding="utf-8")
 
-file = open(("7-22-ascomega.txt"), 'w+', encoding="utf-8")
+file = open(("7-26-Asco.txt"), 'w+', encoding="utf-8")
 
 file.write(plaintext)
 

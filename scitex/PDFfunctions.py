@@ -18,12 +18,12 @@ def removePageHeadersEarly(words, num, pdfSettings):
     for i in range(len(pdfSettings.pageHeaders)):
 
         header = minorfunctions.reverseArr(
-            pdfSettings.pageHeaders[i].text, "text")
+            pdfSettings.pageHeaders[i].words, "text")
 
         wordtext = minorfunctions.reverseArr(words, "text")
 
         if(minorfunctions.BeginningEqual(header, wordtext)):
-            words = CutWords(words, pdfSettings.pageHeaders[i].text)
+            words = CutWords(words, pdfSettings.pageHeaders[i].words)
             if(pdfSettings.pageHeaders[i].expect_num):
                 words = textprocessing.removePageNumber(words, num)
             break
@@ -203,6 +203,8 @@ def getLines(words, pdfSettings, error, space=False):
 
     for w in range(len(words)-1):
 
+        words[w] = textprocessing.cleanWord(words[w])
+
         # if the first word is lowercase, then a paragraph probably got split up.
         if(w == 0):
             nlp = spacy.load("en_core_web_sm")
@@ -211,6 +213,8 @@ def getLines(words, pdfSettings, error, space=False):
                 if(doc[0].is_lower):
                     pdfSettings.addto = True
 
+        if(len(lines) == 78):
+            print("Breakpoint")
         if(textprocessing.newline(words, w, error) and w != 0):
 
             if(nextLineBegin == 0):
@@ -608,6 +612,9 @@ def cleanSection(section):
         i += 1
         if(len(section.subsections[i].subsections) == 0):
             if(len(section.subsections[i].para) == 0):
+                lastPara = section.para[len(section.para)-1]
+                newSent = PDFfragments.sentence(None, section.subsections[i].title, lastPara.coords, lastPara.paraNum, len(lastPara.sentences))
+                lastPara.sentences.append(newSent)
                 section.subsections.pop(i)
                 i -= 1
                 continue
@@ -633,6 +640,7 @@ def getWords(page, hError, spaceChar=False, vError=3):
         hError = 60
 
     space = minorfunctions.mostCommon(minorfunctions.reverseArr(chars, "width")) * ((hError)/100)
+    
 
     i = -1
     unusual = ""
@@ -690,24 +698,62 @@ def getWords(page, hError, spaceChar=False, vError=3):
     return retval
 
 
-def HandleGreekFont(char, font):
+def HandleOtherFont(char, font):
     retval = char
-    if(char["fontname"] == 'KBFOKI+AdvPSMP10' and char["text"] == 'c'):
+    if(font == 'KBFOKI+AdvPSMP10'):
+        if(char["text"] == 'c'):
             char["text"] = 'γ'
-    if(char["text"] != 'γ'):
-        print("Breakpoint")
+    elif(font == 'KBFFFD+AdvP4C4E74'):
+        if(char["text"] == 'þ'):
+            char["text"] = '+'
+        if(char["text"] == 'ð'):
+            char["text"] = '('
+        if(char["text"] == 'Þ'):
+            char["text"] = ')'
+        if(char["text"] == '¼'):
+            char["text"] = '='
+    elif(font == 'AdvPSMP10'):
+        if(char["text"] == 'U'):
+            char["text"] = 'Φ'
+        if(char["text"] == 'q'):
+            char["text"] = 'ρ'
+    elif(font == 'AdvPSMP13'):
+        if(char["text"] == 'U'):
+            char["text"] = 'Φ'
+    elif(font == 'AdvP4C4E74'):
+        if(char["text"] == '¼'):
+            char["text"] = '='
+        if(char["text"] == '•'):
+            char["text"] = '-'
+        if(char["text"] == 'þ'):
+            char["text"] = '+'
+        if(char["text"] == 'ð'):
+            char["text"] = '('
+        if(char["text"] == 'Þ'):
+            char["text"] = ')'
+    elif(font == 'AdvP4C4E46'):
+        if(char["text"] == '!'):
+            char["text"] = ')'
+    elif(font == 'AdvP4C4E51'):
+        if(char["text"] == '='):
+            char["text"] = '/'
+        
+
+
+            
     
     return char
 
 
 #This is a really really long case/switch statement for whatever stupid characters don't get read properly by pdfplumber.
 def HandleWacky(chars, prev=None):
+    font = minorfunctions.mostCommon(minorfunctions.reverseArr(chars, "fontname"))
     c = -1
     while c < (len(chars)-2):
         c += 1
         vis = chars[c-10:c+10]
-        if(chars[c]["fontname"] == 'KBFOKI+AdvPSMP10'):
-            chars[c] = HandleGreekFont(chars[c], 'KBFOKI+AdvPSMP10')
+        if(chars[c]["fontname"] != font):
+            chars[c] = HandleOtherFont(chars[c], chars[c]["fontname"])
         if(not prev):
             prev = chars[0]
         else:
@@ -1141,10 +1187,11 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
 
     if(i == 0 or bookmark < 0):
         return "", -1
+    
     char = chars[i]
     compare = chars[bookmark]
 
-    if(i == 150):
+    if(char["text"] == '■'):
         print("Bookmark")
 
     # if(not minorfunctions.isLesser(char["width"], width)):
@@ -1152,6 +1199,9 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
 
     topdiff = char["top"] - compare["top"]
     botdiff = char["bottom"] - compare["bottom"]
+
+    if(minorfunctions.isLesser(char["x0"], compare["x0"], 10)):
+        return "", -1
 
     if topdiff > compare["height"] and not minorfunctions.areEqual(botdiff, topdiff, error):
         compare = chars[i+1]
@@ -1172,11 +1222,11 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
     BotNotNewLine = minorfunctions.isLesser(
         abs(botdiff), compare["height"], error, True)
 
-    if(validTopDiff and TopNotNewLine):
-        return "Subscript", abs(topdiff)
-
-    if(validBotDiff and BotNotNewLine):
-        return "Superscript", abs(botdiff)
+    if((validTopDiff and TopNotNewLine) or (validBotDiff and BotNotNewLine)):
+        if(topdiff > botdiff):
+            return "Subscript", abs(topdiff)
+        else:
+            return "Superscript", abs(botdiff)        
 
     return "", -1
 
@@ -1184,18 +1234,24 @@ def findScript(chars, i, bookmark, error, width, prevdiff):
 # figures out whether word is script, if it is, adds it to another word, otherwise it adds it to the list of words.
 def addWord(word, words, unusual, bookmark, i, error=0):
     if(word):
+        
         if(len(words) == 0):
             prevScript = False
             tooFar = False
+            isSymbol = False
         else:
-            prevScript = words[len(
-                words)-1]["Superscript"] or words[len(words)-1]["Subscript"]
+            prevWord = words[len(words)-1]
+            prevScript = prevWord["Superscript"] or prevWord["Subscript"]
             tooFar = not minorfunctions.areEqual(
-                word["x0"], words[len(words)-1]["x1"], error, True)
+                word["x0"], prevWord["x1"], error, True)
+            isSymbol = minorfunctions.isGreater(word["bottom"], prevWord["bottom"], error/30) and minorfunctions.isLesser(word["top"], prevWord["top"], error/30)
+            
 
-        if(not prevScript and (unusual == "" or tooFar)):
+        if(not isSymbol and not prevScript and (unusual == "" or tooFar)):
             words.append(word)
             bookmark = i+1
+            return words, bookmark
+        elif isSymbol:
             return words, bookmark
         else:
             words[len(words)-1] = combineWords(words[len(words)-1], word)

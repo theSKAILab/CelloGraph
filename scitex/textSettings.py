@@ -138,7 +138,7 @@ class lineSettings:
         #    return False
         if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE and lines[i]["AftSpace"] > 0 and lines[i]["BefSpace"] > 0):
             return True
-        if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):
+        if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE and lines[i]["BefSpace"] > 0):
             return True
         return False
 

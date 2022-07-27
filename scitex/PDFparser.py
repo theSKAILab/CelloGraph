@@ -68,7 +68,7 @@ def PDFSort(pdf, times=False):
 
 def DealWithPage(PDF, page, pdfSettings):
 
-    if(page.page_number == 2):
+    if(page.page_number == 3):
         print("Breakpoint")
 
     pagechars = page.chars
@@ -95,7 +95,15 @@ def DealWithPage(PDF, page, pdfSettings):
 
     # cols = [pagewords]
 
-    for c in range(len(cols)):
+    c = -1
+    while c < (len(cols)-1):
+        c += 1
+        if(len(cols[c]) == 0):
+            cols.pop(c)
+            c -= 1
+            continue
+        if(c == len(cols)-1):
+            print("Breakpoint")
         pdfSettings.bookmark = 0
         PDF, pdfSettings = DealWithCol(PDF, page, c, cols[c], pdfSettings)
 
@@ -104,13 +112,17 @@ def DealWithPage(PDF, page, pdfSettings):
 
 def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
+    if(colnum == 7):
+        print("Breakpoint")
+
+
     pdfSettings.offset = 0
 
     words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
 
-    #if(page != 1):
-    pdfSettings = PDFsettings.newSpacing(lines, pdfSettings)
+    if(page.page_number != 1 or colnum != 0):
+        pdfSettings = PDFsettings.newSpacing(lines, page.page_number, pdfSettings)
 
     i = -1
     while i < len(lines)-1:
