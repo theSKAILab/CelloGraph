@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Nanocellulose electroconductive composites</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Royal Society of Chemistry (RSC)</publisher>
+				<availability status="unknown"><p>Copyright Royal Society of Chemistry (RSC)</p>
+				</availability>
+				<date type="published" when="2013-02-27">27 February 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,172.91,166.01,43.41,9.74"><forename type="first">Zhijun</forename><surname>Shi</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Glyn</forename><forename type="middle">O</forename><surname>Phillips</surname></persName>
+						</author>
+						<author role="corresp">
+							<persName coords="1,331.54,166.01,56.65,9.74"><forename type="first">Guang</forename><surname>Yang</surname></persName>
+							<email>yang_sunny@yahoo.com</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Biomedical Engineering</orgName>
+								<orgName type="department" key="dep2">College of Life Science and Technology</orgName>
+								<orgName type="institution">Huazhong University of Science and Technology</orgName>
+								<address>
+									<postCode>430074</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">National Engineering Research Center for Nano-Medicine</orgName>
+								<orgName type="institution">Huazhong University of Science and Technology</orgName>
+								<address>
+									<postCode>430074</postCode>
+									<settlement>Wuhan</settlement>
+									<country key="CN">P. R. China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department">Glyn O. Phillips Hydrocolloids Research Centre</orgName>
+								<orgName type="institution">Glyndwr University</orgName>
+								<address>
+									<postCode>LL11 2AW</postCode>
+									<settlement>Wrexham, Wales</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="institution">Phillips Hydrocolloids Research Ltd</orgName>
+								<address>
+									<addrLine>45 Old Bond Street</addrLine>
+									<postCode>W1S 4QT</postCode>
+									<settlement>London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="department">Downloaded by Huazhong</orgName>
+								<orgName type="institution">University of Science &amp; Technology</orgName>
+								<address>
+									<postCode>10/04/2013</postCode>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Nanocellulose electroconductive composites</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Nanoscale</title>
+						<title level="j" type="abbrev">Nanoscale</title>
+						<idno type="ISSN">2040-3364</idno>
+						<idno type="eISSN">2040-3372</idno>
+						<imprint>
+							<publisher>Royal Society of Chemistry (RSC)</publisher>
+							<biblScope unit="volume">5</biblScope>
+							<biblScope unit="issue">8</biblScope>
+							<biblScope unit="page">3194</biblScope>
+							<date type="published" when="2013-02-27">27 February 2013</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F5D66622FF21C2E248A3997569394735</idno>
+					<idno type="DOI">10.1039/c3nr00408b</idno>
+					<note type="submission">Received 24th January 2013 Accepted 25th February 2013</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.1" ident="GROBID" when="2022-08-02T15:23+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Cellulose-based electroconductive composites can be prepared by combining conducting electroactive materials with hydrophilic biocompatible cellulose. Inorganic nanoparticles, such as metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids (through doping, blending or coating) can be introduced into the cellulose matrix. Such composites can form a biocompatible interface for microelectronic devices, and provide a biocompatible matrix or scaffold for electrically stimulated drug release devices, implantable biosensors, and neuronal prostheses. Here the benefits of combining conventional and bacterial cellulose with these electroactive composites are described and future applications are considered.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Glyn</head><p>O. Phillips holds BSc, PhD and DSc degrees from the University of Wales where he is a Professorial Fellow, and is a Chartered Chemist and Fellow of the Royal Society of Chemistry. He is Chairman of Research Transfer Ltd, Phillips Hydocolloids Research Ltd, the Cellucon and Trusts and the Wrexham Gums and Stabilisers Conferences. He is a consultant to several industrial organisations, including the Association for the International Promotion of Gums. In 2010 the "Glyn O. Phillips Hydrocolloids Research Centre" was opened in Hubei University of Technology, China of which Professor Phillips is Chairman. His research interests centre on carbohydrate and biomaterials systems.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="595.276" lry="779.528"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Cellulose is an important natural material which is biocompatible and hydrophobic and which can be extensively derivatized and so form strong and stable stiff-chain homomolecular structures with lmand hydrogel-forming properties. It is, therefore, complementary to other conducting optical materials and has the potential to be a stable and robust carrier, matrix or scaffold component for the fabrication of new functional materials. <ref type="bibr" coords="1,342.71,337.54,2.91,4.76" target="#b0">1</ref> Inorganic nanoparticles, metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids can associate with cellulose to form such materials. In this way their specic conducting properties can be combined with the characteristic properties of cellulose such as high hydration, swellability, in vitro and in vivo biocompatibility and allow small molecules to diffuse into the matrix.</p><p>Due to the wide range of morphological forms of cellulose the composites provide opportunities to produce materials with high electrical conductivity, ON-OFF electrical and optical Zhijun Shi was awarded a Bachelor of Biotechnology in 2008 from the Huazhong University of Science and Technology, China. In 2009, he commenced his PhD research at Huazhong University of Science and Technology, in the area of microbiology, where he is currently completing his candidature. His research interests include the fabrication of optical-electronic materials based on bacterial cellulose.</p><p>switching and electrochemical redox properties. These can form stimuli responsive materials with viable sensory and actuation applications and can be fabricated into biorecognition membrane layers within biosensors, neural prosthetics, and devices for electrostimulated drug release, and exible biocompatible energy harvesting.</p><p>This paper reviews the current status of electroconductive cellulose composites to include their synthesis, characterization and key applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fabrication of electroconductive cellulose composites</head><p>Cellulose and conducting materials can be combined by blending, forming a co-network, or by doping the conductor with cellulose. Fig. <ref type="figure" coords="2,126.48,232.82,4.66,7.85" target="#fig_1">1</ref> illustrates such synthetic routes. The cellulose can be a solid matrix, with the electroconductive material dispersed on the surface or within the matrix. Cellulose can also be dissolved in solvents such as dimethylacetamide (DMAc)/LiCl, aqueous NaOH/urea, N-methylmorpholine-N-oxide (NMMO) or the ionic liquid 1-butyl-3methylimidazolium acetate (BMIM-OAc), <ref type="bibr" coords="2,204.26,303.35,2.84,4.76" target="#b1">[2]</ref><ref type="bibr" coords="2,207.11,303.35,2.84,4.76" target="#b2">[3]</ref><ref type="bibr" coords="2,207.11,303.35,2.84,4.76" target="#b3">[4]</ref><ref type="bibr" coords="2,209.95,303.35,2.84,4.76" target="#b4">[5]</ref> and aer mixing in solution cast or electrospun with the conductor to form microspheres, bers or membranes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Combination with conducting polymers</head><p>Conducting polymers, developed since the 1970s, are a family of highly conjugated polymers with spatially extended p-bonding which provide unique electrical, electrochemical and optical properties. Most derive from just a few basic polymer structures, such as polyacetylene, polypyrrole, polyfuran, polyaniline and polythiophene (Table <ref type="table" coords="2,131.58,433.57,3.29,7.85" target="#tab_0">1</ref>). They nd applications as diverse as electrical conductors, nonlinear optical devices, polymeric light emitting diodes (LEDs), anti-static and corrosion protective coatings, chemical and biological sensors, electrodes of batteries, electromagnetic shielding materials, solar cells, microwave absorbing materials, and valves in microelectromechanical systems (MEMs) devices. <ref type="bibr" coords="2,476.56,61.27,2.84,4.76" target="#b5">[6]</ref><ref type="bibr" coords="2,479.40,61.27,2.84,4.76" target="#b6">[7]</ref><ref type="bibr" coords="2,479.40,61.27,2.84,4.76" target="#b7">[8]</ref><ref type="bibr" coords="2,482.24,61.27,2.84,4.76" target="#b8">[9]</ref> It is difficult to form lms when cast and dried from such dispersions because their H-bond forming ability is low or even absent. However, cellulosic hydrogels or solutions provide sufficient H-bonding to cast lms from heterogenic mixtures of cellulose and conducting polymers and so form microspheres, spun as bers or applied to electrodes and to other solid-state electronic devices. A conducting nanocomposite lm was cast from aqueous slurries using doped polypyrrole (PPy) particles, and carboxymethyl cellulose (CMC) and nanobrillar cellulose (NFC) as the conducting and reinforcing phase, respectively. <ref type="bibr" coords="2,546.92,180.84,5.83,4.76" target="#b12">13</ref> PPy-cellulose composites were prepared by in situ polymerization of pyrrole in cellulose pulp suspensions. <ref type="bibr" coords="2,486.14,204.71,5.83,4.76" target="#b13">14</ref> PPy coating of individual bers of wood-based nanocellulose was carried out in situ by chemical polymerization to give an electrically conducting continuous high-surface-area composite. <ref type="bibr" coords="2,525.03,240.59,5.83,4.76" target="#b14">15</ref> The conducting polymer, polyaniline (PANI), was synthesized by polymerisation in the presence of dispersed pulp bers to yield PANI-pulp composite bers, which were then formed into a conducting paper sheet. <ref type="bibr" coords="2,399.17,288.39,5.83,4.76" target="#b15">16</ref> Cellulose can also provide a stabilizing and lm-forming matrix that can adhere to a supporting substrate. This can be either within the cellulose network or on the surface through chemical oxidative polymerization or electrochemical polymerization. Li et al. thus prepared PANI-cotton composites by in situ polymerization of aniline on graed cotton. <ref type="bibr" coords="2,511.48,360.16,5.83,4.76" target="#b16">17</ref> Another study, by Castillo-Ortega et al., looked at the adsorption and desorption of a gold-iodide complex on a cellulose acetate membrane coated with PANI or PPy. <ref type="bibr" coords="2,459.67,395.99,5.83,4.76" target="#b17">18</ref> PANI could also be deposited onto the surface and insides of the pores of microporous mixed cellulose ester membranes using various chemical oxidative polymerization techniques. <ref type="bibr" coords="2,474.29,431.88,5.83,4.76" target="#b18">19</ref> In this way the charge transport processes of PANI composite membranes could be identied and correlated with the PANI deposition site and the extent of PANI surface layering on the microporous membranes. Li et al. <ref type="bibr" coords="2,435.63,479.67,5.83,4.76" target="#b19">20</ref> used cotton as a template to synthesise PANI microbelts. Zhou et al. <ref type="bibr" coords="2,462.10,491.63,5.83,4.76" target="#b20">21</ref> described the anisotropic actuation of electroactive papers with a poly(3,4-ethylenedioxythiophene)/poly(4-styrene sulfonate) (PEDOT/PSS) coating on cellulose-based paper. The electroactive papers displayed a contractile stress when an external voltage was applied, the magnitude and direction of the stress depending on the relative orientation of the paper bers and the loading direction of the coating.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Combination with carbon nanotubes</head><p>Discovered in 1991, carbon nanotubes (CNTs) form unique structures with unexpected physical (mechanical, thermal and electronic) properties which offer promising applications in both the physical and life sciences. These can be classied into two main types: single-walled carbon nanotubes (SWNTs), which consist of one single layer of graphene sheet seamlessly rolled into a cylindrical tube; and multi-walled carbon nanotubes (MWNTs), which are made up of several concentric graphene layers.</p><p>Guang Yang is a Professor, Distinguished Young Scholar, and a Chutian Scholar (Special Term Professor) in Hubei Province. She received her BS and PhD degrees from Wuhan University. She was an Alexander von Humboldt fellow at Johannes Gutenberg-Universitaet Mainz, Germany (2002-2004) before moving to Kyushu University, Japan, as a Japan Society for the Promotion of Science fellow (2004-2006). She then moved to the College of Life Science and Technology at Huazhong University of Science and Technology as a professor. She was a senior visiting scholar at the University of Akron, USA in 2010. Her research interests focus on bionic nanocomposites.   Many biomolecules (including cellulose) combine with CNTs via non-covalent interactions. Aer solubilization CNTs can attach to chemical or biological molecules without affecting the electronic network of the nanotubes or their non-covalent functionalisation. Applications have been found in biomedical technologies. Tanaka et al. <ref type="bibr" coords="4,160.21,109.07,5.83,4.76" target="#b21">22</ref> fabricated MWCNT-cellulose composite papers and measured the temperature dependence of their electrical conductivity. Basavaraja et al. <ref type="bibr" coords="4,228.47,132.99,5.83,4.76" target="#b22">23</ref> used different weight percentages of MWNTs dispersed in cellulose triacetate (CTA) solution to prepare CTA-MWNTs. Such composite lms can be used for electromagnetic interference shielding. CNTcellulose composite materials can also be used to decrease electromagnetic wave interference, control undesired reections, prevent cross-talk, and suppress noise in circuits. <ref type="bibr" coords="4,265.72,204.71,7.90,4.76" target="#b23">24,</ref><ref type="bibr" coords="4,273.62,204.71,5.27,4.76" target="#b24">25</ref> Lu and Hsieh 26 recently reported MWCNTs reinforced with cellulose bers prepared by electrospinning MWCNT-loaded cellulose acetate (CA) solutions. Miyauchi et al. <ref type="bibr" coords="4,237.37,240.59,5.83,4.76" target="#b26">27</ref> also used electrospinning technology to combine cellulose and MWCNTs, to fabricate core-sheath MWNT-cellulose bers having a cable structure with a conductive core and an insulating sheath.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Minireview</head><p>Cellulose has also been shown to combine with SWNTs, and Oya and Ogino 28 reported the preparation of an electrically conductive SWNT-cellulose nanocomposite simply using the "washi" process by adding the SWNTs into a pulp suspension. Kim et al. <ref type="bibr" coords="4,81.18,336.24,5.83,4.76" target="#b28">29</ref> used N-methylmorpholine-N-oxide (NMMO) monohydrate as a dispersing agent for acid-treated SWNTs (A-SWNTs) as well as a cellulose solvent. A cellulose-SWNT composite has been shown to be homogenous, hydrophilic, conductive and biocompatible, and was used to immobilize leukemia K562 cells on a gold electrode in a cell impedance sensor. <ref type="bibr" coords="4,246.84,395.99,5.83,4.76" target="#b29">30</ref> SWCNTs wrapped with cellulose have been prepared by the treatment of SWCNTs with a cellulose solution in the ionic liquid 1-butyl-3methylimidazolium bromide. This cellulose-SWCNT scaffolds could promote the growth of HeLa cells. <ref type="bibr" coords="4,203.19,443.84,5.83,4.76" target="#b30">31</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Combination with graphene</head><p>Graphene has attracted considerable interest as a potential new electronic material. It is a two-dimensional carbon material with atomic thickness and versatile electrochemical properties, because graphene-based assemblies combine high electrical conductivity, electroactivity, and strength. Thus, assemblies of graphene, graphene oxide, or related polymer composites have been used as so electrodes for exible batteries, supercapacitors, etc.</p><p>Highly ordered graphene paper can be prepared by directional ow-induced assembly of graphene sheets which have been well dispersed in solution. Moderate thermal annealing can enhance the mechanical stiffness, strength and electrical conductivity. In this way graphene paper can become biocompatible and suitable for biomedical applications. <ref type="bibr" coords="4,238.05,647.08,5.83,4.76" target="#b31">32</ref> Kim et al. <ref type="bibr" coords="4,286.13,647.08,5.83,4.76" target="#b32">33</ref> used N-methylmorpholine-N-oxide (NMMO) monohydrate as solvent to prepare graphene oxide (GO)-cellulose composite lms. The products had improved thermal and electrical properties, and were strong but brittle. It is also possible to fabricate mechanically robust and electrically conductive materials based on amine functionalized cellulose nanobrils and chemically reduced grapheme oxide sheets. These composites not only exhibit good electrical properties (1.8 S m À1 ) but also have excellent mechanical properties (tensile strength of 273 MPa). <ref type="bibr" coords="4,402.52,85.20,5.83,4.76" target="#b33">34</ref> Graphene-cellulose paper (GCP) membranes have advantages as free standing binder-free electrodes for exible super-capacitors. Their electrical conductivity is highly stable and decreases only 6% aer being bent 1000 times. Flexible GCP electrodes have a high capacitance per geometric area of 81 mF cm À2 , which is equivalent to a gravimetric capacitance of 120 F g À1 of graphene, and retain &gt;99% capacitance over 5000 cycles. <ref type="bibr" coords="4,418.39,168.88,5.83,4.76" target="#b34">35</ref> Combination with inorganic nanoparticles Hybrid inorganic-organic nanocomposites are a new class of functional nanomaterials that show improved conductive, optical, thermal and mechanical properties because of the synergistic effect of the combined physical or chemical interactions between the inorganic and organic components.</p><p>Mineral nanoparticle-reinforced, metal nanoparticle-reinforced and nanober-reinforced polymer matrix nanocomposites and hybrid nanocomposites have been based on natural cellulose. A conductivity of 0.15 S cm À1 has been reported for cellulose-based composites containing copper which had been introduced by electrolysis plating. <ref type="bibr" coords="4,514.66,330.28,5.83,4.76" target="#b35">36</ref> Sol-gel indium tin oxide lms on cellulose have shown a conductivity as high as 16 S cm À1 aer annealing at 450 C for 6 h. <ref type="bibr" coords="4,520.95,354.21,5.83,4.76" target="#b36">37</ref> Nylon bers electrolytically coated with silver showed an effective conductivity up to 1950 S cm À1 . Cotton bers and paper coated with ZnO by atomic layer deposition (ALD) showed an effective conductivity of up to 24 S cm À1 . <ref type="bibr" coords="4,432.57,402.00,5.83,4.76" target="#b37">38</ref> The electrical transport and photoconductivity of pure and iodine-doped cellulose bers showed signicant enhancements of more than four orders of magnitude when compared with undoped samples. <ref type="bibr" coords="4,519.70,437.89,5.83,4.76" target="#b38">39</ref> TiO 2cellulose composite lms were fabricated by in situ synthesis of TiO 2 nanoparticles in the regenerated cellulose matrix having a micronanoporous structure via a sol-gel method. This composite had good high photocatalytic activity and was useful for waste water treatment. Free-standing, nanotubular indium tin oxide (ITO) sheets with different In/Sn ratios were fabricated by the surface sol-gel process using cellulose lter paper as a template. When prepared by this template synthesis the product exhibited a high electrical conductivity of 0.53 S cm À1 . <ref type="bibr" coords="4,546.92,545.49,5.83,4.76" target="#b39">40</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Combination with ionic liquids</head><p>At room-temperature ionic liquids are frequently colorless, uid, and easy to handle but at high temperatures can be corrosive and viscous. <ref type="bibr" coords="4,393.96,611.25,5.83,4.76" target="#b40">41</ref> Nevertheless, they have widely been promoted as "green solvents" for chemical applications due to their chemical and thermal stabilities, low vapor pressure and high ionic conductivity. <ref type="bibr" coords="4,397.36,647.08,5.83,4.76" target="#b41">42</ref> They have been used in several types of polymerization processes, and also investigated as components for polymeric matrices (such as polymer gels), as templates for porous polymers and as novel electrolytes for electrochemical polymerizations. <ref type="bibr" coords="4,434.21,694.93,5.83,4.76" target="#b42">43</ref> Ionic liquids have excellent ionic conductivity up to their decomposition temperature and so can play an important role in forming electrolyte matrixes. Varying amounts of 1-butyl-3methylimidazolium bis(triuoromethylsulfonyl) imide (BMITFSI), for example, have been loaded into a cellulose lm during its regeneration process by utilizing a traditional solution blending technique. Such BMITFSI-cellulose had very high conductivity under ambient conditions. <ref type="bibr" coords="5,204.66,419.97,5.83,4.76" target="#b43">44</ref> Cellulose triacetate (CTA), N-methyl-N0-propylpyrrolidinium bis(triuoromethanesulfonyl)imide (Pyr1,3TFSI), and lithium bis(triuoromethanesulfonyl)imide (LiTFSI) were used to obtain new composite polymer gels. The ionic conductivities of these polymer gels were signicantly enhanced by the presence of LiTFSI, and could be used as electrolytes. <ref type="bibr" coords="5,216.79,491.69,5.83,4.76" target="#b44">45</ref> Another group 46 synthesized a graed cellulose gel electrolyte in an ionic liquid 1-butyl-3-methylimidazolium iodide ([Bmim]I) for preparing dye-sensitized solar cells. The cellulose was graed homogeneously with acrylic acid by in situ polymerization in an ionic liquid [Bmim]I as reaction medium. Using the graed cellulose gel as polymer host, and KI and I 2 as ionic conductors, an ionic conductivity of 7.33 mS cm À1 of the gel polymer electrolyte was produced (Table <ref type="table" coords="5,110.09,588.51,3.29,7.85" target="#tab_2">2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Bacterial cellulose electroconductive composites</head><p>The biosynthesis of cellulose takes place not only in plants, but also in bacteria, algae, and fungi. Bacterial cellulose (BC) is produced by many microorganisms (such as Acetobacter, Agrobacterium, Achromobacter, Aerobacter, Azotobacter, Sarcina ventriculi, Salmonella, Escherichia and Rhizobium). Sharing the same structural unit, BC does not only have the properties of conventional cellulose produced by plants, but it also has special properties such as high chemical purity and crystallinity, a high degree of polymerization, excellent biocompatibility and biodegradability. These properties have already led to its successful commercialization in a variety of niche markets, including health foods, high-end audio components, speciality papers, and wound care, and even for gene detection. Signicantly, BC is a natural polymer hydrogel, which has threedimensional polymeric networks and adsorbs large amounts of water. BC hydrogels are exible and have good mechanical properties, and they can accordingly easily change their size and shape in response to environmental stimuli. Moreover, BC can also contain other monomeric, reactive and potentially polymerizable monomers within its networks, occupying its void volume and interacting with BC ber chains. These properties can be used to combine with inorganic nanoparticles, metal ions and oxides, carbon nanotubes, graphene and graphene oxide, conducting polymers, and ionic liquids to thus change or improve the characteristics of BC, and in particular to improve its electrical conductivity. Yoon et al. <ref type="bibr" coords="5,445.27,575.37,5.83,4.76" target="#b10">11</ref> incorporated multiwalled carbon nanotubes (MWCNTs) into bacterial cellulose pellicles produced by Gluconacetobacter xylinum, and so increased the conductivity up to 1.4 Â 10 À1 S cm À1 . Jung et al. <ref type="bibr" coords="5,510.18,611.25,5.83,4.76" target="#b56">57</ref> used an aqueous silk broin solution to improve the light transmittance of bacterial cellulose membranes, then incorporated these with MWCNTs to enhance the electrical conductivity, transparency and electrical properties. A light transmittance of 70.3% at 550 nm and electrical conductivity of 2.1 Â 10 À3 S cm À1 was achieved. Bacterial cellulose productivity can be improved by adding conducting materials to the culture medium. The structure of cellulose microbrils has been investigated in a static culture medium containing acid-treated MWCNTs. <ref type="bibr" coords="5,508.76,718.80,5.83,4.76" target="#b57">58</ref> Bacterial celluloses have been synthesized in MWCNT-dispersed medium and it was found that a substantial number of MWCNTs were attached to the surfaces of the bacterial cellulose brils. <ref type="bibr" coords="6,266.00,73.24,5.83,4.76" target="#b58">59</ref> Recently, we have fabricated a BC-polyaniline (PANI) composite. PANI was polymerized and deposited as an adhering layer on the surfaces of the cellulose bers. This forms a relatively uniform thin-lm conductive material, and its electrical conductivity can reach 10 À1 S cm À1 . By varying the reaction time and controlling the proton acid doping/dedoping it is possible to obtain materials having a range of conductivities. <ref type="bibr" coords="6,254.32,156.92,5.83,4.76" target="#b46">47</ref> BC can also be combined with polyaniline <ref type="bibr" coords="6,179.49,168.88,7.90,4.76" target="#b59">60,</ref><ref type="bibr" coords="6,187.39,168.88,5.27,4.76" target="#b60">61</ref> and polypyrrole, <ref type="bibr" coords="6,259.65,168.88,5.83,4.76" target="#b61">62</ref> which can be polymerized through chemical or electrochemical polymerization.</p><p>Metal nanoparticles (such as Au, Ag) have also been applied as the lm forming material to produce various types of lms (including BC) because of their good biocompatibility and conductivity. Silver metal and its compounds have strong inhibitory and bactericidal effects as well as a broad spectrum of antimicrobial activities. As a result there have been many investigations of silver combined with BC for antimicrobial applications. <ref type="bibr" coords="6,93.49,288.39,5.73,4.76" target="#b62">[63]</ref><ref type="bibr" coords="6,99.22,288.39,2.87,4.76" target="#b63">[64]</ref><ref type="bibr" coords="6,102.09,288.39,5.73,4.76" target="#b64">[65]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Medical applications of bacterial cellulose electroconductive hydrogels</head><p>Bacterial cellulose is a natural hydrogel, with a stable nanober network, high water content, shape-ability during biosynthesis, and biocompatibility. <ref type="bibr" coords="6,389.93,49.31,5.83,4.76" target="#b65">66</ref> Such nanobers are neither cytotoxic nor genotoxic. BC is also a 3D template for in vitro and in vivo tissue growth, which can be used for medical implants ranging from bone and cartilage repair to tubular prototype gras for vascular surgery. <ref type="bibr" coords="6,369.58,97.10,5.83,4.76" target="#b66">67</ref> Electroconductive hydrogels provide good small molecule transport, high hydration levels and biocompatibility. Crosslinked hydrogels can then provide redox switching and electrical properties of inherently conductive polymers. When based on bacterial cellulose these have three-dimensional polymeric networks, imbibe large amounts of water, and are exible with good mechanical properties. They can change their size and shape in response to environmental stimuli. Cellulose-SWNT composites have proved to be homogenous, hydrophilic, conductive and biocompatible, and have been used to immobilize leukemia K562 cells on a gold electrode in a cell impedance sensor. <ref type="bibr" coords="6,354.67,240.59,5.83,4.76" target="#b29">30</ref> Using BC hydrogels as natural biotemplates, mesoporous titania networks consisting of interconnected anatase nanowires have been synthesized. These BC-TiO 2 hydrogels may nd potential applications in areas including photocatalysis, photovoltaics, and bone-tissue engineering. <ref type="bibr" coords="6,546.92,288.39,5.83,4.76" target="#b67">68</ref> Gold nanoparticles (AuNPs) and BC nanocomposites have been used for the immobilization of heme proteins. Horseradish peroxidase (HRP), hemoglobin (Hb) and myoglobin (Mb) immobilized in a Au-BC lm showed high biocatalytic activity with good sensitivity, low detection limit and fast response toward hydrogen peroxide.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Flexible displays</head><p>Flexible displays have been produced by using bacterial cellulose as the substrate or the basic optical lm to improve their electronic properties. <ref type="bibr" coords="7,127.16,89.68,5.83,4.76" target="#b69">70</ref> Legnani et al. <ref type="bibr" coords="7,190.83,89.68,5.83,4.76" target="#b70">71</ref> used BC as the exible substrate for the fabrication of organic light emitting diodes (OLEDs). Indium tin oxide (ITO) thin lms were deposited onto the membrane at room temperature using radio frequency magnetron sputtering. The average transmittance of BC membrane substrates at 550 nm is only 40%. Clarity is the most important property for bottom emissive displays, and a total light transmission of &gt;85% over 400-800 nm coupled with a haze of less than 0.7% are typical of what is required. <ref type="bibr" coords="7,262.94,185.32,5.83,4.76" target="#b71">72</ref> Thus many groups have made efforts to improve the light transmittance of BC. <ref type="bibr" coords="7,103.01,209.24,5.83,4.76" target="#b72">73</ref> Nogi et al. <ref type="bibr" coords="7,149.67,209.24,5.83,4.76" target="#b73">74</ref> fabricated transparent composites with bacterial cellulose (BC) nanobers which have low thermal expansion, and even an electroluminescent layer could be deposited onto these transparent BC nanocomposites. However, this nal nanocomposite material is not exible enough and therefore cannot achieve the bending radius required for roll-to-roll processing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electro-active biopolymer actuators</head><p>Cellulose-based electro-active paper is light in weight, is biodegradable, and has a large displacement output and low actuation voltage when dry. <ref type="bibr" coords="7,157.15,348.20,5.83,4.76" target="#b74">75</ref> Jeon et al. developed such an electro-active biopolymer actuator based on bacterial cellulose. They showed that the LiCl treated bacterial cellulose can be adjusted to achieve a better actuation performance by controlling the crystallinity and stiffness of the pristine BC. <ref type="bibr" coords="7,258.92,396.05,5.83,4.76" target="#b75">76</ref> Piezoelectric materials are smart materials which can convert mechanical energy (such as from breathing, or walking) into more useful electrical energy. However, traditional piezoelectrics are hard, inexible crystals which can also be toxic. BCbased piezoelectric materials could lead to nanopiezoelectric devices that combine the key qualities of exibility, energy efficiency, and biocompatibility. The target is to use piezoelectric nanogenerators for continuously self-powering portable electronics and biomedical implants.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>We have indicated that the combination of cellulose and conductive electroactive materials allows both materials to retain their unique responsive properties. Cellulose as a matrix of cellulose-based conductive composites, gives the composites rich and colorful forms. Hydrogels were the rst biomaterials to be specically designed for use in humans. Cellulose hydrogels, especially bacterial cellulose hydrogels, have an especially stable nanober network, high water content, shape-ability during biosynthesis, and biocompatibility. These natural polymers open up the important and rapidly expanding elds of personal care, medicine, and life sciences. When cellulose is combined with conductive materials, it has the potential to introduce novel properties into exible electrodes, exible displays, biocompatible energy scavenging, electrically stimulated drug release devices, implantable biosensors and neural prosthetics (Fig. <ref type="figure" coords="7,282.10,720.04,3.29,7.85" target="#fig_3">2</ref>).</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="2,509.50,24.81,43.23,8.25;2,2.54,420.99,7.20,40.88;2,2.54,410.99,7.20,8.00;2,2.54,376.11,7.20,32.88;2,2.54,340.33,7.20,33.78;2,2.54,331.67,7.20,6.66;2,2.54,304.79,7.20,24.88;2,2.54,296.56,7.20,6.22;2,2.54,256.35,7.20,38.22;2,2.54,246.35,7.20,8.00;2,2.54,207.90,7.20,36.45;2,2.54,175.45,7.20,30.45;2,19.00,423.89,1.00,31.56;2,19.00,413.89,1.00,8.00;2,19.00,403.89,1.00,8.00;2,19.00,373.01,1.00,28.88;2,19.00,355.01,1.00,16.00;2,19.00,345.01,1.00,8.00;2,19.00,284.78,1.00,58.22;2,19.00,281.18,1.00,1.60;2,19.00,192.73,1.00,86.46"><head></head><label></label><figDesc>Nanoscale Downloaded by Huazhong University of Science &amp; Technology on 10/04/2013 12:16:24. Published on 27 February 2013 on http://pubs.rsc.org | doi:10.1039/C3NR00408B</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="3,42.52,456.32,510.26,6.54;3,42.52,466.42,180.53,6.42;3,135.27,50.57,324.92,395.77"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Schematic illustration of the generalized synthetic routes to electroconductive cellulose composites. 10-12 Copyright 2005 Royal Society of Chemistry. Copyright 2006 American Chemical Society. Copyright 2009 Elsevier.</figDesc><graphic coords="3,135.27,50.57,324.92,395.77" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2" coords="6,409.55,360.16,5.83,4.76"><head>69</head><label>69</label><figDesc></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3" coords="6,42.52,710.65,510.26,6.54;6,42.52,720.75,306.97,6.42;6,127.28,402.01,340.76,298.66"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Applications of nanocellulose electroconductive composites. 47,59,66,73-75,77 Copyright 2010 and 2011 Royal Society of Chemistry. Copyright 2009 Elsevier. Copyright 2005, 2008 and 2011 John Wiley and Sons. Copyright 2006 American Chemical Society.</figDesc><graphic coords="6,127.28,402.01,340.76,298.66" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="3,42.52,528.33,155.74,6.42"><head>Table 1</head><label>1</label><figDesc>Structures of some conductive polymers</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" coords="5,42.52,50.24,510.25,275.40"><head>Table 2</head><label>2</label><figDesc>Cellulose combined with several conductive materials</figDesc><table coords="5,42.52,70.00,510.25,255.64"><row><cell>Conductive material</cell><cell>Methods</cell><cell>Properties</cell><cell>Applications</cell><cell>References</cell></row><row><cell>Conducting polymers (PPy,</cell><cell>Casting conducting</cell><cell>Conductivity 10 À5 to 10 2 S</cell><cell>Conductors; biosensors;</cell><cell>18,19,47-49</cell></row><row><cell>PANI, PEDOT/PSS,</cell><cell>polymers/cellulose</cell><cell>cm À1 ; enhanced mechanical</cell><cell>electromechanical devices;</cell><cell></cell></row><row><cell>PEDOT, etc.)</cell><cell>dispersions; in situ chemical</cell><cell>properties;</cell><cell>organic electronics</cell><cell></cell></row><row><cell></cell><cell>polymerization; coating on</cell><cell>electromechanical</cell><cell></cell><cell></cell></row><row><cell></cell><cell>the cellulose ber</cell><cell>properties; biocompatible</cell><cell></cell><cell></cell></row><row><cell>Carbon nanotubes (SWNTs</cell><cell>Solution evaporation</cell><cell>Conductivity 10 À4 to 10 2 S</cell><cell>Wearable electronics; energy</cell><cell>22,23,25,50</cell></row><row><cell>and MWNTs)</cell><cell>technique; solvent casting</cell><cell>cm À1 ; enhanced mechanical</cell><cell>storage; decrease</cell><cell></cell></row><row><cell></cell><cell>aer blending;</cell><cell>properties; electromagnetic</cell><cell>electromagnetic wave</cell><cell></cell></row><row><cell></cell><cell>electrospinning; blending in</cell><cell>interference shielding</cell><cell>interference; cell impedance</cell><cell></cell></row><row><cell></cell><cell>the cellulose matrix</cell><cell>efficiency; thermal</cell><cell>sensors</cell><cell></cell></row><row><cell></cell><cell></cell><cell>stimulated conductivity;</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>anti-static; biocompatible</cell><cell></cell><cell></cell></row><row><cell>Graphene</cell><cell>Solvent casting aer</cell><cell>Conductivity 10 À4 to 10 2 S</cell><cell>Flexible supercapacitors;</cell><cell>35,51-53</cell></row><row><cell></cell><cell>blending; ltering a</cell><cell>cm À1 ; mechanically strong;</cell><cell>energy-storage devices;</cell><cell></cell></row><row><cell></cell><cell>graphene nanosheet</cell><cell>biocompatible</cell><cell>biocompatible materials;</cell><cell></cell></row><row><cell></cell><cell>suspension through a sheet</cell><cell></cell><cell>transparent and exible</cell><cell></cell></row><row><cell></cell><cell>of lter paper</cell><cell></cell><cell>electrodes</cell><cell></cell></row><row><cell>Inorganic nanoparticles</cell><cell>Atomic layer deposition;</cell><cell>Conductivity 10 À6 to 10 3 S</cell><cell>Antimicrobials; functional</cell><cell>38,54-56</cell></row><row><cell>(ZnO, SnO 2 , TiO 2 , I, Au,</cell><cell>compression molding aer</cell><cell>cm À1 ; antimicrobial activity;</cell><cell>chemical sensing;</cell><cell></cell></row><row><cell>Ag, Cu)</cell><cell>internal mixing; liquid-</cell><cell>biodegradable; enhanced</cell><cell>biosensors</cell><cell></cell></row><row><cell></cell><cell>phase deposition; LbL</cell><cell>mechanical properties</cell><cell></cell><cell></cell></row><row><cell></cell><cell>deposition; doping</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Ionic liquids</cell><cell>Casting IL/cellulose</cell><cell>Conductivity 10 À8 to</cell><cell>Gel electrolytes</cell><cell>45</cell></row><row><cell></cell><cell>dispersions</cell><cell>10 À4 S cm À1</cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">This journal is ª The Royal Society of Chemistry 2013</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">Downloaded by Huazhong University of Science &amp; Technology on 10/04/2013 12:16:24. Published on 27 February 2013 on http://pubs.rsc.org | doi:10.1039/C3NR00408B View Article Online</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">This journal is ª The Royal Society of Chemistry 2013 Nanoscale, 2013, 5, 3194-3201 | 3201</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The work was supported by the National Natural Science Foundation of China (20774033, 21074041), the Fundamental Research Funds for the Central Universities, Huazhong University of Science and Technology (2010JC016), and the Natural Science of Hubei Province for Distinguished Young Scholars (2008CDB279).</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="7,315.33,182.08,237.42,7.85;7,315.33,193.32,144.72,8.57" xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Cellulose: Fascinating Biopolymer and Sustainable Raw Material</title>
+		<author>
+			<persName><forename type="first">Dieter</forename><surname>Klemm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Brigitte</forename><surname>Heublein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hans-Peter</forename><surname>Fink</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Andreas</forename><surname>Bohn</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/anie.200460587</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Angewandte Chemie International Edition</title>
+		<title level="j" type="abbrev">Angew. Chem. Int. Ed.</title>
+		<idno type="ISSN">1433-7851</idno>
+		<idno type="ISSNe">1521-3773</idno>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">22</biblScope>
+			<biblScope unit="page" from="3358" to="3393" />
+			<date type="published" when="2005-05-30">2005</date>
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,205.23,237.42,8.57;7,315.33,217.91,16.41,7.85" xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Properties and applications of biodegradable transparent and photoluminescent cellulose films prepared via a green process</title>
+		<author>
+			<persName><forename type="first">Haisong</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chunyu</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lina</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b814721c</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Green Chem.</title>
+		<title level="j" type="abbrev">Green Chem.</title>
+		<idno type="ISSN">1463-9262</idno>
+		<idno type="ISSNe">1463-9270</idno>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="177" to="184" />
+			<date type="published" when="2009">2009</date>
+			<publisher>Royal Society of Chemistry (RSC)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,229.15,222.94,8.57" xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromol. Biosci</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="539" to="548" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,241.83,237.41,7.85;7,315.33,253.08,159.29,8.57" xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">P</forename><surname>Swatloski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">K</forename><surname>Spear</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">D</forename><surname>Holbrey</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">D</forename><surname>Rogers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page" from="4974" to="4975" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,265.04,181.67,8.57" xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Schurz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="481" to="483" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,277.00,237.42,8.57;7,315.33,289.68,21.07,7.85" xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">C</forename><surname>Sharma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Polym. J</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1053" to="1060" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,300.87,200.93,8.57" xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Trojanowicz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Microchim. Acta</title>
+		<imprint>
+			<biblScope unit="volume">143</biblScope>
+			<biblScope unit="page" from="75" to="91" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,313.55,237.41,7.85;7,315.33,324.79,68.32,8.57" xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">D</forename><surname>Malhotra</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Chaubey</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">P</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Chim. Acta</title>
+		<imprint>
+			<biblScope unit="volume">578</biblScope>
+			<biblScope unit="page" from="59" to="74" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,315.33,336.76,237.42,8.57;7,315.33,349.43,16.41,7.85" xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Saxena</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">D</forename><surname>Malhotra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="293" to="305" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,361.40,236.62,7.85;7,316.12,373.36,44.03,7.85" xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Ichinose</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Kunitake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Commun</title>
+		<imprint>
+			<biblScope unit="page" from="1717" to="1719" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,385.32,236.63,7.85;7,316.12,396.51,154.92,8.57" xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">H</forename><surname>Yoon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">J</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">C</forename><surname>Kook</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">R</forename><surname>Pyun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomacromolecules</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1280" to="1284" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,409.19,236.62,7.85;7,316.12,420.43,198.46,8.57" xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Sci. Eng., C</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1216" to="1219" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,433.11,236.61,7.85;7,316.12,445.07,236.59,7.85;7,316.12,456.32,169.76,8.57" xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Sasso</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Zeno</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Petit Conil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Chaussy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">N</forename><surname>Belgacem</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Lingua</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Beneventi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromol. Mater. Eng</title>
+		<imprint>
+			<biblScope unit="volume">295</biblScope>
+			<biblScope unit="page" from="934" to="941" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,468.28,236.62,8.57;7,316.12,480.96,21.07,7.85" xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>An</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cellulose</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="1067" to="1077" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,492.86,236.63,7.86;7,316.12,504.12,236.62,8.57;7,316.12,516.79,44.03,7.85" xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Nyström</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Mihranyan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Razaq</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Lindström</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Nyholm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Strømme</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="4178" to="4182" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,528.04,140.68,8.57" xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Goto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Text. Res. J</title>
+		<imprint>
+			<biblScope unit="page">122</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,540.72,236.61,7.85;7,316.12,551.96,133.61,8.57" xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="1126" to="1132" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,564.64,236.63,7.85;7,316.12,576.60,236.58,7.85;7,316.12,588.51,236.62,7.85;7,316.12,599.75,220.12,8.57" xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">M</forename><surname>Castillo-Ortega</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Santos-Sauceda</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">C</forename><surname>Encinas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">E</forename><surname>Rodriguez-Felix</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Castillo-Castro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Rodriguez-Felix</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Valenzuela-García</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">S</forename><surname>Quiroz-Castillo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">J</forename><surname>Herrera-Franco</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="7466" to="7474" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,612.43,236.61,7.85;7,316.12,623.68,97.21,8.57" xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">A</forename><surname>Qaiser</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">M</forename><surname>Hyland</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">A</forename><surname>Patterson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="1652" to="1661" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,636.36,236.62,7.85;7,316.12,647.60,54.68,8.57" xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Ye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Thermoplast. Compos. Mater</title>
+		<imprint>
+			<biblScope unit="page">389</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,660.28,236.58,7.85;7,316.12,671.53,126.73,8.57" xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Fukawa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Shirai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Kimura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromol. Mater. Eng</title>
+		<imprint>
+			<biblScope unit="volume">295</biblScope>
+			<biblScope unit="page" from="671" to="675" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,684.15,236.62,7.85;7,316.12,695.39,68.65,8.57" xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Tanaka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Sano</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Imai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Akiyama</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="page">54307</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="7,316.12,708.07,236.62,7.85;7,316.12,719.32,77.65,8.57" xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Basavaraja</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Jo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">S</forename><surname>Huh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Polym. Compos</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="2207" to="2210" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,50.55,236.60,7.85;8,55.33,61.74,210.03,8.57" xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Fugetsu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Sano</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sunada</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Sambongi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Shibuya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Hiraki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbon</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="1256" to="1258" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,74.42,236.59,7.85;8,55.33,85.66,119.38,8.57" xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Imai</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Akiyama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Tanaka</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Sano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Compos. Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="1564" to="1570" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,97.63,236.62,8.57;8,55.33,110.31,44.03,7.85" xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">L</forename><surname>Hsieh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Appl. Mater. Interfaces</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="2413" to="2420" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,122.27,236.62,7.85;8,55.33,133.51,236.62,8.57;8,55.33,146.19,44.03,7.85" xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Miyauchi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Miao</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">J</forename><surname>Simmons</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">V</forename><surname>Doherty</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">S</forename><surname>Dordick</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">J</forename><surname>Linhardt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomacromolecules</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="2440" to="2445" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,157.38,191.25,8.57" xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Oya</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Ogino</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbon</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="169" to="171" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,170.06,236.62,7.85;8,55.34,181.30,86.95,8.57" xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">Y</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="3588" to="3594" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.34,193.98,236.62,7.85;8,55.34,205.23,53.83,8.57" xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Ren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sens. Actuators, B</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page" from="221" to="225" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.34,217.91,236.62,7.85;8,55.34,229.15,82.30,8.57" xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="3612" to="3617" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.34,241.83,236.59,7.85;8,55.33,253.02,131.23,8.57" xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Müller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">J</forename><surname>Gilmore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">G</forename><surname>Wallace</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="3557" to="3561" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,265.70,236.62,7.85;8,55.33,276.94,148.79,8.57" xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">S</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">Y</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Polym</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="903" to="909" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,289.62,236.62,7.85;8,55.33,301.58,236.62,7.85;8,63.39,312.83,148.36,8.57" xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">D</forename><surname>Luong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Pahimanolis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">U</forename><surname>Hippi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">T</forename><surname>Korhonen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Ruokolainen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">S</forename><surname>Johansson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">D</forename><surname>Nam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Seppälä</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="13991" to="13998" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.34,325.51,236.63,7.85;8,55.34,336.75,145.21,8.57" xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Weng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">W</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">M</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="917" to="922" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.34,349.38,236.62,7.85;8,55.33,360.63,72.99,8.57" xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zabetakis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Dinderman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Schoen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="734" to="738" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,372.59,236.62,8.57;8,55.33,385.27,34.72,7.85" xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Aoki</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Kunitake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="292" to="297" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,397.23,236.59,7.85;8,55.33,408.47,138.31,8.57" xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">S</forename><surname>Jur</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">J</forename><surname>Sweet</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Iii</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">J</forename><surname>Oldham</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">N</forename><surname>Parsons</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<date type="published" when="1993">2011. 1993-2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,421.15,236.64,7.85;8,55.33,433.11,236.62,7.85;8,55.33,444.30,49.18,8.57" xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">S</forename><surname>Zakirov</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">U</forename><surname>Yuldashev</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">W</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">T</forename><surname>Mamadalimov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="896" to="901" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,456.26,236.62,8.57;8,55.33,468.94,34.72,7.85" xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Aoki</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Kunitake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="292" to="297" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,480.19,218.24,8.57" xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">D</forename><surname>Rogers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">R</forename><surname>Seddon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">302</biblScope>
+			<biblScope unit="page">792</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,492.15,236.62,8.57;8,55.33,504.83,44.03,7.85" xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">J</forename><surname>Earle</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">R</forename><surname>Seddon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pure Appl. Chem</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="1391" to="1398" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,516.07,236.62,8.57;8,55.33,528.75,34.72,7.85" xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Texter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="431" to="448" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,539.94,226.50,8.57" xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">K</forename><surname>Mahadeva</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Yi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ionics</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="41" to="47" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,552.62,236.65,7.85;8,55.33,563.87,206.37,8.57" xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">M</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">Q</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">B</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">S</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="32" to="36" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,576.54,236.56,7.85;8,55.33,587.79,112.91,8.57" xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Fa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Polym</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="1216" to="1220" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,600.47,236.62,7.85;8,55.33,611.71,117.45,8.57" xml:id="b46">
+	<monogr>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Zang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Adv</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1040" to="1046" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,624.39,236.60,7.85;8,55.33,635.58,147.04,8.57" xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Van Den</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Berg</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Schroeter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Capadona</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><surname>Weder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="2746" to="2753" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,648.26,236.58,7.85;8,55.33,659.51,236.62,8.57;8,55.33,672.19,53.40,7.85" xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">O</forename><surname>Carlsson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Nyström</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Q</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">A</forename><surname>Berglund</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Nyholm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Strømme</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="19014" to="19024" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,55.33,684.15,236.61,7.85;8,55.33,696.11,236.61,7.85;8,55.33,707.36,111.50,8.57" xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">E</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Guan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ricard</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Dubey</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Lopinski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Dorris</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Bourne</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Simard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="2400" to="2407" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,50.55,236.63,7.85;8,316.12,61.74,148.79,8.57" xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Yoshino</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Feng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Polym</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="644" to="649" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,74.42,236.62,7.85;8,316.12,85.66,58.49,8.57" xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">K</forename><surname>Layek</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">K</forename><surname>Nandi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="8139" to="8144" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,98.34,236.61,7.85;8,316.12,109.59,120.86,8.57" xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">Y</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">Y</forename><surname>Jeon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<date type="published" when="2012">2012. 20026-20031</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,122.26,236.63,7.85;8,316.12,133.51,236.62,8.57" xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">J B</forename><surname>Pinto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">A A P</forename><surname>Marques</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">P</forename><surname>Neto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Trindade</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Daina</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Sadocco</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Biomater</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="2279" to="2289" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,146.19,236.62,7.85;8,316.12,157.38,72.99,8.57" xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zabetakis</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Dinderman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Schoen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="734" to="738" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,170.06,236.62,7.85;8,316.12,181.30,222.91,8.57" xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>George</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">A</forename><surname>Vallayil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">N</forename><surname>Shanmugam</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">V</forename><surname>Karna</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Siddaramiah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="22433" to="22439" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,193.98,236.64,7.85;8,316.12,205.22,218.70,8.57" xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Kwon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">J</forename><surname>Jin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Polym. Sci., Part B: Polym. Phys</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="1235" to="1242" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,217.90,236.57,7.85;8,316.12,229.15,133.81,8.57" xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Res</title>
+		<imprint>
+			<biblScope unit="volume">343</biblScope>
+			<biblScope unit="page" from="73" to="80" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,241.83,236.64,7.85;8,316.12,253.02,148.79,8.57" xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">I</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">M</forename><surname>Kwon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">H</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">J</forename><surname>Jin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Polym</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="457" to="463" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,265.69,236.57,7.85;8,316.12,276.94,230.84,8.57" xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">A</forename><surname>Marins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">G</forename><surname>Soares</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Dahmouche</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">J L</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Barud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Bonemer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cellulose</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="1285" to="1294" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,289.62,236.61,7.85;8,316.12,300.86,97.21,8.57" xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="8453" to="8457" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,313.54,236.62,7.85;8,316.12,324.80,163.86,8.57" xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Muller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">R</forename><surname>Rambo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Recouvreux</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Porto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Barra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Synth. Met</title>
+		<imprint>
+			<biblScope unit="volume">161</biblScope>
+			<biblScope unit="page" from="106" to="111" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,337.48,236.61,7.85;8,316.12,348.66,111.50,8.57" xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Sureshkumar</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">Y</forename><surname>Siswanto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">K</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="6948" to="6955" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,361.34,236.59,7.85;8,316.12,373.30,236.62,7.85;8,316.12,384.55,72.99,8.57" xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">C</forename><surname>De Santa Maria</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">L C</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">C</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Barud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Messaddeq</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">J L</forename><surname>Ribeiro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Lett</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="797" to="799" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,397.23,236.61,7.85;8,316.12,408.47,159.63,8.57" xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ifuku</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Tsuji</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Morimoto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Saimoto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Yano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomacromolecules</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="2714" to="2717" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,421.15,236.60,7.85;8,316.12,432.40,236.62,8.57;8,316.12,445.02,21.07,7.85" xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Klemm</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Kramer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Moritz</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Lindström</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Ankerfors</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Dorris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem., Int. Ed</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="5438" to="5466" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,456.26,236.62,8.57;8,316.12,468.94,44.03,7.85" xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydr. Polym</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="1432" to="1442" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,480.91,217.80,7.85" xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Qi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Commun</title>
+		<imprint>
+			<biblScope unit="page" from="2735" to="2737" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,492.87,236.59,7.85;8,316.12,504.11,236.62,8.57;8,316.12,516.79,25.41,7.85" xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">W</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">R</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">M</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><forename type="middle">L</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">X</forename><forename type="middle">X</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Talanta</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="71" to="77" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,528.75,236.62,7.85;8,316.12,539.94,49.18,8.57" xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">M</forename><surname>Brown</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Microbiol. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="352" to="355" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,552.62,236.63,7.85;8,316.12,564.58,236.62,7.85;8,316.12,575.83,86.95,8.57" xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Legnani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Vilani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><forename type="middle">L</forename><surname>Calil</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><forename type="middle">S</forename><surname>Barud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">W</forename><forename type="middle">G</forename><surname>Quirino</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">A</forename><surname>Achete</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Cremona</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Thin Solid Films</title>
+		<imprint>
+			<biblScope unit="volume">517</biblScope>
+			<biblScope unit="page" from="1016" to="1020" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,588.51,236.60,7.85;8,316.12,599.37,219.32,8.97" xml:id="b71">
+	<monogr>
+		<title level="m" type="main">Encapsulated liquid crystal materials for exible display applications</title>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">P</forename><surname>Crawford</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<publisher>Wiley Online Library</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,612.43,236.60,7.85;8,316.12,623.67,223.00,8.57" xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Yano</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Sugiyama</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">N</forename><surname>Nakagaito</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Nogi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Matsuura</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hikita</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Handa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="153" to="155" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,635.58,220.74,8.57" xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Nogi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">H</forename><surname>Yano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="1849" to="1852" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,647.54,236.62,8.57;8,316.12,660.23,44.03,7.85" xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Yun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Ounaies</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromolecules</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="4202" to="4206" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,672.19,236.62,7.85;8,316.12,683.43,77.64,8.57" xml:id="b75">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">H</forename><surname>Jeon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><forename type="middle">K</forename><surname>Oh</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">D</forename><surname>Kee</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sens. Actuators, B</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page" from="307" to="313" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,316.12,695.40,236.62,8.57;8,316.12,708.08,21.07,7.85" xml:id="b76">
+	<analytic>
+		<title/>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">C</forename><surname>Mcalpine</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Environ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="1275" to="1285" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

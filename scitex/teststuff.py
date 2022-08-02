@@ -12,7 +12,7 @@ table_settings = {
     "horizontal_strategy": "text"
 }
 
-FILEPATH = "scitex/evalPDF/acsomega.9b01564.pdf"
+FILEPATH = "scitex/evalPDF/A_Study_on_Thermal_and_Nanomechanical_Performance_.pdf"
 
 plumber = pdfplumber.open(FILEPATH)
 
@@ -29,7 +29,7 @@ pdfSettings.activesection = PDFfragments.section(
     "5", None, [0], 1, 11, 18)
 
 PDF.sections.append(pdfSettings.activesection)
-PDF, pdfSettings = PDFparser.DealWithPage(PDF, plumber.pages[2], pdfSettings)
+PDF, pdfSettings = PDFparser.DealWithPage(PDF, plumber.pages[0], pdfSettings)
 
 page = plumber.pages[2]
 words = PDFfunctions.getWords(page, HORIZONTAL_ERROR)

@@ -112,7 +112,7 @@ def DealWithPage(PDF, page, pdfSettings):
 
 def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
-    if(colnum == 7):
+    if(colnum == 2):
         print("Breakpoint")
 
 
@@ -121,8 +121,8 @@ def DealWithCol(PDF, page, colnum, words, pdfSettings):
     words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
 
-    if(page.page_number != 1 or colnum != 0):
-        pdfSettings = PDFsettings.newSpacing(lines, page.page_number, pdfSettings)
+    #if(page.page_number != 1 or colnum != 0):
+    pdfSettings = PDFsettings.newSpacing(lines, page.page_number, pdfSettings)
 
     i = -1
     while i < len(lines)-1:

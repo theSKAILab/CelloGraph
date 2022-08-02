@@ -140,6 +140,7 @@ class lineSettings:
             return True
         if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE and lines[i]["BefSpace"] > 0):
             return True
+        
         return False
 
 

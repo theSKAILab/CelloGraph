@@ -115,7 +115,7 @@ def addHeader(headers, words, i, words2, words3):
     expect_num = False
     foundHeader = False
     if first1["text"].isdigit():
-        if(int(first1) == first1["page"]):
+        if(int(first1["text"]) == first1["page"]):
             index += 1
     anyHeader = False
     x, offset = checkForHeaderOffset(words, words2, words3, index)
@@ -407,13 +407,16 @@ def newSpacing(lines, page, pdfSettings):
 
     spaceIndex = minorfunctions.mostCommonLineSpace(lines, True, vError/100)
     linespace = float(lines[spaceIndex]["AftSpace"])
+    
     heightIndex = minorfunctions.mostCommonLineHeight(lines, True, vError/100)
     lineratio = float(lines[heightIndex]["AftRatio"])
     lineheight = float(lines[heightIndex]["Height"])
+    align = float(lines[heightIndex]["Align"])
 
     pdfSettings.linespace = linespace
     pdfSettings.lineheight = lineheight
     pdfSettings.lineratio = lineratio
+    pdfSettings.paraAlign = align
 
     if(page == 1):
         pdfSettings.interline = linespace * .7
