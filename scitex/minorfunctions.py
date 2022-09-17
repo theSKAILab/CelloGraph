@@ -1,14 +1,6 @@
 import textprocessing
 
 
-from collections import Counter
-
-
-def most_frequent(List):
-    occurence_count = Counter(List)
-    return occurence_count.most_common(1)[0][0]
-
-
 # MINOR FUNCTIONS
 # The following functions are short and used for my own sanity
 
@@ -16,9 +8,13 @@ def most_frequent(List):
 # if percentage is true, it'll return true if v1 is within error% of v2
 # if percentage is false, it'll return true if v1 = v2 +- error
 def areEqual(val1, val2, error=0, percentage=False):
-    val1 = float(val1)
-    val2 = float(val2)
-    error = float(error)
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        error = float(error)
+    except:
+        return val1 == val2
+        
     if(percentage):
         if(val1 < val2*((100+error)/100) and val1 > val2*(100-error)/100):
             return True
@@ -40,6 +36,8 @@ def listElementsEqual(list, error=0, percentage=False):
     return True
 
 
+
+#self-explanatory, I think.
 def bubbleSort(arr):
     if(len(arr) < 2):
         return arr
@@ -54,10 +52,10 @@ def bubbleSort(arr):
 
     return arr
 
+
+
 # sorts a 2d array by length, so that the longest is first
 # I just use bubble sort for now
-
-
 def sortByLen(arr):
     if(len(arr) < 2):
         return arr
@@ -66,15 +64,15 @@ def sortByLen(arr):
     while swapped:
         swapped = False
         for i in range(1, len(arr)):
-            if len(arr[i-1].text) < len(arr[i].text):
+            if len(arr[i-1].words) < len(arr[i].words):
                 swapped = True
                 arr[i], arr[i - 1] = arr[i - 1], arr[i]
 
     return arr
 
+
+
 # returns true if val1 > val2+error or val1 < val2* (100+error)%
-
-
 def isGreater(val1, val2, error=0, percentage=False):
     val1 = float(val1)
     val2 = float(val2)
@@ -143,6 +141,7 @@ def mostCommon(arr, index=False, error=0):
 
 
 # take a list of dicts, make a list of attribute
+# arr is a an array, attribute is a string.
 def reverseArr(arr, attribute):
     retval = []
     for i in range(len(arr)):
@@ -223,7 +222,7 @@ def myMax(arr, index=False):
 # update the coordinates of what section or sub-sub-etc-section we're in.
 def newCoords(coords, type):
     if(coords == []):
-        return [0]
+        return [1]
     if(type == 0):
         return coords
     newcoords = []
@@ -234,14 +233,15 @@ def newCoords(coords, type):
     # if we're in a deeper section, (2.3 to 2.3.1) add depth.
     elif(len(coords) < type):
         newcoords = coords
-        newcoords.append(-1)
+        newcoords.append(0)
     # else just copy as is
     else:
         newcoords = coords
+
     # update coords
     coords = newcoords
     if(coords == []):
-        return [0]
+        return [1]
     else:
         coords[len(coords)-1] += 1
         return coords
@@ -346,6 +346,8 @@ def bottomest(list):
     return retval
 
 
+#returns True if str1 is the beginning of str2 or vice versa.
+#i.e. "Hello there" and "Hello" will return True
 def BeginningEqual(str1, str2):
     if(len(str1) == 0 or len(str2) == 0):
         return False
@@ -355,6 +357,9 @@ def BeginningEqual(str1, str2):
     return False
 
 
+
+#returns True if str1 is the end of str2 or vice versa.
+#i.e. "fighting" and "ing" will return True.
 def EndEqual(str1, str2):
     if(len(str1) == 0 or len(str2) == 0):
         return False
@@ -366,15 +371,17 @@ def EndEqual(str1, str2):
     return False
 
 
+
+#returns the lesser of len(str1) and len(str2)
 def minLength(str1, str2):
     if(len(str1) > len(str2)):
         return len(str2)
     else:
         return len(str1)
 
-# really long if statement
 
 
+# really long if statement trying to figure out whether str is the beginning of a figure caption.
 def isCaption(str):
     if(str == "Fig." or "Figure"):
         return True

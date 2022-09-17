@@ -26,7 +26,7 @@ class lineType(Enum):
 
 
 # class describing what kind of text line we're dealing with.
-# takes a bunch of inputs, and then uses them to calibrate itself.
+# takes a bunch of inputs, and then uses them to figure out the line.
 class lineSettings:
     def __init__(self, i, lines, pdfSettings, error, consistentRatio=0):
         self.size = lineSize.NORMAL_SIZE
@@ -44,32 +44,20 @@ class lineSettings:
         height = lines[i]["Height"]
 
         # is the text big
-        if(minorfunctions.isGreater(height, pdfSettings.lineheight, error)):
-            self.size = lineSize.BIG_SIZE
-        elif(minorfunctions.isLesser(height, pdfSettings.lineheight, error)):
-            self.size = lineSize.SMALL_SIZE
-        else:
-            self.size = lineSize.NORMAL_SIZE
+        self.size = findSize(height, pdfSettings.lineheight, error)
 
         # is there a big space beforehand
         if(i != 0):
-            if(minorfunctions.isGreater(befSpace, pdfSettings.linespace, error)):
-                self.befspace = spaceSize.BIG_SPACE
-            elif(minorfunctions.isLesser(befSpace, pdfSettings.linespace, error)):
-                self.befspace = spaceSize.SMALL_SPACE
-            else:
-                self.befspace = spaceSize.NORMAL_SPACE
+            self.befspace = findSpace(befSpace, pdfSettings.linespace, error)
         else:
             self.befspace = spaceSize.BIG_SPACE
 
         # is there a big space afterwards
-        if(minorfunctions.isGreater(aftSpace, pdfSettings.linespace, error)):
-            self.aftspace = spaceSize.BIG_SPACE
-        elif(minorfunctions.isLesser(aftSpace, pdfSettings.linespace, error)):
-            self.aftspace = spaceSize.SMALL_SPACE
-        else:
-            self.aftspace = spaceSize.NORMAL_SPACE
+        self.aftspace = findSpace(aftSpace, pdfSettings.linespace, error)
 
+
+
+    #Now that we've figured some stuff out, figure out what
     def calcAdvSet(self, i, lines, pdfSettings, error):
         if(i == 21):
             print("Breakpoint")
@@ -98,7 +86,7 @@ class lineSettings:
 
     # if we're not at the bottom of the col and there's a big space before this line and there's a big space after this line and next line.
     def StartMultiTest(self, i, lines, pdfSettings, error):
-        pagenum = lines[0]["Text"][0]["Page"]
+        pagenum = lines[0]["Words"][0]["page"]
         if(minorfunctions.isEndofCol(i+1, lines) or minorfunctions.isEndofCol(i+2, lines) or (pdfSettings.addto and pagenum != 1)):
             return False
         if(minorfunctions.areEqual(lines[i+1]["AftSpace"], pdfSettings.linespace, error)):
@@ -150,6 +138,27 @@ class lineSettings:
         #    return False
         if(self.aftspace == spaceSize.BIG_SPACE and self.befspace == spaceSize.BIG_SPACE and lines[i]["AftSpace"] > 0 and lines[i]["BefSpace"] > 0):
             return True
-        if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE):
+        if(pdfSettings.consistentRatio != 0 and self.aftspace == spaceSize.BIG_SPACE and lines[i]["BefSpace"] > 0):
             return True
+        
         return False
+
+
+def findSize(height, lineheight, error):
+    if(minorfunctions.isGreater(height, lineheight, error)):
+        retval = lineSize.BIG_SIZE
+    elif(minorfunctions.isLesser(height, lineheight, error)):
+        retval = lineSize.SMALL_SIZE
+    else:
+        retval = lineSize.NORMAL_SIZE
+    return retval
+
+
+def findSpace(space, linespace, error):
+    if(minorfunctions.isGreater(space, linespace, error)):
+        retval = spaceSize.BIG_SPACE
+    elif(minorfunctions.isLesser(space, linespace, error)):
+        retval = spaceSize.SMALL_SPACE
+    else:
+        retval = spaceSize.NORMAL_SPACE
+    return retval

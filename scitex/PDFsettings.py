@@ -51,7 +51,7 @@ class PDFsettings():
         self.newFig = False
 
         self.cites = []
-        self.coords = [-1]
+        self.coords = [0]
         self.addto = False
         self.addtoNext = False
         self.consistentRatio = 0
@@ -63,12 +63,12 @@ class PDFsettings():
 
 # expect_num is whether the text right after the header is a page number.
 class Header():
-    def __init__(self, text, expect_num=False):
-        self.text = text
+    def __init__(self, words, expect_num=False):
+        self.words = words
         self.expect_num = expect_num
 
     def __eq__(self, other):
-        return minorfunctions.reverseArr(self.text, "text") == minorfunctions.reverseArr(other.text, "text") and self.expect_num == self.expect_num
+        return minorfunctions.reverseArr(self.words, "text") == minorfunctions.reverseArr(other.words, "text") and self.expect_num == self.expect_num
 
 
 def FindPageHeaders(pdf, pdfSettings, hError):
@@ -115,7 +115,7 @@ def addHeader(headers, words, i, words2, words3):
     expect_num = False
     foundHeader = False
     if first1["text"].isdigit():
-        if(int(first1["text"]) == first1["Page"]):
+        if(int(first1["text"]) == first1["page"]):
             index += 1
     anyHeader = False
     x, offset = checkForHeaderOffset(words, words2, words3, index)
@@ -184,22 +184,30 @@ def headerCheck(words, words2, words3, index, offset=0):
 def footerCheck(words, words2, words3, index, offset=0):
     if(index < 1):
         index = 1
-    w1 = words[len(words)-index-offset]["text"]
-    w2 = words2[len(words2)-index]["text"]
-    w3 = words3[len(words3)-index]["text"]
+    w1 = words[len(words)-index-offset]
+    w2 = words2[len(words2)-index]
+    w3 = words3[len(words3)-index]
 
-    if w1 == w2 and w2 == w3:
-        return True
+    t1 = w1["text"]
+    t2 = w2["text"]
+    t3 = w3["text"]
 
-    w1 = textprocessing.trimScript(w1)
-    w2 = textprocessing.trimScript(w2)
-    w3 = textprocessing.trimScript(w3)
-    if w1.isdigit() and w2.isdigit() and w3.isdigit():
-        num = int(w1)
-        num2 = int(w2)
-        num3 = int(w3)
-        if(minorfunctions.listElementsEqual([int(w1), int(w2), int(w3)], 4)):
+    h1 = w1["bottom"] - w1["top"]
+    h2 = w2["bottom"] - w2["top"]
+    h3 = w3["bottom"] - w3["top"]
+
+    if t1 == t2 and t2 == t3:
+        if(minorfunctions.listElementsEqual([h1, h2, h3], 5, True)):
             return True
+
+    t1 = textprocessing.trimScript(t1)
+    t2 = textprocessing.trimScript(t2)
+    t3 = textprocessing.trimScript(t3)
+
+    if t1.isdigit() and t2.isdigit() and t3.isdigit():
+        if(minorfunctions.listElementsEqual([int(t1), int(t2), int(t3)], 4)):
+            if(minorfunctions.listElementsEqual([h1, h2, h3], 5, True)):
+                return True
 
     return False
 
@@ -297,7 +305,7 @@ def addFooter(footers, words, i, words2, words3):
     expect_num = False
     foundFooter = False
     if first1["text"].isdigit():
-        if(int(first1["text"]) == first1["Page"]):
+        if(int(first1["text"]) == first1["page"]):
             index += 1
     if footerCheck(words, words2, words3, index):
         foundFooter = True
@@ -387,3 +395,32 @@ def FindSpace(pdf, vError, hError, PARAS_REQUIRED):
         paraAlign = lines[heightIndex]["Align"]
 
     return linespace, lineratio, lineheight, paraAlign, paraSpace, vert, horizontal
+
+
+
+def newSpacing(lines, page, pdfSettings):
+    if(len(lines) < 1):
+        return pdfSettings
+
+    vError = pdfSettings.interline
+    hError = pdfSettings.horizontal
+
+    spaceIndex = minorfunctions.mostCommonLineSpace(lines, True, vError/100)
+    linespace = float(lines[spaceIndex]["AftSpace"])
+    
+    heightIndex = minorfunctions.mostCommonLineHeight(lines, True, vError/100)
+    lineratio = float(lines[heightIndex]["AftRatio"])
+    lineheight = float(lines[heightIndex]["Height"])
+    align = float(lines[heightIndex]["Align"])
+
+    pdfSettings.linespace = linespace
+    pdfSettings.lineheight = lineheight
+    pdfSettings.lineratio = lineratio
+    pdfSettings.paraAlign = align
+
+    if(page == 1):
+        pdfSettings.interline = linespace * .7
+    else:
+        pdfSettings.interline = pdfSettings.intraline / .4
+
+    return pdfSettings

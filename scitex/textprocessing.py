@@ -151,7 +151,7 @@ def checkForCutOffs(sentences):
 # this is a function to facilitate a very complicated if statement.
 def DetermineParagraph(lines, lineIndex, pdfSettings, error):
     w = lines[lineIndex]["LineStartDex"]
-    words = lines[lineIndex]["Text"]
+    words = lines[lineIndex]["Words"]
     if(w == pdfSettings.bookmark):
         return False
     if(not pdfSettings.useSpace):
@@ -171,8 +171,25 @@ def DetermineParagraph(lines, lineIndex, pdfSettings, error):
             return False
 
 
+def cleanWord(word):
+    validChars = []
+    if(len(word["chars"]) < 2):
+        return word
+    for c in range(len(word["chars"])):
+        char = word["chars"][c]
+        tempWord = copy.deepcopy(word)
+        tempWord["chars"].pop(c)
+        tempWord["top"] = minorfunctions.toppest(tempWord["chars"])["top"]
+        tempWord["bottom"] = minorfunctions.bottomest(tempWord["chars"])["bottom"]
+        if(minorfunctions.isGreater(char["bottom"], tempWord["bottom"], .5) and minorfunctions.isLesser(char["top"], tempWord["top"], .5)):
+            word["top"] = tempWord["top"]
+            word["bottom"] = tempWord["bottom"]
+    return word
+
 # returns true if w is the first word on a new line.
 def newline(words, w, error=0):
+    if(w > 5 and w < len(words)-5):
+        vis = words[w-5:w+5]
     if(w == 0):
         return True
     # if(words[w][top] <= words[w-1][top] or words[w][bottom] >= words[w-1][bottom]):
@@ -222,10 +239,11 @@ def newRow(words, w, vError, hError):
         return True
     return False
 
+
+
+
 # if the page number is either the first word, or
 # is tacked onto the beginning of the first word, remove it.
-
-
 def removePageNumber(words, num):
     original = words
     words = removePageNumberWord(words, num)
@@ -236,6 +254,10 @@ def removePageNumber(words, num):
     return words
 
 
+
+#remove the page number from the front of words if it's a word in the array
+# words is an array of word dictionaries (see PDFfunctions.makeWord or comments at the bottom of PDFfragments.py)
+# num is an integer, it's the page number.
 def removePageNumberWord(words, num):
     size = words[300:]
     if(len(words) < 1):
@@ -249,6 +271,10 @@ def removePageNumberWord(words, num):
     return words
 
 
+
+#remove the page number if it's at the beginning of the first word of the array.
+# words is an array of word dictionaries (see PDFfunctions.makeWord or comments at the bottom of PDFfragments.py)
+# num is an integer, it's the page number.
 def removePageNumberFromBeginningOfWord(words, num):
     if(len(words) < 1):
         return words
@@ -256,15 +282,6 @@ def removePageNumberFromBeginningOfWord(words, num):
         words[0]["text"] = words[0]["text"][len(str(num)):]
     return words
 
-
-# the newline function but for characters.
-def charNewline(chars, c, error=0):
-    if(c == 0):
-        return True
-    if(not minorfunctions.areEqual(words[w-1]["y0"], words[w]["y0"], error) and not minorfunctions.areEqual(
-            words[w-1]["y1"], words[w]["y1"]), error):
-        return True
-    return False
 
 
 def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
@@ -314,16 +331,19 @@ def FindsectionType(sectionheader, active, pagenum=1, height=4, error=0):
             return test.type
 
 
+
+#I'm not sure I actually use this anywhere.
 def isValid(str):
     for i in str:
         if not i.isdigit():
             return True
     return False
 
+
+
+#NOTE: THIS FUNCTION DOESN'T ACTUALLY GET USED ANYWHERE YET
 # Searches the page for citations and removes them.
 # returns a string with all citations removed.
-
-
 def CitationRemoval(cites, PDF, word, coords, paraNum):
     # find all the citations
     pattern = r'\[\i\]'
@@ -339,29 +359,41 @@ def CitationRemoval(cites, PDF, word, coords, paraNum):
     return word
 
 
+
+
+# returns a 2d array of word dictionaries, organized into their respective columns.
+# words is an array of word dictionaries, hError and vError are integers
 def HandleColumns(words, hError, vError):
     sec1 = time.time()
     retval = [[]]
     c = 0
 
     for w in range(len(words)):
-
+        #get some variables
         prevtop = words[w-1]["top"]
         top = words[w]["top"]
         prevX = words[w-1]["x1"]
         X = words[w]["x0"]
 
+        # if it's on a new line but that new line is higher on the page and further to the right, make a new column.
         if(newline(words, w, vError) and minorfunctions.isLesser(top, prevtop, vError) and minorfunctions.isGreater(X, prevX, hError)):
             c += 1
+
+        # add a new array to the 2d array if we need to, in order to put words there.
         while(c > (len(retval) - 1)):
             retval.append([])
+
         retval[c].append(words[w])
+
     sec2 = time.time()
     print("Seconds to Handle Columns: " + str(sec2 - sec1))
     return retval
 
 
+
+#takes and returns sentlist (an array of sentence objects) and pdfSettings (see PDFsettings.py)
 def cleanPara(sentlist, pdfSettings):
+    #if we don't actually have any sentences, return
     if(len(sentlist) == 0):
         return sentlist, pdfSettings
 

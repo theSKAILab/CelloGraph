@@ -95,7 +95,15 @@ def DealWithPage(PDF, page, pdfSettings):
 
     # cols = [pagewords]
 
-    for c in range(len(cols)):
+    c = -1
+    while c < (len(cols)-1):
+        c += 1
+        if(len(cols[c]) == 0):
+            cols.pop(c)
+            c -= 1
+            continue
+        if(c == len(cols)-1):
+            print("Breakpoint")
         pdfSettings.bookmark = 0
         PDF, pdfSettings = DealWithCol(PDF, page, c, cols[c], pdfSettings)
 
@@ -104,10 +112,17 @@ def DealWithPage(PDF, page, pdfSettings):
 
 def DealWithCol(PDF, page, colnum, words, pdfSettings):
 
+    if(colnum == 2):
+        print("Breakpoint")
+
+
     pdfSettings.offset = 0
 
     words, lines, pdfSettings = PDFfunctions.getLines(
         words, pdfSettings, pdfSettings.intraline)
+
+    #if(page.page_number != 1 or colnum != 0):
+    pdfSettings = PDFsettings.newSpacing(lines, page.page_number, pdfSettings)
 
     i = -1
     while i < len(lines)-1:
@@ -161,7 +176,7 @@ def DealWithLine(PDF, words, lines, lineIndex, pdfSettings, pagenum, colnum):
             PDF, lines, lineIndex, words, pdfSettings, pagenum, colnum)
         lineIndex -= 1
 
-    # if there's a new paragraph, add that.
+        # if there's a new paragraph, add that.
     elif (textprocessing.DetermineParagraph(lines, lineIndex, pdfSettings, pdfSettings.interline)):
         pdfSettings.consistentRatio = 0
         pdfSettings = PDFfunctions.extensiveAddPara(
