@@ -120,12 +120,16 @@ cg:CG_2000003 rdf:type rdfs:Class ;
 ## the properties should be numbered starting with CG_2000004, with the more general classes (e.g. "mechanical property of a material") receiving lower numbers and more specific classes receiving higher numbers 
 ## #####
 
-#cg:CG_2000xxx rdf:type rdfs:Class ;
+#cgp:CG_2000xxx rdf:type rdfs:Class ;
 #		rdfs:label "GIVE IT A PRECISE AND UNIQUE NAME"@en-US ;
 #		rdfs:comment "not be be confused with the term chemical property: because some chemical properties are properties not just of chemical entities but of materials in the broader sense."@en-US ;
 #		rdfs:example "add some specific examples (instances) of the property, see examples above for guidance"@en-US ;
 #		skos:prefLabel "INSERT SAME NAME AS UNDER rdf:label"@en-US ;
 #		skos:altLabel "USE THIS FOR ALTERNATIVE NAME/LABELS"@en-US ;
 #		skos:definition "INSERT YOUR PRECISE NL DEFINITION."@en-US ;		
-# make it a subclass of one or multiple qualities (properties) 
-		rdfs:subClassOf cg:CG_2000xxx , cg:CG_2000xxx .
+# make it a subclass of one or multiple qualities (properties), either cg:CG_2000001, cg:CG_2000002, or cg:CG_2000003 or one of the more specific qualities you introduce (like cgp:CG_2000xxx)
+		rdfs:subClassOf cgp:CG_2000xxx , cgp:CG_2000xxx .
+# add a restriction of what kind of materials can have this properties		
+		rdfs:subClassOf [rdf:type owl:Restriction;
+						owl:onProperty cg:CG_1000002 ;
+						owl:allValuesFrom cg:CLASSIDorNAME] .
