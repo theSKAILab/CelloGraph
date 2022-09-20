@@ -58,13 +58,25 @@ bfo:BFO_0000002 rdfs:subClassOf bfo:BFO_0000001 ;
 rdfs:label "continuant"@en-US .
 
 # BFO independent continuant 
+# http://purl.obolibrary.org/obo/BFO_0000002
 bfo:BFO_0000004 rdfs:subClassOf bfo:BFO_0000002 ;
 rdfs:label "independent continuant"@en-US .
 
-# BFO: material entity: http://purl.obolibrary.org/obo/BFO_0000040
+# BFO material entity 
+#http://purl.obolibrary.org/obo/BFO_0000040
 bfo:BFO_0000040 rdfs:subClassOf bfo:BFO_0000004 ;
 rdfs:label "material entity"@en-US ;
 skos:definition "A material entity is an independent continuant that at all times at which it exists has some portion of matter as continuant part"@en. 
+
+# BFO specifically dependent continuant 
+# http://purl.obolibrary.org/obo/BFO_0000020
+bfo:BFO_0000020 rdfs:subClassOf bfo:BFO_0000002 ;
+rdfs:label "specifically dependent continuant"@en-US . 
+
+# BFO quality
+# http://purl.obolibrary.org/obo/BFO_0000019
+bfo:BFO_0000040 rdfs:subClassOf bfo:BFO_0000020 ;
+rdfs:label "quality"@en-US . 
 
 # reusing ChemicalEntity, Atom, MolecularEntity, Group, ChemicalSubstance from ChEBI
 
@@ -129,88 +141,85 @@ iof:MaterialArtifact rdfs:subClassOf bfo:BFO_0000030 ,
 	rdfs:label "material artifact"@en-US .
 	
 
-cg:CG_0000005 rdf:type rdfs:Class ;
+cg:CG_3000001 rdf:type rdfs:Class ;
 		rdfs:subClassOf iof:MaterialProduct ;
 		rdfs:label "cellulosic product"@en-US ;
 		skos:definition "a cellulosic product is a material product that contains or is produced from some significant amount of cellulosic material"@en-US .
 # TODO: formalize as axiom 
 
 
-cg:CG_0000006 rdf:type rdfs:Class ;
+cg:CG_3000002 rdf:type rdfs:Class ;
 		rdfs:subClassOf iof:MaterialArtifact ,
-						cg:CG_0000005 ;
-		owl:intersectionOf (iof:MaterialArtifact cg:CG_0000005) ;
+						cg:CG_3000001 ;
+		owl:intersectionOf (iof:MaterialArtifact cg:CG_3000001) ;
 		rdfs:label "cellulosic artifact"@en-US ;
 		skos:definition "a cellulosic artifact is a cellulosic product that is also an artifact."@en-US .
 # TODO: check that it is correctly defined as intersection of the two classes 
 	
-
+	
 # =================
-# Material Property
+# Material Property - Basics (do not change!)
 # =================
-
-# BFO specifically dependent continuant
-bfo:BFO_0000020 rdfs:subClassOf bfo:BFO_0000002 ;
-rdfs:label "specifically dependent continuant"@en-US .
-
-# BFO's quality 
-bfo:BFO_0000019 rdfs:subClassOf bfo:BFO_0000020 ;
-				rdfs:label "quality"@en-US .
 
 # "quality of a substance" is a subclass of BFO's quality (BFO_0000019) and must be a property of some substance 
-cg:CG_0000007 rdf:type rdfs:Class ;
+# all subclasses should be numbered CG_2xxxxxx
+cg:CG_2000001 rdf:type rdfs:Class ;
 		rdfs:subClassOf bfo:BFO_0000019 ;
 		rdfs:label "quality of a substance"@en-US ;
 		skos:prefLabel "quality of a substance"@en-US ;
 		skos:altLabel "substance quality"@en-US ;
-		skos:definition "quality of a substance is a quality of some substance (in the broadest sense)."@en-US ;
+		skos:definition "quality of a substance is a physical, chemical or other material quality of some substance (in the broadest sense)."@en-US ;
+		skos:example "the color of water, the density of helium, the tensile strength of cellulose, the average length of microfibrils in cellulose" ;
 		rdfs:subClassOf [rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
 						owl:someValuesFrom cg:CG_0000007].
 		
 		
-# material quality is a quality of a substance that is a property (cg:CG_1000002) only of a material substance 
-cg:CG_0000008 rdf:type rdfs:Class ;
+# material quality is a quality of a substance that is a property (cg:CG_2000001) only of a material substance 
+cg:CG_2000002 rdf:type rdfs:Class ;
 		rdfs:label "material quality"@en-US ;
-		rdfs:subClassOf cg:CG_0000007 ;
+		rdfs:subClassOf cg:CG_2000001 ;
 		skos:prefLabel "material quality"@en-US ;
 		skos:altLabel "material property"@en-US ;
-		skos:definition "material quality is a quality of a substance that is classified as a material substance."@en-US ;		
+		skos:definition "material quality is a quality of a substance that is classified as being a material substance (rather than an chemical substance)."@en-US ;
+		skos:example "the color or melting point of copper alloy no 210, the tensile strength of cellulose, the average length of microfibrils in cellulose" ;
 		rdfs:subClassOf [rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
 						owl:allValuesFrom cg:CG_0000008] .
 						
 							
 # chemical entity quality is a quality of some chemical entity 
-cg:CG_0000009 rdf:type rdfs:Class ;
-		rdfs:label "material quality"@en-US ;
+cg:CG_2000003 rdf:type rdfs:Class ;
+		rdfs:label "chemical entity quality"@en-US ;
 		rdfs:comment "not be be confused with the term chemical property: because some chemical properties are properties not just of chemical entities but of materials in the broader sense."@en-US ;
+		rdfs:example "the atomic number of H, the atomic mass of NaCl, the melting point of copper"@en-US ;
 		skos:prefLabel "chemical entity quality"@en-US ;
 		skos:altLabel "chemical entity property"@en-US ;
 		skos:definition "chemical entity quality is a quality of some chemical entity."@en-US ;		
-		rdfs:subClassOf cg:CG_0000007 ,
+		rdfs:subClassOf cg:CG_2000001 ,
 						[rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom cg:CG_0000008] .
-
-# TODO: may want to create a specific subclass of BFO's relational quality (BFO_0000145)
+						owl:allValuesFrom chebi:CHEBI_24431] .
 
 
-# ~ * ~ * ~ * ~
-# ObjectProperty
-# ~ * ~ * ~ * ~
+# =================
+# ObjectProperties to relate Material Properties and Materials (do not change!)
+# =================
 
 # hasProperty as relationship between any substance and a substanceProperty 
+# all subproperties of hasProperty or its inverse should be numbered CG_1xxxxxx
 cg:CG_1000001 rdf:type rdf:Property,
 						owl:ObjectProperty ;
 				rdfs:label "hasProperty"@en-US ;
+				owl:inverseOf cg:CG_1000002 ;
 				rdfs:domain cg:CG_0000001 ;
-				rdfs:range cg:CG_0000007 .
+				rdfs:range cg:CG_2000001 .
 				
 # isPropertyOf as inverse of # hasProperty
 cg:CG_1000002 rdf:type rdf:Property,
 						owl:ObjectProperty ;
 				owl:inverseOf cg:CG_1000001 ;
 				rdfs:label "isPropertyOf"@en-US ;
-				rdfs:domain cg:CG_0000007 ;
+				rdfs:domain cg:CG_2000001 ;
 				rdfs:range cg:CG_0000001 .
+		
