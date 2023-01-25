@@ -16,6 +16,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+# wordnet and related ontologies
+@prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
+@prefix pwnid: <http://wordnet-rdf.princeton.edu/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 
 @base <http://www.spatialai.org/CelloGraph/v1.0/> .
 
@@ -36,11 +40,49 @@
         owl:versionIRI     <http://www.spatialai.org/CelloGraph/v1.0/> ;
         owl:versionInfo    "1.0"@en-US ;
 		dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/v1/cellograph.owl"^^<xsd:anyURI> .
-		
+
+
+
+
+# ~ * ~ * ~ * ~
+# ObjectProperty
+# ~ * ~ * ~ * ~
+
+# meta-properties for linking ontology terms to wordnet terms
+cg:closeToWordnetSense rdf:type rdf:Property,
+						owl:ObjectProperty ;
+				rdfs:label "close to Wordnet word sense"@en-US ;
+				rdfs:comment "closeToWordSense relates ontology terms to the closest wordsense from Wordnet if Wordnet contains such word sense. All classes should be related to noun wordsenses. For generality, the domain is any BFO entity. "@en-US ; 
+				rdfs:domain bfo:BFO_0000001 ;
+				rdfs:range ontolex:LexicalSense .
+
+
+# hasProperty as relationship between any substance and a substanceProperty 
+# all subproperties of hasProperty or its inverse should be numbered CG_1xxxxxx
+cg:CG_1000001 rdf:type rdf:Property,
+						owl:ObjectProperty ;
+				rdfs:label "hasProperty"@en-US ;
+				owl:inverseOf cg:CG_1000002 ;
+				rdfs:domain cg:CG_0000001 ;
+				rdfs:range cg:CG_2000001 .
+				
+# isPropertyOf as inverse of # hasProperty
+cg:CG_1000002 rdf:type rdf:Property,
+						owl:ObjectProperty ;
+				owl:inverseOf cg:CG_1000001 ;
+				rdfs:label "isPropertyOf"@en-US ;
+				rdfs:domain cg:CG_2000001 ;
+				rdfs:range cg:CG_0000001 .
 
 # ~ * ~ * ~ * ~
 # Classes
 # ~ * ~ * ~ * ~
+
+# Helper classes from other ontologies
+
+ontolex:LexicalSense rdf:type rdfs:Class ; 
+rdfs:label "lexical Sense"@en-US . 
+
 
 # Declaration of highest-level classes 
 
@@ -66,7 +108,7 @@ rdfs:label "independent continuant"@en-US .
 #http://purl.obolibrary.org/obo/BFO_0000040
 bfo:BFO_0000040 rdfs:subClassOf bfo:BFO_0000004 ;
 rdfs:label "material entity"@en-US ;
-skos:definition "A material entity is an independent continuant that at all times at which it exists has some portion of matter as continuant part"@en. 
+skos:definition "A material entity is an independent continuant that at all times at which it exists has some portion of matter as continuant part"@en-US. 
 
 # BFO specifically dependent continuant 
 # http://purl.obolibrary.org/obo/BFO_0000020
@@ -75,7 +117,8 @@ rdfs:label "specifically dependent continuant"@en-US .
 
 # BFO quality
 # http://purl.obolibrary.org/obo/BFO_0000019
-bfo:BFO_0000040 rdfs:subClassOf bfo:BFO_0000020 ;
+bfo:BFO_0000019 rdf:type rdfs:Class ;
+rdfs:subClassOf bfo:BFO_0000020 ;
 rdfs:label "quality"@en-US . 
 
 # reusing ChemicalEntity, Atom, MolecularEntity, Group, ChemicalSubstance from ChEBI
@@ -161,6 +204,7 @@ cg:CG_3000002 rdf:type rdfs:Class ;
 # Material Property - Basics (do not change!)
 # =================
 
+
 # "quality of a substance" is a subclass of BFO's quality (BFO_0000019) and must be a property of some substance 
 # all subclasses should be numbered CG_2xxxxxx
 cg:CG_2000001 rdf:type rdfs:Class ;
@@ -172,7 +216,7 @@ cg:CG_2000001 rdf:type rdfs:Class ;
 		skos:example "the color of water, the density of helium, the tensile strength of cellulose, the average length of microfibrils in cellulose" ;
 		rdfs:subClassOf [rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:someValuesFrom cg:CG_0000007].
+						owl:allValuesFrom cg:CG_0000001].
 		
 		
 # material quality is a quality of a substance that is a property (cg:CG_2000001) only of a material substance 
@@ -185,7 +229,7 @@ cg:CG_2000002 rdf:type rdfs:Class ;
 		skos:example "the color or melting point of copper alloy no 210, the tensile strength of cellulose, the average length of microfibrils in cellulose" ;
 		rdfs:subClassOf [rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom cg:CG_0000008] .
+						owl:allValuesFrom cg:CG_0000002] .
 						
 							
 # chemical entity quality is a quality of some chemical entity 
@@ -201,25 +245,21 @@ cg:CG_2000003 rdf:type rdfs:Class ;
 						owl:onProperty cg:CG_1000002 ;
 						owl:allValuesFrom chebi:CHEBI_24431] .
 
+# TODO: may want to create a specific subclass of BFO's relational quality (BFO_0000145)
 
-# =================
-# ObjectProperties to relate Material Properties and Materials (do not change!)
-# =================
 
-# hasProperty as relationship between any substance and a substanceProperty 
-# all subproperties of hasProperty or its inverse should be numbered CG_1xxxxxx
-cg:CG_1000001 rdf:type rdf:Property,
-						owl:ObjectProperty ;
-				rdfs:label "hasProperty"@en-US ;
-				owl:inverseOf cg:CG_1000002 ;
-				rdfs:domain cg:CG_0000001 ;
-				rdfs:range cg:CG_2000001 .
-				
-# isPropertyOf as inverse of # hasProperty
-cg:CG_1000002 rdf:type rdf:Property,
-						owl:ObjectProperty ;
-				owl:inverseOf cg:CG_1000001 ;
-				rdfs:label "isPropertyOf"@en-US ;
-				rdfs:domain cg:CG_2000001 ;
-				rdfs:range cg:CG_0000001 .
-		
+
+# =====
+# Roles
+# =====
+
+# BFO realizable entity
+# http://purl.obolibrary.org/obo/BFO_0000017
+bfo:BFO_0000017 rdfs:subClassOf bfo:BFO_0000020 ;
+rdfs:label "realizable entity"@en-US .
+
+# BFO role 
+# http://purl.obolibrary.org/obo/BFO_0000023
+bfo:BFO_0000023 rdfs:subClassOf bfo:BFO_0000017 ;
+rdfs:label "role"@en-US .
+
