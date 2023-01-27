@@ -1,7 +1,7 @@
 # core ontologies of the cellograph project
-@prefix cg: <http://www.spatialai.org/CelloGraph/v1.0/>  . 
-@prefix : <http://www.spatialai.org//CelloGraph/v1.0/>  . 
-@prefix sp: <http://www.spatialai.org//SciPub/v1.0/>  .
+@prefix cg: <http://www.spatialai.org/CelloGraph/v1.0/core.owl#>  . 
+@prefix : <http://www.spatialai.org/CelloGraph/v1.0/core.owl#>  . 
+@prefix sp: <http://www.spatialai.org/SciPub/v1.0/>  .
 
 # reused ontologies
 @prefix bfo:  <http://purl.obolibrary.org/obo/bfo.owl#> . 
@@ -21,10 +21,10 @@
 @prefix pwnid: <http://wordnet-rdf.princeton.edu/id/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 
-@base <http://www.spatialai.org/CelloGraph/v1.0/> .
+@base <http://www.spatialai.org/CelloGraph/v1.0/core.owl#> .
 
 
-<http://www.spatialai.org/CelloGraph/2022v1.0/> rdf:type  owl:Ontology ;
+<http://www.spatialai.org/CelloGraph/v1.0/core.owl#> rdf:type  owl:Ontology ;
         owl:versionIRI <http://www.spatialai.org/CelloGraph/v1.0/> ;
         rdfs:label         "CelloGraph Ontology"@en-US ;
 		dcterms:title "Core of the Cellograph Ontology"@en-US ;
@@ -32,14 +32,14 @@
         dcterms:created    "2022-07-11"^^xsd:Date ;
         dcterms:creator <http://orcid.org/0000-0002-5331-5052> ;
         dcterms:creator    "Torsten Hahmann"@en-US ;
-		dcterms:modified   "2022-09-17"^^xsd:Date ;
-        dcterms:issued 	   "2022-07-11"^^xsd:date ;
+		dcterms:modified   "2023-01-27"^^xsd:Date ;
+        dcterms:issued 	   "2023-01-27"^^xsd:date ;
         dcterms:publisher  <http://spatialai.org/> ;
-        dcterms:rights     "Copyright 2022 UMaine, SKAI Lab."@en-US ;
+        dcterms:rights     "Copyright 2022-2023 UMaine, SKAI Lab."@en-US ;
         dcterms:subject    "Ontology"@en-US ;
-        owl:versionIRI     <http://www.spatialai.org/CelloGraph/v1.0/> ;
+        owl:versionIRI     <http://www.spatialai.org/CelloGraph/v1.0/core.owl#> ;
         owl:versionInfo    "1.0"@en-US ;
-		dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/v1/cellograph.owl"^^<xsd:anyURI> .
+		dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/cellograph/v1.0/core.owl"^^<xsd:anyURI> .
 
 
 
@@ -121,6 +121,7 @@ bfo:BFO_0000019 rdf:type rdfs:Class ;
 rdfs:subClassOf bfo:BFO_0000020 ;
 rdfs:label "quality"@en-US . 
 
+
 # reusing ChemicalEntity, Atom, MolecularEntity, Group, ChemicalSubstance from ChEBI
 
 # ChEBI's chemical entities are material entities in the BFO sense, but not all chemical entities are necessarily objects. For example substances may not be objects. 
@@ -197,7 +198,7 @@ cg:CG_0000009 rdf:type rdfs:Class ;
 # TODO: check definition 
 # TODO: capture this axiomatically 		
 
-cg:CG_0000100 rdf:type rdfs:Class ;
+cg:CG_0000010 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_0000005 ;
 		rdfs:label "cellulose"@en-US ;
 		skos:definition "cellulose is a cellulosic material that predominantly consists of cellulose but may include other materials (e.g. lignin, water, etc.)."@en-US .
