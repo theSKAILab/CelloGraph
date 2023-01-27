@@ -147,18 +147,58 @@ cg:CG_0000002 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_0000001 ;
 		rdfs:label "material"@en-US ;
 		skos:definition "a material is a substance that is of the interest of material science and has some consistent material properties associated with it (in addition to physical and chemical properties ascribed to specific chemical entities and substances)."@en-US .
-		
+
+# TODO: need to capture the relationship to organic/inorganic compounds
 cg:CG_0000003 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_0000002 ;
+		rdfs:label "organic material"@en-US ;
+		skos:definition "a material that contains some organic compound (that is, a compound that contains some carbon atom) and is part of or derived from things that live or have lived. Notice though not all materials that contain some carbon are deemed organic."@en-US ;
+		owl:disjointWith cg:CG_0000004 .
+
+# TODO: need to capture the relationship to organic/inorganic compounds
+cg:CG_0000004 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000002 ;
+		rdfs:label "inorganic material"@en-US ;
+		skos:definition "a material that does not make up living things and (with some exceptions) usually does not contain carbon atoms."@en-US ;
+		owl:disjointWith cg:CG_0000003 .
+	
+cg:CG_0000005 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000003 ;
 		rdfs:label "cellulosic material"@en-US ;
-		skos:definition "a cellulosic material is a material that contains a significant amount of matter that is either cellulose or that is derived from cellulose."@en.
+		skos:definition "a cellulosic material is an organic material that contains a significant amount of matter that is either cellulose or that is derived from cellulose."@en.
+
+# TODO: capture relationship to metal atoms
+cg:CG_0000006 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000002,cg:CG_0000004 ;
+		rdfs:label "metallic material"@en-US ;
+		skos:definition "an inorganic material that contains metal. It may be pure metals such as iron or aluminum or alloys of two or more materials, of which at least one is a metal."@en-US ;
+		owl:disjointWith cg:CG_0000007,cg:CG_0000008,cg:CG_0000009  .
+		
+
+cg:CG_0000007 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000002,cg:CG_0000004 ;
+		rdfs:label "ceramic material"@en-US ;
+		skos:definition "A ceramic material is an inorganic material that is neither metallic nor composed of plastics or rubber. These include materials such as glass, concrete, or bricks."@en-US ;
+		owl:disjointWith cg:CG_0000006,cg:CG_0000008,cg:CG_0000009 .
+
+# TODO: capture relationship to polymers (in ChEBI)
+cg:CG_0000008 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000002 ;
+		rdfs:label "polymeric material"@en-US ;
+		skos:definition "A polymeric material is an inorganic or organic material composed of polymers."@en-US ;
+		owl:disjointWith cg:CG_0000006,cg:CG_0000007 .
+
+cg:CG_0000009 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000002 ;
+		rdfs:label "textile material"@en-US ;
+		skos:definition "A textile material is an inorganic or organic material that includes fibres, yarns and fabrics from natural or synthentic materials."@en-US .
 
 # TODO: add preferred and alternative labels using SKOS 
 # TODO: check definition 
 # TODO: capture this axiomatically 		
 
-cg:CG_0000004 rdf:type rdfs:Class ;
-		rdfs:subClassOf cg:CG_0000003 ;
+cg:CG_0000100 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0000005 ;
 		rdfs:label "cellulose"@en-US ;
 		skos:definition "cellulose is a cellulosic material that predominantly consists of cellulose but may include other materials (e.g. lignin, water, etc.)."@en-US .
 
@@ -170,7 +210,7 @@ cg:CG_0000004 rdf:type rdfs:Class ;
 
 # BFO: object: http://purl.obolibrary.org/obo/BFO_0000030
 bfo:BFO_0000030 rdfs:subClassOf bfo:BFO_0000040 ;
-rdfs:label "material object"@en.
+rdfs:label "material object"@en-US.
 
 # IOF: material product: anything designed or used for particular function and marketable; this includes raw (bulk) materials (in the sense of cg:CG_0000002) like wood chips, pulp, cotton, as well as material artifacts. 
 iof:MaterialProduct rdfs:subClassOf bfo:BFO_0000030 ;
