@@ -14,9 +14,15 @@ The upper-most classes are:
   + ChemicalEntity from ChEBI (chebi:CHEBI_24431)
     + Substance (cg:CG_0000001) as a generalization of ChEBI's substance to also include other kinds of material substances
       + ChemicalSubstance from ChEBI (chebi:CHEBI_59999)
-      + Material (cg:CG_0000002) as a substance in the material science, rather than the chemical sense (though nothing precludes an entity to be both a ChemicalSUbstance and a Material)
-        + Cellulosic Material (cg:CG_0000003)
-          + Cellulose (cg:CG_0000004)
+      + Material (cg:CG_0000002) as a substance in the material science, rather than the chemical sense (though nothing precludes an entity to be both a ChemicalSubstance and a Material)
+        + Organic Material (cg:CG_0000003)
+          + Cellulosic Material (cg:CG_0000005)
+            + Cellulose (cg:CG_0000010)
+        + Inorganic Material (cg:CG_0000004)
+          + Metallic Material (cg:CG_0000006)
+          + Ceramic Material (cg:CG_0000007)
+        + Polymeric Material (cg:CG_0000008)
+        + Textile Material (cg:CG_0000009)
 
 
 ## SciPub Ontology
