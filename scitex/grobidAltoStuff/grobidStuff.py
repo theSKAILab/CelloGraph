@@ -1,5 +1,9 @@
 import xml.etree.ElementTree as ET
 
+
+#this is the list of a bunch of spacing characters that show up in the xml that I don't want to include when doing string processing.
+formatList = ['\n', '\t']
+
 #just gets the div object cuz there's some junk to cut through first.
 def findDiv(filepath):
     tree = ET.parse(filepath)
@@ -20,7 +24,126 @@ def clean(textArr):
             textArr.pop(i)
             i -= 1
     return textArr
-        
+
+
+
+
+#accepts a long string, designed to return a list of indices for where each individual word is.    
+def stringBreaker(longstr):
+    retval = []
+    words = []
+    bookmark = 0
+    dividers = [' ']
+    inTag = False
+    for c in range(len(longstr)):
+        testChar = chr(longstr[c])
+        if testChar == '>':
+            inTag = False
+            bookmark = c+1
+        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):
+            if('4' == longstr[bookmark:c].decode()):
+                print("break")
+            
+            retval.append([bookmark, c])
+            words.append(longstr[bookmark:c].decode())
+
+
+            bookmark = c+1
+        if testChar == '<':
+            inTag = True
+    return retval
+
+
+def stringFixer(supers, subs, map, longstr):
+    tags = assembleTags(supers, subs, map)
+    
+
+    for i in range(len(tags)):
+        tagDex, type = tags[i]
+        start = tagDex[0]
+        end = tagDex[1]
+
+        text = longstr[start:end].decode()
+
+        longstr = longstr[:start] + bytes("<", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[start:end] + bytes("</", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[end:]
+        tagDex, type = tags[len(tags)-1]
+    return longstr
+
+
+#use the map for the tags so that 
+def assembleTags(supers, subs, map):
+    retval = []
+    while(len(supers)!=0 or len(subs)!=0):
+        dex, type = lastAmong(supers, subs)
+        retval.append([map[dex], type])
+        if type == "sub":
+            subs.pop(len(subs)-1)
+        if type == "super":
+            supers.pop(len(supers)-1)
+    return retval
+
+
+
+
+
+def strWords(filepath):
+    tree = ET.parse(filepath)
+    longstr = ET.tostring(tree.getroot())
+    
+    retval = []
+    bookmark = 0
+    dividers = [' ']
+    inTag = False
+
+    
+
+    for c in range(len(longstr)):
+        testChar = chr(longstr[c])
+        if testChar == '>':
+            inTag = False
+            bookmark = c+1
+        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):
+            
+            #put the word into the list of words
+            #yes I have to do it like this if I typecast as a string it adds b' to the beginning of every string
+            #I don't know why and just increasing the index deletes from the word instead of the deleting the b'
+            wordArr = [*longstr[bookmark:c]]
+            word = ""
+            for x in range(len(wordArr)):
+                word += chr(wordArr[x])
+                if(chr(wordArr[x]) in formatList):
+                    word = "\\"
+                    break
+            if word != "\\":
+                retval.append(word)
+                bookmark = c+1
+        if testChar == '<':
+            inTag = True
+    return retval
+
+
+def longStr(filepath):
+    tree = ET.parse(filepath)
+    return ET.tostring(tree.getroot())
+
+
+def lastAmong(supers, subs):
+    if(len(subs) == 0 and len(supers) == 0):
+        return -1, 'neither'
+    if(len(subs)>0):
+        lastSub = subs[len(subs)-1][0]
+    else:
+        lastSub = -1
+
+    if(len(supers)>0):
+        lastSuper = supers[len(supers)-1][0]
+    else:
+        lastSuper = -1
+
+    if(lastSub > lastSuper):
+        return lastSub, 'sub'
+    else:
+        return lastSuper, 'super'
 
 #filepath to the GROBID XML file
 #supers is a list of indices that have superscript
@@ -99,21 +222,29 @@ def addScript(filepath, supers, subs):
     return body
 
 
-def rebuild(filepath, body):
-    tree = ET.parse(filepath)
-    root = tree.getroot()
+#def rebuild(filepath, body):
+#    tree = ET.parse(filepath)
+#    root = tree.getroot()
+#
+#    root[2].remove(root[2][0])
+#    ET.SubElement(root[2], "body")
+#    root[2][0] = body
+#
+#    newTree = ET.ElementTree(root)
+#    
+#    newTree.write(filepath + "scitex.xml")
+#
+#    return tree
 
-    root[2].remove(root[2][0])
-    ET.SubElement(root[2], "body")
-    root[2][0] = body
+def rebuild(filepath, longstr, supers, subs):
 
-    newTree = ET.ElementTree(root)
-    
-    newTree.write(filepath + "scitex.xml")
+    longstr = stringFixer(supers, subs, stringBreaker(longstr), longstr)
 
-    return tree
+    output = open("HeinzeSciTex.xml", "w")
+    output.write(longstr.decode())
+    output.close()
 
-
+    return longstr
 
 
 

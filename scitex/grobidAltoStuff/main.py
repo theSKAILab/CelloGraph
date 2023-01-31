@@ -1,7 +1,7 @@
 import grobidStuff
 import altoStuff
 
-groStrings = grobidStuff.grobidWords("scitex/grobidAltoStuff/HeinzeGrobid.xml")
+groStrings = grobidStuff.strWords("scitex/grobidAltoStuff/HeinzeGrobid.xml")
 altoStrings, altoWords, subFonts, superFonts = altoStuff.AltoLists("scitex/grobidAltoStuff/HeinzeAlto.xml")
 
 subs = []
@@ -17,6 +17,8 @@ while altDex < len(altoStrings)-1 and groDex<len(groStrings)-1:
     altoW, altoFullW, groW = altoStrings[altDex], altoWords[altDex], groStrings[groDex]
 
     if(altoW == groW):
+        if(altoW == "P-CH"):
+            print("break")
         
         #if it's not script we don't care, if it is, make a note
         script = altoStuff.isScript(altoWords[altDex], superFonts, subFonts)
@@ -35,13 +37,16 @@ while altDex < len(altoStrings)-1 and groDex<len(groStrings)-1:
         groDex += 1
 
     else:
-        altDex, groDex = altoStuff.sync(groStrings, altoStrings, altDex, groDex)
+        altDex, groDex = altoStuff.sync(groStrings, altoStrings, altDex+1, groDex+1)
     
 
+groLongStr = grobidStuff.longStr("scitex/grobidAltoStuff/HeinzeGrobid.xml")
 
-fixedBody = grobidStuff.addScript("scitex/grobidAltoStuff/HeinzeGrobid.xml", supers, subs)
+#fixedBody = grobidStuff.addScript("scitex/grobidAltoStuff/HeinzeGrobid.xml", supers, subs)
 
-outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", fixedBody)
+#outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", fixedBody)
+
+outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", groLongStr, supers, subs)
 
 print("hi")
 
