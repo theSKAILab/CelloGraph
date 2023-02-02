@@ -1,0 +1,71 @@
+# core ontologies of the cellograph project
+@prefix : <http://www.spatialai.org/CelloGraph/v1.0/core.owl#>  . 
+@prefix cg: <http://www.spatialai.org/CelloGraph/v1.0/core.owl#>  . 
+#@prefix cg-bonds: <http://www.spatialai.org/CelloGraph/v1.0/chemicalbonds.owl#>  . 
+@prefix sp: <http://www.spatialai.org/SciPub/v1.0/>  .
+
+# reused ontologies
+@prefix bfo:  <http://purl.obolibrary.org/obo/bfo.owl#> . 
+@prefix chebi: <http://purl.obolibrary.org/obo/chebi.owl#> . 
+@prefix iof: <https://purl.industrialontologies.org/ontology/core/20220506/Core/> . 
+
+# generic prefixes
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+# wordnet and related ontologies
+@prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
+@prefix pwnid: <http://wordnet-rdf.princeton.edu/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+
+@base <http://www.spatialai.org/CelloGraph/v1.0/chemicalbonds.owl#> .
+
+
+<http://www.spatialai.org/CelloGraph/v1.0/chemicalbonds.owl#> rdf:type  owl:Ontology ;
+        owl:versionIRI <http://www.spatialai.org/CelloGraph/v1.0/> ;
+        rdfs:label         "Chemical Bonds Module of the CelloGraph Ontology"@en-US ;
+		dcterms:title "Chemical Bonds Module of the CelloGraph Ontology"@en-US ;
+        dcterms:description "The module that describes chemical bonds of the Cellograph Ontology."@en-US ;
+        dcterms:created    "2023-01-27"^^xsd:Date ;
+        dcterms:creator <http://orcid.org/0000-0002-5331-5052> ;
+        dcterms:creator    "Torsten Hahmann"@en-US ;
+		dcterms:modified   "2023-01-27"^^xsd:Date ;
+        dcterms:issued 	   "2023-01-27"^^xsd:date ;
+        dcterms:publisher  <http://spatialai.org/> ;
+        dcterms:rights     "Copyright 2023 UMaine, SKAI Lab."@en-US ;
+        dcterms:subject    "Ontology"@en-US ;
+        owl:versionIRI     <http://www.spatialai.org/CelloGraph/v1.0/chemicalbonds.owl#> ;
+        owl:versionInfo    "1.0"@en-US ;
+		dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/cellograph/v1.0/chemicalbonds.owl"^^<xsd:anyURI> ;
+		owl:imports "https://github.com/thahmann/CelloGraph/ontologies/cellograph/v1.0/core.owl".
+
+# BFO occurrent
+###  http://purl.obolibrary.org/obo/bfo.owl#BFO_0000003
+bfo:BFO_0000003 rdfs:subClassOf bfo:BFO_0000001 ;
+rdfs:label "occurrent"@en-US ;
+owl:disjointWith bfo:BFO_0000002 .
+
+# BFO process
+###  http://purl.obolibrary.org/obo/bfo.owl#BFO_0000015
+bfo:BFO_0000015 rdfs:subClassOf bfo:BFO_0000003 ;
+rdfs:label "process"@en-US .
+
+# Introducing Chemical bonds as forces, which are processes and thus occurrents
+cg:CG_0001000 rdf:type rdfs:Class ;
+		rdfs:subClassOf bfo:BFO_0000015 ;
+		rdfs:label "force"@en-US ;
+		skos:definition "A force is a process that involves material participants and that influences the participants location and trajectory in space -- either to remain in place or to cause movement or other kinds of spatial changes."@en-US .
+
+# Introducing Chemical bonds as forces, which are processes and thus occurrents
+cg:CG_0001001 rdf:type rdfs:Class ;
+		rdfs:subClassOf cg:CG_0001000 ;
+		rdfs:label "chemical bond"@en-US ;
+		skos:definition "A chemical bond is a microscopic force that binds atoms, molecules or subatomic particles together."@en-US .
+
+		
+
+

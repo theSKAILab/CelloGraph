@@ -21,8 +21,14 @@ def sync(groStrings, altStrings, aD=0, gD=0, checkSize=20):
             groW = groStrings[j+gD:j+5+gD]
             if(altStrings[i+aD:i+5+aD] == groStrings[j+gD:j+5+gD]):
                 alt = altStrings[i+aD:i+5+aD]
+                if("P-CH" in alt):
+                    print("break")
                 gro = groStrings[j+gD:j+5+gD]
                 return i+aD, j+gD
+    if(aD + i < len(altStrings)-1):
+        return sync(groStrings, altStrings, aD, gD, len(groStrings))
+    else:
+        return "uh...fuck"
 
 
 #if the word's font is on the list of fonts, then return True
