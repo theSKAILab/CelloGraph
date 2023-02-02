@@ -7,6 +7,7 @@ def findDiv(filepath):
     root = tree.getroot() 
     text = root[2]
     body = text[0]
+
     return body
 
 
