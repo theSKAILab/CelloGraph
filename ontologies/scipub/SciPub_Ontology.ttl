@@ -14,8 +14,10 @@
 :ScientificPublication rdf:type rdfs:Class .
 :PublicationAuthor rdf:type rdfs:Class . 
 :DocumentPart rdf:type rdfs:Class .
-:Term rdf:type rdfs:Class .
-:TermStatus rdf:type rdfs:Class .
+:Entity rdf:type rdfs:Class .
+:InformationContentEntity rdf:type rdfs:Class .
+:LabelingSchema rdf:type rdfs:Class .
+:LabeledTermStatus rdf:type rdfs:Class .
 :LocationInDocument rdf:type rdfs:Class . 
 :BibliographicEntry rdf:type rdfs:Class . 
 :Agent rdf:type rdfs:Class . 
@@ -48,24 +50,30 @@
 
 :TextFragment rdf:type rdfs:Class ;
 	rdfs:subClassOf :DocumentPart .
+	
+:Label rdf:type rdfs:Class ;
+	rdfs:subClassOf :InformationContentEntity .
+	
+:LabeledTerm rdf:type rdfs:Class ;
+	rdfs:subClassOf :InformationContentEntity .
 
-:SingleTerm rdf:type rdfs:Class ;
-	rdfs:subClassOf :Term .
+:AtomicLabeledTerm rdf:type rdfs:Class ;
+	rdfs:subClassOf :LabeledTerm .
 
-:CompoundTerm rdf:type rdfs:Class ;
-	rdfs:subClassOf :Term .
+:CompoundLabeledTerm rdf:type rdfs:Class ;
+	rdfs:subClassOf :LabeledTerm .
 
 :CandidateStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :TermStatus .
+	rdfs:subClassOf :LabeledTermStatus .
 
 :ConfirmedStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :TermStatus .
+	rdfs:subClassOf :LabeledTermStatus .
 
 :RejectedStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :TermStatus .
+	rdfs:subClassOf :LabeledTermStatus .
 
 :OpenStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :TermStatus .
+	rdfs:subClassOf :LabeledTermStatus .
 
 :Person rdf:type rdfs:Class ;
 	rdfs:subClassOf :Agent .
