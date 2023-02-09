@@ -1,8 +1,11 @@
 import grobidStuff
 import altoStuff
+import tryingDiff
 
 groStrings = grobidStuff.strWords("scitex/grobidAltoStuff/HeinzeGrobid.xml")
 altoStrings, altoWords, subFonts, superFonts = altoStuff.AltoLists("scitex/grobidAltoStuff/HeinzeAlto.xml")
+
+matches = tryingDiff.getMatches(groStrings, altoStrings)
 
 subs = []
 supers = []
@@ -10,34 +13,63 @@ supers = []
 subStrings = []
 superStrings = []
 
+for match in matches:
+    groDex, altDex, matchLen = match
+
+    for i in range(matchLen):
+        altoW = altoStrings[altDex+i]
+        groW = groStrings[groDex+i]
+
+
+        script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
+        if(script == "super"):
+            supers.append([groDex+i, groStrings[groDex+i]])
+            superStrings.append(groStrings[groDex+i])
+        if(script == "sub"):
+            subs.append([groDex+i, groStrings[groDex+i]])
+            subStrings.append(groStrings[groDex+i])
+
+    
+
+
+
 #just go through the words in altStrings until we get like, 5 in a row that match with groStrings.
-altDex, groDex = altoStuff.sync(groStrings, altoStrings, checkSize=400)
+#groDex, altDex = altoStuff.sync(groStrings, altoStrings, checkSize=400)
 
-while altDex < len(altoStrings)-1 and groDex<len(groStrings)-1:
-    altoW, altoFullW, groW = altoStrings[altDex], altoWords[altDex], groStrings[groDex]
+#while altDex < len(altoStrings)-1 and groDex<len(groStrings)-1:
+#    altoW, altoFullW, groW = altoStrings[altDex], altoWords[altDex], groStrings[groDex]
 
-    if(altoW == groW):
-        if(altoW == "P-CH"):
-            print("break")
+#   contextAlt = altoStrings[altDex-5:altDex+6]
+#    contextGro = groStrings[groDex-5:groDex+6]
+
+
+#    if(altoW == groW):
+
         
         #if it's not script we don't care, if it is, make a note
-        script = altoStuff.isScript(altoWords[altDex], superFonts, subFonts)
-        if(not script):
-            altDex += 1
-            groDex += 1
-            continue
-        elif(script == "super"):
-            supers.append([groDex, groW])
-            superStrings.append(groW)
-        elif(script == "sub"):
-            subs.append([groDex, groW])
-            subStrings.append(groW)
+#        script = altoStuff.isScript(altoWords[altDex], superFonts, subFonts)
+#        if(not script):
+#            altDex += 1
+#            groDex += 1
+#            continue
+#        elif(script == "super"):
+#            supers.append([groDex, groW])
+#            superStrings.append(groW)
+#        elif(script == "sub"):
+#            subs.append([groDex, groW])
+#            subStrings.append(groW)
         
-        altDex += 1
-        groDex += 1
+#        altDex += 1
+#        groDex += 1
 
-    else:
-        altDex, groDex = altoStuff.sync(groStrings, altoStrings, altDex+1, groDex+1)
+#    else:
+#        skipGro, skipAlt = altoStuff.sync(groStrings, altoStrings, altDex, groDex)
+#        if skipAlt == 0 and skipGro == 0:
+#            skipAlt = 1
+#            if(altDex > 2000):
+#                print("hey wait a minute")
+#        altDex += skipAlt
+#        groDex += skipGro
     
 
 groLongStr = grobidStuff.longStr("scitex/grobidAltoStuff/HeinzeGrobid.xml")

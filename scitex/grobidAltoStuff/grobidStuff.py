@@ -241,7 +241,7 @@ def rebuild(filepath, longstr, supers, subs):
 
     longstr = stringFixer(supers, subs, stringBreaker(longstr), longstr)
 
-    output = open("HeinzeSciTex.xml", "w")
+    output = open("HeinzeSciTex5.xml", "w")
     output.write(longstr.decode())
     output.close()
 
