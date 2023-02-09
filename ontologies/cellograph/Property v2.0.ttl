@@ -129,6 +129,7 @@ cg:CG_2000004 rdf:type rdfs:Class ;
 # subclass of property 'physical property of chemical entity'
 # ~ * ~ * ~ * ~
 
+# all atomic properties are properties of atoms, which is CHEBI_33250
 cg:CG_2000005 rdf:type rdfs:Class ;
 		rdfs:label "atomic property"@en-US ;
 		rdfs:comment "not be be confused with the molecular properties."@en-US ;
@@ -139,7 +140,7 @@ cg:CG_2000005 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_2000004 ,
 						[rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom cg:CHEBI_24431] .
+						owl:allValuesFrom cg:CHEBI_33250] .
 
 
 cg:CG_2000006 rdf:type rdfs:Class ;
@@ -148,21 +149,15 @@ cg:CG_2000006 rdf:type rdfs:Class ;
 		skos:prefLabel "atomic mass"@en-US ;
 		skos:altLabel "atomic weight"@en-US ;
 		skos:definition "A atomic property denoting the mass of an atom."@en-US ;		
-		rdfs:subClassOf cg:CG_2000005 ,
-						[rdf:type owl:Restriction;
-						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom cg:CHEBI_24431] .
+		rdfs:subClassOf cg:CG_2000005 .
 
 cg:CG_2000007 rdf:type rdfs:Class ;
 		rdfs:label "atomic number"@en-US ;
 		rdfs:example "the atomic mass of Hydrogen is 1, the atomic mass of Lithium is 3."@en-US ;
 		skos:prefLabel "atomic number"@en-US ;
 		skos:altLabel "nuclear charge number"@en-US ;
-		skos:definition "A atomic property denoting the charge number of an atomic nucleus."@en-US ;
-		rdfs:subClassOf cg:CG_2000005 ,
-						[rdf:type owl:Restriction;
-						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom chebi:CHEBI_24431] .
+		skos:definition "A atomic property denoting the number of protons in an atom."@en-US ;
+		rdfs:subClassOf cg:CG_2000005  .
 
 cg:CG_2000008 rdf:type rdfs:Class ;
 		rdfs:label "atomic weight"@en-US ;
@@ -171,20 +166,19 @@ cg:CG_2000008 rdf:type rdfs:Class ;
 		skos:altLabel "atomic mass"@en-US ;
 		skos:altLabel "atom weight"@en-US ;
 		skos:definition "A atomic property denoting a dimensionless physical quantity defined as the ratio of the average mass of atoms of a chemical element in a given sample to the atomic mass constant.."@en-US ;		
-		rdfs:subClassOf cg:CG_2000005 ,
-						[rdf:type owl:Restriction;
-						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom chebi:CHEBI_24431] .
+		rdfs:subClassOf cg:CG_2000005 .
 
+# covalent bond is a property of a group (CHEBI_24433)
+# subclass of group property? 
 cg:CG_2000009 rdf:type rdfs:Class ;
 		rdfs:label "covalent bond"@en-US ;
 		rdfs:example "-OH is a covalent bond  "@en-US ;
 		skos:prefLabel "Covalent bond"@en-US ;
-		skos:definition "A atomic propertythat involves the sharing of electrons to form electron pairs between atoms."@en-US ;		
-		rdfs:subClassOf cg:CG_2000005 , cg:CG_2000013 ,
+		skos:definition "A atomic property that involves the sharing of electrons to form electron pairs between atoms."@en-US ;		
+		rdfs:subClassOf cg:CG_XXX , 
 						[rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom chebi:CHEBI_24431] .
+						owl:allValuesFrom chebi:CHEBI_CHEBI_24433] .
 
 cg:CG_2000010 rdf:type rdfs:Class ;
 		rdfs:label "electronegativity"@en-US ;
@@ -200,7 +194,7 @@ cg:CG_2000011 rdf:type rdfs:Class ;
 		rdfs:example "the mass number of Oxygen is 16, 17 or 18; the mass number of Hydrogen is 1, 2 or 3"@en-US ;
 		skos:prefLabel "mass number"@en-US ;
 		skos:altLabel "atomic mass number or nucleon number"@en-US ;
-		skos:definition "A atomic property denoting the total number of protons and neutrons (together known as nucleons) in an atomic nucleus."@en-US ;		
+		skos:definition "A atomic property denoting the sum of the number of protons and neutrons (together known as nucleons) in an atom."@en-US ;		
 		rdfs:subClassOf cg:CG_2000005 ,
 						[rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
@@ -219,7 +213,7 @@ cg:CG_2000012 rdf:type rdfs:Class ;
 
 cg:CG_2000013 rdf:type rdfs:Class ;
 		rdfs:label "molecular property"@en-US ;
-		rdfs:example "The moleculat mass of HCl, the moleculzr size of NaCl"@en-US ;
+		rdfs:example "The molecular mass of HCl, the moleculzr size of NaCl"@en-US ;
 		skos:prefLabel "molecular property"@en-US ;
 		skos:definition "the physical properties of molecular substance, which is a substance with two or more atoms, the smallest units of matter, joined together by a covalent bond. It includes chemical properties, physical properties, and structural properties of molecules."@en-US ;		
 		rdfs:subClassOf cg:CG_2000004 ,
