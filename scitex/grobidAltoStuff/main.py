@@ -12,10 +12,25 @@ supers = []
 
 subStrings = []
 superStrings = []
+matchesWords = []
+
+totalLost = 0
+prev = 0
+biggestGap = [0, 0]
 
 for match in matches:
-    groDex, altDex, matchLen = match
+    lost = match[1]-prev
+    if(lost > biggestGap[0]):
+        biggestGap[0] = lost
+        biggestGap[1] = match[1]
 
+    totalLost += lost
+    prev = match[0]+match[2]
+    
+    matchesWords.append([match[1], match[2], groStrings[match[1]:match[1]+match[2]], match[0], altoStrings[match[0]:match[0]+match[2]]])
+
+for match in matches:
+    altDex, groDex, matchLen = match
     for i in range(matchLen):
         altoW = altoStrings[altDex+i]
         groW = groStrings[groDex+i]

@@ -298,6 +298,17 @@ def newTarget(supers, subs):
         return supers[0][0], "supers"
 
 
+def manualSplit(text):
+    retval = []
+
+    bookmark = 0
+    for i in range(len(text)):
+        if(text[i] == ' '):
+            retval.append(text[bookmark:i])
+            bookmark = i+1
+
+    return retval
+
 #returns an array of all the words
 def grobidWords(filepath, output="arr"):
     
@@ -308,19 +319,19 @@ def grobidWords(filepath, output="arr"):
         if('div' in header.tag):
             head = header[0]
             if(head.text):
-                retval += head.text.split(' ')
+                retval += manualSplit(head.text)
                 for para in header[1:]:
                     for sent in para:
                         #add sentence text
                         if(sent.text):
-                            retval += sent.text.split(' ')
+                            retval += manualSplit(sent.text)
 
                         #if there are citations breaking up the sentence, add those
                         if(len(sent)>0):
                             for cite in sent:
-                                retval += cite.text.split(' ')
+                                retval += manualSplit(cite.text)
                                 if(cite.tail):
-                                    retval += cite.tail.split(' ')
+                                    retval += manualSplit(cite.tail)
     
     retval = clean(retval)
     return retval
