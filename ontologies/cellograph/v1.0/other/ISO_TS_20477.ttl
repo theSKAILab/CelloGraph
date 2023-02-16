@@ -1,0 +1,443 @@
+@prefix : <http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iso20477: <http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#> .
+@base <http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#> .
+
+<http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#> rdf:type owl:Ontology ;
+                                                                owl:versionIRI <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#> ;
+                                                                dcterms: "https://www.iso.org/standard/68153.html" ;
+                                                                dcterms:created "2022-09-20"^^xsd:Date ;
+                                                                dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                                                "Torsten Hahmann"@en-us ,
+                                                                                "Xuelian Zhang"@en-us ;
+                                                                dcterms:description "OWL version of the ISO/TS 20477  2017 Technical specification Nanotechnologies-Standard terms and their definition for cellulose nanomaterial."@en-us ;
+                                                                dcterms:modified "2023-02-16"^^xsd:Date ;
+                                                                dcterms:publisher <http://spatialai.org/> ;
+                                                                dcterms:rights "Copyright 2022 UMaine, SKAI Lab."@en-us ;
+                                                                dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/cellograph/v1.0/other/ISO_TS_20477.owl"^^<xsd:anyURI> ;
+                                                                dcterms:subject "Ontology"@en-us ;
+                                                                dcterms:title "OWL Ontology for ISO/TS 20477 2017"@en-us ;
+                                                                rdfs:label "OWL Ontology for ISO/TS 20477  2017"@en-us ;
+                                                                owl:versionInfo "1.0"@en-us .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/
+dcterms: rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/subject
+dcterms:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#alternative_source
+iso20477:alternative_source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#definition
+iso20477:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#id
+iso20477:id rdf:type owl:AnnotationProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#source
+iso20477:source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#synonym
+iso20477:synonym rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasConfigurationOf
+iso20477:hasConfigurationOf rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf iso20477:hasSomeIn .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasDimensionIn
+iso20477:hasDimensionIn rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf iso20477:hasSomeIn .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasPartIn
+iso20477:hasPartIn rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf iso20477:hasSomeIn .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasSome
+iso20477:hasSome rdf:type owl:ObjectProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasSomeIn
+iso20477:hasSomeIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hasStructureIn
+iso20477:hasStructureIn rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf iso20477:hasSomeIn .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#isComposedOf
+iso20477:isComposedOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanowhiskers_CNW
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanowhiskers_CNW> rdf:type owl:Class ;
+                                                                                         owl:equivalentClass iso20477:cellulose_nanocrystal ;
+                                                                                         rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_crystalline_cellulose_NCC
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_crystalline_cellulose_NCC> rdf:type owl:Class ;
+                                                                                             owl:equivalentClass iso20477:cellulose_nanocrystal ;
+                                                                                             rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)> rdf:type owl:Class ;
+                                                                                         owl:equivalentClass <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)> ,
+                                                                                                             <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)> ,
+                                                                                                             <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)> ,
+                                                                                                             <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)> ,
+                                                                                                             <http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)> ;
+                                                                                         rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                         rdfs:comment "" ,
+                                                                                                      "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                       rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                             rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                              rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                              rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)
+<http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                                                                                           rdfs:comment "cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#amorphous
+iso20477:amorphous rdf:type owl:Class ;
+                   rdfs:subClassOf iso20477:solid_structure ;
+                   iso20477:source "ISO/TS20477:2017, 3.2.2" ;
+                   skos:definition "Solid structure where its ions, molecules, or atoms are oriented randomly, lacking any order." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellullose_nanomaterial
+iso20477:cellullose_nanomaterial rdf:type owl:Class ;
+                                 rdfs:subClassOf iso20477:nanomaterial ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty iso20477:isComposedOf ;
+                                                   owl:someValuesFrom iso20477:cellulose
+                                                 ] ;
+                                 iso20477:source "ISO/TS20477:2017, 3.3.1" ;
+                                 iso20477:synonym "cellulosic nanomaterial" ,
+                                                  "nanocellulose(NC)" ;
+                                 rdfs:comment "Some cellulose nanomateiral can be composed of chemically modified cellulose." ,
+                                              "This term is inclusive of cellulose nano-object and cellulose nanostructure material." ;
+                                 skos:definition "Material composed predominantly of cellulose, with any external dimension in the nanoscale, or a material having internal structure or surface structure in the nanoscale, with the internal structure or surface structure composed predominantly of cellulose." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose
+iso20477:cellulose rdf:type owl:Class ;
+                   owl:disjointWith iso20477:hemicellulose ;
+                   iso20477:source "ISO/TS20477:2017, 3.2.4" ;
+                   skos:definition "Linear polymeric chain of beta(1-4)linked D-glucopyranose units." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_microfibrils
+iso20477:cellulose_microfibrils rdf:type owl:Class ;
+                                owl:equivalentClass iso20477:cellulose_nanocrystal ;
+                                rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nano_object
+iso20477:cellulose_nano_object rdf:type owl:Class ;
+                               rdfs:subClassOf iso20477:cellullose_nanomaterial ,
+                                               iso20477:nano_object ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:hasDimensionIn ;
+                                                 owl:someValuesFrom iso20477:nanoscale
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:isComposedOf ;
+                                                 owl:someValuesFrom iso20477:cellulose
+                                               ] ;
+                               owl:disjointWith iso20477:cellulose_nanostructured_material ;
+                               iso20477:source "ISO/TS20477:2017, 3.3.2" ;
+                               skos:definition "Nano-object composed predominantly of cellulose." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nano_ribbon
+iso20477:cellulose_nano_ribbon rdf:type owl:Class ;
+                               rdfs:subClassOf iso20477:cellulose_nanofibril ;
+                               rdfs:comment "cellulose nanofibrils from bacteria sources" .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nanocrystal
+iso20477:cellulose_nanocrystal rdf:type owl:Class ;
+                               owl:equivalentClass iso20477:cellulose_nanowire ,
+                                                   iso20477:cellulose_needle ,
+                                                   iso20477:cellulose_sphere ;
+                               rdfs:subClassOf iso20477:nanocrystal ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:hasSome ;
+                                                 owl:someValuesFrom iso20477:elementary_fibril
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:hasStructureIn ;
+                                                 owl:someValuesFrom iso20477:crystalline
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:hasStructureIn ;
+                                                 owl:someValuesFrom iso20477:paracrystalline
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty iso20477:isComposedOf ;
+                                                 owl:someValuesFrom iso20477:cellulose
+                                               ] ;
+                               owl:disjointWith iso20477:cellulose_nanofibril ;
+                               iso20477:source "ISO/TS 20477:2017(E), 3.3.5" ;
+                               rdfs:comment "The dimension are typically 3-50 nm in cross section and 100 nm to several um in length on the sources of the cellulose nanocrystal." ;
+                               skos:definition "Nanocrystal predominantly composed of cellulose with at least one elementary fibril, containing predominantly crystalline and paracrystalline regions, with aspect ratio of usually less than 50 but usually greater than 5, not exhibiting longitudinal splits, inter-particle entanglement, or network-like structures." ;
+                               skos:historyNote "Historically cellulose nanocrystal have been called nano crystalline cellulose(NCC), whiskers such as cellulose nanowhiskers (CNW), and microfibrils such as cellulose microfibrils; they have also been called sphere, needles or nanowires on their shoe, dimensions and morphology; other names have included cellulose micelles, cellulose crystallites and cellulose microcrystals." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nanofibre
+iso20477:cellulose_nanofibre rdf:type owl:Class ;
+                             rdfs:subClassOf iso20477:nanofibre ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty iso20477:isComposedOf ;
+                                               owl:someValuesFrom iso20477:cellulose
+                                             ] ;
+                             iso20477:source "ISO/TS20477:2017, 3.3.4" ;
+                             skos:definition "Nanofibre composed predominantly of cellulose" .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nanofibril
+iso20477:cellulose_nanofibril rdf:type owl:Class ;
+                              rdfs:subClassOf iso20477:cellulose_nanofibre ;
+                              iso20477:source "ISO/TS20477:2017, 3.3.6" ;
+                              rdfs:comment "Cellulose nanofibrils produced from plant sources by mechanical; processed usually contain hemicellulose and in some cases lignin." ,
+                                           "Some cellulose nano fibrils might have functional groups on their surfaces as a result of the manufacturing process." ;
+                              rdfs:seeAlso "nano fibrillated cellulose(NFC)" ;
+                              skos:definition "Cellulose nanofibre composed of at least one elementary fibril, containing crystalline, paracrystalline, and amorphous regions, with aspect ration usually greater than 10, which may contain longitudinal splits, entanglement between particles, or network-like structures." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nanostructured_material
+iso20477:cellulose_nanostructured_material rdf:type owl:Class ;
+                                           rdfs:subClassOf iso20477:cellullose_nanomaterial ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty iso20477:hasStructureIn ;
+                                                             owl:someValuesFrom iso20477:nanoscale
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty iso20477:isComposedOf ;
+                                                             owl:someValuesFrom iso20477:cellulose
+                                                           ] ;
+                                           iso20477:alternative_source "ISO/TS 80004-1:2015, 2.7" ;
+                                           iso20477:source "ISO/TS20477:2017, 3.3.3" ;
+                                           skos:definition "Nanostructured material of which the internal or surface nanostructure is predominantly composed of cellulose." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_nanowire
+iso20477:cellulose_nanowire rdf:type owl:Class ;
+                            rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_needle
+iso20477:cellulose_needle rdf:type owl:Class ;
+                          rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#cellulose_sphere
+iso20477:cellulose_sphere rdf:type owl:Class ;
+                          rdfs:subClassOf iso20477:nanocrystal .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#crystalline
+iso20477:crystalline rdf:type owl:Class ;
+                     rdfs:subClassOf iso20477:solid_structure ;
+                     iso20477:source "ISO/TS20477:2017, 3.2.1" ;
+                     skos:definition "solid structure where its ions, molecules, or atoms are in an ordered, three-three-dimensional arrangement." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#elementary_fibril
+iso20477:elementary_fibril rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty iso20477:hasConfigurationOf ;
+                                             owl:someValuesFrom iso20477:cellulose
+                                           ] ;
+                           iso20477:source "ISO/TS20477:2017, 3.2.5" ;
+                           skos:definition "Structure, originating from single terminal enzyme complex, having a configuration of cellulose chain specific to each cellulose-producing plant, animal, algal, and bacterial species." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#hemicellulose
+iso20477:hemicellulose rdf:type owl:Class ;
+                       iso20477:source "ISO/TS20477:2017, 3.2.6" ;
+                       rdfs:comment "Hemicellulose can be branched polymers." ,
+                                    "Hemicellulose is usually extractable with dilute alkaline solutions." ;
+                       skos:definition "Non-cellulose polysaccharides in organisms, typically containing monomers such as, but not limited to xylose, glucose, mannose, galactose, arabinose and glucuronic acid." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nano_object
+iso20477:nano_object rdf:type owl:Class ;
+                     rdfs:subClassOf iso20477:nanomaterial ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty iso20477:hasDimensionIn ;
+                                       owl:someValuesFrom iso20477:nanoscale
+                                     ] ;
+                     iso20477:alternative_source "ISO/TS 80004-1:2015, 2.5" ;
+                     iso20477:source "ISO/TS20477:2017, 3.1.3" ;
+                     rdfs:comment "the second and the third external dimensions are orthogonal to the first dimension and to each other." ;
+                     skos:definition "Discrete piece of material with one ,two or three external dimensions in the nanoscale." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nanocrystal
+iso20477:nanocrystal rdf:type owl:Class ;
+                     rdfs:subClassOf iso20477:nano_object ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty iso20477:hasStructureIn ;
+                                       owl:someValuesFrom iso20477:crystalline
+                                     ] ;
+                     iso20477:alternative_source "ISO/TS 80004-1:2015, 4.15" ;
+                     iso20477:source "ISO/TS20477:2017, 3.1.7" ;
+                     skos:definition "Nano-object with a crystalline structure." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nanofibre
+iso20477:nanofibre rdf:type owl:Class ;
+                   rdfs:subClassOf iso20477:nano_object ;
+                   iso20477:alternative_source "ISO/TS 80004-1:2015, 4.5" ;
+                   iso20477:source "ISO/TS20477:2017, 3.1.6" ;
+                   iso20477:synonym "Nanofibril" ,
+                                    "Nanofilament" ;
+                   rdfs:comment "The largest external dimension is not necessarily in the nanoscale." ;
+                   skos:definition "Nano-object with two similar external dimensions in the nanoscale and the dimensions significantly larger." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nanomaterial
+iso20477:nanomaterial rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty iso20477:hasSomeIn ;
+                                        owl:someValuesFrom iso20477:nanoscale
+                                      ] ;
+                      iso20477:alternative_source "ISO/TS 80004-1:2015, 2.4" ;
+                      iso20477:source "ISO/TS20477:2017, 3.1.2" ;
+                      skos:definition "Materials with any external dimension in nanoscale or having internal structure or surface structure in the nanoscale." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nanoscale
+iso20477:nanoscale rdf:type owl:Class ;
+                   iso20477:alternative_source "ISO/TS 80004-1:2015, 2.1" ;
+                   iso20477:source "ISO/TS20477:2017, 3.1.1" ;
+                   skos:definition "Length range approximately from 1nm to 100 nm." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#nanostructure
+iso20477:nanostructure rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty iso20477:hasPartIn ;
+                                         owl:someValuesFrom iso20477:nanoscale
+                                       ] ;
+                       iso20477:alternative_source "ISO/TS 80004-1:2015,2.6" ;
+                       iso20477:source "ISO/TS20477:2017, 3.1.4" ;
+                       skos:definition "Composition of inter-related constituent parts in which one or more of those parts is a nanoscale region." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#paracrystalline
+iso20477:paracrystalline rdf:type owl:Class ;
+                         rdfs:subClassOf iso20477:solid_structure ;
+                         iso20477:source "ISO/TS20477:2017, 3.2.3" ;
+                         skos:definition "Structure in the intermediate state between crystalline and amorphous, having short and medium range ordered lattice structure and lacking long range order in at lease on e direction." .
+
+
+###  http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#solid_structure
+iso20477:solid_structure rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
