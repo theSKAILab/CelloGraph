@@ -120,10 +120,7 @@ cg:CG_2000004 rdf:type rdfs:Class ;
 		skos:prefLabel "physical property of chemical entity"@en-US ;
 		skos:altLabel "chemical entity's chemical property"@en-US ;
 		skos:definition "A property that is discernable without changing the  structure of the chemical entity."@en-US ;	
-		rdfs:subClassOf cg:CG_2000003 ,
-						[rdf:type owl:Restriction;
-						owl:onProperty cg:CG_1000002;
-						owl:allValuesFrom cg:CHEBI_24431] .
+		rdfs:subClassOf cg:CG_2000003 .
 
 # ~ * ~ * ~ * ~
 # subclass of property 'physical property of chemical entity'
@@ -205,7 +202,7 @@ cg:CG_2000013 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_2000004 ,
 						[rdf:type owl:Restriction;
 						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom cg:CHEBI_36357] .
+						owl:allValuesFrom cg:CHEBI_23367] .
 
 
 cg:CG_2000014 rdf:type rdfs:Class ;
