@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#"
+     versionIRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#">
+    <Prefix name="" IRI="http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="iso20477" IRI="http://www.spatialai.org/cellograph/v1.0/other/ISO_TS_20477#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:"/>
+        <Literal>https://www.iso.org/standard/68153.html</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#Date">2022-09-20</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <IRI>http://orcid.org/0000-0002-5331-5052</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal xml:lang="en-us">Torsten Hahmann</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal xml:lang="en-us">Xuelian Zhang</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal xml:lang="en-us">OWL version of the ISO/TS 20477  2017 Technical specification Nanotechnologies-Standard terms and their definition for cellulose nanomaterial.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#Date">2023-02-16</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+        <IRI>http://spatialai.org/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:rights"/>
+        <Literal xml:lang="en-us">Copyright 2022 UMaine, SKAI Lab.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+        <Literal datatypeIRI="xsd:anyURI">https://github.com/thahmann/CelloGraph/ontologies/cellograph/v1.0/other/ISO_TS_20477.owl</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:subject"/>
+        <Literal xml:lang="en-us">Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="en-us">OWL Ontology for ISO/TS 20477 2017</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en-us">OWL Ontology for ISO/TS 20477  2017</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en-us">1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanowhiskers_(CNW)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_crystalline_cellulose(NCC)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="amorphous"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellullose_nanomaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_microfibrils"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nano_object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nano_ribbon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nanocrystal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nanofibre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nanofibril"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nanostructured_material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_nanowire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_needle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="cellulose_sphere"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="crystalline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="elementary_fibril"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="hemicellulose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nano_object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nanocrystal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nanofibre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nanomaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nanoscale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="nanostructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="paracrystalline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="solid_structure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasConfigurationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasDimensionIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPartIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSome"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSomeIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStructureIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isComposedOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="alternative_source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="definition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="id"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="synonym"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:historyNote"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:prefLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:subject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanowhiskers_(CNW)"/>
+        <Class IRI="cellulose_nanocrystal"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_crystalline_cellulose(NCC)"/>
+        <Class IRI="cellulose_nanocrystal"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="cellulose_microfibrils"/>
+        <Class IRI="cellulose_nanocrystal"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="cellulose_nanocrystal"/>
+        <Class IRI="cellulose_nanowire"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="cellulose_nanocrystal"/>
+        <Class IRI="cellulose_needle"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="cellulose_nanocrystal"/>
+        <Class IRI="cellulose_sphere"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanowhiskers_(CNW)"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_crystalline_cellulose(NCC)"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="amorphous"/>
+        <Class IRI="solid_structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellullose_nanomaterial"/>
+        <Class IRI="nanomaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellullose_nanomaterial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isComposedOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_microfibrils"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellullose_nanomaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="nano_object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nano_object"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasDimensionIn"/>
+            <Class IRI="nanoscale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nano_object"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isComposedOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nano_ribbon"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanocrystal"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanocrystal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasSome"/>
+            <Class IRI="elementary_fibril"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanocrystal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStructureIn"/>
+            <Class IRI="crystalline"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanocrystal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStructureIn"/>
+            <Class IRI="paracrystalline"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanocrystal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isComposedOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanofibre"/>
+        <Class IRI="nanofibre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanofibre"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isComposedOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanofibril"/>
+        <Class IRI="cellulose_nanofibre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanostructured_material"/>
+        <Class IRI="cellullose_nanomaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanostructured_material"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStructureIn"/>
+            <Class IRI="nanoscale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanostructured_material"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isComposedOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_nanowire"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_needle"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="cellulose_sphere"/>
+        <Class IRI="nanocrystal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="crystalline"/>
+        <Class IRI="solid_structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="elementary_fibril"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasConfigurationOf"/>
+            <Class IRI="cellulose"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nano_object"/>
+        <Class IRI="nanomaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nano_object"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasDimensionIn"/>
+            <Class IRI="nanoscale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nanocrystal"/>
+        <Class IRI="nano_object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nanocrystal"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStructureIn"/>
+            <Class IRI="crystalline"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nanofibre"/>
+        <Class IRI="nano_object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nanomaterial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasSomeIn"/>
+            <Class IRI="nanoscale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="nanostructure"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasPartIn"/>
+            <Class IRI="nanoscale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="paracrystalline"/>
+        <Class IRI="solid_structure"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="cellulose"/>
+        <Class IRI="hemicellulose"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellulose_nanostructured_material"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="cellulose_nanocrystal"/>
+        <Class IRI="cellulose_nanofibril"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasConfigurationOf"/>
+        <ObjectProperty IRI="hasSomeIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasDimensionIn"/>
+        <ObjectProperty IRI="hasSomeIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasPartIn"/>
+        <ObjectProperty IRI="hasSomeIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasStructureIn"/>
+        <ObjectProperty IRI="hasSomeIn"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_nanofibre(CNF)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#micro_fibrillar_cellulose(MFC)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#microfibrillated_cellulose(MFC)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nano_fibrillated_cellulose(NFC)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)</IRI>
+        <Literal>cellulose nanofibrils by mechanical treatment of plant materials often combined with chemical or enzymatic pre-treatment steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>amorphous</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>amorphous</IRI>
+        <Literal>Solid structure where its ions, molecules, or atoms are oriented randomly, lacking any order.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>ISO/TS20477:2017, 3.3.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="synonym"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>cellulosic nanomaterial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="synonym"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>nanocellulose(NC)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>Some cellulose nanomateiral can be composed of chemically modified cellulose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>This term is inclusive of cellulose nano-object and cellulose nanostructure material.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellullose_nanomaterial</IRI>
+        <Literal>Material composed predominantly of cellulose, with any external dimension in the nanoscale, or a material having internal structure or surface structure in the nanoscale, with the internal structure or surface structure composed predominantly of cellulose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose</IRI>
+        <Literal>Linear polymeric chain of beta(1-4)linked D-glucopyranose units.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose_nano_object</IRI>
+        <Literal>ISO/TS20477:2017, 3.3.2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose_nano_object</IRI>
+        <Literal>Nano-object composed predominantly of cellulose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellulose_nano_ribbon</IRI>
+        <Literal>cellulose nanofibrils from bacteria sources</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose_nanocrystal</IRI>
+        <Literal>ISO/TS 20477:2017(E), 3.3.5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellulose_nanocrystal</IRI>
+        <Literal>The dimension are typically 3-50 nm in cross section and 100 nm to several um in length on the sources of the cellulose nanocrystal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose_nanocrystal</IRI>
+        <Literal>Nanocrystal predominantly composed of cellulose with at least one elementary fibril, containing predominantly crystalline and paracrystalline regions, with aspect ratio of usually less than 50 but usually greater than 5, not exhibiting longitudinal splits, inter-particle entanglement, or network-like structures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:historyNote"/>
+        <IRI>cellulose_nanocrystal</IRI>
+        <Literal>Historically cellulose nanocrystal have been called nano crystalline cellulose(NCC), whiskers such as cellulose nanowhiskers (CNW), and microfibrils such as cellulose microfibrils; they have also been called sphere, needles or nanowires on their shoe, dimensions and morphology; other names have included cellulose micelles, cellulose crystallites and cellulose microcrystals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose_nanofibre</IRI>
+        <Literal>ISO/TS20477:2017, 3.3.4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose_nanofibre</IRI>
+        <Literal>Nanofibre composed predominantly of cellulose</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose_nanofibril</IRI>
+        <Literal>ISO/TS20477:2017, 3.3.6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellulose_nanofibril</IRI>
+        <Literal>Cellulose nanofibrils produced from plant sources by mechanical; processed usually contain hemicellulose and in some cases lignin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cellulose_nanofibril</IRI>
+        <Literal>Some cellulose nano fibrils might have functional groups on their surfaces as a result of the manufacturing process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>cellulose_nanofibril</IRI>
+        <Literal>nano fibrillated cellulose(NFC)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose_nanofibril</IRI>
+        <Literal>Cellulose nanofibre composed of at least one elementary fibril, containing crystalline, paracrystalline, and amorphous regions, with aspect ration usually greater than 10, which may contain longitudinal splits, entanglement between particles, or network-like structures.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>cellulose_nanostructured_material</IRI>
+        <Literal>ISO/TS 80004-1:2015, 2.7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>cellulose_nanostructured_material</IRI>
+        <Literal>ISO/TS20477:2017, 3.3.3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>cellulose_nanostructured_material</IRI>
+        <Literal>Nanostructured material of which the internal or surface nanostructure is predominantly composed of cellulose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>crystalline</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>crystalline</IRI>
+        <Literal>solid structure where its ions, molecules, or atoms are in an ordered, three-three-dimensional arrangement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>elementary_fibril</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>elementary_fibril</IRI>
+        <Literal>Structure, originating from single terminal enzyme complex, having a configuration of cellulose chain specific to each cellulose-producing plant, animal, algal, and bacterial species.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>hemicellulose</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hemicellulose</IRI>
+        <Literal>Hemicellulose can be branched polymers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hemicellulose</IRI>
+        <Literal>Hemicellulose is usually extractable with dilute alkaline solutions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>hemicellulose</IRI>
+        <Literal>Non-cellulose polysaccharides in organisms, typically containing monomers such as, but not limited to xylose, glucose, mannose, galactose, arabinose and glucuronic acid.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nano_object</IRI>
+        <Literal>ISO/TS 80004-1:2015, 2.5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nano_object</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>nano_object</IRI>
+        <Literal>the second and the third external dimensions are orthogonal to the first dimension and to each other.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nano_object</IRI>
+        <Literal>Discrete piece of material with one ,two or three external dimensions in the nanoscale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nanocrystal</IRI>
+        <Literal>ISO/TS 80004-1:2015, 4.15</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nanocrystal</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nanocrystal</IRI>
+        <Literal>Nano-object with a crystalline structure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nanofibre</IRI>
+        <Literal>ISO/TS 80004-1:2015, 4.5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nanofibre</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="synonym"/>
+        <IRI>nanofibre</IRI>
+        <Literal>Nanofibril</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="synonym"/>
+        <IRI>nanofibre</IRI>
+        <Literal>Nanofilament</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>nanofibre</IRI>
+        <Literal>The largest external dimension is not necessarily in the nanoscale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nanofibre</IRI>
+        <Literal>Nano-object with two similar external dimensions in the nanoscale and the dimensions significantly larger.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nanomaterial</IRI>
+        <Literal>ISO/TS 80004-1:2015, 2.4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nanomaterial</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nanomaterial</IRI>
+        <Literal>Materials with any external dimension in nanoscale or having internal structure or surface structure in the nanoscale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nanoscale</IRI>
+        <Literal>ISO/TS 80004-1:2015, 2.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nanoscale</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nanoscale</IRI>
+        <Literal>Length range approximately from 1nm to 100 nm.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="alternative_source"/>
+        <IRI>nanostructure</IRI>
+        <Literal>ISO/TS 80004-1:2015,2.6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>nanostructure</IRI>
+        <Literal>ISO/TS20477:2017, 3.1.4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>nanostructure</IRI>
+        <Literal>Composition of inter-related constituent parts in which one or more of those parts is a nanoscale region.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="source"/>
+        <IRI>paracrystalline</IRI>
+        <Literal>ISO/TS20477:2017, 3.2.3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>paracrystalline</IRI>
+        <Literal>Structure in the intermediate state between crystalline and amorphous, having short and medium range ordered lattice structure and lacking long range order in at lease on e direction.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
