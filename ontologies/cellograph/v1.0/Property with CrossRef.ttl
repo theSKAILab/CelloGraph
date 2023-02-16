@@ -1293,10 +1293,7 @@ cg:CG_2000146 rdf:type rdfs:Class ;
 		rdfs:example "capability of being shaped or extended by hammering,  forging, such as the malleability of tin"@en-US ;
 		skos:prefLabel "malleability"@en-US ;
 		skos:definition "A mechanical property characterized by a material's ability to deform plastically without failure under compressive stress"@en-US ;	
-		rdfs:subClassOf cg:CG_2000100 , 
-						[rdf:type owl:Restriction;
-						owl:onProperty cg:CG_1000002 ;
-						owl:allValuesFrom chebi:CHEBI_24431] .
+		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000147 rdf:type rdfs:Class ;
 		rdfs:label "mass diffusivity"@en-US ;
