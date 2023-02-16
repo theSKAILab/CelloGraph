@@ -1337,7 +1337,7 @@ cg:CG_2000156 rdf:type rdfs:Class ;
 		rdfs:example "compression resilience "@en-US ;
 		skos:prefLabel "resilience"@en-US ;
 		skos:definition " A mechanical property describing the ability of a material to absorb energy when it is deformed elastically, and release that energy upon unloading"@en-US ;		
-		rdfs:subClassOf cg:CG_2000100 ,
+		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000157 rdf:type rdfs:Class ;
 		rdfs:label "modulus of resilience"@en-US ;
