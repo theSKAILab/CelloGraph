@@ -97,7 +97,7 @@
         <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="amorphous"/>
+        <Class IRI="amorphous_structure"/>
     </Declaration>
     <Declaration>
         <Class IRI="cellullose_nanomaterial"/>
@@ -172,7 +172,7 @@
         <ObjectProperty IRI="hasConfigurationOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="hasDimensionIn"/>
+        <ObjectProperty IRI="hasDimensionOfScale"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasPartIn"/>
@@ -181,7 +181,7 @@
         <ObjectProperty IRI="hasSomeIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="hasStructureIn"/>
+        <ObjectProperty IRI="ofStructure"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="isComposedOf"/>
@@ -320,10 +320,6 @@
         <Class IRI="cellulose_nanofibril"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="amorphous"/>
-        <Class IRI="solid_structure"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="cellullose_nanomaterial"/>
         <Class IRI="nanomaterial"/>
     </SubClassOf>
@@ -349,7 +345,7 @@
     <SubClassOf>
         <Class IRI="cellulose_nano-object"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasDimensionIn"/>
+            <ObjectProperty IRI="hasDimensionOfScale"/>
             <Class IRI="nanoscale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -470,7 +466,7 @@
     <SubClassOf>
         <Class IRI="nanocrystal"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasStructureIn"/>
+            <ObjectProperty IRI="hasStructure"/>
             <Class IRI="crystalline"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -512,18 +508,6 @@
         <ObjectProperty IRI="hasConfigurationOf"/>
         <ObjectProperty IRI="hasSomeIn"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasDimensionIn"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasPartIn"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasStructureIn"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#cellulose_microfibril(CMF)</IRI>
@@ -561,12 +545,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="source"/>
-        <IRI>amorphous</IRI>
+        <IRI>amorphous_structure</IRI>
         <Literal>ISO/TS20477:2017, 3.2.2</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:definition"/>
-        <IRI>amorphous</IRI>
+        <IRI>amorphous_structure</IRI>
         <Literal>Solid structure where its ions, molecules, or atoms are oriented randomly, lacking any order.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
