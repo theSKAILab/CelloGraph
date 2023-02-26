@@ -97,7 +97,7 @@
         <Class IRI="http://www.spatialai.org/CelloGraph/v1.0/other/ISO_TS_20477#nanofibrillar_cellulose(NFC)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="amorphous"/>
+        <Class IRI="amorphous_structure"/>
     </Declaration>
     <Declaration>
         <Class IRI="cellullose_nanomaterial"/>
@@ -172,19 +172,16 @@
         <ObjectProperty IRI="hasConfigurationOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="hasDimensionIn"/>
+        <ObjectProperty IRI="hasDimensionOfScale"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasPartIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="hasSome"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="hasSomeIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="hasStructureIn"/>
+        <ObjectProperty IRI="ofStructure"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="isComposedOf"/>
@@ -275,7 +272,7 @@
         <Class IRI="cellulose_nanocrystal"/>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="cellulose_microfibrils"/>
+        <Class IRI="cellulose_microfibril"/>
         <Class IRI="cellulose_nanocrystal"/>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -323,10 +320,6 @@
         <Class IRI="cellulose_nanofibril"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="amorphous"/>
-        <Class IRI="solid_structure"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="cellullose_nanomaterial"/>
         <Class IRI="nanomaterial"/>
     </SubClassOf>
@@ -342,22 +335,22 @@
         <Class IRI="nanocrystal"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellulose_nano-object"/>
         <Class IRI="cellullose_nanomaterial"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellulose_nano-object"/>
         <Class IRI="nano_object"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellulose_nano-object"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasDimensionIn"/>
+            <ObjectProperty IRI="hasDimensionOfScale"/>
             <Class IRI="nanoscale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="cellulose_nano_object"/>
+        <Class IRI="cellulose_nano-object"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="isComposedOf"/>
             <Class IRI="cellulose"/>
@@ -374,21 +367,21 @@
     <SubClassOf>
         <Class IRI="cellulose_nanocrystal"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasSome"/>
+            <ObjectProperty IRI="hasPart"/>
             <Class IRI="elementary_fibril"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="cellulose_nanocrystal"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasStructureIn"/>
+            <ObjectProperty IRI="ofStructure"/>
             <Class IRI="crystalline"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="cellulose_nanocrystal"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasStructureIn"/>
+            <ObjectProperty IRI="ofStructure"/>
             <Class IRI="paracrystalline"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -421,7 +414,7 @@
     <SubClassOf>
         <Class IRI="cellulose_nanostructured_material"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasStructureIn"/>
+            <ObjectProperty IRI="hasDimensionOfScale"/>
             <Class IRI="nanoscale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -462,7 +455,7 @@
     <SubClassOf>
         <Class IRI="nano_object"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasDimensionIn"/>
+            <ObjectProperty IRI="hasDimensionOfScale"/>
             <Class IRI="nanoscale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -473,7 +466,7 @@
     <SubClassOf>
         <Class IRI="nanocrystal"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasStructureIn"/>
+            <ObjectProperty IRI="hasStructure"/>
             <Class IRI="crystalline"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -484,7 +477,7 @@
     <SubClassOf>
         <Class IRI="nanomaterial"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasSomeIn"/>
+            <ObjectProperty IRI="hasDimensionOfScale"/>
             <Class IRI="nanoscale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -513,18 +506,6 @@
     </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="hasConfigurationOf"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasDimensionIn"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasPartIn"/>
-        <ObjectProperty IRI="hasSomeIn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasStructureIn"/>
         <ObjectProperty IRI="hasSomeIn"/>
     </SubObjectPropertyOf>
     <AnnotationAssertion>
@@ -564,12 +545,12 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="source"/>
-        <IRI>amorphous</IRI>
+        <IRI>amorphous_structure</IRI>
         <Literal>ISO/TS20477:2017, 3.2.2</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="skos:definition"/>
-        <IRI>amorphous</IRI>
+        <IRI>amorphous_structure</IRI>
         <Literal>Solid structure where its ions, molecules, or atoms are oriented randomly, lacking any order.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -590,7 +571,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>cellullose_nanomaterial</IRI>
-        <Literal>Some cellulose nanomateiral can be composed of chemically modified cellulose.</Literal>
+        <Literal>Some cellulose nanomaterial can be composed of chemically modified cellulose.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

@@ -148,7 +148,7 @@ cg:CG_2000005 rdf:type rdfs:Class ;
 		rdfs:example "the atomic number of H, the atomic mass of Na"@en-US ;
 		skos:prefLabel "atomic property"@en-US ;
 		skos:altLabel "atomical property"@en-US ;
-		skos:definition "A physical properties of atoms."@en-US ;
+		skos:definition "A physical property of atoms."@en-US ;
 		skos:closeMatch edam:data_1917 ;	
 		rdfs:subClassOf cg:CG_2000004 ,
 						[rdf:type owl:Restriction;
@@ -348,7 +348,7 @@ cg:CG_2000028 rdf:type rdfs:Class ;
 		skos:definition "A material property that becomes evident during, or after, a chemical reaction"@en-US ;		
 		rdfs:subClassOf cg:CG_2000002 .
 
-cg:CG_20000029 rdf:type rdfs:Class ;
+cg:CG_2000029 rdf:type rdfs:Class ;
 		rdfs:label "chemical stability"@en-US ;
 		rdfs:example "advanced ceramics are highly resistant to chemical corrosion due to their high levels of chemical stability."@en-US ;
 		skos:prefLabel "Chemical stability"@en-US ;
@@ -381,10 +381,10 @@ cg:CG_2000032 rdf:type rdfs:Class ;
 
 cg:CG_2000033 rdf:type rdfs:Class ;
 		rdfs:label "specific surface area"@en-US ;
-		rdfs:example "European Commission has communicated nanomaterial identification guidelines that a material potentially composed of nanoparticles and with a volume specific surface area in the range of VSSA > 20 m2/m3 up to VSSA > 60 m2/m3 is entitled as a nanomaterial."@en-US ;
+		rdfs:example "European Commission has communicated nanomaterial identification guidelines that a material potentially composed of nanoparticles and with a volume specific surface area in the range of VSSA > 20 m^2/m^3 up to VSSA > 60 m^2/m^3 is entitled as a nanomaterial."@en-US ;
 		skos:prefLabel "Specific surface area"@en-US ;
 		skos:definition "A chemical property defined as the total surface area of a material per unit of mass or solid or bulk volume"@en-US ;	
-		skos:closeMatch  cheminf:CHEMINF_000515 ;	
+		skos:closeMatch cheminf:CHEMINF_000515 ;	
 		rdfs:subClassOf cg:CG_2000028 .
 
 cg:CG_2000034 rdf:type rdfs:Class ;
@@ -631,7 +631,7 @@ cg:CG_2000064 rdf:type rdfs:Class ;
 		rdfs:example "Cellulose EAPap shows high piezoelectricity as ‘Piezoelectric Paper’, 28.2 pC/N at 45° orientation angle"@en-US ;
 		skos:prefLabel "piezoelectric constant"@en-US ;
 		skos:altLabel "piezoelectric modulus, piezoelectric coefficient"@en-US ;
-		skos:definition "A electrical property describing the volume change when a piezoelectric material is subject to an electric field, or the polarization on application of a stress."@en-US ;		
+		skos:definition "A electrical property describing the volume change when a piezoelectric material is subject to an electric field, or the polarization on application of a stress."@en-US ;
 		rdfs:subClassOf cg:CG_2000052 .
 
 cg:CG_2000065 rdf:type rdfs:Class ;
@@ -730,17 +730,13 @@ cg:CG_2000076 rdf:type rdfs:Class ;
 
 cg:CG_2000077 rdf:type rdfs:Class ;
 		rdfs:label "magnetostrictive coefficient L"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "magnetostrictive coefficient L"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A magnetic property describing the fractional change in length as the magnetization increases from zero to its saturation value"@en-US ;		
 		rdfs:subClassOf cg:CG_2000070 .
 
 cg:CG_2000078 rdf:type rdfs:Class ;
 		rdfs:label "magnetostrictive coefficient L"@en-US ;
 		rdfs:comment "The coefficient L may be positive or negative, and is usually on the order of 10-5."@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "magnetostrictive coefficient L"@en-US ;
 		skos:definition "A magnetic property describing a magneto-thermodynamic phenomenon in which a temperature change of a suitable material is caused by exposing the material to a changing magnetic field. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000070 .
@@ -756,19 +752,15 @@ cg:CG_2000079 rdf:type rdfs:Class ;
 
 cg:CG_2000080 rdf:type rdfs:Class ;
 		rdfs:label "magnetoresistance"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example " the shape memory Ni-Mn-Sn-B ribbons show a phase transition at room temperature and a significant magnetoresistance behavior was observed at the room temperature. "@en-US ;
 		skos:prefLabel "magnetoresistance"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A magnetic property describing the tendency of a material (often ferromagnetic) to change the value of its electrical resistance in an externally-applied magnetic field"@en-US ;		
 		rdfs:subClassOf cg:CG_2000070 .
 
 cg:CG_2000081 rdf:type rdfs:Class ;
 		rdfs:label "maximum energy product"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "The maximum energy product (Hc · Br) values for given magnet compositions lie between 320 and 360 kJ/m3; neodymium-iron-boron magnets (Nd2Fe14B) were introduced in 1984, and have attained maximum energy products exceeding 300 kJ/m3"@en-US ;
 		skos:prefLabel "maximum energy product"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A magnetic property describing an important figure-of-merit for the strength of a permanent magnet material"@en-US ;		
 		rdfs:subClassOf cg:CG_2000070 .
 
@@ -776,9 +768,7 @@ cg:CG_2000081 rdf:type rdfs:Class ;
 cg:CG_2000082 rdf:type rdfs:Class ;
 		rdfs:label "paramagnetism"@en-US ;
 		rdfs:comment "The greater the number of unpaired electrons, the greater the magnetic moment of the substance and hence greater the paramagnetism."@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "paramagnetism"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A magnetic property describing a form of magnetism whereby some materials are weakly attracted by an externally applied magnetic field, and form internal, induced magnetic fields in the direction of the applied magnetic field"@en-US ;		
 		rdfs:subClassOf cg:CG_2000070 .
 
@@ -793,7 +783,6 @@ cg:CG_2000083 rdf:type rdfs:Class ;
 
 cg:CG_2000084 rdf:type rdfs:Class ;
 		rdfs:label "Magnetic permeability"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "The permeability of a vacuum has a finite value - about 1.257×10-6 H m-1"@en-US ;
 		skos:prefLabel "Magnetic permeability"@en-US ;
 		skos:definition "A magnetic property describing the measure of magnetization that a material obtains in response to an applied magnetic field."@en-US ;		
@@ -870,7 +859,6 @@ cg:CG_2000093 rdf:type rdfs:Class ;
 
 cg:CG_2000094 rdf:type rdfs:Class ;
 		rdfs:label "dye absorbency"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "NNitrogen gasplasma induced –NH2 groups might become the dyesites on the wool fiber resulting in increased dye absorption "@en-US ;
 		skos:prefLabel "dye absorbency"@en-US ;
 		skos:definition "A manufacturing property describing the ability of a material to take in dye with dyeing conditions"@en-US ;		
@@ -878,7 +866,6 @@ cg:CG_2000094 rdf:type rdfs:Class ;
 
 cg:CG_2000095 rdf:type rdfs:Class ;
 		rdfs:label "dye-affinity"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "Cotton has a limited dye affinity because both the surface of cotton fibres as well as the dye compounds are negatively charged and therefore do not readily react with each other."@en-US ;
 		skos:prefLabel "dye absorbency "@en-US ;
 		skos:definition "A manufacturing property describing the attraction between the fiber and the dye under given dyeing condition, where the dye is selectively extracted from an application medium by the fiber"@en-US ;	
@@ -921,7 +908,6 @@ cg:CG_2000100 rdf:type rdfs:Class ;
 
 cg:CG_2000101 rdf:type rdfs:Class ;
 		rdfs:label "abrasion resistance"@en-US ;
-		rdfs:comment ""@en-US ;
 		rdfs:example "The common abrasion resistance material can choose from three reinforcements: fiberglass, carbon fiber, and Kevlar®; cotton has limited abrasion resistance. "@en-US ;
 		skos:prefLabel "abrasion resistance"@en-US ;
 		skos:definition "A mechanical property describing the ability of a surface to resist being worn away by rubbing or friction"@en-US ;		
@@ -950,7 +936,7 @@ cg:CG_2000104 rdf:type rdfs:Class ;
 cg:CG_2000105 rdf:type rdfs:Class ;
 		rdfs:label "bondability"@en-US ;
 		skos:prefLabel "bondability"@en-US ;
-		skos:definition " A mechanical property describing the ability of bonds to form between two entities"@en-US ;	
+		skos:definition "A mechanical property describing the ability of bonds to form between two entities"@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000106 rdf:type rdfs:Class ;
@@ -973,7 +959,7 @@ cg:CG_2000108 rdf:type rdfs:Class ;
 		rdfs:label "brittleness "@en-US ;
 		rdfs:example "Non-metals generally show brittleness "@en-US ;
 		skos:prefLabel "brittleness "@en-US ;
-		skos:definition " A mechanical property describing the ability of a material to break or shatter without significant deformation when under stress; opposite of plasticity, examples: glass, concrete, cast iron, ceramics etc. "@en-US ;		
+		skos:definition "A mechanical property describing the ability of a material to break or shatter without significant deformation when under stress; opposite of plasticity, examples: glass, concrete, cast iron, ceramics etc. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000109 rdf:type rdfs:Class ;
@@ -986,14 +972,14 @@ cg:CG_2000109 rdf:type rdfs:Class ;
 cg:CG_2000110 rdf:type rdfs:Class ;
 		rdfs:label "coefficient of restitution"@en-US ;
 		rdfs:example "the tennis ball had the highest value (e = 0.82) and the cricket ball the lowest value (e = 0.48). This means the tennis ball bounced much higher than the cricket ball because much less energy was lost during impact. "@en-US ;
-		skos:definition " A mechanical property  defined as the ratio of the final to initial relative velocity between two objects after they collide. Range: 0-1, 1 for perfectly elastic collision. "@en-US ;		
+		skos:definition "A mechanical property  defined as the ratio of the final to initial relative velocity between two objects after they collide. Range: 0-1, 1 for perfectly elastic collision. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000111 rdf:type rdfs:Class ;
 		rdfs:label "coefficient of friction"@en-US ;
 		rdfs:example "ice on steel has a low coefficient of friction. "@en-US ;
 		skos:prefLabel "coefficient of friction"@en-US ;
-		skos:definition " A mechanical property defined as the ratio between friction force and normal force"@en-US ;	
+		skos:definition "A mechanical property defined as the ratio between friction force and normal force"@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 
@@ -1001,7 +987,7 @@ cg:CG_2000112 rdf:type rdfs:Class ;
 		rdfs:label "compression modulus"@en-US ;
 		rdfs:example "MIL-H-83282 oil has a bulk modulus of 3.0 x 105 psi. Thus, a pressure increase of 3000 psi will reduce its volume by 1.0%."@en-US ;
 		skos:prefLabel "compression modulus"@en-US ;
-		skos:definition " A mechanical property defined as the ratio of mechanical stress to strain in an elastic material when that material is being compressed; it is the modulus of elasticity applied to a material under compression:modulus of compression = compressive force per unit area/change in volume per unit volume. "@en-US ;	
+		skos:definition "A mechanical property defined as the ratio of mechanical stress to strain in an elastic material when that material is being compressed; it is the modulus of elasticity applied to a material under compression:modulus of compression = compressive force per unit area/change in volume per unit volume. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000113 rdf:type rdfs:Class ;
@@ -1022,7 +1008,7 @@ cg:CG_2000115 rdf:type rdfs:Class ;
 		rdfs:label "creep strength"@en-US ;
 		skos:prefLabel "creep strength "@en-US ;
 		skos:altLabel "creep limit "@en-US ;
-		skos:definition " A mechanical property denoted as the maximum stress in a material that will result in a specified amount of creep in a given time at a constant temperature. "@en-US ;		
+		skos:definition " A mechanical property denoted as the maximum stress in a material that will result in a specified amount of creep in a given time at a constant temperature. "@en-US ;
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000116 rdf:type rdfs:Class ;
@@ -1032,7 +1018,7 @@ cg:CG_2000116 rdf:type rdfs:Class ;
 		skos:altLabel "cohesive strength"@en-US ;
 		skos:altLabel "cohesive attraction "@en-US ;
 		skos:altLabel "cohesive force "@en-US ;
-		skos:definition " A mechanical property describing the energy required to break a fully brittle material along a molecularly smooth crack"@en-US ;
+		skos:definition "A mechanical property describing the energy required to break a fully brittle material along a molecularly smooth crack"@en-US ;
 		skos:closeMatch  envo:ENVO_06105025 ;
 		rdfs:subClassOf cg:CG_2000100 .
 
@@ -1040,13 +1026,13 @@ cg:CG_2000117 rdf:type rdfs:Class ;
 		rdfs:label "cure time"@en-US ;
 		rdfs:example "Many substances need cure time to fully cure. Concrete usually reaches its full effective strength after about 28 days. "@en-US ;
 		skos:prefLabel "cure time"@en-US ;
-		skos:definition " A mechanical property describing the time that determines how long materials take to fully cure under heat or pressure"@en-US ;
+		skos:definition "A mechanical property describing the time that determines how long materials take to fully cure under heat or pressure"@en-US ;
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000118 rdf:type rdfs:Class ;
-		rdfs:label "Ductility"@en-US ;
+		rdfs:label "ductility"@en-US ;
 		rdfs:example "Gold and platinum are examples of most ductile metals."@en-US ;
-		skos:prefLabel "Ductility"@en-US ;
+		skos:prefLabel "ductility"@en-US ;
 		skos:definition "is a mechanical property commonly described as a material's amenability to drawing (e.g. into wire)"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
@@ -1054,7 +1040,7 @@ cg:CG_2000119 rdf:type rdfs:Class ;
 		rdfs:label "durability"@en-US ;
 		rdfs:example "construction products such as vinyl flooring, siding, paneling, aluminum coil stock, plaster- board or plywood."@en-US ;
 		skos:prefLabel "durability"@en-US ;
-		skos:definition " A mechanical property describing the ability of a material to withstand wear, pressure, or damage; hard-wearing; the ability of a physical product to remain functional, without requiring excessive maintenance or repair, when faced with the challenges of normal operation over its design lifetime"@en-US ;		
+		skos:definition "A mechanical property describing the ability of a material to withstand wear, pressure, or damage; hard-wearing; the ability of a physical product to remain functional, without requiring excessive maintenance or repair, when faced with the challenges of normal operation over its design lifetime"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000120 rdf:type rdfs:Class ;
@@ -1070,7 +1056,6 @@ cg:CG_20000121 rdf:type rdfs:Class ;
 		rdfs:label "fatigue resistance"@en-US ;
 		rdfs:comment "Composite materials can offer excellent resistance to fatigue loading, in general"@en-US ;
 		skos:prefLabel "fatigue resistance"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "a durable property measuringthe bearing's strength especially with regard to combustion engines, where the loading is cyclic in direction as well as its intensity."@en-US ;		
 		rdfs:subClassOf cg:CG_2000119 .
 
@@ -1121,7 +1106,6 @@ cg:CG_2000126 rdf:type rdfs:Class ;
 
 cg:CG_2000127 rdf:type rdfs:Class ;
 		rdfs:label "elasticity"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "Rubber bands and elastic and other stretchy materials display elasticity. Modeling clay, on the other hand, is relatively inelastic and retains a new shape even after the force that caused it to change is no longer being exerted. "@en-US ;
 		skos:prefLabel "elasticity"@en-US ;
 		skos:definition "A mechanical property describing the ability of a body to resist a distorting influence and to return to its original size and shape when that influence or force is removed. "@en-US ;
@@ -1133,10 +1117,12 @@ cg:CG_2000128 rdf:type rdfs:Class ;
 		rdfs:label "elastic modulus"@en-US ;
 		rdfs:example "Steel has a modulus of elasticity of 210GPa"@en-US ;
 		skos:prefLabel "elastic modulus"@en-US ;
-		skos:altLabel "Modulus of elasticity"@en-US ;
+		skos:altLabel "modulus of elasticity"@en-US ;
 		skos:altLabel "moduli of elasticity"@en-US ;
+		skos:altLabel "MOE"@en-US ;
 		skos:definition " A mechanical property measuring an object's or substance's resistance to being deformed elastically (i.e., non-permanently) when a stress is applied to it"@en-US ;	skos:closeMatch omit:OMIT_0026160 ;
-		rdfs:subClassOf cg:CG_2000127 .
+		rdfs:subClassOf cg:CG_2000100 .
+
 cg:CG_2000129 rdf:type rdfs:Class ;
 		rdfs:label "intrinsic modulus of elasticity"@en-US ;
 		skos:prefLabel "intrinsic modulus of elasticity"@en-US ;
@@ -1146,50 +1132,42 @@ cg:CG_2000129 rdf:type rdfs:Class ;
 
 cg:CG_2000130 rdf:type rdfs:Class ;
 		rdfs:label "actual modulus of elasticity"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "actual modulus of elasticity"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A elastic modulus measured a material’s performance under real working environmentt. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000128 .
 
 
 cg:CG_2000131 rdf:type rdfs:Class ;
 		rdfs:label "tensile elastic modulus"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "tensile elastic modulus"@en-US ;
-		skos:altLabel " "@en-US ;
-		skos:definition "A elastic modulus measuring an object's or substance's resistance to being deformed elastically (i.e., non-permanently) when a stress is applied to it. "@en-US ;		
+		skos:definition "A elastic modulus measuring an object's or substance's resistance to being deformed elastically (i.e., non-permanently) when a stress is applied to it. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000128 .
 
 
 cg:CG_2000132 rdf:type rdfs:Class ;
-		rdfs:label "elastic storage modulus"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
-		skos:prefLabel "elastic storage modulus"@en-US ;
+		rdfs:label "storage modulus"@en-US ;
+		skos:prefLabel "storage modulus"@en-US ;
+		skos:altLabel "elastic storage modulus′"@en-US ;
 		skos:altLabel "E′"@en-US ;
-		skos:definition " A mechanical property defined as the ratio of the elastic stress to strain, which indicates the ability of a material to store energy elastically"@en-US ;		
-		rdfs:subClassOf cg:CG_2000127 .
+		skos:definition "A mechanical property defined as the ratio of the elastic stress to strain, which indicates the ability of a material to store energy elastically"@en-US ;		
+		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000133 rdf:type rdfs:Class ;
-		rdfs:label "Elongation at break"@en-US ;
-		rdfs:comment "Elongation at break is the measure of a materials ductility"@en-US ;
-		skos:prefLabel "Elongation at break"@en-US ;
+		rdfs:label "elongation at break"@en-US ;
+		rdfs:comment "elongation at break is the measure of a materials ductility"@en-US ;
+		skos:prefLabel "elongation at break"@en-US ;
 		skos:altLabel "Emax"@en-US ;
 		skos:altLabel "strain to failure"@en-US ;
 		skos:altLabel "fracture strain"@en-US ;
 		skos:altLabel "maximum elongation at break"@en-US ;
-		skos:definition " A mechanical property defined as the ratio between changed length and initial length after breakage of the test specimen"@en-US ;	
+		skos:definition "A mechanical property defined as the ratio between changed length and initial length after breakage of the test specimen"@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000134 rdf:type rdfs:Class ;
 		rdfs:label "elongation at yield"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example " Elongation at yield is the deformation of a thermoplastic or thermoset material at the yield point "@en-US ;
 		skos:prefLabel "elongation at yield"@en-US ;
-		skos:definition " A mechanical property defined as the ratio between increased length and initial length at the yield point"@en-US ;		
+		skos:definition "A mechanical property defined as the ratio between increased length and initial length at the yield point"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100  .
 
 cg:CG_2000135 rdf:type rdfs:Class ;
@@ -1197,7 +1175,7 @@ cg:CG_2000135 rdf:type rdfs:Class ;
 		rdfs:comment "Some metals such as ferrous alloys and titanium alloys have a distinct fatigue limit. "@en-US ;
 		skos:prefLabel "fatigue limit"@en-US ;
 		skos:altLabel "endurance limit"@en-US ;
-		skos:definition " A mechanical property denoted as maximum stress a material can withstand under repeated loading (MPa; the stress evel below which an infinite number of loading cycles can be applied to a material without causing fatigue failure"@en-US ;		
+		skos:definition "A mechanical property denoted as maximum stress a material can withstand under repeated loading (MPa; the stress evel below which an infinite number of loading cycles can be applied to a material without causing fatigue failure"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000136 rdf:type rdfs:Class ;
@@ -1205,7 +1183,7 @@ cg:CG_2000136 rdf:type rdfs:Class ;
 		rdfs:comment "The inverse of stiffness"@en-US ;
 		skos:prefLabel "flexibility"@en-US ;
 		skos:altLabel "compliance"@en-US ;
-		skos:definition " A mechanical property describing the ability of an object to bend or deform in response to an applied force; pliability; complementary to stiffness; defined as the ratio of strain to stress"@en-US ;
+		skos:definition "A mechanical property describing the ability of an object to bend or deform in response to an applied force; pliability; complementary to stiffness; defined as the ratio of strain to stress"@en-US ;
 		skos:closeMatch pato:PATO_0001543 ;
 		skos:closeMatch ncit:NCIT_C121479 ;
 		rdfs:subClassOf cg:CG_2000100 .
@@ -1213,28 +1191,24 @@ cg:CG_2000136 rdf:type rdfs:Class ;
 cg:CG_2000137 rdf:type rdfs:Class ;
 		rdfs:label "flexural modulus"@en-US ;
 		rdfs:comment "It is a measure of a materials stiffness/ resistance to bend when a force is applied perpendicular to the long edge of a sample - known as the three point bend test. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "flexural modulus"@en-US ;
 		skos:altLabel "bending modulus"@en-US ;
-		skos:definition " A mechanical property describing the tendency for a material to resist bending, noted as the ratio of stress to strain in flexural deformation. "@en-US ;	
+		skos:definition "A mechanical property describing the tendency for a material to resist bending, noted as the ratio of stress to strain in flexural deformation. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000138 rdf:type rdfs:Class ;
 		rdfs:label "fracture toughness"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "3 modes: Opening, sliding, tearing "@en-US ;
 		skos:prefLabel "fracture toughness"@en-US ;
-		skos:altLabel " "@en-US ;
-		skos:definition " A mechanical property describing the critical stress intensity factor of a sharp crack where propagation of the crack suddenly becomes rapid and unlimited. "@en-US ;	
+		skos:definition "A mechanical property describing the critical stress intensity factor of a sharp crack where propagation of the crack suddenly becomes rapid and unlimited. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000139 rdf:type rdfs:Class ;
 		rdfs:label "friction coefficient"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "3 types: static friction coefficient and the kinetic friction coefficient "@en-US ;
 		skos:prefLabel "friction coefficient"@en-US ;
 		skos:altLabel "coefficient of friction (COF)"@en-US ;
-		skos:definition " A mechanical property denoted as a dimensionless scalar value which equals the ratio of the force of friction between two bodies and the force pressing them together, either during or at the onset of slipping. "@en-US ;		
+		skos:definition "A mechanical property denoted as a dimensionless scalar value which equals the ratio of the force of friction between two bodies and the force pressing them together, either during or at the onset of slipping. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000140 rdf:type rdfs:Class ;
@@ -1256,9 +1230,7 @@ cg:CG_2000141 rdf:type rdfs:Class ;
 cg:CG_2000142 rdf:type rdfs:Class ;
 		rdfs:label "impact load"@en-US ;
 		rdfs:comment "Sudden load that last for a very short duration, eg: collision of a car with a wall."@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "impact load"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition " A mechanical property describing the force delivered by a blow, as opposed to a force applied gradually and maintained over a long period."@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
@@ -1280,7 +1252,6 @@ cg:CG_2000144 rdf:type rdfs:Class ;
 
 cg:CG_2000145 rdf:type rdfs:Class ;
 		rdfs:label "internal bonding strength"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "The particleboard with soy protein adhesives has lower internal bonding strength than that with MDI, but higher than that with UF"@en-US ;
 		skos:prefLabel "internal bonding strength"@en-US ;
 		skos:altLabel "IB"@en-US ;
@@ -1289,7 +1260,6 @@ cg:CG_2000145 rdf:type rdfs:Class ;
 
 cg:CG_2000146 rdf:type rdfs:Class ;
 		rdfs:label "malleability"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "capability of being shaped or extended by hammering,  forging, such as the malleability of tin"@en-US ;
 		skos:prefLabel "malleability"@en-US ;
 		skos:definition "A mechanical property characterized by a material's ability to deform plastically without failure under compressive stress"@en-US ;	
@@ -1298,19 +1268,21 @@ cg:CG_2000146 rdf:type rdfs:Class ;
 cg:CG_2000147 rdf:type rdfs:Class ;
 		rdfs:label "mass diffusivity"@en-US ;
 		rdfs:comment "It is the rate one material can disperse through another material.  The higher the diffusion coefficient.  the faster the diffusion will be.  The diffusion coefficient for solids tends to be much lower than the diffusion coefficient for liquids and gasses."@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "mass diffusivity"@en-US ;
 		skos:altLabel "diffusivity"@en-US ;
 		skos:altLabel "diffusion coefficient "@en-US ;
-		skos:definition " A mechanical property denoted as a proportionality constant between the molar flux due to molecular diffusion nd the gradient in the concentration of the species (or the driving force for diffusion)"@en-US ;	
+		skos:definition "A mechanical property denoted as a proportionality constant between the molar flux due to molecular diffusion nd the gradient in the concentration of the species (or the driving force for diffusion)"@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000148 rdf:type rdfs:Class ;
 		rdfs:label "modulus of resilience"@en-US ;
 		rdfs:comment "Modulus of toughness is the total area below engineering stress-strain curve"@en-US ;
+		rdfs:example "Rubber is an example of a material that has an extremely high modulus of resilience. Ceramics typically have a very low modulus of resilience. "@en-US ;
 		skos:prefLabel "modulus of resilience"@en-US ;
+		skos:altLabel "MOR"@en-US ;
 		skos:definition "A mechanical property denoting the maximum energy that can be absorbed per unit volume without creating a permanent distortion"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
+
 
 cg:CG_2000149 rdf:type rdfs:Class ;
 		rdfs:label "modulus of rupture"@en-US ;
@@ -1367,7 +1339,7 @@ cg:CG_2000155 rdf:type rdfs:Class ;
 		rdfs:comment "The smaller the repeatability coefficient is, the better."@en-US ;
 		skos:prefLabel "repeatability coefficient"@en-US ;
 		skos:altLabel "RC"@en-US ;
-		skos:definition " A mechanical property measuring a value below which the absolute difference between two repeated test results may be expected to lie with a probability of 95%"@en-US ;	
+		skos:definition " A mechanical property measuring a value below which the absolute difference between two repeated test results may be expected to lie with a probability of 95%"@en-US ;
 		rdfs:subClassOf cg:CG_2000154 .
 
 cg:CG_2000156 rdf:type rdfs:Class ;
@@ -1378,17 +1350,9 @@ cg:CG_2000156 rdf:type rdfs:Class ;
 		skos:definition " A mechanical property describing the ability of a material to absorb energy when it is deformed elastically, and release that energy upon unloading"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
-cg:CG_2000157 rdf:type rdfs:Class ;
-		rdfs:label "modulus of resilience"@en-US ;
-		rdfs:example "Rubber is an example of a material that has an extremely high modulus of resilience. Ceramics typically have a very low modulus of resilience. "@en-US ;
-		skos:prefLabel "modulus of resilience"@en-US ;
-		skos:definition " A mechanical property denoting the maximum energy that can be absorbed per unit volume without creating a permanent distortion"@en-US ;
-		rdfs:subClassOf cg:CG_2000156 .
-
 cg:CG_2000158 rdf:type rdfs:Class ;
 		rdfs:label "proof resilience"@en-US ;
 		rdfs:comment "The proof resilience per unit volume of a body is called modulus of resilience. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "proof resilience"@en-US ;
 		skos:definition " A mechanical property denoting the maximum energy that can be absorbed up to the elastic limit, without creating a permanent distortion. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
@@ -1405,7 +1369,6 @@ cg:CG_2000159 rdf:type rdfs:Class ;
 cg:CG_2000160 rdf:type rdfs:Class ;
 		rdfs:label "interlaminar shear modulus"@en-US ;
 		rdfs:comment "A methodology that can efficiently and accurately determine the interlaminar shear modulus of composite laminates in the elastic domain is little. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "interlaminar shear modulus"@en-US ;
 		skos:definition "A mechanical property denoting the shear modulus between laminate planes of composites and is determined using the short beam shear test a material property for design of laminated composite structures subjected to transverse loads. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
@@ -1421,16 +1384,14 @@ cg:CG_2000161 rdf:type rdfs:Class ;
 
 cg:CG_2000162 rdf:type rdfs:Class ;
 		rdfs:label "shrinking stress"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "Concrete is subjected to volume change, including shrinkage stresses, during and after the hardening period"@en-US ;
 		skos:prefLabel "shrinking stress"@en-US ;
-		skos:altLabel "Shrinkage stress"@en-US ;
-		skos:definition " "@en-US ;		
+		skos:altLabel "Shrinkage stress"@en-US ;		
 		skos:definition "a mechannical property describing the pressure put on the materials and surrounding structure during the polymerization or the contraction caused by moisture loss . process."@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000163 rdf:type rdfs:Class ;
-		rdfs:label " slip "@en-US ;
+		rdfs:label "slip "@en-US ;
 		rdfs:comment "An external force makes parts of the crystal lattice glide along each other, changing the material's geometry. "@en-US ;
 		skos:prefLabel "slip"@en-US ;
 		skos:definition " A mechanical property denoting the large displacement of one part of a crystal relative to another part along crystallographic planes and directions."@en-US ;
@@ -1444,10 +1405,10 @@ cg:CG_2000164 rdf:type rdfs:Class ;
 		skos:altLabel "specific stiffness"@en-US ;
 		skos:definition " A mechanical property consisting of the elastic modulus per mass density of a material"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
+
 cg:CG_2000165 rdf:type rdfs:Class ;
 		rdfs:label "specific strength"@en-US ;
 		rdfs:comment "In fiber or textile applications, tenacity is the usual measure of specific strength. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "specific strength"@en-US ;
 		skos:altLabel "strength-to-weight ratio"@en-US ;
 		skos:altLabel "strength/weight ratio"@en-US ;
@@ -1457,7 +1418,6 @@ cg:CG_2000165 rdf:type rdfs:Class ;
 
 cg:CG_2000166 rdf:type rdfs:Class ;
 		rdfs:label "specific weight"@en-US ;
-		rdfs:comment ""@en-US ;
 		rdfs:example "A commonly used value is the specific weight of water on Earth at 4 °C, which is 9.807 kilonewtons per cubic metre or 62.43 pounds-force per cubic foot. "@en-US ;
 		skos:prefLabel "specific weight"@en-US ;
 		skos:altLabel "unit weight"@en-US ;
@@ -1491,10 +1451,7 @@ cg:CG_2000169 rdf:type rdfs:Class ;
 
 cg:CG_2000170 rdf:type rdfs:Class ;
 		rdfs:label "actual strength"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "actual strength"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A strength evaluated under real working environment"@en-US ;
 		rdfs:subClassOf cg:CG_2000169 .
 
@@ -1503,7 +1460,6 @@ cg:CG_2000172 rdf:type rdfs:Class ;
 		rdfs:comment "When one atom bonds to various atoms in a group, the bond strength typically decreases as we move down the group "@en-US ;
 		rdfs:example "C–F is 439 kJ/mol, C–Cl is 330 kJ/mol, and C–Br is 275 kJ/mol."@en-US ;
 		skos:prefLabel "bond strength"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A strength evaluated the bonding property of the material"@en-US ;	
 		rdfs:subClassOf cg:CG_2000169 .
 
@@ -1541,9 +1497,7 @@ cg:CG_2000175 rdf:type rdfs:Class ;
 cg:CG_2000176 rdf:type rdfs:Class ;
 		rdfs:label "intrinsic strength"@en-US ;
 		rdfs:comment "Intrinsic strength is easy to define but difficult to measure experimentally. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "intrinsic strength"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition " A strength defied as the maximum bending stress a material can withstand before failure (MPa)"@en-US ;		
 		rdfs:subClassOf cg:CG_2000169 .
 
@@ -1573,7 +1527,6 @@ cg:CG_2000179 rdf:type rdfs:Class ;
 cg:CG_2000180 rdf:type rdfs:Class ;
 		rdfs:label "edgewise shear strength "@en-US ;
 		rdfs:comment "The rail shear test used extensively at the Forest Products Laboratory to determine the edgewise shear strength of wood-base panel products"@en-US ;
-		rdfs:example ""@en-US ;
 		skos:prefLabel "edgewise shear strength"@en-US ;
 		skos:definition "A shear strength denoting the shear testing position at the edge of the material. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000177 .
@@ -1602,14 +1555,14 @@ cg:CG_2000183 rdf:type rdfs:Class ;
 		rdfs:example "Normal steels have grade B with yield strength of 35,000 psi/240 MPa; high-strength steels X42 to X80 have yield strength of 42,000 psi/290 MPa to 80,000 psi/550 MPa)."@en-US ;
 		skos:prefLabel "yield strength"@en-US ;
 		skos:altLabel "yield stress"@en-US ;
-		skos:definition "  A mechanical property denoting the stress corresponding to the yield point at which the material begins to deform plastically; the lowest stress point at which permanent deformation can be measured."@en-US ;		
+		skos:definition "A mechanical property denoting the stress corresponding to the yield point at which the material begins to deform plastically; the lowest stress point at which permanent deformation can be measured."@en-US ;		
 		rdfs:subClassOf cg:CG_2000177 .
 
 cg:CG_2000184 rdf:type rdfs:Class ;
 		rdfs:label "tackiness"@en-US ;
 		rdfs:comment "tackiness of the adhesive is its ability to stick after a short contact"@en-US ;
 		skos:prefLabel "tackiness"@en-US ;
-		skos:definition "  A mechanical property of being cohesive and sticky"@en-US ;		
+		skos:definition "A mechanical property of being cohesive and sticky"@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000185 rdf:type rdfs:Class ;
@@ -1621,24 +1574,24 @@ cg:CG_2000185 rdf:type rdfs:Class ;
 
 cg:CG_2000186 rdf:type rdfs:Class ;
 		rdfs:label "toughness"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "Steel is often used to absorb energy in car impacts because it is tough and strong."@en-US ;
 		skos:prefLabel "toughness"@en-US ;
-		skos:altLabel " "@en-US ;
-		skos:definition " A mechanical property describing the ability of a material to absorb energy and plastically deform without fracturing. "@en-US ;	
+		skos:definition "A mechanical property describing the ability of a material to absorb energy and plastically deform without fracturing. "@en-US ;
 		skos:closeMatch pato:PATO_0000048 ;	
 		rdfs:subClassOf cg:CG_2000100 .
+
 cg:CG_2000187 rdf:type rdfs:Class ;
 		rdfs:label "fracture toughness"@en-US ;
 		rdfs:example "Ice, 0,1; glass 0,7, steel, 65 MN/m^3"@en-US ;
 		skos:prefLabel "fracture toughness"@en-US ;
 		skos:definition "A toughness where propagation of the crack suddenly becomes rapid and unlimited"@en-US ;	
 		rdfs:subClassOf cg:CG_2000186 .
+
 cg:CG_2000188 rdf:type rdfs:Class ;
 		rdfs:label "impact toughness"@en-US ;
 		rdfs:comment "Factors(temperature, material thickness, notch radius) affect impact strength"@en-US ;
 		skos:prefLabel "impact toughness"@en-US ;
-		skos:definition "A toughness of a material using the value of impact energy absorbed by the material during fracturing under impact"@en-US ;		
+		skos:definition "A toughness of a material using the value of impact energy absorbed by the material during fracturing under impact"@en-US ;	
 		rdfs:subClassOf cg:CG_2000186 .
 
 cg:CG_2000189 rdf:type rdfs:Class ;
@@ -1647,18 +1600,19 @@ cg:CG_2000189 rdf:type rdfs:Class ;
 		skos:prefLabel "notch toughness"@en-US ;
 		skos:definition "A toughness that a material possesses to absorb energy in the presence of a flaw"@en-US ;	
 		rdfs:subClassOf cg:CG_2000186 .
+
 cg:CG_2000190 rdf:type rdfs:Class ;
 		rdfs:label "viscoelasticity"@en-US ;
 		rdfs:comment "Viscoelasticity is caused by temporary connections between fiber-like particles. "@en-US ;
 		skos:prefLabel "viscoelasticity"@en-US ;
-		skos:definition " A mechanical property of materials that exhibit both viscous and elastic characteristics when undergoing deformation"@en-US ;		
+		skos:definition " A mechanical property of materials that exhibit both viscous and elastic characteristics when undergoing deformation"@en-US ;	
 		rdfs:subClassOf cg:CG_2000169 .
 
 cg:CG_2000191 rdf:type rdfs:Class ;
 		rdfs:label "wood failure"@en-US ;
 		rdfs:example "A weak joint, exhibiting little or no wood failure, might result from poor machining or under-cured or frosted joints. "@en-US ;
 		skos:prefLabel "wood failure"@en-US ;
-		skos:definition " A mechanical property denoting the area of wood fiber remaining at the glueline following completion of a specified shear test. "@en-US ;		
+		skos:definition "A mechanical property denoting the area of wood fiber remaining at the glueline following completion of a specified shear test. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000192 rdf:type rdfs:Class ;
@@ -1675,7 +1629,7 @@ cg:CG_2000193 rdf:type rdfs:Class ;
 		skos:prefLabel "yield point"@en-US ;
 		skos:altLabel "yield stress"@en-US ;
 		skos:altLabel "YS"@en-US ;
-		skos:definition " A mechanical property denoted as the point on a stress-strain curve that indicates the limit of elastic behavior and the beginning of plastic behavior. "@en-US ;	
+		skos:definition "A mechanical property denoted as the point on a stress-strain curve that indicates the limit of elastic behavior and the beginning of plastic behavior. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000194 rdf:type rdfs:Class ;
@@ -1685,8 +1639,8 @@ cg:CG_2000194 rdf:type rdfs:Class ;
 		skos:altLabel "modulus of elasticity in tension or compression"@en-US ;
 		skos:altLabel "Young modulus"@en-US ;
 		skos:altLabel "E"@en-US ;
-		skos:definition " A mechanical property denoting that measures the tensile or compressive stiffness of a solid material when the force is applied lengthwise. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000128 .
+		skos:definition "A mechanical property denoting that measures the tensile or compressive stiffness of a solid material when the force is applied lengthwise. "@en-US ;		
+		rdfs:subClassOf cg:CG_2000100 .
 
 cg:CG_2000195 rdf:type rdfs:Class ;
 		rdfs:label "bearing modulus of elasticity"@en-US ;
@@ -1699,7 +1653,6 @@ cg:CG_2000195 rdf:type rdfs:Class ;
 
 cg:CG_2000196 rdf:type rdfs:Class ;
 		rdfs:label "shear modulus of elasticity"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "For pine wood measured with Arcan test, he obtained LR,L average modulus of shear is approximately 350 MPa, while that of LR,R is approximately 840 MPa."@en-US ;
 		skos:prefLabel "shear modulus of elasticity"@en-US ;
 		skos:prefLabel "shear modulus"@en-US ;
@@ -1712,8 +1665,6 @@ cg:CG_2000196 rdf:type rdfs:Class ;
 
 cg:CG_2000197 rdf:type rdfs:Class ;
 		rdfs:label "compressive modulus of elasticity"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "compressive modulus of elasticity"@en-US ;
 		skos:altLabel "compression modulus"@en-US ;
 		skos:definition "A Young’s modulus defined as compressive force per unit area/change in volume per unit volume. "@en-US ;		
@@ -1730,7 +1681,7 @@ cg:CG_2000199 rdf:type rdfs:Class ;
 		rdfs:label "optical absorbance"@en-US ;
 		rdfs:comment "The amount of light transmitted through a material diminishes exponentially as it travels through the material, according to the Beer–Lambert."@en-US ;
 		skos:prefLabel "optical absorbance"@en-US ;
-		skos:definition "A optical property defined as the logarithm of the ratio of incident to transmitted radiant power through a sample (excluding the effects on cell walls)"@en-US ;		
+		skos:definition "A optical property defined as the logarithm of the ratio of incident to transmitted radiant power through a sample (excluding the effects on cell walls)"@en-US ;
 		rdfs:subClassOf cg:CG_2000198 .
 
 cg:CG_2000200 rdf:type rdfs:Class ;
@@ -1752,7 +1703,7 @@ cg:CG_2000201 rdf:type rdfs:Class ;
 
 cg:CG_2000202 rdf:type rdfs:Class ;
 		rdfs:label "color"@en-US ;
-		rdfs:example " blue in a rainbow "@en-US ;
+		rdfs:example "blue in a rainbow "@en-US ;
 		skos:prefLabel "color"@en-US ;
 		skos:definition "A optical property deriving from the spectrum of light interacting with the photoreceptor cells of the eyes"@en-US ;	
 		skos:closeMatch pato:PATO_0000014 ;
@@ -1773,7 +1724,7 @@ cg:CG_2000204 rdf:type rdfs:Class ;
 		rdfs:label "luminosity"@en-US ;
 		rdfs:example "The most noticeable quality of a large, sparkly diamond is its luminosity. "@en-US ;
 		skos:prefLabel "luminosity"@en-US ;
-		skos:definition "A optical property denoted as an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object over time. "@en-US ;		
+		skos:definition "A optical property denoted as an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object over time. "@en-US ;	
 		rdfs:subClassOf cg:CG_2000198 .
 
 
@@ -1793,9 +1744,7 @@ cg:CG_2000205 rdf:type rdfs:Class ;
 cg:CG_2000206 rdf:type rdfs:Class ;
 		rdfs:label "photoelasticity"@en-US ;
 		rdfs:comment "Photoelasticity is a whole-field technique for measuring and visualizing stresses and strains in structures. It is a property of all dielectric media. "@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "photoelasticity"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A optical property describing the changes in the optical properties of a material under mechanical deformation. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000198 .
 
@@ -1813,7 +1762,7 @@ cg:CG_2000208 rdf:type rdfs:Class ;
 		rdfs:example " The average eflectivity of the Earth, including its atmosphere, as would be seen from space, is about 0.3"@en-US ;
 		skos:prefLabel "reflectivity"@en-US ;
 		skos:altLabel "reflectiveness"@en-US ;
-		skos:definition "A optical property defined as the square of the magnitude of the Fresnel reflection coefficient, which is the ratio of the reflected to incident electric field. "@en-US ;		
+		skos:definition "A optical property defined as the square of the magnitude of the Fresnel reflection coefficient, which is the ratio of the reflected to incident electric field. "@en-US ;
 		skos:closeMatch pato:PATO_0001297 ;
 		skos:closeMatch chmo:CHMO_0000209 ;
 		rdfs:subClassOf cg:CG_2000198 .
@@ -1822,7 +1771,6 @@ cg:CG_2000209 rdf:type rdfs:Class ;
 		rdfs:label "refractive index "@en-US ;
 		rdfs:example "a refractive index of 1.33 for water means that light travels 1.33 times faster in a vacuum than in water. "@en-US ;
 		skos:prefLabel "refractive index "@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A optical property that gives the indication of the light bending ability of that medium"@en-US ;
 		skos:closeMatch cheminf:CHEMINF_000228 ;
 		rdfs:subClassOf cg:CG_2000198 .
@@ -1861,8 +1809,8 @@ cg:CG_2000214 rdf:type rdfs:Class ;
 		rdfs:label "neutron cross-section"@en-US ;
 		rdfs:comment "The larger the neutron cross section, the more likely a neutron will react with the nucleus. "@en-US ;
 		skos:prefLabel "neutron cross-section"@en-US ;
-		skos:altLabel " "@en-US ;
-		skos:definition " "@en-US ;		
+		skos:altLabel "σ"@en-US ;
+		skos:definition "a radiological property that can be defined as the area in cm2 for which the number of nuclei–neutron reactions taking place is equal to the product of the number of incident neutrons that would pass through the area and the number of target nuclei."@en-US ;		
 		rdfs:subClassOf cg:CG_2000213 .
 
 cg:CG_2000215 rdf:type rdfs:Class ;
@@ -2010,10 +1958,9 @@ cg:CG_2000232 rdf:type rdfs:Class ;
 
 cg:CG_2000233 rdf:type rdfs:Class ;
 		rdfs:label "asymmetric index"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example "Asymmetry index (Al) is calculated from the formula Al = [(R-L)/R+L)] x 100% in which R and L stand for the values on the right and left sides. "@en-US ;
+		rdfs:example "Asymmetry index (AI) is calculated from the formula Al = [(R-L)/R+L)] x 100% in which R and L stand for the values on the right and left sides. "@en-US ;
 		skos:prefLabel "asymmetric index"@en-US ;
-		skos:altLabel "Al"@en-US ;
+		skos:altLabel "AI"@en-US ;
 		skos:definition "A structural property denoted as the ratio of the skewness to the standard error. It is an indication of the asymmetry of a distribution. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
@@ -2030,23 +1977,17 @@ cg:CG_2000234 rdf:type rdfs:Class ;
 cg:CG_2000235 rdf:type rdfs:Class ;
 		rdfs:label "contact angle"@en-US ;
 		rdfs:comment "If the liquid runs evenly on the solid surface, complete wetting is present with a contact angle of 0 °. If the angle is between 0 ° and 90 °, the surface is wettable. The surface is called hydrophilic. An angle between 90 ° and 180 ° means the surface is not wettable. It is hydrophobic. "@en-US ;
-		rdfs:example ""@en-US ;
 		skos:prefLabel "contact angle"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A structural property describing conventionally measured through the liquid, where a liquid–vapor interface meets a solid surface "@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
 
 cg:CG_2000236 rdf:type rdfs:Class ;
 		rdfs:label "crystallinity"@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example ""@en-US ;
 		skos:prefLabel "crystallinity"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A structural property describing the degree of structural order in a solid. In a crystal, the atoms or molecules are arranged in a regular, periodic manner. "@en-US ;	
 		skos:closeMatch ncit:NCIT_C133974 ;
 		rdfs:subClassOf cg:CG_2000227 .
-
 
 cg:CG_2000237 rdf:type rdfs:Class ;
 		rdfs:label "crystallinity degree"@en-US ;
@@ -2054,7 +1995,7 @@ cg:CG_2000237 rdf:type rdfs:Class ;
 		skos:prefLabel "crystallinity degree"@en-US ;
 		skos:altLabel "crystallinity index (CrI)"@en-US ;
 		skos:altLabel "CrI"@en-US ;
-		skos:definition " A structural property describing the fraction of the sample which is crystalline"@en-US ;		
+		skos:definition "A structural property describing the fraction of the sample which is crystalline"@en-US ;		
 		rdfs:subClassOf cg:CG_2000236 .
 
 cg:CG_2000238 rdf:type rdfs:Class ;
@@ -2062,7 +2003,7 @@ cg:CG_2000238 rdf:type rdfs:Class ;
 		rdfs:example "The chemically extracted cellulose showed higher crystallinity index than that from mechanical extraction."@en-US ;
 		skos:prefLabel "crystallinity index"@en-US ;
 		skos:altLabel "CI"@en-US ;
-		skos:definition " A structural property quantitatively indicating crystallinity"@en-US ;
+		skos:definition "A structural property quantitatively indicating crystallinity"@en-US ;
 		rdfs:subClassOf cg:CG_2000237 .
 
 cg:CG_2000239 rdf:type rdfs:Class ;
@@ -2089,23 +2030,22 @@ cg:CG_2000241 rdf:type rdfs:Class ;
 		skos:prefLabel "linear density"@en-US ;
 		skos:definition " A density measuring a quantity of mass per unit of length."@en-US ;	
 		skos:closeMatch pato:PATO_0001352 ;
-		rdfs:subClassOf cg:CG_2000240 .
+		rdfs:subClassOf cg:CG_2000239 .
 
 
 cg:CG_2000242 rdf:type rdfs:Class ;
 		rdfs:label "degree of polymerization"@en-US ;
-		rdfs:comment ""@en-US ;
 		rdfs:example "In nature, cellulose has a DP of approximately 10,000 glucopyranose units in wood cellulose and of 15,000 units in plant cellulose, whereas BC shows DP values of 2000–6000"@en-US ;
 		skos:prefLabel "degree of polymerization"@en-US ;
 		skos:altLabel "dp"@en-US ;
-		skos:definition " A structural property denoting as the number of monomeric units in a macromolecule or polymer or oligomer molecule"@en-US ;		
+		skos:definition "A structural property denoting as the number of monomeric units in a macromolecule or polymer or oligomer molecule"@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
 cg:CG_2000243 rdf:type rdfs:Class ;
 		rdfs:label "degree of orientation"@en-US ;
-		rdfs:comment " the crystalline and amorphous components show different degrees of orientation "@en-US ;
+		rdfs:comment "the crystalline and amorphous components show different degrees of orientation "@en-US ;
 		skos:prefLabel "degree of orientation"@en-US ;
-		skos:definition " A structural property describing the arrangement of crystallites where one axis in all of them remains parallel to the direction of extension and the two remaining axes are arbitrarily oriented"@en-US ;		
+		skos:definition "A structural property describing the arrangement of crystallites where one axis in all of them remains parallel to the direction of extension and the two remaining axes are arbitrarily oriented"@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
 cg:CG_2000244 rdf:type rdfs:Class ;
@@ -2119,10 +2059,10 @@ cg:CG_2000245 rdf:type rdfs:Class ;
 		rdfs:label "diameter"@en-US ;
 		rdfs:example "Tracheid fiber has diameter about 10 to 50 um"@en-US ;
 		skos:prefLabel "diameter"@en-US ;
-		skos:definition " A structural property describing any straight line segment that passes through the center of the circle and whose endpoints lie on the circle"@en-US ;	
+		skos:definition "A structural property describing any straight line segment that passes through the center of the circle and whose endpoints lie on the circle"@en-US ;	
 		skos:closeMatch ncit:NCIT_C25285 ;
 		skos:closeMatch pato:PATO_0001334 ;
-		rdfs:subClassOf cg:CG_2000227 .
+		rdfs:subClassOf cg:CG_2000280 .
 
 cg:CG_2000246 rdf:type rdfs:Class ;
 		rdfs:label "fiber diameter"@en-US ;
@@ -2191,7 +2131,6 @@ cg:CG_2000253 rdf:type rdfs:Class ;
 cg:CG_2000254 rdf:type rdfs:Class ;
 		rdfs:label "lattice spacing"@en-US ;
 		rdfs:comment "Lattice spacing is calculated using Bragg’s law "@en-US ;
-		rdfs:example ""@en-US ;
 		skos:prefLabel "lattice spacing"@en-US ;
 		skos:definition "A structural property describing the distance between atom centers (a) depends upon the direction in the lattice "@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
@@ -2212,31 +2151,28 @@ cg:CG_2000256 rdf:type rdfs:Class ;
 		skos:altLabel "d-value "@en-US ;
 		skos:altLabel "d-spacing "@en-US ;
 		skos:definition "A lattice constant describing the distance between successive, parallel planes of atoms"@en-US ;		
-		rdfs:subClassOf cg:CG_2000255 .
+		rdfs:subClassOf cg:CG_2000280 .
 
 cg:CG_2000257 rdf:type rdfs:Class ;
 		rdfs:label "length"@en-US ;
-		rdfs:example " "@en-US ;
 		skos:prefLabel "average crystalline length "@en-US ;
 		skos:altLabel "height, width, breath, depth "@en-US ;
 		skos:definition "A structural property measuring of distance. In the International System of Quantities, length is a quantity with dimension distance. "@en-US ;		
 		skos:closeMatch pato:PATO_0000122 ;
 		skos:closeMatch ncit:NCIT_C25334 ;
-		rdfs:subClassOf cg:CG_2000227 .
+		rdfs:subClassOf cg:CG_2000280 .
 
 cg:CG_2000258 rdf:type rdfs:Class ;
 		rdfs:label "average crystalline length "@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "in a granite typically 85% or more of the crystals might has average crystalline length around 1 cm in size. "@en-US ;
 		skos:prefLabel "average crystalline length "@en-US ;
-		skos:definition " "@en-US ;		
-		rdfs:subClassOf cg:CG_2000227 .
+		skos:definition "a length averagely used to describe crystalines"@en-US ;		
+		rdfs:subClassOf cg:CG_2000257 .
 
 cg:CG_2000259 rdf:type rdfs:Class ;
 		rdfs:label "length uniformity "@en-US ;
 		rdfs:comment "If all of the fibers in the bale were the same length, the mean length and the upperhalf mean length would be the same, and the uniformity would be 100 percent. "@en-US ;
 		skos:prefLabel "length uniformity "@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition " A structural property denoted as the ratio between the mean length and the upperhalf mean length of the fibers, expressed as a percentage "@en-US ;	
 		rdfs:subClassOf cg:CG_2000258 .
 
@@ -2246,11 +2182,10 @@ cg:CG_2000260 rdf:type rdfs:Class ;
 		skos:prefLabel "maturity "@en-US ;
 		skos:definition "A structural property describing a physical testing parameter of cotton fiber properties testing. It is quantified by the degree of cell wall thickening relative to its perimeter "@en-US ;
 		skos:closeMatch pato:PATO_0000261 ;	
-		rdfs:subClassOf cg:CG_2000233 .
+		rdfs:subClassOf cg:CG_2000227 .
 
 cg:CG_2000261 rdf:type rdfs:Class ;
 		rdfs:label "micronaire"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "a measurement of the thickness of the cell walls of cotton fiber, 1 micronaire = 2.824 x Denier. "@en-US ;
 		skos:prefLabel "micronaire"@en-US ;
 		skos:definition "A structural property describing a measure of the air permeability of cotton fiber and is an indication of fineness and maturity"@en-US ;		
@@ -2305,7 +2240,7 @@ cg:CG_2000267 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_2000227 .
 
 cg:CG_2000268 rdf:type rdfs:Class ;
-		rdfs:label "Gas permeability"@en-US ;
+		rdfs:label "gas permeability"@en-US ;
 		rdfs:comment "The gas permeability of plastic films is important in packaging, containment, and agricultural fumigation"@en-US ;
 		rdfs:example "Solution-casted CNC films has higher gas permeability than films made of microfibrillated cellulose (MFC"@en-US ;
 		skos:prefLabel "gas permeability"@en-US ;
@@ -2325,7 +2260,7 @@ cg:CG_2000270 rdf:type rdfs:Class ;
 		skos:prefLabel "oxygen permeability"@en-US ;
 		skos:altLabel "OP"@en-US ;
 		skos:definition "A structural property that defines how easily oxygen passes through a particular material."@en-US ;		
-		rdfs:subClassOf cg:CG_2000271 .
+		rdfs:subClassOf cg:CG_2000267 .
 
 cg:CG_2000271 rdf:type rdfs:Class ;
 		rdfs:label "moisture permeability"@en-US ;
@@ -2334,14 +2269,14 @@ cg:CG_2000271 rdf:type rdfs:Class ;
 		skos:altLabel "Moisture vapor transmission rate (MVTR)"@en-US ;
 		skos:altLabel "Water vapor transmission rate (WVTR) "@en-US ;
 		skos:definition "A structural property describing the material's resistance to the water vapor diffusion through a unit of surface area"@en-US ;		
-		rdfs:subClassOf cg:CG_2000227 .
+		rdfs:subClassOf cg:CG_2000267 .
 
 cg:CG_2000272 rdf:type rdfs:Class ;
 		rdfs:label "water permeability"@en-US ;
 		rdfs:example "At 50% RH the water vapor permeance of plywood is approximately 1 perm but the water vapor permeance may be increased by a factor of 10 when the humidity is increased to 90%."@en-US ;
 		skos:prefLabel "water permeability"@en-US ;
 		skos:definition "A mass permeability specifically measuring the passage of a specific amount of water through a material."@en-US ;
-		rdfs:subClassOf cg:CG_2000271 .
+		rdfs:subClassOf cg:CG_2000267 .
 
 cg:CG_2000273 rdf:type rdfs:Class ;
 		rdfs:label "porosity"@en-US ;
@@ -2476,7 +2411,6 @@ cg:CG_2000289 rdf:type rdfs:Class ;
 		rdfs:label "wall thickness"@en-US ;
 		rdfs:example "Earlywood fibres have an average cell wall thickness of 2–4 µm and latewood fibres have an average cell wall thickness of 4–8 µm"@en-US ;
 		skos:prefLabel "wall thickness"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A structural property measuring the thickness of the cell wall. "@en-US ;
 		rdfs:subClassOf cg:CG_2000287 .
 
@@ -2505,15 +2439,6 @@ cg:CG_2000292 rdf:type rdfs:Class ;
 		skos:definition "A structural property describing the ability of a material to physically hold water against the force of gravity from its three-dimensional structure"@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
-
-cg:CG_2000293 rdf:type rdfs:Class ;
-		rdfs:label "water resistance"@en-US ;
-		skos:prefLabel "water resistance"@en-US ;
-		skos:altLabel "Moisture resistance"@en-US ;
-		skos:definition "A structural property describing the resistance of water penetration to some degree not entirely. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000227 .
-
-
 cg:CG_2000294 rdf:type rdfs:Class ;
 		rdfs:label "microfibril angle"@en-US ;
 		rdfs:comment "Differences in MFA have a profound effect on the properties of wood, in particular its stiffness. The large MFA in juvenile wood confers low stiffness and gives the sapling the flexibility it needs to survive high winds without breaking"@en-US ;
@@ -2525,18 +2450,17 @@ cg:CG_2000294 rdf:type rdfs:Class ;
 
 
 cg:CG_2000295 rdf:type rdfs:Class ;
-		rdfs:label " "@en-US ;
-		rdfs:comment " "@en-US ;
-		rdfs:example ""@en-US ;
-		skos:prefLabel " "@en-US ;
-		skos:altLabel " "@en-US ;
+		rdfs:label "microfibril angle"@en-US ;
+		rdfs:comment "Differences in MFA have a profound effect on the properties of wood, in particular its stiffness. The large MFA in juvenile wood confers low stiffness and gives the sapling the flexibility it needs to survive high winds without breaking"@en-US ;
+		rdfs:example "The average MFA of the S2 layer in mature wood lies between 5–20° to the fibre axis, but much larger angles are foundin the juvenile1) wood of conifers"@en-US ;
+		skos:prefLabel "microfibril angle"@en-US ;
+		skos:altLabel "MFA"@en-US ;
 		skos:definition "A Structural property featuring the angle between the direction of the helical windings of cellulose microfibrils in the secondary cell wall of fibres and tracheids and the long axis of cell. "@en-US ;		
 		rdfs:subClassOf cg:CG_2000227 .
 
 
 cg:CG_2000296 rdf:type rdfs:Class ;
 		rdfs:label "solubility"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "at 25°C, the solubility (Ksp)of Calcium hydroxide is 5.02 × 10−6"@en-US ;
 		skos:prefLabel "solubility"@en-US ;
 		skos:definition "A structural property denoting the maximum amount of a substance that will dissolve in a given amount of solvent at a specified temperature."@en-US ;		
@@ -2557,7 +2481,7 @@ cg:CG_2000298 rdf:type rdfs:Class ;
 		skos:prefLabel "boiling point"@en-US ;
 		skos:definition "A thermal property describing the temperature at which the vapor pressure of a liquid equals the pressure surrounding the liquid and the liquid changes into a vapor."@en-US ;	
 		skos:closeMatch mi:MI_2036 ;	
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000299 rdf:type rdfs:Class ;
 		rdfs:label "char yield"@en-US ;
@@ -2587,26 +2511,25 @@ cg:CG_2000302 rdf:type rdfs:Class ;
 		rdfs:example "The critical temperature  of water is 374°C."@en-US ;
 		skos:prefLabel "critical temperature"@en-US ;
 		skos:definition "A thermal property denoting the end point of a phase equilibrium curve"@en-US ;		
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000303 rdf:type rdfs:Class ;
 		rdfs:label "curie point, tc"@en-US ;
 		rdfs:example "The curie temperature for a low carbon steel is 770 °C or 1390 °F. "@en-US ;
 		skos:prefLabel "curie point, tc"@en-US ;
 		skos:definition "A thermal property denoting the temperature above which certain materials lose their permanent magnetic properties, which can (in most cases) be replaced by induced magnetism"@en-US ;
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000304 rdf:type rdfs:Class ;
-		rdfs:label "ductile-to-brittle transition temperature, dbtt"@en-US ;
+		rdfs:label "ductile-to-brittle transition temperature, DBTT"@en-US ;
 		rdfs:comment "the ductile to brittle transition temperature is strongly dependant on the composition of the metal."@en-US ;
 		rdfs:example "T Steel is the most commonly used metal that shows this behavior.  For some steels the transition temperature can be around 0°C"@en-US ;
-		skos:prefLabel "ductile-to-brittle transition temperature, dbtt"@en-US ;
+		skos:prefLabel "ductile-to-brittle transition temperature, DBTT"@en-US ;
 		skos:definition "A thermal property denoting the minimum temperature at which the metal transitions from a brittle behavior to a ductile behavior, or from a ductile behavior to a brittle behavior"@en-US ;
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000305 rdf:type rdfs:Class ;
 		rdfs:label "emissivity"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "A black body is a material that is a perfect emitter of heat energy and has an emissivity value of 1."@en-US ;
 		skos:prefLabel "emissivity"@en-US ;
 		skos:definition "A thermal property denoting the effectiveness of the surface of a material in emitting energy as thermal radiation"@en-US ;
@@ -2617,27 +2540,27 @@ cg:CG_2000306 rdf:type rdfs:Class ;
 		rdfs:example "The regenerated cellulose had its endothermic transition temperature at around 314.83 °C, which was slightly lower than cellulose around 365 °C"@en-US ;
 		skos:prefLabel "endothermic peak"@en-US ;
 		skos:definition "A thermal property denoting the peak temperature under endothermic DSC curve."@en-US ;		
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000307 rdf:type rdfs:Class ;
 		rdfs:label "eutectic point"@en-US ;
 		rdfs:example "The eutectic temperature for the KAc-water system is -60°C (-76°F) at a concentration of 49 percent"@en-US ;
 		skos:prefLabel "eutectic point"@en-US ;
 		skos:definition "A thermal property denoting a homogeneous mixture of substances that melts or solidifies at a single temperature that is lower than the melting point of any of the constituents"@en-US ;	
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000308 rdf:type rdfs:Class ;
 		rdfs:label "fire resistance"@en-US ;
 		rdfs:example "Natural building materials such as lumber and cotton typically offer very poor fire resistance compared to dense concrete and plaster"@en-US ;
 		skos:prefLabel "fire resistance"@en-US ;
-		skos:definition "A thermal property denoting the degree of resistance of material to fire often measured in terms of time of withstanding a standard test fire."@en-US ;	
+		skos:definition "A thermal property denoting the degree of resistance of material to fire often measured in terms of time of withstanding a standard test fire."@en-US ;
+		skos:closeMatch cg:CG_2000122 ;	
 		rdfs:subClassOf cg:CG_2000297 .
 
 cg:CG_2000309 rdf:type rdfs:Class ;
 		rdfs:label "flammability"@en-US ;
 		rdfs:comment "The flammability properties of cellulosic materials depends on their chemical composition. They is inherently flammable and requires the addition of chemicals to achieve flame retardancy"@en-US ;
 		skos:prefLabel "flammability"@en-US ;
-		skos:altLabel " "@en-US ;
 		skos:definition "A thermal property denscibing the ease with which a combustible substance can be ignited, causing fire or combustion or even an explosion"@en-US ;		
 		rdfs:subClassOf cg:CG_2000297 .
 
@@ -2646,21 +2569,21 @@ cg:CG_2000310 rdf:type rdfs:Class ;
 		rdfs:example "The maximum flash point for methanol-aqueous solution are all the same, 72.59°C"@en-US ;
 		skos:prefLabel "flash point"@en-US ;
 		skos:definition "A thermal property denoted as the lowest liquid temperature at which, under certain standardized conditions, a liquid gives off vapors in a quantity such as to be capable of forming an ignitable vapor/air mixture"@en-US ;		
-		rdfs:subClassOf cg:CG_2000297  .
+		rdfs:subClassOf cg:CG_2000323  .
 
 cg:CG_2000311 rdf:type rdfs:Class ;
 		rdfs:label "freezing point"@en-US ;
 		rdfs:example "The freezing point of methanol is -143.7°F or -97.6°C"@en-US ;
 		skos:prefLabel "freezing point"@en-US ;
 		skos:definition "A thermal property denoting the temperature at which a liquid freezes, and the solid and liquid phases are in equilibrium"@en-US ;		
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000312 rdf:type rdfs:Class ;
 		rdfs:label "glass transition temperature"@en-US ;
 		rdfs:example "Glass transition temperature of cellulose is in the region 200°–250°C"@en-US ;
 		skos:prefLabel "TG"@en-US ;
 		skos:definition "A thermal property denoting the temperature at which a liquid freezes, and the solid and liquid phases are in equilibrium"@en-US ;		
-		rdfs:subClassOf cg:CG_2000297  .
+		rdfs:subClassOf cg:CG_2000323  .
 
 cg:CG_2000313 rdf:type rdfs:Class ;
 		rdfs:label "heat capacity"@en-US ;
@@ -2674,7 +2597,7 @@ cg:CG_2000314 rdf:type rdfs:Class ;
 		rdfs:label "heat of crystallization"@en-US ;
 		rdfs:example "For water, the latent heat of crystallization is 1.7 ± 0.5 kJ mol−1"@en-US ;
 		skos:prefLabel "heat of crystallization"@en-US ;
-		skos:definition "A thermal property denoting the amount of thermal energy a substance requires to raise its temperature by 1°C (with the value depending on which temperature scale is used)"@en-US ;	
+		skos:definition "A thermal property denoting the heat evolved or absorbed when one mole of given substance crystallises from a saturated solution of the same substance"@en-US ;	
 		rdfs:subClassOf cg:CG_2000297 .
 
 cg:CG_2000315 rdf:type rdfs:Class ;
@@ -2689,7 +2612,7 @@ cg:CG_2000316 rdf:type rdfs:Class ;
 		rdfs:label "heat of gasification (lg)"@en-US ;
 		rdfs:example "The heat of gasification  of solid fuel, Polymethylmethacrylate, is significantly influenced by the time dependent thermal properties of the material and approaches an asymptotic value 1600 J/g."@en-US ;
 		skos:prefLabel "heat of gasification (lg)"@en-US ;
-		skos:definition "A thermal property denoting the heat required to produce unit mass of volatile products from unit mass of solid, initially at standard temperature and pressure. "@en-US ;		
+		skos:definition "A thermal property denoting the heat required to produce unit mass of volatile products from unit mass of solid, initially at standard temperature and pressure. "@en-US ;
 		rdfs:subClassOf cg:CG_2000297 .
 
 cg:CG_2000317 rdf:type rdfs:Class ;
@@ -2716,7 +2639,7 @@ cg:CG_2000319 rdf:type rdfs:Class ;
 		skos:definition "A thermal property denoting the lowest temperature in which it spontaneously ignites in a normal atmosphere without an external source of ignition, such as a flame or spark. "@en-US ;
 		skos:altLabel "autoignition temperature"@en-US ;
 		skos:altLabel "kindling point "@en-US ;
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000320 rdf:type rdfs:Class ;
 		rdfs:label "latent heat"@en-US ;
@@ -2732,7 +2655,7 @@ cg:CG_2000321 rdf:type rdfs:Class ;
 		skos:prefLabel "melting point"@en-US ;
 		skos:definition "A thermal property denoting the temperature at which it changes state from solid to liquid. "@en-US ;	
 		skos:closeMatch ncit:NCIT_C63384 ;	
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000322 rdf:type rdfs:Class ;
 		rdfs:label "residual mass"@en-US ;
@@ -2754,7 +2677,7 @@ cg:CG_2000324 rdf:type rdfs:Class ;
 		rdfs:example "Corresponding the initial degradation temperature, cellulose starts degrading around 200°C and lignin 160 °C"@en-US ;
 		skos:prefLabel "initial degradation temperature"@en-US ;
 		skos:definition "A thermal property denoting the temperature from which material degradation occurs. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000325 rdf:type rdfs:Class ;
 		rdfs:label "thermal conductivity, k"@en-US ;
@@ -2768,7 +2691,7 @@ cg:CG_2000326 rdf:type rdfs:Class ;
 		rdfs:example "Cellulose begins to decompose at temperature of 200 °C "@en-US ;
 		skos:prefLabel "thermal decomposition temperature"@en-US ;
 		skos:definition "A thermal property denoting the temperature at which the material begin thermal decomposition."@en-US ;		
-		rdfs:subClassOf cg:CG_2000297 .
+		rdfs:subClassOf cg:CG_2000323 .
 
 cg:CG_2000327 rdf:type rdfs:Class ;
 		rdfs:label "thermal diffusivity"@en-US ;
@@ -2847,7 +2770,6 @@ cg:CG_2000336 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_2000297 .
 cg:CG_2000337 rdf:type rdfs:Class ;
 		rdfs:label "thermomechanical property"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "storage modulus, loss modulus, tandelta"@en-US ;
 		skos:prefLabel "thermomechanical property"@en-US ;
 		skos:definition "A mechanical properties as a function of increasing or decreasing temperature. "@en-US ;		
@@ -2855,7 +2777,6 @@ cg:CG_2000337 rdf:type rdfs:Class ;
 
 cg:CG_2000338 rdf:type rdfs:Class ;
 		rdfs:label "tensile strength retention"@en-US ;
-		rdfs:comment " "@en-US ;
 		rdfs:example "Comparing to polyglyconate (Maxon) and polydioxanone (PDS) sutures, self-reinforced poly L-lactide (SR-PLLA) sutures had the most prolonged tensile strength retention in vitro."@en-US ;
 		skos:prefLabel "tensile strength retention"@en-US ;
 		skos:definition "A thermomechanical property denoting tensile strength of a structure material in vivo as a percentage of its original strength."@en-US ;		
@@ -2870,9 +2791,9 @@ cg:CG_2000339 rdf:type rdfs:Class ;
 		rdfs:subClassOf cg:CG_2000297  .
 
 cg:CG_2000340 rdf:type rdfs:Class ;
-		rdfs:label "Compositional property"@en-US ;
+		rdfs:label "compositional property"@en-US ;
 		rdfs:example "specific gravity, viscosity, elemental composition "@en-US ;
-		skos:prefLabel "Compositional property"@en-US ;
+		skos:prefLabel "compositional property"@en-US ;
 		skos:definition "A  physical property of a material related with its compositions. "@en-US ;
 		rdfs:subClassOf cg:CG_2000037  .
 
@@ -2882,14 +2803,14 @@ cg:CG_2000341 rdf:type rdfs:Class ;
 		skos:prefLabel "composition by volume"@en-US ;
 		skos:altLabel "Volume fraction"@en-US ;
 		skos:definition "A  physical property of a material related with its compositions. "@en-US ;
-		rdfs:subClassOf cg:CG_2000240  .
+		rdfs:subClassOf cg:CG_2000340  .
 
 cg:CG_2000342 rdf:type rdfs:Class ;
 		rdfs:label "composition by weight"@en-US ;
 		rdfs:example "The percentage of an element in a compound is 100 times the fraction, so for water the mass percent hydrogen is 11.11% and the mass percent oxygen is 88.89%."@en-US ;
 		skos:prefLabel "composition by weight"@en-US ;
 		skos:definition "A  compositional property of a material indicating the composition content by weight percentage. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000240 .
+		rdfs:subClassOf cg:CG_2000340 .
 
 cg:CG_2000343 rdf:type rdfs:Class ;
 		rdfs:label "cellulose content"@en-US ;
@@ -2897,7 +2818,7 @@ cg:CG_2000343 rdf:type rdfs:Class ;
 		skos:prefLabel "cellulose content"@en-US ;
 		skos:definition "A composition property measuring the weight percentage of cellulose in a substance. "@en-US ;		
 		skos:closeMatch to:TO_0000993 ;
-		rdfs:subClassOf cg:CG_2000242  .
+		rdfs:subClassOf cg:CG_2000342  .
 
 cg:CG_2000344 rdf:type rdfs:Class ;
 		rdfs:label "lignin content"@en-US ;
@@ -2905,35 +2826,35 @@ cg:CG_2000344 rdf:type rdfs:Class ;
 		skos:prefLabel "lignin content "@en-US ;
 		skos:definition "A composition property measuring the weight percentage of lignin in a substance. "@en-US ;	
 		skos:closeMatch to:TO_0000731 ;	
-		rdfs:subClassOf cg:CG_2000242 .
+		rdfs:subClassOf cg:CG_2000342 .
 
 cg:CG_2000345 rdf:type rdfs:Class ;
 		rdfs:label "hemicellulose content"@en-US ;
 		rdfs:example "Cellulose and hemicellulose contents of algal biomass were 7.1% and 16.3%"@en-US ;
 		skos:prefLabel "hemicellulose content"@en-US ;
 		skos:definition "A compositional property measuring the weight percentage of hemicellulose in a substance. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000242 .
+		rdfs:subClassOf cg:CG_2000342 .
 
 cg:CG_2000346 rdf:type rdfs:Class ;
 		rdfs:label "dry solid content"@en-US ;
 		rdfs:example "University of Maine developed a process using a plate & frame press for MFC dewatering and achieve a pressed cake with 18 wt.% solids content."@en-US ;
 		skos:prefLabel "dry solid content"@en-US ;
 		skos:definition "A compositional property measuring the weight percentage of the non-solvent, non-water ingredients in the mixture of substance. "@en-US ;		
-		rdfs:subClassOf cg:CG_2000242 .
+		rdfs:subClassOf cg:CG_2000342 .
 
 cg:CG_2000347 rdf:type rdfs:Class ;
-		rdfs:label "ashcontent"@en-US ;
+		rdfs:label "ash content"@en-US ;
 		rdfs:example "the ash content of the cellulose can be reduced from 0.10% to 0.03% by washing the cellulose with an aqueous solution of an aldohexonic acid, its lactone or its salt"@en-US ;
 		skos:prefLabel "ash content"@en-US ;
 		skos:definition "A compositional property measuring the total amount of minerals present after the water and organic matter have been removed by heating in the presence of oxidizing agents. "@en-US ;	
-		rdfs:subClassOf cg:CG_2000242 .
+		rdfs:subClassOf cg:CG_2000342 .
 
 cg:CG_2000348 rdf:type rdfs:Class ;
 		rdfs:label "kappa number"@en-US ;
 		rdfs:example "Cellulose pulp produced under optimal conditions has a Kappa number of 45–46"@en-US ;
 		skos:prefLabel "kappa number"@en-US ;
 		skos:definition "A compositional property measuring the standard potassium permanganate solution that the pulp consumes"@en-US ;
-		rdfs:subClassOf cg:CG_2000242 .
+		rdfs:subClassOf cg:CG_2000342 .
 
  cg:CG_2000349 rdf:type rdfs:Class ;
 		rdfs:label "utilization property"@en-US ;
@@ -2947,7 +2868,7 @@ cg:CG_2000350 rdf:type rdfs:Class ;
 		rdfs:example "Theoretically, 95% of these waste textiles can be recycled. In fact, the recycling utilization rate is extremely low ( in Germany and Britain,  less than 30%; in China, less than 10%)"@en-US ;
 		skos:prefLabel "recycling rate"@en-US ;
 		skos:definition "A material utilization property indicating the recycled and composted divided by the total amount of MSW recycled, composted, landfilled, or incinerated."@en-US ;
-		rdfs:subClassOf cg:CG_2000249 .
+		rdfs:subClassOf cg:CG_2000349 .
 
 cg:CG_2000351 rdf:type rdfs:Class ;
 		rdfs:label "shelf life"@en-US ;
@@ -2955,4 +2876,4 @@ cg:CG_2000351 rdf:type rdfs:Class ;
 		skos:prefLabel "shelf life"@en-US ;
 		skos:definition "A material utilization property measuring the length of time that a commodity may be stored without becoming unfit for use, consumption, or sale. "@en-US ;	
 		skos:closeMatch ncit:NCIT_C70855 ;
-		rdfs:subClassOf cg:CG_2000249 .
+		rdfs:subClassOf cg:CG_2000349 .
