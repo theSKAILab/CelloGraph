@@ -1,14 +1,16 @@
 import xml.etree.ElementTree as ET
-
+import io
+import copy
 
 #this is the list of a bunch of spacing characters that show up in the xml that I don't want to include when doing string processing.
 formatList = ['\n', '\t']
 
 #just gets the div object cuz there's some junk to cut through first.
 def findDiv(filepath):
-    tree = ET.parse(filepath)
+
+    with io.open(filepath, "rb") as f:
+        root = ET.parse(f).getroot()
     
-    root = tree.getroot() 
     text = root[2]
     body = text[0]
 
@@ -28,7 +30,6 @@ def clean(textArr):
 
 
 
-
 #accepts a long string, designed to return a list of indices for where each individual word is.    
 def stringBreaker(longstr):
     retval = []
@@ -36,14 +37,15 @@ def stringBreaker(longstr):
     bookmark = 0
     dividers = [' ']
     inTag = False
+
+    newString = copy.copy(longstr)
+
     for c in range(len(longstr)):
         testChar = chr(longstr[c])
         if testChar == '>':
             inTag = False
             bookmark = c+1
         elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):
-            if('4' == longstr[bookmark:c].decode()):
-                print("break")
             
             retval.append([bookmark, c])
             words.append(longstr[bookmark:c].decode())
@@ -64,10 +66,12 @@ def stringFixer(supers, subs, map, longstr):
         start = tagDex[0]
         end = tagDex[1]
 
-        text = longstr[start:end].decode()
 
         longstr = longstr[:start] + bytes("<", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[start:end] + bytes("</", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[end:]
         tagDex, type = tags[len(tags)-1]
+
+    
+    
     return longstr
 
 
@@ -125,7 +129,25 @@ def strWords(filepath):
 
 def longStr(filepath):
     tree = ET.parse(filepath)
-    return ET.tostring(tree.getroot())
+    
+    longString = ET.tostring(tree.getroot())
+
+
+    c = -1
+
+    while c < len(longString):
+        c += 1
+
+        #if there's a character that's being stupid and was replaced with a Unicode encoding number
+        if(longString[c:c+2] == b"&#"):
+
+            #replace it with the right character. 
+            #Yes I have to decode and then re-encode it that's how chr() works.
+
+            longString = longString[:c] + chr(int(longString[c+2:c+5].decode())).encode() + longString[c+6:]
+
+    
+    return longString
 
 
 def lastAmong(supers, subs):
@@ -223,27 +245,13 @@ def addScript(filepath, supers, subs):
     return body
 
 
-#def rebuild(filepath, body):
-#    tree = ET.parse(filepath)
-#    root = tree.getroot()
-#
-#    root[2].remove(root[2][0])
-#    ET.SubElement(root[2], "body")
-#    root[2][0] = body
-#
-#    newTree = ET.ElementTree(root)
-#    
-#    newTree.write(filepath + "scitex.xml")
-#
-#    return tree
 
 def rebuild(filepath, longstr, supers, subs):
 
     longstr = stringFixer(supers, subs, stringBreaker(longstr), longstr)
 
-    output = open("HeinzeSciTex5.xml", "w")
-    output.write(longstr.decode())
-    output.close()
+    with io.open(filepath,'w',encoding='utf8') as f:
+        f.write(longstr.decode(encoding="UTF-8"))
 
     return longstr
 
@@ -304,7 +312,7 @@ def manualSplit(text):
     bookmark = 0
     for i in range(len(text)):
         if(text[i] == ' '):
-            retval.append(text[bookmark:i])
+            retval.append(text[bookmark:i].encode())
             bookmark = i+1
 
     return retval
@@ -339,9 +347,6 @@ def grobidWords(filepath, output="arr"):
 
 #returns the ith word.
 #def grobidDex(filepath, i):
-
-
-grobidWords("scitex/grobidAltoStuff/HeinzeGrobid.xml")
 
 
 #go through page by page and remove page headers as you find them

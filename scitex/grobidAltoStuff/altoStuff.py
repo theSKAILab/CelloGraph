@@ -179,7 +179,7 @@ def AltoLists(filepath):
                             wordList.append(string)
     
     for word in wordList:
-        stringList.append(word.get("CONTENT"))
+        stringList.append(word.get("CONTENT").encode())
     
     stringList = clean(stringList)
     return stringList, wordList, superFonts, subFonts
