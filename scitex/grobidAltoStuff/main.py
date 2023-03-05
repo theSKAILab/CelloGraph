@@ -2,56 +2,61 @@ import grobidStuff
 import altoStuff
 import tryingDiff
 
-groStrings = grobidStuff.grobidWords("scitex/grobidAltoStuff/HeinzeGrobid.xml")
-altoStrings, altoWords, subFonts, superFonts = altoStuff.AltoLists("scitex/grobidAltoStuff/HeinzeAlto.xml")
+def addScript(grobidpath, altopath, outputpath):
 
-matches = tryingDiff.getMatches(groStrings, altoStrings)
+    groStrings = grobidStuff.grobidWords(grobidpath)
+    altoStrings, altoWords, subFonts, superFonts = altoStuff.AltoLists(altopath)
 
-subs = []
-supers = []
+    matches = tryingDiff.getMatches(groStrings, altoStrings)
 
-subStrings = []
-superStrings = []
-matchesWords = []
+    subs = []
+    supers = []
 
-totalLost = 0
-prev = 0
-biggestGap = [0, 0]
+    subStrings = []
+    superStrings = []
+    matchesWords = []
 
-for match in matches:
-    lost = match[1]-prev
-    if(lost > biggestGap[0]):
-        biggestGap[0] = lost
-        biggestGap[1] = match[1]
+    totalLost = 0
+    prev = 0
+    biggestGap = [0, 0]
 
-    totalLost += lost
-    prev = match[0]+match[2]
+    for match in matches:
+        lost = match[1]-prev
+        if(lost > biggestGap[0]):
+            biggestGap[0] = lost
+            biggestGap[1] = match[1]
+
+        totalLost += lost
+        prev = match[0]+match[2]
     
-    matchesWords.append([match[1], match[2], groStrings[match[1]:match[1]+match[2]], match[0], altoStrings[match[0]:match[0]+match[2]]])
+        matchesWords.append([match[1], match[2], groStrings[match[1]:match[1]+match[2]], match[0], altoStrings[match[0]:match[0]+match[2]]])
 
-for match in matches:
-    altDex, groDex, matchLen = match
-    for i in range(matchLen):
-        altoW = altoStrings[altDex+i]
-        groW = groStrings[groDex+i]
+    for match in matches:
+        altDex, groDex, matchLen = match
+        for i in range(matchLen):
+            altoW = altoStrings[altDex+i]
+            groW = groStrings[groDex+i]
 
 
-        script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
-        if(script == "super"):
-            supers.append([groDex+i, groStrings[groDex+i]])
-            superStrings.append(groStrings[groDex+i])
-        if(script == "sub"):
-            subs.append([groDex+i, groStrings[groDex+i]])
-            subStrings.append(groStrings[groDex+i])
+            script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
+            if(script == "super"):
+                supers.append([groDex+i, groStrings[groDex+i]])
+                superStrings.append(groStrings[groDex+i])
+            if(script == "sub"):
+                subs.append([groDex+i, groStrings[groDex+i]])
+                subStrings.append(groStrings[groDex+i])
 
-        
 
-groLongStr = grobidStuff.longStr("scitex/grobidAltoStuff/HeinzeGrobid.xml")
+    #fixedBody = grobidStuff.addScript("scitex/grobidAltoStuff/HeinzeGrobid.xml", supers, subs)
 
-#fixedBody = grobidStuff.addScript("scitex/grobidAltoStuff/HeinzeGrobid.xml", supers, subs)
+    #outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", fixedBody)
 
-#outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", fixedBody)
+    grobidStuff.rebuild(grobidpath, outputpath, supers, subs)
 
-outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/output.xml", groLongStr, supers, subs)
 
-print("hi")
+
+grobidpath = "scitex/grobidAltoStuff/HeinzeGrobid.xml"
+altopath = "scitex/grobidAltoStuff/HeinzeAlto.xml"
+outputpath = "scitex/grobidAltoStuff/testOutput.xml"
+
+addScript(grobidpath, altopath, outputpath)

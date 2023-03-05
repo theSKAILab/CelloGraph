@@ -6,6 +6,8 @@ import copy
 formatList = ['\n', '\t']
 
 #just gets the div object cuz there's some junk to cut through first.
+# filepath: String filepath
+# returns: ElementTree.Element which contains the main text.
 def findDiv(filepath):
 
     with io.open(filepath, "rb") as f:
@@ -16,7 +18,9 @@ def findDiv(filepath):
 
     return body
 
-
+#removes empty strings from a list of strings.
+# textArr: List of strings
+# returns: List of strings
 def clean(textArr):
     if(len(textArr) == 0):
         return textArr
@@ -31,56 +35,91 @@ def clean(textArr):
 
 
 #accepts a long string, designed to return a list of indices for where each individual word is.    
+# longstr: String version of the grobid XML.
+# returns: List of shape [[int, int], ...] where retval[0] is the first and last character of the first word.
 def stringBreaker(longstr):
     retval = []
     words = []
     bookmark = 0
-    dividers = [' ']
     inTag = False
-
-    newString = copy.copy(longstr)
 
     for c in range(len(longstr)):
         testChar = chr(longstr[c])
         if testChar == '>':
             inTag = False
             bookmark = c+1
-        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):
-            
+        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):            
             retval.append([bookmark, c])
             words.append(longstr[bookmark:c].decode())
-
-
             bookmark = c+1
         if testChar == '<':
             inTag = True
     return retval
 
 
-def stringFixer(supers, subs, map, longstr):
-    tags = assembleTags(supers, subs, map)
+#finds the number of words before the main text so it can be used as an offset.
+# filepath: String filepath of the grobid output
+# returns: int, the number of words present before the main text.
+def findDivOffSet(filepath):
+    with io.open(filepath, "rb") as f:
+        root = ET.parse(f).getroot()
+
+    #need the len of root[0] and root[1]
+    string1 = ET.tostring(root[0])
+    string2 = ET.tostring(root[1])
+
+    words1 = stringBreaker(string1)
+    words2 = stringBreaker(string2)
+
+    words = []
+
+    for i in range(len(words1)):
+        words.append(string1.decode()[words1[i][0]:words1[i][1]])
+    for i in range(len(words2)):
+        words.append(string2.decode()[words2[i][0]:words2[i][1]])
+
+    wordOff = len(words)
+
+    return wordOff
+
+
+#puts all the script tags in.
+# filepath: String
+# supers: List of shape [[int, bytestring], ...] of which words need to be surrounded by superscript tags.
+# subs: List of shape [[int, bytestring], ...] of which words need to be surrounded by subscript tags.
+# map: List of shape [[int, int], ...] where map[0] is the first word, and contains the index of its first and last character.
+# returns: String, which can be turned into an XML file.
+def stringFixer(filepath, supers, subs, map):
+
+    wordOffset = findDivOffSet(filepath)
+
+    tags = assembleTags(supers, subs, map, wordOffset)
+
+    longstr = longStr(filepath)
     
 
     for i in range(len(tags)):
         tagDex, type = tags[i]
-        start = tagDex[0]
+        start = tagDex[0] 
         end = tagDex[1]
 
-
+        
         longstr = longstr[:start] + bytes("<", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[start:end] + bytes("</", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[end:]
-        tagDex, type = tags[len(tags)-1]
-
-    
+        tagDex, type = tags[len(tags)-1]  
     
     return longstr
 
 
-#use the map for the tags so that 
-def assembleTags(supers, subs, map):
+# supers: list of shape [[int, bytestring], ...] where int is the index of a superscript word.
+# subs: list of shape [[int, bytestring], ...] where int is the index of a subscript word.
+# map: list of shape [[int, int], ...] where map[0] is the first and last character of the first word.
+# offset: an offset to be applied to the map.
+def assembleTags(supers, subs, map, offset):
+
     retval = []
     while(len(supers)!=0 or len(subs)!=0):
         dex, type = lastAmong(supers, subs)
-        retval.append([map[dex], type])
+        retval.append([map[dex+offset], type])
         if type == "sub":
             subs.pop(len(subs)-1)
         if type == "super":
@@ -88,50 +127,16 @@ def assembleTags(supers, subs, map):
     return retval
 
 
-
-
-
-def strWords(filepath):
-    tree = ET.parse(filepath)
-    longstr = ET.tostring(tree.getroot())
-    
-    retval = []
-    bookmark = 0
-    dividers = [' ']
-    inTag = False
-
-    
-
-    for c in range(len(longstr)):
-        testChar = chr(longstr[c])
-        if testChar == '>':
-            inTag = False
-            bookmark = c+1
-        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):
-            
-            #put the word into the list of words
-            #yes I have to do it like this if I typecast as a string it adds b' to the beginning of every string
-            #I don't know why and just increasing the index deletes from the word instead of the deleting the b'
-            wordArr = [*longstr[bookmark:c]]
-            word = ""
-            for x in range(len(wordArr)):
-                word += chr(wordArr[x])
-                if(chr(wordArr[x]) in formatList):
-                    word = "\\"
-                    break
-            if word != "\\":
-                retval.append(word)
-                bookmark = c+1
-        if testChar == '<':
-            inTag = True
-    return retval
-
-
+# ET.tostring() with extra steps.
+# filepath: String filepath of the grobid output.
+# returns: String representation of the XML but with all irregular characters formatted properly.
 def longStr(filepath):
+
     tree = ET.parse(filepath)
     
     longString = ET.tostring(tree.getroot())
 
+    #wordsString = grobidWords(filepath, "str")
 
     c = -1
 
@@ -142,14 +147,17 @@ def longStr(filepath):
         if(longString[c:c+2] == b"&#"):
 
             #replace it with the right character. 
-            #Yes I have to decode and then re-encode it that's how chr() works.
+            #Yes I have to decode and then re-encode it that is unfortunately how chr() works.
 
             longString = longString[:c] + chr(int(longString[c+2:c+5].decode())).encode() + longString[c+6:]
 
     
     return longString
 
-
+# returns the index and type of whichever script tag is last in the document.
+# supers: list of shape [[int, bytestring], ...] of all superscript tags
+# subs: list of shape [[int, bytestring], ...] of all subscript tags.
+# returns: int, string where int is the index of the tag and string is "sub", "super", or "neither"
 def lastAmong(supers, subs):
     if(len(subs) == 0 and len(supers) == 0):
         return -1, 'neither'
@@ -168,144 +176,27 @@ def lastAmong(supers, subs):
     else:
         return lastSuper, 'super'
 
-#filepath to the GROBID XML file
-#supers is a list of indices that have superscript
-#subs is the same but for subscript
-#returns a remade BODY XML element with all script tags added.
 
-#could this be broken into multiple functions? maybe, but the majority of it is a 4d loop
-def addScript(filepath, supers, subs):
+# adds the script tags and writes out the output.
+# sourcePath: String, filepath to the grobid output
+# outputName: String, name of the output file.
+# supers: list of shape [[int, bytestring], ...] where int is the location of superscript words.
+# subs: list of shape [[int, bytestring], ...] where int is the location of subscript words.
+# returns: String, the contents of the XML
+def rebuild(sourcePath, outputName, supers, subs):
+    longstr = longStr(sourcePath)
 
-    supers.sort()
-    subs.sort()
+    longstr = stringFixer(sourcePath, supers, subs, stringBreaker(longstr))
 
-    body = findDiv(filepath)
-
-    dex = 0
-    targetDex, type = newTarget(supers, subs)
-    
-
-    for divDex in range(len(body)):
-        div = body[divDex]
-        if(len(div) >0):
-            header = div[0]
-            if(header.text):
-                dex += len(header.text.split(' '))
-                for paraDex in range(len(div[1:])):
-                    para = div[paraDex]
-                    sentDex = -1
-                    while sentDex < len(para)-1:
-                        sentDex += 1
-                        sent = body[divDex][paraDex][sentDex]
-
-                        if(sent.text):
-                            sentCount = len(sent.text.split(' '))
-                            if(dex + sentCount > targetDex and targetDex>0):
-                                body[divDex][paraDex][sentDex] = injectScript(sent, targetDex-dex, type)
-                                if(type == 'supers'):
-                                    supers.pop(0)
-                                elif(type == 'subs'):
-                                    subs.pop(0)
-                                targetDex, type = newTarget(supers, subs)
-                                sentDex -= 1
-                                continue
-                            else:
-                                dex += sentCount
-
-                        #if there are citations breaking up the sentence, add those
-                        if(len(body[divDex][paraDex][sentDex])>0):
-                            citeDex = -1
-                            while citeDex < len(body[divDex][paraDex][sentDex])-1:
-                                citeDex += 1
-                                cite = body[divDex][paraDex][sentDex][citeDex]
-                                if(cite.text):
-                                    dex += len(cite.text.split(' '))
-                                if(cite.tail):
-                                    sentCount = len(cite.tail.split(' '))
-                                    if(dex + sentCount > targetDex and targetDex>0):
-                                        #sentLen = len(sent)
-                                        #bodyLen = len(body[i][j][k])
-                                        #sentKids, bodyKids = [], []
-                                        #for z in sent:
-                                        #    sentKids.append(z)
-                                        #for y in body[i][j][k]:
-                                        #    bodyKids.append(y)
-                                        body[divDex][paraDex][sentDex][citeDex] = injectScript(sent[citeDex], targetDex-dex, type, "tail")
-                                        
-                                        if(type == 'supers'):
-                                            supers.pop(0)
-                                        elif(type == 'subs'):
-                                            subs.pop(0)
-                                        targetDex, type = newTarget(supers, subs)
-                                        citeDex -= 1
-                                        continue
-                                    else:
-                                        dex += len(cite.tail.split(' '))
-
-    return body
-
-
-
-def rebuild(filepath, longstr, supers, subs):
-
-    longstr = stringFixer(supers, subs, stringBreaker(longstr), longstr)
-
-    with io.open(filepath,'w',encoding='utf8') as f:
+    with io.open(outputName,'w',encoding='utf8') as f:
         f.write(longstr.decode(encoding="UTF-8"))
 
     return longstr
 
 
-
-#sent is the sentence the script is being injected into
-#index is where the script is. This will be an int for one word or an array for a string
-#type will be "super" or "sub" respectively.
-
-#returns a sentence tag that should be exactly the same except the script tag has been added.
-
-def injectScript(sent, index, type, mode="text"):
-    if(index < 0):
-        return sent
-
-    if(mode == "text"):
-        text = sent.text.split(' ')
-    else:
-        text = sent.tail.split(' ')
-    
-
-    retval = ET.Element('s')
-    retval.text = ' '.join(text[:index])
-
-    script = ET.SubElement(retval, type)
-    script.text = text[index]
-
-    if(index < len(text)-1):
-        script.tail = ' '.join(text[index+1:])
-
-    for ele in sent:
-        newEle = ET.SubElement(retval, ele.tag)
-        newEle = ele
-        for sub in ele:
-            newSubEle = ET.SubElement(newEle, sub.tag)
-            newSubEle = sub
-
-    return retval
-
-
-def newTarget(supers, subs):
-    if(len(supers) == 0 and len(subs) == 0):
-        return -1, "neither"
-    if(len(supers) == 0):
-        return subs[0][0], "subs"
-    if(len(subs) == 0):
-        return supers[0][0], "supers"
-
-    if(supers[0] > subs[0]):
-        return subs[0][0], "subs"
-    else:
-        return supers[0][0], "supers"
-
-
+#string.split(' ') with extra steps because we want them to be bytestrings.
+# text: String text
+# returns: list of shape [bytestring, ...] of the text, split by spaces.
 def manualSplit(text):
     retval = []
 
@@ -314,6 +205,7 @@ def manualSplit(text):
         if(text[i] == ' '):
             retval.append(text[bookmark:i].encode())
             bookmark = i+1
+    retval.append(text[bookmark:].encode())
 
     return retval
 
@@ -342,11 +234,8 @@ def grobidWords(filepath, output="arr"):
                                     retval += manualSplit(cite.tail)
     
     retval = clean(retval)
+
+    if(output == "str"):
+        return b' '.join(retval)
+
     return retval
-
-
-#returns the ith word.
-#def grobidDex(filepath, i):
-
-
-#go through page by page and remove page headers as you find them
