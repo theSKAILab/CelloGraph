@@ -110,8 +110,16 @@ cg:CG_1000002 rdf:type owl:ObjectProperty .
 bfo:BFO_0000019 rdf:type owl:Class .
 
 
+###  http://purl.obolibrary.org/obo/chebi.owl#CHEBI_23367
+chebi:CHEBI_23367 rdf:type owl:Class .
+
+
 ###  http://purl.obolibrary.org/obo/chebi.owl#CHEBI_24431
 chebi:CHEBI_24431 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/chebi.owl#CHEBI_33250
+chebi:CHEBI_33250 rdf:type owl:Class .
 
 
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_0000007
@@ -143,7 +151,7 @@ cg:CG_2000002 rdf:type owl:Class ;
                                 owl:onProperty cg:CG_1000002 ;
                                 owl:allValuesFrom cg:CG_0000008
                               ] ;
-              rdfs:label "material quality"@en-us ;
+              rdfs:label "quality of material"@en-us ;
               skos:altLabel "material property"@en-us ;
               skos:definition "material quality is a quality of a substance that is classified as being a material substance (rather than an chemical substance)."@en-us ;
               skos:example "the color or melting point of copper alloy no 210, the tensile strength of cellulose, the average length of microfibrils in cellulose" ;
@@ -437,7 +445,7 @@ cg:CG_2000028 rdf:type owl:Class ;
               rdfs:subClassOf cg:CG_2000002 ;
               rdfs:comment "it is about chemical properties of materials entities, not the chemical properties of molecular entities. "@en-us ;
               rdfs:example "chemical stability, pH, surface energy"@en-us ;
-              rdfs:label " chemical property of material entity "@en-us ;
+              rdfs:label "chemical quality of material"@en-us ;
               skos:altLabel "material chemical quality "@en-us ,
                             "material entity chemical quality "@en-us ;
               skos:definition "A material property that becomes evident during, or after, a chemical reaction"@en-us ;
@@ -471,18 +479,9 @@ cg:CG_2000032 rdf:type owl:Class ;
               skos:prefLabel "Reactivity"@en-us .
 
 
-###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000033
-cg:CG_2000033 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000028 ;
-              rdfs:example "European Commission has communicated nanomaterial identification guidelines that a material potentially composed of nanoparticles and with a volume specific surface area in the range of VSSA > 20 m2/m3 up to VSSA > 60 m2/m3 is entitled as a nanomaterial."@en-us ;
-              rdfs:label "specific surface area"@en-us ;
-              skos:definition "A chemical property defined as the total surface area of a material per unit of mass or solid or bulk volume"@en-us ;
-              skos:prefLabel "Specific surface area"@en-us .
-
-
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000034
 cg:CG_2000034 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000028 ;
+              rdfs:subClassOf cg:CG_2000037 ;
               rdfs:example "the surface energy of silicone (111plane) is 1240 mJ/m2, Polytetrafluoroethylene (PTFE) surface energy is 19 mJ/m2"@en-us ;
               rdfs:label "surface energy"@en-us ;
               skos:altLabel "Surface free energy, interfacial free energy"@en-us ;
@@ -492,29 +491,18 @@ cg:CG_2000034 rdf:type owl:Class ;
 
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000035
 cg:CG_2000035 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000028 ;
+              rdfs:subClassOf cg:CG_2000037 ;
               rdfs:example "Surface tension"@en-us ;
               rdfs:label "surface tension"@en-us ;
               skos:definition "A chemical property describing the tendency of liquid surfaces at rest to shrink into the minimum surface area possible"@en-us ;
               skos:prefLabel "Surface tension"@en-us .
 
 
-###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000036
-cg:CG_2000036 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000028 ;
-              rdfs:comment "mechanochemistry includes many chemical transformations induced by mechanical energy"@en-us ;
-              rdfs:example " "@en-us ;
-              rdfs:label "molecular mechnochemical properties"@en-us ;
-              skos:altLabel "Mechanochemistry"@en-us ;
-              skos:definition "A chemical properties of a reactant system modified through the absorption of mechanical energy at the single molecular level"@en-us ;
-              skos:prefLabel "Molecular mechnochemical properties"@en-us .
-
-
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000037
 cg:CG_2000037 rdf:type owl:Class ;
               rdfs:subClassOf cg:CG_2000002 ;
               rdfs:example "colour, hardness, conductivity, density"@en-us ;
-              rdfs:label " physical property of material entity "@en-us ;
+              rdfs:label "physical quality of material"@en-us ;
               skos:altLabel "material entity physical quality "@en-us ,
                             "material physical quality "@en-us ;
               skos:definition " A material property that is measurable without changing the structure of the material entity."@en-us ;
@@ -2380,22 +2368,13 @@ cg:CG_2000228 rdf:type owl:Class ;
               skos:prefLabel "annual ring"@en-us .
 
 
-###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000229
-cg:CG_2000229 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000227 ;
-              rdfs:example "Surface area, plane area"@en-us ;
-              rdfs:label "area"@en-us ;
-              skos:definition "A structural property that expresses the extent of a region on the plane or on a curved surface"@en-us ;
-              skos:prefLabel "area"@en-us .
-
-
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000230
 cg:CG_2000230 rdf:type owl:Class ;
               rdfs:subClassOf cg:CG_2000227 ;
               rdfs:example "a 25 × 75 mm bar would have an aspect ratio of 3"@en-us ;
               rdfs:label "aspect ratio"@en-us ;
               skos:altLabel " "@en-us ;
-              skos:definition "A structural property describing a proportional relationship between an image's width and height."@en-us ;
+              skos:definition "A structural property describing a proportional relationship between the length and width or diameter of a material structure"@en-us ;
               skos:prefLabel "aspect ratio"@en-us .
 
 
@@ -2769,7 +2748,7 @@ cg:CG_2000268 rdf:type owl:Class ;
               rdfs:subClassOf cg:CG_2000267 ;
               rdfs:comment "The gas permeability of plastic films is important in packaging, containment, and agricultural fumigation"@en-us ;
               rdfs:example "Solution-casted CNC films has higher gas permeability than films made of microfibrillated cellulose (MFC"@en-us ;
-              rdfs:label "Gas permeability"@en-us ;
+              rdfs:label "gas permeability"@en-us ;
               skos:altLabel "volumetric permeability"@en-us ;
               skos:definition "A structural property that measures the passage of a specific volume of a gas through a material."@en-us ;
               skos:prefLabel "gas permeability"@en-us .
@@ -3021,17 +3000,6 @@ cg:CG_2000294 rdf:type owl:Class ;
               skos:altLabel "MFA"@en-us ;
               skos:definition "A structural property of a liquid to maintain contact with a solid surface, resulting from intermolecular interactions when the two are brought together. "@en-us ;
               skos:prefLabel "microfibril angle"@en-us .
-
-
-###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000295
-cg:CG_2000295 rdf:type owl:Class ;
-              rdfs:subClassOf cg:CG_2000227 ;
-              rdfs:comment " "@en-us ;
-              rdfs:example ""@en-us ;
-              rdfs:label " "@en-us ;
-              skos:altLabel " "@en-us ;
-              skos:definition "A Structural property featuring the angle between the direction of the helical windings of cellulose microfibrils in the secondary cell wall of fibres and tracheids and the long axis of cell. "@en-us ;
-              skos:prefLabel " "@en-us .
 
 
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000296
@@ -3455,9 +3423,9 @@ cg:CG_2000339 rdf:type owl:Class ;
 cg:CG_2000340 rdf:type owl:Class ;
               rdfs:subClassOf cg:CG_2000037 ;
               rdfs:example "specific gravity, viscosity, elemental composition "@en-us ;
-              rdfs:label "Compositional property"@en-us ;
+              rdfs:label "compositional property"@en-us ;
               skos:definition "A  physical property of a material related with its compositions. "@en-us ;
-              skos:prefLabel "Compositional property"@en-us .
+              skos:prefLabel "compositional property"@en-us .
 
 
 ###  http://www.spatialai.org/CelloGraph/v1.0/CG_2000341
@@ -3558,14 +3526,6 @@ cg:CG_2000351 rdf:type owl:Class ;
               rdfs:label "shelf life"@en-us ;
               skos:definition "A material utilization property measuring the length of time that a commodity may be stored without becoming unfit for use, consumption, or sale. "@en-us ;
               skos:prefLabel "shelf life"@en-us .
-
-
-###  http://www.spatialai.org/CelloGraph/v1.0/CHEBI_23367
-chebi:CHEBI_23367 rdf:type owl:Class .
-
-
-###  http://www.spatialai.org/CelloGraph/v1.0/CHEBI_33250
-chebi:CHEBI_33250 rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
