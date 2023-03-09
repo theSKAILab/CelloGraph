@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">An Update on Overview of Cellulose, Its Structure and Applications</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>IntechOpen</publisher>
+				<availability status="unknown"><p>Copyright IntechOpen</p>
+				</availability>
+				<date type="published" when="2019-12-18">2019-12-18</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Praveen</forename><surname>Kumar Gupta</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Shreeya</forename><surname>Sai Raghunath</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Deepali</forename><surname>Venkatesh Prasanna</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Priyadharsini</forename><surname>Venkat</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Vidhya</forename><surname>Shree</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Chandrananthi</forename><surname>Chithananthan</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Shreya</forename><surname>Choudhary</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Krithika</forename><surname>Surender</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Keerthana</forename><surname>Geetha</surname></persName>
+						</author>
+						<title level="a" type="main">An Update on Overview of Cellulose, Its Structure and Applications</title>
+					</analytic>
+					<monogr>
+						<title level="m">Cellulose</title>
+						<imprint>
+							<publisher>IntechOpen</publisher>
+							<date type="published" when="2019-12-18" />
+						</imprint>
+					</monogr>
+					<idno type="MD5">7D779EBB1305A523EE3B92B8F25BEFB4</idno>
+					<idno type="DOI">10.5772/intechopen.84727</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-03-09T03:34+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>properties</term>
+					<term>chemistry</term>
+					<term>types</term>
+					<term>microcrystalline cellulose</term>
+					<term>cellulose nanocrystals</term>
+					<term>cellulose nanofibres</term>
+					<term>extraction</term>
+					<term>characterization</term>
+					<term>NMR</term>
+					<term>SEM</term>
+					<term>FTIR</term>
+					<term>BJH</term>
+					<term>biomedical applications</term>
+					<term>pharmaceutical applications</term>
+					<term>renewable energy applications</term>
+					<term>waste management</term>
+					<term>drug delivery</term>
+					<term>wound healing</term>
+					<term>scaffolding</term>
+					<term>implants</term>
+					<term>biofuels</term>
+					<term>consumables Cellulose</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Cellulose (C 6 H 10 O 5 ) n is one of the most ubiquitous organic polymers on the planet. It is a significant structural component of the primary cell wall of green plants, various forms of algae and oomycetes. It is a polysaccharide consisting of a linear chain of several hundred to many thousands of β(1 → 4) linked d-glucose units. There are various extraction procedures for cellulose developed by using different processes like oxidation, etherification and esterification which convert the prepared celluloses in to cellulose derivatives. Since it is a non-toxic, bio-degradable polymer with high tensile and compressive strength, it has widespread use in various fields such as nanotechnology, pharmaceutical industry, food industry, cosmetics, textile and paper industry, drug-delivery systems in treating cancer and other diseases. Micro-crystalline cellulose in particular is among the most frequently used cellulose derivatives in the food, cosmetics, pharma industry, etc. and is an important excipient due to its binding and tableting properties, characterized by its plasticity and cohesiveness when wet. Bacterial cellulose's high dispensability, tasteless and odourless nature provides it with lot of industrial applications. Currently, about half of the waste produced in India contains about 50% cellulose which can be used productively. This chapter deals with the chemistry of cellulose, its extraction and its properties which help various industries to make the most of it.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Cellulose is the most abundant biopolymer available in nature, since it is one of the major components of the cell walls of most of the plants <ref type="bibr" target="#b0">[1]</ref>. It is a homopolymer of anhydroglucose, with the glucose residues linked in a ß-1,4 fashion <ref type="bibr" target="#b1">[2]</ref>. Cell walls of plant cells attribute their mechanical strength to cellulose. Cellulose owes its structural properties to the fact that it can retain a semi-crystalline state of aggregation even in an aqueous environment, which is unusual for a polysaccharide <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b3">4]</ref>.</p><p>As far as cellulose based products are concerned, paperboard and paper are the most commonly used ones <ref type="bibr" target="#b4">[5]</ref>. Smaller amounts of cellulose when processed under appropriate conditions, can be converted to a wide variety of derivatives, these can be used in manufacture of few commercial products like cellophane and rayon <ref type="bibr" target="#b5">[6]</ref>.</p><p>Since cellulose is a homopolymer of a glucose derivative, it is a great source of fermentable sugar. It is cultivated in the form of energy crops for the production of ethanol, ethers, acetic acid, etc. Besides energy requirements the industrial demands of cellulose are fulfilled by wood pulp and cotton crops <ref type="bibr" target="#b6">[7]</ref>.</p><p>Cellulose also fulfils the dietary requirements of some animals, particularly ruminants and termite, they can digest cellulose with help of symbiotic microorganisms present in their gut, while some organisms secrete a group of enzymes called cellulases to aid the degradation of cellulose molecules <ref type="bibr" target="#b7">[8]</ref>. Human beings are unable to digest cellulose due to lack of cellulases, thus cellulose acts as a hydrophilic bulking agent for faeces and potentially aids in defecation <ref type="bibr" target="#b8">[9]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Overview</head><p>Among the various raw materials which nature has placed at our disposal for industrial purposes, cellulose has from time immemorial occupied a prominent position. Its abundance is attributed to the constant photosynthetic cycles taking place in higher plants, which can synthesize around 1011 ± 1012 tons of cellulose in a rather pure form. Since time immemorial it has served mankind either as a construction material or as a versatile starting material for chemical reactions for the production of artificial cellulose based threads and biofilms as well as for production of a variety of stable cellulose derivatives which are used for various industrial and domestic applications <ref type="bibr" target="#b9">[10]</ref>. Cellulose was used for various biochemical conversions even before its polymeric nature was recognized and well understood. In the process of recognizing and understanding its polymeric structure, it led to the discovery of nitrocellulose, synthesis of organo-soluble cellulose acetate and the preparation of Schweizer's reagent (first cellulose solvent). Another area of great interest was nanocellulose, the nanostructure of cellulose has proven to be advantageous because of its applications in a variety of fields <ref type="bibr">[11,</ref><ref type="bibr" target="#b10">12]</ref>.</p><p>Due to such great economical significance of tree cellulose, the current scientific focus is more towards cellulose biosynthesis as it is still not well understood <ref type="bibr" target="#b11">[13]</ref>. Most of the recent findings concerning the molecular mechanism of cellulose biosynthesis in higher plants resulted from research in model herbaceous plants and fibre crops and have been reviewed recently. All these aspects trigger a researchers' curiosity and makes them want to dig deeper and unveil other properties and applications of cellulose.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Chemistry of cellulose</head><p>The Cellulose is made up of a d-glucose unit at one end and a C4-OH group, the non-reducing end, while the terminating group is C1-OH, the reducing end with aldehyde structure. Some technical celluloses contain extra carbonyl and carboxy groups, like the bleached wood pulp. The molecular structure is responsible for its significant properties: Chirality, hydrophilicity, degradability and chemical variability due to high reactivity from the donor group-OH. The superior hydrogen bonds add crystalline fibre structures to cellulose. Figure <ref type="figure" target="#fig_0">1</ref> presents the four different pathways which determine the major processing routes. The most famous and highly used pathway is the manufacture of cellulose from plants. It is established that cellulose is found in its purest form from the seed hairs of cotton. The wood cellulose, on the other hand forms a composite with lignin and other polysaccharides, which is further separated by large scale chemical pulping and purification processes. Cellulose can be derived from algae, some specific bacteria, and fungi, apart from most plants. The supramolecular structures are used for research on cellulose structures, reactivity, and crystallinity with further note on development of biomaterials and new substances. Cyanobacteria are known to biosynthesize cellulose for nearly 3.5 billion years <ref type="bibr" target="#b13">[15]</ref>. The first synthesis of cellulose in vitro is reported as the cellucellulase-cellulose formation by catalyzed cellobiosyl fluoride and the chemosynthesis was processed in a ring opening polymerization of the d-glucose moieties <ref type="bibr" target="#b15">[16]</ref>. A lot of research is ongoing in the field and study of cellulose over the past decade. The structure and properties of cellulose are quintessential to perform modifications and processing of cellulose on the whole.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Properties of cellulose</head><p>The structure of cellulose has been constantly a subject requiring intensive research as it is formed by the hydrogen bonds between the network of hydroxy groups <ref type="bibr" target="#b16">[17]</ref>. The progress was for more than a 100 years of intensive development on structure analysis methods like electron microscopy, X-ray diffraction and high Major pathways of formation of cellulose <ref type="bibr" target="#b12">[14]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Figure 2.</head><p>Molecular structure of cellulose (n = DP, degree of polymerization) <ref type="bibr" target="#b12">[14]</ref>.</p><p>resolution solid state NMR spectroscopy. The complete detailed analysis is required for the procedures of synthetic reactions and cellulose based manmade products with extensive applications. The structure of cellulose as depicted in Figure <ref type="figure">2</ref> consists of hydroxyl groups of β-1,4-glucan cellulose at C2, C3 and C6. The CH 2 OH group is positioned relative to the C4 and C5 bonds along with a shear relativity with O5-C5 bonds. The solid state is equally likely to be represented in the crystalline (high order) and amorphous (low order). The crystal structure in particular is determined by the X-ray diffraction using a monoclinic unit cell which is made up of two cellulose chains in a parallel orientation and two fold screw axis <ref type="bibr" target="#b17">[18]</ref>. The investigations with respect to the electron microbeam diffraction, combined X-ray and neutron diffraction have clearly indicated that the cellulose crystalline structures have a triclinic and monoclinic unit cell. The schematic representations of the I β crystal structure, in Figure <ref type="figure" target="#fig_1">3</ref>, indicate the two intramolecular chain-stiffening hydrogen bonds. The recent researches on the I β crystal structure have different H-bonds and different conformations of neighbouring chains. The thermodynamically stable cellulose II can occur in other forms of crystal structures and is the most stable form of cellulose. The cellulose I can be treated with aqueous sodium hydroxide to form cellulose II.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Types of cellulose</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Bacterial cellulose</head><p>Although cellulose is mainly produced by plants, many bacteria, especially those belonging to the genus Gluconacetobacter are involved in the production of a very peculiar form of cellulose with mechanical and structural properties that can be exploited in numerous applications. Bacterial cellulose are usually produced by Gluconacetobacter hansenii UCP1619 using the Hestrin-Schramm (HS) medium. But there are few limitations associated with bacterial cellulose like the production cost is high, use of expensive culture media, poor yields, downstream processing, and operating costs. Bacterial cellulose can also be produced by bacteria from genera Sarcina, and Agrobacterium <ref type="bibr" target="#b18">[19]</ref>. Bacterial cellulose produced by aerobic bacteria has unique physiochemical properties compared to plant cellulose <ref type="bibr" target="#b19">[20]</ref>.  <ref type="formula">010</ref>) lattice plane, cellulose II <ref type="bibr" target="#b12">[14]</ref>.</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Cellulose acetate</head><p>Cellulose acetate is an important ester of cellulose. Cellulose acetate can be used for great varies of applications like for films, membranes or fibres, depending on the way it has been processed. A special field for using cellulose acetate is the synthesis of porous, spherical particles, so called cellulose beads <ref type="bibr" target="#b20">[21]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Ethylcellulose</head><p>Ethylcellulose (EC) is a derivative of cellulose in which some of the hydroxyl groups on the repeating anhydroglucose units are modified into ethyl ether groups, largely called as non-ionic ethyl ether of cellulose. Ethylcellulose (EC) based microencapsulated drug delivery systems are being studied to achieve extended drug release and to protect the core substance from degradation <ref type="bibr" target="#b21">[22]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Hydroxypropyl cellulose (HPC)</head><p>Hydroxypropyl cellulose (HPC) is one of the derivatives of cellulose which is soluble in both water and organic solvent. It can be used as a lubricant. It can also be used for the treatment of keratoconjunctivitis sicca, corneal erosions neuroparalytic keratitis etc. It is also used as a lubricant for patients having artificial eye <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Extraction and characterization of cellulose</head><p>Cellulose is one of the most abundant biomass materials in nature possessing some promising properties. In our work, let us look into the various procedures involved in extracting cellulose from different sources. The sources available are many which can be broadly classified into Agro-waste, Domestic-waste (and other means such as wood, plant and paper). The processes involved include usual chemical procedures like alkaline extraction, bleaching, acid hydrolysis and chlorination. The final products can be characterized by using techniques like thermogravimetric analysis (TGA), infrared spectroscopy (FTIR), X-ray diffraction (XRD), differential scanning calorimetry (DSC) and scanning electronic microscopy (SEM). Purified cellulose can be obtained successfully using the above mentioned procedures. In our study, we will be concentrating on the extraction of cellulose from agricultural residues and plants [26-28] (Figure <ref type="figure" target="#fig_2">4</ref>). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Extraction of cellulose from agricultural residues</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.1">Extraction of cellulose from sugarcane bagasse</head><p>Sugarcane bagasse (SCB) is a key agricultural residue which has grown to be the point of interest in recent times. The extraction of cellulose from SCB was investigated using steam explosion and xylanase based environmentally friendly pretreatment for reducing chemical bleaching and to determine the characteristics of cellulose from sugarcane bagasse. SCB is a low value agriculture residue and about 40-50% of bagasse is the glucose polymer cellulose. There are several approaches to pretreat lignocellulosic materials to extract cellulose such as steam explosion, solvent extraction and alkaline treatment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.1.1">Methodology</head><p>Cellulose is extracted from SCB by using steam explosion and xylanase pretreatment and bleaching process. The dried SCB treated with steam explosion at a pressure 13 bar (195°C) for 15 minutes to obtain steam exploded SCB fibres. Then, the steam exploded SCB is treated with 20 μg of xylanase using fibre to liquor ratio of 1:10 for 1 hour at 50°C under constant agitation. Then, dried steam exploded SCB is treated with xylanase (fibre to liquor ratio of 1:10) and then bleached with 0.7% sodium chlorite (NaClO 2 ) adjusted to a pH of 4 by the addition of weak acetic acid at 70°C for 1 hour. Sodium chlorite and acetic acid at the same loading were added to the reaction every 1 hour till the cellulose turns white. The cellulose fibres thus obtained would then filtrated, washed with distilled water until the pH of water neutral and dried at 55°C for 24 hours. The steam explosion process includes saturating the dry material with steam at elevated pressure and temperature followed by sudden release of pressure, resulting in substantial resistance of degraded lignin fragments, facilitates the release of lignin, which is then readily available for further bleaching and thereby increases the efficiency of the bleaching process Thus, the use of enzymes to treat pulp before applying chemical bleaching help to reduce chemical required in bleaching stage, breakdown of lignocellulosic structure, hydrolysis of the hemicelluloses fraction, depolymerization of the lignin components and defibrillization. In terms of bleaching treatments, chlorine-based chemicals were typically used for bleaching process resulting in chemical hazard released into environmental. Xylanases are glycosyl hydrolase that can catalyse the hydrolysis of β-1, 4-glycosidic bonds in xylan by means of double displacement mechanical reaction. This treatment improves accessibility of bleaching chemical to the pulp by decreasing diffusion [29] (Table <ref type="table" target="#tab_0">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2">Extraction of cellulose from rice husk</head><p>Rice is the most cultivated cereal crop in the world. Rice husk is a major agrowaste that is generated in huge quantities. It accounts for 20% of the 600 million tons of paddy produced worldwide. People often dispose the rice husk waste using open burning which is an environmental threat causing damage to the land and the surrounding area in which it is disposed. This rice husk can be put into best use by exploitation of its cellulose content. Rice husk comprises of 33% cellulose, 26% hemicellulose, and 7% lignin. Thus, the use of rice husk as the primary source for producing cellulose fibres and nanocrystals is efficient. The strategy is to extract cellulose fibres from the rice husk using alkali and bleaching treatments.</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.1">Methodology</head><p>Sodium hydroxide (99% purity) is used for alkaline treatment. Sodium chlorite, acetic acid and NaOH are used as bleaching agents while sulphuric acid is used for hydrolysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.2">Preparation of cellulose nanocrystals from rice husk</head><p>1. Treatment with alkali: Cellulose is purified by treating with Alkali to remove lignin and hemicellulose on or after rice husk grits. The pulverised rice husk is preserved through an alkali solution (4% by weight of NaOH). The combination is poured into a plump bottom flask and action is performed at reflux temperature intended for 2 hours. The solid is formerly filtered and carry away numerous times by means of distilled water. This treatment is frequent thrice.</p><p>2. Bleaching process: Subsequent the alkali action, bleaching progression is completed by totalling a buffer solution of acetic acid, aqueous chlorite (1.7% by weightiness) and purified water at reflux (by means of a silicon emollient soak at 100-130°C) for 4 hours. The assortment is then permitted to cool and the additional distilled liquid is filtered. The bleaching procedure is performed four periods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Acid hydrolysis:</head><p>The acid hydrolysis action is performed on the fibres subsequently alkali action and decolourising at a temperature of 50°C by means of 10.0 mol L −1 of preheated sulphuric acid intended for 40 minutes underneath non-stop stirring. The fibre content varieties from 4 to 6% by heaviness. The hydrolysed substantial is eroded by centrifugation at 10000 rpm at 10°C for 10 minutes. This centrifugation stage is repeated many times before the suspension is dialyzed in contradiction of purified water for several days until persistent pH in the range of 5-6 is attained. The subsequent suspension is formerly sonicated for 30 minutes previously it is frozen for additional use [30].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Extraction of cellulose from plants</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.1">Extraction of cellulose from bamboo</head><p>This extraction method involves use of Bamboo fibres as a raw material for cellulose extraction. The chemicals used to produce cellulose nanofibres are toluene, ethanol, hydrogen peroxide, acetic acid glacial, titanium (IV) oxide, and sodium hydroxide. All the chemicals used here are of analytical grade.  It is then ground using a planner machine to produce small chips and powder form excluding the internodes. This chips and powder mixture is put into an oven at 70°C for 72 hours to dry. The oven dried sample is ground and then sieved using 600 μm size sieve. The 600 μm mesh size fibres are used for the synthesis of cellulose fibre. This sample is then labelled as green bamboo fibre (GBF).</p><p>2. Preparation of cellulose from bamboo fibre and de-waxing of bamboo fibre: The 400 mL toluene and 200 mL of ethyl alcohol are filled into a round flask to produce toluene-ethanol of ratio 2:1. The round flask is placed on a heating element. A Soxhlet extractor is placed on top of the boiling flask and fixed firmly using a retort stand. About 10 grams of GBF is scooped into a membrane tube and placed into the extraction thimble. A Liebig condenser is placed on top of the extractor and then fixed firmly. The temperature of the heating element is observed using a digital thermometer and it is maintained at 250°C. The extraction process is continued till the colour mixture disappears.</p><p>The process takes 2 hours with approximately 10-12 cycles of extraction. The extraction thimble is taken out using tweezers. The product is transferred into a beaker and stirred using a glass rod while adding toluene-ethanol mixture. The final product is filtered using a filter paper placed on a funnel. It is then distributed evenly using glass rod on a filter paper. It is then placed in an oven set to temperature 70°C for drying overnight and is kept for delignification processes. The dried sample is identified as dewaxed bamboo fibre (DBF).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Delignification of bamboo fibre:</head><p>The delignification solution is prepared using 82.3 g of 35% by weight of hydrogen peroxide (H 2 O 2 ) and 106.2 g of 99.8% by weight of acetic acid (CH 3 COOH) in the present of titanium (IV) oxide as catalyst. Thirty grams of dry DBF sample is weighed and immersed into delignification solution contained in a round bottom flask. The flask is placed on the heating element and heated to 130°C. After 2 hours, the heater is switched off and cooled to room temperature. The treated product is then filtered using Buchner flask and rinsed with de-ionized (DI) water until the pH level reaches 7 and dried at 70°C for 1 day. The dried sample is placed in a bottle and kept in a cool and dark place for alkaline treatment. The sample so obtained is delignified bamboo fibre (DLBF).</p><p>4. Mercerization: DLBF is finally immersed in an alkaline solution in order to dissolve the pectin and hemicelluloses. 6% by weight of sodium hydroxide is used to treat the DLBF in a flask at room temperature. The mixture is stirred using auto shaker at 150 rpm, heated to 80°C for 2 hours, and stopped after 8 hours of proper stirring. The mixture is then rinsed continuously with de-ionized water until the product reaches pH 7. The treated product is finally filtered using Buchner flask, rinsed with de-ionized water until the pH level reaches 7, and freeze-dried at −85°C for 2 days <ref type="bibr" target="#b26">[31]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.4">Characterization of cellulose extracted from bamboo</head><p>After extraction of cellulose, it is generally characterized by using the following techniques:</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727 1. Fourier transform infrared spectroscopy (FTIR): The infrared spectra obtained using a FTIR Spectrometer model IRAFFINITY-1 CE. The spectra were to be taken at a resolution of 4 cm −1 , with a total of 60 scans for each sample. The transmittance range of the scans was 600-4000 cm −1 . The composition changes in GBF were investigated by FTIR spectroscopy (Figure <ref type="figure" target="#fig_4">5</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Scanning electron microscopy (SEM):</head><p>The bamboo fibre samples was vacuum-dried for 24 hours at 70°C, pressed onto a carbon tape adhered to a sample holder surface, and sputtered with titanium. Imaging of each sample was done using Hitachi M-3030 scanning electron microscope. All images were taken at an accelerating voltage of 5 kV with a magnification of 1500 time <ref type="bibr" target="#b29">[33]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Barrett-Joyner-Halenda (BJH) analysis:</head><p>In order to do BJH analysis the bamboo fibre sample is dried for 24 hours at 70°C and inserted into a capillary tube. The outgas had an approximately 7 hour duration with final outgas temperature of 350°C. After outgas process, the sample was analysed using Nova Quantachrome 4200e automated gas sorption instrument for 1.5 hours across a wide range of relative pressures at constant temperature (77 K) using liquid nitrogen (Figure <ref type="figure" target="#fig_6">6</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Thermogravimetric analysis (TGA):</head><p>Dynamic thermogravimetric measurements were performed using a Shimadzu DTG 60H instrument. The temperature programs for dynamic tests was run from ambient temperature 25-700°C. All measurements was made under a nitrogen flow (20 mL/min), while keeping a constant heating rate of 10°C min −1 and using an aluminium crucible with a pinhole (Figure <ref type="figure" target="#fig_5">7</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.5">Characterization of cellulose extracted from rice husk fibres</head><p>The chemical conformation of rice husk at individual phase of action is originate to be giving to the approaches conveyed by the Technical Association of Pulp and Paper Industry (TAPPI). The cellulose and hemicellulose contents are retrieved conferring to TAPPI standard T203 OS-74 though the lignin content is restrained according to TAPPI normal T222 OS-83. The silica ash content is calculated by </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparative differences of FTIR peaks into green bamboo fibre (GBF) and cellulose fibre (CF).</head><p>The peak intensity at 1514 cm −1 from the spectrum of the GBF is credited to the C═C stretching vibration in the aromatic ring of lignin. Yet, the cellulose fibre did not show the C═C stretching at that region. This is an indication that the lignin was well removed by chemical process <ref type="bibr">[30,</ref><ref type="bibr" target="#b28">32]</ref>. means of the thermogravimetric examination (TGA) data. The arrangement of silica ash was found at temperatures 900°C as the residual ash at this point can be credited to the silica ash [30, 33, 34].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.6">Scanning electron microscopy (SEM)</head><p>It is utilized to detect the superficial morphology of the rice husk fibres. The effect of the numerous chemical treatments is evaluated using an assessment of the raw, alkali treated, and bleached fibres. Rice husk fibres is reserved on the aluminium stub and raised in the oven at 60°C. The samples are then covered with gold by means of a vacuum sputter coater (model SC 500). The width of the gold layer is approximately 0.01-0.1 μm. The fast-tracking voltage is 15 kV. Transmission electron microscopy (TEM) is used to regulate the proportions of the cellulose nanocrystals attained from the rice husk fibres. A drop of a diluted suspension (1% by weight) is placed on the superficial of a clean copper grid and covered through a thin carbon film. As for contrast in TEM, the cellulose nanocrystals are undesirably stained in a 2% by weight solution of uranyl acetate for 10 seconds then carried away by means of 50% by weight of sieved alcohol. Later sample is dehydrated at ambient temperature before TEM examination is approved out through an accelerating voltage of 80 kV (Figure <ref type="figure" target="#fig_7">8</ref>).  BJH surface area for four samples. It was noted that there was an increase in the BJH surface area of GBF and a decrease after DLBF. The decreased surface area of cellulose fibre might be a result of the mechanical grinding process that creates smaller cellulose fibre thus reduced the surface area. This result also indicates that mechanical grinding should be avoided to obtain higher BJH surface area. The final cellulose fibre showed that BJH surface area is two times greater than the initial green bamboo fibre <ref type="bibr">[30,</ref><ref type="bibr" target="#b28">32]</ref>.</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.7">Fourier transform infrared (FTIR) spectroscopy</head><p>Fourier transform infrared spectra are noted with the assistance of a Perkin-Elmer FTIR spectrophotometer. Un-treated, alkali-treated, blanched, and acidhydrolysed rice husk fibres models are examined. Models are excellently crushed and mixed with potassium bromide. The combination is then flattened to pellet form. FTIR spectral investigation is achieved inside the wave number range of 400-4000 cm −1 (Figure <ref type="figure" target="#fig_8">9</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.8">X-ray diffraction (XRD)</head><p>X-ray diffraction is applied to identify the crystallinity of rice husk grits after numerous extraction methods. Each sample/material in the arrangement of milled powder is set aside on the sample vessel and levelled to attain complete and unvarying X-ray exposure. The trials are examined with the assistance of an X-ray diffractometer at room temperature (RT) by means of a monochromatic CuKα energy source (λ = 0.1539 nm) in the step-scan approach with a 2θ angle extending from 10 to 50°C with a stage of 0.04 and scanning period of 5 minutes. To characterize the crystallinity of the several samples, the crystallinity index CrI, is created based on the mirrored intensity data (Figure <ref type="figure" target="#fig_0">10</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1.2.9">Thermogravimetric analysis (TGA)</head><p>The thermal stability of the different samples is determined by TGA measurements performed using a Mettler Toledo thermogravimetric analyser. The quantity  <ref type="bibr" target="#b30">[34]</ref>. <ref type="bibr" target="#b30">[34]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SEM images of (a) untreated rice husk and rice husk residues of (b) [BMIM]Cl, 1-butyl-3-methylimidazolium chloride; (c) [EMIM] OAc, 1-ethyl-3-methylimidazolium acetate; and (d) [EMIM] DEP, 1-ethyl-3methylimidazolium diethyl phosphate pretreatments</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Figure 10. X-ray diffractograms of rice husk (RH), bleached rice husk (RHB), rise husk nanofibrin after 1 and 2 hour of bleaching (RHNF1h and RHNF2h, respectively)</head><p>of sample involved for individual measurement remained approximately 1 mg. Each measurement is achieved under a nitrogen based generated atmosphere through a gas flow of 10 mL min −1 by means of heating the substantial from room temperature to 900°C at a heating rate of 10°C min −1 <ref type="bibr" target="#b30">[34]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Applications of cellulose</head><p>Cellulose is the most richly found organic polymer, as it is a major structural component of the primary cell wall of green plants, several algae and oomycetes. Cellulose is found in large quantities in frequently used materials like cotton (90%), </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FTIR spectra for RH (rice husk), RH extractive-free, alkaline treated RH (RH after 15 minutes autoclave), RH cellulose (after 30 minutes bleaching) and commercial microcrystalline cellulose (MCC) in the range from 2000</head><p>to 800 cm −1 <ref type="bibr" target="#b30">[34]</ref>.</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727 Wood (50%) and dried Hemp (57%). It has numerous applications in various fields, but it is most frequently used in the manufacturing of paper and cardboard or in derivative products like cellophane and rayon. It is also a major component of textiles made from cotton or linen. Further, its use is seen in the pharmaceutical industry as inactive fillers in drugs, in the form of powdered cellulose and microcrystalline cellulose. However, one of the most important uses of cellulose is in the production of biofuel and in the food Industry. This will be elaborated further in the following sections <ref type="bibr" target="#b29">[33]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.1">Use of cellulose in renewable energy</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.1.1">Biofuel</head><p>A drastic increase in the population of the world coupled with an exponential increase in technological advancements and need of the people, fossil fuels are being rapidly depleted. At such an hour, the term sustainable development comes into play. In order to develop sustainably, it is important to switch to a fuel that is more clean, green and more cost-effective. One such alternative, is cellulose derived biofuel. There are numerous advantages of using biofuel, the first and foremost being cost-effective. Recent studies have shown that due to increase in demand, the cost of biofuel is decreasing as ethanol costs lesser than petrol and diesel. Further, there is a significant reduction in the carbon emission. The raw material used for biofuel is simply a substrate that has cellulose in it. Since cellulose is so widely abundant, the cost is significantly lower.</p><p>The ethanol obtained from cellulose is used as an alternative substrate in the production of biofuel. It is considered a superior source due to its high energy efficiency and low cost as compared to other sources. This is a very good source for renewable energy as it is found most abundantly in stalks, leaves and stem of green plants. Other sources for ethanol include, feedstocks, including wheat straw, rice straw, sawdust, forest thinning and grasses perennial grasses and switchgrass. Cellulose can be broken down into fermentable sugars by using the fungus Trichoderma reesei or by using acid to convert them first into sugars and then into gas. The gut of termites also can be utilized for this purpose. Further, a group of bacteria collectively referred to as methanogens have the ability to digest cellulose and produce carbon di oxide and methane, which is further processed. One group of such bacteria called methanobacteria grow anaerobically on cellulosic matter and degrade it to produce methane. They are also found in the rumen of cattle and the dung of cattle. As is seen from this, it is quite easy to obtain a substrate for biogas production especially by using waste cellulosic material. Therefore, it is important that to utilize even the apparent waste material to ensure a reduction in wastage and optimum usage of its potential <ref type="bibr" target="#b30">[34,</ref><ref type="bibr" target="#b31">35]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.2">Use of cellulose in consumables</head><p>Cellulose has numerous applications in the field of pharmaceuticals and food technology. Modifying the structure of cellulose with other chemical groups results in the production of structures that have better bio-compatibility, flexibility, stability, emulsifying effects. Further, cellulose being indigestible by human beings, tend to have zero calorific value and can thus have been added in food to serve several purposes. Compounds like HPMC, sodium carboxymethyl cellulose, hydroxyethyl cellulose and others are commonly utilized in the pharmaceutical industry and food technology industry. Some of these uses are enumerated below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.2.1">Hydroxypropyl methylcellulose</head><p>HPMC is widely utilized in the pharmaceutical industry not only because it is safe and nontoxic but also because it does not get engrossed orally and does not upsurge the energy of foods. It is utilized as a film-forming agent, thickener, blocker, sustainedrelease agent, blending agent and suspending agent in many dosage forms, thus forming the numerous pharmaceutical preparation consistently discrete, tough short of being wrecked due to sustained release effects or steady emulsion without stratification. It is regularly used as a matrix, adhesives, frame ingredients, the film creating material or in the creation of sustained or controlled release microcapsules and pellets <ref type="bibr" target="#b32">[36]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.2.2">Sodium carboxymethyl cellulose</head><p>It used as an emulsion stabilizer in injections, adhesion and film-forming materials which have proved to be effective in controlling wound infections and can reduce postoperative oedema and wound stimulation phenomena. Animal experiments have shown that sodium carboxymethyl cellulose is a safe and reliable carrier of anticancer drugs <ref type="bibr" target="#b33">[37]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.2.3">Hydroxyethyl cellulose</head><p>In ice cream, frozen milk drinks, it is added as a stabilizer to extend the storage life and improve the overflow property. It is also used as the stabilizer of beer foam.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.2.4">Food</head><p>Due to its unique physical and chemical properties and its behaviour in water, it is today being increasingly used a food additive to improve the bulk and fibre content of foods without having a major impact on the flavour of the food. Since it is indigestible by humans, it has no caloric value and is thus used in excessive amounts in diet foods to create a sensation of fullness both physical and physiology without having consumed too many calories. It is also widely used an emulsifier and a thickening agent in whipped cream, sauces and ice cream <ref type="bibr" target="#b34">[38]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.3">Biomedical and pharmaceutical applications of cellulose</head><p>Cellulose, with its properties, as discussed in previous sections of this manuscript, is extensively used in the field of biomedicine and pharmaceuticals. The cost of several pharmaceutical products is extremely high due to production factors such as high cost, difficulty in procuring the material, complicated processing steps etc. These problems can be remedied by the use of cellulose, which is found abundantly in nature. The most productive use of cellulose would be the utilization of plant based waste materials which are produced in bulk by many industries such as the sugar production industry as well as in minor quantities by households. The applications highlighted below could be brought to mainstream commercial use with the appropriate optimization techniques and novel modifications to the various steps of the production and processing of cellulosic material.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.3.1">Cellulose in coating of solid dosage forms and compressibility enhancers</head><p>Solid dosage forms including pills, tablets, granules, pellets, microcapsules and spherules can be coated, usually with the aim to protect the drug from adverse environmental factors such as humidity, oxygen, enzymatic or acidic degradation. Coating may also be used to facilitate drug delivery systems with altered release mechanisms such as delayed release, extended release, step-by-step release, pulsatile release and sustained release. Derivatives of cellulose such as esters and ethers are also extensively used as coating materials. In the process of solid dosage form manufacture by direct compression, a problem that frequently occurs is low compactability of the drug, this is more seen more frequently when the amount of drug in the formulation exceeds 30%. Many attempts are being made to reduce the price of the final product by experimenting with various starting materials and test conditions <ref type="bibr" target="#b35">[39]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.3.2">Cellulose in drug delivery</head><p>From the advent of novel drug delivery systems, cellulose based models seemed like strong candidates due to their projected benefits. Since then various advances have been made with the aim to bring its use to common practice. There are still many hurdles to cross before this becomes a reality. Cellulose based drug delivery is an important step in green and sustainable pharmacy which focuses on toxicity reduction, biodegradability and less hazardous synthesis with respect to drugs and drug delivery systems. A very brief overview of the primary ways in which it is used is provided here. Cellulose nanocrystals (CNCs) have the potential to acquire a negative charge during hydrolysis. This coupled with their large surface area allow them to bind ionizable drugs such as tetracycline and doxorubicin permitting optimum dosing control. Sites for surface modification for multiple chemicals are provided by the multitude of surface hydroxyl groups. This is used in case of non-ionized or hydrophobic drugs which do not generally bind to cellulose. The open pore structure and high surface area of CNC based aerogels provide increased drug loading capacity and drug bioavailability. Extremely porous aerogel scaffolds were reported to attain sustained drug release <ref type="bibr" target="#b36">[40]</ref>.</p><p>Cellulose derivatives have also been researched in terms of drug delivery. For instance, cellulose acetate has been successfully used in several HIV drugs, five flavonoids, one pain reliever and two antibiotics among others. Hydroxypropyl methylcellulose has been used in oral drug delivery formulations <ref type="bibr" target="#b37">[41]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.3.3">Cellulose in scaffolding</head><p>Scaffolds are materials that have been engineered to cause desirable cellular interactions to contribute to the formation of new functional tissues for medical purposes by providing the microenvironment required by cells to proliferate, migrate and differentiate. It contributes the geometrical basis and building blocks to provide cell attachment. Gluconacetobacter xylinus sourced nanocellulose is an emerging biomaterial for this purpose. Bacterial nanocellulose has a very high affinity for water and therefore displays properties similar to those of hydrogels which provides an ideal environment to host cells. Studies have confirmed that human smooth muscle cells, bone forming osteoblasts and fibroblasts and human embryonic kidney cells can grow in the presence of bacterial cellulose scaffolds. The main challenge in the production of these scaffolds seems to be biodegradability as the cellulose, the enzyme required to breakdown cellulose is not present in humans. This property was reported to be enhanced by periodate oxidation <ref type="bibr" target="#b38">[42]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.3.4">Cellulose in biomedical implants</head><p>BNC is specifically nondegradable under physiological conditions and has been shown to be biocompatible. These properties further impart durable mechanical properties and long-term chemical stability which make it an exciting candidate for application in this field:</p><p>• Cardiovascular implants: Bacterial cellulose has an important application in artificial blood vessels. Compared to the material generally used for vascular grafts, these materials show less thrombosis and occlusion. Heparin hybridized bacterial nanocellulose scaffolds with anticoagulant properties have potential use in vascular tissue engineering. Potential use of BC in the production of heart valve replacements has been explored <ref type="bibr" target="#b39">[43,</ref><ref type="bibr" target="#b40">44]</ref>.</p><p>• Bone and connective tissue repair: Nanocellulose are promising materials for the culture of various cells including osteoblasts and chondroblasts indicating that they have potential for bone tissue regeneration and healing. A membrane of BC and hydroxyapatite was developed as biomaterial for potential bone regeneration, which delivered prone growth of osteoblast cells, high level of alkaline phosphatase activity and greater bone nodule formation. It was also found that HAp crystals are partially substituted with carbonate resembling natural bones <ref type="bibr" target="#b41">[45]</ref><ref type="bibr" target="#b42">[46]</ref><ref type="bibr" target="#b43">[47]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.">Conclusion</head><p>From the chapter we can conclude that cellulose is a highly versatile polymer which is easy to manufacture and extract. Its application in multiple fields has been discussed above. With increasing population, demand and technological innovations, renewable energy is gradually becoming imperative aspect of resource conservation and overall environmental health. Although various other polymers can be utilized for consumables, biomedical and pharmaceutical applications, the marked advantage of cellulose is that it is a biodegradable and environmentally friendly material. The intensive research on the chemistry of the compound, has resulted in the production of a wide variety of biodegradable products with a plethora of applications. An improved information of the many structural levels in which cellulose partakes will allow us to understand better practise of this exceptional and metastable molecular assembly produced by plant metabolic pathways. We have placed emphasis on the diverse applications of cellulose to promote more innovations that aim to bridge the gap between the amounts of cellulosic waste and its optimum utilization. Large amounts of cellulose based wastes are produced in every community across the world, which remain a largely untapped resource. Research that involves the conversion of this perceived waste into a widely used commodity would have the dual benefit of organic waste management and sustainable innovations.</p><p>© 2019 The Author(s). Licensee IntechOpen. This chapter is distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/ by/3.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1.Major pathways of formation of cellulose<ref type="bibr" target="#b12">[14]</ref>.</figDesc><graphic coords="3,102.00,66.84,408.00,271.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. The crystal structures of cellulose I and II: (a) projection of the unit cell along the a-b plane and (b) projection of UC parallel to (100) lattice plane, cellulose I and (010) lattice plane, cellulose II<ref type="bibr" target="#b12">[14]</ref>.</figDesc><graphic coords="4,110.50,66.84,391.00,180.59" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Different sources of cellulose extraction.</figDesc><graphic coords="5,136.00,634.48,340.00,139.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fibres</head><label></label><figDesc></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5.Comparative differences of FTIR peaks into green bamboo fibre (GBF) and cellulose fibre (CF). The peak intensity at 1514 cm −1 from the spectrum of the GBF is credited to the C═C stretching vibration in the aromatic ring of lignin. Yet, the cellulose fibre did not show the C═C stretching at that region. This is an indication that the lignin was well removed by chemical process[30,<ref type="bibr" target="#b28">32]</ref>.</figDesc><graphic coords="9,136.22,565.15,340.00,184.57" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. The thermogravimetric analysis of (GBF, DBF, DLBF and CF) green bamboo fibre, dewaxed bamboo fibre, delignified bamboo fibre and cellulose fibre, respectively. The weight loss rate was obtained from the derivative thermogravimetric (DTG) data. The intersection of tangents drawn from thermogravimetric curve, one before inflection caused by the degradation and another from the cellulose degradation step indicates the onset degradation temperature [30].</figDesc><graphic coords="10,135.11,282.34,341.78,162.53" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6.BJH surface area for four samples. It was noted that there was an increase in the BJH surface area of GBF and a decrease after DLBF. The decreased surface area of cellulose fibre might be a result of the mechanical grinding process that creates smaller cellulose fibre thus reduced the surface area. This result also indicates that mechanical grinding should be avoided to obtain higher BJH surface area. The final cellulose fibre showed that BJH surface area is two times greater than the initial green bamboo fibre[30,<ref type="bibr" target="#b28">32]</ref>.</figDesc><graphic coords="10,179.54,66.84,252.92,118.65" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. SEM images of (a) untreated rice husk and rice husk residues of (b) [BMIM]Cl, 1-butyl-3-methylimidazolium chloride; (c) [EMIM] OAc, 1-ethyl-3-methylimidazolium acetate; and (d) [EMIM] DEP, 1-ethyl-3methylimidazolium diethyl phosphate pretreatments<ref type="bibr" target="#b30">[34]</ref>.</figDesc><graphic coords="11,136.02,66.84,339.97,315.36" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. FTIR spectra for RH (rice husk), RH extractive-free, alkaline treated RH (RH after 15 minutes autoclave), RH cellulose (after 30 minutes bleaching) and commercial microcrystalline cellulose (MCC) in the range from 2000 to 800 cm −1 [34].</figDesc><graphic coords="12,136.00,66.84,340.00,290.27" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Extraction and characterization of cellulose from sugarcane bagasse by using environmental friendly method[29].</figDesc><table><row><cell>α-Cellulose</cell><cell>Hemicellulose</cell><cell>Lignin</cell></row><row><cell>(in %)</cell><cell>(in %)</cell><cell>(in %)</cell></row></table><note>6.1.2.3 Methodology1. Bamboo fibre preparation: Green bamboo Culm of 1 m length is prepared.</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The authors listed in this chapter wish to express their appreciation to the RSST trust Bangalore for their continuation support and encouragement. As a corresponding author, I also express my sincere thanks to all other authors whose valuable contribution and important comments make this manuscript in this form.</p><p>An Update on Overview of Cellulose, Its Structure and Applications DOI: http://dx.doi.org/10.5772/intechopen.84727</p></div>
+			</div>
+
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Funding information</head><p>There was no funding provided for the above research and preparation of the manuscript.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest</head><p>The authors listed in this chapter have no conflict of interest known best from our side. There was also no problem related to funding. All authors have contributed equally with their valuable comments which made the manuscript to this form. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>List of abbreviations</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author details</head><p>Praveen Kumar Gupta*, Shreeya Sai Raghunath, Deepali Venkatesh Prasanna, Priyadharsini Venkat, Vidhya Shree, Chandrananthi Chithananthan, Shreya Choudhary, Krithika Surender and Keerthana Geetha Department of Biotechnology, R. V College of Engineering, Bangalore, India *Address all correspondence to: praveenkgupta@rvce.edu.in</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Hierarchical Organisation in the Most Abundant Biopolymer -Cellulose</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Khandelwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Windle</surname></persName>
+		</author>
+		<idno type="DOI">10.1557/opl.2013.379</idno>
+	</analytic>
+	<monogr>
+		<title level="j">MRS Proceedings</title>
+		<imprint>
+			<biblScope unit="page">1504</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Cellulose</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Holtzapple</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/B0-12-227055-X/00185-1</idno>
+		<ptr target="https://doi.org/10.1016/B0-12-227055-X/00185-1" />
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopedia of Food Sciences and Nutrition</title>
+				<editor>
+			<persName><forename type="first">B</forename><surname>Caballero</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="998" to="1007" />
+		</imprint>
+	</monogr>
+	<note>2nd ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Natural Polymers: Polysaccharides and Their Derivatives for Biomedical Applications</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aravamudhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Ramos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nada</forename><forename type="middle">A</forename><surname>Kumbar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/B978-0-12-396983-5.00004-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Natural and Synthetic Biomedical Polymers</title>
+		<imprint>
+			<biblScope unit="page" from="67" to="89" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Biodegradable Polymers</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Ortiz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Goyal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kohn</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/B978-0-12-398358-9.00023-9</idno>
+		<ptr target="https://doi.org/10.1016/B978-0-12-398358-9.00023-9" />
+	</analytic>
+	<monogr>
+		<title level="m">Principles of Tissue Engineering</title>
+				<imprint>
+			<publisher>Elsevier Inc</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="441" to="473" />
+		</imprint>
+	</monogr>
+	<note>4th ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Cellulose-based sustainable polymers: State of the art and future trends</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Palkovits</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromolecular Rapid Communications</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="1299" to="1311" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Cellulosebased bio-and nanocomposites: A Review</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kalia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dufresne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Cherian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kaith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Avérous</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Njuguna</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2011/837875</idno>
+		<idno>ID 837875</idno>
+		<ptr target="https://doi.org/10.1155/2011/837875" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Polymer Science</title>
+		<imprint>
+			<biblScope unit="volume">2011</biblScope>
+			<biblScope unit="page">35</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Feasibility of bioethanol production from Lignocellulosic biomass</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Aunina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bazbauers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Valters</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Scientific Journal of Riga Technical University Environmental and Climate Technologies</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">-1</biblScope>
+			<biblScope unit="page" from="11" to="15" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Digestion in ruminants</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Niwińska</surname></persName>
+		</author>
+		<idno type="DOI">10.5772/51574</idno>
+		<ptr target="https://www.intechopen.com/books/carbohydrates-comprehensive-studies-on-glycobiology-and-glycotechnology/digestion-in-ruminants" />
+	</analytic>
+	<monogr>
+		<title level="m">Carbohydrates-Comprehensive Studies on Glycobiology and Glycotechnology</title>
+				<meeting><address><addrLine>IntechOpen</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Beneficial effect of intestinal fermentation of natural polysaccharides</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nutrients</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page">1055</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Cellulose as an architectural element in spatially structured Escherichia coli biofilms</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Serra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Richter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R ;</forename><surname>Hengge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Fernandes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Altaner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Callow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Forsyth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Apperley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">195</biblScope>
+			<biblScope unit="issue">24</biblScope>
+			<biblScope unit="page" from="E1195" to="E1203" />
+			<date type="published" when="2011">2013. 2011</date>
+		</imprint>
+	</monogr>
+	<note>Journal of Bacteriology</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Chitosan. In: Ramawat K, Mérillon JM, ediors. Polysaccharides</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chawla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kanatt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sharma</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-3-319-16298-0_13</idno>
+		<ptr target="https://doi.org/10.1007/978-3-319-16298-0_13" />
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="219" to="246" />
+			<pubPlace>Cham</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Cellulose synthesis and its regulation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bashline</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gu</surname></persName>
+		</author>
+		<idno type="DOI">10.1199/tab.0169</idno>
+		<ptr target="https://doi.org/10.1199/tab.0169" />
+	</analytic>
+	<monogr>
+		<title level="m">The Arabidopsis Book</title>
+				<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">e0169</biblScope>
+		</imprint>
+	</monogr>
+	<note>BiOne Complete. Open Access</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Cellulose in cyanobacteria. Origin of vascular plant cellulose synthase</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Nobles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Romanovicz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Malcolm</forename><surname>Brown R</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Plant Physiology</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page" from="529" to="542" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Cationic ring-opening polymerization of 3,6-di-O-benzyl-αd-glucose 1,2,4-Orthopivalate and the first chemical synthesis of cellulose</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Nakatsubo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kamitakahara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hori</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Chemical Society</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1677" to="1681" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Cellulose</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Conformation and packing of various crystalline cellulose fibers</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zugenmaier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Progress in Polymer Science</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="1341" to="1417" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The Structure of native Cellulose</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Gardner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Blackwell</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/bip.1974.360131005</idno>
+		<ptr target="http://dx.doi.org/10.1002/bip.1974.360131005" />
+	</analytic>
+	<monogr>
+		<title level="j">Biopolymers. Wiley Online Library</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="1975" to="2001" />
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Cellulose: Fascinating biopolymer and sustainable raw material Angew</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Klemm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bhh-P</forename><surname>Fink</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bohn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angewandte Chemie International Edition</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="3358" to="3393" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Production of bacterial cellulose by Gluconacetobacter hansenii using corn steep liquor as nutrient sources</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Costa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Almeida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Vinhas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sarubbo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers in Microbiology</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Overview of bacterial cellulose production and application</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Esa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tasirin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rahman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Agriculture and Agricultural Science Procedia</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="113" to="119" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Properties and applications of cellulose acetate</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Thümmler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Volkert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hettrich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Fischer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Macromolecular Symposia</title>
+		<imprint>
+			<biblScope unit="volume">262</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="89" to="96" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Ethylcellulose microparticles: A review</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Murtaza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Jornal of Pharmacy and Pharmaceutical Sciences</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="11" to="22" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Efficacy of Hydroxypropyl cellulose ophthalmic inserts (LACRISERT) in subsets of patients with dry eye syndrome: Findings from a patient registry</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Luchs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Nelinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Macy</forename><forename type="middle">J</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cornea</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1417" to="1427" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Correlating patient-reported response to hydroxypropyl cellulose ophthalmic insert (LACRISERT ® ) therapy with clinical outcomes: Tools for predicting response</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mcdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D'</forename><surname>Aversa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Perry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Wittpenn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Nelinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Current Eye Research</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="880" to="887" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">New low-viscosity overlay medium for viral plaque assays</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sanford-Smith</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Glaucoma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Matrosovich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Matrosovich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Garten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Klenk</surname></persName>
+		</author>
+		<ptr target="https://www.theguardian.com/lifeandstyle/2004/nov/20/foodanddrink.shopping3" />
+	</analytic>
+	<monogr>
+		<title level="m">Eye Diseases in Hot Climates</title>
+				<meeting><address><addrLine>India; Melting Point</addrLine></address></meeting>
+		<imprint>
+			<publisher>The Guardian</publisher>
+			<date type="published" when="2003">2003. 2004. 2006</date>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">63</biblScope>
+		</imprint>
+	</monogr>
+	<note>4th ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Synthesis and characterization of cellulose from green bamboo by chemical treatment with mechanical process</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lynch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Maurice</forename><surname>Lynch</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Gerard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Saelee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yingkamhaeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nimchua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P ;</forename><surname>Sukyai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">K</forename><surname>Liew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hamdan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rezaur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Rahman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jch</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Hossen</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2015/212158</idno>
+		<idno>US 10/752</idno>
+		<ptr target="http://dx.doi.org/10.1155/2015/212158" />
+	</analytic>
+	<monogr>
+		<title level="m">The 26th Annual Meeting of the Thai Society for Biotechnology and International Conference</title>
+				<imprint>
+			<date type="published" when="2004-08">August 2004. 2015</date>
+			<biblScope unit="volume">2015</biblScope>
+			<biblScope unit="page">212158</biblScope>
+		</imprint>
+	</monogr>
+	<note>Journal of Chemistry</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Extraction, preparation and characterization of cellulose fibers and nanocrystals from rice husk</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Johar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dufresne</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.indcrop.2011.12.016</idno>
+		<ptr target="https://doi.org/10.1016/j.indcrop.2011.12.016" />
+	</analytic>
+	<monogr>
+		<title level="j">Industrial Crops and Products</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="93" to="99" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<idno type="DOI">10.5772/intechopen.84727</idno>
+		<ptr target="http://dx.doi.org/10.5772/intechopen.84727" />
+		<title level="m">An Update on Overview of Cellulose</title>
+				<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Extraction and characterisation of cellulose nanocrystals from pineapple peel</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Madureira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Atatoprak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Çabuk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Sousa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pullar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pintado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Food Studies</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="24" to="33" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Elucidation of the effect of ionic liquid pretreatment on rice husk via structural analyses</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Ang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ngoh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Chua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gyu</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1186/1754-6834-5-67</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biotechnology for Biofuels</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">67</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Chlorine-free extraction of cellulose from rice husk and whisker isolation</title>
+		<author>
+			<persName><forename type="first">Sml</forename><surname>Rosa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rehman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mig</forename><surname>De Miranda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Smb</forename><surname>Nachtigall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cid</forename><surname>Bica</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.carbpol.2011.08.084</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydrate Polymers</title>
+		<idno type="ISSN">0144-8617</idno>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1131" to="1138" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Pyrolytic conversion of cellulose to fuels: Levoglucosan deoxygenation via elimination and cyclization within molten biomass</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mettler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paulsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vlachos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dauenhauer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy &amp; Environmental Science</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page">7864</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Hydroxypropyl methylcellulose (HPMC) lubricant facilitates insertion of porous spherical orbital implants</title>
+		<author>
+			<persName><forename type="first">De</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Olver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ophthalmic Plastic &amp; Reconstructive Surgery</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="301" to="302" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Carboxymethylcellulose. Uses and applications</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hollabaugh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Burt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Walsh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Industrial and Engineering Chemistry</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="943" to="947" />
+			<date type="published" when="1945">1945</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Dietary fiber in foods: A review</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dhingra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rajput</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Patil</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Food Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="255" to="266" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">A new manufacturing process for microcrystalline cellulose (MCC)</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Vanhatalo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Aalto University publication series</title>
+		<imprint>
+			<biblScope unit="page">2017</biblScope>
+		</imprint>
+	</monogr>
+	<note type="report_type">doctoral dissertations</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Cellulose nanocrystals: Synthesis, functional properties, and applications</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>George</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Sabapathi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanotechnology, Science and Applications</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">45</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A multipurpose natural and renewable polymer in medical applications: Bacterial cellulose</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Barud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Barud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tercjak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Guttierez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lustri</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.carbpol.2016.07.059</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Carbohydrate Polymers</title>
+		<imprint>
+			<biblScope unit="volume">153</biblScope>
+			<biblScope unit="page" from="406" to="420" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Recent advances in nanocellulose for biomedical applications</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jorfi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Foster</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/app.41719</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Applied Polymer Science</title>
+		<imprint>
+			<biblScope unit="volume">132</biblScope>
+			<biblScope unit="page">19</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Bacterial cellulose in the field of wound healing and regenerative medicine of skin: Recent trends and future prospective</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kucińska-Lipka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Gubanska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Janik</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00289-015-1407-3</idno>
+		<ptr target="https://doi.org/10.1007/s00289-015-1407-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Polymer Bulletin</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2399" to="2419" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Surface modified cellulose scaffolds for tissue engineering</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Courtenay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Galembeck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Deneke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Lanzoni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Costa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cellulose</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="253" to="267" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Biocompatibility of subcutaneously implanted plant-derived cellulose biomaterials</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Modulevsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Cuerrier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Pelling</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0157894</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">e0157894</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Microcrystalline cellulose: Isolation, characterization and bio-composites application-A review</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Trache</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hussin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hui Chuin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sabar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fazita</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Taiwo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Biological Macromolecules</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="789" to="804" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Nanocellulose Produced from Rice hulls and its effect on the properties of biodegradable starch films</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nascimento</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Marim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Carvalho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mali</surname></persName>
+		</author>
+		<idno type="DOI">10.1590/1980-5373-MR-2015-0423</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials Research</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="167" to="174" />
+			<date type="published" when="2016-02-12">2016. Feb 12, 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

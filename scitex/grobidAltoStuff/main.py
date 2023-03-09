@@ -37,7 +37,6 @@ def addScript(grobidpath, altopath, outputpath):
             altoW = altoStrings[altDex+i]
             groW = groStrings[groDex+i]
 
-
             script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
             if(script == "super"):
                 supers.append([groDex+i, groStrings[groDex+i]])
@@ -53,10 +52,3 @@ def addScript(grobidpath, altopath, outputpath):
 
     grobidStuff.rebuild(grobidpath, outputpath, supers, subs)
 
-
-
-grobidpath = "scitex/grobidAltoStuff/HeinzeGrobid.xml"
-altopath = "scitex/grobidAltoStuff/HeinzeAlto.xml"
-outputpath = "scitex/grobidAltoStuff/testOutput.xml"
-
-addScript(grobidpath, altopath, outputpath)
