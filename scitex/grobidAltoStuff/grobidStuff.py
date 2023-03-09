@@ -12,11 +12,14 @@ def findDiv(filepath):
 
     with io.open(filepath, "rb") as f:
         root = ET.parse(f).getroot()
-    
-    text = root[2]
-    body = text[0]
 
-    return body
+    list = []
+    for thing in root:
+        list.append(thing)
+    
+    text = root.find("{http://www.tei-c.org/ns/1.0}text")
+
+    return text.find("{http://www.tei-c.org/ns/1.0}body")
 
 #removes empty strings from a list of strings.
 # textArr: List of strings
@@ -65,22 +68,26 @@ def findDivOffSet(filepath):
         root = ET.parse(f).getroot()
 
     #need the len of root[0] and root[1]
-    string1 = ET.tostring(root[0])
-    string2 = ET.tostring(root[1])
 
-    words1 = stringBreaker(string1)
-    words2 = stringBreaker(string2)
+    textDex = 0
+
+    #find the text thing
+    for c in range(len(root)):
+        if(root[c].tag == "{http://www.tei-c.org/ns/1.0}text"):
+            textDex = c
 
     words = []
-
-    for i in range(len(words1)):
-        words.append(string1.decode()[words1[i][0]:words1[i][1]])
-    for i in range(len(words2)):
-        words.append(string2.decode()[words2[i][0]:words2[i][1]])
+    #get the size of the things before it.
+    for i in range(textDex):
+        stringi = ET.tostring(root[i])
+        wordsi = stringBreaker(stringi)
+        for j in range(len(wordsi)):
+            words.append(stringi.decode()[wordsi[j][0]:wordsi[j][1]])
+        words.append(len(wordsi))
 
     wordOff = len(words)
 
-    return wordOff
+    return wordOff - textDex
 
 
 #puts all the script tags in.
@@ -221,10 +228,16 @@ def grobidWords(filepath, output="arr"):
             if(head.text):
                 retval += manualSplit(head.text)
                 for para in header[1:]:
+                    if(para.text):
+                        retval += manualSplit(para.text)
+                    if(para.tail):
+                        retval += manualSplit(para.tail)
                     for sent in para:
                         #add sentence text
                         if(sent.text):
                             retval += manualSplit(sent.text)
+                        if(sent.tail):
+                            retval += manualSplit(sent.tail)
 
                         #if there are citations breaking up the sentence, add those
                         if(len(sent)>0):
@@ -232,6 +245,8 @@ def grobidWords(filepath, output="arr"):
                                 retval += manualSplit(cite.text)
                                 if(cite.tail):
                                     retval += manualSplit(cite.tail)
+                        
+
     
     retval = clean(retval)
 
