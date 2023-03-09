@@ -62,7 +62,18 @@
 :TextFragment rdf:type rdfs:Class ;
 	rdfs:subClassOf :DocumentPart .
 	
+:NonleafTextFragment rdf:type rdfs:Class ;
+	rdfs:subClassOf :TextFragment .
 
+:Sentence rdf:type rdfs:Class ;
+	rdfs:subClassOf :TextFragment .
+
+:Section rdf:type rdfs:Class ;
+	rdfs:subClassOf :NonleafTextFragment .
+
+:Paragraph rdf:type rdfs:Class ;
+	rdfs:subClassOf :NonleafTextFragment .
+	
 bfo:Entity rdf:type rdfs:Class .
 
 bfo:InformationContentEntity rdf:type rdfs:Class ;
@@ -77,23 +88,27 @@ bfo:InformationContentEntity rdf:type rdfs:Class ;
 :CompoundLabeledTerm rdf:type rdfs:Class ;
 	rdfs:subClassOf :LabeledTerm .
 
-
 sp:Label rdf:type rdfs:Class ;
 	rdfs:subClassOf bfo:InformationContentEntity .
 
 sp:LabelingSchema rdf:type rdfs:Class .
 
-:LocationInDocument rdf:type rdfs:Class . 
-:BibliographicEntry rdf:type rdfs:Class . 
+:LocationInDocument rdf:type rdfs:Class .
+
+:BibliographicEntry rdf:type rdfs:Class .
+
 :Agent rdf:type rdfs:Class . 
 
+:Person rdf:type rdfs:Class ;
+	rdfs:subClassOf :Agent .
 
-	
+:Organization rdf:type rdfs:Class ;
+	rdfs:subClassOf :Agent .
 
+:System rdf:type rdfs:Class ;
+	rdfs:subClassOf :Agent .
 
 :LabeledTermStatus rdf:type rdfs:Class .
-
-	
 
 :CandidateStatus rdf:type rdfs:Class ;
 	rdfs:subClassOf :LabeledTermStatus .
@@ -109,54 +124,61 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 
 
-:Person rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
-
-:Organization rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
-
-:System rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
-
-:NonleafTextFragment rdf:type rdfs:Class ;
-	rdfs:subClassOf :TextFragment .
-
-:Sentence rdf:type rdfs:Class ;
-	rdfs:subClassOf :TextFragment .
-
-:Section rdf:type rdfs:Class ;
-	rdfs:subClassOf :NonleafTextFragment .
-
-:Paragraph rdf:type rdfs:Class ;
-	rdfs:subClassOf :NonleafTextFragment .
-
-
 # ------------------------------
 # OBJECT PROPERTY
 # ------------------------------
 
-:containsDocumentPart rdf:type owl:ObjectProperty .
+:containsDocumentPart rdf:type owl:ObjectProperty ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:range :DocumentPart ;
+	rdf:type owl:TransitiveProperty ;
+	rdf:type owl:AsymmetricProperty ;
+	rdf:type owl:IrreflexiveProperty .
+
 :containsTerm rdf:type owl:ObjectProperty ;
-	owl:inverseOf :termOccursIn .
+	owl:inverseOf :termOccursIn ;
+	rdfs:domain :ScientificPublication ;
+	rdfs:domain :Keywords ;
+	rdfs:range :Term .
+	
 :directlyContainsFragment rdf:type owl:ObjectProperty .
+
 :hasAuthor rdf:type owl:ObjectProperty .
+
 :containsBibliographicEntry rdf:type owl:ObjectProperty .
+
 :references rdf:type owl:ObjectProperty .
+
 :cites rdf:type owl:ObjectProperty .
+
 :containsSubTerm rdf:type owl:ObjectProperty .
+
 :hasStatus rdf:type owl:ObjectProperty .
+
 :hasStartingLocation rdf:type owl:ObjectProperty .
+
 :hasEndingLocation rdf:type owl:ObjectProperty .
+
 :hasStartingLine rdf:type owl:ObjectProperty .
+
 :hasEndingLine rdf:type owl:ObjectProperty .
+
 :hasStartingColumn rdf:type owl:ObjectProperty .
+
 :hasEndingColumn rdf:type owl:ObjectProperty .
+
 :hasStartingPage rdf:type owl:ObjectProperty .
+
 :hasEndingPage rdf:type owl:ObjectProperty .
+
 :person rdf:type owl:ObjectProperty .
+
 :affiliation rdf:type owl:ObjectProperty .
+
 :statusCreatedBy rdf:type owl:ObjectProperty .
+
 :statusTerminatedBy rdf:type owl:ObjectProperty .
+
 
 
 # ------------------------------
@@ -175,12 +197,12 @@ sp:LabelingSchema rdf:type rdfs:Class .
 # DOMAIN AND RANGE
 # ------------------------------
 
-:containsDocumentPart rdfs:domain :ScientificPublication ;
-	rdfs:range :DocumentPart .
+#:containsDocumentPart rdfs:domain :ScientificPublication ;
+#	rdfs:range :DocumentPart .
 	
-:containsTerm rdfs:domain :ScientificPublication ;
-	rdfs:domain :Keywords ;
-	rdfs:range :Term .
+#:containsTerm rdfs:domain :ScientificPublication ;
+#	rdfs:domain :Keywords ;
+#	rdfs:range :Term .
 	
 :termOccursIn rdfs:domain :Term ;
 	rdfs:range :DocumentPart ;
@@ -397,9 +419,6 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 
 
-
-
-
 # ~ * ~ * ~ * ~~ * ~ 
 # Axiom
 # ~ * ~ * ~ * ~~ * ~ 
@@ -490,14 +509,6 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 
 
-
-
-
-
-
-
-
-
 # ~ * ~ * ~ * ~~ * ~ 
 # Class expressions
 # ~ * ~ * ~ * ~~ * ~ 
@@ -558,8 +569,4 @@ sp:LabelingSchema rdf:type rdfs:Class .
        		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
 		owl:someValuesFrom :BibliographicEntry] .
 
-
-
-
-		
 
