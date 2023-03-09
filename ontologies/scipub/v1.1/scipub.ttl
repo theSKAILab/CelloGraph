@@ -135,11 +135,10 @@ sp:LabelingSchema rdf:type rdfs:Class .
 	rdf:type owl:AsymmetricProperty ;
 	rdf:type owl:IrreflexiveProperty .
 
-:containsTerm rdf:type owl:ObjectProperty ;
-	owl:inverseOf :termOccursIn ;
-	rdfs:domain :ScientificPublication ;
-	rdfs:domain :Keywords ;
-	rdfs:range :Term .
+:containsLabeledTerm rdf:type owl:ObjectProperty ;
+	owl:inverseOf :labeledTermOccursIn ;
+	rdfs:domain _:RangeOfLabeledTermOccursIn ;
+	rdfs:range :LabeledTerm .
 	
 :directlyContainsFragment rdf:type owl:ObjectProperty .
 
@@ -151,7 +150,7 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 :cites rdf:type owl:ObjectProperty .
 
-:containsSubTerm rdf:type owl:ObjectProperty .
+:containsSubLabeledTerm rdf:type owl:ObjectProperty .
 
 :hasStatus rdf:type owl:ObjectProperty .
 
@@ -185,10 +184,6 @@ sp:LabelingSchema rdf:type rdfs:Class .
 # OBJECT SUBPROPERTY
 # ------------------------------
 
-:containsDocumentPart rdfs:subPropertyOf :contains .             #### how these are subproperties of contains which is not a property
-:containsTerm rdfs:subPropertyOf :contains .
-:containsSubTerm rdfs:subPropertyOf :contains .
-
 :containsFragment rdfs:subPropertyOf :contains .
 :directlyContainsFragment rdfs:subPropertyOf :containsFragment .
 
@@ -200,13 +195,11 @@ sp:LabelingSchema rdf:type rdfs:Class .
 #:containsDocumentPart rdfs:domain :ScientificPublication ;
 #	rdfs:range :DocumentPart .
 	
-#:containsTerm rdfs:domain :ScientificPublication ;
-#	rdfs:domain :Keywords ;
-#	rdfs:range :Term .
+:labeledTermOccursIn rdfs:domain :LabeledTerm ;
+	rdfs:range _:RangeOfLabeledTermOccursIn .  
 	
-:termOccursIn rdfs:domain :Term ;
-	rdfs:range :DocumentPart ;
-	rdfs:range :ScientificPublication .               #### why there is no inverse relation Term -> Keywords
+_:RangeOfLabeledTermOccursIn rdf:type owl:Class ;
+				owl:unionOf (:ScientificPublication :DocumentPart ).
 	
 :directlyContainsFragment rdfs:domain :ScientificPublication ;
 	rdfs:domain :NonleafTextFragment ;
@@ -224,10 +217,10 @@ sp:LabelingSchema rdf:type rdfs:Class .
 :cites rdfs:domain :TextFragment ;
 	rdfs:range :BibliographicEntry .
 	
-:containsSubTerm rdfs:domain :Term ;
-	rdfs:range :Term .
+:containsSubLabeledTerm rdfs:domain :LabeledTerm ;
+	rdfs:range :LabeledTerm .
 
-:hasStatus rdfs:domain :Term ;
+:hasStatus rdfs:domain :LabeledTerm ;
 	rdfs:range :TermStatus .
 	
 :hasStartingLocation rdfs:domain :TextFragment ;
@@ -336,8 +329,8 @@ sp:LabelingSchema rdf:type rdfs:Class .
 	rdf:type owl:AsymmetricProperty ;
 	rdf:type owl:IrreflexiveProperty .
 	
-:containsTerm rdf:type owl:ObjectProperty ;
-	owl:inverseOf :termOccursIn ;
+:containsLabeledTerm rdf:type owl:ObjectProperty ;
+	owl:inverseOf :labeledTermOccursIn ;
 	rdf:type owl:AsymmetricProperty ;
 	rdf:type owl:IrreflexiveProperty .
 
