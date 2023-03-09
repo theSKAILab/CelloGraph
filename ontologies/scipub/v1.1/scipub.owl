@@ -1,0 +1,1108 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://spatialai.org/SciPub/v1.1/scipub.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://spatialai.org/SciPub/v1.1/scipub.owl#"
+     versionIRI="http://www.spatialai.org/SciPub/v1.1/">
+    <Prefix name="" IRI="http://spatialai.org/SciPub/v1.1/scipub.owl#"/>
+    <Prefix name="sp" IRI="http://spatialai.org/SciPub/v1.1/scipub.owl#"/>
+    <Prefix name="bfo" IRI="http://purl.obolibrary.org/obo/bfo.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#Date">2022-07-11</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <IRI>http://orcid.org/0000-0002-5331-5052</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal xml:lang="en-us">Torsten Hahmann</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal xml:lang="en-us">The ontology module for representing the content and meta-information of Scientific Publications (mostly print publications) as relevant for the CelloGraph project.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2023-01-27</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#Date">2023-02-09</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+        <IRI>http://spatialai.org/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:rights"/>
+        <Literal xml:lang="en-us">Copyright 2022-2023 UMaine, SKAI Lab.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+        <Literal datatypeIRI="xsd:anyURI">https://github.com/thahmann/CelloGraph/ontologies/scipub/v1.1/scipub.owl</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="en-us">Scientific Publications Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en-us">Scientific Publications Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en-us">1.1</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="bfo:Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bfo:InformationContentEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Abstract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AtomicLabeledTerm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BibliographicEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Bibliography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CandidateStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CompoundLabeledTerm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ConfirmedStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DocumentPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Equation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Figure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Keywords"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Label"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LabeledTerm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LabeledTermStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LabelingSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Listing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LocationInDocument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NonleafTextFragment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OpenStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Paragraph"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PublicationAuthor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RejectedStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ScientificPublication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Section"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Sentence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Table"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TextFragment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="affiliation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="cites"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsBibliographicEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsDocumentPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsSubTerm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsTerm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasEndingColumn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasEndingLine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasEndingLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasEndingPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStartingColumn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStartingLine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStartingLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStartingPage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPerson"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="references"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="statusCreatedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="statusTerminatedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="authors"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="doi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="firstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="headerText"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="lastName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="orcId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="position"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="publicationDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="statusCreatedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="statusUpdatedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="text"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="venue"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsFragment"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="termOccursIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="containsText"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Column"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SingleTerm"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Keyword"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:rights"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TermStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Heading"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="contains"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:DocumentPart"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Term"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CompoundTerm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Page"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="bfo:InformationContentEntity"/>
+        <Class abbreviatedIRI="bfo:Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Abstract"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AtomicLabeledTerm"/>
+        <Class IRI="LabeledTerm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Bibliography"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Bibliography"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="containsBibliographicEntry"/>
+            <Class IRI="BibliographicEntry"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CandidateStatus"/>
+        <Class IRI="LabeledTermStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CompoundLabeledTerm"/>
+        <Class IRI="LabeledTerm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ConfirmedStatus"/>
+        <Class IRI="LabeledTermStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DocumentPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="contains"/>
+            <Class IRI="Abstract"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DocumentPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="contains"/>
+            <Class IRI="Bibliography"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DocumentPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="contains"/>
+            <Class IRI="Keyword"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Equation"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Figure"/>
+        <Class abbreviatedIRI="rdfs:DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Keywords"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Label"/>
+        <Class abbreviatedIRI="bfo:InformationContentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LabeledTerm"/>
+        <Class abbreviatedIRI="bfo:InformationContentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Listing"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NonleafTextFragment"/>
+        <Class IRI="TextFragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OpenStatus"/>
+        <Class IRI="LabeledTermStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Organization"/>
+        <Class IRI="Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Paragraph"/>
+        <Class IRI="NonleafTextFragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Person"/>
+        <Class IRI="Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RejectedStatus"/>
+        <Class IRI="LabeledTermStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ScientificPublication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="containsDocumentPart"/>
+            <Class IRI="DocumentPart"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ScientificPublication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="containsText"/>
+            <Class IRI="TextFragment"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Section"/>
+        <Class IRI="NonleafTextFragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Sentence"/>
+        <Class IRI="TextFragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="System"/>
+        <Class IRI="Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Table"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Term"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStatus"/>
+            <Class IRI="TermStatus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TermStatus"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="statusCreatedBy"/>
+            <Class IRI="Agent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TermStatus"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="statusTerminatedBy"/>
+            <Class IRI="Agent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TextFragment"/>
+        <Class IRI="DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TextFragment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasEndingLocation"/>
+            <Class IRI="LocationInDocument"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TextFragment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasStartingLocation"/>
+            <Class IRI="LocationInDocument"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="Abstract"/>
+        <Class IRI="Bibliography"/>
+        <Class IRI="Equation"/>
+        <Class IRI="Figure"/>
+        <Class IRI="Keyword"/>
+        <Class IRI="Listing"/>
+        <Class IRI="Table"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CandidateStatus"/>
+        <Class IRI="ConfirmedStatus"/>
+        <Class IRI="RejectedStatus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="Column"/>
+        <Class IRI="Line"/>
+        <Class IRI="Page"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="CompoundTerm"/>
+        <Class IRI="SingleTerm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="Heading"/>
+        <Class IRI="Paragraph"/>
+        <Class IRI="Section"/>
+        <Class IRI="Sentence"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="Person"/>
+        <Class IRI="System"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="Agent"/>
+        <Class IRI="Person"/>
+        <Class IRI="System"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="DocumentPart"/>
+        <Class IRI="Abstract"/>
+        <Class IRI="Bibliography"/>
+        <Class IRI="Equation"/>
+        <Class IRI="Figure"/>
+        <Class IRI="Keyword"/>
+        <Class IRI="Listing"/>
+        <Class IRI="Table"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="LocationInDocument"/>
+        <Class IRI="Column"/>
+        <Class IRI="Line"/>
+        <Class IRI="Page"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="Term"/>
+        <Class IRI="CompoundTerm"/>
+        <Class IRI="SingleTerm"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="TermStatus"/>
+        <Class IRI="CandidateStatus"/>
+        <Class IRI="ConfirmedStatus"/>
+        <Class IRI="RejectedStatus"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="TextFragment"/>
+        <Class IRI="Heading"/>
+        <Class IRI="Paragraph"/>
+        <Class IRI="Section"/>
+        <Class IRI="Sentence"/>
+    </DisjointUnion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="containsDocumentPart"/>
+        <ObjectProperty IRI="contains"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="containsFragment"/>
+        <ObjectProperty IRI="contains"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="containsSubTerm"/>
+        <ObjectProperty IRI="contains"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="containsTerm"/>
+        <ObjectProperty IRI="contains"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+        <ObjectProperty IRI="containsFragment"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="containsTerm"/>
+        <ObjectProperty IRI="termOccursIn"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="containsSubTerm"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasEndingColumn"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasEndingLine"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasEndingPage"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasStartingColumn"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasStartingLine"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="hasStartingPage"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="affiliation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="cites"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="containsBibliographicEntry"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="containsDocumentPart"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="containsTerm"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="hasAuthor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="hasEndingLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="hasStartingLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="hasStatus"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="isPerson"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="references"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="statusCreatedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="statusTerminatedBy"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="containsDocumentPart"/>
+    </TransitiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="containsSubTerm"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasEndingColumn"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasEndingLine"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasEndingPage"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasStartingColumn"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasStartingLine"/>
+    </ReflexiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="hasStartingPage"/>
+    </ReflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="affiliation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="cites"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="containsBibliographicEntry"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="containsDocumentPart"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="containsTerm"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="hasAuthor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="hasEndingLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="hasStartingLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="hasStatus"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="isPerson"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="references"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="statusCreatedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="statusTerminatedBy"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="affiliation"/>
+        <Class IRI="Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="affiliation"/>
+        <Class IRI="PublicationAuthor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="cites"/>
+        <Class IRI="TextFragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="containsBibliographicEntry"/>
+        <Class IRI="Bibliography"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="containsDocumentPart"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="containsSubTerm"/>
+        <Class IRI="Term"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="containsTerm"/>
+        <Class IRI="Keywords"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="containsTerm"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+        <Class IRI="NonleafTextFragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasAuthor"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEndingColumn"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEndingLine"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEndingLocation"/>
+        <Class IRI="TextFragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasEndingPage"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStartingColumn"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStartingLine"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStartingLocation"/>
+        <Class IRI="TextFragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStartingPage"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="Term"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPerson"/>
+        <Class IRI="Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPerson"/>
+        <Class IRI="PublicationAuthor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="references"/>
+        <Class IRI="BibliographicEntry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="statusCreatedBy"/>
+        <Class IRI="TermStatus"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="statusTerminatedBy"/>
+        <Class IRI="TermStatus"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="termOccursIn"/>
+        <Class IRI="Term"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="cites"/>
+        <Class IRI="BibliographicEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="containsBibliographicEntry"/>
+        <Class IRI="BibliographicEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="containsDocumentPart"/>
+        <Class IRI="DocumentPart"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="containsSubTerm"/>
+        <Class IRI="Term"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="containsTerm"/>
+        <Class IRI="Term"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="directlyContainsFragment"/>
+        <Class IRI="TextFragment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAuthor"/>
+        <Class IRI="PublicationAuthor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEndingColumn"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEndingLine"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEndingLocation"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasEndingPage"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStartingColumn"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStartingLine"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStartingLocation"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStartingPage"/>
+        <Class IRI="LocationInDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasStatus"/>
+        <Class IRI="TermStatus"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="references"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="statusCreatedBy"/>
+        <Class IRI="Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="statusTerminatedBy"/>
+        <Class IRI="Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="termOccursIn"/>
+        <Class IRI="DocumentPart"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="termOccursIn"/>
+        <Class IRI="ScientificPublication"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="authors"/>
+        <Class IRI="ScientificPublication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="doi"/>
+        <Class IRI="ScientificPublication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="firstName"/>
+        <Class IRI="Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="headerText"/>
+        <Class IRI="TextFragment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="lastName"/>
+        <Class IRI="Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="orcId"/>
+        <Class IRI="Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="position"/>
+        <Class IRI="DocumentPart"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="position"/>
+        <Class IRI="PublicationAuthor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="publicationDate"/>
+        <Class IRI="ScientificPublication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="statusCreatedDate"/>
+        <Class IRI="TermStatus"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="statusUpdatedDate"/>
+        <Class IRI="TermStatus"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="text"/>
+        <Class IRI="Sentence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="text"/>
+        <Class IRI="Term"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="text"/>
+        <Class IRI="TextFragment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="title"/>
+        <Class IRI="ScientificPublication"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="venue"/>
+        <Class IRI="ScientificPublication"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="authors"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="doi"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="firstName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="headerText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="lastName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="orcId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="position"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="publicationDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="statusCreatedDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="statusUpdatedDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="text"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="title"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="venue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483666"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:maxCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483667"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483668"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:minCardinality"/>
+        <AnonymousIndividual nodeID="_:genid2147483669"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

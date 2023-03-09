@@ -254,7 +254,7 @@ sp:LabelingSchema rdf:type rdfs:Class .
 :hasEndingPage rdfs:domain :LocationInDocument ;
 	rdfs:range :LocationInDocument .
 
-:person rdfs:domain :PublicationAuthor ;
+:isPerson rdfs:domain :PublicationAuthor ;
 	rdfs:domain :Person .
 
 :affiliation rdfs:domain :PublicationAuthor ;
@@ -401,7 +401,7 @@ sp:LabelingSchema rdf:type rdfs:Class .
 	rdf:type owl:SymmetricProperty ;
 	rdf:type owl:ReflexiveProperty.
 	
-:person rdf:type owl:ObjectProperty ;
+:isPerson rdf:type owl:ObjectProperty ;
 	rdf:type owl:AsymmetricProperty ;
 	rdf:type owl:IrreflexiveProperty .
 	
