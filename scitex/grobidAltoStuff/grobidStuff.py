@@ -2,13 +2,15 @@ import xml.etree.ElementTree as ET
 import io
 import copy
 
+
 #this is the list of a bunch of spacing characters that show up in the xml that I don't want to include when doing string processing.
 formatList = ['\n', '\t']
+whiteSpace = ['', b'', '\n', b'\n']
 
 #just gets the div object cuz there's some junk to cut through first.
 # filepath: String filepath
 # returns: ElementTree.Element which contains the main text.
-def findDiv(filepath):
+def findBody(filepath):
 
     with io.open(filepath, "rb") as f:
         root = ET.parse(f).getroot()
@@ -25,14 +27,25 @@ def findDiv(filepath):
 # textArr: List of strings
 # returns: List of strings
 def clean(textArr):
+
+    whiteSpaceCount = 0
+
     if(len(textArr) == 0):
         return textArr
     i = -1
     while i < len(textArr)-1:
         i += 1
-        if(textArr[i] == ''):
+        if(textArr[i] in whiteSpace):
             textArr.pop(i)
             i -= 1
+            whiteSpaceCount += 1
+        elif(textArr[i] == b'.' or textArr[i] == '.'):
+            textArr[i-1] += '.'
+            textArr.pop(i)
+            i -= 1
+        else:
+            if isinstance(textArr[i], bytes):
+                textArr[i] = textArr[i].decode()
     return textArr
 
 
@@ -40,30 +53,54 @@ def clean(textArr):
 #accepts a long string, designed to return a list of indices for where each individual word is.    
 # longstr: String version of the grobid XML.
 # returns: List of shape [[int, int], ...] where retval[0] is the first and last character of the first word.
-def stringBreaker(longstr):
+def stringBreaker(longstr, mode="map"):
     retval = []
     words = []
     bookmark = 0
     inTag = False
 
-    for c in range(len(longstr)):
+    c = -1
+    while c < len(longstr) -1:
+        c += 1
         testChar = chr(longstr[c])
         if testChar == '>':
             inTag = False
             bookmark = c+1
-        elif not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):            
-            retval.append([bookmark, c])
-            words.append(longstr[bookmark:c].decode())
+        elif bookmark != c and not inTag and testChar == ' ' or (testChar == '<' and chr(longstr[c-1]) != '>' and chr(longstr[c-1]) not in formatList):            
+            ret = [bookmark, c]
+            word = longstr[bookmark:c].decode()
+            add = True
+
+            if(word == '' or word == ' '):
+                add = False
+            elif(word[0] == ' '):
+                ret[0] += 1
+                word = word[1:]
+            elif(word[len(word)-1] == ' '):
+                ret[1] -= 1
+                word = word[:len(word)-1]
+            elif(word == '.'):
+                words[len(words)-1] += '.'
+                add = False
+            
+
+            if(add):
+                retval.append(ret)
+                words.append(word)
             bookmark = c+1
+
         if testChar == '<':
             inTag = True
+
+    if(mode=="words"):
+        return words
     return retval
 
 
 #finds the number of words before the main text so it can be used as an offset.
 # filepath: String filepath of the grobid output
 # returns: int, the number of words present before the main text.
-def findDivOffSet(filepath):
+def findBodyOffSet(filepath):
     with io.open(filepath, "rb") as f:
         root = ET.parse(f).getroot()
 
@@ -85,9 +122,18 @@ def findDivOffSet(filepath):
             words.append(stringi.decode()[wordsi[j][0]:wordsi[j][1]])
         words.append(len(wordsi))
 
-    wordOff = len(words)
+    cleaned = clean(words)
+    wordOff = len(cleaned)
 
     return wordOff - textDex
+
+def findFigOffset(filepath):
+    bodyOff = findBodyOffSet(filepath)
+
+    bodyWords = grobidBodyWords(filepath)
+    bodyLen = len(bodyWords)
+    
+    return bodyOff + bodyLen
 
 
 #puts all the script tags in.
@@ -98,18 +144,23 @@ def findDivOffSet(filepath):
 # returns: String, which can be turned into an XML file.
 def stringFixer(filepath, supers, subs, map):
 
-    wordOffset = findDivOffSet(filepath)
+    bodySupers, figSupers = supers[0], supers[1]
+    bodySubs, figSubs = subs[0], subs[1]
 
-    tags = assembleTags(supers, subs, map, wordOffset)
+    wordOffset = findBodyOffSet(filepath)
+
+    tags = assembleTags(bodySupers, bodySubs, map, wordOffset)
+
+    figOffset = findFigOffset(filepath)
+
+    tags = assembleTags(figSupers, figSubs, map, figOffset) + tags
 
     longstr = longStr(filepath)
-    
 
     for i in range(len(tags)):
         tagDex, type = tags[i]
         start = tagDex[0] 
         end = tagDex[1]
-
         
         longstr = longstr[:start] + bytes("<", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[start:end] + bytes("</", "utf-8") + bytes(type, "utf-8") + bytes(">", "utf-8") + longstr[end:]
         tagDex, type = tags[len(tags)-1]  
@@ -146,17 +197,39 @@ def longStr(filepath):
     #wordsString = grobidWords(filepath, "str")
 
     c = -1
+    decimal_marker = -1
+    hex_marker = -1
 
-    while c < len(longString):
+    while c < len(longString)-1:
         c += 1
+
+        if hex_marker > 0 and (chr(longString[c] == ' ')):
+            num = int(longString[hex_marker+2:c])
+            longString = longString[:hex_marker] + longString[hex_marker+2:c].decode() + longString[c:]
+            hex_marker = -1
 
         #if there's a character that's being stupid and was replaced with a Unicode encoding number
         if(longString[c:c+2] == b"&#"):
+            decimal_marker = c
+
+        if(longString[c:c+2] == b"\\x"):
+            hex_marker = c
+
+        if decimal_marker > 0 and (chr(longString[c]) == ';'):
+
+            num = int(longString[decimal_marker+2:c])
 
             #replace it with the right character. 
             #Yes I have to decode and then re-encode it that is unfortunately how chr() works.
+            
 
-            longString = longString[:c] + chr(int(longString[c+2:c+5].decode())).encode() + longString[c+6:]
+            if(True):
+                longString = longString[:decimal_marker] + chr(int(longString[decimal_marker+2:c].decode())).encode() + longString[c+1:]
+            #else:
+                #call 'fixFunkyPDFChars' from old Scitex.
+            decimal_marker = -1
+
+        
 
     
     return longString
@@ -196,7 +269,7 @@ def rebuild(sourcePath, outputName, supers, subs):
     longstr = stringFixer(sourcePath, supers, subs, stringBreaker(longstr))
 
     with io.open(outputName,'w',encoding='utf8') as f:
-        f.write(longstr.decode(encoding="UTF-8"))
+        f.write(longstr.decode())
 
     return longstr
 
@@ -205,6 +278,8 @@ def rebuild(sourcePath, outputName, supers, subs):
 # text: String text
 # returns: list of shape [bytestring, ...] of the text, split by spaces.
 def manualSplit(text):
+    if not text:
+        return None
     retval = []
 
     bookmark = 0
@@ -214,43 +289,53 @@ def manualSplit(text):
             bookmark = i+1
     retval.append(text[bookmark:].encode())
 
+    i = -1
+    while i < len(retval)-1:
+        i += 1
+        word = retval[i]
+        if word == b'.' and i != 0:
+            retval[i-1] += b'.'
+            retval.pop(i)
+            i -= 1
+
+
     return retval
 
 #returns an array of all the words
-def grobidWords(filepath, output="arr"):
+def grobidBodyWords(filepath, output="arr"):
     
-    body = findDiv(filepath)
+    body = findBody(filepath)
+    divArr = body.findall("{http://www.tei-c.org/ns/1.0}div")
     retval = []
-    
-    for header in body:
-        if('div' in header.tag):
-            head = header[0]
-            if(head.text):
-                retval += manualSplit(head.text)
-                for para in header[1:]:
-                    if(para.text):
-                        retval += manualSplit(para.text)
-                    if(para.tail):
-                        retval += manualSplit(para.tail)
-                    for sent in para:
-                        #add sentence text
-                        if(sent.text):
-                            retval += manualSplit(sent.text)
-                        if(sent.tail):
-                            retval += manualSplit(sent.tail)
 
-                        #if there are citations breaking up the sentence, add those
-                        if(len(sent)>0):
-                            for cite in sent:
-                                retval += manualSplit(cite.text)
-                                if(cite.tail):
-                                    retval += manualSplit(cite.tail)
-                        
-
-    
+    for div in divArr:
+        for child in div.iter():
+            if(child.text):
+                retval += manualSplit(child.text)
+            if(child.tail):
+                retval += manualSplit(child.tail)
+                
     retval = clean(retval)
 
     if(output == "str"):
         return b' '.join(retval)
 
+    return retval
+
+
+def grobidFigWords(filepath):
+    body = findBody(filepath)
+
+    figureArr = body.findall("{http://www.tei-c.org/ns/1.0}figure")
+
+    retval = []
+    
+    for figure in figureArr:
+        for thing in figure.iter():
+            if(thing.text):
+                retval += manualSplit(thing.text)
+            if(thing.tail):
+                retval += manualSplit(thing.tail)
+        
+    retval = clean(retval)
     return retval

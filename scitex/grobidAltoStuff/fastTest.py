@@ -1,4 +1,5 @@
 import main
+import grobidStuff
 
 HGpath = "scitex/grobidAltoStuff/grobid/HeinzeGrobid.xml"
 HApath = "scitex/grobidAltoStuff/pdfalto/HeinzeAlto.xml"
@@ -31,4 +32,21 @@ def testAll():
     test(Klemm)
     test(Shi)
 
+
 testAll()
+
+#bodyStrings = grobidStuff.grobidBodyWords(GGpath)
+#map = grobidStuff.stringBreaker(grobidStuff.longStr(GGpath), "words")
+#offset = grobidStuff.findBodyOffSet(GGpath)
+
+#diffs = []
+#for w in range(len(bodyStrings)):
+    #if bodyStrings[w] != map[w+offset+1]:
+        #diffs.append([bodyStrings[w], map[w+offset+1]])
+
+#print("hey")
+
+
+#grobidStuff.grobidFigWords(GGpath)
+
+

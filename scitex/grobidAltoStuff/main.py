@@ -4,8 +4,23 @@ import tryingDiff
 
 def addScript(grobidpath, altopath, outputpath):
 
-    groStrings = grobidStuff.grobidWords(grobidpath)
+    bodyStrings = grobidStuff.grobidBodyWords(grobidpath)
     altoStrings, altoWords, subFonts, superFonts = altoStuff.AltoLists(altopath)
+
+    bodySupers, bodySubs = matchStuff(bodyStrings, altoStrings, altoWords, subFonts, superFonts)
+
+    figStrings = grobidStuff.grobidFigWords(grobidpath)
+    
+    figSupers, figSubs = matchStuff(figStrings, altoStrings, altoWords, subFonts, superFonts)
+
+    supers = [bodySupers, figSupers]
+    subs = [bodySubs, figSubs]
+
+    grobidStuff.rebuild(grobidpath, outputpath, supers, subs)
+
+    
+
+def matchStuff(groStrings, altoStrings, altoWords, subFonts, superFonts):
 
     matches = tryingDiff.getMatches(groStrings, altoStrings)
 
@@ -37,6 +52,9 @@ def addScript(grobidpath, altopath, outputpath):
             altoW = altoStrings[altDex+i]
             groW = groStrings[groDex+i]
 
+            if(groW == '−1'):
+                print("what")
+
             script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
             if(script == "super"):
                 supers.append([groDex+i, groStrings[groDex+i]])
@@ -45,10 +63,9 @@ def addScript(grobidpath, altopath, outputpath):
                 subs.append([groDex+i, groStrings[groDex+i]])
                 subStrings.append(groStrings[groDex+i])
 
+    return supers, subs
 
     #fixedBody = grobidStuff.addScript("scitex/grobidAltoStuff/HeinzeGrobid.xml", supers, subs)
 
     #outputXML = grobidStuff.rebuild("scitex/grobidAltoStuff/HeinzeGrobid.xml", fixedBody)
-
-    grobidStuff.rebuild(grobidpath, outputpath, supers, subs)
 

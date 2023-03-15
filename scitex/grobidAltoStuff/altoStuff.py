@@ -16,12 +16,13 @@ def clean(textArr):
 
 #if the word's font is on the list of fonts, then return True
 def isScript(word, supers, subs):
-    id = word.get("STYLEREFS")
+    word_id = word.get("STYLEREFS")
     for font in supers:
-        if(id == font.get("ID")):
+        font_id = font.get("ID")
+        if(word_id == font_id):
             return "super"
     for font in subs:
-        if(id == font.get("ID")):
+        if(word_id == font_id):
             return "sub"
     return False
 
@@ -47,10 +48,11 @@ def AltoLists(filepath):
     styles = root[1]
     for font in styles:
         style = font.get("FONTSTYLE")
-        if(style == "superscript"):
-            subFonts.append(font)
-        elif(style == "subscript"):
-            superFonts.append(font)
+        if(style):
+            if("superscript" in style):
+                subFonts.append(font)
+            elif("subscript" in style):
+                superFonts.append(font)
 
     for page in layout:
         for space in page:
@@ -63,7 +65,7 @@ def AltoLists(filepath):
                             wordList.append(string)
     
     for word in wordList:
-        stringList.append(word.get("CONTENT").encode())
+        stringList.append(word.get("CONTENT"))
     
     stringList = clean(stringList)
     return stringList, wordList, superFonts, subFonts
