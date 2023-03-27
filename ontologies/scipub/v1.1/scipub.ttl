@@ -32,64 +32,102 @@
 # CLASS
 # ------------------------------
 
-:ScientificPublication rdf:type rdfs:Class .
+:ScientificPublication rdf:type rdfs:Class ;
+					   rdfs:subClassOf 
+									   [ rdf:type owl:Restriction ;
+										 owl:onProperty :containsDocumentPart ;
+										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+										 owl:someValuesFrom :DocumentPart ] ,
+									   [ rdf:type owl:Restriction ;
+										 owl:onProperty :directlyContainsFragment ;
+										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+										 owl:someValuesFrom :TextFragment ] ,
+									   [ rdf:type owl:Restriction ;
+									     owl:onProperty :hasAuthor ;
+										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+										 owl:allValuesFrom :PublicationAuthor ] .
 
-:PublicationAuthor rdf:type rdfs:Class . 
+:PublicationAuthor rdf:type rdfs:Class ;
+				   rdfs:subClassOf
+								   [ rdf:type owl:Restriction ;
+								     owl:onProperty :isPerson ;
+									 owl:allValuesFrom :Person ] ,
+								   [ rdf:type owl:Restriction ;
+								     owl:onProperty :affiliation ;
+									 owl:allValuesFrom :Organization ] .
 
 :DocumentPart rdf:type rdfs:Class .
 
 :Figure rdf:type rdfs:Class ;
-	rdfs:subClassOf rdfs:DocumentPart .
+				 rdfs:subClassOf rdfs:DocumentPart .
 	
 :Table rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart .
+				rdfs:subClassOf :DocumentPart .
 
 :Equation rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart .
+		  rdfs:subClassOf :DocumentPart .
 
 :Listing rdf:type rdfs:Class ;	
-	rdfs:subClassOf :DocumentPart .
+		 rdfs:subClassOf :DocumentPart .
 
 :Bibliography rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart.
+			  rdfs:subClassOf :DocumentPart ,
+							  [ rdf:type owl:Restriction ;
+								owl:onProperty :containsBibliographicEntry ;
+								owl:allValuesFrom :BibliographicEntry ] .
 
 :Abstract rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart .
+		  rdfs:subClassOf :DocumentPart .
 	
 :Keywords rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart .
+		  rdfs:subClassOf :DocumentPart .
 
 :TextFragment rdf:type rdfs:Class ;
-	rdfs:subClassOf :DocumentPart .
+			  rdfs:subClassOf :DocumentPart ,
+							  [ rdf:type owl:Restriction ;
+							    owl:onProperty :cites ;
+								owl:allValuesFrom :BibliographicEntry ] ,
+							  [ rdf:type owl:Restriction ;
+								owl:onProperty :hasStartingLocation ;
+								owl:cardinality '1'^^xsd:nonNegativeInteger ;
+								owl:someValuesFrom :LocationInDocument ] ,
+							  [ rdf:type owl:Restriction ;
+								owl:onProperty :hasEndingLocation ;
+								owl:cardinality '1'^^xsd:nonNegativeInteger ;
+								owl:someValuesFrom :LocationInDocument ] .
 	
 :NonleafTextFragment rdf:type rdfs:Class ;
-	rdfs:subClassOf :TextFragment .
+					 rdfs:subClassOf :TextFragment .
 
 :Sentence rdf:type rdfs:Class ;
-	rdfs:subClassOf :TextFragment .
+		  rdfs:subClassOf :TextFragment .
 
 :Section rdf:type rdfs:Class ;
-	rdfs:subClassOf :NonleafTextFragment .
+		 rdfs:subClassOf :NonleafTextFragment .
 
 :Paragraph rdf:type rdfs:Class ;
-	rdfs:subClassOf :NonleafTextFragment .
+		   rdfs:subClassOf :NonleafTextFragment .
 	
 bfo:Entity rdf:type rdfs:Class .
 
 bfo:InformationContentEntity rdf:type rdfs:Class ;
-	rdfs:subClassOf bfo:Entity .
+							 rdfs:subClassOf bfo:Entity .
 
 :LabeledTerm rdf:type rdfs:Class ;
-	rdfs:subClassOf bfo:InformationContentEntity .
+			 rdfs:subClassOf bfo:InformationContentEntity ,
+							 [ rdf:type owl:Restriction ;
+							   owl:onProperty :hasStatus ;
+							   owl:cardinality '1'^^xsd:nonNegativeInteger ;
+							   owl:someValuesFrom :LabeledTermStatus ] .
 
 :AtomicLabeledTerm rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTerm .
+				   rdfs:subClassOf :LabeledTerm .
 
 :CompoundLabeledTerm rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTerm .
+					 rdfs:subClassOf :LabeledTerm .
 
 sp:Label rdf:type rdfs:Class ;
-	rdfs:subClassOf bfo:InformationContentEntity .
+		 rdfs:subClassOf bfo:InformationContentEntity .
 
 sp:LabelingSchema rdf:type rdfs:Class .
 
@@ -100,27 +138,36 @@ sp:LabelingSchema rdf:type rdfs:Class .
 :Agent rdf:type rdfs:Class . 
 
 :Person rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
+		rdfs:subClassOf :Agent .
 
 :Organization rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
+			  rdfs:subClassOf :Agent .
 
 :System rdf:type rdfs:Class ;
-	rdfs:subClassOf :Agent .
+		rdfs:subClassOf :Agent .
 
-:LabeledTermStatus rdf:type rdfs:Class .
+:LabeledTermStatus rdf:type rdfs:Class ;
+				   rdfs:subClassOf 
+								   [ rdf:type owl:Restriction ;
+									 owl:onProperty :statusCreatedBy ;
+									 owl:cardinality '1'^^xsd:nonNegativeInteger ;
+									 owl:someValuesFrom :Agent ] ,
+								   [ rdf:type owl:Restriction ;
+									 owl:onProperty :statusTerminatedBy ;
+									 owl:cardinality '1'^^xsd:nonNegativeInteger ;
+									 owl:someValuesFrom :Agent ] .
 
 :CandidateStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTermStatus .
+				 rdfs:subClassOf :LabeledTermStatus .
 
 :ConfirmedStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTermStatus .
+				 rdfs:subClassOf :LabeledTermStatus .
 
 :RejectedStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTermStatus .
+				rdfs:subClassOf :LabeledTermStatus .
 
 :OpenStatus rdf:type rdfs:Class ;
-	rdfs:subClassOf :LabeledTermStatus .
+			rdfs:subClassOf :LabeledTermStatus .
 
 
 
@@ -129,136 +176,163 @@ sp:LabelingSchema rdf:type rdfs:Class .
 # ------------------------------
 
 :containsDocumentPart rdf:type owl:ObjectProperty ;
-	rdfs:domain :ScientificPublication ;
-	rdfs:range :DocumentPart ;
-	rdf:type owl:TransitiveProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
+					  rdfs:domain :ScientificPublication ;
+					  rdfs:range :DocumentPart ;
+					  rdf:type owl:AsymmetricProperty ;
+					  rdf:type owl:IrreflexiveProperty .
 
 :containsLabeledTerm rdf:type owl:ObjectProperty ;
-	owl:inverseOf :labeledTermOccursIn ;
-	rdfs:domain _:RangeOfLabeledTermOccursIn ;
-	rdfs:range :LabeledTerm .
+					 owl:inverseOf :labeledTermOccursIn ;
+					 rdfs:domain _:DomainOfContainsLabeledTerm ;
+					 rdfs:range :LabeledTerm ;
+					 rdf:type owl:AsymmetricProperty ;
+					 rdf:type owl:IrreflexiveProperty .
+					
+:labeledTermOccursIn rdf:type owl:ObjectProperty ;
+					 rdfs:domain :LabeledTerm ;
+					 rdfs:range _:DomainOfContainsLabeledTerm ;
+					 rdf:type owl:AsymmetricProperty ;
+					 rdf:type owl:ReflexiveProperty .
 	
-:directlyContainsFragment rdf:type owl:ObjectProperty .
-
-:hasAuthor rdf:type owl:ObjectProperty .
-
-:containsBibliographicEntry rdf:type owl:ObjectProperty .
-
-:references rdf:type owl:ObjectProperty .
-
-:cites rdf:type owl:ObjectProperty .
-
-:containsSubLabeledTerm rdf:type owl:ObjectProperty .
-
-:hasStatus rdf:type owl:ObjectProperty .
-
-:hasStartingLocation rdf:type owl:ObjectProperty .
-
-:hasEndingLocation rdf:type owl:ObjectProperty .
-
-:hasStartingLine rdf:type owl:ObjectProperty .
-
-:hasEndingLine rdf:type owl:ObjectProperty .
-
-:hasStartingColumn rdf:type owl:ObjectProperty .
-
-:hasEndingColumn rdf:type owl:ObjectProperty .
-
-:hasStartingPage rdf:type owl:ObjectProperty .
-
-:hasEndingPage rdf:type owl:ObjectProperty .
-
-:person rdf:type owl:ObjectProperty .
-
-:affiliation rdf:type owl:ObjectProperty .
-
-:statusCreatedBy rdf:type owl:ObjectProperty .
-
-:statusTerminatedBy rdf:type owl:ObjectProperty .
-
-
-
-# ------------------------------
-# OBJECT SUBPROPERTY
-# ------------------------------
-
-:containsFragment rdfs:subPropertyOf :contains .
-:directlyContainsFragment rdfs:subPropertyOf :containsFragment .
-
-
-# ------------------------------
-# DOMAIN AND RANGE
-# ------------------------------
-
-#:containsDocumentPart rdfs:domain :ScientificPublication ;
-#	rdfs:range :DocumentPart .
+_:DomainOfContainsLabeledTerm rdf:type owl:Class ;
+							  owl:unionOf ( :ScientificPublication :DocumentPart ).
 	
-:labeledTermOccursIn rdfs:domain :LabeledTerm ;
-	rdfs:range _:RangeOfLabeledTermOccursIn .  
+:directlyContainsFragment rdf:type owl:ObjectProperty ;
+						  rdfs:domain _:DomainOfDirectlyContainsFragment ;
+						  rdfs:range :TextFragment ;
+						  rdf:type owl:AsymmetricProperty ;
+						  rdf:type owl:IrreflexiveProperty .
 	
-_:RangeOfLabeledTermOccursIn rdf:type owl:Class ;
-				owl:unionOf (:ScientificPublication :DocumentPart ).
-	
-:directlyContainsFragment rdfs:domain :ScientificPublication ;
-	rdfs:domain :NonleafTextFragment ;
-	rdfs:range :TextFragment .                        ####  the domain is any Publication or TextFragment and the range is another TextFragment
-	
-:hasAuthor rdfs:domain :ScientificPublication ;
-	rdfs:range :PublicationAuthor .	
-	
-:containsBibliographicEntry rdfs:domain :Bibliography ;
-	rdfs:range :BibliographicEntry .
-	
-:references rdfs:domain :BibliographicEntry ;
-	rdfs:range :ScientificPublication .
-	
-:cites rdfs:domain :TextFragment ;
-	rdfs:range :BibliographicEntry .
-	
-:containsSubLabeledTerm rdfs:domain :LabeledTerm ;
-	rdfs:range :LabeledTerm .
+_:DomainOfDirectlyContainsFragment rdf:type owl:Class ;
+								   owl:unionOf ( :ScientificPublication :NonleafTextFragment ).
 
-:hasStatus rdfs:domain :LabeledTerm ;
-	rdfs:range :TermStatus .
+:hasAuthor rdf:type owl:ObjectProperty ;
+		   rdfs:domain :ScientificPublication ;
+		   rdfs:range :PublicationAuthor ;
+		   rdf:type owl:AsymmetricProperty ;
+		   rdf:type owl:IrreflexiveProperty .
+
+:containsBibliographicEntry rdf:type owl:ObjectProperty ;
+							rdfs:domain :Bibliography ;
+							rdfs:range :BibliographicEntry ;
+							rdf:type owl:AsymmetricProperty ;
+							rdf:type owl:IrreflexiveProperty .
+
+:references rdf:type owl:ObjectProperty ;
+			rdfs:domain :BibliographicEntry ;
+			rdfs:range :ScientificPublication ;
+			rdf:type owl:AsymmetricProperty ;
+			rdf:type owl:IrreflexiveProperty .
+
+:cites rdf:type owl:ObjectProperty ;
+	   rdfs:domain :TextFragment ;
+	   rdfs:range :BibliographicEntry ;
+	   rdf:type owl:AsymmetricProperty ;
+	   rdf:type owl:IrreflexiveProperty .
 	
-:hasStartingLocation rdfs:domain :TextFragment ;
-	rdfs:range :LocationInDocument .
+bfo:is_about rdf:type owl:ObjectProperty ;
+			 rdfs:domain :LabeledTerm ;
+			 rdfs:range bfo:Entity ;
+			 rdf:type owl:AsymmetricProperty ;
+			 rdf:type owl:IrreflexiveProperty .
 
-:hasEndingLocation rdfs:domain :TextFragment ;
-	rdfs:range :LocationInDocument .
-
-:hasStartingLine rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
-
-:hasEndingLine rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
+:containsSubLabeledTerm rdf:type owl:ObjectProperty ;
+						rdfs:domain :LabeledTerm ;
+						rdfs:range :LabeledTerm ;
+						rdf:type owl:SymmetricProperty ;
+						rdf:type owl:ReflexiveProperty .
 	
-:hasStartingColumn rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
+:hasLabel rdf:type owl:ObjectProperty ;
+		  rdfs:domain :LabeledTerm ;
+		  rdfs:range sp:Label ;
+		  rdf:type owl:AsymmetricProperty ;
+		  rdf:type owl:IrreflexiveProperty .
 
-:hasEndingColumn rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
+:hasStatus rdf:type owl:ObjectProperty ;
+		   rdfs:domain :LabeledTerm ;
+		   rdfs:range :LabeledTermStatus ;
+		   rdf:type owl:AsymmetricProperty ;
+		   rdf:type owl:IrreflexiveProperty .
 
-:hasStartingPage rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
+:fromLabelingSchema rdf:type owl:ObjectProperty ;
+					rdfs:domain sp:Label ;
+					rdfs:range sp:LabelingSchema ;
+					rdf:type owl:AsymmetricProperty ;
+					rdf:type owl:IrreflexiveProperty .
 
-:hasEndingPage rdfs:domain :LocationInDocument ;
-	rdfs:range :LocationInDocument .
+:hasStartingLocation rdf:type owl:ObjectProperty ;
+					 rdfs:domain :TextFragment ;
+					 rdfs:range :LocationInDocument ;
+					 rdf:type owl:AsymmetricProperty ;
+					 rdf:type owl:IrreflexiveProperty.
 
-:isPerson rdfs:domain :PublicationAuthor ;
-	rdfs:domain :Person .
+:hasEndingLocation rdf:type owl:ObjectProperty ;
+				   rdfs:domain :TextFragment ;
+				   rdfs:range :LocationInDocument ;
+				   rdf:type owl:AsymmetricProperty ;
+				   rdf:type owl:IrreflexiveProperty .
 
-:affiliation rdfs:domain :PublicationAuthor ;
-	rdfs:domain :Organization .
+:hasStartingLine rdf:type owl:ObjectProperty ;
+				 rdfs:domain :LocationInDocument ;
+				 rdfs:range :LocationInDocument ;
+				 rdf:type owl:SymmetricProperty ;
+				 rdf:type owl:ReflexiveProperty .
+
+:hasEndingLine rdf:type owl:ObjectProperty ;
+			   rdfs:domain :LocationInDocument ;
+			   rdfs:range :LocationInDocument ;
+			   rdf:type owl:SymmetricProperty ;
+			   rdf:type owl:ReflexiveProperty .
+
+:hasStartingColumn rdf:type owl:ObjectProperty ;
+				   rdfs:domain :LocationInDocument ;
+				   rdfs:range :LocationInDocument ;
+				   rdf:type owl:SymmetricProperty ;
+				   rdf:type owl:ReflexiveProperty .
+
+:hasEndingColumn rdf:type owl:ObjectProperty ;
+				 rdfs:domain :LocationInDocument ;
+				 rdfs:range :LocationInDocument ;
+				 rdf:type owl:SymmetricProperty ;
+				 rdf:type owl:ReflexiveProperty .
+
+:hasStartingPage rdf:type owl:ObjectProperty ;
+				 rdfs:domain :LocationInDocument ;
+				 rdfs:range :LocationInDocument ;
+				 rdf:type owl:SymmetricProperty ;
+				 rdf:type owl:ReflexiveProperty .
 	
-:statusCreatedBy rdfs:domain :TermStatus ;
-	rdfs:range :Agent .
+:hasEndingPage rdf:type owl:ObjectProperty ;
+			   rdfs:domain :LocationInDocument ;
+			   rdfs:range :LocationInDocument ;
+			   rdf:type owl:SymmetricProperty ;
+			   rdf:type owl:ReflexiveProperty .
 
-:statusTerminatedBy rdfs:domain :TermStatus ;
-	rdfs:range :Agent .
-	
+:isPerson rdf:type owl:ObjectProperty ;
+		  rdfs:domain :PublicationAuthor ;
+		  rdfs:range :Person ;
+		  rdf:type owl:AsymmetricProperty ;
+		  rdf:type owl:IrreflexiveProperty .
+
+:affiliation rdf:type owl:ObjectProperty ;
+			 rdfs:domain :PublicationAuthor ;
+			 rdfs:range :Organization ;
+			 rdf:type owl:AsymmetricProperty ;
+			 rdf:type owl:IrreflexiveProperty .
+
+:statusCreatedBy rdf:type owl:ObjectProperty ;
+				 rdfs:domain :LabeledTermStatus ;
+				 rdfs:range :Agent ;
+				 rdf:type owl:AsymmetricProperty ;
+				 rdf:type owl:IrreflexiveProperty .
+
+:statusTerminatedBy rdf:type owl:ObjectProperty ;
+					rdfs:domain :LabeledTermStatus ;
+					rdfs:range :Agent ;
+					rdf:type owl:AsymmetricProperty ;
+					rdf:type owl:IrreflexiveProperty .
+
+
 
 # ------------------------------
 # DATATYPE PROPERTY
@@ -285,26 +359,30 @@ _:RangeOfLabeledTermOccursIn rdf:type owl:Class ;
 	rdfs:range xsd:dateTime .
 	
 :position rdf:type owl:DatatypeProperty ;
-	rdfs:domain :DocumentPart ;
-	rdfs:domain :PublicationAuthor ;
+	rdfs:domain _:DomainOfContainsLabeledTerm ;
 	rdfs:range xsd:nonNegativeInteger .
 
 :text rdf:type owl:DatatypeProperty ;
-	rdfs:domain :TextFragment ;
-	rdfs:domain :Sentence ;
-	rdfs:domain :Term ;
+	rdfs:domain _:DomainOfText ;
 	rdfs:range xsd:string .
 	
+_:DomainOfText rdf:type owl:Class ;
+	owl:unionOf ( :NonleafTextFragment :Sentence :LabeledTerm ) .
+	
+:labelText rdf:type owl:DatatypeProperty ;
+	rdfs:domain sp:Label ;
+	rdfs:range xsd:string .
+
 :headerText rdf:type owl:DatatypeProperty ;
 	rdfs:domain :TextFragment ;
 	rdfs:range xsd:string .
 	
 :statusCreatedDate rdf:type owl:DatatypeProperty ;
-	rdfs:domain :TermStatus ;
+	rdfs:domain :LabeledTermStatus ;
 	rdfs:range xsd:dateTime .
 	
 :statusUpdatedDate rdf:type owl:DatatypeProperty ;
-	rdfs:domain :TermStatus ;
+	rdfs:domain :LabeledTermStatus ;
 	rdfs:range xsd:dateTime .
 
 :firstName rdf:type owl:DatatypeProperty ;
@@ -320,103 +398,10 @@ _:RangeOfLabeledTermOccursIn rdf:type owl:Class ;
 	rdfs:range xsd:string .
 
 
+
 # ------------------------------
-# PROPERTY RESTRICTION
+# GENERAL AXIOM
 # ------------------------------
-
-:containsDocumentPart rdf:type owl:ObjectProperty ;
-	rdf:type owl:TransitiveProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-	
-:containsLabeledTerm rdf:type owl:ObjectProperty ;
-	owl:inverseOf :labeledTermOccursIn ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-
-:directlyContainsFragment rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-	
-:hasAuthor rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-		
-:containsBibliographicEntry rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-		
-:references rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-
-:cites rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-	
-:containsSubTerm rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty .
-	
-:hasStatus rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-	
-:hasStartingLocation rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty.
-
-:hasEndingLocation rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty.
-	
-:hasStartingLine rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:hasEndingLine rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:hasStartingColumn rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:hasEndingColumn rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:hasStartingPage rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:hasEndingPage rdf:type owl:ObjectProperty ;
-	rdf:type owl:SymmetricProperty ;
-	rdf:type owl:ReflexiveProperty.
-	
-:isPerson rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-	
-:affiliation rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-
-:statusCreatedBy rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-
-:statusTerminatedBy rdf:type owl:ObjectProperty ;
-	rdf:type owl:AsymmetricProperty ;
-	rdf:type owl:IrreflexiveProperty .
-
-
-
-# ~ * ~ * ~ * ~~ * ~ 
-# Axiom
-# ~ * ~ * ~ * ~~ * ~ 
-
-# Class axiom
 
 :DocumentPart owl:disjointUnionOf
 	(:Figure 
@@ -499,67 +484,5 @@ _:RangeOfLabeledTermOccursIn rdf:type owl:Class ;
 			:Paragraph
 			:Sentence
 			:Heading ) ].
-
-
-
-# ~ * ~ * ~ * ~~ * ~ 
-# Class expressions
-# ~ * ~ * ~ * ~~ * ~ 
-
-:ScientificPublication rdfs:subClassOf 
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :containsDocumentPart;
-       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :DocumentPart] ,
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :containsText;
-       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :TextFragment] .
-
-:DocumentPart rdfs:subClassOf 
-    	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :contains;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-        		owl:someValuesFrom :Abstract] ,
-    	[rdf:type owl:Restriction ;
-      		owl:onProperty :contains;
-       	 	owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-       		owl:someValuesFrom :Keyword] ,
-    	[rdf:type owl:Restriction ;
-      		 owl:onProperty :contains;
-      	 	 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-        	 	 owl:someValuesFrom :Bibliography] .
-
-:TextFragment rdfs:subClassOf 
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :hasStartingLocation;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :LocationInDocument] ,
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :hasEndingLocation;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :LocationInDocument] .
-
-:TermStatus rdfs:subClassOf 
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :statusCreatedBy;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :Agent] ,
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :statusTerminatedBy;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :Agent] .
-
-:Term rdfs:subClassOf 
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :hasStatus;
-       		owl:maxCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :TermStatus] .
-
-:Bibliography rdfs:subClassOf 
-	[rdf:type owl:Restriction ;
-       	 	owl:onProperty :containsBibliographicEntry;
-       		owl:minCardinality '1'^^xsd:nonNegativeInteger ;
-		owl:someValuesFrom :BibliographicEntry] .
 
 
