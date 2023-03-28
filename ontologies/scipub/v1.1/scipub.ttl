@@ -28,13 +28,12 @@
 
 
 
-# ------------------------------
+# ==============================
 # CLASS
-# ------------------------------
+# ==============================
 
 :ScientificPublication rdf:type rdfs:Class ;
-					   rdfs:subClassOf 
-									   [ rdf:type owl:Restriction ;
+					   rdfs:subClassOf [ rdf:type owl:Restriction ;
 										 owl:onProperty :containsDocumentPart ;
 										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
 										 owl:someValuesFrom :DocumentPart ] ,
@@ -48,8 +47,7 @@
 										 owl:allValuesFrom :PublicationAuthor ] .
 
 :PublicationAuthor rdf:type rdfs:Class ;
-				   rdfs:subClassOf
-								   [ rdf:type owl:Restriction ;
+				   rdfs:subClassOf [ rdf:type owl:Restriction ;
 								     owl:onProperty :isPerson ;
 									 owl:allValuesFrom :Person ] ,
 								   [ rdf:type owl:Restriction ;
@@ -97,7 +95,9 @@
 								owl:someValuesFrom :LocationInDocument ] .
 	
 :NonleafTextFragment rdf:type rdfs:Class ;
-					 rdfs:subClassOf :TextFragment .
+					 rdfs:subClassOf :TextFragment ;
+					 owl:disjointUnionOf ( :Section
+										   :Paragraph ) .
 
 :Sentence rdf:type rdfs:Class ;
 		  rdfs:subClassOf :TextFragment .
@@ -118,7 +118,9 @@ bfo:InformationContentEntity rdf:type rdfs:Class ;
 							 [ rdf:type owl:Restriction ;
 							   owl:onProperty :hasStatus ;
 							   owl:cardinality '1'^^xsd:nonNegativeInteger ;
-							   owl:someValuesFrom :LabeledTermStatus ] .
+							   owl:someValuesFrom :LabeledTermStatus ] ;
+			 owl:disjointUnionOf ( :AtomicLabeledTerm
+								   :CompoundLabeledTerm ) .
 
 :AtomicLabeledTerm rdf:type rdfs:Class ;
 				   rdfs:subClassOf :LabeledTerm .
@@ -135,7 +137,10 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 :BibliographicEntry rdf:type rdfs:Class .
 
-:Agent rdf:type rdfs:Class . 
+:Agent rdf:type rdfs:Class ;
+	   owl:disjointUnionOf ( :Person
+							 :Organization
+							 :System ) .
 
 :Person rdf:type rdfs:Class ;
 		rdfs:subClassOf :Agent .
@@ -147,15 +152,18 @@ sp:LabelingSchema rdf:type rdfs:Class .
 		rdfs:subClassOf :Agent .
 
 :LabeledTermStatus rdf:type rdfs:Class ;
-				   rdfs:subClassOf 
-								   [ rdf:type owl:Restriction ;
+				   rdfs:subClassOf [ rdf:type owl:Restriction ;
 									 owl:onProperty :statusCreatedBy ;
 									 owl:cardinality '1'^^xsd:nonNegativeInteger ;
 									 owl:someValuesFrom :Agent ] ,
 								   [ rdf:type owl:Restriction ;
 									 owl:onProperty :statusTerminatedBy ;
 									 owl:cardinality '1'^^xsd:nonNegativeInteger ;
-									 owl:someValuesFrom :Agent ] .
+									 owl:someValuesFrom :Agent ] ;
+					owl:disjointUnionOf ( :CandidateStatus
+										  :ConfirmedStatus
+										  :OpenStatus
+										  :RejectedStatus ) .
 
 :CandidateStatus rdf:type rdfs:Class ;
 				 rdfs:subClassOf :LabeledTermStatus .
@@ -171,9 +179,9 @@ sp:LabelingSchema rdf:type rdfs:Class .
 
 
 
-# ------------------------------
+# ==============================
 # OBJECT PROPERTY
-# ------------------------------
+# ==============================
 
 :containsDocumentPart rdf:type owl:ObjectProperty ;
 					  rdfs:domain :ScientificPublication ;
@@ -334,9 +342,9 @@ bfo:is_about rdf:type owl:ObjectProperty ;
 
 
 
-# ------------------------------
+# ==============================
 # DATATYPE PROPERTY
-# ------------------------------
+# ==============================
 
 :title rdf:type owl:DatatypeProperty ;
 	rdfs:domain :ScientificPublication ;
@@ -399,90 +407,26 @@ _:DomainOfText rdf:type owl:Class ;
 
 
 
-# ------------------------------
+# ==============================
 # GENERAL AXIOM
-# ------------------------------
+# ==============================
 
-:DocumentPart owl:disjointUnionOf
-	(:Figure 
-	:Table 
-	:Equation 
-	:Listing 
-	:Bibliography 
-	:Abstract 
-	:Keyword ) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:Figure 
-			:Table 
-			:Equation 
-			:Listing 
-			:Bibliography 
-			:Abstract 
-			:Keyword ) ].
-
-
-:TextFragment owl:disjointUnionOf
-	(:Section
-	:Paragraph
-	:Sentence 
-	:Heading ) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:Section
-			:Paragraph
-			:Sentence 
-			:Heading ) ].
-
-
-:TermStatus owl:disjointUnionOf
-	(:ConfirmedStatus 
-	:CandidateStatus 
-	:RejectedStatus ) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:ConfirmedStatus 
-			:CandidateStatus 
-			:RejectedStatus ) ].
-
-:Agent owl:disjointUnionOf
-	(:Person
-	:System) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:Person
-			:System) ].
-
-
-:Term owl:disjointUnionOf
-	(:SingleTerm
-	:CompoundTerm) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:SingleTerm
-			:CompoundTerm) ].
-
-
-:LocationInDocument owl:disjointUnionOf
-	(:Page
-	:Column
-	:Line ) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:Page
-			:Column
-			:Line ) ].
-
-:TextFragment owl:disjointUnionOf
-	(:Section
-	:Paragraph
-	:Sentence
-	:Heading ) .
-
-[ rdf:type owl:AllDisjointClasses;
-	owl:members(:Section
-			:Paragraph
-			:Sentence
-			:Heading ) ].
-
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Section
+				 :Paragraph ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :AtomicLabeledTerm
+				 :CompoundLabeledTerm ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Person
+				 :Organization
+				 :System ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :CandidateStatus
+				 :ConfirmedStatus
+				 :OpenStatus
+				 :RejectedStatus ) .
 
