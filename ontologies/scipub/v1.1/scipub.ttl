@@ -367,24 +367,29 @@ bfo:is_about rdf:type owl:ObjectProperty ;
 	rdfs:range xsd:dateTime .
 	
 :position rdf:type owl:DatatypeProperty ;
-	rdfs:domain _:DomainOfContainsLabeledTerm ;
+	rdfs:domain :DocumentPart ;
 	rdfs:range xsd:nonNegativeInteger .
-
-:text rdf:type owl:DatatypeProperty ;
-	rdfs:domain _:DomainOfText ;
-	rdfs:range xsd:string .
 	
-_:DomainOfText rdf:type owl:Class ;
-	owl:unionOf ( :NonleafTextFragment :Sentence :LabeledTerm ) .
-	
-:labelText rdf:type owl:DatatypeProperty ;
-	rdfs:domain sp:Label ;
-	rdfs:range xsd:string .
-
 :headerText rdf:type owl:DatatypeProperty ;
-	rdfs:domain :TextFragment ;
-	rdfs:range xsd:string .
-	
+			rdfs:domain :TextFragment ;
+			rdfs:range xsd:string .
+			
+:text rdf:type owl:DatatypeProperty ;
+	  rdfs:domain :Sentence ;
+	  rdfs:range xsd:string .
+	  
+:text rdf:type owl:DatatypeProperty ;
+	  rdfs:domain :LabeledTerm ;
+	  rdfs:range xsd:string .
+	  
+:positionInSentence rdf:type owl:DatatypeProperty ;
+	  rdfs:domain :LabeledTerm ;
+	  rdfs:range xsd:string .
+	  
+:labelText rdf:type owl:DatatypeProperty ;
+	  rdfs:domain :Label ;
+	  rdfs:range xsd:string .
+	  
 :statusCreatedDate rdf:type owl:DatatypeProperty ;
 	rdfs:domain :LabeledTermStatus ;
 	rdfs:range xsd:dateTime .
@@ -392,6 +397,10 @@ _:DomainOfText rdf:type owl:Class ;
 :statusUpdatedDate rdf:type owl:DatatypeProperty ;
 	rdfs:domain :LabeledTermStatus ;
 	rdfs:range xsd:dateTime .
+
+:position rdf:type owl:DatatypeProperty ;
+	rdfs:domain :PublicationAuthor ;
+	rdfs:range xsd:nonNegativeInteger .
 
 :firstName rdf:type owl:DatatypeProperty ;
 	rdfs:domain :Person ;
@@ -403,7 +412,7 @@ _:DomainOfText rdf:type owl:Class ;
 
 :orcId rdf:type owl:DatatypeProperty ;
 	rdfs:domain :Person ;
-	rdfs:range xsd:string .
+	rdfs:range xsd:string .	
 
 
 
