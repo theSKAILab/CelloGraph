@@ -51,7 +51,7 @@
 								     owl:onProperty :isPerson ;
 									 owl:allValuesFrom :Person ] ,
 								   [ rdf:type owl:Restriction ;
-								     owl:onProperty :affiliation ;
+								     owl:onProperty :hasAffiliation ;
 									 owl:allValuesFrom :Organization ] .
 
 :DocumentPart rdf:type rdfs:Class .
@@ -322,7 +322,7 @@ bfo:is_about rdf:type owl:ObjectProperty ;
 		  rdf:type owl:AsymmetricProperty ;
 		  rdf:type owl:IrreflexiveProperty .
 
-:affiliation rdf:type owl:ObjectProperty ;
+:hasAffiliation rdf:type owl:ObjectProperty ;
 			 rdfs:domain :PublicationAuthor ;
 			 rdfs:range :Organization ;
 			 rdf:type owl:AsymmetricProperty ;
