@@ -49,12 +49,6 @@ def matchStuff(groStrings, altoStrings, altoWords, subFonts, superFonts):
     for match in matches:
         altDex, groDex, matchLen = match
         for i in range(matchLen):
-            altoW = altoStrings[altDex+i]
-            groW = groStrings[groDex+i]
-
-            if(groW == '−1'):
-                print("what")
-
             script = altoStuff.isScript(altoWords[altDex+i], superFonts, subFonts)
             if(script == "super"):
                 supers.append([groDex+i, groStrings[groDex+i]])

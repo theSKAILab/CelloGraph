@@ -219,12 +219,19 @@ def longStr(filepath):
 
             num = int(longString[decimal_marker+2:c])
 
+            char = chr(int(longString[decimal_marker+2:c].decode()))
+
+            if char == '−':
+                char = b'-'
+            else:
+                char = char.encode()
+
             #replace it with the right character. 
             #Yes I have to decode and then re-encode it that is unfortunately how chr() works.
             
 
             if(True):
-                longString = longString[:decimal_marker] + chr(int(longString[decimal_marker+2:c].decode())).encode() + longString[c+1:]
+                longString = longString[:decimal_marker] + char + longString[c+1:]
             #else:
                 #call 'fixFunkyPDFChars' from old Scitex.
             decimal_marker = -1
