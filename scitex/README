@@ -5,7 +5,7 @@ Step 0. Be on a Linux machine. Or a Linux VM.
 Step 1. Download CelloGraph from the CelloGraph github
             Download as a zip file, then unzip it.
 
-Step 2. Download grobid from the grobid github.
+Step 2. Download grobid from the grobid github: https://github.com/kermitt2/grobid
             Download as a zip file, unzip it, then put it in the same folder the CelloGraph-main folder is in.
 
 Step 3. Take whatever pdfs you want translated, and put them into the CelloGraph-main/scitex/scitexIn folder
