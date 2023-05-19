@@ -1,0 +1,654 @@
+@prefix sp: <http://spatialai.org/SciPub/v1.2/scipub.owl#>  .
+@prefix : <http://spatialai.org/SciPub/v1.2/scipub.owl#>  . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl#> .
+@prefix iao: <http://purl.obolibrary.org/obo/IAO_#> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix pattern: <http://www.essepuntato.it/2008/12/pattern#> .
+@prefix deo: <http://purl.org/spar/deo#> .
+@prefix biro: <http://purl.org/spar/biro#> .
+@prefix cito: <http://purl.org/spar/cito#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1#> .
+@prefix fabio: <http://purl.org/spar/fabio#> .
+@prefix omrse: <http://purl.obolibrary.org/obo/omrse.owl> .
+
+@base <http://spatialai.org/SciPub/v1.2/scipub.owl#> .
+
+
+#<http://spatialai.org/SciPub/v1.2/scipub.owl#> rdf:type owl:Ontology ;
+#	owl:imports <http://purl.org/spar/doco/> ,
+#				<http://purl.org/spar/deo> ,
+#				<http://purl.org/spar/po> .
+
+
+<http://spatialai.org/SciPub/v1.1/scipub.owl#> rdf:type  owl:Ontology ;
+        owl:versionIRI <http://www.spatialai.org/SciPub/v1.1/> ;
+        rdfs:label         "Scientific Publications Ontology"@en-US ;
+		dcterms:title "Scientific Publications Ontology"@en-US ;
+        dcterms:description "The ontology module for representing the content and meta-information of Scientific Publications (mostly print publications) as relevant for the CelloGraph project."@en-US ;
+        dcterms:created    "2022-07-11"^^xsd:Date ;
+        dcterms:creator <http://orcid.org/0000-0002-5331-5052> ;
+        dcterms:creator    "Torsten Hahmann"@en-US ;
+		dcterms:modified   "2023-02-09"^^xsd:Date ;
+        dcterms:issued 	   "2023-01-27"^^xsd:date ;
+        dcterms:publisher  <http://spatialai.org/> ;
+        dcterms:rights     "Copyright 2022-2023 UMaine, SKAI Lab."@en-US ;
+        owl:versionIRI     <http://spatialai.org/SciPub/v1.1/scipub.owl#> ;
+        owl:versionInfo    "1.1"@en-US ;
+		dcterms:source "https://github.com/thahmann/CelloGraph/ontologies/scipub/v1.1/scipub.owl"^^<xsd:anyURI> .
+
+
+# ==============================
+# CLASS
+# ==============================
+
+iao:InformationStructureEntity rdf:type rdfs:Class ;
+							   rdfs:label "Information Structure Entity"@en ;
+							   rdfs:comment "Comment will go here!"@en ;
+							   rdfs:subClassOf bfo:Entity .
+
+:Pattern rdf:type rdfs:Class ;
+		 rdfs:label "Pattern"@en ;
+		 rdfs:comment "Comment will go here!"@en ;
+		 rdfs:subClassOf iao:InformationStructureEntity ,
+						 pattern:Pattern .
+
+:Textual rdf:type rdfs:Class ;
+		 rdfs:label "Textual"@en ;
+		 rdfs:comment "Comment will go here!"@en ;
+		 rdfs:subClassOf :Pattern ,
+						 pattern:Textual .
+
+:DocumentPart rdf:type rdfs:Class ;
+			  rdfs:label "Document Part"@en ;
+			  rdfs:comment "Comment will go here!"@en ;
+			  rdfs:subClassOf :Pattern ;
+			  owl:disjointUnionOf ( :Figure
+									:Table
+									:Formula
+									:List 
+									:Abstract
+									:Keywords
+									:TextFragment
+									:Bibliography ) .
+
+:Figure rdf:type rdfs:Class ;
+		rdfs:label "Figure"@en ;
+		rdfs:comment "Comment will go here!"@en ;
+		rdfs:subClassOf :DocumentPart ,
+						doco:Figure .
+
+:Table rdf:type rdfs:Class ;
+	   rdfs:label "Table"@en ;
+	   rdfs:comment "Comment will go here!"@en ;
+	   rdfs:subClassOf :DocumentPart ,
+					   doco:Table .
+
+:Formula rdf:type rdfs:Class ;
+		 rdfs:label "Formula"@en ;
+		 rdfs:comment "Comment will go here!"@en ;
+		 rdfs:subClassOf :DocumentPart ,
+						  doco:Formula .
+
+:List rdf:type rdfs:Class ;
+	  rdfs:label "List"@en ;
+	  rdfs:comment "Comment will go here!"@en ;
+	  rdfs:subClassOf :DocumentPart ,
+					  doco:List .
+
+:Abstract rdf:type rdfs:Class ;
+		  rdfs:label "Abstract"@en ;
+		  rdfs:comment "Comment will go here!"@en ;
+		  rdfs:subClassOf :DocumentPart ,
+						  doco:Abstract .
+
+:Keywords rdf:type rdfs:Class ;
+		  rdfs:label "Keywords"@en ;
+		  rdfs:comment "Comment will go here!"@en ;
+		  rdfs:subClassOf :DocumentPart .
+
+:TextFragment rdf:type rdfs:Class ;
+			  rdfs:label "Text Fragment"@en ;
+			  rdfs:comment "Comment will go here!"@en ;
+		      rdfs:subClassOf :Textual ,
+							  :DocumentPart ,
+							  [ rdf:type owl:Restriction ;
+							    owl:onProperty cito:cites ;
+								owl:allValuesFrom :BibliographicEntry ] ;
+			  owl:disjointUnionOf ( :Section
+									:Paragraph
+									:Sentence 
+									:Caption ) .
+
+:Section rdf:type rdfs:Class ;
+		 rdfs:label "Text Fragment"@en ;
+		 rdfs:comment "Comment will go here!"@en ;
+		 rdfs:subClassOf :TextFragment ,
+						 doco:Section .
+
+:Paragraph rdf:type rdfs:Class ;
+		   rdfs:label "Paragraph"@en ;
+		   rdfs:comment "Comment will go here!"@en ;
+		   rdfs:subClassOf :TextFragment ,
+						   doco:Paragraph .
+
+:Sentence rdf:type rdfs:Class ;
+		  rdfs:label "Sentence"@en ;
+		  rdfs:comment "Comment will go here!"@en ;
+		  rdfs:subClassOf :TextFragment ,
+						  doco:Sentence .
+
+:Caption rdf:type rdfs:Class ;
+		 rdfs:label "Caption"@en ;
+		 rdfs:comment "Comment will go here!"@en ;
+		 rdfs:subClassOf :TextFragment ,
+						 deo:Caption .
+
+iao:InformationContentEntity rdf:type rdfs:Class ;
+							 rdfs:label "Information Content Entity"@en ;
+							 rdfs:comment "Comment will go here!"@en ;
+							 rdfs:subClassOf bfo:Entity .
+							 
+:ScholarlyPublication rdf:type rdfs:Class ;
+					  rdfs:label "Scholarly Publication"@en ;
+					  rdfs:comment "Comment will go here!"@en ;
+					  rdfs:subClassOf iao:InformationContentEntity ,
+									  fabio:Expression ,
+									  [ rdf:type owl:Restriction ;
+										 owl:onProperty :containsDocumentPart ;
+										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+										 owl:someValuesFrom :DocumentPart ] ,
+									   [ rdf:type owl:Restriction ;
+									     owl:onProperty :hasPublicationAuthor ;
+										 owl:minCardinality '1'^^xsd:nonNegativeInteger ;
+										 owl:allValuesFrom :PublicationAuthor ] .
+
+:LocationInDocument rdf:type rdfs:Class ;
+					rdfs:label "Location In Document"@en ;
+					rdfs:comment "Comment will go here!"@en ;
+					rdfs:subClassOf iao:InformationContentEntity .
+
+:LabelingSchema rdf:type rdfs:Class ;
+				rdfs:label "Labeling Schema"@en ;
+				rdfs:comment "Comment will go here!"@en ;
+				rdfs:subClassOf iao:InformationContentEntity .
+
+:Label rdf:type rdfs:Class ;
+	   rdfs:label "Label"@en ;
+	   rdfs:comment "Comment will go here!"@en ;
+	   rdfs:subClassOf iao:InformationContentEntity .
+
+:TextChunk rdf:type rdfs:Class ;
+		   rdfs:label "Text Chunk"@en ;
+		   rdfs:comment "Comment will go here!"@en ;
+		   rdfs:subClassOf iao:InformationContentEntity ,
+						   doco:TextChunk .
+
+:LabeledTerm rdf:type rdfs:Class ;
+			 rdfs:label "Labeled Term"@en ;
+		     rdfs:comment "Comment will go here!"@en ;
+			 rdfs:subClassOf :TextChunk ;
+			 owl:disjointUnionOf ( :AtomicLabeledTerm
+								   :CompoundLabeledTerm ) .
+
+:AtomicLabeledTerm rdf:type rdfs:Class ;
+				   rdfs:label "Atomic Labeled Term"@en ;
+				   rdfs:comment "Comment will go here!"@en ;
+				   rdfs:subClassOf :LabeledTerm .
+
+:CompoundLabeledTerm rdf:type rdfs:Class ;
+					 rdfs:label "Compound Labeled Term"@en ;
+				     rdfs:comment "Comment will go here!"@en ;
+					 rdfs:subClassOf :LabeledTerm .
+
+iao:InformationBearingEntity rdf:type rdfs:Class ;
+							 rdfs:label "Information Bearing Entity"@en ;
+							 rdfs:comment "Comment will go here!"@en ;
+							 rdfs:subClassOf bfo:Entity .			
+
+:Bibliography rdf:type rdfs:Class ;
+			  rdfs:label "Bibliography"@en ;
+			  rdfs:comment "Comment will go here!"@en ;
+			  rdfs:subClassOf iao:InformationBearingEntity ,
+							  biro:BibliographicCollection ,
+							  :DocumentPart ,
+							  [ rdf:type owl:Restriction ;
+								owl:onProperty :containsBibliographicEntry ;
+								owl:allValuesFrom :BibliographicEntry ] .
+								   
+:BibliographicEntry rdf:type rdfs:Class ;
+				    rdfs:label "Bibliographic Entry"@en ;
+				    rdfs:comment "Comment will go here!"@en ;
+				    rdfs:subClassOf biro:BibliographicRecord .
+		
+:PublicationAuthor rdf:type rdfs:Class ;
+				   rdfs:label "Publication Author"@en ;
+				   rdfs:comment "Comment will go here!"@en ;
+				   rdfs:subClassOf bfo:Role ,
+								   omrse:LegalPersonRole ,
+								   [ rdf:type owl:Restriction ;
+								     owl:onProperty :isPerson ;
+									 owl:allValuesFrom :Person ] ,
+								   [ rdf:type owl:Restriction ;
+								     owl:onProperty :hasAffiliation ;
+									 owl:allValuesFrom :Organization ] .
+
+:Agent rdf:type rdfs:Class ;
+	   rdfs:label "Agent"@en ;
+	   rdfs:comment "Comment will go here!"@en ;
+	   rdfs:subClassOf foaf:Agent ,
+					   bfo:MaterialEntity ,
+					   omrse:MaterialEntity ;
+	   owl:disjointUnionOf ( :Person
+							 :Organization ) .
+
+:Person rdf:type rdfs:Class ;
+	    rdfs:label "Person"@en ;
+	    rdfs:comment "Comment will go here!"@en ;
+	    rdfs:subClassOf :Agent ,
+						foaf:Person .
+
+:Organization rdf:type rdfs:Class ;
+			  rdfs:label "Organization"@en ;
+			  rdfs:comment "Comment will go here!"@en ;
+			  rdfs:subClassOf :Agent ,
+							  foaf:Organization .
+
+bfo:Entity rdf:type rdfs:Class ;
+		   rdfs:label "Entity"@en ;
+		   rdfs:comment "This is a class from the Basic Formal Ontology (BFO)"@en .
+
+bfo:MaterialEntity rdf:type rdfs:Class ;
+				   rdfs:label "Material Entity"@en ;
+				   rdfs:comment "This is a class from the Basic Formal Ontology (BFO)"@en .
+
+bfo:Role rdf:type rdfs:Class ;
+		 rdfs:label "Role"@en ;
+		 rdfs:comment "This is a class from the Basic Formal Ontology (BFO)"@en .
+
+omrse:MaterialEntity rdf:type rdfs:Class ;
+					 rdfs:label "Material Entity"@en ;
+					 rdfs:comment "This is a class from the Ontology of Medically Related Social Entities (OMRSE)"@en .
+
+omrse:LegalPersonRole rdf:type rdfs:Class ;
+					  rdfs:label "Legal Person Role"@en ;
+					  rdfs:comment "This is a class from the Ontology of Medically Related Social Entities (OMRSE)"@en .
+
+pattern:Pattern rdf:type rdfs:Class ;
+				rdfs:label "Pattern"@en ;
+				rdfs:comment "This is a class from the Pattern Ontology"@en .
+
+pattern:Textual rdf:type rdfs:Class ;
+				rdfs:label "Textual"@en ;
+				rdfs:comment "This is a class from the Pattern Ontology"@en .
+
+doco:Figure rdf:type rdfs:Class ;
+			rdfs:label "Figure"@en ;
+			rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Table rdf:type rdfs:Class ;
+		   rdfs:label "Table"@en ;
+		   rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Formula rdf:type rdfs:Class ;
+			 rdfs:label "Formula"@en ;
+			 rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:List rdf:type rdfs:Class ;
+		  rdfs:label "List"@en ;
+		  rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Abstract rdf:type rdfs:Class ;
+			  rdfs:label "Abstract"@en ;
+		      rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Section rdf:type rdfs:Class ;
+			 rdfs:label "Section"@en ;
+		     rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Paragraph rdf:type rdfs:Class ;
+			   rdfs:label "Paragraph"@en ;
+			   rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:Sentence rdf:type rdfs:Class ;
+			  rdfs:label "Sentence"@en ;
+		      rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+doco:TextChunk rdf:type rdfs:Class ;
+			   rdfs:label "Text Chunk"@en ;
+		       rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
+
+deo:Caption rdf:type rdfs:Class ;
+			rdfs:label "Caption"@en ;
+		    rdfs:comment "This is a class from the Discourse Elements Ontology (DEO)"@en .
+
+biro:BibliographicCollection rdf:type rdfs:Class ;
+							 rdfs:label "Bibliographic Collection"@en ;
+							 rdfs:comment "This is a class from the Bibliographic Reference Ontology (BiRO)"@en .
+
+biro:BibliographicRecord rdf:type rdfs:Class ;
+						 rdfs:label "Bibliographic Record"@en ;
+						 rdfs:comment "This is a class from the Bibliographic Reference Ontology (BiRO)"@en .
+
+foaf:Agent rdf:type rdfs:Class ;
+		   rdfs:label "Agent"@en ;
+		   rdfs:comment "This is a class from the Friend of a Friend Ontology (FOAF)"@en .
+
+foaf:Person rdf:type rdfs:Class ;
+			rdfs:label "Person"@en ;
+			rdfs:comment "This is a class from the Friend of a Friend Ontology (FOAF)"@en .
+
+foaf:Organization rdf:type rdfs:Class ;
+				  rdfs:label "Organization"@en ;
+				  rdfs:comment "This is a class from the Friend of a Friend Ontology (FOAF)"@en .
+
+fabio:Expression rdf:type rdfs:Class ;
+				 rdfs:label "Expression"@en ;
+				 rdfs:comment "This is a class from the FRBR-aligned Bibliographic Ontology (FaBiO)"@en .
+
+
+# ==============================
+# OBJECT PROPERTY
+# ==============================
+
+:containsDocumentPart rdf:type owl:ObjectProperty ;
+					  rdfs:subPropertyOf pattern:contains ,
+										 doco:contains ;
+					  rdfs:domain :ScholarlyPublication ;
+					  rdfs:range :DocumentPart ;
+					  owl:inverseOf :documentPartIsContainedBy ;
+					  rdf:type owl:AsymmetricProperty ,
+							   owl:IrreflexiveProperty ;
+					  rdfs:label "contains document part"@en .
+
+:documentPartIsContainedBy rdf:type owl:ObjectProperty ;
+						   rdfs:subPropertyOf pattern:isContainedBy ,
+										      doco:isContainedBy ;
+						   rdfs:domain :DocumentPart ;
+						   rdfs:range :ScholarlyPublication ;
+						   owl:inverseOf :containsDocumentPart ;
+						   rdf:type owl:AsymmetricProperty ,
+								    owl:IrreflexiveProperty ;
+						   rdfs:label "document part is contained by"@en .
+
+:containsLabeledTerm rdf:type owl:ObjectProperty ;
+					 rdfs:subPropertyOf pattern:contains ,
+										 doco:contains ;
+					 rdfs:domain _:DomainOfContainsLabeledTerm ;
+					 rdfs:range :LabeledTerm ;
+					 owl:inverseOf :labeledTermIsContainedBy ;
+					 rdf:type owl:AsymmetricProperty ,
+							  owl:IrreflexiveProperty ;
+					 rdfs:label "contains labeled term"@en .
+
+:labeledTermIsContainedBy rdf:type owl:ObjectProperty ;
+						  rdfs:subPropertyOf pattern:isContainedBy ,
+										     doco:isContainedBy ;
+						  rdfs:domain :LabeledTerm ;
+						  rdfs:range _:DomainOfContainsLabeledTerm ;
+						  owl:inverseOf :containsLabeledTerm ;
+						  rdf:type owl:AsymmetricProperty ,
+								   owl:IrreflexiveProperty ;
+						  rdfs:label "labeled term is contained by"@en .
+
+_:DomainOfContainsLabeledTerm rdf:type owl:Class ;
+							  owl:unionOf ( :ScholarlyPublication :DocumentPart ).
+										 
+:containsSubLabeledTerm rdf:type owl:ObjectProperty ;
+						rdfs:subPropertyOf pattern:contains ,
+										 doco:contains ;
+						rdfs:domain :LabeledTerm ;
+						rdfs:range :LabeledTerm ;
+						rdf:type owl:SymmetricProperty ,
+								 owl:ReflexiveProperty ;										 
+						rdfs:label "contains sub labeled term"@en .
+
+:containsSubSection rdf:type owl:ObjectProperty ;
+					rdfs:subPropertyOf pattern:contains ,
+									   doco:contains ;
+					rdfs:domain :Section ;
+					rdfs:range :Section ;
+					rdf:type owl:SymmetricProperty ,
+							 owl:ReflexiveProperty ;										 
+					rdfs:label "contains sub section"@en .
+
+:hasLocationInDocument rdf:type owl:ObjectProperty ;
+					   rdfs:domain :DocumentPart ;
+					   rdfs:range :LocationInDocument ;
+					   rdf:type owl:AsymmetricProperty ,
+								owl:IrreflexiveProperty ;
+					   rdfs:label "has location in document"@en .
+
+:fromLabelingSchema rdf:type owl:ObjectProperty ;
+					rdfs:domain :Label ;
+					rdfs:range :LabelingSchema ;
+					rdf:type owl:AsymmetricProperty ,
+							 owl:IrreflexiveProperty ;
+					rdfs:label "from labeling schema"@en .	
+
+:hasLabel rdf:type owl:ObjectProperty ;
+		  rdfs:domain :LabeledTerm ;
+		  rdfs:range :Label ;
+		  rdf:type owl:AsymmetricProperty ,
+				   owl:IrreflexiveProperty ;
+		  rdfs:label "from labeling schema"@en .
+		  
+#:isAbout rdf:type owl:ObjectProperty ;
+#		 rdfs:subPropertyOf bfo:isAbout ;
+#		 rdfs:domain :LabeledTerm ;
+#		 rdfs:range bfo:Entity ;
+#		 rdf:type owl:AsymmetricProperty ,
+#				  owl:IrreflexiveProperty ;
+#		 rdfs:label "is about"@en .
+
+cito:cites rdf:type owl:ObjectProperty ;
+	   rdfs:domain :TextFragment ;
+	   rdfs:range :BibliographicEntry ;
+	   owl:inverseOf cito:isCitedBy ;
+	   rdf:type owl:SymmetricProperty ,
+				owl:ReflexiveProperty ;										 
+	   rdfs:label "cites"@en ;
+	   rdfs:comment "The citing entity cites the cited entity, either directly and explicitly (as in the reference list of a journal article), indirectly (e.g. by citing a more recent paper by the same group on the same topic), or implicitly (e.g. as in artistic quotations or parodies, or in cases of plagiarism)."@en .
+
+cito:isCitedBy rdf:type owl:ObjectProperty ;
+			   rdfs:domain :BibliographicEntry ;
+			   rdfs:range :TextFragment ;
+			   owl:inverseOf cito:cites ;
+			   rdf:type owl:SymmetricProperty ,
+						owl:ReflexiveProperty ;										 
+			   rdfs:label "is cited by"@en ;
+			   rdfs:comment "The cited entity (the subject of the RDF triple) is cited by the citing entity (the object of the triple)."@en .
+
+:hasPublicationAuthor rdf:type owl:ObjectProperty ;
+					  rdfs:domain :ScholarlyPublication ;
+					  rdfs:range :PublicationAuthor ;
+					  rdf:type owl:AsymmetricProperty ,
+							   owl:IrreflexiveProperty ;
+					  rdfs:label "has publication author"@en .
+
+:isPerson rdf:type owl:ObjectProperty ;
+		  rdfs:domain :PublicationAuthor ;
+		  rdfs:range :Person ;
+		  rdf:type owl:AsymmetricProperty ,
+				   owl:IrreflexiveProperty ;
+		  rdfs:label "is person"@en .
+
+:hasAffiliation rdf:type owl:ObjectProperty ;
+				rdfs:domain :PublicationAuthor ;
+				rdfs:range :Organization ;
+				rdf:type owl:AsymmetricProperty ,
+						 owl:IrreflexiveProperty ;
+				rdfs:label "has affiliation"@en .
+
+biro:references rdf:type owl:ObjectProperty ;
+				rdfs:domain :BibliographicEntry ;
+				rdfs:range :ScholarlyPublication ;
+				owl:inverseOf biro:isReferencedBy ;
+				rdf:type owl:AsymmetricProperty ,
+						 owl:IrreflexiveProperty ;
+				rdfs:label "references"@en ;
+				rdfs:comment ""@en .
+
+biro:isReferencedBy rdf:type owl:ObjectProperty ;
+					rdfs:domain :ScholarlyPublication ;
+					rdfs:range :BibliographicEntry ;
+					owl:inverseOf biro:references ;
+					rdf:type owl:AsymmetricProperty ,
+							 owl:IrreflexiveProperty ;
+					rdfs:label "is referenced by"@en ;
+					rdfs:comment ""@en .
+
+:containsBibliographicEntry rdf:type owl:ObjectProperty ;
+							rdfs:subPropertyOf pattern:contains ,
+											   doco:contains ;
+							rdfs:domain :Bibliography ;
+							rdfs:range :BibliographicEntry ;
+							owl:inverseOf :bibliographicEntryIsContainedBy ;
+							rdf:type owl:AsymmetricProperty ,
+									 owl:IrreflexiveProperty ;
+							rdfs:label "contains bibliographic entry"@en .
+
+:bibliographicEntryIsContainedBy rdf:type owl:ObjectProperty ;
+								 rdfs:subPropertyOf pattern:isContainedBy ,
+													doco:isContainedBy ;
+								rdfs:domain :BibliographicEntry ;
+								rdfs:range :Bibliography ;
+								owl:inverseOf :containsBibliographicEntry ;
+								rdf:type owl:AsymmetricProperty ,
+										 owl:IrreflexiveProperty ;
+								rdfs:label "bibliographic entry is contained by"@en .
+
+#bfo:isAbout rdf:type owl:ObjectProperty ;
+#			rdfs:label "is about"@en ;
+#		    rdfs:comment "This is an object property from the Basic Formal Ontology (BFO)"@en .
+
+pattern:contains rdf:type owl:ObjectProperty ;
+				 rdfs:label "contains"@en ;
+		         rdfs:comment "This is an object property from the Pattern Ontology"@en .
+
+pattern:isContainedBy rdf:type owl:ObjectProperty ;
+					  rdfs:label "is contained by"@en ;
+				      rdfs:comment "This is an object property from the Pattern Ontology"@en .
+
+doco:contains rdf:type owl:ObjectProperty ;
+			  rdfs:label "contains"@en ;
+		      rdfs:comment "This is an object property from the Document Components Ontology (DoCo)"@en .
+
+doco:isContainedBy rdf:type owl:ObjectProperty ;
+				   rdfs:label "is contained by"@en ;
+				   rdfs:comment "This is an object property from the Document Components Ontology (DoCo)"@en .
+
+
+# ==============================
+# DATATYPE PROPERTY
+# ==============================
+
+:title rdf:type owl:DatatypeProperty ;
+	   rdfs:domain :ScholarlyPublication ;
+	   rdfs:range xsd:string .
+
+:doi rdf:type owl:DatatypeProperty ;
+	 rdfs:domain :ScholarlyPublication ;
+	 rdfs:range xsd:string .
+
+:venue rdf:type owl:DatatypeProperty ;
+	   rdfs:domain :ScholarlyPublication ;
+	   rdfs:range xsd:string .
+
+:publicationDate rdf:type owl:DatatypeProperty ;
+				 rdfs:domain :ScholarlyPublication ;
+				 rdfs:range xsd:dateTime .
+
+:startingPage rdf:type owl:DatatypeProperty ;
+			  rdfs:domain :LocationInDocument ;
+			  rdfs:range xsd:nonNegativeInteger .
+
+:endingPage rdf:type owl:DatatypeProperty ;
+			rdfs:domain :LocationInDocument ;
+			rdfs:range xsd:nonNegativeInteger .
+
+:startingColumn rdf:type owl:DatatypeProperty ;
+				rdfs:domain :LocationInDocument ;
+				rdfs:range xsd:nonNegativeInteger .
+
+:endingColumn rdf:type owl:DatatypeProperty ;
+			  rdfs:domain :LocationInDocument ;
+			  rdfs:range xsd:nonNegativeInteger .
+
+:startingLine rdf:type owl:DatatypeProperty ;
+			  rdfs:domain :LocationInDocument ;
+			  rdfs:range xsd:nonNegativeInteger .
+
+:endingLine rdf:type owl:DatatypeProperty ;
+			rdfs:domain :LocationInDocument ;
+			rdfs:range xsd:nonNegativeInteger .
+
+:headerText rdf:type owl:DatatypeProperty ;
+			rdfs:domain :TextFragment ;
+			rdfs:range xsd:string .
+
+:contextText rdf:type owl:DatatypeProperty ;
+			 rdfs:domain :TextFragment ;
+			 rdfs:range xsd:string .
+
+:labelText rdf:type owl:DatatypeProperty ;
+		   rdfs:domain :Label ;
+	       rdfs:range xsd:string .
+
+:labelingSchemaText rdf:type owl:DatatypeProperty ;
+					rdfs:domain :LabelingSchema ;
+					rdfs:range xsd:string .
+
+:labeledTermText rdf:type owl:DatatypeProperty ;
+				 rdfs:domain :LabeledTerm ;
+				 rdfs:range xsd:string .
+
+:positionInSentence rdf:type owl:DatatypeProperty ;
+					rdfs:domain :LabeledTerm ;
+					rdfs:range xsd:nonNegativeInteger .
+
+:authorPosition rdf:type owl:DatatypeProperty ;
+				rdfs:domain :PublicationAuthor ;
+				rdfs:range xsd:nonNegativeInteger .
+
+:personName rdf:type owl:DatatypeProperty ;
+			rdfs:domain :Person ;
+			rdfs:range xsd:string .
+
+
+:organizationName rdf:type owl:DatatypeProperty ;
+				  rdfs:domain :Organization ;
+				  rdfs:range xsd:string .
+
+
+# ==============================
+# GENERAL AXIOM
+# ==============================
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Figure
+				 :Table 
+				 :Formula 
+				 :List
+				 :Abstract
+				 :Keywords
+				 :TextFragment
+				 :Bibliography ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Section
+				 :Paragraph 
+				 :Sentence 
+				 :Caption ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :AtomicLabeledTerm
+				 :CompoundLabeledTerm ) .
+				 
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :Person
+				 :Organization ) .
