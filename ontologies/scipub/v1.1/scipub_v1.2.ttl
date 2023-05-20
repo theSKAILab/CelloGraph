@@ -122,7 +122,7 @@ iao:InformationStructureEntity rdf:type rdfs:Class ;
 			  owl:disjointUnionOf ( :Section
 									:Paragraph
 									:Sentence 
-									:Caption ) .
+									deo:Caption ) .
 
 :Section rdf:type rdfs:Class ;
 		 rdfs:label "Text Fragment"@en ;
@@ -142,11 +142,10 @@ iao:InformationStructureEntity rdf:type rdfs:Class ;
 		  rdfs:subClassOf :TextFragment ,
 						  doco:Sentence .
 
-:Caption rdf:type rdfs:Class ;
-		 rdfs:label "Caption"@en ;
-		 rdfs:comment "Comment will go here!"@en ;
-		 rdfs:subClassOf :TextFragment ,
-						 deo:Caption .
+deo:Caption rdf:type rdfs:Class ;
+			rdfs:label "Caption"@en ;
+			rdfs:comment "A Piece of text that stays with another entity, such as a picture, table, etc."@en ;
+			rdfs:subClassOf :TextFragment .
 
 iao:InformationContentEntity rdf:type rdfs:Class ;
 							 rdfs:label "Information Content Entity"@en ;
@@ -322,9 +321,9 @@ doco:TextChunk rdf:type rdfs:Class ;
 			   rdfs:label "Text Chunk"@en ;
 		       rdfs:comment "This is a class from the Document Components Ontology (DoCo)"@en .
 
-deo:Caption rdf:type rdfs:Class ;
-			rdfs:label "Caption"@en ;
-		    rdfs:comment "This is a class from the Discourse Elements Ontology (DEO)"@en .
+#deo:Caption rdf:type rdfs:Class ;
+#			rdfs:label "Caption"@en ;
+#		    rdfs:comment "This is a class from the Discourse Elements Ontology (DEO)"@en .
 
 biro:BibliographicCollection rdf:type rdfs:Class ;
 							 rdfs:label "Bibliographic Collection"@en ;
@@ -416,12 +415,62 @@ _:DomainOfContainsLabeledTerm rdf:type owl:Class ;
 							 owl:ReflexiveProperty ;										 
 					rdfs:label "contains sub section"@en .
 
+:containsParagraph rdf:type owl:ObjectProperty ;
+				   rdfs:subPropertyOf pattern:contains ,
+									  doco:contains ;
+				   rdfs:domain :Section ;
+				   rdfs:range :Paragraph ;
+				   owl:inverseOf :paragraphIsContainedBy ;
+				   rdf:type owl:AsymmetricProperty ,
+							owl:IrreflexiveProperty ;
+				   rdfs:label "contains paragraph"@en .
+
+:paragraphIsContainedBy rdf:type owl:ObjectProperty ;
+						rdfs:subPropertyOf pattern:isContainedBy ,
+										    doco:isContainedBy ;
+						rdfs:domain :Paragraph ;
+						rdfs:range :Section ;
+						owl:inverseOf :containsParagraph ;
+						rdf:type owl:AsymmetricProperty ,
+								 owl:IrreflexiveProperty ;
+						rdfs:label "paragraph is contained by"@en .
+
+:containsSentence rdf:type owl:ObjectProperty ;
+				  rdfs:subPropertyOf pattern:contains ,
+									 doco:contains ;
+				  rdfs:domain :Paragraph ;
+				  rdfs:range :Sentence ;
+				  owl:inverseOf :sentenceIsContainedBy ;
+				  rdf:type owl:AsymmetricProperty ,
+						   owl:IrreflexiveProperty ;
+				  rdfs:label "contains sentence"@en .
+
+:sentenceIsContainedBy rdf:type owl:ObjectProperty ;
+					   rdfs:subPropertyOf pattern:isContainedBy ,
+										  doco:isContainedBy ;
+					   rdfs:domain :Sentence ;
+					   rdfs:range :Paragraph ;
+					   owl:inverseOf :containsSentence ;
+					   rdf:type owl:AsymmetricProperty ,
+								owl:IrreflexiveProperty ;
+					   rdfs:label "sentence is contained by"@en .
+
 :hasLocationInDocument rdf:type owl:ObjectProperty ;
 					   rdfs:domain :DocumentPart ;
 					   rdfs:range :LocationInDocument ;
 					   rdf:type owl:AsymmetricProperty ,
 								owl:IrreflexiveProperty ;
 					   rdfs:label "has location in document"@en .
+
+:hasCaption rdf:type owl:ObjectProperty ;
+					   rdfs:domain _:DomainOfHasCaption ;
+					   rdfs:range deo:Caption ;
+					   rdf:type owl:AsymmetricProperty ,
+								owl:IrreflexiveProperty ;
+					   rdfs:label "has caption"@en .
+
+_:DomainOfHasCaption rdf:type owl:Class ;
+							  owl:unionOf ( :Figure :Table ).
 
 :fromLabelingSchema rdf:type owl:ObjectProperty ;
 					rdfs:domain :Label ;
@@ -587,8 +636,9 @@ doco:isContainedBy rdf:type owl:ObjectProperty ;
 			rdfs:domain :LocationInDocument ;
 			rdfs:range xsd:nonNegativeInteger .
 
+########## Change: rdfs:domain :TextFragment => rdfs:domain :Section ##########
 :headerText rdf:type owl:DatatypeProperty ;
-			rdfs:domain :TextFragment ;
+			rdfs:domain :Section ;
 			rdfs:range xsd:string .
 
 :contextText rdf:type owl:DatatypeProperty ;
@@ -614,6 +664,18 @@ doco:isContainedBy rdf:type owl:ObjectProperty ;
 :authorPosition rdf:type owl:DatatypeProperty ;
 				rdfs:domain :PublicationAuthor ;
 				rdfs:range xsd:nonNegativeInteger .
+
+:figureNumber rdf:type owl:DatatypeProperty ;
+			  rdfs:domain :Figure ;
+			  rdfs:range xsd:nonNegativeInteger .
+
+:tableNumber rdf:type owl:DatatypeProperty ;
+			 rdfs:domain :Table ;
+			 rdfs:range xsd:nonNegativeInteger .
+
+:captionText rdf:type owl:DatatypeProperty ;
+			 rdfs:domain _:DomainOfHasCaption ;
+			 rdfs:range xsd:string .
 
 :personName rdf:type owl:DatatypeProperty ;
 			rdfs:domain :Person ;
@@ -643,7 +705,7 @@ doco:isContainedBy rdf:type owl:ObjectProperty ;
    owl:members ( :Section
 				 :Paragraph 
 				 :Sentence 
-				 :Caption ) .
+				 deo:Caption ) .
 				 
 [] rdf:type owl:AllDisjointClasses ;
    owl:members ( :AtomicLabeledTerm
