@@ -1,0 +1,77 @@
+### 1. Show the publication information
+select * where { 
+	:Pub1 sp:title ?title ;
+          sp:doi ?doi ;
+          sp:venue ?venue ;
+          sp:publicationDate ?publicationDate .
+}
+
+
+### 2. Find the authors and their affiliation
+select ?authorName ?person ?affiliationName where { 
+    ?author sp:isPerson ?person ;
+    		sp:hasAffiliation ?organizationName .
+    ?person sp:personName ?authorName .
+    ?organizationName sp:organizationName ?affiliationName .
+}
+
+
+### 3. Find all the sentences of abstract
+select ?sentence ?abstractText where {
+  ?abstract rdf:type :Abstract ;
+            sp:containsSentence ?sentence .
+  ?sentence rdf:type :Sentence ;
+            sp:sentenceText ?abstractText .
+}
+
+### 4. Find all the section of the publication
+select * where {
+    ?section sp:headerText ?sectionName .
+}
+
+### 5. Find how many sections in the publication
+select (count(*) as ?count) where {
+    ?section sp:headerText ?sectionName .
+}
+
+### 6. Find all the sentences of section Introduction
+select * where {
+    ?section sp:headerText  'Introduction' .
+    ?section sp:hasParagraph ?paragraph .
+    ?paragraph sp:hasSentence ?sentence .
+    ?sentence sp:sentenceText ?text .
+}
+
+### 7. Total number of labeled terms 
+select (count(*) as ?count) where {
+    ?s rdf:type :LabeledTerm .
+}
+
+
+### 8. Total number of atomic labeled terms 
+select (count(*) as ?count) where {
+    ?s rdf:type :AtomicLabeledTerm .
+}
+
+
+### 9. Total number of compound labeled terms 
+
+select (count(*) as ?count) where {
+    ?s rdf:type :CompoundLabeledTerm .
+}
+
+
+### 10. Show all the compound labeled terms with relevant sentences and sentence location
+select ?labeledTermText ?sentenceText ?startingPage ?endingPage ?startingColumn ?endingColumn ?startingLine ?endingLine where {
+    ?labeledTerm rdf:type :CompoundLabeledTerm ;
+       			 sp:labeledTermText ?labeledTermText ;
+           		 sp:labeledTermIsContainedBy ?sentence .
+    ?sentence sp:sentenceText ?sentenceText ;
+    		  sp:hasLocationInDocument ?location .
+    ?location sp:startingPage ?startingPage ;
+              sp:startingPage ?endingPage ;
+              sp:startingPage ?startingColumn ;
+              sp:startingPage ?endingColumn ;
+              sp:startingPage ?startingLine ;
+              sp:startingPage ?endingLine .
+}
