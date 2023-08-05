@@ -636,14 +636,13 @@ doco:isContainedBy rdf:type owl:ObjectProperty ;
 			rdfs:domain :LocationInDocument ;
 			rdfs:range xsd:nonNegativeInteger .
 
-########## Change: rdfs:domain :TextFragment => rdfs:domain :Section ##########
 :headerText rdf:type owl:DatatypeProperty ;
 			rdfs:domain :Section ;
 			rdfs:range xsd:string .
 
-:contextText rdf:type owl:DatatypeProperty ;
-			 rdfs:domain :TextFragment ;
-			 rdfs:range xsd:string .
+:sentenceText rdf:type owl:DatatypeProperty ;
+			  rdfs:domain :Sentence ;
+			  rdfs:range xsd:string .
 
 :labelText rdf:type owl:DatatypeProperty ;
 		   rdfs:domain :Label ;
@@ -657,13 +656,17 @@ doco:isContainedBy rdf:type owl:ObjectProperty ;
 				 rdfs:domain :LabeledTerm ;
 				 rdfs:range xsd:string .
 
-:positionInSentence rdf:type owl:DatatypeProperty ;
-					rdfs:domain :LabeledTerm ;
-					rdfs:range xsd:nonNegativeInteger .
+:offset rdf:type owl:DatatypeProperty ;
+		rdfs:domain :LabeledTerm ;
+		rdfs:range xsd:nonNegativeInteger .
+		
+:length rdf:type owl:DatatypeProperty ;
+		rdfs:domain :LabeledTerm ;
+		rdfs:range xsd:nonNegativeInteger .
 
-:authorPosition rdf:type owl:DatatypeProperty ;
-				rdfs:domain :PublicationAuthor ;
-				rdfs:range xsd:nonNegativeInteger .
+:authorHierarchy rdf:type owl:DatatypeProperty ;
+				 rdfs:domain :PublicationAuthor ;
+				 rdfs:range xsd:nonNegativeInteger .
 
 :figureNumber rdf:type owl:DatatypeProperty ;
 			  rdfs:domain :Figure ;
