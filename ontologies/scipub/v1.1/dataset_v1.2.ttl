@@ -1,0 +1,752 @@
+@prefix sp: <http://spatialai.org/SciPub/v1.2/scipub.owl#>  .
+@prefix : <http://spatialai.org/SciPub/v1.2/scipub.owl#>  . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix deo: <http://purl.org/spar/deo#> .
+
+:Pub1 rdf:type :ScholarlyPublication .
+
+:Pub1 sp:title 'Mechanical Properties of Regenerated Cellulose Fibres for Composites'^^xsd:string ;
+	  sp:doi 'https://doi.org/10.1002/masy.200651211'^^xsd:string ;
+	  sp:venue 'Macromolecular Symposia'^^xsd:string ;
+	  sp:publicationDate '2007-01-16'^^xsd:date .
+
+:Pub1 sp:hasPublicationAuthor :Author1 ,
+						      :Author2 ,
+						      :Author3 ,
+						      :Author4 ,
+						      :Author5 ,
+						      :Author6 .
+
+:Author1 rdf:type :PublicationAuthor .
+:Author2 rdf:type :PublicationAuthor .
+:Author3 rdf:type :PublicationAuthor .
+:Author4 rdf:type :PublicationAuthor .
+:Author5 rdf:type :PublicationAuthor .
+:Author6 rdf:type :PublicationAuthor .
+
+:Person1 rdf:type :Person .
+:Person2 rdf:type :Person .
+:Person3 rdf:type :Person .
+:Person4 rdf:type :Person .
+:Person5 rdf:type :Person .
+:Person6 rdf:type :Person .
+
+:Author1 sp:isPerson :Person1 .
+:Author2 sp:isPerson :Person2 .
+:Author3 sp:isPerson :Person3 .
+:Author4 sp:isPerson :Person4 .
+:Author5 sp:isPerson :Person5 .
+:Author6 sp:isPerson :Person6 .
+							   
+:Person1 sp:personName 'Ramesh-Babu Adusumali'^^xsd:string .
+:Person2 sp:personName 'Moritz Reifferscheid'^^xsd:string .
+:Person3 sp:personName 'Hedda Weber'^^xsd:string .
+:Person4 sp:personName 'Thomas Roeder'^^xsd:string . 
+:Person5 sp:personName 'Herbert Sixta'^^xsd:string .
+:Person6 sp:personName 'Wolfgang Gindl'^^xsd:string .
+		 
+:Author1 sp:hasAffiliation :Organization1 .
+:Author2 sp:hasAffiliation :Organization1 .								 
+:Author3 sp:hasAffiliation :Organization1 .
+:Author4 sp:hasAffiliation :Organization2 .
+:Author5 sp:hasAffiliation :Organization1 ,
+						   :Organization2 .
+:Author6 sp:hasAffiliation :Organization1 ,
+						   :Organization3 .
+							 
+:Organization1 rdf:type :Organization .
+:Organization2 rdf:type :Organization .
+:Organization3 rdf:type :Organization .
+
+:Organization1 sp:organizationName 'Kompetenzzentrum Holz GmbH, St.-Peter-Str. 25, 4021 Linz, Austria'^^xsd:string .
+:Organization2 sp:organizationName 'Lenzing R&D, Lenzing, Austria'^^xsd:string .
+:Organization3 sp:organizationName 'Department of Materials Science and Process Engineering, BOKU-Vienna, Vienna, Austria, Fax:(+43) 01 47654-4295, E-mail: wolfgang.gindl@boku.ac.at'^^xsd:string .
+
+:Pub1 sp:containsDocumentPart :Abstract ,
+							  :Keyword1 ,
+							  :Keyword2 ,
+							  :Keyword3 ,
+							  :Keyword4 ,
+							  :Figure1 ,
+							  :Figure2 ,
+							  :Figure3 ,
+							  :Figure4 ,
+							  :Figure5 ,
+							  :Table1 .
+							  
+:Abstract1 rdf:type :Abstract ;
+		   sp:containsSentence :Abstract1Sentence1 ,
+							   :Abstract1Sentence2 ,
+							   :Abstract1Sentence3 ,
+							   :Abstract1Sentence4 ,
+							   :Abstract1Sentence5 ,
+							   :Abstract1Sentence6 ,
+							   :Abstract1Sentence7 .
+
+:Abstract1Sentence1 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence1Location ;
+					sp:sentenceText 'A broad variety of regenerated cellulose fibres was subjected to single fibre tensile tests in order to determine the modulus of elasticity, tensile strength, and failure strain.'^^xsd:string .
+
+:Abstract1Sentence2 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence2Location ;
+					sp:sentenceText 'The results were compared to glass fibres and flax fibres, which are considered the most important technical and natural fibres, respectively.'^^xsd:string .
+					
+:Abstract1Sentence3 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence3Location ;
+					sp:sentenceText 'With regard to their modulus of elasticity and tensile strength, regenerated cellulose fibres showed clearly lower values than glass fibres, even when their low density was taken into account.'^^xsd:string .
+					
+:Abstract1Sentence4 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence4Location ;
+					sp:sentenceText 'The average modulus of elasticity and tensile strength of regenerated cellulose fibres was also lower than the values measured for flax fibres, but when variability was considered, both fibres performed similarly.'^^xsd:string .
+					
+:Abstract1Sentence5 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence5Location ;
+					sp:sentenceText 'In terms of interfacial shear strength with polypropylene, lyocell fibres performed significantly less well than sized glass fibre and ramie fibre.'^^xsd:string .
+					
+:Abstract1Sentence6 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence6Location ;
+					sp:sentenceText 'The most important difference between regenerated cellulose fibres and both glass and flax fibres is their high failure strain and thus high work to fracture.'^^xsd:string .
+					
+:Abstract1Sentence7 rdf:type :Sentence ;
+					sp:hasLocationInDocument :Abstract1Sentence7Location ;
+					sp:sentenceText 'The high work to fracture of regenerated cellulose fibres makes them particularly useful for composite applications where high fracture toughness is required.'^^xsd:string .
+
+:Abstract1Sentence1Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '1'^^xsd:nonNegativeInteger ;
+							sp:endingLine '3'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence2Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '3'^^xsd:nonNegativeInteger ;
+							sp:endingLine '4'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence3Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '4'^^xsd:nonNegativeInteger ;
+							sp:endingLine '7'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence4Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '7'^^xsd:nonNegativeInteger ;
+							sp:endingLine '9'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence5Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '9'^^xsd:nonNegativeInteger ;
+							sp:endingLine '11'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence6Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '11'^^xsd:nonNegativeInteger ;
+							sp:endingLine '13'^^xsd:nonNegativeInteger .
+
+:Abstract1Sentence7Location rdf:type :LocationInDocument ;
+							sp:startingPage '1'^^xsd:nonNegativeInteger ;
+							sp:endingPage '1'^^xsd:nonNegativeInteger ;
+							sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:endingColumn '1'^^xsd:nonNegativeInteger ;
+							sp:startingLine '13'^^xsd:nonNegativeInteger ;
+							sp:endingLine '15'^^xsd:nonNegativeInteger .
+
+:Keyword1 rdf:type :Keyword .
+:Keyword2 rdf:type :Keyword .
+:Keyword3 rdf:type :Keyword .
+:Keyword4 rdf:type :Keyword .
+
+:Keyword1 sp:keywordText 'cellulose'^^xsd:string .
+:Keyword2 sp:keywordText 'fibres'^^xsd:string .
+:Keyword3 sp:keywordText 'interfacial shear strength'^^xsd:string .
+:Keyword4 sp:keywordText 'tensile properties'^^xsd:string .
+
+:Figure1 rdf:type :Figure ;
+		 sp:figureNumber '1'^^xsd:nonNegativeInteger ;
+		 sp:hasCaption :FigureCaption1 .
+
+:FigureCaption1 rdf:type deo:Caption ;
+				sp:containsSentence :FigureCaption1Sentence1 ,
+									:FigureCaption1Sentence2 ,
+									:FigureCaption1Sentence3 ,
+									:FigureCaption1Sentence4 .
+
+:FigureCaption1Sentence1 rdf:type :Sectence ;
+						 sp:sentenceText 'Set-up for the determination of interfacial shear strength by drop pull-off testing.'^^xsd:string .
+						 
+:FigureCaption1Sentence2 rdf:type :Sectence ;
+						 sp:sentenceText 'The fibre with polypropylene (PP) droplet is mounted to the testing machine in a paper frame, which is cut-open thereafter.'^^xsd:string .
+						 
+:FigureCaption1Sentence3 rdf:type :Sectence ;
+						 sp:sentenceText 'Upon testing, the droplet is pulled from the fibre by means of adjustable carbide cutter edges.'^^xsd:string .
+						 
+:FigureCaption1Sentence4 rdf:type :Sectence ;
+						 sp:sentenceText 'The embedded detail (right) shows a light microscope image of an actual PP droplet on a lyocell fibre.'^^xsd:string .
+
+:Figure2 rdf:type :Figure ;
+		 sp:figureNumber '2'^^xsd:nonNegativeInteger ;
+		 sp:hasCaption :FigureCaption2 .
+		 
+:FigureCaption2 rdf:type deo:Caption ;
+				sp:containsSentence :FigureCaption2Sentence1 ,
+									:FigureCaption2Sentence2 .
+
+:FigureCaption2Sentence1 rdf:type :Sectence ;
+						 sp:sentenceText 'Typical force-displacement curve from a drop pull-off test with a polypropylene drop on a lyocell fibre.'^^xsd:string .
+
+:FigureCaption2Sentence2 rdf:type :Sectence ;
+						 sp:sentenceText 'The peak force indicating the onset of debonding was used for the calculation of interfacial shear strength.'^^xsd:string .
+
+
+:Figure3 rdf:type :Figure ;
+		 sp:figureNumber '3'^^xsd:nonNegativeInteger ;
+		 sp:hasCaption :FigureCaption3 .
+		 
+:FigureCaption3 rdf:type deo:Caption ;
+				sp:containsSentence :FigureCaption3Sentence1 .
+		 
+:FigureCaption3Sentence1 rdf:type :Sectence ;
+						 sp:sentenceText 'Representative stress-strain curves of various regenerated cellulose fibres in comparison to flax and glass fibre (the stress-strain curve of glass fibre extending up to 3000 MPa is not fully shown and curves are off-set by 1% strain for better viewing).'^^xsd:string .		 
+		 
+:Figure4 rdf:type :Figure ;
+		 sp:figureNumber '4'^^xsd:nonNegativeInteger ;
+		 sp:hasCaption :FigureCaption4 .
+		 
+:FigureCaption4 rdf:type deo:Caption ;
+				sp:containsSentence :FigureCaption4Sentence1 .
+				
+:FigureCaption4Sentence1 rdf:type :Sectence ;
+						 sp:sentenceText 'Average values and standard deviation of modulus of elasticity and tensile strength for different cellulosic fibres.'^^xsd:string .	
+		 
+:Figure5 rdf:type :Figure ;
+		 sp:figureNumber '5'^^xsd:nonNegativeInteger ;
+		 sp:hasCaption :FigureCaption5 .
+
+:FigureCaption5 rdf:type deo:Caption ;
+				sp:containsSentence :FigureCaption5Sentence1 .
+	  
+:FigureCaption5Sentence1 rdf:type :Sectence ;
+						 sp:sentenceText 'Average values and standard deviation of interfacial shear strength measured for different fibres in PP drop pull-off tests.'^^xsd:string .
+	  
+:Figure1 sp:hasLocationInDocument :Figure1Location .
+:Figure2 sp:hasLocationInDocument :Figure2Location .
+:Figure3 sp:hasLocationInDocument :Figure3Location .
+:Figure4 sp:hasLocationInDocument :Figure4Location .
+:Figure5 sp:hasLocationInDocument :Figure5Location . 
+	  
+:Figure1Location rdf:type :LocationInDocument .
+:Figure2Location rdf:type :LocationInDocument .
+:Figure3Location rdf:type :LocationInDocument .
+:Figure4Location rdf:type :LocationInDocument .
+:Figure5Location rdf:type :LocationInDocument .
+	  
+:Figure1Location sp:startingPage '3'^^xsd:nonNegativeInteger ;
+				 sp:endingPage '3'^^xsd:nonNegativeInteger ;
+				 sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Figure2Location sp:startingPage '3'^^xsd:nonNegativeInteger ;
+				 sp:endingPage '3'^^xsd:nonNegativeInteger ;
+				 sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Figure3Location sp:startingPage '4'^^xsd:nonNegativeInteger ;
+				 sp:endingPage '4'^^xsd:nonNegativeInteger ;
+				 sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Figure4Location sp:startingPage '5'^^xsd:nonNegativeInteger ;
+				 sp:endingPage '5'^^xsd:nonNegativeInteger ;
+				 sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Figure5Location sp:startingPage '6'^^xsd:nonNegativeInteger ;
+				 sp:endingPage '6'^^xsd:nonNegativeInteger ;
+				 sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				 sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Table1 rdf:type :Table .
+
+:Table1 sp:tableNumber '1'^^xsd:nonNegativeInteger .
+
+:Table1 sp:hasCaption :TableCaption1 .
+
+:TableCaption1 rdf:type deo:Caption .
+
+:TableCaption1 sp:containsSentence :TableCaption1Sentence1 .
+
+:TableCaption1Sentence1 rdf:type :Sentence .
+
+:TableCaption1Sentence1 sp:sentenceText 'Average tensile properties of regenerated cellulose and reference fibres (E – modulus of elasticity, sf – tensile strength, ef – elongation at break, Wef – work to fracture, for lyocell top values are given in brackets).'^^xsd:string .
+	  
+:Table1 sp:hasLocationInDocument :Table1Location .
+
+:Table1Location rdf:type :LocationInDocument .
+	  
+:Table1Location sp:startingPage '5'^^xsd:nonNegativeInteger ;
+				sp:endingPage '5'^^xsd:nonNegativeInteger ;
+				sp:startingColumn '1'^^xsd:nonNegativeInteger ;
+				sp:endingColumn '2'^^xsd:nonNegativeInteger ;
+				sp:startingLine '0'^^xsd:nonNegativeInteger ;
+				sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1 rdf:type :Section ;
+		  sp:headerText 'Introduction'^^xsd:string .
+
+:Section1 sp:containsParagraph :Section1Paragraph1 ,
+							   :Section1Paragraph2 ,
+							   :Section1Paragraph3 .
+
+:Section1Paragraph1 rdf:type :Paragraph .
+:Section1Paragraph2 rdf:type :Paragraph .
+:Section1Paragraph3 rdf:type :Paragraph .
+
+:Section1Paragraph1 sp:containsSentence :Section1Paragraph1Sectence1 ,
+										:Section1Paragraph1Sectence2 ,
+										:Section1Paragraph1Sectence3 ,
+										:Section1Paragraph1Sectence4 ,
+										:Section1Paragraph1Sectence5 ,
+										:Section1Paragraph1Sectence6 ,
+										:Section1Paragraph1Sectence7 ,
+										:Section1Paragraph1Sectence8 ,
+										:Section1Paragraph1Sectence9 .
+
+:Section1Paragraph1Sectence1 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence1Location ;
+							 sp:sentenceText 'Cellulose combines excellent mechanical properties with the advantage of being a natural, fully renewable and biodegradable material.'^^xsd:string .
+
+:Section1Paragraph1Sectence2 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence2Location ;
+							 sp:sentenceText 'Due to the rise in importance of the latter properties, research on the use of cellulose for the reinforcement of polymer composites is increasing in importance, as demonstrated in reviews on natural fibre reinforced composites[1,2] and cellulose nanocomposites.[3]'^^xsd:string .
+
+:Section1Paragraph1Sectence3 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence3Location ;
+							 sp:sentenceText 'Also regenerated cellulose fibres, which are produced by the dissolution of pulp in a suitable solvent and subsequent spinning, profit from this rise in interest as documented by recent publications.[4–8]'^^xsd:string .
+
+:Section1Paragraph1Sectence4 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence4Location ;
+							 sp:sentenceText 'Concerning the reinforcement of polymer composites, tensile strength, modulus of elasticity, elongation at break, and interfacial shear strength in combination with a polymer matrix are important fibre properties, as they govern the strength, stiffness, and toughness of composites.'^^xsd:string .
+
+:Section1Paragraph1Sectence5 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence5Location ;
+							 sp:sentenceText 'The mechanical performance of regenerated cellulose fibres is inferior to glass fibres, the most widely used reinforcement fibre, but cellulose gains in competitiveness when its low density of 1.5 g cm-3 compared to 2.5 g cm-3 for glass is taken into account.'^^xsd:string .
+
+:Section1Paragraph1Sectence6 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence6Location ;
+							 sp:sentenceText 'The non-abrasiveness of cellulose compared to glass fibre is a strong advantage of cellulose in processes such as extrusion and injection moulding.'^^xsd:string .
+
+:Section1Paragraph1Sectence7 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence7Location ;
+							 sp:sentenceText 'On the market, regenerated cellulose fibres also compete with flax fibre, which is the currently most important natural reinforcement fibre.'^^xsd:string .
+
+:Section1Paragraph1Sectence8 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence8Location ;
+							 sp:sentenceText 'It is well known that the properties of flax fibres, though very good on average, are highly variable due to inherent natural variability and partly damaging processing methods.[9]'^^xsd:string .
+
+:Section1Paragraph1Sectence9 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph1Sectence9Location ;
+							 sp:sentenceText 'In comparison, the properties of regenerated cellulose fibres may be tuned to specific value within a wide range and narrow limits.[10–13]'^^xsd:string .
+
+:Section1Paragraph1Sectence1Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+							
+:Section1Paragraph1Sectence2Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence3Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence4Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence5Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence6Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence7Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence8Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph1Sectence9Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph2 sp:containsSentence :Section1Paragraph2Sectence1 ,
+										:Section1Paragraph2Sectence2 ,
+										:Section1Paragraph2Sectence3 .
+
+:Section1Paragraph2Sectence1 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph2Sectence1Location ;
+							 sp:sentenceText 'Besides basic mechanical fibre properties, the interaction of fibre and matrix polymer in terms of adhesion is crucial to composite performance.'^^xsd:string .
+
+:Section1Paragraph2Sectence2 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph2Sectence2Location ;
+							 sp:sentenceText 'While thermoset resins usually show good adhesion, thermoplastics are often not compatible with cellulose, which is highly hydrophilic due to accessible OH groups, because of their hydrophobicity.'^^xsd:string .
+
+:Section1Paragraph2Sectence3 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph2Sectence3Location ;
+							 sp:sentenceText 'Therefore, surface modification of cellulosic fibres is performed in order to improve adhesion to thermoplastic matrices.[14–16]'^^xsd:string .
+
+:Section1Paragraph2Sectence1Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+							
+:Section1Paragraph2Sectence2Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph2Sectence3Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph3 sp:containsSentence :Section1Paragraph3Sectence1 ,
+										:Section1Paragraph3Sectence2 ,
+										:Section1Paragraph3Sectence3 .
+
+:Section1Paragraph3Sectence1 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph3Sectence1Location ;
+							 sp:sentenceText 'In the present study, a large number of regenerated cellulose fibres was characterised by single-fibre tensile tests and compared to glass fibre and flax.'^^xsd:string .
+
+:Section1Paragraph3Sectence2 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph3Sectence2Location ;
+							 sp:sentenceText 'In addition, the interfacial shear strength between regenerated cellulose fibres and polypropylene droplets was determined.'^^xsd:string .
+
+:Section1Paragraph3Sectence3 rdf:type :Sectence ;
+							 sp:hasLocationInDocument :Section1Paragraph3Sectence3Location ;
+							 sp:sentenceText 'Based on the experimental results obtained, an assessment of the suitability of different types of regenerated cellulose fibres for the reinforcement of polymer composites is given.'^^xsd:string .
+
+:Section1Paragraph3Sectence1Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+							
+:Section1Paragraph3Sectence2Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section1Paragraph3Sectence3Location rdf:type :LocationInDocument ;
+									 sp:startingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:endingPage '0'^^xsd:nonNegativeInteger ;
+									 sp:startingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:endingColumn '0'^^xsd:nonNegativeInteger ;
+									 sp:startingLine '0'^^xsd:nonNegativeInteger ;
+									 sp:endingLine '0'^^xsd:nonNegativeInteger .
+
+:Section2 rdf:type :Section ;
+		  sp:headerText 'Materials and Methods'^^xsd:string .
+		  
+:Section3 rdf:type :Section ;
+		  sp:headerText 'Results and Discussion'^^xsd:string .
+		  
+:Section4 rdf:type :Section ;
+		  sp:headerText 'Conclusion'^^xsd:string .
+
+:Section4 sp:containsParagraph :Section4Paragraph1 .
+
+:Section4Paragraph1 rdf:type :Paragraph .
+
+:Section4Paragraph1 sp:containsSentence :Section4Paragraph1Sectence1 ,
+										:Section4Paragraph1Sectence2 ,
+										:Section4Paragraph1Sectence3 ,
+										:Section4Paragraph1Sectence4 ,
+										:Section4Paragraph1Sectence5 ,
+										:Section4Paragraph1Sectence6 .
+
+:Section4Paragraph1Sectence1 rdf:type :Sectence .
+:Section4Paragraph1Sectence2 rdf:type :Sectence .
+:Section4Paragraph1Sectence3 rdf:type :Sectence .
+:Section4Paragraph1Sectence4 rdf:type :Sectence .
+:Section4Paragraph1Sectence5 rdf:type :Sectence .
+:Section4Paragraph1Sectence6 rdf:type :Sectence .
+
+:Section4Paragraph1Sectence1 sp:sentenceText 'The experimental data presented above show that among a number of different regenerated cellulose fibres tested in tension, rayon tire cord and lyocell have highest strength while lyocell has the highest modulus of elasticity.'^^xsd:string .
+:Section4Paragraph1Sectence2 sp:sentenceText 'In comparison to glass fibre, regenerated cellulose fibres performed less well regarding strength and modulus, but well in terms of work to fracture.'^^xsd:string .
+:Section4Paragraph1Sectence3 sp:sentenceText 'In comparison to flax fibre, regenerated cellulose fibre performed equally well in strength and modulus when their different variability was considered.'^^xsd:string .
+:Section4Paragraph1Sectence4 sp:sentenceText 'The work to fracture of regenerated cellulose fibres was by far superior to flax.'^^xsd:string .
+:Section4Paragraph1Sectence5 sp:sentenceText 'Interfacial shear strength between cellulose fibres and PP was worse than for glass fibre.'^^xsd:string .
+:Section4Paragraph1Sectence6 sp:sentenceText 'Considering all this, two important conclusions may be drawn: when using an non-polar matrix polymer, surface modification of regenerated cellulose fibres or the addition of a suitable coupling agent to the polymer matrix is necessary, and regenerated cellulose fibres perform very well in terms of work to fracture, which makes them perfectly suitable reinforcement fibres for composite applications where high fracture toughness is required.'^^xsd:string .
+
+:LabeledTerm1 rdf:type :CompoundLabeledTerm ;
+			  sp:labeledTermText 'regenerated cellulose fibres'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence1 ;
+			  sp:offset '20'^^xsd:nonNegativeInteger ;
+			  sp:length '28'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label1 .
+
+:LabeledTerm2 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'modulus of elasticity'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence1 ;
+			  sp:offset '119'^^xsd:nonNegativeInteger ;
+			  sp:length '21'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label3 .
+
+:LabeledTerm3 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'tensile strength'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence1 ;
+			  sp:offset '142'^^xsd:nonNegativeInteger ;
+			  sp:length '16'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label3 .
+
+:LabeledTerm4 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'failure strain'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence1 ;
+			  sp:offset '164'^^xsd:nonNegativeInteger ;
+			  sp:length '14'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label3 .
+			  
+:LabeledTerm5 rdf:type :CompoundLabeledTerm ;
+			  sp:labeledTermText 'glass fibres'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence2 ;
+			  sp:offset '30'^^xsd:nonNegativeInteger ;
+			  sp:length '12'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label1 .
+			  
+:LabeledTerm6 rdf:type :CompoundLabeledTerm ;
+			  sp:labeledTermText 'flax fibres'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence2 ;
+			  sp:offset '47'^^xsd:nonNegativeInteger ;
+			  sp:length '11'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label1 .
+			  
+:LabeledTerm7 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'natural fibres'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence2 ;
+			  sp:offset '114'^^xsd:nonNegativeInteger ;
+			  sp:length '14'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label1 .
+
+:LabeledTerm8 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'modulus of elasticity'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence3 ;
+			  sp:offset '22'^^xsd:nonNegativeInteger ;
+			  sp:length '21'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label3 .
+			  
+:LabeledTerm9 rdf:type :AtomicLabeledTerm ;
+			  sp:labeledTermText 'tensile strength'^^xsd:string ;
+			  sp:labeledTermIsContainedBy :Abstract1Sentence3 ;
+			  sp:offset '48'^^xsd:nonNegativeInteger ;
+			  sp:length '16'^^xsd:nonNegativeInteger ;
+			  sp:hasLabel :Label3 .
+
+:LabeledTerm10 rdf:type :CompoundLabeledTerm ;
+			   sp:labeledTermText 'regenerated cellulose fibres'^^xsd:string ;
+			   sp:labeledTermIsContainedBy :Abstract1Sentence3 ;
+			   sp:offset '66'^^xsd:nonNegativeInteger ;
+			   sp:length '28'^^xsd:nonNegativeInteger ;
+			   sp:hasLabel :Label1 .
+
+:LabeledTerm11 rdf:type :CompoundLabeledTerm ;
+			   sp:labeledTermText 'glass fibres'^^xsd:string ;
+			   sp:labeledTermIsContainedBy :Abstract1Sentence3 ;
+			   sp:offset '128'^^xsd:nonNegativeInteger ;
+			   sp:length '12'^^xsd:nonNegativeInteger ;
+			   sp:hasLabel :Label1 .
+
+:LabeledTerm12 rdf:type :AtomicLabeledTerm ; 
+			   sp:labeledTermText 'low density'^^xsd:string ;
+			   sp:labeledTermIsContainedBy :Abstract1Sentence3 ;
+			   sp:offset '158'^^xsd:nonNegativeInteger ;
+			   sp:length '11'^^xsd:nonNegativeInteger ;
+			   sp:hasLabel :Label3 .
+
+:Label1 rdf:type :Label ;
+		sp:fromLabelingSchema :LabelingSchema1 ;
+		sp:labelText 'Material Object'^^xsd:string .
+
+:Label2 rdf:type :Label ;
+		sp:fromLabelingSchema :LabelingSchema2 ;
+		sp:labelText 'Material'^^xsd:string .
+		
+:Label3 rdf:type :Label ;
+		sp:fromLabelingSchema :LabelingSchema3 ;
+		sp:labelText 'Property'^^xsd:string .
+
+:LabelingSchema1 rdf:type :LabelingSchema .
+:LabelingSchema2 rdf:type :LabelingSchema .
+:LabelingSchema3 rdf:type :LabelingSchema .
+
+:Bibliography sp:containsBibliographicEntry :BibliographicEntry1 ,
+											:BibliographicEntry2 ,
+											:BibliographicEntry3 ,
+											:BibliographicEntry4 ,
+											:BibliographicEntry5 ,
+											:BibliographicEntry6 ,
+											:BibliographicEntry7 ,
+											:BibliographicEntry8 ,
+											:BibliographicEntry9 ,
+											:BibliographicEntry10 ,
+											:BibliographicEntry11 ,
+											:BibliographicEntry12 ,
+											:BibliographicEntry13 ,
+											:BibliographicEntry14 ,
+											:BibliographicEntry15 ,
+											:BibliographicEntry16 ,
+											:BibliographicEntry17 ,
+											:BibliographicEntry18 ,
+											:BibliographicEntry19 ,
+											:BibliographicEntry20 ,
+											:BibliographicEntry21 ,
+											:BibliographicEntry22 .
+											
+:BibliographicEntry1 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'A. K. Bledzki, J. Gassan, Prog. Polym. Sci. 1999, 24, 221.'^^xsd:string .
+					 
+:BibliographicEntry2 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'A. K. Mohantya, M. Misra, G. Hinrichsen, Macromol. Mater. Eng. 2000, 276/277, 1.'^^xsd:string .
+					 
+:BibliographicEntry3 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'L. Berglund, in: "Natural Fibers, Biopolymers, and Biocomposites", A. K. Mohanty, M. Misra, L. T. Drzal, Eds., Taylor and Francis, Boca Raton 2005, p.807ff.'^^xsd:string .
+					 
+:BibliographicEntry4 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'A. Amash, P. Zugenmaier, Polymer 2000, 41, 1589.'^^xsd:string .
+					 
+:BibliographicEntry5 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'K. C. Seavey, I. Ghosh, R. M. Davis, W. G. Glasser, Cellulose 2001, 8, 149.'^^xsd:string .
+					 
+:BibliographicEntry6 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'H. P. Fink, P. Weigel, O. Geiger, M. Busch, Techn. Text. 2004, 47, 126.'^^xsd:string .
+					 
+:BibliographicEntry7 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'J. Ganster, H.P. Fink, Cellulose 2006, 13, 271.'^^xsd:string .
+					 
+:BibliographicEntry8 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'J. Ganster, H. P. Fink, M. Pinnow, Comp. Part A 2006, 37, 1796.'^^xsd:string .
+					 
+:BibliographicEntry9 rdf:type :BibliographicEntry ;
+					 sp:bibliographicEntryText 'R. W. Kessler, U. Becker, R. Kohler, B. Goth, Biomass Bioenergy 1998, 14, 237.'^^xsd:string .
+					 
+:BibliographicEntry10 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J. Lenz, J. Schurz, E. Wrentschur, Holzforschung 1994, 48 Suppl,72.'^^xsd:string .
+					  
+:BibliographicEntry11 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'H. P. Fink, P. Weigel, H. J. Purz, J. Ganster, Prog. Polym. Sci. 2001, 26, 1473.'^^xsd:string .
+					  
+:BibliographicEntry12 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'M. G. Northolt, H. Boerstoel, H. Maatman, R. Huisman, J. Veurink, H. Elzerman, Polymer 2001, 42, 8249.'^^xsd:string .
+					  
+:BibliographicEntry13 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'K. Kong, S. J. Eichhorn, Polymer 2005, 46, 6380.'^^xsd:string .
+					  
+:BibliographicEntry14 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J. M. Felix, P. Gatenholm, J. Appl. Polym. Sci. 1991, 42, 609.'^^xsd:string .
+					  
+:BibliographicEntry15 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J.-A. Trejo-O’Reilly, J.-Y. Cavaille, A. Gandini, Cellulose 1997, 4, 305.'^^xsd:string .
+					  
+:BibliographicEntry16 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J.-A. Trejo-O’Reilly, J.-Y. Cavaille, M. Paillet, A. Gandini, P. Herrera-Franco, J. Cauich, Polym. Comp. 2000, 21, 65.'^^xsd:string .
+					  
+:BibliographicEntry17 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'R.-B. Adusumalli, U. Mu¨ller, H. Weber, T. Roeder, H. Sixta, W. Gindl, Macromol. Symp. 2006, submitted.'^^xsd:string .
+					  
+:BibliographicEntry18 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'B. M. Collett, Wood Sci. Technol. 1972, 6, 1.'^^xsd:string .
+					  
+:BibliographicEntry19 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J. O. Karlsson, J.-F. Blachot, A. Peguy, P. Gatenholm, Polym. Comp. 1996, 17, 300.'^^xsd:string .
+					  
+:BibliographicEntry20 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'J. Gassan, Comp. Part A 2002, 33, 369.'^^xsd:string .
+					  
+:BibliographicEntry21 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText 'A. K. Bledzki, O. Faruk, Appl. Comp. Mater. 2003, 10, 365.'^^xsd:string .
+					  
+:BibliographicEntry22 rdf:type :BibliographicEntry ;
+					  sp:bibliographicEntryText ' S. E. Selke, I. Wichmann, Comp. Part A 2004, 35, 321.'^^xsd:string .
