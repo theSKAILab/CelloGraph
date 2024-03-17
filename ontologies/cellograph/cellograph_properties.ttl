@@ -126,7 +126,8 @@ cg:CG_2000003 rdf:type rdfs:Class ;
 #		rdfs:example "add some specific examples (instances) of the property, see examples above for guidance"@en-US ;
 #		skos:prefLabel "INSERT SAME NAME AS UNDER rdf:label"@en-US ;
 #		skos:altLabel "USE THIS FOR ALTERNATIVE NAME/LABELS"@en-US ;
-#		skos:definition "INSERT YOUR PRECISE NL DEFINITION."@en-US ;		
+#		skos:definition "INSERT YOUR PRECISE NL DEFINITION."@en-US ;
+#		cg:wordSenseUsed wn:synset-temperature-noun-1		
 # make it a subclass of one or multiple qualities (properties), either cg:CG_2000001, cg:CG_2000002, or cg:CG_2000003 or one of the more specific qualities you introduce (like cgp:CG_2000xxx)
 		rdfs:subClassOf cgp:CG_2000xxx , cgp:CG_2000xxx .
 # add a restriction of what kind of materials can have this properties		
