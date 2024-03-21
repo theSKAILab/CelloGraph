@@ -3,7 +3,7 @@ An ontology and associated tools for cellulose and cellulosic materials
 
 The project contains two separate but interlinked ontologies: 
 * The __Cellograph Ontology__ who focuses on terms referring to cellulosic materials, their properties, products, etc. This ontologies is an extension of BFO and reuses some concepts from ChEBI. 
-* The __Scientific Publication Ontology (SciPub Ontology)__ which focuses on modeling the metadata and content of a scientific publication. It is intended to be capture the information from a publication in RDF format, focusing on adding information on the contained terms  
+* The __Ontology for Named Entity Representation (OnNER)__ which focuses on modeling named entities as they appear in scientific publications and what is necessary to locate them therein. It is intended to be used to capture each publication and all its named entities as an RDF document  
 
 ## Cellograph Ontology 
 
@@ -25,4 +25,4 @@ The upper-most classes are:
         + Textile Material (cg:CG_0000009)
 
 
-## SciPub Ontology
+## OnNER
