@@ -1,6 +1,6 @@
 # CelloGraph Working Pipeline
 
-![CelloGraph Workflow](/diagram/CelloGraph-Working-Pipeline.png)
+![CelloGraph Workflow](./diagram/CelloGraph-Working-Pipeline.png)
 
 ### Meaning of Color Code:
 
