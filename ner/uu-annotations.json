@@ -1,0 +1,71 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "COUNTRY",
+      "color": "red-11"
+    },
+    {
+      "id": 2,
+      "name": "CAPITAL",
+      "color": "blue-11"
+    },
+    {
+      "id": 3,
+      "name": "CURRENCY",
+      "color": "light-green-11"
+    }
+  ],
+  "annotations": [
+    [
+      "Bangladesh is a south asian country . dhaka is its capital .\r",
+      {
+        "entities": [
+          [
+            0,
+            10,
+            [
+              [
+                "Candidate",
+                "2025-04-23~18:23:25",
+                "uu",
+                "COUNTRY"
+              ]
+            ]
+          ],
+          [
+            38,
+            43,
+            [
+              [
+                "Candidate",
+                "2025-04-23~18:23:25",
+                "uu",
+                "CAPITAL"
+              ]
+            ]
+          ]
+        ]
+      }
+    ],
+    [
+      "its currency is bangladeshi taka .",
+      {
+        "entities": [
+          [
+            16,
+            32,
+            [
+              [
+                "Candidate",
+                "2025-04-23~18:23:25",
+                "uu",
+                "CURRENCY"
+              ]
+            ]
+          ]
+        ]
+      }
+    ]
+  ]
+}
