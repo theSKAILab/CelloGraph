@@ -1,4 +1,4 @@
-instructions = [
+instruction = [
     """
     You will be provided with a paragraph prefixed by "TEXT:". Your task is to perform the following task of finding terms based on the instructions below.
     - Provide a list of chemical substances, which can be either pure chemicals or chemical compounds.
@@ -100,7 +100,7 @@ instructions = [
 	""",
 ]
 
-examples_10 = [
+example_10 = [
     """
     TEXT: Cellulose (C <sub>6</sub> H <sub>10</sub> O <sub>5</sub> ) <sub>n</sub> is one of the most ubiquitous organic polymers on the planet. It is a significant structural component of the primary cell wall of green plants, various forms of algae and oomycetes. It is a polysaccharide consisting of a linear chain of several hundred to many thousands of β(1 → 4) linked d-glucose units. There are various extraction procedures for cellulose developed by using different processes like oxidation, etherification and esterification which convert the prepared celluloses in to cellulose derivatives. Since it is a non-toxic, bio-degradable polymer with high tensile and compressive strength, it has widespread use in various fields such as nanotechnology, pharmaceutical industry, food industry, cosmetics, textile and paper industry, drug-delivery systems in treating cancer and other diseases. Micro-crystalline cellulose in particular is among the most frequently used cellulose derivatives in the food, cosmetics, pharma industry, etc. and is an important excipient due to its binding and tableting properties, characterized by its plasticity and cohesiveness when wet. Bacterial cellulose's high dispensability, tasteless and odourless nature provides it with lot of industrial applications. Currently, about half of the waste produced in India contains about 50% cellulose which can be used productively. This chapter deals with the chemistry of cellulose, its extraction and its properties which help various industries to make the most of it.
     { "chemical": "['Cellulose', 'organic polymers', 'polysaccharide', 'celluloses', 'cellulose derivatives', 'cellulose', 'cellulose']" }
@@ -166,7 +166,7 @@ examples_10 = [
     """,
 ]
 
-examples_20 = [
+example_20 = [
     """
     TEXT: Cellulose (C <sub>6</sub> H <sub>10</sub> O <sub>5</sub> ) <sub>n</sub> is one of the most ubiquitous organic polymers on the planet. It is a significant structural component of the primary cell wall of green plants, various forms of algae and oomycetes. It is a polysaccharide consisting of a linear chain of several hundred to many thousands of β(1 → 4) linked d-glucose units. There are various extraction procedures for cellulose developed by using different processes like oxidation, etherification and esterification which convert the prepared celluloses in to cellulose derivatives. Since it is a non-toxic, bio-degradable polymer with high tensile and compressive strength, it has widespread use in various fields such as nanotechnology, pharmaceutical industry, food industry, cosmetics, textile and paper industry, drug-delivery systems in treating cancer and other diseases. Micro-crystalline cellulose in particular is among the most frequently used cellulose derivatives in the food, cosmetics, pharma industry, etc. and is an important excipient due to its binding and tableting properties, characterized by its plasticity and cohesiveness when wet. Bacterial cellulose's high dispensability, tasteless and odourless nature provides it with lot of industrial applications. Currently, about half of the waste produced in India contains about 50% cellulose which can be used productively. This chapter deals with the chemistry of cellulose, its extraction and its properties which help various industries to make the most of it.
     { "chemical": "['Cellulose', 'organic polymers', 'polysaccharide', 'celluloses', 'cellulose derivatives', 'cellulose', 'cellulose']" }
