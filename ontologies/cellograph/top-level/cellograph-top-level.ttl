@@ -1,0 +1,186 @@
+@prefix : <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+@prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl#> .
+@prefix iao: <http://purl.obolibrary.org/obo/IAO_#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cg: <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+@prefix dcterms: <http://purl.org/dc/terms#> .
+@base <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+
+bfo:Entity rdf:type owl:Class ;
+    rdfs:label "Entity"@en .
+
+bfo:Continuant rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Entity ;
+    rdfs:label "Continuant"@en .
+	
+bfo:IndependentContinuant rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Continuant ;
+    rdfs:label "Independent Continuant"@en .
+
+bfo:MaterialEntity rdf:type owl:Class ;
+    rdfs:subClassOf bfo:IndependentContinuant ;
+    rdfs:label "Material Entity"@en .
+	
+bfo:Object rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MaterialEntity ;
+    rdfs:label "Object"@en .
+	
+cg:MacroscopicObject rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Object ,
+					cg:MacroscopicMaterialEntity ;
+	owl:disjointWith cg:MicroscopicObject ;
+	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
+											   cg:MacroscopicMaterialEntity
+											 )
+						] ;
+    rdfs:label "Macroscopic Object"@en .
+	
+cg:Equipment rdf:type owl:Class ;
+    rdfs:subClassOf cg:MacroscopicObject ;
+    rdfs:label "Equipment"@en .
+
+cg:MaterialProduct rdf:type owl:Class ;
+    rdfs:subClassOf cg:MacroscopicObject ;
+    rdfs:label "Material Product"@en .
+	
+cg:MicroscopicObject rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Object ,
+					cg:MicroscopicMaterialEntity ;
+	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
+											   cg:MicroscopicMaterialEntity
+											  )
+						] ;
+    rdfs:label "Microscopic Object"@en .
+	
+cg:ChemicalEntity rdf:type owl:Class ;
+    rdfs:subClassOf cg:MicroscopicObject ;
+    rdfs:label "Chemical Entity"@en .	
+	
+bfo:FiatObjectPart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MaterialEntity ;
+    rdfs:label "Fiat Object Part"@en .
+	
+cg:MacroscopicFiatObjectPart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:FiatObjectPart ,
+					cg:MacroscopicMaterialEntity ;
+	owl:disjointWith cg:MicroscopicFiatObjectPart ;
+	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
+											   cg:MacroscopicMaterialEntity
+											  )
+						] ;
+    rdfs:label "Macroscopic Fiat Object Part"@en .
+	
+cg:MacroscopicMaterialStructurePart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MacroscopicFiatObjectPart ;
+    rdfs:label "Macroscopic Material Structure Part"@en .
+
+cg:MacroscopicMaterialNon-structurePart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MacroscopicFiatObjectPart ;
+    rdfs:label "Macroscopic Material Non-structure Part"@en .	
+
+cg:MicroscopicFiatObjectPart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:FiatObjectPart ,
+					cg:MicroscopicMaterialEntity ;
+	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
+											   cg:MicroscopicMaterialEntity
+											  )
+						] ;
+    rdfs:label "Microscopic Fiat Object Part"@en .		
+
+cg:MicroscopicChemicalStructurePart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MicroscopicFiatObjectPart ;
+    rdfs:label "Microscopic Chemical Structure Part"@en .
+
+cg:MicroscopicChemicalNon-structurePart rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MicroscopicFiatObjectPart ;
+    rdfs:label "Microscopic Chemical Non-structure Part"@en .		
+	
+cg:MacroscopicMaterialEntity rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MaterialEntity ;
+	owl:disjointWith cg:MicroscopicMaterialEntity ;
+    rdfs:label "Macroscopic Material Entity"@en .
+
+cg:Material rdf:type owl:Class ;
+    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
+    rdfs:label "Material"@en .
+
+cg:StructuredMaterial rdf:type owl:Class ;
+    rdfs:subClassOf cg:Material ;
+    rdfs:label "Structured Material"@en .
+
+cg:Equipment rdf:type owl:Class ;
+    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
+    rdfs:label "Equipment"@en .
+
+cg:MaterialProduct rdf:type owl:Class ;
+    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
+    rdfs:label "Material Product"@en .	
+	
+cg:MicroscopicMaterialEntity rdf:type owl:Class ;
+    rdfs:subClassOf bfo:MaterialEntity ;
+    rdfs:label "Microscopic Material Entity"@en .
+
+cg:ChemicalEntity rdf:type owl:Class ;
+    rdfs:subClassOf cg:MicroscopicMaterialEntity ;
+    rdfs:label "Chemical Entity"@en .
+
+cg:ChemicalPart rdf:type owl:Class ;
+    rdfs:subClassOf cg:MicroscopicMaterialEntity ;
+    rdfs:label "Chemical Part"@en .
+
+bfo:SpecificallyDependentContinuant rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Continuant ;
+    rdfs:label "Specifically Dependent Continuant"@en .
+
+bfo:Quality rdf:type owl:Class ;
+    rdfs:subClassOf bfo:SpecificallyDependentContinuant ;
+    rdfs:label "Quality"@en .
+
+cg:MaterialQuality rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Quality ;
+    rdfs:label "Material Quality"@en .
+
+cg:NonstructuralMaterialQuality rdf:type owl:Class ;
+    rdfs:subClassOf cg:MaterialQuality ;
+    rdfs:label "Nonstructural Material Quality"@en .
+
+cg:StructureQuality rdf:type owl:Class ;
+    rdfs:subClassOf cg:MaterialQuality ;
+    rdfs:label "Structure Quality"@en .
+
+bfo:GenericallyDependentContinuant rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Continuant ;
+    rdfs:label "Generically Dependent Continuant"@en .
+
+iao:InformationContentEntity rdf:type owl:Class ;
+    rdfs:subClassOf bfo:GenericallyDependentContinuant ;
+    rdfs:label "Information Content Entity"@en .
+
+iao:DataItem rdf:type owl:Class ;
+    rdfs:subClassOf iao:InformationContentEntity ;
+    rdfs:label "Data Item"@en .
+
+iao:MeasurementDatum rdf:type owl:Class ;
+    rdfs:subClassOf iao:DataItem ;
+    rdfs:label "Measurement Datum"@en .
+
+cg:Measurement rdf:type owl:Class ;
+    rdfs:subClassOf iao:MeasurementDatum ;
+    rdfs:label "Measurement"@en .
+	
+bfo:Occurrent rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Entity ;
+    rdfs:label "Occurrent"@en .
+	
+bfo:Process rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Occurrent ;
+    rdfs:label "Process"@en .	
+	
+cg:Process rdf:type owl:Class ;
+    rdfs:subClassOf bfo:Process ;
+    rdfs:label "Process"@en .	
+	
