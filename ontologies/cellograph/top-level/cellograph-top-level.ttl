@@ -1,186 +1,297 @@
-@prefix : <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+@prefix : <http://purl.org/spatialai/cg/cg-top-level#> .
 @prefix bfo: <http://purl.obolibrary.org/obo/bfo.owl#> .
 @prefix iao: <http://purl.obolibrary.org/obo/IAO_#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix cg: <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+@prefix cg: <http://purl.org/spatialai/cg/cg-top-level#> .
 @prefix dcterms: <http://purl.org/dc/terms#> .
-@base <http://purl.org/spatialai/cellograph/cellograph-highlevel#> .
+@base <http://purl.org/spatialai/cg/cg-top-level#> .
 
-bfo:Entity rdf:type owl:Class ;
-    rdfs:label "Entity"@en .
+<http://purl.org/spatialai/cg/cg-top-level> rdf:type owl:Ontology ;
+                                            owl:versionIRI <http://purl.org/spatialai/onner/v1/onner-full> ;
+                                            dcterms:bibliographicCitation "Umayer Reza, Torsten Hahmann. (2026). Cellulosic Materials Top Level Domain Ontology." ;
+                                            dcterms:created "2025-12-05"^^xsd:date ;
+                                            dcterms:creator "Umayer Reza <https://orcid.org/0000-0003-4013-3513>"@en ,
+                                            				"Torsten Hahmann <http://orcid.org/0000-0002-5331-5052>"@en ;
+                                            dcterms:description "Top level domain ontology for cellulosic entities."@en ;
+                                            dcterms:identifier <http://purl.org/spatialai/onner/onner-full> ;
+                                            dcterms:issued "2000-00-00"^^xsd:date ;
+                                            dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                            dcterms:modified "2000-00-00"^^xsd:date ;
+                                            dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
+                                            dcterms:source <http://example.com/source> ;
+                                            dcterms:subject "Cellulosic Entities" ,
+                                            				"Top Level Domain Ontology" ;
+                                            dcterms:title "Cellulosic Materials Top Level Domain Ontology"@en ;
+                                            bibo:doi "NA" ;
+                                            bibo:status "stable" ;
+                                            owl:versionInfo "1.0"@en ;
+                                            foaf:logo <http://example.com/ontology_logo.png> .
 
-bfo:Continuant rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Entity ;
-    rdfs:label "Continuant"@en .
-	
-bfo:IndependentContinuant rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Continuant ;
-    rdfs:label "Independent Continuant"@en .
 
-bfo:MaterialEntity rdf:type owl:Class ;
-    rdfs:subClassOf bfo:IndependentContinuant ;
-    rdfs:label "Material Entity"@en .
-	
-bfo:Object rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MaterialEntity ;
-    rdfs:label "Object"@en .
-	
-cg:MacroscopicObject rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Object ,
-					cg:MacroscopicMaterialEntity ;
-	owl:disjointWith cg:MicroscopicObject ;
-	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
-											   cg:MacroscopicMaterialEntity
-											 )
-						] ;
-    rdfs:label "Macroscopic Object"@en .
-	
-cg:Equipment rdf:type owl:Class ;
-    rdfs:subClassOf cg:MacroscopicObject ;
-    rdfs:label "Equipment"@en .
+#################################################################
+#    Classes
+#################################################################
 
-cg:MaterialProduct rdf:type owl:Class ;
-    rdfs:subClassOf cg:MacroscopicObject ;
-    rdfs:label "Material Product"@en .
-	
-cg:MicroscopicObject rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Object ,
-					cg:MicroscopicMaterialEntity ;
-	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
-											   cg:MicroscopicMaterialEntity
-											  )
-						] ;
-    rdfs:label "Microscopic Object"@en .
-	
-cg:ChemicalEntity rdf:type owl:Class ;
-    rdfs:subClassOf cg:MicroscopicObject ;
-    rdfs:label "Chemical Entity"@en .	
-	
-bfo:FiatObjectPart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MaterialEntity ;
-    rdfs:label "Fiat Object Part"@en .
-	
-cg:MacroscopicFiatObjectPart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:FiatObjectPart ,
-					cg:MacroscopicMaterialEntity ;
-	owl:disjointWith cg:MicroscopicFiatObjectPart ;
-	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
-											   cg:MacroscopicMaterialEntity
-											  )
-						] ;
-    rdfs:label "Macroscopic Fiat Object Part"@en .
-	
-cg:MacroscopicMaterialStructurePart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MacroscopicFiatObjectPart ;
-    rdfs:label "Macroscopic Material Structure Part"@en .
+###  http://purl.obolibrary.org/obo#BFO_0000001
+<http://purl.obolibrary.org/obo#BFO_0000001> rdf:type owl:Class ;
+                                             rdfs:comment "An entity is anything that exists or has existed or will exist."@en ;
+                                             rdfs:label "Entity"@en .
 
-cg:MacroscopicMaterialNon-structurePart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MacroscopicFiatObjectPart ;
-    rdfs:label "Macroscopic Material Non-structure Part"@en .	
 
-cg:MicroscopicFiatObjectPart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:FiatObjectPart ,
-					cg:MicroscopicMaterialEntity ;
-	owl:equivalentClass [ owl:intersectionOf ( bfo:Object
-											   cg:MicroscopicMaterialEntity
-											  )
-						] ;
-    rdfs:label "Microscopic Fiat Object Part"@en .		
+###  http://purl.obolibrary.org/obo#BFO_0000002
+<http://purl.obolibrary.org/obo#BFO_0000002> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000001> ;
+                                             rdfs:comment "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity."@en ;
+                                             rdfs:label "Continuant"@en .
 
-cg:MicroscopicChemicalStructurePart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MicroscopicFiatObjectPart ;
-    rdfs:label "Microscopic Chemical Structure Part"@en .
 
-cg:MicroscopicChemicalNon-structurePart rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MicroscopicFiatObjectPart ;
-    rdfs:label "Microscopic Chemical Non-structure Part"@en .		
-	
+###  http://purl.obolibrary.org/obo#BFO_0000004
+<http://purl.obolibrary.org/obo#BFO_0000004> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000002> ;
+                                             rdfs:comment "B is an independent continuant = Def. B is a continuant which is such that there is no C and no T such that B s-depends_on C at T."@en ;
+                                             rdfs:label "Independent Continuant"@en .
+
+
+###  http://purl.obolibrary.org/obo#BFO_0000040
+<http://purl.obolibrary.org/obo#BFO_0000040> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000004> ;
+                                             rdfs:comment "A material entity is an independent continuant that has some portion of matter as proper or improper continuant part."@en ;
+                                             rdfs:label "Material Entity"@en .
+
+# Classes for secondary taxonomy
+# =================================================================
+### http://purl.org/spatialai/cg/cg-top-level#MacroscopicMaterialEntity
 cg:MacroscopicMaterialEntity rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MaterialEntity ;
-	owl:disjointWith cg:MicroscopicMaterialEntity ;
-    rdfs:label "Macroscopic Material Entity"@en .
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000040> ;
+                             rdfs:comment ""@en ;
+                             rdfs:label "Macroscopic Material Entity"@en .
 
-cg:Material rdf:type owl:Class ;
-    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
-    rdfs:label "Material"@en .
 
-cg:StructuredMaterial rdf:type owl:Class ;
-    rdfs:subClassOf cg:Material ;
-    rdfs:label "Structured Material"@en .
-
-cg:Equipment rdf:type owl:Class ;
-    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
-    rdfs:label "Equipment"@en .
-
-cg:MaterialProduct rdf:type owl:Class ;
-    rdfs:subClassOf cg:MacroscopicMaterialEntity ;
-    rdfs:label "Material Product"@en .	
-	
+### http://purl.org/spatialai/cg/cg-top-level#MicroscopicMaterialEntity
 cg:MicroscopicMaterialEntity rdf:type owl:Class ;
-    rdfs:subClassOf bfo:MaterialEntity ;
-    rdfs:label "Microscopic Material Entity"@en .
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000040> ;
+                             rdfs:comment ""@en ;
+                             rdfs:label "Microscopic Material Entity"@en .
+# =================================================================
 
+
+###  http://purl.obolibrary.org/obo#BFO_0000024
+<http://purl.obolibrary.org/obo#BFO_0000024> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000040> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Fiat Object Part"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#MacroscopicFiatObjectPart
+cg:MacroscopicFiatObjectPart rdf:type owl:Class ;
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000024> ,
+                             				 cg:MacroscopicMaterialEntity ;
+                             rdfs:comment ""@en ;
+                             rdfs:label "Macroscopic Fiat Object Part"@en .
+ 
+
+### http://purl.org/spatialai/cg/cg-top-level#MacroscopicMaterialNon-StructurePart
+cg:MacroscopicMaterialNon-StructurePart rdf:type owl:Class ;
+						                rdfs:subClassOf cg:MacroscopicFiatObjectPart ;
+						                rdfs:comment ""@en ;
+						                rdfs:label "Macroscopic Material Non-Structure Part"@en .
+                             
+                                                   
+### http://purl.org/spatialai/cg/cg-top-level#MicroscopicFiatObjectPart
+cg:MicroscopicFiatObjectPart rdf:type owl:Class ;
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000024> ,
+                             				 cg:MicroscopicMaterialEntity ;
+                             rdfs:comment ""@en ;
+                             rdfs:label "Microscopic Fiat Object Part"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#MicroscopicChemicalNonStructurePart
+cg:MicroscopicChemicalNon-StructurePart rdf:type owl:Class ;
+				                        rdfs:subClassOf cg:MicroscopicFiatObjectPart ;
+				                        rdfs:comment ""@en ;
+				                        rdfs:label "Microscopic Chemical Non-Structure Part"@en .
+                             
+                             
+### http://purl.org/spatialai/cg/cg-top-level#MicroscopicChemicalStructurePart
+cg:MicroscopicChemicalStructurePart rdf:type owl:Class ;
+		                            rdfs:subClassOf cg:MicroscopicFiatObjectPart ;
+		                            rdfs:comment ""@en ;
+		                            rdfs:label "Microscopic Chemical Structure Part"@en .
+
+
+###  http://purl.obolibrary.org/obo#BFO_0000030
+<http://purl.obolibrary.org/obo#BFO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000040> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Object"@en .
+                                             
+                                             
+### http://purl.org/spatialai/cg/cg-top-level#MacroscopicObject
+cg:MacroscopicObject rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000030> ,
+                     				 cg:MacroscopicMaterialEntity ;
+                     rdfs:comment ""@en ;
+                     rdfs:label "Macroscopic Object"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#StructuredMaterialObject
+cg:StructuredMaterialObject rdf:type owl:Class ;
+                            rdfs:subClassOf cg:MacroscopicObject ;
+                            rdfs:comment ""@en ;
+                            rdfs:label "Structured Material Object"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#Equipment
+cg:Equipment rdf:type owl:Class ;
+             rdfs:subClassOf cg:MacroscopicObject ;
+             rdfs:comment ""@en ;
+             rdfs:label "Equipment"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#MaterialProduct
+cg:MaterialProduct rdf:type owl:Class ;
+                   rdfs:subClassOf cg:MacroscopicObject ;
+                   rdfs:comment ""@en ;
+                   rdfs:label "Material Product"@en .
+                             
+
+### http://purl.org/spatialai/cg/cg-top-level#MicroscopicObject
+cg:MicroscopicObject rdf:type owl:Class ;
+		             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000030> ,
+		             				 cg:MicroscopicMaterialEntity ;
+		             rdfs:comment ""@en ;
+		             rdfs:label "Microscopic Object"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#ChemicalEntity
 cg:ChemicalEntity rdf:type owl:Class ;
-    rdfs:subClassOf cg:MicroscopicMaterialEntity ;
-    rdfs:label "Chemical Entity"@en .
+                  rdfs:subClassOf cg:MicroscopicObject ;
+                  rdfs:comment ""@en ;
+                  rdfs:label "Chemical Entity"@en .
 
+
+### http://purl.org/spatialai/cg/cg-top-level#ChemicalPart
 cg:ChemicalPart rdf:type owl:Class ;
-    rdfs:subClassOf cg:MicroscopicMaterialEntity ;
-    rdfs:label "Chemical Part"@en .
+                rdfs:subClassOf cg:MicroscopicObject ;
+                rdfs:comment ""@en ;
+                rdfs:label "Chemical Part"@en .
+                                             
+                                                          
+###  http://purl.obolibrary.org/obo#BFO_0000020
+<http://purl.obolibrary.org/obo#BFO_0000020> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000002> ;
+                                             rdfs:comment "B is a specifically dependent continuant = Def. B is a continuant & there is some independent continuant C which is not a spatial region and which is such that B s-depends_on C at every time T during the course of B’s existence."@en ;
+                                             rdfs:label "Specifically Dependent Continuant"@en .                                 
 
-bfo:SpecificallyDependentContinuant rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Continuant ;
-    rdfs:label "Specifically Dependent Continuant"@en .
 
-bfo:Quality rdf:type owl:Class ;
-    rdfs:subClassOf bfo:SpecificallyDependentContinuant ;
-    rdfs:label "Quality"@en .
+###  http://purl.obolibrary.org/obo#BFO_0000019
+<http://purl.obolibrary.org/obo#BFO_0000019> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000020> ;
+                                             rdfs:comment "A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized."@en ;
+                                             rdfs:label "Quality"@en .
+                                             
 
+### http://purl.org/spatialai/cg/cg-top-level#MaterialQuality
 cg:MaterialQuality rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Quality ;
-    rdfs:label "Material Quality"@en .
+                   rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000019> ;
+                   rdfs:comment ""@en ;
+                   rdfs:label "Material Quality"@en .
+                                             
 
+### http://purl.org/spatialai/cg/cg-top-level#NonstructuralMaterialQuality
 cg:NonstructuralMaterialQuality rdf:type owl:Class ;
-    rdfs:subClassOf cg:MaterialQuality ;
-    rdfs:label "Nonstructural Material Quality"@en .
+                                rdfs:subClassOf cg:MaterialQuality ;
+                                rdfs:comment ""@en ;
+                                rdfs:label "Nonstructural Material Quality"@en .
 
+
+### http://purl.org/spatialai/cg/cg-top-level#StructureQuality
 cg:StructureQuality rdf:type owl:Class ;
-    rdfs:subClassOf cg:MaterialQuality ;
-    rdfs:label "Structure Quality"@en .
+                    rdfs:subClassOf cg:MaterialQuality ;
+                    rdfs:comment ""@en ;
+                    rdfs:label "Structure Quality"@en .
 
-bfo:GenericallyDependentContinuant rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Continuant ;
-    rdfs:label "Generically Dependent Continuant"@en .
 
-iao:InformationContentEntity rdf:type owl:Class ;
-    rdfs:subClassOf bfo:GenericallyDependentContinuant ;
-    rdfs:label "Information Content Entity"@en .
+###  http://purl.obolibrary.org/obo#BFO_0000017
+<http://purl.obolibrary.org/obo#BFO_0000017> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000020> ;
+                                             rdfs:comment "To say that B is a realizable entity is to say that B is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type."@en ;
+                                             rdfs:label "Realizable Entity"@en .
 
-iao:DataItem rdf:type owl:Class ;
-    rdfs:subClassOf iao:InformationContentEntity ;
-    rdfs:label "Data Item"@en .
 
-iao:MeasurementDatum rdf:type owl:Class ;
-    rdfs:subClassOf iao:DataItem ;
-    rdfs:label "Measurement Datum"@en .
+###  http://purl.obolibrary.org/obo#BFO_0000016
+<http://purl.obolibrary.org/obo#BFO_0000016> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000017> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Disposition"@en .
 
+
+###  http://purl.obolibrary.org/obo#BFO_0000034
+<http://purl.obolibrary.org/obo#BFO_0000034> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000016> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Function"@en .
+
+
+###  http://purl.obolibrary.org/obo#BFO_0000031
+<http://purl.obolibrary.org/obo#BFO_0000031> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000002> ;
+                                             rdfs:comment "B is a generically dependent continuant = Def. B is a continuant that g-depends_on one or more other entities."@en ;
+                                             rdfs:label "Generically Dependent Continuant"@en .
+                                             
+                                             
+ ###  http://purl.obolibrary.org/obo#IAO_0000030
+<http://purl.obolibrary.org/obo#IAO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000031> ;
+                                             rdfs:comment "A generically dependent continuant that is about some thing."@en ;
+                                             rdfs:label "Information Content Entity"@en .                                            
+
+
+ ###  http://purl.obolibrary.org/obo#IAO_0000027
+<http://purl.obolibrary.org/obo#IAO_0000027> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#IAO_0000030> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Data Item"@en .     
+
+
+ ###  http://purl.obolibrary.org/obo#IAO_0000109
+<http://purl.obolibrary.org/obo#IAO_0000109> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#IAO_0000027> ;
+                                             rdfs:comment ""@en ;
+                                             rdfs:label "Measurement Datum" .  
+                                             
+                                             
+### http://purl.org/spatialai/cg/cg-top-level#Measurement
 cg:Measurement rdf:type owl:Class ;
-    rdfs:subClassOf iao:MeasurementDatum ;
-    rdfs:label "Measurement"@en .
-	
-bfo:Occurrent rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Entity ;
-    rdfs:label "Occurrent"@en .
-	
-bfo:Process rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Occurrent ;
-    rdfs:label "Process"@en .	
-	
+               rdfs:subClassOf <http://purl.obolibrary.org/obo#IAO_0000109> ;
+               rdfs:comment ""@en ;
+               rdfs:label "Measurement"@en .
+                             
+                             
+###  http://purl.obolibrary.org/obo#BFO_0000003
+<http://purl.obolibrary.org/obo#BFO_0000003> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000001> ;
+                                             rdfs:comment "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region."@en ;
+                                             rdfs:label "Occurrent"@en .                                             
+
+
+###  http://purl.obolibrary.org/obo#BFO_0000015
+<http://purl.obolibrary.org/obo#BFO_0000015> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000003> ;
+                                             rdfs:comment "P is a process = Def. P is an occurrent that has temporal proper parts and for some time T, P s-depends_on some material entity at T."@en ;
+                                             rdfs:label "Process"@en .
+
+
+### http://purl.org/spatialai/cg/cg-top-level#Process
 cg:Process rdf:type owl:Class ;
-    rdfs:subClassOf bfo:Process ;
-    rdfs:label "Process"@en .	
-	
+           rdfs:subClassOf <http://purl.obolibrary.org/obo#BFO_0000015> ;
+           rdfs:comment ""@en ;
+           rdfs:label "Process"@en .
+
+
