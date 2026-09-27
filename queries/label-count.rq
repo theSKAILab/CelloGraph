@@ -1,0 +1,11 @@
+# Counts the number of recognized domain entities by label
+
+prefix onner: <http://purl.org/spatialai/onner/onner-full#>
+prefix : <http://purl.org/spatialai/onner/onner-full#>
+
+select ?label (COUNT(DISTINCT ?entity) as ?count) where {
+    ?entity a :LabeledTerm ;
+    	:labeledTermText ?text;
+    :hasLabeledTermStatus ?status.
+    ?status :hasLabeledTermLabel [:labelText ?label].
+} GROUP BY ?label

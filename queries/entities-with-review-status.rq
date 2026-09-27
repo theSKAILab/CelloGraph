@@ -1,0 +1,28 @@
+# Find all "PROCESS" entities for which some review has taken place, i.e. they have some status object other than Candidate
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix onner: <http://purl.org/spatialai/onner/onner-full#>
+SELECT ?title ?entID ?ent ?label ?status ?statusDate ?contributor WHERE {
+    ?pubId rdf:type onner:ScholarlyPublication ;
+        onner:publicationTitle ?title ;
+    	onner:containsDocumentPart ?entID .
+
+    ?entID rdf:type onner:LabeledTerm ;
+        onner:labeledTermText ?ent ;
+        onner:hasLabeledTermStatus ?status .
+
+    ?status onner:statusAssignmentDate ?statusDate ;
+        onner:statusAssignedBy ?contributor ;
+        onner:hasLabeledTermLabel ?labelId .
+
+    ?labelId onner:labelText ?label .
+
+    # entity must have at least one status other than Candidate
+    FILTER EXISTS {
+        ?entID onner:hasLabeledTermStatus ?reviewStatus .
+        ?reviewStatus rdf:type ?reviewStatusType .
+
+        FILTER (?reviewStatusType != onner:CandidateStatus)
+    }
+}
+ORDER BY ?entID ?statusDate

@@ -1,0 +1,22 @@
+# Find publications with high frequency of terms "CNC" or "nanofibers"
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix onner: <http://purl.org/spatialai/onner/onner-full#>
+
+SELECT ?publication ?date ?doi WHERE {    
+	?pubublicationId rdf:type onner:ScholarlyPublication ;
+    	onner:publicationTitle ?publication ;
+		onner:publicationDate ?date ;
+		onner:doi ?doi ;
+		onner:containsDocumentPart ?paragraphId .
+	
+	?paragraphId rdf:type onner:Paragraph ;
+		onner:directlyContainsLabeledTerm ?termId .
+	
+	?termId rdf:type onner:LabeledTerm ;
+		onner:labeledTermText ?term .
+	
+	FILTER(?term = "CNC" || ?term = "nanofibers")
+}
+GROUP BY ?publication ?date ?doi
+HAVING (COUNT(?term) >= 10)

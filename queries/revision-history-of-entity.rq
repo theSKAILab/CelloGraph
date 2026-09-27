@@ -1,0 +1,18 @@
+# Revision history of one particular entity
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix onner: <http://purl.org/spatialai/onner/onner-full#>
+prefix data: <http://purl.org/spatialai/onner/onner-full/data#>
+
+SELECT ?ent ?label ?status ?statusDate ?contributor WHERE {
+    data:10.1016_j.indcrop.2015.03.075_A_P1_E16 rdf:type onner:LabeledTerm ;
+    	onner:labeledTermText ?ent ;
+        onner:hasLabeledTermStatus ?status .
+
+    ?status onner:statusAssignmentDate ?statusDate ;
+        onner:statusAssignedBy ?contributor ;
+    	onner:hasLabeledTermLabel ?labelId .
+
+    ?labelId onner:labelText ?label .
+}
+ORDER BY ?entID ?statusDate

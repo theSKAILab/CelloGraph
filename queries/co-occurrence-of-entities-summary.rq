@@ -1,0 +1,26 @@
+#Summarize: Chemicals mentioned with Mechanical Properties
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix onner: <http://purl.org/spatialai/onner/onner-full#>
+prefix : <http://purl.org/spatialai/onner/onner-full#>
+
+SELECT ?publication (COUNT(DISTINCT ?chemical) AS ?count) WHERE {
+	?pubublicationId rdf:type onner:ScholarlyPublication ;
+    	onner:publicationTitle ?publication ;
+		onner:containsDocumentPart ?paragraphId .
+	
+	?paragraphId rdf:type onner:Paragraph ;
+		onner:paragraphText ?paragraph ;
+		onner:directlyContainsLabeledTerm ?termId1 , ?termId2 .
+	
+	?termId1 onner:labeledTermText 'mechanical properties'^^xsd:string ;
+		onner:hasLabeledTermStatus ?status1 .
+	?status1 onner:hasLabeledTermLabel ?labelId1 .
+	?labelId1 onner:labelText 'PROPERTY'^^xsd:string . 
+	
+	?termId2 onner:labeledTermText ?chemical ;
+		onner:hasLabeledTermStatus ?status2 .
+	?status2 onner:hasLabeledTermLabel ?labelId2 .
+	?labelId2 onner:labelText 'CHEM_ENT'^^xsd:string . 
+} GROUP BY ?publication
