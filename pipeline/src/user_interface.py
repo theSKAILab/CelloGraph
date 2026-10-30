@@ -526,6 +526,10 @@ def render_paragraph_cards(dataframe: pd.DataFrame) -> None:
         )
 
 
+def reset_result_page() -> None:
+    st.session_state.result_page = 1
+
+
 # -----------------------------------------------------------------------------
 # Page configuration and visual styling
 # -----------------------------------------------------------------------------
@@ -684,12 +688,12 @@ st.markdown(
         .paragraph-id, .acknowledgement-title { color: var(--cg-ink); }
         .app-title { color: #176A70; }
         .app-subtitle, .acknowledgement-text, .output-empty { color: #627685; }
-        .selected-question { border-color: var(--cg-line); border-left: 4px solid var(--cg-accent); background: #ffffff; color: #263c48; }
+        .selected-question { border-color: var(--cg-line); background: #ffffff; color: #263c48; }
         .paragraph-card { border-color: var(--cg-line); background: #ffffff; }
         .paragraph-id { color: var(--cg-accent); }
         .paragraph-text { color: #263b46; }
         .output-empty { border-color: #afc9c9; background: #f5fbfa; }
-        .selected-question-label { font-size:.64rem; font-weight:800; letter-spacing:.12em; color:#12676a; margin-bottom:7px; }
+        .selected-question-label { font-size:.85rem; font-weight:800; letter-spacing:.12em; color:#12676a; margin-bottom:7px; }
         /* Same Selected Question card appearance, with a native dropdown inside. */
         [data-testid="stSidebar"] .st-key-selected_question_box {
             white-space: normal;
@@ -697,7 +701,6 @@ st.markdown(
             line-height: 1.45;
             padding: 0.75rem 0.85rem;
             border: 1px solid var(--cg-line);
-            border-left: 4px solid var(--cg-accent);
             border-radius: 0.6rem;
             background: #ffffff;
             color: #263c48;
@@ -712,6 +715,35 @@ st.markdown(
         }
 
         .acknowledgement-box { border-left-color: var(--cg-accent); background: #f7faf9; }
+        [data-testid="stSidebarUserContent"] {
+            padding-bottom: 2rem;
+        }
+        [data-testid="stSidebarUserContent"] > div > [data-testid="stVerticalBlock"] {
+            min-height: calc(100dvh - 7.75rem);
+        }
+        [data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.acknowledgement-box) {
+            margin-top: auto;
+        }
+        [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {
+            height: var(--cg-main-content-height, calc(100dvh - 6.5rem));
+            min-height: var(--cg-main-content-height, calc(100dvh - 6.5rem));
+        }
+        .st-key-output_results {
+            flex: 1 0 480px;
+            height: auto !important;
+            min-height: 480px;
+        }
+        [data-testid="stLayoutWrapper"]:has(> .st-key-output_results) {
+            flex: 1 0 480px;
+        }
+        .st-key-selected_category input[role="combobox"],
+        .st-key-selected_question_box .react-aria-ComboBox [role="group"]::before {
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #263c48;
+        }
         [data-testid="stMetric"] { background-color: #ffffff; border-color: var(--cg-line); }
         [data-testid="stMetricValue"] { color: var(--cg-accent); }
         [data-testid="stSidebar"] .stButton button[kind="primary"] {
@@ -807,27 +839,136 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
+    st.markdown(
+        '<div class="selected-question-label">CATEGORY</div>',
+        unsafe_allow_html=True,
+    )
     st.selectbox(
         "Category",
         options=list(CQ_CATEGORIES.keys()),
         key="selected_category",
         on_change=queue_selected_category,
+        label_visibility="collapsed",
     )
 
-    # Keep the original Selected Question card styling; make its question selectable.
+    category_questions = CQ_CATEGORIES[st.session_state.selected_category]
+
+    def format_question(cq_name: str) -> str:
+        number = category_questions.index(cq_name) + 1
+        return f"{number}. {CQ_DEFINITIONS[cq_name]['question']}"
+
+    st.markdown(
+        '<div class="selected-question-label">SELECTED QUESTION</div>',
+        unsafe_allow_html=True,
+    )
+    # Keep the question selector inside its card, with the heading above it.
     with st.container(key="selected_question_box"):
-        st.markdown(
-            '<div class="selected-question-label">SELECTED QUESTION</div>',
-            unsafe_allow_html=True,
-        )
         selected_cq = st.selectbox(
             "Selected Question",
-            options=CQ_CATEGORIES[st.session_state.selected_category],
-            format_func=lambda cq_name: CQ_DEFINITIONS[cq_name]["question"],
+            options=category_questions,
+            format_func=format_question,
             key="selected_cq",
             on_change=queue_selected_query,
             label_visibility="collapsed",
         )
+
+    # Streamlit 1.59 uses a single-line input; keep the native combobox
+    # interactive and display its selected text in a wrapping CSS layer.
+    question_css_text = json.dumps(format_question(selected_cq))
+    st.html(
+        "<style>"
+        ".st-key-selected_question_box { --cg-question-text: "
+        + question_css_text
+        + "; }"
+        + """
+        .st-key-selected_question_box .react-aria-ComboBox [role="group"] {
+            position: relative;
+            height: auto;
+            min-height: 2.5rem;
+            align-items: center;
+        }
+        .st-key-selected_question_box .react-aria-ComboBox [role="group"]::before {
+            content: var(--cg-question-text);
+            display: block;
+            flex: 1;
+            min-width: 0;
+            padding: 0.5rem 0.75rem;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            line-height: 1.45;
+            pointer-events: none;
+        }
+        .st-key-selected_question_box .react-aria-ComboBox input[role="combobox"] {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: calc(100% - 2.5rem);
+            height: 100%;
+            opacity: 0;
+        }
+        .st-key-selected_question_box .react-aria-ComboBox input[aria-expanded="true"]:not([value=__CG_SELECTED_TEXT__]) {
+            opacity: 1;
+        }
+        .st-key-selected_question_box [role="group"]:has(input[aria-expanded="true"]:not([value=__CG_SELECTED_TEXT__]))::before {
+            visibility: hidden;
+        }
+        [role="listbox"][aria-label="Selected Question"] [role="presentation"] {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            height: auto !important;
+            width: 100% !important;
+            contain: none !important;
+        }
+        [role="listbox"][aria-label="Selected Question"] [role="option"],
+        [role="listbox"][aria-label="Selected Question"] [data-item-hl] {
+            height: auto;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            overflow: visible;
+            text-overflow: clip;
+        }
+        [role="listbox"][aria-label="Selected Question"] [role="presentation"] + [role="presentation"] {
+            margin-top: 0.5rem;
+        }
+        </style>
+        <script>
+        (() => {
+            window.cellographLayoutCleanup?.();
+            let frame;
+            const alignOutput = () => {
+                cancelAnimationFrame(frame);
+                frame = requestAnimationFrame(() => {
+                    const acknowledgement = document.querySelector('.acknowledgement-box');
+                    const sidebar = document.querySelector('[data-testid="stSidebarContent"]');
+                    const main = document.querySelector('[data-testid="stMain"]');
+                    const content = document.querySelector('[data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"]');
+                    if (!acknowledgement || !content) return;
+                    const bottom = acknowledgement.getBoundingClientRect().bottom + (sidebar?.scrollTop || 0);
+                    const top = content.getBoundingClientRect().top + (main?.scrollTop || 0);
+                    const height = Math.ceil(Math.max(innerHeight - 32, bottom) - top);
+                    if (content.style.getPropertyValue('--cg-main-content-height') !== `${height}px`) {
+                        content.style.setProperty('--cg-main-content-height', `${height}px`);
+                    }
+                });
+            };
+            const resize = new ResizeObserver(alignOutput);
+            const sidebar = document.querySelector('[data-testid="stSidebarUserContent"]');
+            if (sidebar) resize.observe(sidebar);
+            const mutations = new MutationObserver(alignOutput);
+            mutations.observe(document.body, {childList: true, subtree: true, characterData: true});
+            window.addEventListener('resize', alignOutput);
+            window.cellographLayoutCleanup = () => {
+                cancelAnimationFrame(frame);
+                resize.disconnect();
+                mutations.disconnect();
+                window.removeEventListener('resize', alignOutput);
+            };
+            alignOutput();
+        })();
+        </script>
+        """.replace("__CG_SELECTED_TEXT__", question_css_text),
+        unsafe_allow_javascript=True,
+    )
 
     if selected_cq == "Co-occurance of Terms in Paragraph":
         pair_1_term, pair_1_label = st.columns(2)
@@ -925,6 +1066,7 @@ if st.session_state.run_selected_query:
 
         st.session_state.result_json = result_json
         st.session_state.result_df = sparql_json_to_dataframe(result_json)
+        reset_result_page()
 
     except Exception as error:
         st.session_state.result_json = None
@@ -954,7 +1096,7 @@ st.markdown(
 )
 st.markdown('<div class="section-label">Output</div>', unsafe_allow_html=True)
 
-with st.container(border=True, height=480):  # height=680
+with st.container(border=True, height=480, key="output_results"):
     if st.session_state.error_message:
         st.error("The query could not be completed.")
         st.code(st.session_state.error_message, language="text")
@@ -977,6 +1119,36 @@ with st.container(border=True, height=480):  # height=680
         metric_1.metric("Rows", row_count)
         metric_2.metric("Columns", column_count)
 
+        size_column, page_column = st.columns(2)
+        with size_column:
+            page_size = st.selectbox(
+                "Rows per page",
+                options=[25, 50, 100, 250, 500],
+                index=2,
+                key="result_page_size",
+                on_change=reset_result_page,
+            )
+        page_count = max(1, (row_count + page_size - 1) // page_size)
+        st.session_state.result_page = min(
+            max(1, st.session_state.get("result_page", 1)), page_count
+        )
+        with page_column:
+            page_number = st.number_input(
+                "Page",
+                min_value=1,
+                max_value=page_count,
+                step=1,
+                key="result_page",
+            )
+        start_row = (page_number - 1) * page_size
+        end_row = min(start_row + page_size, row_count)
+        page_df = result_df.iloc[start_row:end_row]
+        st.caption(
+            f"Showing rows {start_row + 1 if row_count else 0:,}–{end_row:,} "
+            f"of {row_count:,} · Page {page_number:,} of {page_count:,}. "
+            "Downloads include all result rows."
+        )
+
         table_tab, readable_tab, graph_tab, json_tab = st.tabs(
             ["Table", "Readable text", "Graph", "Raw JSON"]
         )
@@ -986,7 +1158,7 @@ with st.container(border=True, height=480):  # height=680
                 st.info("The query ran successfully, but no rows were returned.")
             else:
                 st.dataframe(
-                    result_df,
+                    page_df,
                     width="stretch",
                     hide_index=True,
                     height=450,
@@ -1002,14 +1174,14 @@ with st.container(border=True, height=480):  # height=680
                 )
 
         with readable_tab:
-            render_paragraph_cards(result_df)
+            render_paragraph_cards(page_df)
 
         with graph_tab:
-            dot_graph = dataframe_to_dot(result_df)
+            dot_graph = dataframe_to_dot(page_df)
             if dot_graph:
                 st.graphviz_chart(dot_graph, width="stretch")
-                if len(result_df) > 80:
-                    st.caption("The graph view shows only the first 80 result rows.")
+                if len(page_df) > 80:
+                    st.caption("The graph view shows only the first 80 rows on this page.")
             else:
                 st.info(
                     "A graph is shown when the result contains at least two "
@@ -1017,7 +1189,17 @@ with st.container(border=True, height=480):  # height=680
                 )
 
         with json_tab:
-            st.json(st.session_state.result_json, expanded=False)
+            result_json = st.session_state.result_json
+            page_json = result_json
+            if "results" in result_json:
+                page_json = {
+                    **result_json,
+                    "results": {
+                        **result_json["results"],
+                        "bindings": result_json["results"].get("bindings", [])[start_row:end_row],
+                    },
+                }
+            st.json(page_json, expanded=False)
             raw_json = json.dumps(
                 st.session_state.result_json,
                 indent=2,
@@ -1035,9 +1217,10 @@ with st.container(border=True, height=480):  # height=680
         st.markdown(
             """
             <div class="output-empty">
-                Select a question from Browse & Filter panel, provide input value(s), and click Execute.<br><br>
+                Select a question from Query Explorer panel, provide input value(s) or keep them empty, and click Execute.<br><br>
                 The GraphDB result will appear here.
             </div>
             """,
             unsafe_allow_html=True,
         )
+
