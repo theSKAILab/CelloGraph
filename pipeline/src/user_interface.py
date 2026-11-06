@@ -530,6 +530,14 @@ def reset_result_page() -> None:
     st.session_state.result_page = 1
 
 
+def previous_result_page() -> None:
+    st.session_state.result_page = max(1, st.session_state.result_page - 1)
+
+
+def next_result_page() -> None:
+    st.session_state.result_page += 1
+
+
 # -----------------------------------------------------------------------------
 # Page configuration and visual styling
 # -----------------------------------------------------------------------------
@@ -1115,38 +1123,54 @@ with st.container(border=True, height=480, key="output_results"):
         row_count = len(result_df)
         column_count = len(result_df.columns)
 
-        metric_1, metric_2 = st.columns(2)
-        metric_1.metric("Rows", row_count)
-        metric_2.metric("Columns", column_count)
-
-        size_column, page_column = st.columns(2)
-        with size_column:
+        # Compact summary and pagination on a single toolbar.
+        summary_col, size_col, spacer_col, prev_col, page_col, next_col = st.columns(
+            [2.4, 1.7, 0.7, 0.45, 0.8, 0.45], vertical_alignment="center"
+        )
+        with summary_col:
+            st.markdown(f"**{row_count:,} rows** · {column_count:,} columns")
+        with size_col:
             page_size = st.selectbox(
                 "Rows per page",
                 options=[25, 50, 100, 250, 500],
                 index=2,
+                format_func=lambda size: f"{size} / page",
                 key="result_page_size",
                 on_change=reset_result_page,
+                label_visibility="collapsed",
             )
+
         page_count = max(1, (row_count + page_size - 1) // page_size)
         st.session_state.result_page = min(
             max(1, st.session_state.get("result_page", 1)), page_count
         )
-        with page_column:
-            page_number = st.number_input(
-                "Page",
-                min_value=1,
-                max_value=page_count,
-                step=1,
-                key="result_page",
+        page_number = st.session_state.result_page
+
+        with prev_col:
+            st.button(
+                "‹", key="result_previous_page", help="Previous page",
+                disabled=page_number <= 1, on_click=previous_result_page,
+                use_container_width=True,
             )
+        with page_col:
+            st.markdown(
+                f"<div style='text-align:center;white-space:nowrap'>"
+                f"{page_number:,} / {page_count:,}</div>",
+                unsafe_allow_html=True,
+            )
+        with next_col:
+            st.button(
+                "›", key="result_next_page", help="Next page",
+                disabled=page_number >= page_count, on_click=next_result_page,
+                use_container_width=True,
+            )
+
         start_row = (page_number - 1) * page_size
         end_row = min(start_row + page_size, row_count)
         page_df = result_df.iloc[start_row:end_row]
         st.caption(
-            f"Showing rows {start_row + 1 if row_count else 0:,}–{end_row:,} "
-            f"of {row_count:,} · Page {page_number:,} of {page_count:,}. "
-            "Downloads include all result rows."
+            f"Showing {start_row + 1 if row_count else 0:,}–{end_row:,} "
+            f"of {row_count:,} · Downloads include all rows"
         )
 
         table_tab, readable_tab, graph_tab, json_tab = st.tabs(
